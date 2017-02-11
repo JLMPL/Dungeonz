@@ -6,6 +6,6 @@ Project is still unnamed and It's not likely to change anytime soon.
 SFML 2.4.1 - Rendering  
 lua 5.2 - The scripting language  
 LuaBridge - Little help  
-RapidXml - Parsing .tmx map files  
+RapidXml - Parsing *.tmx map files  
 zlib - Decompressing map files  
 SDL2 - Error handling  
