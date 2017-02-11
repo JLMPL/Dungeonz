@@ -3,9 +3,9 @@ Simple 2D Top-Down Realtime Dungeon-Crawler made for competition.
 Project is still unnamed and It's not likely to change anytime soon.
 
 # libs
-SFML 2.4.1 - Rendering  
-lua 5.2 - The scripting language  
-LuaBridge - Little help  
-RapidXml - Parsing *.tmx map files  
-zlib - Decompressing map files  
-SDL2 - Error handling  
+__SFML 2.4.1__ - Rendering  
+__lua 5.2__ - The scripting language  
+__LuaBridge__ - Little help  
+__RapidXml__ - Parsing _.tmx_ map files  
+__zlib__ - Decompressing map files  
+__SDL2__ - Error handling  
