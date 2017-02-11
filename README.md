@@ -4,7 +4,7 @@ Project is still unnamed and It's not likely to change anytime soon.
 
 # libs
 __SFML 2.4.1__ - Rendering  
-__lua 5.2__ - The scripting language  
+__Lua 5.2__ - The scripting language  
 __LuaBridge__ - Little help  
 __RapidXml__ - Parsing _.tmx_ map files  
 __zlib__ - Decompressing map files  
