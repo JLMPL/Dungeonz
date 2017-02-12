@@ -1,5 +1,4 @@
 #include "collision_handler.hpp"
-#include "../message/message_bus.hpp"
 #include "collision_algorithm.hpp"
 #include <SFML/Window/Keyboard.hpp>
 
@@ -88,8 +87,4 @@ void CollisionHandler::clean()
 		}
 		else i++;
 	}
-}
-
-void CollisionHandler::sendMessage(int message, MessagePtr_t value)
-{
 }

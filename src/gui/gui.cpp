@@ -1,6 +1,5 @@
 #include "gui.hpp"
 #include "../resource/font_cache.hpp"
-#include "../message/message_bus.hpp"
 #include "../resource/texture_cache.hpp"
 #include "../render/renderer.hpp"
 #include "../gameplay/living.hpp"
@@ -11,7 +10,6 @@ constexpr int _BookHeight = 512;
 
 void GUI::init()
 {
-	MessageBus::Get().addListener(this);
 	m_mode = GUIMode::OFF;
 	m_focusLabel.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
 	m_focusLabel.setCharacterSize(10);
@@ -35,7 +33,7 @@ void GUI::update()
 {
 	m_camera = Renderer::Get().getCameraPos();
 	m_sight.setPosition(m_camera.getSfVecf());
-	// Renderer::Get().submit(RenderData(&m_sight), RenderAttribute::OVERLAY);
+	Renderer::Get().submit(RenderData(&m_sight), RenderAttribute::OVERLAY);
 
 	switch(m_mode)
 	{
@@ -151,17 +149,6 @@ void GUI::setFocusLabel(const std::string& label, const vec2i& pos)
 						   static_cast<int>(m_focusLabel.getLocalBounds().height));
 	m_focusLabel.setPosition(pos.getSfVecf());
 	m_showLabel = true;
-}
-
-void GUI::sendMessage(int message, MessagePtr_t value)
-{
-	switch(message)
-	{
-		case Message::GUI::SET_FOCUS_LABEL:
-			auto val = static_cast<Message::GUI::MessageLabel*>(value.get());
-			setFocusLabel(val->name, val->pos);
-			break;
-	}
 }
 
 void GUI::setTarget(Living* living)

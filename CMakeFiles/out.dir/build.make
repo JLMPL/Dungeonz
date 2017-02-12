@@ -753,57 +753,9 @@ CMakeFiles/out.dir/src/gui/gui.cpp.o.provides: CMakeFiles/out.dir/src/gui/gui.cp
 CMakeFiles/out.dir/src/gui/gui.cpp.o.provides.build: CMakeFiles/out.dir/src/gui/gui.cpp.o
 
 
-CMakeFiles/out.dir/src/message/listener.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/message/listener.cpp.o: src/message/listener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/message/listener.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/message/listener.cpp.o -c /home/dominik/Desktop/Rekt/src/message/listener.cpp
-
-CMakeFiles/out.dir/src/message/listener.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/message/listener.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/message/listener.cpp > CMakeFiles/out.dir/src/message/listener.cpp.i
-
-CMakeFiles/out.dir/src/message/listener.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/message/listener.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/message/listener.cpp -o CMakeFiles/out.dir/src/message/listener.cpp.s
-
-CMakeFiles/out.dir/src/message/listener.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/message/listener.cpp.o.requires
-
-CMakeFiles/out.dir/src/message/listener.cpp.o.provides: CMakeFiles/out.dir/src/message/listener.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/listener.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/message/listener.cpp.o.provides
-
-CMakeFiles/out.dir/src/message/listener.cpp.o.provides.build: CMakeFiles/out.dir/src/message/listener.cpp.o
-
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/message/message_bus.cpp.o: src/message/message_bus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/message/message_bus.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/message/message_bus.cpp.o -c /home/dominik/Desktop/Rekt/src/message/message_bus.cpp
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/message/message_bus.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/message/message_bus.cpp > CMakeFiles/out.dir/src/message/message_bus.cpp.i
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/message/message_bus.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/message/message_bus.cpp -o CMakeFiles/out.dir/src/message/message_bus.cpp.s
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/message/message_bus.cpp.o.requires
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.o.provides: CMakeFiles/out.dir/src/message/message_bus.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/message_bus.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/message/message_bus.cpp.o.provides
-
-CMakeFiles/out.dir/src/message/message_bus.cpp.o.provides.build: CMakeFiles/out.dir/src/message/message_bus.cpp.o
-
-
 CMakeFiles/out.dir/src/base64/base64.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/base64/base64.cpp.o: src/base64/base64.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/base64/base64.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/base64/base64.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/base64/base64.cpp.o -c /home/dominik/Desktop/Rekt/src/base64/base64.cpp
 
 CMakeFiles/out.dir/src/base64/base64.cpp.i: cmake_force
@@ -827,7 +779,7 @@ CMakeFiles/out.dir/src/base64/base64.cpp.o.provides.build: CMakeFiles/out.dir/sr
 
 CMakeFiles/out.dir/src/script/lua_interface.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/script/lua_interface.cpp.o: src/script/lua_interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/script/lua_interface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/script/lua_interface.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/script/lua_interface.cpp.o -c /home/dominik/Desktop/Rekt/src/script/lua_interface.cpp
 
 CMakeFiles/out.dir/src/script/lua_interface.cpp.i: cmake_force
@@ -851,7 +803,7 @@ CMakeFiles/out.dir/src/script/lua_interface.cpp.o.provides.build: CMakeFiles/out
 
 CMakeFiles/out.dir/src/script/script_handler.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/script/script_handler.cpp.o: src/script/script_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/script/script_handler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/script/script_handler.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/script/script_handler.cpp.o -c /home/dominik/Desktop/Rekt/src/script/script_handler.cpp
 
 CMakeFiles/out.dir/src/script/script_handler.cpp.i: cmake_force
@@ -904,8 +856,6 @@ out_OBJECTS = \
 "CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o" \
 "CMakeFiles/out.dir/src/gui/slot.cpp.o" \
 "CMakeFiles/out.dir/src/gui/gui.cpp.o" \
-"CMakeFiles/out.dir/src/message/listener.cpp.o" \
-"CMakeFiles/out.dir/src/message/message_bus.cpp.o" \
 "CMakeFiles/out.dir/src/base64/base64.cpp.o" \
 "CMakeFiles/out.dir/src/script/lua_interface.cpp.o" \
 "CMakeFiles/out.dir/src/script/script_handler.cpp.o"
@@ -942,14 +892,12 @@ out: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
 out: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o
 out: CMakeFiles/out.dir/src/gui/slot.cpp.o
 out: CMakeFiles/out.dir/src/gui/gui.cpp.o
-out: CMakeFiles/out.dir/src/message/listener.cpp.o
-out: CMakeFiles/out.dir/src/message/message_bus.cpp.o
 out: CMakeFiles/out.dir/src/base64/base64.cpp.o
 out: CMakeFiles/out.dir/src/script/lua_interface.cpp.o
 out: CMakeFiles/out.dir/src/script/script_handler.cpp.o
 out: CMakeFiles/out.dir/build.make
 out: CMakeFiles/out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -986,8 +934,6 @@ CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.requir
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/slot.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/gui.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/message/listener.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/message/message_bus.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/base64/base64.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/script/lua_interface.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/script/script_handler.cpp.o.requires

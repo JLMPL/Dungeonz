@@ -690,60 +690,6 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/message/listener.o: src/message/listener.cpp.o
-
-.PHONY : src/message/listener.o
-
-# target to build an object file
-src/message/listener.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/listener.cpp.o
-.PHONY : src/message/listener.cpp.o
-
-src/message/listener.i: src/message/listener.cpp.i
-
-.PHONY : src/message/listener.i
-
-# target to preprocess a source file
-src/message/listener.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/listener.cpp.i
-.PHONY : src/message/listener.cpp.i
-
-src/message/listener.s: src/message/listener.cpp.s
-
-.PHONY : src/message/listener.s
-
-# target to generate assembly for a file
-src/message/listener.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/listener.cpp.s
-.PHONY : src/message/listener.cpp.s
-
-src/message/message_bus.o: src/message/message_bus.cpp.o
-
-.PHONY : src/message/message_bus.o
-
-# target to build an object file
-src/message/message_bus.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/message_bus.cpp.o
-.PHONY : src/message/message_bus.cpp.o
-
-src/message/message_bus.i: src/message/message_bus.cpp.i
-
-.PHONY : src/message/message_bus.i
-
-# target to preprocess a source file
-src/message/message_bus.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/message_bus.cpp.i
-.PHONY : src/message/message_bus.cpp.i
-
-src/message/message_bus.s: src/message/message_bus.cpp.s
-
-.PHONY : src/message/message_bus.s
-
-# target to generate assembly for a file
-src/message/message_bus.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/message/message_bus.cpp.s
-.PHONY : src/message/message_bus.cpp.s
-
 src/render/animated_sprite.o: src/render/animated_sprite.cpp.o
 
 .PHONY : src/render/animated_sprite.o
@@ -1113,12 +1059,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/message/listener.o"
-	@echo "... src/message/listener.i"
-	@echo "... src/message/listener.s"
-	@echo "... src/message/message_bus.o"
-	@echo "... src/message/message_bus.i"
-	@echo "... src/message/message_bus.s"
 	@echo "... src/render/animated_sprite.o"
 	@echo "... src/render/animated_sprite.i"
 	@echo "... src/render/animated_sprite.s"

@@ -2,14 +2,14 @@
 #define renderer_hpp
 #include "render_attribute.hpp"
 #include "render_data.hpp"
-#include "../message/listener.hpp"
+#include "../core/vec2.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <vector>
 
 //Singleton
-class Renderer : public Listener
+class Renderer
 {
 	public:
 		static Renderer& Get()
@@ -25,8 +25,7 @@ class Renderer : public Listener
 		void submit(sf::Text* data);
 		void flush();
 
-		virtual void sendMessage(int message, MessagePtr_t value) override final;
-
+		void setCameraPos(const vec2i& pos);
 		vec2i getCameraPos() const;
 
 	private:
@@ -34,8 +33,6 @@ class Renderer : public Listener
 		void sort();
 		void render();
 		void clearAll();
-
-		void setCameraPos(const vec2i& pos);
 
 	private:
 		sf::RenderWindow* m_window = nullptr;

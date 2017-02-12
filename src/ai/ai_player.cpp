@@ -4,7 +4,6 @@
 #include "../gameplay/level.hpp"
 #include "../gui/gui.hpp"
 #include "../input/input_handler.hpp"
-#include "../message/message_bus.hpp"
 #include "../resource/animation_cache.hpp"
 #include "../render/indication_handler.hpp"
 
@@ -263,8 +262,6 @@ void AIPlayer::focus()
 		}
 
 		m_focus = ents[0];
-
-		MessagePtr_t setLabel;
 
 		switch(m_focus->getType())
 		{

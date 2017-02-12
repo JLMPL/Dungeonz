@@ -1,7 +1,6 @@
 #include "sprite.hpp"
 #include "renderer.hpp"
 #include "../resource/texture_cache.hpp"
-#include "../message/message_bus.hpp"
 
 void Sprite::loadFromFile(const std::string& path)
 {

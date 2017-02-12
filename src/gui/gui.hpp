@@ -3,7 +3,6 @@
 #include "graphic_inv.hpp"
 #include "graphic_loot.hpp"
 #include "gui_mode.hpp"
-#include "../message/listener.hpp"
 #include "../render/bar.hpp"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -13,7 +12,7 @@ class Living;
 class Inventory;
 
 //Singleton
-class GUI : public Listener
+class GUI
 {
 	public:
 		static GUI& Get()
@@ -29,8 +28,6 @@ class GUI : public Listener
 		void goRead(const std::string& content);
 		void showFocusHealthbar(int val, int max, const vec2i& pos);
 		void setFocusLabel(const std::string& label, const vec2i& pos);
-
-		virtual void sendMessage(int message, MessagePtr_t value) override final;
 
 		void setTarget(Living* living);
 

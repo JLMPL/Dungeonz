@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+ASS_BINARY_DIR:STATIC=/home/dominik/Desktop/Rekt
+
+//Value Computed by CMake
+ASS_SOURCE_DIR:STATIC=/home/dominik/Desktop/Rekt
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -114,7 +120,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=NRG
+CMAKE_PROJECT_NAME:STATIC=ASS
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib

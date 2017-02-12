@@ -18,7 +18,6 @@ file(GLOB gameplay  "src/gameplay/*.cpp")
 file(GLOB ai        "src/ai/*.cpp")
 file(GLOB collision "src/collision/*.cpp")
 file(GLOB gui   	"src/gui/*.cpp")
-file(GLOB message 	"src/message/*.cpp")
 file(GLOB base64 	"src/base64/*.cpp")
 file(GLOB script 	"src/script/*.cpp")
 
@@ -32,7 +31,6 @@ add_executable(out
     ${ai}
     ${collision}
 	${gui}
-	${message}
 	${base64}
 	${script}
 )
