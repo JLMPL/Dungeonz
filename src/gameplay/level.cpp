@@ -2,7 +2,6 @@
 #include "../ai/ai_player.hpp"
 #include "../ai/ai_mob.hpp"
 #include "../gui/gui.hpp"
-#include "../message/message_bus.hpp"
 #include "../collision/collision_handler.hpp"
 #include "../render/indication_handler.hpp"
 
@@ -49,8 +48,8 @@ void Level::update(float deltaTime)
 	mope.update();
 	CollisionHandler::Get().update(deltaTime);
 
-	MessagePtr_t setCameraPos = MessagePtr_t(new Message::RENDER::MessageCamera(vec2i(player->getPosition().x, player->getPosition().y)));
-	MessageBus::Get().sendMessage(Message::RENDER::SET_CAMERA_POS, setCameraPos);
+	auto camera_pos = player->getPosition().geti();
+	Renderer::Get().setCameraPos(camera_pos);
 
 	IndicationHandler::Get().update(deltaTime);
 	GUI::Get().update();

@@ -5,7 +5,6 @@
 #include "../resource/texture_cache.hpp"
 #include "../resource/animation_cache.hpp"
 #include "../collision/collision_handler.hpp"
-#include "../message/message_bus.hpp"
 #include "../gui/gui.hpp"
 #include "../render/indication_handler.hpp"
 #include "error.hpp"
@@ -20,13 +19,12 @@ Game::Game()
 	InputHandler::Get().init();
 	GUI::Get().init();
 	CollisionHandler::Get().init();
-	MessageBus::Get().init();
 	Renderer::Get().init(&Window);
 	IndicationHandler::Get().init();
 
 	version.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.1.3 WIP");
+	version.setString("Version 0.1.6 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	level.init();
@@ -41,6 +39,9 @@ void Game::update()
 	deltaTime = Clock.restart().asSeconds();
 
 	level.update(deltaTime);
+
+	auto ver_pos = Renderer::Get().getCameraPos() + vec2i(5,5);
+	version.setPosition(ver_pos.getSfVecf());
 }
 
 void Game::mainLoop()

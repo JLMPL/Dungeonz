@@ -1,6 +1,5 @@
 #include "renderer.hpp"
 #include "../core/error.hpp"
-#include "../message/message_bus.hpp"
 #include "../render/sprite.hpp"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
@@ -11,7 +10,6 @@ void Renderer::init(sf::RenderWindow* window)
 		ShowErrorBox("Failed to initialize renderer with window!");
 	else
 	{
-		MessageBus::Get().addListener(this);
 		m_window = window;
 		m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(800,600));
 	}
@@ -105,26 +103,6 @@ void Renderer::clearAll()
 void Renderer::setCameraPos(const vec2i& pos)
 {
 	m_camera.setCenter(pos.x, pos.y);
-}
-
-void Renderer::sendMessage(int message, MessagePtr_t value)
-{
-	switch(message)
-	{
-		case Message::RENDER::SET_CAMERA_POS:
-		{
-			auto poz = static_cast<Message::RENDER::MessageCamera*>(value.get());
-			setCameraPos(poz->pos);
-			break;
-		}
-
-		case Message::RENDER::SUBMIT_SPRITE:
-		{
-			auto spriz = static_cast<Message::RENDER::MessageSubmitSprite*>(value.get());
-			submit(spriz->data, spriz->attribute);
-			break;
-		}
-	}
 }
 
 vec2i Renderer::getCameraPos() const

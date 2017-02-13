@@ -28,8 +28,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o"
   "CMakeFiles/out.dir/src/gui/slot.cpp.o"
   "CMakeFiles/out.dir/src/gui/gui.cpp.o"
-  "CMakeFiles/out.dir/src/message/listener.cpp.o"
-  "CMakeFiles/out.dir/src/message/message_bus.cpp.o"
   "CMakeFiles/out.dir/src/base64/base64.cpp.o"
   "CMakeFiles/out.dir/src/script/lua_interface.cpp.o"
   "CMakeFiles/out.dir/src/script/script_handler.cpp.o"

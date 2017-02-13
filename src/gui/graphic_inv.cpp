@@ -202,6 +202,9 @@ void GraphicInv::description()
 			case ItemType::FOOD:
 				m_desc_type.setString("Consumable");
 			break;
+			case ItemType::BOOK:
+				m_desc_type.setString("Book");
+			break;
 			case ItemType::MISC:
 				m_desc_type.setString("Miscellaneous");
 			break;
