@@ -25,7 +25,7 @@ class AIPlayer : public AI
 
 		void focus();
 	private:
-		float     speed = 50;
+		float     m_speed = 100;
 		Entity*   m_focus;
 		sf::Clock m_timer;
 		PlayerState m_state;

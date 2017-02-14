@@ -25,13 +25,12 @@ CMakeFiles/out.dir/src/ai/ai_mob.cpp.o
  /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
  /home/dominik/Desktop/Rekt/src/core/vec2.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/door.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
@@ -40,7 +39,6 @@ CMakeFiles/out.dir/src/ai/ai_mob.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/lever.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/living.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/living_profile.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.hpp
@@ -77,6 +75,7 @@ CMakeFiles/out.dir/src/ai/ai_player.cpp.o
  /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/dice.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
@@ -128,6 +127,7 @@ CMakeFiles/out.dir/src/collision/collision_handler.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/collision_algorithm.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.cpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
  /home/dominik/Desktop/Rekt/src/core/vec2.hpp
@@ -149,11 +149,10 @@ CMakeFiles/out.dir/src/core/game.cpp.o
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeList.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeTraits.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Userdata.h
- /home/dominik/Desktop/Rekt/src/ai/ai.hpp
- /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -161,21 +160,14 @@ CMakeFiles/out.dir/src/core/game.cpp.o
  /home/dominik/Desktop/Rekt/src/core/game.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
  /home/dominik/Desktop/Rekt/src/core/vec2.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/door.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/inventory.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/lever.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/living.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/living_profile.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/stats.hpp
  /home/dominik/Desktop/Rekt/src/gui/graphic_inv.hpp
  /home/dominik/Desktop/Rekt/src/gui/graphic_loot.hpp
  /home/dominik/Desktop/Rekt/src/gui/gui.hpp
@@ -216,6 +208,7 @@ CMakeFiles/out.dir/src/gameplay/chest.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -256,6 +249,7 @@ CMakeFiles/out.dir/src/gameplay/door.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -286,6 +280,7 @@ CMakeFiles/out.dir/src/gameplay/door.cpp.o
 CMakeFiles/out.dir/src/gameplay/entity.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
@@ -347,13 +342,12 @@ CMakeFiles/out.dir/src/gameplay/level.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
  /home/dominik/Desktop/Rekt/src/core/vec2.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/door.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
@@ -363,7 +357,6 @@ CMakeFiles/out.dir/src/gameplay/level.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.cpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/lever.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/living.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/living_profile.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.hpp
@@ -391,6 +384,7 @@ CMakeFiles/out.dir/src/gameplay/lever.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
@@ -427,6 +421,7 @@ CMakeFiles/out.dir/src/gameplay/living.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -476,6 +471,7 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -496,8 +492,15 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/living_profile.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.cpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/stats.hpp
+ /home/dominik/Desktop/Rekt/src/gui/graphic_inv.hpp
+ /home/dominik/Desktop/Rekt/src/gui/graphic_loot.hpp
+ /home/dominik/Desktop/Rekt/src/gui/gui.hpp
+ /home/dominik/Desktop/Rekt/src/gui/gui_mode.hpp
+ /home/dominik/Desktop/Rekt/src/gui/slot.hpp
  /home/dominik/Desktop/Rekt/src/rapidxml/rapidxml.hpp
+ /home/dominik/Desktop/Rekt/src/render/bar.hpp
  /home/dominik/Desktop/Rekt/src/render/render_attribute.hpp
  /home/dominik/Desktop/Rekt/src/render/render_data.hpp
  /home/dominik/Desktop/Rekt/src/render/renderer.hpp
@@ -508,6 +511,29 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o
  /home/dominik/Desktop/Rekt/src/resource/texture_cache.hpp
  /home/dominik/Desktop/Rekt/src/resource/texture_ptr.hpp
  /home/dominik/Desktop/Rekt/src/script/script_handler.hpp
+CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o
+ /home/dominik/Desktop/Rekt/src/collision/box.hpp
+ /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
+ /home/dominik/Desktop/Rekt/src/core/direction.hpp
+ /home/dominik/Desktop/Rekt/src/core/rect.hpp
+ /home/dominik/Desktop/Rekt/src/core/vec2.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.cpp
+ /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.hpp
+ /home/dominik/Desktop/Rekt/src/render/animated_sprite.hpp
+ /home/dominik/Desktop/Rekt/src/render/render_attribute.hpp
+ /home/dominik/Desktop/Rekt/src/render/render_data.hpp
+ /home/dominik/Desktop/Rekt/src/render/renderer.hpp
+ /home/dominik/Desktop/Rekt/src/render/sprite.hpp
+ /home/dominik/Desktop/Rekt/src/render/sprite_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/resource/animation.hpp
+ /home/dominik/Desktop/Rekt/src/resource/animation_cache.hpp
+ /home/dominik/Desktop/Rekt/src/resource/animation_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/resource/texture_ptr.hpp
 CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
  /home/dominik/Desktop/Rekt/src/LuaBridge/LuaBridge.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/CFunctions.h
@@ -527,6 +553,7 @@ CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
  /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -608,6 +635,7 @@ CMakeFiles/out.dir/src/gui/gui.cpp.o
  /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
@@ -685,31 +713,23 @@ CMakeFiles/out.dir/src/main.cpp.o
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeList.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeTraits.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Userdata.h
- /home/dominik/Desktop/Rekt/src/ai/ai.hpp
- /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
  /home/dominik/Desktop/Rekt/src/core/game.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp
  /home/dominik/Desktop/Rekt/src/core/vec2.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/door.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/inventory.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/lever.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/living.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/living_profile.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/map.hpp
- /home/dominik/Desktop/Rekt/src/gameplay/stats.hpp
  /home/dominik/Desktop/Rekt/src/main.cpp
  /home/dominik/Desktop/Rekt/src/rapidxml/rapidxml.hpp
  /home/dominik/Desktop/Rekt/src/render/render_attribute.hpp
@@ -844,6 +864,7 @@ CMakeFiles/out.dir/src/script/script_handler.cpp.o
  /home/dominik/Desktop/Rekt/src/ai/ai_ptr.hpp
  /home/dominik/Desktop/Rekt/src/collision/box.hpp
  /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
  /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp

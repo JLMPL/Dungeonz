@@ -7,7 +7,8 @@ enum EntityType
     LIVING,
     CHEST,
     DOOR,
-    LEVER
+    LEVER,
+    SPIKE_TRAP
 };
 
 #endif

@@ -70,6 +70,8 @@ class Living : public Entity
 		float       m_pushTimer = 0;
 		float       m_pushDuration;
 
+		float 		m_trapTimer = 0;
+
 		int m_attributes[Attribute::NUM_ATTS];
 		Inventory m_inv;
 		Item* m_equipped[Equip::NUM_EQ];
