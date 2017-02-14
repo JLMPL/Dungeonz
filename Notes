@@ -13,12 +13,10 @@ Touched When Moving:
 -some stats [health, mana] yeah! - 30.01.2017
 -animation load from txt file - 02.02.2017
 -animation looping & finished - 02.02.2017
+-no logging here
 
 TODO:
--wearable armor
--enemy healthbar
--notes
--Lever
+-add delay to spike_trap
 
 I have bat I can kill bat - combat
 I killed bat I can loot bat - inventory

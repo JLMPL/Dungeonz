@@ -1,28 +1,28 @@
 #include "level.hpp"
+#include "living.hpp"
 #include "../ai/ai_player.hpp"
 #include "../ai/ai_mob.hpp"
-#include "../gui/gui.hpp"
 #include "../collision/collision_handler.hpp"
+#include "../gui/gui.hpp"
 #include "../render/indication_handler.hpp"
 
 void Level::init()
 {
-	profile.loadFromFile("data/pc_player.chr");
+	// profile.loadFromFile("data/pc_player.chr");
 
-	//Player
-	player = (Living*)addEntity(EntityPtr_t(new Living()));
-	player->init(profile);
-	player->setAI(AIPtr_t(new AIPlayer()));
-	player->setPosition(vec2f(600,400));//(vec2f(418,950));
+	// player = (Living*)addEntity(EntityPtr_t(new Living()));
+	// player->init(profile);
+	// player->setAI(AIPtr_t(new AIPlayer()));
+	// player->setPosition(vec2f(600,400));//(vec2f(418,950));
 
 	ItemPtr_t book = addItem(ItemPtr_t(new Item("data/it_test_note.lua")));
 
-	player->accessInv().addItem(book);
+	// player->accessInv().addItem(book);
 
-	mope.setLevel(this);
-	mope.loadFromFile("data/map_test.tmx");
+	map.setLevel(this);
+	map.loadFromFile("data/map_test.tmx");
 
-	GUI::Get().setTarget(player);
+	// GUI::Get().setTarget(player);
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -41,14 +41,14 @@ ItemPtr_t Level::addItem(ItemPtr_t item)
 }
 
 void Level::update(float deltaTime)
-{	
+{
 	for(auto& i : m_Entities)
 		i->update(deltaTime);
 
-	mope.update();
+	map.update();
 	CollisionHandler::Get().update(deltaTime);
 
-	auto camera_pos = player->getPosition().geti();
+	auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
 	Renderer::Get().setCameraPos(camera_pos);
 
 	IndicationHandler::Get().update(deltaTime);

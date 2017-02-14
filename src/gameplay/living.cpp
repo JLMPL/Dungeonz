@@ -25,6 +25,16 @@ void Living::init(const LivingProfile& profile)
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,14,6);
 	m_box->type = CollisionType::DYNAMIC;
+	m_box->material = CollMaterial::LIVING;
+	m_box->reactMaterial = CollMaterial::TRAP;
+	m_box->callback = [this]()
+	{
+		if(this->m_trapTimer > 1000 + 25*4 + 160)
+		{
+			this->damage(2);
+			this->m_trapTimer = 0;
+		}
+	};
 
 	m_shadow = sf::CircleShape(7);
 	m_shadow.setFillColor({0,0,0,64});
@@ -46,6 +56,8 @@ void Living::init(const LivingProfile& profile)
 
 void Living::update(float deltaTime)
 {
+	m_trapTimer += 1000 * deltaTime;
+
 	m_ai->update(deltaTime);
 
 	m_shadow.setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});

@@ -2,10 +2,13 @@
 #include "../core/dice.hpp"
 #include "../gameplay/living.hpp"
 #include "../gameplay/level.hpp"
+#include "../gameplay/chest.hpp"
+#include "../gameplay/door.hpp"
+#include "../gameplay/lever.hpp"
 #include "../gui/gui.hpp"
 #include "../input/input_handler.hpp"
-#include "../resource/animation_cache.hpp"
 #include "../render/indication_handler.hpp"
+#include "../resource/animation_cache.hpp"
 
 void AIPlayer::setup()
 {
@@ -90,22 +93,22 @@ void AIPlayer::movingState(float deltaTime)
 {
 	if(InputHandler::Get().isUp())
 	{
-		m_target->move({0, -deltaTime * speed});
+		m_target->move({0, -deltaTime * m_speed});
 		m_target->setDirection(Direction::UP);
 	}
 	else if(InputHandler::Get().isDown())
 	{
-		m_target->move({0, deltaTime * speed});
+		m_target->move({0, deltaTime * m_speed});
 		m_target->setDirection(Direction::DOWN);
 	}
 	if(InputHandler::Get().isLeft())
 	{
-		m_target->move({-deltaTime * speed, 0});
+		m_target->move({-deltaTime * m_speed, 0});
 		m_target->setDirection(Direction::LEFT);
 	}
 	else if(InputHandler::Get().isRight())
 	{
-		m_target->move({deltaTime * speed, 0});
+		m_target->move({deltaTime * m_speed, 0});
 		m_target->setDirection(Direction::RIGHT);
 	}
 

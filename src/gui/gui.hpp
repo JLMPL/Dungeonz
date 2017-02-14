@@ -30,6 +30,7 @@ class GUI
 		void setFocusLabel(const std::string& label, const vec2i& pos);
 
 		void setTarget(Living* living);
+		Living* getTarget();
 
 	private:
 

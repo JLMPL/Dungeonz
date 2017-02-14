@@ -38,6 +38,7 @@ void CollisionHandler::update(float deltaTime)
 							a.rect.y += move.y * 0.5 + gPush;
 							b.rect.y -= move.y * 0.5 + gPush;
 						}
+						react(m_Bodies[i], m_Bodies[j]);
 					}
 				}
 				else if(a.type == CollisionType::DYNAMIC and b.type == CollisionType::STATIC)
@@ -47,6 +48,7 @@ void CollisionHandler::update(float deltaTime)
 						vec2f move;
 						Collision::AABBResponse(a.rect, b.rect, move);
 						(move.y == 0) ? a.rect.x += move.x + gPush : a.rect.y += move.y + gPush;
+						react(m_Bodies[i], m_Bodies[j]);
 					}
 				}
 				else if(a.type == CollisionType::STATIC and b.type == CollisionType::DYNAMIC)
@@ -57,6 +59,21 @@ void CollisionHandler::update(float deltaTime)
 						Collision::AABBResponse(b.rect, a.rect, move);
 
 						(move.y == 0) ? b.rect.x += move.x + gPush : b.rect.y += move.y + gPush;
+						react(m_Bodies[i], m_Bodies[j]);
+					}
+				}
+				else if(a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::DYNAMIC)
+				{
+					if(Collision::AABBOverlap(a.rect, b.rect))
+					{
+						react(m_Bodies[i], m_Bodies[j]);
+					}
+				}
+				else if(b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::DYNAMIC)
+				{
+					if(Collision::AABBOverlap(a.rect, b.rect))
+					{
+						react(m_Bodies[i], m_Bodies[j]);
 					}
 				}
 			}
@@ -73,6 +90,21 @@ void CollisionHandler::update(float deltaTime)
 void CollisionHandler::addBody(BoxPtr_t box)
 {
 	m_Bodies.push_back(box);
+}
+
+void CollisionHandler::react(BoxPtr_t a, BoxPtr_t b)
+{
+	if(b->material == a->reactMaterial)
+	{	
+		if(a->callback)
+			a->callback();
+	}
+
+	if(a->material == b->reactMaterial)
+	{	
+		if(b->callback)
+			b->callback();
+	}
 }
 
 void CollisionHandler::clean()

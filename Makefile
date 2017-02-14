@@ -528,6 +528,33 @@ src/gameplay/map.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/map.cpp.s
 .PHONY : src/gameplay/map.cpp.s
 
+src/gameplay/spike_trap.o: src/gameplay/spike_trap.cpp.o
+
+.PHONY : src/gameplay/spike_trap.o
+
+# target to build an object file
+src/gameplay/spike_trap.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o
+.PHONY : src/gameplay/spike_trap.cpp.o
+
+src/gameplay/spike_trap.i: src/gameplay/spike_trap.cpp.i
+
+.PHONY : src/gameplay/spike_trap.i
+
+# target to preprocess a source file
+src/gameplay/spike_trap.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.i
+.PHONY : src/gameplay/spike_trap.cpp.i
+
+src/gameplay/spike_trap.s: src/gameplay/spike_trap.cpp.s
+
+.PHONY : src/gameplay/spike_trap.s
+
+# target to generate assembly for a file
+src/gameplay/spike_trap.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.s
+.PHONY : src/gameplay/spike_trap.cpp.s
+
 src/gui/graphic_inv.o: src/gui/graphic_inv.cpp.o
 
 .PHONY : src/gui/graphic_inv.o
@@ -1041,6 +1068,9 @@ help:
 	@echo "... src/gameplay/map.o"
 	@echo "... src/gameplay/map.i"
 	@echo "... src/gameplay/map.s"
+	@echo "... src/gameplay/spike_trap.o"
+	@echo "... src/gameplay/spike_trap.i"
+	@echo "... src/gameplay/spike_trap.s"
 	@echo "... src/gui/graphic_inv.o"
 	@echo "... src/gui/graphic_inv.i"
 	@echo "... src/gui/graphic_inv.s"

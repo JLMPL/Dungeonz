@@ -5,11 +5,16 @@
 #include "../resource/texture_cache.hpp"
 #include "../render/render_attribute.hpp"
 #include "../collision/collision_handler.hpp"
-#include "../gameplay/living_profile.hpp"
-#include "../gameplay/living.hpp"
-#include "../gameplay/level.hpp"
+#include "living_profile.hpp"
+#include "living.hpp"
+#include "level.hpp"
+#include "door.hpp"
+#include "lever.hpp"
+#include "spike_trap.hpp"
+#include "chest.hpp"
 #include "../ai/ai_player.hpp"
 #include "../ai/ai_mob.hpp"
+#include "../gui/gui.hpp"
 #include "zlib.h"
 #include <fstream>
 #include <sstream>
@@ -232,6 +237,35 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 				if(door)
 					door->open();
 			});
+		}
+		else if(type == "spike_trap")
+		{
+			std::string name = object->first_attribute("name")->value();
+			// std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			vec2f pos;
+			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.y = std::stof(object->first_attribute("y")->value());
+
+			auto trap = (SpikeTrap*)m_level->addEntity(EntityPtr_t(new SpikeTrap()));
+			trap->setCode(name);
+			trap->setPosition(pos);
+		}
+		else if(type == "start")
+		{
+			// std::string name = object->first_attribute("name")->value();
+			vec2f pos;
+			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.y = std::stof(object->first_attribute("y")->value());
+
+			LivingProfile profile;
+			profile.loadFromFile("data/pc_player.chr");
+
+			auto player = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+			player->init(profile);
+			player->setAI(AIPtr_t(new AIPlayer()));
+			player->setPosition(pos);
+
+			GUI::Get().setTarget(player);
 		}
 		object = object->next_sibling("object");
 	}

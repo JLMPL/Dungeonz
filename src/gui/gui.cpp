@@ -33,7 +33,7 @@ void GUI::update()
 {
 	m_camera = Renderer::Get().getCameraPos();
 	m_sight.setPosition(m_camera.getSfVecf());
-	Renderer::Get().submit(RenderData(&m_sight), RenderAttribute::OVERLAY);
+	// Renderer::Get().submit(RenderData(&m_sight), RenderAttribute::OVERLAY);
 
 	switch(m_mode)
 	{
@@ -157,4 +157,9 @@ void GUI::setTarget(Living* living)
 	m_ginv.setInv(&m_target->accessInv());
 	m_ginv.setTarget(m_target);
 	m_gloot.setTargetInv(&m_target->accessInv());
+}
+
+Living* GUI::getTarget()
+{
+	return m_target;
 }

@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/dominik/Desktop/Rekt/src/gameplay/lever.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gameplay/lever.cpp.o"
   "/home/dominik/Desktop/Rekt/src/gameplay/living.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gameplay/living.cpp.o"
   "/home/dominik/Desktop/Rekt/src/gameplay/map.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gameplay/map.cpp.o"
+  "/home/dominik/Desktop/Rekt/src/gameplay/spike_trap.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o"
   "/home/dominik/Desktop/Rekt/src/gui/graphic_inv.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o"
   "/home/dominik/Desktop/Rekt/src/gui/graphic_loot.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o"
   "/home/dominik/Desktop/Rekt/src/gui/gui.cpp" "/home/dominik/Desktop/Rekt/CMakeFiles/out.dir/src/gui/gui.cpp.o"

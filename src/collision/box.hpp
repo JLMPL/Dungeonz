@@ -1,15 +1,20 @@
 #ifndef box_hpp
 #define box_hpp
-#include "../core/rect.hpp"
 #include "collision_type.hpp"
+#include "collision_material.hpp"
+#include "../core/rect.hpp"
 #include "../render/renderer.hpp"
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <functional>
 
 struct Box
 {
 	Rectf rect;
 	CollisionType type = CollisionType::STATIC;
+	CollMaterial_t material = CollMaterial::NONE;
+	CollMaterial_t reactMaterial = CollMaterial::NONE;
 	bool enabled = true;
+	std::function<void ()> callback;
 
 	sf::RectangleShape shape;
 

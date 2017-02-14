@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "error.hpp"
 #include "../render/renderer.hpp"
 #include "../input/input_handler.hpp"
 #include "../resource/font_cache.hpp"
@@ -7,7 +8,6 @@
 #include "../collision/collision_handler.hpp"
 #include "../gui/gui.hpp"
 #include "../render/indication_handler.hpp"
-#include "error.hpp"
 
 Game::Game()
 {
@@ -24,7 +24,7 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.1.6 WIP");
+	version.setString("Version 0.1.7 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	level.init();
