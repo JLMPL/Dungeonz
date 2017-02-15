@@ -27,11 +27,14 @@ SpikeTrap::SpikeTrap()
 
 void SpikeTrap::update(float deltaTime)
 {
-	m_timer += 1000 * deltaTime;
-
-	if(m_timer >= 1000)
+	if(m_enabled)
 	{
-		deactivate();
+		m_timer += 1000 * deltaTime;
+
+		if(m_timer >= 750)
+		{
+			deactivate();
+		}
 	}
 
 	m_sprite->setPosition({m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2});
@@ -40,7 +43,7 @@ void SpikeTrap::update(float deltaTime)
 
 void SpikeTrap::activate()
 {
-	if(!m_active)
+	if(!m_active and m_enabled)
 	{
 		m_active = true;
 		m_timer = 0;
@@ -58,4 +61,16 @@ void SpikeTrap::deactivate()
 			m_active = false;
 		});
 	}
+}
+
+void SpikeTrap::enable()
+{
+	m_enabled = true;
+	m_box->enabled = true;
+}
+
+void SpikeTrap::disable()
+{
+	m_enabled = false;
+	m_box->enabled = false;
 }

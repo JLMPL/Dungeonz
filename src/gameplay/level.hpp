@@ -15,6 +15,7 @@ class Level
 
 		std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
 		Entity* getEntityByCode(std::string code);
+		std::vector<Entity*> getEntitiesByCode(std::string code);
 
 	private:
 		std::vector<EntityPtr_t> m_Entities;

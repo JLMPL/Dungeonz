@@ -9,6 +9,7 @@ void InputHandler::init()
 	m_keys[KeyBind::ACTION] = sf::Keyboard::E;
 	m_keys[KeyBind::ATTACK] = sf::Keyboard::F;
 	m_keys[KeyBind::INV]    = sf::Keyboard::Tab;
+	m_keys[KeyBind::RUN]	= sf::Keyboard::LShift;
 }
 
 bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
@@ -18,13 +19,14 @@ bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
 
 bool InputHandler::isAnyKeyPressed()
 {
-	if(sf::Keyboard::isKeyPressed(m_keys[KeyBind::UP]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::DOWN]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::LEFT]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::RIGHT]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::ACTION]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::ATTACK]) or
-	   sf::Keyboard::isKeyPressed(m_keys[KeyBind::INV]))
+	if (sf::Keyboard::isKeyPressed(m_keys[KeyBind::UP]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::DOWN]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::LEFT]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::RIGHT]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::ACTION]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::ATTACK]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::INV]))// or
+		// sf::Keyboard::isKeyPressed(m_keys[KeyBind::RUN]))
 	{
 		return true;
 	}
@@ -69,4 +71,9 @@ bool InputHandler::isAttack()
 bool InputHandler::isInv()
 {
 	return sf::Keyboard::isKeyPressed(m_keys[KeyBind::INV]);
+}
+
+bool InputHandler::isRun()
+{
+	return sf::Keyboard::isKeyPressed(m_keys[KeyBind::RUN]);
 }

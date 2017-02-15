@@ -12,8 +12,12 @@ class SpikeTrap : public Entity
 		void activate();
 		void deactivate();
 
+		void enable();
+		void disable();
+
 	private:
 		bool m_active = false;
+		bool m_enabled = true;
 		float m_timer = 0;
 };
 

@@ -91,6 +91,11 @@ void AIPlayer::update(float deltaTime)
 
 void AIPlayer::movingState(float deltaTime)
 {
+	if(InputHandler::Get().isRun())
+		m_speed = m_runSpeed;
+	else
+		m_speed = m_walkSpeed;
+
 	if(InputHandler::Get().isUp())
 	{
 		m_target->move({0, -deltaTime * m_speed});
