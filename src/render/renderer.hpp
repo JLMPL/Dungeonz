@@ -19,10 +19,13 @@ class Renderer
 		}
 
 		void init(sf::RenderWindow* window);
-		void submit(const RenderData& data, const RenderAttribute& att);
-		void submit(sf::RectangleShape* data);
-		void submito(sf::Sprite* data);
-		void submit(sf::Text* data);
+		// void submit(const RenderData& data, const RenderAttribute& att);
+
+		void submitSorted(sf::Sprite* data);
+
+		void submitOverlay(sf::RectangleShape* data);
+		void submitOverlay(sf::Sprite* data);
+		void submitOverlay(sf::Text* data);
 		void flush();
 
 		void setCameraPos(const vec2i& pos);
@@ -36,13 +39,14 @@ class Renderer
 
 	private:
 		sf::RenderWindow* m_window = nullptr;
-		std::vector<RenderData> m_BackgroundData;
-		std::vector<RenderData> m_SortedData;
-		std::vector<RenderData> m_OverlayData;
+		std::vector<sf::Sprite*> m_BackgroundData;
+		std::vector<sf::Sprite*> m_SortedData;
+		std::vector<sf::Sprite*> m_OverlayData;
 
-		std::vector<sf::Sprite*> m_SpriteData;
+		//gui
 		std::vector<sf::RectangleShape*> m_RectData;
-		std::vector<sf::Text*> m_TextData;
+		std::vector<sf::Sprite*>         m_SpriteData;
+		std::vector<sf::Text*>           m_TextData;
 		sf::View m_camera;
 };
 

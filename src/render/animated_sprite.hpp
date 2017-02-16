@@ -8,12 +8,12 @@ class AnimatedSprite : public Sprite
 	public:
 		using Base = Sprite;
 
-		virtual void loadFromFile(const std::string& path) override final;
+		void loadFromFile(const std::string& path) override final;
 
 		void update(float deltaTime);
 		void reset();
 		
-		virtual void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){}) override final;
+		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){}) override final;
 
 		bool isFinished() const;
 

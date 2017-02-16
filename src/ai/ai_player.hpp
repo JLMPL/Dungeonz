@@ -16,14 +16,15 @@ class Entity;
 class AIPlayer : public AI
 {
 	public:
-		virtual void setup() override final;
-		virtual void update(float deltaTime) override final;
+		void setup() override final;
+		void update(float deltaTime) override final;
+		void focus();
+		
 		void movingState(float deltaTime);
 		void idleState(float deltaTime);
 		void attackState(float deltaTime);
 		void pickingState(float deltaTime);
 
-		void focus();
 	private:
 		float       m_speed = 100;
 		float 	    m_runSpeed = 100;

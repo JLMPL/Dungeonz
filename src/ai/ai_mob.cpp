@@ -14,7 +14,7 @@ void AIMob::focus()
 	m_focus = nullptr;
 	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 100);
 
-	for(auto i = ents.begin(); i != ents.end();)
+	for (auto i = ents.begin(); i != ents.end();)
 	{
 		if((*i)->getType() != EntityType::LIVING)
 			i = ents.erase(i);
@@ -22,9 +22,9 @@ void AIMob::focus()
 			i++;
 	}
 
-	if(ents.size() > 0)
+	if (ents.size() > 0)
 	{
-		if(ents.size() > 1)
+		if (ents.size() > 1)
 		std::sort(begin(ents), end(ents),
 		[&](Entity* a, Entity* b)
 		{
@@ -50,17 +50,13 @@ void AIMob::update(float deltaTime)
 			{
 				if(m_focus)
 				{
-					if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
+					if (distance(m_target->getPosition(), m_focus->getPosition()) < 28 and
+						m_timer.getElapsedTime().asMilliseconds() > 300)
 					{
-						if(m_timer.getElapsedTime().asMilliseconds() > 300)
-						{
-							m_state = MobState::ATTACK;
-						}
+						m_state = MobState::ATTACK;
 					}
 					else 
-					{
 						m_state = MobState::MOVE;
-					}
 				}
 			}
 			else

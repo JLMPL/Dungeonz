@@ -29,7 +29,7 @@ struct Indication
 
 	void draw()
 	{
-		Renderer::Get().submit(&text);
+		Renderer::Get().submitOverlay(&text);
 	}
 };
 

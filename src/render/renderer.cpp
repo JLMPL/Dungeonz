@@ -15,33 +15,38 @@ void Renderer::init(sf::RenderWindow* window)
 	}
 }
 
-void Renderer::submit(const RenderData& data, const RenderAttribute& att)
+// void Renderer::submit(const RenderData& data, const RenderAttribute& att)
+// {
+// 	switch(att)
+// 	{
+// 		case RenderAttribute::BACKGROUND:
+// 			m_BackgroundData.push_back(data);
+// 			break;
+// 		case RenderAttribute::SORTED:
+// 			m_SortedData.push_back(data);
+// 			break;
+// 		case RenderAttribute::OVERLAY:
+// 			m_OverlayData.push_back(data);
+// 			break;
+// 	}
+// }
+
+void submitSorted(sf::Sprite* data)
 {
-	switch(att)
-	{
-		case RenderAttribute::BACKGROUND:
-			m_BackgroundData.push_back(data);
-			break;
-		case RenderAttribute::SORTED:
-			m_SortedData.push_back(data);
-			break;
-		case RenderAttribute::OVERLAY:
-			m_OverlayData.push_back(data);
-			break;
-	}
+	m_SortedData.push_back(data);
 }
 
-void Renderer::submit(sf::RectangleShape* data)
+void Renderer::submitOverlay(sf::RectangleShape* data)
 {
 	m_RectData.push_back(data);
 }
 
-void Renderer::submito(sf::Sprite* data)
+void Renderer::submitOverlay(sf::Sprite* data)
 {
 	m_SpriteData.push_back(data);
 }
 
-void Renderer::submit(sf::Text* data)
+void Renderer::submitOverlay(sf::Text* data)
 {
 	m_TextData.push_back(data);
 }
@@ -54,9 +59,9 @@ void Renderer::updateCamera()
 void Renderer::sort()
 {
 	std::sort(begin(m_SortedData), end(m_SortedData),
-	[&](const RenderData& a, const RenderData& b)
+	[&](sf::Sprite* a, sf::Sprite* b)
 	{
-		return a.z < b.z;
+		return a.getPosition().y < b.getPosition().y;
 	});
 }
 

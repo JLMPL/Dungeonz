@@ -40,7 +40,7 @@ struct Box
 
 		shape.setFillColor({0,0,0,0});
 
-		Renderer::Get().submit(RenderData(&shape), RenderAttribute::OVERLAY);
+		Renderer::Get().submitOverlay(&shape);
 	}
 };
 
