@@ -772,6 +772,7 @@ CMakeFiles/out.dir/src/render/indication_handler.cpp.o
  /home/dominik/Desktop/Rekt/src/resource/font_cache.hpp
  /home/dominik/Desktop/Rekt/src/resource/font_ptr.hpp
 CMakeFiles/out.dir/src/render/renderer.cpp.o
+ /home/dominik/Desktop/Rekt/src/collision/collision_algorithm.hpp
  /home/dominik/Desktop/Rekt/src/core/direction.hpp
  /home/dominik/Desktop/Rekt/src/core/error.hpp
  /home/dominik/Desktop/Rekt/src/core/rect.hpp

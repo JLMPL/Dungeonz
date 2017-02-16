@@ -771,6 +771,7 @@ CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/render/renderer.hpp
 CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/resource/font_cache.hpp
 CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/resource/font_ptr.hpp
 
+CMakeFiles/out.dir/src/render/renderer.cpp.o: src/collision/collision_algorithm.hpp
 CMakeFiles/out.dir/src/render/renderer.cpp.o: src/core/direction.hpp
 CMakeFiles/out.dir/src/render/renderer.cpp.o: src/core/error.hpp
 CMakeFiles/out.dir/src/render/renderer.cpp.o: src/core/rect.hpp

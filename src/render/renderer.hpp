@@ -20,7 +20,6 @@ class Renderer
 		}
 
 		void init(sf::RenderWindow* window);
-		// void submit(const RenderData& data, const RenderAttribute& att);
 
 		void submitBackground(sf::CircleShape* data);
 		void submitBackground(sf::Sprite* data);
@@ -36,6 +35,7 @@ class Renderer
 
 	private:
 		void updateCamera();
+		void cull();
 		void sort();
 		void render();
 		void clearAll();
@@ -45,12 +45,11 @@ class Renderer
 		std::vector<sf::CircleShape*> m_BackCircleData;
 		std::vector<sf::Sprite*> m_BackgroundData;
 		std::vector<sf::Sprite*> m_SortedData;
-		std::vector<sf::Sprite*> m_OverlayData;
 
 		//gui
-		std::vector<sf::RectangleShape*> m_RectData;
-		std::vector<sf::Sprite*>         m_SpriteData;
-		std::vector<sf::Text*>           m_TextData;
+		std::vector<sf::RectangleShape*> m_OverRectData;
+		std::vector<sf::Sprite*>         m_OverSpriteData;
+		std::vector<sf::Text*>           m_OverTextData;
 		sf::View m_camera;
 };
 

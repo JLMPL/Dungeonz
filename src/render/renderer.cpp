@@ -1,6 +1,8 @@
 #include "renderer.hpp"
+#include "sprite.hpp"
 #include "../core/error.hpp"
-#include "../render/sprite.hpp"
+#include "../core/rect.hpp"
+#include "../collision/collision_algorithm.hpp"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 
@@ -14,22 +16,6 @@ void Renderer::init(sf::RenderWindow* window)
 		m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(800,600));
 	}
 }
-
-// void Renderer::submit(const RenderData& data, const RenderAttribute& att)
-// {
-// 	switch(att)
-// 	{
-// 		case RenderAttribute::BACKGROUND:
-// 			m_BackgroundData.push_back(data);
-// 			break;
-// 		case RenderAttribute::SORTED:
-// 			m_SortedData.push_back(data);
-// 			break;
-// 		case RenderAttribute::OVERLAY:
-// 			m_OverlayData.push_back(data);
-// 			break;
-// 	}
-// }
 
 void Renderer::submitBackground(sf::CircleShape* data)
 {
@@ -48,22 +34,43 @@ void Renderer::submitSorted(sf::Sprite* data)
 
 void Renderer::submitOverlay(sf::RectangleShape* data)
 {
-	m_RectData.push_back(data);
+	m_OverRectData.push_back(data);
 }
 
 void Renderer::submitOverlay(sf::Sprite* data)
 {
-	m_SpriteData.push_back(data);
+	m_OverSpriteData.push_back(data);
 }
 
 void Renderer::submitOverlay(sf::Text* data)
 {
-	m_TextData.push_back(data);
+	m_OverTextData.push_back(data);
 }
 
 void Renderer::updateCamera()
 {
 	m_window->setView(m_camera);
+}
+
+void Renderer::cull()
+{
+	Rectf cameraRect(m_camera.getCenter().x - 400, m_camera.getCenter().y - 300, 800, 600);
+
+	for (auto i = m_BackgroundData.begin(); i != m_BackgroundData.end();)
+	{ 
+		sf::Sprite& current = **i;
+		Rectf rect(current.getPosition().x,
+				   current.getPosition().y,
+				   current.getLocalBounds().width,
+				   current.getLocalBounds().height);
+		
+		if (!Collision::AABBOverlap(rect, cameraRect))
+		{
+			i = m_BackgroundData.erase(i);
+		}
+		else 
+			i++;
+	}
 }
 
 void Renderer::sort()
@@ -86,22 +93,20 @@ void Renderer::render()
 	for(auto& i : m_SortedData)
 		m_window->draw(*i);
 
-	for(auto& i : m_OverlayData)
+	for(auto& i : m_OverRectData)
 		m_window->draw(*i);
 
-	for(auto& i : m_RectData)
+	for(auto& i : m_OverSpriteData)
 		m_window->draw(*i);
 
-	for(auto& i : m_SpriteData)
-		m_window->draw(*i);
-
-	for(auto& i : m_TextData)
+	for(auto& i : m_OverTextData)
 		m_window->draw(*i);
 }
 
 void Renderer::flush()
 {
 	updateCamera();
+	cull();
 	sort();
 	render();
 	clearAll();
@@ -112,11 +117,10 @@ void Renderer::clearAll()
 	m_BackgroundData.clear();
 	m_BackCircleData.clear();
 	m_SortedData.clear();
-	m_OverlayData.clear();
 
-	m_RectData.clear();
-	m_SpriteData.clear();
-	m_TextData.clear();
+	m_OverRectData.clear();
+	m_OverSpriteData.clear();
+	m_OverTextData.clear();
 }
 
 void Renderer::setCameraPos(const vec2i& pos)
