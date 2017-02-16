@@ -17,8 +17,11 @@ enum class MobState
 class AIMob : public AI
 {
 	public:
-		virtual void setup() override final;
-		virtual void update(float deltaTime) override final;
+		void setup() override final;
+		void update(float deltaTime) override final;
+
+		void focus();
+		
 	private:
 		Entity*   m_focus = nullptr;
 		MobState  m_state;

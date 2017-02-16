@@ -61,7 +61,7 @@ void Living::update(float deltaTime)
 	m_ai->update(deltaTime);
 
 	m_shadow.setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
-	Renderer::Get().submit(RenderData(&m_shadow, m_sprite->getPosition().y-0.00001), RenderAttribute::SORTED);
+	Renderer::Get().submit(RenderData(&m_shadow, m_sprite->getPosition().y - 0.00001), RenderAttribute::SORTED);
 
 	m_sprite->setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
 	m_sprite->update(deltaTime);
@@ -79,10 +79,9 @@ void Living::update(float deltaTime)
 	{
 		m_pushTimer += deltaTime * (1/m_pushDuration);
 
-		if(m_pushDir == Direction::LEFT or m_pushDir == Direction::RIGHT)
-			m_box->rect.x = lerp(m_startPush.x, m_endPush.x, m_pushTimer);
-		else
-			m_box->rect.y = lerp(m_startPush.y, m_endPush.y, m_pushTimer);
+		auto pushVec = lerp(m_pushStart, m_pushEnd, m_pushTimer);
+		m_box->rect.x = pushVec.x;
+		m_box->rect.y = pushVec.y;
 
 		if(m_pushTimer >= 1)
 			m_push = false;
@@ -98,35 +97,22 @@ void Living::push(Direction_t dir, float dist, float duration)
 		m_pushTimer = 0;
 		m_pushDuration = duration;
 
-		m_startPush = vec2f();
-		m_endPush = vec2f();
+		m_pushStart = vec2f(m_box->rect.x, m_box->rect.y);
 
 		switch(m_pushDir)
 		{
 			case Direction::UP:
-			{
-				m_startPush.y = m_box->rect.y;
-				m_endPush.y = m_box->rect.y - dist;
-				break;
-			}
+				m_pushEnd = m_pushStart + vec2f(0, -dist);
+			break;
 			case Direction::DOWN:
-			{
-				m_startPush.y = m_box->rect.y;
-				m_endPush.y = m_box->rect.y + dist;
-				break;
-			}
+				m_pushEnd = m_pushStart + vec2f(0, dist);
+			break;
 			case Direction::LEFT:
-			{
-				m_startPush.x = m_box->rect.x;
-				m_endPush.x = m_box->rect.x - dist;
-				break;
-			}
+				m_pushEnd = m_pushStart + vec2f(-dist, 0);
+			break;
 			case Direction::RIGHT:
-			{
-				m_startPush.x = m_box->rect.x;
-				m_endPush.x = m_box->rect.x + dist;
-				break;
-			}
+				m_pushEnd = m_pushStart + vec2f(dist, 0);
+			break;
 		}
 	}
 }
@@ -136,16 +122,6 @@ void Living::damage(int damage)
 	int& currHp = m_attributes[Attribute::HP];
 	currHp -= damage;
 	if(currHp < 0) currHp = 0;
-}
-
-void Living::equipWeapon(const std::string& code)
-{
-	// m_equipped[Equip::WEAPON] = code;
-}
-
-void Living::equipArmor(const std::string& code)
-{
-	// m_equipped[Equip::ARMOR] = code;
 }
 
 void Living::setDamage(int high)
