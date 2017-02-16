@@ -1,5 +1,5 @@
-#ifndef door_profile_hpp
-#define door_profile_hpp
+#ifndef DOOR_PROFILE_HPP
+#define DOOR_PROFILE_HPP
 
 struct DoorProfile
 {

@@ -1,5 +1,5 @@
-#ifndef box_ptr_hpp
-#define box_ptr_hpp
+#ifndef BOX_PTR_HPP
+#define BOX_PTR_HPP
 #include "box.hpp"
 #include <memory>
 

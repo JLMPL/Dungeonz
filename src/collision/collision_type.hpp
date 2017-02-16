@@ -1,5 +1,5 @@
-#ifndef collision_type_hpp
-#define collision_type_hpp
+#ifndef COLLISION_TYPE_HPP
+#define COLLISION_TYPE_HPP
 
 enum class CollisionType : int
 {

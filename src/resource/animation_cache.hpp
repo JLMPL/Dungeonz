@@ -1,5 +1,5 @@
-#ifndef animation_cache_hpp
-#define animation_cache_hpp
+#ifndef ANIMATION_CACHE_HPP
+#define ANIMATION_CACHE_HPP
 #include "animation_ptr.hpp"
 #include <map>
 

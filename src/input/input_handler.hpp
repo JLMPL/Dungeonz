@@ -1,5 +1,5 @@
-#ifndef input_handler_hpp
-#define input_handler_hpp
+#ifndef INPUT_HANDLER_HPP
+#define INPUT_HANDLER_HPP
 #include <SFML/Window/Keyboard.hpp>
 
 enum KeyBind

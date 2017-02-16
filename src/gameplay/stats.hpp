@@ -1,5 +1,5 @@
-#ifndef stats_hpp
-#define stats_hpp
+#ifndef STATS_HPP
+#define STATS_HPP
 
 enum Attribute
 {

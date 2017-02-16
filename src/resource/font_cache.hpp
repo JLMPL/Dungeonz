@@ -1,5 +1,5 @@
-#ifndef font_cache_hpp
-#define font_cache_hpp
+#ifndef FONT_CACHE_HPP
+#define FONT_CACHE_HPP
 #include "font_ptr.hpp"
 #include <map>
 

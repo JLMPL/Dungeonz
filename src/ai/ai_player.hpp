@@ -1,5 +1,5 @@
-#ifndef ai_player_hpp
-#define ai_player_hpp
+#ifndef AI_PLAYER_HPP
+#define AI_PLAYER_HPP
 #include "ai.hpp"
 #include <SFML/System/Clock.hpp>
 

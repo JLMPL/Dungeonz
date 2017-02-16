@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="28">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="29">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
@@ -67,6 +67,11 @@
    <properties>
     <property name="activate" value="first_spikes"/>
     <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="28" name="skell_spawn" type="spawn" x="356" y="558" width="32" height="32">
+   <properties>
+    <property name="spawn" value="mob_skeleton"/>
    </properties>
   </object>
  </objectgroup>

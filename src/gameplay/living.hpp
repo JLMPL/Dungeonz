@@ -1,5 +1,5 @@
-#ifndef Living_hpp
-#define Living_hpp
+#ifndef LIVING_HPP
+#define LIVING_HPP
 #include "entity.hpp"
 #include "living_profile.hpp"
 #include "stats.hpp"
@@ -19,7 +19,7 @@ class Living : public Entity
 		Living   (const LivingProfile& profile);
 		void init(const LivingProfile& profile);
 
-		virtual void update(float deltaTime) override final;
+		void update(float deltaTime) override final;
 
 		void push(Direction_t dir, float dist, float duration);
 		void damage(int damage);
@@ -41,7 +41,7 @@ class Living : public Entity
 		bool isEquipped(int where, Item* item);
 
 		void addXp(int xp);
-		int getXp();
+		int  getXp();
 
 		void setAI(AIPtr_t ai);
 		void setDirection(Direction_t facing);
@@ -72,9 +72,9 @@ class Living : public Entity
 
 		float 		m_trapTimer = 0;
 
-		int m_attributes[Attribute::NUM_ATTS];
+		int       m_attributes[Attribute::NUM_ATTS];
 		Inventory m_inv;
-		Item* m_equipped[Equip::NUM_EQ];
+		Item*     m_equipped[Equip::NUM_EQ];
 };
 
 #endif

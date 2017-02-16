@@ -1,5 +1,5 @@
-#ifndef item_type_hpp
-#define item_type_hpp
+#ifndef ITEM_TYPE_HPP
+#define ITEM_TYPE_HPP
 
 enum class ItemType
 {

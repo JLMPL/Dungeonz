@@ -1,5 +1,5 @@
-#ifndef spike_trap_hpp
-#define spike_trap_hpp
+#ifndef SPIKE_TRAP_HPP
+#define SPIKE_TRAP_HPP
 #include "entity.hpp"
 
 class SpikeTrap : public Entity

@@ -1,5 +1,5 @@
-#ifndef bar_hpp
-#define bar_hpp
+#ifndef BAR_HPP
+#define BAR_HPP
 #include "../core/vec2.hpp"
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>

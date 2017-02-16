@@ -1,5 +1,5 @@
-#ifndef animated_sprite_hpp
-#define animated_sprite_hpp
+#ifndef ANIMATED_SPRITE_HPP
+#define ANIMATED_SPRITE_HPP
 #include "sprite.hpp"
 #include "../resource/animation_ptr.hpp"
 

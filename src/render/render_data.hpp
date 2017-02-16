@@ -1,5 +1,5 @@
-#ifndef texture_data_hpp
-#define texture_data_hpp
+#ifndef TEXTURE_DATA_HPP
+#define TEXTURE_DATA_HPP
 #include <SFML/Graphics/Sprite.hpp>
 
 struct RenderData

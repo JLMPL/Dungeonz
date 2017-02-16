@@ -1,5 +1,5 @@
-#ifndef renderer_hpp
-#define renderer_hpp
+#ifndef RENDERER_HPP
+#define RENDERER_HPP
 #include "render_attribute.hpp"
 #include "render_data.hpp"
 #include "../core/vec2.hpp"

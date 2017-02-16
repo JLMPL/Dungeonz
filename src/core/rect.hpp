@@ -1,5 +1,5 @@
-#ifndef rect_hpp
-#define rect_hpp
+#ifndef RECT_HPP
+#define RECT_HPP
 
 template <typename T>
 struct Rect

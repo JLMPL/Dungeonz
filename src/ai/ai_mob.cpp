@@ -20,7 +20,7 @@ void AIMob::update(float deltaTime)
 		else 
 			i++;
 	}
-
+	
 	if(m_target->getAttribute(Attribute::HP) > 0)
 	{
 		if(ents.size() > 0)
@@ -39,36 +39,65 @@ void AIMob::update(float deltaTime)
 		}
 
 		if(m_focus)
-		switch(m_focus->getType())
 		{
-			case EntityType::LIVING:
+			switch(m_focus->getType())
 			{
-				m_direction = m_focus->getPosition() - m_target->getPosition();
-				m_target->setDirection(Direction::deduceDirection(normalize(m_direction)));
-				auto enemy = (Living*)(m_focus);
-				
-				if(length(m_direction) > 28)
+				case EntityType::LIVING:
 				{
-					m_direction = normalize(m_direction);
-					m_target->move(m_direction * m_speed * deltaTime);
-				}
-				else
-				{
-					if(m_timer.getElapsedTime().asMilliseconds() > 2000)
+					auto living = static_cast<Living*>(m_focus);
+					if(living->getAttribute(Attribute::HP) >= 0)
 					{
-						enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
-						enemy->push(m_target->getDirection(), 5, 0.075);
-						m_timer.restart();
+						m_direction = m_focus->getPosition() - m_target->getPosition();
+						m_target->setDirection(Direction::deduceDirection(normalize(m_direction)));
+						auto enemy = (Living*)(m_focus);
+						
+						if(!m_target->isBusy())
+						{
+							if(length(m_direction) > 28)
+							{
+								m_direction = normalize(m_direction);
+								m_target->move(m_direction * m_speed * deltaTime);
+								m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_walk.ani"));
+							}
+							else
+							{
+								if(m_timer.getElapsedTime().asMilliseconds() > 300)
+								{
+									enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
+									enemy->push(m_target->getDirection(), 5, 0.075);
+									m_target->setBusy(true);
+
+									Living* shit = m_target;
+
+									m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_attack.ani"),
+									[=]()
+									{
+										shit->setBusy(false);
+										printf("Is busy now? %d\n", shit->isBusy());
+									});
+									m_timer.restart();
+								}
+							}
+						}
+						else {}
 					}
 				}
+				break;
+				default:
+				{
+					m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_idle.ani"));
+				}
+				break;
 			}
-			break;
-			default: {} break;
+		}
+		else
+		{
+			m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_idle.ani"));
 		}
 	}
 	else
 	{
-		m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_dead.ani"));
 		m_target->setDirection(Direction::UP);
+		m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_dead.ani"));
 	}
 }

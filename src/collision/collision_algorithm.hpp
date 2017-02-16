@@ -1,5 +1,5 @@
-#ifndef collision_algorithm_hpp
-#define collision_algorithm_hpp
+#ifndef COLLISION_ALGORITHM_HPP
+#define COLLISION_ALGORITHM_HPP
 #include "../core/rect.hpp"
 
 namespace Collision

@@ -1,5 +1,5 @@
-#ifndef entity_hpp
-#define entity_hpp
+#ifndef ENTITY_HPP
+#define ENTITY_HPP
 #include "entity_type.hpp"
 #include "../render/sprite_ptr.hpp"
 #include "../collision/box_ptr.hpp"

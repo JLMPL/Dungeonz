@@ -1,5 +1,5 @@
-#ifndef inventory_hpp
-#define inventory_hpp
+#ifndef INVENTORY_HPP
+#define INVENTORY_HPP
 #include "item_ptr.hpp"
 #include <vector>
 #include <array>

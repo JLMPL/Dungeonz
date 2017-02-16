@@ -1,5 +1,5 @@
-#ifndef gui_mode_hpp
-#define gui_mode_hpp
+#ifndef GUI_MODE_HPP
+#define GUI_MODE_HPP
 
 enum class GUIMode 
 {

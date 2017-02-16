@@ -1,5 +1,5 @@
-#ifndef indication_handler_hpp
-#define indication_handler_hpp
+#ifndef INDICATION_HANDLER_HPP
+#define INDICATION_HANDLER_HPP
 #include <vector>
 
 //For indication

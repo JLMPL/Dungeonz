@@ -1,5 +1,5 @@
-#ifndef sprite_ptr_hpp
-#define sprite_ptr_hpp
+#ifndef SPRITE_PTR_HPP
+#define SPRITE_PTR_HPP
 #include "sprite.hpp"
 #include <memory>
 

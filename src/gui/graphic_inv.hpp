@@ -1,5 +1,5 @@
-#ifndef graphic_inv_hpp
-#define graphic_inv_hpp
+#ifndef GRAPHIC_INV_HPP
+#define GRAPHIC_INV_HPP
 #include "slot.hpp"
 #include "../render/bar.hpp"
 #include <SFML/System/Clock.hpp>

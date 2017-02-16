@@ -1,5 +1,5 @@
-#ifndef font_ptr_hpp
-#define font_ptr_hpp
+#ifndef FONT_PTR_HPP
+#define FONT_PTR_HPP
 #include <SFML/Graphics/Font.hpp>
 #include <memory>
 

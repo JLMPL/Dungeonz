@@ -1,5 +1,5 @@
-#ifndef graphic_loot_hpp
-#define graphic_loot_hpp
+#ifndef GRAPHIC_LOOT_HPP
+#define GRAPHIC_LOOT_HPP
 #include "slot.hpp"
 #include <SFML/System/Clock.hpp>
 

@@ -1,5 +1,5 @@
-#ifndef texture_ptr_hpp
-#define texture_ptr_hpp
+#ifndef TEXTURE_PTR_HPP
+#define TEXTURE_PTR_HPP
 #include <SFML/Graphics/Texture.hpp>
 #include <memory>
 

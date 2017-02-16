@@ -1,5 +1,5 @@
-#ifndef vec2_hpp
-#define vec2_hpp
+#ifndef VEC2_HPP
+#define VEC2_HPP
 #include <cmath>
 #include <SFML/System/Vector2.hpp>
 

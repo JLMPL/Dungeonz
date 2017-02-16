@@ -1,5 +1,5 @@
-#ifndef sprite_hpp
-#define sprite_hpp
+#ifndef SPRITE_HPP
+#define SPRITE_HPP
 #include "../resource/texture_ptr.hpp"
 #include "../resource/animation_ptr.hpp"
 #include "../core/direction.hpp"

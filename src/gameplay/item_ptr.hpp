@@ -1,5 +1,5 @@
-#ifndef item_ptr_hpp
-#define item_ptr_hpp
+#ifndef ITEM_PTR_HPP
+#define ITEM_PTR_HPP
 #include "item.hpp"
 #include <memory>
 

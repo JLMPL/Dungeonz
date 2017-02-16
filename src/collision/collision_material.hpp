@@ -1,5 +1,5 @@
-#ifndef collision_material_hpp
-#define collision_material_hpp
+#ifndef COLLISION_MATERIAL_HPP
+#define COLLISION_MATERIAL_HPP
 
 enum class CollMaterial : int
 {

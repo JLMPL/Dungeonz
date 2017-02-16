@@ -1,5 +1,5 @@
-#ifndef gui_hpp
-#define gui_hpp
+#ifndef GUI_HPP
+#define GUI_HPP
 #include "graphic_inv.hpp"
 #include "graphic_loot.hpp"
 #include "gui_mode.hpp"

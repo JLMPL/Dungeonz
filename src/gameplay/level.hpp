@@ -1,5 +1,5 @@
-#ifndef level_hpp
-#define level_hpp
+#ifndef LEVEL_HPP
+#define LEVEL_HPP
 #include "entity_ptr.hpp"
 #include "item_ptr.hpp"
 #include "map.hpp"
