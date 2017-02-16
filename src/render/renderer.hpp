@@ -5,6 +5,7 @@
 #include "../core/vec2.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <vector>
 
@@ -21,6 +22,8 @@ class Renderer
 		void init(sf::RenderWindow* window);
 		// void submit(const RenderData& data, const RenderAttribute& att);
 
+		void submitBackground(sf::CircleShape* data);
+		void submitBackground(sf::Sprite* data);
 		void submitSorted(sf::Sprite* data);
 
 		void submitOverlay(sf::RectangleShape* data);
@@ -39,6 +42,7 @@ class Renderer
 
 	private:
 		sf::RenderWindow* m_window = nullptr;
+		std::vector<sf::CircleShape*> m_BackCircleData;
 		std::vector<sf::Sprite*> m_BackgroundData;
 		std::vector<sf::Sprite*> m_SortedData;
 		std::vector<sf::Sprite*> m_OverlayData;

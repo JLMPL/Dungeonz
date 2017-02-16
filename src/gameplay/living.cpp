@@ -61,7 +61,7 @@ void Living::update(float deltaTime)
 	m_ai->update(deltaTime);
 
 	m_shadow.setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
-	Renderer::Get().submit(RenderData(&m_shadow, m_sprite->getPosition().y - 0.00001), RenderAttribute::SORTED);
+	Renderer::Get().submitBackground(&m_shadow);
 
 	m_sprite->setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
 	m_sprite->update(deltaTime);

@@ -679,6 +679,8 @@ SFML/Graphics/RenderWindow.hpp
 -
 SFML/Graphics/RectangleShape.hpp
 -
+SFML/Graphics/CircleShape.hpp
+-
 SFML/Graphics/Text.hpp
 -
 vector

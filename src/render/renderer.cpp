@@ -31,7 +31,17 @@ void Renderer::init(sf::RenderWindow* window)
 // 	}
 // }
 
-void submitSorted(sf::Sprite* data)
+void Renderer::submitBackground(sf::CircleShape* data)
+{
+	m_BackCircleData.push_back(data);
+}
+
+void Renderer::submitBackground(sf::Sprite* data)
+{
+	m_BackgroundData.push_back(data);
+}
+
+void Renderer::submitSorted(sf::Sprite* data)
 {
 	m_SortedData.push_back(data);
 }
@@ -61,20 +71,23 @@ void Renderer::sort()
 	std::sort(begin(m_SortedData), end(m_SortedData),
 	[&](sf::Sprite* a, sf::Sprite* b)
 	{
-		return a.getPosition().y < b.getPosition().y;
+		return a->getPosition().y < b->getPosition().y;
 	});
 }
 
 void Renderer::render()
 {
 	for(auto& i : m_BackgroundData)
-		m_window->draw(*(i.data));
+		m_window->draw(*i);
+
+	for(auto& i : m_BackCircleData)
+		m_window->draw(*i);
 
 	for(auto& i : m_SortedData)
-		m_window->draw(*(i.data));
+		m_window->draw(*i);
 
 	for(auto& i : m_OverlayData)
-		m_window->draw(*(i.data));
+		m_window->draw(*i);
 
 	for(auto& i : m_RectData)
 		m_window->draw(*i);
@@ -97,6 +110,7 @@ void Renderer::flush()
 void Renderer::clearAll()
 {
 	m_BackgroundData.clear();
+	m_BackCircleData.clear();
 	m_SortedData.clear();
 	m_OverlayData.clear();
 

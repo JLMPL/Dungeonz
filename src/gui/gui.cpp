@@ -33,7 +33,7 @@ void GUI::update()
 {
 	m_camera = Renderer::Get().getCameraPos();
 	m_sight.setPosition(m_camera.getSfVecf());
-	// Renderer::Get().submit(RenderData(&m_sight), RenderAttribute::OVERLAY);
+	// Renderer::Get().submitOverlay(RenderData(&m_sight), RenderAttribute::OVERLAY);
 
 	switch(m_mode)
 	{
@@ -48,12 +48,11 @@ void GUI::update()
 
 			if(m_showLabel)
 			{
-				Renderer::Get().submit(&m_focusLabel);
+				Renderer::Get().submitOverlay(&m_focusLabel);
 				m_showLabel = false;
 
 				if(m_showHealthbar)
 				{
-					// m_focusHealth.setPosition({m_camera.x + (400-64), m_camera.y + 5});
 					m_focusHealth.update();
 					m_showHealthbar = false;
 				}
@@ -99,8 +98,8 @@ void GUI::update()
 			vec2i text_pos = m_camera + m_bookPos + vec2f(32,32);
 			m_bookText.setPosition(text_pos.getSfVecf());
 
-			Renderer::Get().submit(&m_bookBack);
-			Renderer::Get().submit(&m_bookText);
+			Renderer::Get().submitOverlay(&m_bookBack);
+			Renderer::Get().submitOverlay(&m_bookText);
 		}
 		break;
 	}

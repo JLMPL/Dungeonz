@@ -50,8 +50,7 @@ void AIMob::update(float deltaTime)
 			{
 				if(m_focus)
 				{
-					if (distance(m_target->getPosition(), m_focus->getPosition()) < 28 and
-						m_timer.getElapsedTime().asMilliseconds() > 300)
+					if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 					{
 						m_state = MobState::ATTACK;
 					}
@@ -86,16 +85,19 @@ void AIMob::update(float deltaTime)
 		break;
 		case MobState::ATTACK:
 		{
-			auto enemy = static_cast<Living*>(m_focus);
-			enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
-			enemy->push(m_target->getDirection(), 5, 0.05);
-			m_target->setBusy(true);
-			m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_attack.ani"),
-			[&]()
+			if(m_timer.getElapsedTime().asMilliseconds() > 300)
 			{
-				m_state = MobState::IDLE;
-			});
-			m_timer.restart();
+				auto enemy = static_cast<Living*>(m_focus);
+				enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
+				enemy->push(m_target->getDirection(), 5, 0.1);
+				m_target->setBusy(true);
+				m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_attack.ani"),
+				[&]()
+				{
+					m_state = MobState::IDLE;
+				});
+				m_timer.restart();
+			}
 		}
 		break;
 		case MobState::DEAD:

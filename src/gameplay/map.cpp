@@ -316,18 +316,18 @@ void Map::update()
 
 	for(int i = 0; i < m_Layers[0].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[0].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[0].tiles[i].sprite);
 	}
 
 	for(int i = 0; i < m_Layers[1].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[1].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[1].tiles[i].sprite);
 	}
 
 	if(false)
 	for(int i = 0; i < m_Layers[2].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[2].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[2].tiles[i].sprite);
 	}
 }
 
