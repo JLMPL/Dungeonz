@@ -176,10 +176,10 @@ void GraphicInv::update()
 
 	for(auto& i : m_slots)
 	{
-		Renderer::Get().submit(&i.rect);
+		Renderer::Get().submitOverlay(&i.rect);
 		if(!i.empty)
-			Renderer::Get().submito(&i.sprite);
-		Renderer::Get().submito(&m_select);
+			Renderer::Get().submitOverlay(&i.sprite);
+		Renderer::Get().submitOverlay(&m_select);
 	}
 	
 	description();
@@ -226,10 +226,10 @@ void GraphicInv::description()
 	auto desc_pos = m_pos + m_desc_back_pos + vec2i(30, 50);
 	m_desc.setPosition(desc_pos.getSfVecf());
 
-	Renderer::Get().submit(&m_desc_back);
-	Renderer::Get().submit(&m_desc_name);
-	Renderer::Get().submit(&m_desc_type);
-	Renderer::Get().submit(&m_desc);
+	Renderer::Get().submitOverlay(&m_desc_back);
+	Renderer::Get().submitOverlay(&m_desc_name);
+	Renderer::Get().submitOverlay(&m_desc_type);
+	Renderer::Get().submitOverlay(&m_desc);
 }
 
 void GraphicInv::stats()
@@ -270,12 +270,12 @@ void GraphicInv::stats()
 	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)));
 	m_stats_defense.setPosition(defense_pos.getSfVecf());
 
-	Renderer::Get().submit(&m_stats_bcg);
-	Renderer::Get().submit(&m_stats_level);
-	Renderer::Get().submit(&m_stats_health);
-	Renderer::Get().submit(&m_stats_mana);
-	Renderer::Get().submit(&m_stats_damage);
-	Renderer::Get().submit(&m_stats_defense);
+	Renderer::Get().submitOverlay(&m_stats_bcg);
+	Renderer::Get().submitOverlay(&m_stats_level);
+	Renderer::Get().submitOverlay(&m_stats_health);
+	Renderer::Get().submitOverlay(&m_stats_mana);
+	Renderer::Get().submitOverlay(&m_stats_damage);
+	Renderer::Get().submitOverlay(&m_stats_defense);
 
 	m_xp_bar.update();
 	m_health_bar.update();

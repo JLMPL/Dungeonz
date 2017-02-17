@@ -1,5 +1,5 @@
-#ifndef entity_ptr_hpp
-#define entity_ptr_hpp
+#ifndef ENTITY_PTR_HPP
+#define ENTITY_PTR_HPP
 #include "entity.hpp"
 #include <memory>
 

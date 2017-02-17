@@ -1,5 +1,5 @@
-#ifndef box_hpp
-#define box_hpp
+#ifndef BOX_HPP
+#define BOX_HPP
 #include "collision_type.hpp"
 #include "collision_material.hpp"
 #include "../core/rect.hpp"
@@ -40,7 +40,7 @@ struct Box
 
 		shape.setFillColor({0,0,0,0});
 
-		Renderer::Get().submit(RenderData(&shape), RenderAttribute::OVERLAY);
+		Renderer::Get().submitOverlay(&shape);
 	}
 };
 

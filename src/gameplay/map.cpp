@@ -178,7 +178,13 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 		if(type == "spawn")
 		{
-			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string item1 = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string whom = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());
 			pos.y = std::stof(object->first_attribute("y")->value());
@@ -190,6 +196,32 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			living->init(profile);
 			living->setAI(AIPtr_t(new AIMob()));
 			living->setPosition(pos + vec2f(16,16));
+
+			if(item0 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				living->accessInv().addItem(item);
+			}
+			if(item1 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				living->accessInv().addItem(item);
+			}
+			if(item2 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				living->accessInv().addItem(item);
+			}
+			if(item3 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				living->accessInv().addItem(item);
+			}
+			if(item4 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				living->accessInv().addItem(item);
+			}
 		}
 		else if(type == "door")
 		{
@@ -208,6 +240,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string item1 = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());
 			pos.y = std::stof(object->first_attribute("y")->value());
@@ -216,13 +253,40 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			chest->setCode(name);
 			chest->setPosition(pos + vec2f(16,16));
 
-			auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
-			chest->accessInv().addItem(item);
+			if(item0 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				chest->accessInv().addItem(item);
+			}
+			if(item1 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				chest->accessInv().addItem(item);
+			}
+			if(item2 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				chest->accessInv().addItem(item);
+			}
+			if(item3 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				chest->accessInv().addItem(item);
+			}
+			if(item4 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				chest->accessInv().addItem(item);
+			}
 		}
 		else if(type == "lever")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string type = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+
+			printf("%s\n", type.c_str());
+
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());
 			pos.y = std::stof(object->first_attribute("y")->value());
@@ -233,9 +297,23 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			lever->setActivateFunc(
 			[=]()
 			{
-				Door* door = (Door*)m_level->getEntityByCode(whom);
-				if(door)
-					door->open();
+				if(type == "door")
+				{
+					Door* door = (Door*)m_level->getEntityByCode(whom);
+					if(door)
+						door->open();
+				}
+				else if(type == "spike_trap")
+				{
+					auto spikes = m_level->getEntitiesByCode(whom);
+					if(!spikes.empty())
+					{
+						for(int i = 0; i < spikes.size(); i++)
+						{
+							static_cast<SpikeTrap*>(spikes[i])->disable();
+						}
+					}
+				}
 			});
 		}
 		else if(type == "spike_trap")
@@ -298,18 +376,18 @@ void Map::update()
 
 	for(int i = 0; i < m_Layers[0].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[0].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[0].tiles[i].sprite);
 	}
 
 	for(int i = 0; i < m_Layers[1].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[1].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[1].tiles[i].sprite);
 	}
 
 	if(false)
 	for(int i = 0; i < m_Layers[2].tiles.size(); i++)
 	{
-		Renderer::Get().submit(RenderData(&m_Layers[2].tiles[i].sprite), RenderAttribute::BACKGROUND);
+		Renderer::Get().submitBackground(&m_Layers[2].tiles[i].sprite);
 	}
 }
 

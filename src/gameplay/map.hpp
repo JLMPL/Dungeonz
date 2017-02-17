@@ -1,5 +1,5 @@
-#ifndef Map_hpp
-#define Map_hpp
+#ifndef MAP_HPP
+#define MAP_HPP
 #include <SFML/Graphics.hpp>
 #include "../rapidxml/rapidxml.hpp"
 #include "../core/vec2.hpp"

@@ -1,5 +1,5 @@
-#ifndef animation_ptr_hpp
-#define animation_ptr_hpp
+#ifndef ANIMATION_PTR_HPP
+#define ANIMATION_PTR_HPP
 #include "animation.hpp"
 #include <memory>
 

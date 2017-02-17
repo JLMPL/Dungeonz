@@ -1,5 +1,5 @@
-#ifndef texture_cache_hpp
-#define texture_cache_hpp
+#ifndef TEXTURE_CACHE_HPP
+#define TEXTURE_CACHE_HPP
 #include "texture_ptr.hpp"
 #include <map>
 

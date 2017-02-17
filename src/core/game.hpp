@@ -1,5 +1,5 @@
-#ifndef game_hpp
-#define game_hpp
+#ifndef GAME_HPP
+#define GAME_HPP
 #include "../gameplay/level.hpp"
 #include <SFML/Graphics.hpp>
 

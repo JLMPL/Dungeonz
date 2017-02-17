@@ -1,5 +1,5 @@
-#ifndef direction_hpp
-#define direction_hpp
+#ifndef DIRECTION_HPP
+#define DIRECTION_HPP
 #include "vec2.hpp"
 
 using Direction_t = unsigned int;

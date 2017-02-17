@@ -33,7 +33,7 @@ void Sprite::setDirection(Direction_t dir)
 
 void Sprite::draw()
 {
-	Renderer::Get().submit(RenderData(&m_sprite, m_sprite.getPosition().y), RenderAttribute::SORTED);
+	Renderer::Get().submitSorted(&m_sprite);
 }
 
 vec2i Sprite::getPosition() const

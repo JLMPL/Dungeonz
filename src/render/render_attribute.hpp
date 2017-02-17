@@ -1,5 +1,5 @@
-#ifndef render_attribute_hpp
-#define render_attribute_hpp
+#ifndef RENDER_ATTRIBUTE_HPP
+#define RENDER_ATTRIBUTE_HPP
 
 enum class RenderAttribute
 {

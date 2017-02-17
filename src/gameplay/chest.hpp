@@ -1,5 +1,5 @@
-#ifndef chest_hpp
-#define chest_hpp
+#ifndef CHEST_HPP
+#define CHEST_HPP
 #include "entity.hpp"
 #include "inventory.hpp"
 

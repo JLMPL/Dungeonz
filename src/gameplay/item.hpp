@@ -1,5 +1,5 @@
-#ifndef item_hpp
-#define item_hpp
+#ifndef ITEM_HPP
+#define ITEM_HPP
 #include "item_type.hpp"
 #include "../script/script_handler.hpp"
 #include "../core/error.hpp"

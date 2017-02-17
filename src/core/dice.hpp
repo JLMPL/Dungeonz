@@ -1,5 +1,5 @@
-#ifndef dice_hpp
-#define dice_hpp
+#ifndef DICE_HPP
+#define DICE_HPP
 #include <cstdlib>
 
 namespace dice

@@ -1,5 +1,5 @@
-#ifndef error_hpp
-#define error_hpp
+#ifndef ERROR_HPP
+#define ERROR_HPP
 #include <SDL2/SDL.h>
 #include <string>
 

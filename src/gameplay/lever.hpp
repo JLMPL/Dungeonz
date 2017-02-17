@@ -1,5 +1,5 @@
-#ifndef lever_hpp
-#define lever_hpp
+#ifndef LEVER_HPP
+#define LEVER_HPP
 #include "entity.hpp"
 #include <functional>
 

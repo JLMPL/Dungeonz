@@ -1,5 +1,5 @@
-#ifndef animation_hpp
-#define animation_hpp
+#ifndef ANIMATION_HPP
+#define ANIMATION_HPP
 #include "../core/vec2.hpp"
 #include <string>
 

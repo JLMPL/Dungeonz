@@ -1,5 +1,5 @@
-#ifndef animated_sprite_hpp
-#define animated_sprite_hpp
+#ifndef ANIMATED_SPRITE_HPP
+#define ANIMATED_SPRITE_HPP
 #include "sprite.hpp"
 #include "../resource/animation_ptr.hpp"
 
@@ -8,12 +8,12 @@ class AnimatedSprite : public Sprite
 	public:
 		using Base = Sprite;
 
-		virtual void loadFromFile(const std::string& path) override final;
+		void loadFromFile(const std::string& path) override final;
 
 		void update(float deltaTime);
 		void reset();
 		
-		virtual void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){}) override final;
+		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){}) override final;
 
 		bool isFinished() const;
 

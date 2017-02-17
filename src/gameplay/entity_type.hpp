@@ -1,5 +1,5 @@
-#ifndef entity_type_hpp
-#define entity_type_hpp
+#ifndef ENTITY_TYPE_HPP
+#define ENTITY_TYPE_HPP
 
 enum EntityType
 {

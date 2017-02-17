@@ -32,8 +32,8 @@ void Bar::update()
 	m_bcg.setPosition(m_position.getSfVecf());
 	m_bar.setPosition(m_position.getSfVecf());
 
-	Renderer::Get().submit(&m_bcg);
-	Renderer::Get().submit(&m_bar);
+	Renderer::Get().submitOverlay(&m_bcg);
+	Renderer::Get().submitOverlay(&m_bar);
 
 	if(m_showStats)
 	{
@@ -42,7 +42,7 @@ void Bar::update()
 			 			  static_cast<int>(m_stats.getLocalBounds().height/2));
 		m_stats.setPosition(m_bcg.getPosition().x + m_bcg.getLocalBounds().width/2,
 							m_bcg.getPosition().y + m_bcg.getLocalBounds().height/2 -2);
-		Renderer::Get().submit(&m_stats);
+		Renderer::Get().submitOverlay(&m_stats);
 	}
 }
 

@@ -1,5 +1,5 @@
-#ifndef script_handler_hpp
-#define script_handler_hpp
+#ifndef SCRIPT_HANDLER_HPP
+#define SCRIPT_HANDLER_HPP
 extern "C"
 {
 #include <lua5.2/lua.h>
@@ -18,8 +18,8 @@ class ScriptHandler
 		}
 
 		void init();
-
 		void loadLibs(lua_State* lua);
+		
 	private:
 };
 

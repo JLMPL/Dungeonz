@@ -1,5 +1,5 @@
-#ifndef collision_handler_hpp
-#define collision_handler_hpp
+#ifndef COLLISION_HANDLER_HPP
+#define COLLISION_HANDLER_HPP
 #include "box_ptr.hpp"
 #include <vector>
 

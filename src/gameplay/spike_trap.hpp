@@ -1,5 +1,5 @@
-#ifndef spike_trap_hpp
-#define spike_trap_hpp
+#ifndef SPIKE_TRAP_HPP
+#define SPIKE_TRAP_HPP
 #include "entity.hpp"
 
 class SpikeTrap : public Entity
@@ -12,8 +12,12 @@ class SpikeTrap : public Entity
 		void activate();
 		void deactivate();
 
+		void enable();
+		void disable();
+
 	private:
 		bool m_active = false;
+		bool m_enabled = true;
 		float m_timer = 0;
 };
 

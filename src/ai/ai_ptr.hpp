@@ -1,5 +1,5 @@
-#ifndef ai_ptr_hpp
-#define ai_ptr_hpp
+#ifndef AI_PTR_HPP
+#define AI_PTR_HPP
 #include "ai.hpp"
 #include <memory>
 

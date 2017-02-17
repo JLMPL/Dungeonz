@@ -1,5 +1,5 @@
-#ifndef slot_hpp
-#define slot_hpp
+#ifndef SLOT_HPP
+#define SLOT_HPP
 #include "../gameplay/item_ptr.hpp"
 #include "../core/vec2.hpp"
 #include <SFML/Graphics/RectangleShape.hpp>

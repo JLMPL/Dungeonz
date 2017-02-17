@@ -1,5 +1,5 @@
-#ifndef vec2_hpp
-#define vec2_hpp
+#ifndef VEC2_HPP
+#define VEC2_HPP
 #include <cmath>
 #include <SFML/System/Vector2.hpp>
 
@@ -84,6 +84,12 @@ static float length(const vec2<T>& v)
 }
 
 template <typename T>
+static float distance(const vec2<T>& a, const vec2<T>& b)
+{
+	return length(b - a);
+}
+
+template <typename T>
 static vec2<T> normalize(const vec2<T>& v)
 {
 	vec2<T> vec = v;
@@ -99,6 +105,12 @@ static vec2<T> normalize(const vec2<T>& v)
 static float lerp(float start, float end, float percent)
 {
 	return(start + percent * (end - start));
+}
+
+template <typename T>
+static vec2<T> lerp(const vec2<T>& start, const vec2<T>& end, float percent)
+{
+	return(start + (end - start) * percent);
 }
 
 using vec2i = vec2<int>;

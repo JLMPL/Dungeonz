@@ -85,4 +85,18 @@ Entity* Level::getEntityByCode(std::string code)
 		}
 	}
 	return nullptr;
-}	
+}
+
+std::vector<Entity*> Level::getEntitiesByCode(std::string code)
+{
+	std::vector<Entity*> ents;
+
+	for(int i = 0; i < m_Entities.size(); i++)
+	{
+		if(m_Entities[i]->getCode() == code)
+		{
+			ents.push_back(m_Entities[i].get());
+		}
+	}
+	return ents;
+}

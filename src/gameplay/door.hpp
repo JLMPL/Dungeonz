@@ -1,5 +1,5 @@
-#ifndef door_hpp
-#define door_hpp
+#ifndef DOOR_HPP
+#define DOOR_HPP
 #include "entity.hpp"
 
 class Inventory;

@@ -1,5 +1,5 @@
-#ifndef level_hpp
-#define level_hpp
+#ifndef LEVEL_HPP
+#define LEVEL_HPP
 #include "entity_ptr.hpp"
 #include "item_ptr.hpp"
 #include "map.hpp"
@@ -15,6 +15,7 @@ class Level
 
 		std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
 		Entity* getEntityByCode(std::string code);
+		std::vector<Entity*> getEntitiesByCode(std::string code);
 
 	private:
 		std::vector<EntityPtr_t> m_Entities;

@@ -1,5 +1,5 @@
-#ifndef ai_hpp
-#define ai_hpp
+#ifndef AI_HPP
+#define AI_HPP
 
 class Living;
 

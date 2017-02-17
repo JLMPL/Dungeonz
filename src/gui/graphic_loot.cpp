@@ -62,10 +62,10 @@ void GraphicLoot::update()
 
 	for (auto& i : m_slots)
 	{
-		Renderer::Get().submit(&i.rect);
+		Renderer::Get().submitOverlay(&i.rect);
 		if (!i.empty)
-			Renderer::Get().submito(&i.sprite);
-		Renderer::Get().submito(&m_select);
+			Renderer::Get().submitOverlay(&i.sprite);
+		Renderer::Get().submitOverlay(&m_select);
 	}
 }
 

@@ -1,10 +1,11 @@
-#ifndef renderer_hpp
-#define renderer_hpp
+#ifndef RENDERER_HPP
+#define RENDERER_HPP
 #include "render_attribute.hpp"
 #include "render_data.hpp"
 #include "../core/vec2.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <vector>
 
@@ -19,10 +20,14 @@ class Renderer
 		}
 
 		void init(sf::RenderWindow* window);
-		void submit(const RenderData& data, const RenderAttribute& att);
-		void submit(sf::RectangleShape* data);
-		void submito(sf::Sprite* data);
-		void submit(sf::Text* data);
+
+		void submitBackground(sf::CircleShape* data);
+		void submitBackground(sf::Sprite* data);
+		void submitSorted(sf::Sprite* data);
+
+		void submitOverlay(sf::RectangleShape* data);
+		void submitOverlay(sf::Sprite* data);
+		void submitOverlay(sf::Text* data);
 		void flush();
 
 		void setCameraPos(const vec2i& pos);
@@ -30,19 +35,21 @@ class Renderer
 
 	private:
 		void updateCamera();
+		void cull();
 		void sort();
 		void render();
 		void clearAll();
 
 	private:
 		sf::RenderWindow* m_window = nullptr;
-		std::vector<RenderData> m_BackgroundData;
-		std::vector<RenderData> m_SortedData;
-		std::vector<RenderData> m_OverlayData;
+		std::vector<sf::CircleShape*> m_BackCircleData;
+		std::vector<sf::Sprite*> m_BackgroundData;
+		std::vector<sf::Sprite*> m_SortedData;
 
-		std::vector<sf::Sprite*> m_SpriteData;
-		std::vector<sf::RectangleShape*> m_RectData;
-		std::vector<sf::Text*> m_TextData;
+		//gui
+		std::vector<sf::RectangleShape*> m_OverRectData;
+		std::vector<sf::Sprite*>         m_OverSpriteData;
+		std::vector<sf::Text*>           m_OverTextData;
 		sf::View m_camera;
 };
 
