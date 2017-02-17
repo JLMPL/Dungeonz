@@ -43,6 +43,8 @@ CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/gameplay/living_profile.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/gameplay/map.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/gameplay/stats.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/render/animated_sprite.hpp
+CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/render/render_data.hpp
 CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/render/renderer.hpp
@@ -103,7 +105,9 @@ CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gui/gui_mode.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gui/slot.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/input/input_handler.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/animated_sprite.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/bar.hpp
+CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/indication_handler.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/render/render_data.hpp
@@ -174,7 +178,9 @@ CMakeFiles/out.dir/src/core/game.cpp.o: src/gui/gui_mode.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/gui/slot.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/input/input_handler.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/core/game.cpp.o: src/render/animated_sprite.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/render/bar.hpp
+CMakeFiles/out.dir/src/core/game.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/render/indication_handler.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/core/game.cpp.o: src/render/render_data.hpp
@@ -366,7 +372,9 @@ CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/gui/gui.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/gui/gui_mode.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/gui/slot.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/animated_sprite.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/bar.hpp
+CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/indication_handler.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/render/render_data.hpp
@@ -427,16 +435,21 @@ CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/core/error.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/core/rect.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/core/vec2.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/entity.hpp
+CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/entity_ptr.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/entity_type.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/inventory.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/item.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/item_ptr.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/item_type.hpp
+CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/level.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/living.cpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/living.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/living_profile.hpp
+CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/map.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/stats.hpp
+CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/rapidxml/rapidxml.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/render/animated_sprite.hpp
+CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/render/render_data.hpp
 CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/render/renderer.hpp
@@ -499,7 +512,9 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gui/gui.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gui/gui_mode.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gui/slot.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/animated_sprite.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/bar.hpp
+CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/render_data.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/render/renderer.hpp
@@ -731,6 +746,8 @@ CMakeFiles/out.dir/src/main.cpp.o: src/gameplay/level.hpp
 CMakeFiles/out.dir/src/main.cpp.o: src/gameplay/map.hpp
 CMakeFiles/out.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/out.dir/src/main.cpp.o: src/rapidxml/rapidxml.hpp
+CMakeFiles/out.dir/src/main.cpp.o: src/render/animated_sprite.hpp
+CMakeFiles/out.dir/src/main.cpp.o: src/render/big_particle.hpp
 CMakeFiles/out.dir/src/main.cpp.o: src/render/render_attribute.hpp
 CMakeFiles/out.dir/src/main.cpp.o: src/render/render_data.hpp
 CMakeFiles/out.dir/src/main.cpp.o: src/render/renderer.hpp
@@ -761,6 +778,17 @@ CMakeFiles/out.dir/src/render/bar.cpp.o: src/render/render_data.hpp
 CMakeFiles/out.dir/src/render/bar.cpp.o: src/render/renderer.hpp
 CMakeFiles/out.dir/src/render/bar.cpp.o: src/resource/font_cache.hpp
 CMakeFiles/out.dir/src/render/bar.cpp.o: src/resource/font_ptr.hpp
+
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/core/direction.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/core/rect.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/core/vec2.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/render/animated_sprite.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/render/big_particle.cpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/render/big_particle.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/render/sprite.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/resource/animation.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/resource/animation_ptr.hpp
+CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/resource/texture_ptr.hpp
 
 CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/core/vec2.hpp
 CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/render/indication_handler.cpp

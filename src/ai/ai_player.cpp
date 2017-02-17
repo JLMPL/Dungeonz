@@ -59,7 +59,8 @@ void AIPlayer::update(float deltaTime)
 									{
 										int damage = m_target->getAttribute(Attribute::DAMAGE);
 										living->damage(damage);
-										living->push(m_target->getDirection(), 5, 0.075);
+										printf("Push!\n");
+										living->push(m_target->getDirection(), 5, 0.1);
 
 										IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
 
@@ -154,47 +155,49 @@ void AIPlayer::idleState(float deltaTime)
 
 void AIPlayer::attackState(float deltaTime)
 {
-	if(m_timer.getElapsedTime().asMilliseconds() > 300)
-	{
-		m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_attack.ani"),
-		[&]()
-		{
-			m_state = PlayerState::MOVING;
-		});
+	// if(m_timer.getElapsedTime().asMilliseconds() > 300)
+	// {
+	// 	// m_target->getLevel()->addBigParticle("data/blood_splash.ani", m_target->getPosition().geti(), 0.150);
 
-		if(m_focus)
-		{
-			float dist = length(m_focus->getPosition() - m_target->getPosition());
+	// 	m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_attack.ani"),
+	// 	[&]()
+	// 	{
+	// 		m_state = PlayerState::MOVING;
+	// 	});
 
-			if(dist <= 32)
-			{
-				switch(m_focus->getType())
-				{
-					case EntityType::LIVING:
-					{
-						auto living = static_cast<Living*>(m_focus);
+	// 	if(m_focus)
+	// 	{
+	// 		float dist = length(m_focus->getPosition() - m_target->getPosition());
 
-						if(living->getAttribute(Attribute::HP) > 0)
-						{
-							int damage = m_target->getAttribute(Attribute::DAMAGE);
-							living->damage(damage);
-							living->push(m_target->getDirection(), 5, 0.075);
+	// 		if(dist <= 32)
+	// 		{
+	// 			switch(m_focus->getType())
+	// 			{
+	// 				case EntityType::LIVING:
+	// 				{
+	// 					auto living = static_cast<Living*>(m_focus);
 
-							IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
+	// 					if(living->getAttribute(Attribute::HP) > 0)
+	// 					{
+	// 						int damage = m_target->getAttribute(Attribute::DAMAGE);
+	// 						living->damage(damage);
+	// 						living->push(m_target->getDirection(), 5, 0.075);
 
-							if(living->getAttribute(Attribute::HP) <= 0)
-							{
-								m_target->addXp(living->getXp());
-								IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
-							}
-						}
-						break;
-					}
-				}
-			}
-		}
-		m_timer.restart();
-	}
+	// 						IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
+
+	// 						if(living->getAttribute(Attribute::HP) <= 0)
+	// 						{
+	// 							m_target->addXp(living->getXp());
+	// 							IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
+	// 						}
+	// 					}
+	// 					break;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	m_timer.restart();
+	// }
 }
 
 void AIPlayer::pickingState(float deltaTime)

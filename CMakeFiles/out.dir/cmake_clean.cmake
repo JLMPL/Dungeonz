@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/input/input_handler.cpp.o"
   "CMakeFiles/out.dir/src/render/sprite.cpp.o"
   "CMakeFiles/out.dir/src/render/indication_handler.cpp.o"
+  "CMakeFiles/out.dir/src/render/big_particle.cpp.o"
   "CMakeFiles/out.dir/src/render/animated_sprite.cpp.o"
   "CMakeFiles/out.dir/src/render/bar.cpp.o"
   "CMakeFiles/out.dir/src/render/renderer.cpp.o"

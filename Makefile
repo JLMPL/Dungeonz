@@ -771,6 +771,33 @@ src/render/bar.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/bar.cpp.s
 .PHONY : src/render/bar.cpp.s
 
+src/render/big_particle.o: src/render/big_particle.cpp.o
+
+.PHONY : src/render/big_particle.o
+
+# target to build an object file
+src/render/big_particle.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.o
+.PHONY : src/render/big_particle.cpp.o
+
+src/render/big_particle.i: src/render/big_particle.cpp.i
+
+.PHONY : src/render/big_particle.i
+
+# target to preprocess a source file
+src/render/big_particle.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.i
+.PHONY : src/render/big_particle.cpp.i
+
+src/render/big_particle.s: src/render/big_particle.cpp.s
+
+.PHONY : src/render/big_particle.s
+
+# target to generate assembly for a file
+src/render/big_particle.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.s
+.PHONY : src/render/big_particle.cpp.s
+
 src/render/indication_handler.o: src/render/indication_handler.cpp.o
 
 .PHONY : src/render/indication_handler.o
@@ -1095,6 +1122,9 @@ help:
 	@echo "... src/render/bar.o"
 	@echo "... src/render/bar.i"
 	@echo "... src/render/bar.s"
+	@echo "... src/render/big_particle.o"
+	@echo "... src/render/big_particle.i"
+	@echo "... src/render/big_particle.s"
 	@echo "... src/render/indication_handler.o"
 	@echo "... src/render/indication_handler.i"
 	@echo "... src/render/indication_handler.s"

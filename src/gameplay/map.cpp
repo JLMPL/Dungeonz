@@ -1,10 +1,4 @@
 #include "map.hpp"
-#include "../base64/base64.h"
-#include "../render/renderer.hpp"
-#include "../core/error.hpp"
-#include "../resource/texture_cache.hpp"
-#include "../render/render_attribute.hpp"
-#include "../collision/collision_handler.hpp"
 #include "living_profile.hpp"
 #include "living.hpp"
 #include "level.hpp"
@@ -14,8 +8,14 @@
 #include "chest.hpp"
 #include "../ai/ai_player.hpp"
 #include "../ai/ai_mob.hpp"
+#include "../base64/base64.h"
+#include "../core/error.hpp"
+#include "../collision/collision_handler.hpp"
 #include "../gui/gui.hpp"
-#include "zlib.h"
+#include "../render/renderer.hpp"
+#include "../render/render_attribute.hpp"
+#include "../resource/texture_cache.hpp"
+#include <zlib.h>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -82,25 +82,6 @@ void Map::loadTileset(rapidxml::xml_node<>* tileset)
 			m_Tileset.push_back(tile);
 		}
 	}
-
-	xml_node<>* tile = tileset->first_node("tile");
-
-	// while(tile != nullptr)
-	// {
-	//     int index = atoi(tile->first_attribute("id")->value());
-	//
-	//     xml_node<>* prop = tile->first_node("properties")->first_node("property");
-	//     std::string name = prop->first_attribute("name")->value();
-	//
-	//     if(name == "collisions")
-	//     {
-	//         int value = atoi(prop->first_attribute("value")->value());
-	//         m_Tileset[index].sprite.rotate(12);
-	//         m_Tileset[index].collisionType = static_cast<TileCollision>(value);
-	//     }
-	//
-	//     tile = tile->next_sibling("tile");
-	// }
 }
 
 void Map::loadLayers(rapidxml::xml_node<>* map)
@@ -183,7 +164,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
-			std::string whom = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string whom  = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 			
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());

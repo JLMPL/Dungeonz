@@ -8,21 +8,8 @@
 
 void Level::init()
 {
-	// profile.loadFromFile("data/pc_player.chr");
-
-	// player = (Living*)addEntity(EntityPtr_t(new Living()));
-	// player->init(profile);
-	// player->setAI(AIPtr_t(new AIPlayer()));
-	// player->setPosition(vec2f(600,400));//(vec2f(418,950));
-
-	ItemPtr_t book = addItem(ItemPtr_t(new Item("data/it_test_note.lua")));
-
-	// player->accessInv().addItem(book);
-
 	map.setLevel(this);
 	map.loadFromFile("data/map_test.tmx");
-
-	// GUI::Get().setTarget(player);
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -40,10 +27,30 @@ ItemPtr_t Level::addItem(ItemPtr_t item)
 	return m_Items.back();
 }
 
+void Level::addBigParticle(const std::string& path, const vec2i& pos, float life)
+{
+	m_BigParticles.push_back(BigParticle());
+	m_BigParticles.back().init(path, life);
+	m_BigParticles.back().setPosition(pos);
+}
+
 void Level::update(float deltaTime)
 {
 	for(auto& i : m_Entities)
 		i->update(deltaTime);
+
+	for(auto i = m_BigParticles.begin(); i != m_BigParticles.end();)
+	{
+		if((*i).isDead())
+			i = m_BigParticles.erase(i);
+		else
+			i++;
+	}
+
+	for(auto& i : m_BigParticles)
+	{
+		i.update(deltaTime);
+	}
 
 	map.update();
 	CollisionHandler::Get().update(deltaTime);

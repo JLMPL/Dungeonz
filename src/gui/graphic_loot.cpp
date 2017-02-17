@@ -83,7 +83,6 @@ void GraphicLoot::setPosition(const vec2i& pos)
 void GraphicLoot::setInv(Inventory* inv)
 {
 	m_inv = inv;
-	printf("setted inv!\n");
 }
 
 void GraphicLoot::setTargetInv(Inventory* inv)

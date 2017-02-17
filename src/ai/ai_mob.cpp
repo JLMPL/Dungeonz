@@ -85,19 +85,21 @@ void AIMob::update(float deltaTime)
 		break;
 		case MobState::ATTACK:
 		{
-			if(m_timer.getElapsedTime().asMilliseconds() > 300)
+			if(m_timer.getElapsedTime().asMilliseconds() > 1000)
 			{
 				auto enemy = static_cast<Living*>(m_focus);
 				enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
 				enemy->push(m_target->getDirection(), 5, 0.1);
-				m_target->setBusy(true);
 				m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_attack.ani"),
 				[&]()
 				{
 					m_state = MobState::IDLE;
+					m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_idle.ani"));
 				});
 				m_timer.restart();
 			}
+			if(m_target->getAttribute(Attribute::HP) <= 0)
+				m_state = MobState::DEAD;
 		}
 		break;
 		case MobState::DEAD:
