@@ -79,7 +79,6 @@ void GUI::update()
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
 				m_timer.restart();
-				printf("exit\n");
 			}
 
 			m_gloot.update();

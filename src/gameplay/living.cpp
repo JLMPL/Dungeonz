@@ -3,6 +3,7 @@
 #include "../ai/ai_ptr.hpp"
 #include "../render/animated_sprite.hpp"
 #include "../collision/collision_handler.hpp"
+#include "level.hpp"
 
 Living::Living()
 {
@@ -29,7 +30,7 @@ void Living::init(const LivingProfile& profile)
 	m_box->reactMaterial = CollMaterial::TRAP;
 	m_box->callback = [this]()
 	{
-		if(this->m_trapTimer > 1000 + 25*4 + 160)
+		if(this->m_trapTimer > 750 + 60 + 160)
 		{
 			this->damage(2);
 			this->m_trapTimer = 0;
@@ -122,6 +123,8 @@ void Living::damage(int damage)
 	int& currHp = m_attributes[Attribute::HP];
 	currHp -= damage;
 	if(currHp < 0) currHp = 0;
+
+	m_level->addBigParticle("data/blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
 }
 
 void Living::setDamage(int high)

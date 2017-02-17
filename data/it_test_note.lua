@@ -6,6 +6,6 @@ Item = {
 	desc = "A Single page torn from a bigger tome.",
 
 	effect = function()
-		gui_read("This is something I don't really\ncare about. It's meant to be\njust a simple demonstration of\na new mechanic in the game\nwhich is reading notes!\n\n~GOD");
+		gui_read("This is something I don't really\ncare about. It's meant to be\njust a simple demonstration of\na new mechanic in the game\nwhich is reading notes!");
 	end
 }
