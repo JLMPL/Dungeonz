@@ -42,14 +42,14 @@ class Renderer
 
 	private:
 		sf::RenderWindow* m_window = nullptr;
-		std::vector<sf::CircleShape*> m_BackCircleData;
-		std::vector<sf::Sprite*> m_BackgroundData;
-		std::vector<sf::Sprite*> m_SortedData;
+		std::vector<sf::CircleShape*> m_backCircleData;
+		std::vector<sf::Sprite*> m_backgroundData;
+		std::vector<sf::Sprite*> m_sortedData;
 
 		//gui
-		std::vector<sf::RectangleShape*> m_OverRectData;
-		std::vector<sf::Sprite*>         m_OverSpriteData;
-		std::vector<sf::Text*>           m_OverTextData;
+		std::vector<sf::RectangleShape*> m_overRectData;
+		std::vector<sf::Sprite*>         m_overSpriteData;
+		std::vector<sf::Text*>           m_overTextData;
 		sf::View m_camera;
 };
 

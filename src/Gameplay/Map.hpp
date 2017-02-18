@@ -43,13 +43,13 @@ class Map
 		void setLevel(Level* level);
 
 	private:
-		std::vector<Tile> m_Tileset;
-		std::vector<TileLayer> m_Layers;
+		std::vector<Tile> m_tileset;
+		std::vector<TileLayer> m_layers;
 		TexturePtr_t m_texture;
 
 		Level* m_level;
 
-		std::vector<BoxPtr_t> m_Boxes;
+		std::vector<BoxPtr_t> m_boxes;
 
 		int m_width = 0;
 		int m_height = 0;

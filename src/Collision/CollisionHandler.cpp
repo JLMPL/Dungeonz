@@ -12,13 +12,13 @@ void CollisionHandler::update(float deltaTime)
 {
 	clean();
 
-	if(m_Bodies.size() > 1)
-	for(int i = 0; i < m_Bodies.size() - 1; i++)
+	if(m_bodies.size() > 1)
+	for(int i = 0; i < m_bodies.size() - 1; i++)
 	{
-		for(int j = i + 1; j < m_Bodies.size(); j++)
+		for(int j = i + 1; j < m_bodies.size(); j++)
 		{
-			auto& a = *m_Bodies[i];
-			auto& b = *m_Bodies[j];
+			auto& a = *m_bodies[i];
+			auto& b = *m_bodies[j];
 
 			if(a.enabled and b.enabled)
 			{
@@ -38,7 +38,7 @@ void CollisionHandler::update(float deltaTime)
 							a.rect.y += move.y * 0.5 + gPush;
 							b.rect.y -= move.y * 0.5 + gPush;
 						}
-						react(m_Bodies[i], m_Bodies[j]);
+						react(m_bodies[i], m_bodies[j]);
 					}
 				}
 				else if(a.type == CollisionType::DYNAMIC and b.type == CollisionType::STATIC)
@@ -48,7 +48,7 @@ void CollisionHandler::update(float deltaTime)
 						vec2f move;
 						Collision::AABBResponse(a.rect, b.rect, move);
 						(move.y == 0) ? a.rect.x += move.x + gPush : a.rect.y += move.y + gPush;
-						react(m_Bodies[i], m_Bodies[j]);
+						react(m_bodies[i], m_bodies[j]);
 					}
 				}
 				else if(a.type == CollisionType::STATIC and b.type == CollisionType::DYNAMIC)
@@ -59,21 +59,21 @@ void CollisionHandler::update(float deltaTime)
 						Collision::AABBResponse(b.rect, a.rect, move);
 
 						(move.y == 0) ? b.rect.x += move.x + gPush : b.rect.y += move.y + gPush;
-						react(m_Bodies[i], m_Bodies[j]);
+						react(m_bodies[i], m_bodies[j]);
 					}
 				}
 				else if(a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::DYNAMIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
 					{
-						react(m_Bodies[i], m_Bodies[j]);
+						react(m_bodies[i], m_bodies[j]);
 					}
 				}
 				else if(b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::DYNAMIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
 					{
-						react(m_Bodies[i], m_Bodies[j]);
+						react(m_bodies[i], m_bodies[j]);
 					}
 				}
 			}
@@ -81,15 +81,15 @@ void CollisionHandler::update(float deltaTime)
 	}
 
 	if(false)
-	for(int i = 0; i < m_Bodies.size(); i++)
+	for(int i = 0; i < m_bodies.size(); i++)
 	{
-		m_Bodies[i]->draw();
+		m_bodies[i]->draw();
 	}
 }
 
 void CollisionHandler::addBody(BoxPtr_t box)
 {
-	m_Bodies.push_back(box);
+	m_bodies.push_back(box);
 }
 
 void CollisionHandler::react(BoxPtr_t a, BoxPtr_t b)
@@ -109,13 +109,13 @@ void CollisionHandler::react(BoxPtr_t a, BoxPtr_t b)
 
 void CollisionHandler::clean()
 {
-	for(auto i = m_Bodies.begin(); i != m_Bodies.end();)
+	for(auto i = m_bodies.begin(); i != m_bodies.end();)
 	{
 		auto& the = *i;
 		if(the.use_count() == 1)
 		{
 			the.reset();
-			i = m_Bodies.erase(i);
+			i = m_bodies.erase(i);
 		}
 		else i++;
 	}

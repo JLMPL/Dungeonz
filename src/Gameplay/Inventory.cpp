@@ -2,9 +2,9 @@
 
 bool Inventory::addItem(ItemPtr_t item)
 {
-	if(m_Items.size() < 25)
+	if(m_items.size() < 25)
 	{
-		m_Items.push_back(item);
+		m_items.push_back(item);
 		return true;
 	}
 	return false;
@@ -14,11 +14,11 @@ void Inventory::removeItem(const std::string& code)
 {
 	// if(hasItem(code))
 	// {
-	for(int i = 0; i < m_Items.size(); i++)
+	for(int i = 0; i < m_items.size(); i++)
 	{
-		if(m_Items[i]->code == code)
+		if(m_items[i]->code == code)
 		{
-			m_Items.erase(m_Items.begin() + i);
+			m_items.erase(m_items.begin() + i);
 			return;
 		}
 	}
@@ -27,11 +27,11 @@ void Inventory::removeItem(const std::string& code)
 
 void Inventory::removeItem(Item* item)
 {
-	for(int i = 0; i < m_Items.size(); i++)
+	for(int i = 0; i < m_items.size(); i++)
 	{
-		if(m_Items[i].get() == item)
+		if(m_items[i].get() == item)
 		{
-			m_Items.erase(m_Items.begin() + i);
+			m_items.erase(m_items.begin() + i);
 			return;
 		}
 	}
@@ -39,9 +39,9 @@ void Inventory::removeItem(Item* item)
 
 bool Inventory::hasItem(const std::string& code)
 {
-	for(int i = 0; i < m_Items.size(); i++)
+	for(int i = 0; i < m_items.size(); i++)
 	{
-		if(m_Items[i]->code == code)
+		if(m_items[i]->code == code)
 		{
 			return true;
 		}
@@ -51,10 +51,10 @@ bool Inventory::hasItem(const std::string& code)
 
 ItemPtr_t Inventory::getItem(int index)
 {
-	return m_Items[index];
+	return m_items[index];
 }
 
 int Inventory::getAmount()
 {
-	return m_Items.size();
+	return m_items.size();
 }

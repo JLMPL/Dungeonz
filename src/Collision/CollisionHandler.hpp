@@ -23,7 +23,7 @@ class CollisionHandler
 		void clean();
 
 	private:
-		std::vector<BoxPtr_t> m_Bodies;
+		std::vector<BoxPtr_t> m_bodies;
 };
 
 #endif

@@ -14,48 +14,48 @@ void Level::init()
 
 Entity* Level::addEntity(EntityPtr_t entity)
 {
-	m_Entities.push_back(std::move(entity));
-	m_Entities.back()->setLevel(this);
-	m_Entities.back()->setId(m_lastEntityId);
+	m_entities.push_back(std::move(entity));
+	m_entities.back()->setLevel(this);
+	m_entities.back()->setId(m_lastEntityId);
 	m_lastEntityId++;
-	return m_Entities.back().get();
+	return m_entities.back().get();
 }
 
 ItemPtr_t Level::addItem(ItemPtr_t item)
 {
-	m_Items.push_back(item);
-	return m_Items.back();
+	m_items.push_back(item);
+	return m_items.back();
 }
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, float life)
 {
-	m_BigParticles.push_back(BigParticle());
-	m_BigParticles.back().init(path, life);
-	m_BigParticles.back().setPosition(pos);
+	m_bigParticles.push_back(BigParticle());
+	m_bigParticles.back().init(path, life);
+	m_bigParticles.back().setPosition(pos);
 }
 
 void Level::update(float deltaTime)
 {
-	for(auto i = m_Entities.begin(); i != m_Entities.end();)
+	for(auto i = m_entities.begin(); i != m_entities.end();)
 	{
 		if((*i)->isDestroyed())
-			i = m_Entities.erase(i);
+			i = m_entities.erase(i);
 		else
 			i++;
 	}
 
-	for(auto& i : m_Entities)
+	for(auto& i : m_entities)
 		i->update(deltaTime);
 
-	for(auto i = m_BigParticles.begin(); i != m_BigParticles.end();)
+	for(auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
 	{
 		if((*i).isDead())
-			i = m_BigParticles.erase(i);
+			i = m_bigParticles.erase(i);
 		else
 			i++;
 	}
 
-	for(auto& i : m_BigParticles)
+	for(auto& i : m_bigParticles)
 	{
 		i.update(deltaTime);
 	}
@@ -74,15 +74,15 @@ std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)
 {
 	std::vector<Entity*> ents;
 
-	for(int i = 0; i < m_Entities.size(); i++)
+	for(int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_Entities[i]->getPosition() != pos)
+		if(m_entities[i]->getPosition() != pos)
 		{
-			vec2f die = pos - m_Entities[i]->getPosition();
+			vec2f die = pos - m_entities[i]->getPosition();
 
 			if(length(die) <= range)
 			{
-				ents.push_back(m_Entities[i].get());
+				ents.push_back(m_entities[i].get());
 			}
 		}
 	}
@@ -92,11 +92,11 @@ std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)
 
 Entity* Level::getEntityByCode(std::string code)
 {
-	for(int i = 0; i < m_Entities.size(); i++)
+	for(int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_Entities[i]->getCode() == code)
+		if(m_entities[i]->getCode() == code)
 		{
-			return m_Entities[i].get();
+			return m_entities[i].get();
 		}
 	}
 	return nullptr;
@@ -106,11 +106,11 @@ std::vector<Entity*> Level::getEntitiesByCode(std::string code)
 {
 	std::vector<Entity*> ents;
 
-	for(int i = 0; i < m_Entities.size(); i++)
+	for(int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_Entities[i]->getCode() == code)
+		if(m_entities[i]->getCode() == code)
 		{
-			ents.push_back(m_Entities[i].get());
+			ents.push_back(m_entities[i].get());
 		}
 	}
 	return ents;

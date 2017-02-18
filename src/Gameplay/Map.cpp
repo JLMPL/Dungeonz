@@ -80,7 +80,7 @@ void Map::loadTileset(rapidxml::xml_node<>* tileset)
 										tile.rect.y,
 										tile.rect.w,
 										tile.rect.h});
-			m_Tileset.push_back(tile);
+			m_tileset.push_back(tile);
 		}
 	}
 }
@@ -127,7 +127,7 @@ void Map::loadLayer(rapidxml::xml_node<>* layere)
 	{
 		if(data[i] >= 1)
 		{
-			layer.tiles[i] = m_Tileset[data[i]-1];
+			layer.tiles[i] = m_tileset[data[i]-1];
 		}
 		else
 		{
@@ -146,7 +146,7 @@ void Map::loadLayer(rapidxml::xml_node<>* layere)
 		}
 	}
 
-	m_Layers.push_back(layer);
+	m_layers.push_back(layer);
 }
 
 void Map::loadObjects(rapidxml::xml_node<>* objects)
@@ -376,43 +376,43 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 void Map::collisions()
 {
-	for(int i = 0; i < m_Layers[2].tiles.size(); i++)
+	for(int i = 0; i < m_layers[2].tiles.size(); i++)
 	{
-		auto& tile = m_Layers[2].tiles[i];
+		auto& tile = m_layers[2].tiles[i];
 
 		if(tile.rect.x == 96 and tile.rect.y == 128)
 		{
 			BoxPtr_t box(new Box());
 			box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
-			m_Boxes.push_back(box);
+			m_boxes.push_back(box);
 
-			CollisionHandler::Get().addBody(m_Boxes.back());
+			CollisionHandler::Get().addBody(m_boxes.back());
 		}
 	}
 }
 
 void Map::update()
 {
-	// for(int i = 0; i < m_Tileset.size(); i++)
+	// for(int i = 0; i < m_tileset.size(); i++)
 	// {
-	//     m_Tileset[i].sprite.setPosition(i * 32, 0);
-	//     Renderer::Get().submit(&m_Tileset[i].sprite);
+	//     m_tileset[i].sprite.setPosition(i * 32, 0);
+	//     Renderer::Get().submit(&m_tileset[i].sprite);
 	// }
 
-	for(int i = 0; i < m_Layers[0].tiles.size(); i++)
+	for(int i = 0; i < m_layers[0].tiles.size(); i++)
 	{
-		Renderer::Get().submitBackground(&m_Layers[0].tiles[i].sprite);
+		Renderer::Get().submitBackground(&m_layers[0].tiles[i].sprite);
 	}
 
-	for(int i = 0; i < m_Layers[1].tiles.size(); i++)
+	for(int i = 0; i < m_layers[1].tiles.size(); i++)
 	{
-		Renderer::Get().submitBackground(&m_Layers[1].tiles[i].sprite);
+		Renderer::Get().submitBackground(&m_layers[1].tiles[i].sprite);
 	}
 
 	if(false)
-	for(int i = 0; i < m_Layers[2].tiles.size(); i++)
+	for(int i = 0; i < m_layers[2].tiles.size(); i++)
 	{
-		Renderer::Get().submitBackground(&m_Layers[2].tiles[i].sprite);
+		Renderer::Get().submitBackground(&m_layers[2].tiles[i].sprite);
 	}
 }
 

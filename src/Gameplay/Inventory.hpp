@@ -16,7 +16,7 @@ class Inventory
 		int getAmount();
 
 	private:
-		std::vector<ItemPtr_t> m_Items;
+		std::vector<ItemPtr_t> m_items;
 };
 
 #endif

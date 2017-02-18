@@ -20,10 +20,10 @@ class Level
 		std::vector<Entity*> getEntitiesByCode(std::string code);
 
 	private:
-		std::vector<EntityPtr_t> m_Entities;
+		std::vector<EntityPtr_t> m_entities;
 		uint m_lastEntityId = 0;
-		std::vector<ItemPtr_t> m_Items;
-		std::vector<BigParticle> m_BigParticles;
+		std::vector<ItemPtr_t> m_items;
+		std::vector<BigParticle> m_bigParticles;
 
 		Map map;
 };

@@ -24,7 +24,7 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.1.7 WIP");
+	version.setString("Version 0.1.8 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	level.init();
