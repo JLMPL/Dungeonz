@@ -26,13 +26,14 @@ void Map::loadFromFile(std::string path)
 {
 	using namespace rapidxml;
 
-	std::ifstream file(path.c_str());
+	std::string finalpath = "data/Maps/" + path;
+	std::ifstream file(finalpath.c_str());
 	std::string line;
 	std::string content;
 
 	if(!file.good())
 	{
-		ShowErrorBox("Something went wrong with " + path + " file.");
+		ShowErrorBox("Something went wrong with " + finalpath + " file.");
 	}
 	else
 	{
@@ -67,7 +68,7 @@ void Map::loadTileset(rapidxml::xml_node<>* tileset)
 	int width = atoi(image->first_attribute("width")->value());
 	int height = atoi(image->first_attribute("height")->value());
 
-	m_texture = TextureCache::Get().getTexture("data/" + texturePath);
+	m_texture = TextureCache::Get().getTexture(texturePath);
 
 	for(int i = 0; i < height/32; i++)
 	{
@@ -172,7 +173,8 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			pos.y = std::stof(object->first_attribute("y")->value());
 
 			LivingProfile profile;
-			profile.loadFromFile("data/" + whom + ".chr");
+			profile.loadFromFile(whom + ".chr");
+			profile.loadFromFile(whom + ".chr");
 
 			auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
 			living->init(profile);
@@ -181,27 +183,27 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 			if(item0 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 			if(item1 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 			if(item2 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 			if(item3 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 			if(item4 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 		}
@@ -237,27 +239,27 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 			if(item0 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 			if(item1 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 			if(item2 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 			if(item3 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 			if(item4 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 		}
@@ -329,27 +331,27 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 			if(item0 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 			if(item1 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 			if(item2 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 			if(item3 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 			if(item4 != "-")
 			{
-				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 		}
@@ -361,7 +363,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			pos.y = std::stof(object->first_attribute("y")->value());
 
 			LivingProfile profile;
-			profile.loadFromFile("data/pc_player.chr");
+			profile.loadFromFile("pc_player.chr");
 
 			auto player = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
 			player->init(profile);

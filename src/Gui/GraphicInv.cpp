@@ -21,7 +21,7 @@ GraphicInv::GraphicInv()
 		m_slots.push_back(Slot());
 
 	m_invPos = vec2i(640, 220);
-	m_select.setTexture(*TextureCache::Get().getTexture("data/selection.png"));
+	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
 	
 	initDesc();
 	initStats();
@@ -34,14 +34,14 @@ void GraphicInv::initDesc()
 
 	m_desc_back_pos = vec2i(400 - (gDescWidth /2), 600 - gDescHeight);
 
-	m_desc_name.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_desc_name.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_desc_name.setCharacterSize(16);
 
-	m_desc_type.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_desc_type.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_desc_type.setCharacterSize(10);
 	m_desc_type.setFillColor({0x80,0x80,0x80});
 
-	m_desc.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_desc.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_desc.setCharacterSize(10);
 }
 
@@ -52,31 +52,31 @@ void GraphicInv::initStats()
 
 	m_stats_pos = vec2i(0,300-gStatsHeight/2);
 
-	m_stats_level.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats_level.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_level.setCharacterSize(10);
 	m_stats_level.setString("Level");
 
 	m_xp_bar.init({gStatsWidth - 20,14}, {128,0,128});
 	m_xp_bar.setShowStats(true);
 
-	m_stats_health.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats_health.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_health.setCharacterSize(10);
 	m_stats_health.setString("Health");
 
 	m_health_bar.init({gStatsWidth - 20,14}, {192,0,0});
 	m_health_bar.setShowStats(true);
 
-	m_stats_mana.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats_mana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_mana.setCharacterSize(10);
 	m_stats_mana.setString("Magicka");
 
 	m_mana_bar.init({gStatsWidth - 20,14}, {0,0,192});
 	m_mana_bar.setShowStats(true);
 
-	m_stats_damage.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats_damage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_damage.setCharacterSize(10);
 
-	m_stats_defense.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats_defense.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_defense.setCharacterSize(10);
 }
 

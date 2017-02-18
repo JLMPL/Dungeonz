@@ -22,7 +22,7 @@ Game::Game()
 	Renderer::Get().init(&Window);
 	IndicationHandler::Get().init();
 
-	version.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
 	version.setString("Version 0.1.8 WIP");
 	version.setPosition(sf::Vector2f(5,5));

@@ -28,11 +28,12 @@ struct Item
 
 	void loadFromFile(const std::string& path)
 	{
+		std::string finalpath = "data/Items/" + path;
+		std::ifstream file(finalpath.c_str());
 
-		std::ifstream file(path.c_str());
 		if(!file.good())
 		{
-			ShowErrorBox("Failed to load Item file \"" + path + "\"");
+			ShowErrorBox("Failed to load Item file \"" + finalpath + "\"");
 		}
 		else
 		{
@@ -41,7 +42,7 @@ struct Item
 			lua_State* lua = luaL_newstate();
 			luaL_openlibs(lua);
 			ScriptHandler::Get().loadLibs(lua);
-			luaL_dofile(lua, path.c_str());
+			luaL_dofile(lua, finalpath.c_str());
 			lua_pcall(lua, 0,0,0);
 
 			LuaRef ref_theItem = getGlobal(lua, "Item");

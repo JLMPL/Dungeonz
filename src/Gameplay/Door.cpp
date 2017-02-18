@@ -10,7 +10,7 @@ Door::Door()
 	m_type = EntityType::DOOR;
 
 	m_sprite = SpritePtr_t(new AnimatedSprite());
-	m_sprite->loadFromFile("data/door_idle.ani");
+	m_sprite->loadFromFile("door_idle.ani");
 	m_sprite->setOrigin({16,32});
 
 	m_box = BoxPtr_t(new Box());
@@ -35,7 +35,7 @@ void Door::tryOpening(Inventory* inv)
 		m_box->enabled = false;
 		inv->removeItem(m_requiredKey);
 
-		m_sprite->setAnimation(AnimationCache::Get().getAnimation("data/door_open.ani"));
+		m_sprite->setAnimation(AnimationCache::Get().getAnimation("door_open.ani"));
 		IndicationHandler::Get().addIndication("Key used", sf::Color(0,255,0), the_pos + vec2f(0,-50));
 	}
 	else
@@ -49,7 +49,7 @@ void Door::open()
 {
 	m_isOpen = true;
 	m_box->enabled = false;
-	m_sprite->setAnimation(AnimationCache::Get().getAnimation("data/door_open.ani"));
+	m_sprite->setAnimation(AnimationCache::Get().getAnimation("door_open.ani"));
 }
 
 void Door::setRequiredItem(const std::string& code)

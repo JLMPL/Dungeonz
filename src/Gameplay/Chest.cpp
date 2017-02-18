@@ -5,7 +5,7 @@ Chest::Chest()
 {
 	m_type = EntityType::CHEST;
 	m_sprite = SpritePtr_t(new Sprite());
-	m_sprite->loadFromFile("data/test_chest.png");
+	m_sprite->loadFromFile("test_chest.png");
 	m_sprite->setOrigin({16,32});
 
 	m_box = BoxPtr_t(new Box());

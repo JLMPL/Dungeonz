@@ -9,7 +9,7 @@
 void Level::init()
 {
 	map.setLevel(this);
-	map.loadFromFile("data/map_test.tmx");
+	map.loadFromFile("map_test.tmx");
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)

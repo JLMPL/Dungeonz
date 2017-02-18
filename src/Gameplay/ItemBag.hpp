@@ -10,6 +10,7 @@ class ItemBag : public Chest
 		void update(float deltaTime);
 		
 	private:
+		sf::CircleShape m_shadow;
 };
 
 #endif

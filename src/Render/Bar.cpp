@@ -12,7 +12,7 @@ void Bar::init(const vec2i& size, const sf::Color& color)
 	m_bcg.setOutlineThickness(1);
 	m_bcg.setOutlineColor({0,0,0});
 
-	m_stats.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_stats.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats.setCharacterSize(10);
 	m_stats.setOutlineThickness(1);
 	m_stats.setOutlineColor({0,0,0});

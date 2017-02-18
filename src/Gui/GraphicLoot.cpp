@@ -11,7 +11,7 @@ GraphicLoot::GraphicLoot()
 	for(int i = 0; i < gMaxItems; i++)
 		m_slots.push_back(Slot());
 
-	m_select.setTexture(*TextureCache::Get().getTexture("data/selection.png"));
+	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
 }
 
 void GraphicLoot::update()

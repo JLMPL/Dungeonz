@@ -5,28 +5,26 @@
 #include "../Gameplay/Living.hpp"
 #include "../Input/InputHandler.hpp"
 
-constexpr int _BookWidth = 256*1.5;
-constexpr int _BookHeight = 512;
+constexpr int g_BookWidth = 256*1.5;
+constexpr int g_BookHeight = 512;
 
 void GUI::init()
 {
 	m_mode = GUIMode::OFF;
-	m_focusLabel.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	m_focusLabel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_focusLabel.setCharacterSize(10);
 
-	m_sight.setTexture(*TextureCache::Get().getTexture("data/sight.png"));
+	m_sight.setTexture(*TextureCache::Get().getTexture("sight.png"));
 
 	m_health.init({128,10}, {192,0,0});
 	m_magicka.init({128,10}, {0,0,192});
 
 	m_focusHealth.init({32,4}, {192,0,0});
 
-	// m_bookBack.setSize({_BookWidth, _BookHeight});
-	// m_bookBack.setFillColor({0x20,0x20,0x20});
-	m_bookBack.setTexture(*TextureCache::Get().getTexture("data/page.png"));
-	m_bookPos = vec2i(400 - _BookWidth/2, 300 - _BookHeight/2);
+	m_bookBack.setTexture(*TextureCache::Get().getTexture("page.png"));
+	m_bookPos = vec2i(400 - g_BookWidth/2, 300 - g_BookHeight/2);
 
-	m_bookText.setFont(*FontCache::Get().getFont("data/HarabaraHand.ttf"));
+	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
 	m_bookText.setCharacterSize(20);
 	m_bookText.setFillColor({0,0,0});
 }

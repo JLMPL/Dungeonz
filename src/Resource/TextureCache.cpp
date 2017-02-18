@@ -16,8 +16,9 @@ TexturePtr_t TextureCache::getTexture(const std::string& path)
 
 TexturePtr_t TextureCache::loadTexture(const std::string& path)
 {
+	std::string finalpath = "data/Images/" + path;
 	TexturePtr_t texture = TexturePtr_t(new sf::Texture());
-	texture->loadFromFile(path);
+	texture->loadFromFile(finalpath);
 	m_Textures.insert(std::make_pair(path, texture));
 	return texture;
 }

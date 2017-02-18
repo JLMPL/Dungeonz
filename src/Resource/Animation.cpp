@@ -6,10 +6,11 @@
 
 void Animation::loadFromFile(const std::string& path)
 {
-	std::ifstream file(path.c_str());
+	std::string finalpath = "data/Animations/" + path;
+	std::ifstream file(finalpath.c_str());
 
 	if(!file.good())
-		ShowErrorBox("Failed to load animation file \"" + path + "\"!");
+		ShowErrorBox("Failed to load animation file \"" + finalpath + "\"!");
 	else
 	{
 		file >> image;

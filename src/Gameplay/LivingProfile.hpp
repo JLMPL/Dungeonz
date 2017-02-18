@@ -18,16 +18,25 @@ struct LivingProfile
 
     void loadFromFile(std::string path)
     {
-    	std::ifstream file(path.c_str());
-    	file >> code;
-    	file >> apperance;
-		file >> name;
-		file >> health;
-		file >> magicka;
-		file >> damage;
-		file >> defense;
-		file >> level;
-		file >> xp;
+        std::string finalpath = "data/Living/" + path;
+    	std::ifstream file(finalpath.c_str());
+
+        if(!file.good())
+        {
+            printf("Failed to load LivingProfile \"%s\"!", finalpath.c_str());
+        }
+        else
+        {
+        	file >> code;
+        	file >> apperance;
+    		file >> name;
+    		file >> health;
+    		file >> magicka;
+    		file >> damage;
+    		file >> defense;
+    		file >> level;
+    		file >> xp;
+        }
     	file.close();
     }
 };
