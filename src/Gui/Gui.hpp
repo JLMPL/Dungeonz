@@ -53,7 +53,7 @@ class GUI
 		Bar m_magicka;
 
 		vec2i m_bookPos;
-		sf::RectangleShape m_bookBack;
+		sf::Sprite m_bookBack;
 		sf::Text m_bookText;
 };
 

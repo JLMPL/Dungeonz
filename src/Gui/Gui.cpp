@@ -21,12 +21,14 @@ void GUI::init()
 
 	m_focusHealth.init({32,4}, {192,0,0});
 
-	m_bookBack.setSize({_BookWidth, _BookHeight});
-	m_bookBack.setFillColor({0x20,0x20,0x20});
+	// m_bookBack.setSize({_BookWidth, _BookHeight});
+	// m_bookBack.setFillColor({0x20,0x20,0x20});
+	m_bookBack.setTexture(*TextureCache::Get().getTexture("data/page.png"));
 	m_bookPos = vec2i(400 - _BookWidth/2, 300 - _BookHeight/2);
 
-	m_bookText.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
-	m_bookText.setCharacterSize(16);
+	m_bookText.setFont(*FontCache::Get().getFont("data/HarabaraHand.ttf"));
+	m_bookText.setCharacterSize(20);
+	m_bookText.setFillColor({0,0,0});
 }
 
 void GUI::update()
