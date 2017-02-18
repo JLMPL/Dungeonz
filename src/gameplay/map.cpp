@@ -6,6 +6,7 @@
 #include "lever.hpp"
 #include "spike_trap.hpp"
 #include "chest.hpp"
+#include "item_bag.hpp"
 #include "../ai/ai_player.hpp"
 #include "../ai/ai_mob.hpp"
 #include "../base64/base64.h"
@@ -308,6 +309,49 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			auto trap = (SpikeTrap*)m_level->addEntity(EntityPtr_t(new SpikeTrap()));
 			trap->setCode(name);
 			trap->setPosition(pos);
+		}
+		else if(type == "item_bag")
+		{
+			std::string name = object->first_attribute("name")->value();
+			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string item1 = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+
+			vec2f pos;
+			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.y = std::stof(object->first_attribute("y")->value());
+
+			auto bag = (ItemBag*)m_level->addEntity(EntityPtr_t(new ItemBag()));
+			bag->setCode(name);
+			bag->setPosition(pos + vec2f(16,16));
+
+			if(item0 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item0 + ".lua")));
+				bag->accessInv().addItem(item);
+			}
+			if(item1 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item1 + ".lua")));
+				bag->accessInv().addItem(item);
+			}
+			if(item2 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item2 + ".lua")));
+				bag->accessInv().addItem(item);
+			}
+			if(item3 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item3 + ".lua")));
+				bag->accessInv().addItem(item);
+			}
+			if(item4 != "-")
+			{
+				auto item = m_level->addItem(ItemPtr_t(new Item("data/" + item4 + ".lua")));
+				bag->accessInv().addItem(item);
+			}
 		}
 		else if(type == "start")
 		{

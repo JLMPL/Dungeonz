@@ -115,6 +115,8 @@ ai_player.hpp
 /home/dominik/Desktop/Rekt/src/gameplay/door.hpp
 ../gameplay/lever.hpp
 /home/dominik/Desktop/Rekt/src/gameplay/lever.hpp
+../gameplay/item_bag.hpp
+/home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
 ../gui/gui.hpp
 /home/dominik/Desktop/Rekt/src/gui/gui.hpp
 ../input/input_handler.hpp
@@ -320,6 +322,16 @@ fstream
 iostream
 -
 
+/home/dominik/Desktop/Rekt/src/gameplay/item_bag.cpp
+item_bag.hpp
+/home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
+../collision/collision_handler.hpp
+/home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+
+/home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
+chest.hpp
+/home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
+
 /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
 item.hpp
 /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
@@ -425,6 +437,8 @@ spike_trap.hpp
 /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.hpp
 chest.hpp
 /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
+item_bag.hpp
+/home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
 ../ai/ai_player.hpp
 /home/dominik/Desktop/Rekt/src/ai/ai_player.hpp
 ../ai/ai_mob.hpp

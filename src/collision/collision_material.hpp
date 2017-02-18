@@ -1,14 +1,14 @@
 #ifndef COLLISION_MATERIAL_HPP
 #define COLLISION_MATERIAL_HPP
 
-enum class CollMaterial : int
+namespace CollMaterial
 {
-	NONE    = 1 << 0,
-	REGULAR = 1 << 1,
-	TRAP    = 1 << 2,
-	LIVING  = 1 << 3
-};
+constexpr int NONE    = 1 << 0;
+constexpr int REGULAR = 1 << 1;
+constexpr int TRAP    = 1 << 2;
+constexpr int LIVING  = 1 << 3;
+}
 
-using CollMaterial_t = CollMaterial;
+using CollMaterial_t = int;
 
 #endif

@@ -8,7 +8,8 @@ enum EntityType
     CHEST,
     DOOR,
     LEVER,
-    SPIKE_TRAP
+    SPIKE_TRAP,
+    ITEM_BAG
 };
 
 #endif

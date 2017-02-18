@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="34">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="35">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
@@ -43,7 +43,7 @@
     <property name="item4" value="-"/>
    </properties>
   </object>
-  <object id="8" name="extra_lever" type="lever" x="846.5" y="115.5" width="32" height="32">
+  <object id="8" name="extra_lever" type="lever" x="846.5" y="128" width="32" height="32">
    <properties>
     <property name="activate" value="final_door"/>
     <property name="type" value="door"/>
@@ -85,7 +85,7 @@
   <object id="31" name="skell_spawn" type="spawn" x="352" y="576" width="32" height="32">
    <properties>
     <property name="item0" value="it_test_key"/>
-    <property name="item1" value="-"/>
+    <property name="item1" value="it_test_better"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
@@ -110,6 +110,15 @@
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
     <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="34" name="one_bag" type="item_bag" x="512" y="940.5" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_item"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
    </properties>
   </object>
  </objectgroup>

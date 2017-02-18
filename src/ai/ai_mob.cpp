@@ -109,5 +109,4 @@ void AIMob::update(float deltaTime)
 		}
 		break;
 	}
-
 }

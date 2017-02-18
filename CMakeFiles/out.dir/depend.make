@@ -90,6 +90,7 @@ CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/entity_ptr.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/entity_type.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/inventory.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/item.hpp
+CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/item_bag.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/item_ptr.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/item_type.hpp
 CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/gameplay/level.hpp
@@ -326,6 +327,48 @@ CMakeFiles/out.dir/src/gameplay/inventory.cpp.o: src/script/script_handler.hpp
 
 CMakeFiles/out.dir/src/gameplay/item.cpp.o: src/gameplay/item.cpp
 
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/LuaBridge.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/CFunctions.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/ClassInfo.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/Constructor.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/FuncTraits.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/Iterator.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/LuaException.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/LuaHelpers.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/LuaRef.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/Namespace.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/Stack.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/TypeList.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/TypeTraits.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/LuaBridge/detail/Userdata.h
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/collision/box.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/collision/box_ptr.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/collision/collision_handler.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/collision/collision_material.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/collision/collision_type.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/core/direction.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/core/error.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/core/rect.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/core/vec2.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/chest.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/entity.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/entity_type.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/inventory.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item_bag.cpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item_bag.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item_ptr.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item_type.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/render/render_attribute.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/render/render_data.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/render/renderer.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/render/sprite.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/render/sprite_ptr.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/resource/animation.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/resource/animation_ptr.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/resource/texture_ptr.hpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/script/script_handler.hpp
+
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/LuaBridge/LuaBridge.h
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/LuaBridge/detail/CFunctions.h
 CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/LuaBridge/detail/ClassInfo.h
@@ -496,6 +539,7 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/entity_ptr.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/entity_type.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/inventory.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/item.hpp
+CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/item_bag.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/item_ptr.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/item_type.hpp
 CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/level.hpp

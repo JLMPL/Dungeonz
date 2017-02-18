@@ -129,6 +129,12 @@ void GraphicInv::update()
 	{
 		Slot& slot = m_slots[i];
 		slot.setItem(m_inv->getItem(i).get());
+		slot.unmark();
+
+		if(m_player->isEquipped(Equip::WEAPON, slot.item))
+		{
+			slot.mark();
+		}
 	}
 
 	if (InputHandler::Get().isAction() and
