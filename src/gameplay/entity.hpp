@@ -14,6 +14,7 @@ class Entity
 		virtual void update(float deltaTime);
 
 		void move(vec2f offset);
+		void destroy();
 
 		void setId(uint id);
 		void setCode(const std::string& code);
@@ -26,6 +27,7 @@ class Entity
 		vec2f              getPosition() const;
 		Level*             getLevel() const;
 		vec2i 			   getFakePos() const;
+		bool 			   isDestroyed();
 
 	protected:
 		uint        m_id;
@@ -35,6 +37,7 @@ class Entity
 		SpritePtr_t m_sprite = nullptr;
 		vec2f       m_pos;
 		BoxPtr_t    m_box;
+		bool 		m_destroy = false;
 };
 
 #endif

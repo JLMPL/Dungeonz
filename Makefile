@@ -420,6 +420,33 @@ src/gameplay/item.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item.cpp.s
 .PHONY : src/gameplay/item.cpp.s
 
+src/gameplay/item_bag.o: src/gameplay/item_bag.cpp.o
+
+.PHONY : src/gameplay/item_bag.o
+
+# target to build an object file
+src/gameplay/item_bag.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o
+.PHONY : src/gameplay/item_bag.cpp.o
+
+src/gameplay/item_bag.i: src/gameplay/item_bag.cpp.i
+
+.PHONY : src/gameplay/item_bag.i
+
+# target to preprocess a source file
+src/gameplay/item_bag.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.i
+.PHONY : src/gameplay/item_bag.cpp.i
+
+src/gameplay/item_bag.s: src/gameplay/item_bag.cpp.s
+
+.PHONY : src/gameplay/item_bag.s
+
+# target to generate assembly for a file
+src/gameplay/item_bag.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.s
+.PHONY : src/gameplay/item_bag.cpp.s
+
 src/gameplay/level.o: src/gameplay/level.cpp.o
 
 .PHONY : src/gameplay/level.o
@@ -1083,6 +1110,9 @@ help:
 	@echo "... src/gameplay/item.o"
 	@echo "... src/gameplay/item.i"
 	@echo "... src/gameplay/item.s"
+	@echo "... src/gameplay/item_bag.o"
+	@echo "... src/gameplay/item_bag.i"
+	@echo "... src/gameplay/item_bag.s"
 	@echo "... src/gameplay/level.o"
 	@echo "... src/gameplay/level.i"
 	@echo "... src/gameplay/level.s"

@@ -36,6 +36,14 @@ void Level::addBigParticle(const std::string& path, const vec2i& pos, float life
 
 void Level::update(float deltaTime)
 {
+	for(auto i = m_Entities.begin(); i != m_Entities.end();)
+	{
+		if((*i)->isDestroyed())
+			i = m_Entities.erase(i);
+		else
+			i++;
+	}
+
 	for(auto& i : m_Entities)
 		i->update(deltaTime);
 

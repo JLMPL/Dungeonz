@@ -9,9 +9,9 @@ class Chest : public Entity
 		Chest();
 
 		void update(float deltaTime);
-
 		Inventory& accessInv();
-	private:
+
+	protected:
 		Inventory m_inv;
 };
 

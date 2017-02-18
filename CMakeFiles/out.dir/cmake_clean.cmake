@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o"
   "CMakeFiles/out.dir/src/gameplay/living.cpp.o"
   "CMakeFiles/out.dir/src/gameplay/inventory.cpp.o"
+  "CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o"
   "CMakeFiles/out.dir/src/gameplay/lever.cpp.o"
   "CMakeFiles/out.dir/src/gameplay/item.cpp.o"
   "CMakeFiles/out.dir/src/gameplay/door.cpp.o"

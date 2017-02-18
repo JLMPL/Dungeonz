@@ -91,6 +91,7 @@ CMakeFiles/out.dir/src/ai/ai_player.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/inventory.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp
@@ -326,6 +327,48 @@ CMakeFiles/out.dir/src/gameplay/inventory.cpp.o
  /home/dominik/Desktop/Rekt/src/script/script_handler.hpp
 CMakeFiles/out.dir/src/gameplay/item.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/item.cpp
+CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o
+ /home/dominik/Desktop/Rekt/src/LuaBridge/LuaBridge.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/CFunctions.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/ClassInfo.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Constructor.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/FuncTraits.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Iterator.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/LuaException.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/LuaHelpers.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/LuaRef.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Namespace.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Stack.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeList.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/TypeTraits.h
+ /home/dominik/Desktop/Rekt/src/LuaBridge/detail/Userdata.h
+ /home/dominik/Desktop/Rekt/src/collision/box.hpp
+ /home/dominik/Desktop/Rekt/src/collision/box_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_handler.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_material.hpp
+ /home/dominik/Desktop/Rekt/src/collision/collision_type.hpp
+ /home/dominik/Desktop/Rekt/src/core/direction.hpp
+ /home/dominik/Desktop/Rekt/src/core/error.hpp
+ /home/dominik/Desktop/Rekt/src/core/rect.hpp
+ /home/dominik/Desktop/Rekt/src/core/vec2.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/chest.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/entity.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/inventory.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_bag.cpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
+ /home/dominik/Desktop/Rekt/src/render/render_attribute.hpp
+ /home/dominik/Desktop/Rekt/src/render/render_data.hpp
+ /home/dominik/Desktop/Rekt/src/render/renderer.hpp
+ /home/dominik/Desktop/Rekt/src/render/sprite.hpp
+ /home/dominik/Desktop/Rekt/src/render/sprite_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/resource/animation.hpp
+ /home/dominik/Desktop/Rekt/src/resource/animation_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/resource/texture_ptr.hpp
+ /home/dominik/Desktop/Rekt/src/script/script_handler.hpp
 CMakeFiles/out.dir/src/gameplay/level.cpp.o
  /home/dominik/Desktop/Rekt/src/LuaBridge/LuaBridge.h
  /home/dominik/Desktop/Rekt/src/LuaBridge/detail/CFunctions.h
@@ -497,6 +540,7 @@ CMakeFiles/out.dir/src/gameplay/map.cpp.o
  /home/dominik/Desktop/Rekt/src/gameplay/entity_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/inventory.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item.hpp
+ /home/dominik/Desktop/Rekt/src/gameplay/item_bag.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_ptr.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/item_type.hpp
  /home/dominik/Desktop/Rekt/src/gameplay/level.hpp

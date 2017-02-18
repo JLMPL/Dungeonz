@@ -5,6 +5,7 @@
 #include "../gameplay/chest.hpp"
 #include "../gameplay/door.hpp"
 #include "../gameplay/lever.hpp"
+#include "../gameplay/item_bag.hpp"
 #include "../gui/gui.hpp"
 #include "../input/input_handler.hpp"
 #include "../render/indication_handler.hpp"
@@ -59,7 +60,6 @@ void AIPlayer::update(float deltaTime)
 									{
 										int damage = m_target->getAttribute(Attribute::DAMAGE);
 										living->damage(damage);
-										printf("Push!\n");
 										living->push(m_target->getDirection(), 5, 0.1);
 
 										IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
@@ -246,6 +246,12 @@ void AIPlayer::pickingState(float deltaTime)
 					lever->activate();
 					break;
 				}
+				case EntityType::ITEM_BAG:
+				{
+					auto bag = static_cast<ItemBag*>(m_focus);
+					GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
+					break;
+				}
 			}
 		}
 		m_timer.restart();
@@ -303,6 +309,12 @@ void AIPlayer::focus()
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Lever", pos);
+				break;
+			}
+			case EntityType::ITEM_BAG:
+			{
+				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
+				GUI::Get().setFocusLabel("Bag", pos);
 				break;
 			}
 		}

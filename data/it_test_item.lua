@@ -1,3 +1,5 @@
+item_damage = 20;
+
 Item = {
 	code = "it_test_item",
 	name = "The Sample Item",
@@ -7,7 +9,7 @@ Item = {
 
 	equip = function(user)
 		print("equipped!")
-		user:setDamage(20)
+		user:setDamage(item_damage)
 	end,
 
 	takeoff = function(user)
