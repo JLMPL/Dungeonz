@@ -81,753 +81,777 @@ CMakeFiles/out.dir/src/main.cpp.o.provides: CMakeFiles/out.dir/src/main.cpp.o.re
 CMakeFiles/out.dir/src/main.cpp.o.provides.build: CMakeFiles/out.dir/src/main.cpp.o
 
 
-CMakeFiles/out.dir/src/core/game.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/core/game.cpp.o: src/core/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/out.dir/src/core/game.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/core/game.cpp.o -c /home/dominik/Desktop/Rekt/src/core/game.cpp
+CMakeFiles/out.dir/src/Core/Game.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Core/Game.cpp.o: src/Core/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/out.dir/src/Core/Game.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Core/Game.cpp.o -c /home/dominik/Desktop/Rekt/src/Core/Game.cpp
 
-CMakeFiles/out.dir/src/core/game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/core/game.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/core/game.cpp > CMakeFiles/out.dir/src/core/game.cpp.i
+CMakeFiles/out.dir/src/Core/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Core/Game.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Core/Game.cpp > CMakeFiles/out.dir/src/Core/Game.cpp.i
 
-CMakeFiles/out.dir/src/core/game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/core/game.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/core/game.cpp -o CMakeFiles/out.dir/src/core/game.cpp.s
+CMakeFiles/out.dir/src/Core/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Core/Game.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Core/Game.cpp -o CMakeFiles/out.dir/src/Core/Game.cpp.s
 
-CMakeFiles/out.dir/src/core/game.cpp.o.requires:
+CMakeFiles/out.dir/src/Core/Game.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/core/game.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Core/Game.cpp.o.requires
 
-CMakeFiles/out.dir/src/core/game.cpp.o.provides: CMakeFiles/out.dir/src/core/game.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/core/game.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/core/game.cpp.o.provides
+CMakeFiles/out.dir/src/Core/Game.cpp.o.provides: CMakeFiles/out.dir/src/Core/Game.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/Game.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Core/Game.cpp.o.provides
 
-CMakeFiles/out.dir/src/core/game.cpp.o.provides.build: CMakeFiles/out.dir/src/core/game.cpp.o
+CMakeFiles/out.dir/src/Core/Game.cpp.o.provides.build: CMakeFiles/out.dir/src/Core/Game.cpp.o
 
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/resource/font_cache.cpp.o: src/resource/font_cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/out.dir/src/resource/font_cache.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/resource/font_cache.cpp.o -c /home/dominik/Desktop/Rekt/src/resource/font_cache.cpp
+CMakeFiles/out.dir/src/Resource/Animation.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/Animation.cpp.o: src/Resource/Animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/out.dir/src/Resource/Animation.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/Animation.cpp.o -c /home/dominik/Desktop/Rekt/src/Resource/Animation.cpp
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/resource/font_cache.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/resource/font_cache.cpp > CMakeFiles/out.dir/src/resource/font_cache.cpp.i
+CMakeFiles/out.dir/src/Resource/Animation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/Animation.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Resource/Animation.cpp > CMakeFiles/out.dir/src/Resource/Animation.cpp.i
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/resource/font_cache.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/resource/font_cache.cpp -o CMakeFiles/out.dir/src/resource/font_cache.cpp.s
+CMakeFiles/out.dir/src/Resource/Animation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/Animation.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Resource/Animation.cpp -o CMakeFiles/out.dir/src/Resource/Animation.cpp.s
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.o.requires:
+CMakeFiles/out.dir/src/Resource/Animation.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/resource/font_cache.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Resource/Animation.cpp.o.requires
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.o.provides: CMakeFiles/out.dir/src/resource/font_cache.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/font_cache.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/resource/font_cache.cpp.o.provides
+CMakeFiles/out.dir/src/Resource/Animation.cpp.o.provides: CMakeFiles/out.dir/src/Resource/Animation.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/Animation.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/Animation.cpp.o.provides
 
-CMakeFiles/out.dir/src/resource/font_cache.cpp.o.provides.build: CMakeFiles/out.dir/src/resource/font_cache.cpp.o
+CMakeFiles/out.dir/src/Resource/Animation.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/Animation.cpp.o
 
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.o: src/resource/texture_cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/out.dir/src/resource/texture_cache.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/resource/texture_cache.cpp.o -c /home/dominik/Desktop/Rekt/src/resource/texture_cache.cpp
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.o: src/Resource/FontCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/out.dir/src/Resource/FontCache.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/FontCache.cpp.o -c /home/dominik/Desktop/Rekt/src/Resource/FontCache.cpp
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/resource/texture_cache.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/resource/texture_cache.cpp > CMakeFiles/out.dir/src/resource/texture_cache.cpp.i
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/FontCache.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Resource/FontCache.cpp > CMakeFiles/out.dir/src/Resource/FontCache.cpp.i
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/resource/texture_cache.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/resource/texture_cache.cpp -o CMakeFiles/out.dir/src/resource/texture_cache.cpp.s
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/FontCache.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Resource/FontCache.cpp -o CMakeFiles/out.dir/src/Resource/FontCache.cpp.s
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.requires:
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.requires
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.provides: CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.provides
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.provides
 
-CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.provides.build: CMakeFiles/out.dir/src/resource/texture_cache.cpp.o
+CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/FontCache.cpp.o
 
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.o: src/resource/animation_cache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.dir/src/resource/animation_cache.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/resource/animation_cache.cpp.o -c /home/dominik/Desktop/Rekt/src/resource/animation_cache.cpp
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: src/Resource/TextureCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o -c /home/dominik/Desktop/Rekt/src/Resource/TextureCache.cpp
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/resource/animation_cache.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/resource/animation_cache.cpp > CMakeFiles/out.dir/src/resource/animation_cache.cpp.i
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Resource/TextureCache.cpp > CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/resource/animation_cache.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/resource/animation_cache.cpp -o CMakeFiles/out.dir/src/resource/animation_cache.cpp.s
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Resource/TextureCache.cpp -o CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.requires:
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.provides: CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.provides
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides
 
-CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.provides.build: CMakeFiles/out.dir/src/resource/animation_cache.cpp.o
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
 
 
-CMakeFiles/out.dir/src/resource/animation.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/resource/animation.cpp.o: src/resource/animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.dir/src/resource/animation.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/resource/animation.cpp.o -c /home/dominik/Desktop/Rekt/src/resource/animation.cpp
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: src/Resource/AnimationCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o -c /home/dominik/Desktop/Rekt/src/Resource/AnimationCache.cpp
 
-CMakeFiles/out.dir/src/resource/animation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/resource/animation.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/resource/animation.cpp > CMakeFiles/out.dir/src/resource/animation.cpp.i
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Resource/AnimationCache.cpp > CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i
 
-CMakeFiles/out.dir/src/resource/animation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/resource/animation.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/resource/animation.cpp -o CMakeFiles/out.dir/src/resource/animation.cpp.s
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Resource/AnimationCache.cpp -o CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s
 
-CMakeFiles/out.dir/src/resource/animation.cpp.o.requires:
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/resource/animation.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
 
-CMakeFiles/out.dir/src/resource/animation.cpp.o.provides: CMakeFiles/out.dir/src/resource/animation.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/resource/animation.cpp.o.provides
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides
 
-CMakeFiles/out.dir/src/resource/animation.cpp.o.provides.build: CMakeFiles/out.dir/src/resource/animation.cpp.o
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
 
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/input/input_handler.cpp.o: src/input/input_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/out.dir/src/input/input_handler.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/input/input_handler.cpp.o -c /home/dominik/Desktop/Rekt/src/input/input_handler.cpp
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.o: src/Input/InputHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/out.dir/src/Input/InputHandler.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Input/InputHandler.cpp.o -c /home/dominik/Desktop/Rekt/src/Input/InputHandler.cpp
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/input/input_handler.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/input/input_handler.cpp > CMakeFiles/out.dir/src/input/input_handler.cpp.i
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Input/InputHandler.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Input/InputHandler.cpp > CMakeFiles/out.dir/src/Input/InputHandler.cpp.i
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/input/input_handler.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/input/input_handler.cpp -o CMakeFiles/out.dir/src/input/input_handler.cpp.s
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Input/InputHandler.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Input/InputHandler.cpp -o CMakeFiles/out.dir/src/Input/InputHandler.cpp.s
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.o.requires:
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/input/input_handler.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.requires
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.o.provides: CMakeFiles/out.dir/src/input/input_handler.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/input/input_handler.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/input/input_handler.cpp.o.provides
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.provides: CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.provides
 
-CMakeFiles/out.dir/src/input/input_handler.cpp.o.provides.build: CMakeFiles/out.dir/src/input/input_handler.cpp.o
+CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.provides.build: CMakeFiles/out.dir/src/Input/InputHandler.cpp.o
 
 
-CMakeFiles/out.dir/src/render/sprite.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/sprite.cpp.o: src/render/sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/out.dir/src/render/sprite.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/sprite.cpp.o -c /home/dominik/Desktop/Rekt/src/render/sprite.cpp
+CMakeFiles/out.dir/src/Render/Bar.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/Bar.cpp.o: src/Render/Bar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/out.dir/src/Render/Bar.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Bar.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/Bar.cpp
 
-CMakeFiles/out.dir/src/render/sprite.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/sprite.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/sprite.cpp > CMakeFiles/out.dir/src/render/sprite.cpp.i
+CMakeFiles/out.dir/src/Render/Bar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/Bar.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/Bar.cpp > CMakeFiles/out.dir/src/Render/Bar.cpp.i
 
-CMakeFiles/out.dir/src/render/sprite.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/sprite.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/sprite.cpp -o CMakeFiles/out.dir/src/render/sprite.cpp.s
+CMakeFiles/out.dir/src/Render/Bar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/Bar.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/Bar.cpp -o CMakeFiles/out.dir/src/Render/Bar.cpp.s
 
-CMakeFiles/out.dir/src/render/sprite.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/Bar.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/sprite.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/Bar.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/sprite.cpp.o.provides: CMakeFiles/out.dir/src/render/sprite.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/sprite.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/sprite.cpp.o.provides
+CMakeFiles/out.dir/src/Render/Bar.cpp.o.provides: CMakeFiles/out.dir/src/Render/Bar.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Bar.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/Bar.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/sprite.cpp.o.provides.build: CMakeFiles/out.dir/src/render/sprite.cpp.o
+CMakeFiles/out.dir/src/Render/Bar.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Bar.cpp.o
 
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/indication_handler.cpp.o: src/render/indication_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/out.dir/src/render/indication_handler.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/indication_handler.cpp.o -c /home/dominik/Desktop/Rekt/src/render/indication_handler.cpp
+CMakeFiles/out.dir/src/Render/Sprite.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/Sprite.cpp.o: src/Render/Sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/out.dir/src/Render/Sprite.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Sprite.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/Sprite.cpp
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/indication_handler.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/indication_handler.cpp > CMakeFiles/out.dir/src/render/indication_handler.cpp.i
+CMakeFiles/out.dir/src/Render/Sprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/Sprite.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/Sprite.cpp > CMakeFiles/out.dir/src/Render/Sprite.cpp.i
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/indication_handler.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/indication_handler.cpp -o CMakeFiles/out.dir/src/render/indication_handler.cpp.s
+CMakeFiles/out.dir/src/Render/Sprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/Sprite.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/Sprite.cpp -o CMakeFiles/out.dir/src/Render/Sprite.cpp.s
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/Sprite.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/indication_handler.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/Sprite.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.o.provides: CMakeFiles/out.dir/src/render/indication_handler.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/indication_handler.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/indication_handler.cpp.o.provides
+CMakeFiles/out.dir/src/Render/Sprite.cpp.o.provides: CMakeFiles/out.dir/src/Render/Sprite.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Sprite.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/Sprite.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/indication_handler.cpp.o.provides.build: CMakeFiles/out.dir/src/render/indication_handler.cpp.o
+CMakeFiles/out.dir/src/Render/Sprite.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Sprite.cpp.o
 
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/big_particle.cpp.o: src/render/big_particle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/out.dir/src/render/big_particle.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/big_particle.cpp.o -c /home/dominik/Desktop/Rekt/src/render/big_particle.cpp
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o: src/Render/AnimatedSprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/AnimatedSprite.cpp
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/big_particle.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/big_particle.cpp > CMakeFiles/out.dir/src/render/big_particle.cpp.i
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/AnimatedSprite.cpp > CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.i
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/big_particle.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/big_particle.cpp -o CMakeFiles/out.dir/src/render/big_particle.cpp.s
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/AnimatedSprite.cpp -o CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.s
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/big_particle.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.o.provides: CMakeFiles/out.dir/src/render/big_particle.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/big_particle.cpp.o.provides
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.provides: CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/big_particle.cpp.o.provides.build: CMakeFiles/out.dir/src/render/big_particle.cpp.o
+CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o
 
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.o: src/render/animated_sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/out.dir/src/render/animated_sprite.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/animated_sprite.cpp.o -c /home/dominik/Desktop/Rekt/src/render/animated_sprite.cpp
+CMakeFiles/out.dir/src/Render/Indication.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/Indication.cpp.o: src/Render/Indication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/out.dir/src/Render/Indication.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Indication.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/Indication.cpp
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/animated_sprite.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/animated_sprite.cpp > CMakeFiles/out.dir/src/render/animated_sprite.cpp.i
+CMakeFiles/out.dir/src/Render/Indication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/Indication.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/Indication.cpp > CMakeFiles/out.dir/src/Render/Indication.cpp.i
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/animated_sprite.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/animated_sprite.cpp -o CMakeFiles/out.dir/src/render/animated_sprite.cpp.s
+CMakeFiles/out.dir/src/Render/Indication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/Indication.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/Indication.cpp -o CMakeFiles/out.dir/src/Render/Indication.cpp.s
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/Indication.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/Indication.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.provides: CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.provides
+CMakeFiles/out.dir/src/Render/Indication.cpp.o.provides: CMakeFiles/out.dir/src/Render/Indication.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Indication.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/Indication.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.provides.build: CMakeFiles/out.dir/src/render/animated_sprite.cpp.o
+CMakeFiles/out.dir/src/Render/Indication.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Indication.cpp.o
 
 
-CMakeFiles/out.dir/src/render/bar.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/bar.cpp.o: src/render/bar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/out.dir/src/render/bar.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/bar.cpp.o -c /home/dominik/Desktop/Rekt/src/render/bar.cpp
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o: src/Render/IndicationHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/IndicationHandler.cpp
 
-CMakeFiles/out.dir/src/render/bar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/bar.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/bar.cpp > CMakeFiles/out.dir/src/render/bar.cpp.i
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/IndicationHandler.cpp > CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.i
 
-CMakeFiles/out.dir/src/render/bar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/bar.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/bar.cpp -o CMakeFiles/out.dir/src/render/bar.cpp.s
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/IndicationHandler.cpp -o CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.s
 
-CMakeFiles/out.dir/src/render/bar.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/bar.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/bar.cpp.o.provides: CMakeFiles/out.dir/src/render/bar.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/bar.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/bar.cpp.o.provides
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.provides: CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/bar.cpp.o.provides.build: CMakeFiles/out.dir/src/render/bar.cpp.o
+CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o
 
 
-CMakeFiles/out.dir/src/render/renderer.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/render/renderer.cpp.o: src/render/renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/out.dir/src/render/renderer.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/render/renderer.cpp.o -c /home/dominik/Desktop/Rekt/src/render/renderer.cpp
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.o: src/Render/BigParticle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/out.dir/src/Render/BigParticle.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/BigParticle.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/BigParticle.cpp
 
-CMakeFiles/out.dir/src/render/renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/render/renderer.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/render/renderer.cpp > CMakeFiles/out.dir/src/render/renderer.cpp.i
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/BigParticle.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/BigParticle.cpp > CMakeFiles/out.dir/src/Render/BigParticle.cpp.i
 
-CMakeFiles/out.dir/src/render/renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/render/renderer.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/render/renderer.cpp -o CMakeFiles/out.dir/src/render/renderer.cpp.s
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/BigParticle.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/BigParticle.cpp -o CMakeFiles/out.dir/src/Render/BigParticle.cpp.s
 
-CMakeFiles/out.dir/src/render/renderer.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/render/renderer.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.requires
 
-CMakeFiles/out.dir/src/render/renderer.cpp.o.provides: CMakeFiles/out.dir/src/render/renderer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/renderer.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/render/renderer.cpp.o.provides
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.provides: CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.provides
 
-CMakeFiles/out.dir/src/render/renderer.cpp.o.provides.build: CMakeFiles/out.dir/src/render/renderer.cpp.o
+CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/BigParticle.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o: src/gameplay/spike_trap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.cpp
+CMakeFiles/out.dir/src/Render/Renderer.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Render/Renderer.cpp.o: src/Render/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.dir/src/Render/Renderer.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Renderer.cpp.o -c /home/dominik/Desktop/Rekt/src/Render/Renderer.cpp
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.cpp > CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.i
+CMakeFiles/out.dir/src/Render/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/Renderer.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Render/Renderer.cpp > CMakeFiles/out.dir/src/Render/Renderer.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/spike_trap.cpp -o CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.s
+CMakeFiles/out.dir/src/Render/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/Renderer.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Render/Renderer.cpp -o CMakeFiles/out.dir/src/Render/Renderer.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.requires:
+CMakeFiles/out.dir/src/Render/Renderer.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Render/Renderer.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.provides
+CMakeFiles/out.dir/src/Render/Renderer.cpp.o.provides: CMakeFiles/out.dir/src/Render/Renderer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Render/Renderer.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o
+CMakeFiles/out.dir/src/Render/Renderer.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Renderer.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/living.cpp.o: src/gameplay/living.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/out.dir/src/gameplay/living.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/living.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/living.cpp
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o: src/Gameplay/SpikeTrap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/SpikeTrap.cpp
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/living.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/living.cpp > CMakeFiles/out.dir/src/gameplay/living.cpp.i
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/SpikeTrap.cpp > CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/living.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/living.cpp -o CMakeFiles/out.dir/src/gameplay/living.cpp.s
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/SpikeTrap.cpp -o CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/living.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/living.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/living.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/living.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/living.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/living.cpp.o
+CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.o: src/gameplay/inventory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/out.dir/src/gameplay/inventory.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/inventory.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/inventory.cpp
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o: src/Gameplay/ItemBag.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.cpp
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/inventory.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/inventory.cpp > CMakeFiles/out.dir/src/gameplay/inventory.cpp.i
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.cpp > CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/inventory.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/inventory.cpp -o CMakeFiles/out.dir/src/gameplay/inventory.cpp.s
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.cpp -o CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/inventory.cpp.o
+CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o: src/gameplay/item_bag.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/item_bag.cpp
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o: src/Gameplay/Inventory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Inventory.cpp
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/item_bag.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/item_bag.cpp > CMakeFiles/out.dir/src/gameplay/item_bag.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Inventory.cpp > CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/item_bag.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/item_bag.cpp -o CMakeFiles/out.dir/src/gameplay/item_bag.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Inventory.cpp -o CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/lever.cpp.o: src/gameplay/lever.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/out.dir/src/gameplay/lever.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/lever.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/lever.cpp
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o: src/Gameplay/Lever.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Lever.cpp
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/lever.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/lever.cpp > CMakeFiles/out.dir/src/gameplay/lever.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Lever.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Lever.cpp > CMakeFiles/out.dir/src/Gameplay/Lever.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/lever.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/lever.cpp -o CMakeFiles/out.dir/src/gameplay/lever.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Lever.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Lever.cpp -o CMakeFiles/out.dir/src/Gameplay/Lever.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/lever.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/lever.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/lever.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/lever.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/lever.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/lever.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/item.cpp.o: src/gameplay/item.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/out.dir/src/gameplay/item.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/item.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/item.cpp
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Gameplay/Level.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Level.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Level.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Level.cpp
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/item.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/item.cpp > CMakeFiles/out.dir/src/gameplay/item.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Level.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Level.cpp > CMakeFiles/out.dir/src/Gameplay/Level.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/item.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/item.cpp -o CMakeFiles/out.dir/src/gameplay/item.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Level.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Level.cpp -o CMakeFiles/out.dir/src/Gameplay/Level.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/item.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/item.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/item.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/item.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/item.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/door.cpp.o: src/gameplay/door.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/out.dir/src/gameplay/door.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/door.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/door.cpp
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o: src/Gameplay/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Entity.cpp
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/door.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/door.cpp > CMakeFiles/out.dir/src/gameplay/door.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Entity.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Entity.cpp > CMakeFiles/out.dir/src/Gameplay/Entity.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/door.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/door.cpp -o CMakeFiles/out.dir/src/gameplay/door.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Entity.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Entity.cpp -o CMakeFiles/out.dir/src/Gameplay/Entity.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/door.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/door.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/door.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/door.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/door.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/door.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/level.cpp.o: src/gameplay/level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/out.dir/src/gameplay/level.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/level.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/level.cpp
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.o: src/Gameplay/Door.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Door.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Door.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Door.cpp
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/level.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/level.cpp > CMakeFiles/out.dir/src/gameplay/level.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Door.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Door.cpp > CMakeFiles/out.dir/src/Gameplay/Door.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/level.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/level.cpp -o CMakeFiles/out.dir/src/gameplay/level.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Door.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Door.cpp -o CMakeFiles/out.dir/src/Gameplay/Door.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/level.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/level.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/level.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/level.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/level.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/level.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Door.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/entity.cpp.o: src/gameplay/entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/out.dir/src/gameplay/entity.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/entity.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/entity.cpp
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.o: src/Gameplay/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Map.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Map.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Map.cpp
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/entity.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/entity.cpp > CMakeFiles/out.dir/src/gameplay/entity.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Map.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Map.cpp > CMakeFiles/out.dir/src/Gameplay/Map.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/entity.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/entity.cpp -o CMakeFiles/out.dir/src/gameplay/entity.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Map.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Map.cpp -o CMakeFiles/out.dir/src/Gameplay/Map.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/entity.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/entity.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/entity.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/entity.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/entity.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/entity.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Map.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/chest.cpp.o: src/gameplay/chest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/out.dir/src/gameplay/chest.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/chest.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/chest.cpp
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.o: src/Gameplay/Living.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Living.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Living.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Living.cpp
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/chest.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/chest.cpp > CMakeFiles/out.dir/src/gameplay/chest.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Living.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Living.cpp > CMakeFiles/out.dir/src/Gameplay/Living.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/chest.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/chest.cpp -o CMakeFiles/out.dir/src/gameplay/chest.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Living.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Living.cpp -o CMakeFiles/out.dir/src/Gameplay/Living.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/chest.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/chest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/chest.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/chest.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/chest.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/chest.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Living.cpp.o
 
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gameplay/map.cpp.o: src/gameplay/map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/out.dir/src/gameplay/map.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gameplay/map.cpp.o -c /home/dominik/Desktop/Rekt/src/gameplay/map.cpp
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o: src/Gameplay/Chest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Chest.cpp
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gameplay/map.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gameplay/map.cpp > CMakeFiles/out.dir/src/gameplay/map.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Chest.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Chest.cpp > CMakeFiles/out.dir/src/Gameplay/Chest.cpp.i
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gameplay/map.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gameplay/map.cpp -o CMakeFiles/out.dir/src/gameplay/map.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Chest.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Chest.cpp -o CMakeFiles/out.dir/src/Gameplay/Chest.cpp.s
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gameplay/map.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.requires
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.o.provides: CMakeFiles/out.dir/src/gameplay/map.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/map.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gameplay/map.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.provides
 
-CMakeFiles/out.dir/src/gameplay/map.cpp.o.provides.build: CMakeFiles/out.dir/src/gameplay/map.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o
 
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.o: src/ai/ai_mob.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/out.dir/src/ai/ai_mob.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/ai/ai_mob.cpp.o -c /home/dominik/Desktop/Rekt/src/ai/ai_mob.cpp
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.o: src/Gameplay/Item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Item.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Item.cpp.o -c /home/dominik/Desktop/Rekt/src/Gameplay/Item.cpp
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/ai/ai_mob.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/ai/ai_mob.cpp > CMakeFiles/out.dir/src/ai/ai_mob.cpp.i
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Item.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gameplay/Item.cpp > CMakeFiles/out.dir/src/Gameplay/Item.cpp.i
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/ai/ai_mob.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/ai/ai_mob.cpp -o CMakeFiles/out.dir/src/ai/ai_mob.cpp.s
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Item.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gameplay/Item.cpp -o CMakeFiles/out.dir/src/Gameplay/Item.cpp.s
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.requires:
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.requires
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.provides: CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.provides
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.provides
 
-CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.provides.build: CMakeFiles/out.dir/src/ai/ai_mob.cpp.o
+CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Item.cpp.o
 
 
-CMakeFiles/out.dir/src/ai/ai.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/ai/ai.cpp.o: src/ai/ai.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/out.dir/src/ai/ai.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/ai/ai.cpp.o -c /home/dominik/Desktop/Rekt/src/ai/ai.cpp
+CMakeFiles/out.dir/src/Ai/Ai.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Ai/Ai.cpp.o: src/Ai/Ai.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/out.dir/src/Ai/Ai.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Ai/Ai.cpp.o -c /home/dominik/Desktop/Rekt/src/Ai/Ai.cpp
 
-CMakeFiles/out.dir/src/ai/ai.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/ai/ai.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/ai/ai.cpp > CMakeFiles/out.dir/src/ai/ai.cpp.i
+CMakeFiles/out.dir/src/Ai/Ai.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Ai/Ai.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Ai/Ai.cpp > CMakeFiles/out.dir/src/Ai/Ai.cpp.i
 
-CMakeFiles/out.dir/src/ai/ai.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/ai/ai.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/ai/ai.cpp -o CMakeFiles/out.dir/src/ai/ai.cpp.s
+CMakeFiles/out.dir/src/Ai/Ai.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Ai/Ai.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Ai/Ai.cpp -o CMakeFiles/out.dir/src/Ai/Ai.cpp.s
 
-CMakeFiles/out.dir/src/ai/ai.cpp.o.requires:
+CMakeFiles/out.dir/src/Ai/Ai.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/ai/ai.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Ai/Ai.cpp.o.requires
 
-CMakeFiles/out.dir/src/ai/ai.cpp.o.provides: CMakeFiles/out.dir/src/ai/ai.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/ai/ai.cpp.o.provides
+CMakeFiles/out.dir/src/Ai/Ai.cpp.o.provides: CMakeFiles/out.dir/src/Ai/Ai.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/Ai.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Ai/Ai.cpp.o.provides
 
-CMakeFiles/out.dir/src/ai/ai.cpp.o.provides.build: CMakeFiles/out.dir/src/ai/ai.cpp.o
+CMakeFiles/out.dir/src/Ai/Ai.cpp.o.provides.build: CMakeFiles/out.dir/src/Ai/Ai.cpp.o
 
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/ai/ai_player.cpp.o: src/ai/ai_player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/out.dir/src/ai/ai_player.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/ai/ai_player.cpp.o -c /home/dominik/Desktop/Rekt/src/ai/ai_player.cpp
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.o: src/Ai/AiMob.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/out.dir/src/Ai/AiMob.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Ai/AiMob.cpp.o -c /home/dominik/Desktop/Rekt/src/Ai/AiMob.cpp
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/ai/ai_player.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/ai/ai_player.cpp > CMakeFiles/out.dir/src/ai/ai_player.cpp.i
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Ai/AiMob.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Ai/AiMob.cpp > CMakeFiles/out.dir/src/Ai/AiMob.cpp.i
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/ai/ai_player.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/ai/ai_player.cpp -o CMakeFiles/out.dir/src/ai/ai_player.cpp.s
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Ai/AiMob.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Ai/AiMob.cpp -o CMakeFiles/out.dir/src/Ai/AiMob.cpp.s
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.o.requires:
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/ai/ai_player.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.requires
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.o.provides: CMakeFiles/out.dir/src/ai/ai_player.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_player.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/ai/ai_player.cpp.o.provides
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.provides: CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.provides
 
-CMakeFiles/out.dir/src/ai/ai_player.cpp.o.provides.build: CMakeFiles/out.dir/src/ai/ai_player.cpp.o
+CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.provides.build: CMakeFiles/out.dir/src/Ai/AiMob.cpp.o
 
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.o: src/collision/collision_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/out.dir/src/collision/collision_handler.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/collision/collision_handler.cpp.o -c /home/dominik/Desktop/Rekt/src/collision/collision_handler.cpp
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o: src/Ai/AiPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o -c /home/dominik/Desktop/Rekt/src/Ai/AiPlayer.cpp
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/collision/collision_handler.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/collision/collision_handler.cpp > CMakeFiles/out.dir/src/collision/collision_handler.cpp.i
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Ai/AiPlayer.cpp > CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.i
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/collision/collision_handler.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/collision/collision_handler.cpp -o CMakeFiles/out.dir/src/collision/collision_handler.cpp.s
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Ai/AiPlayer.cpp -o CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.s
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.requires:
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.requires
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.provides: CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.provides
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.provides: CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.provides
 
-CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.provides.build: CMakeFiles/out.dir/src/collision/collision_handler.cpp.o
+CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.provides.build: CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o
 
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o: src/gui/graphic_inv.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o -c /home/dominik/Desktop/Rekt/src/gui/graphic_inv.cpp
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o: src/Collision/CollisionHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o -c /home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.cpp
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gui/graphic_inv.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gui/graphic_inv.cpp > CMakeFiles/out.dir/src/gui/graphic_inv.cpp.i
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.cpp > CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.i
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gui/graphic_inv.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gui/graphic_inv.cpp -o CMakeFiles/out.dir/src/gui/graphic_inv.cpp.s
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.cpp -o CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.s
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.requires:
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.requires
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.provides: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.provides
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.provides: CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.provides
 
-CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.provides.build: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
+CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.provides.build: CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o
 
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o: src/gui/graphic_loot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o -c /home/dominik/Desktop/Rekt/src/gui/graphic_loot.cpp
+CMakeFiles/out.dir/src/Gui/Gui.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gui/Gui.cpp.o: src/Gui/Gui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/Gui/Gui.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gui/Gui.cpp.o -c /home/dominik/Desktop/Rekt/src/Gui/Gui.cpp
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gui/graphic_loot.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gui/graphic_loot.cpp > CMakeFiles/out.dir/src/gui/graphic_loot.cpp.i
+CMakeFiles/out.dir/src/Gui/Gui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gui/Gui.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gui/Gui.cpp > CMakeFiles/out.dir/src/Gui/Gui.cpp.i
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gui/graphic_loot.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gui/graphic_loot.cpp -o CMakeFiles/out.dir/src/gui/graphic_loot.cpp.s
+CMakeFiles/out.dir/src/Gui/Gui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gui/Gui.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gui/Gui.cpp -o CMakeFiles/out.dir/src/Gui/Gui.cpp.s
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.requires:
+CMakeFiles/out.dir/src/Gui/Gui.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gui/Gui.cpp.o.requires
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.provides: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.provides
+CMakeFiles/out.dir/src/Gui/Gui.cpp.o.provides: CMakeFiles/out.dir/src/Gui/Gui.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Gui.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gui/Gui.cpp.o.provides
 
-CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.provides.build: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o
+CMakeFiles/out.dir/src/Gui/Gui.cpp.o.provides.build: CMakeFiles/out.dir/src/Gui/Gui.cpp.o
 
 
-CMakeFiles/out.dir/src/gui/slot.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gui/slot.cpp.o: src/gui/slot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/gui/slot.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gui/slot.cpp.o -c /home/dominik/Desktop/Rekt/src/gui/slot.cpp
+CMakeFiles/out.dir/src/Gui/Slot.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gui/Slot.cpp.o: src/Gui/Slot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/Gui/Slot.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gui/Slot.cpp.o -c /home/dominik/Desktop/Rekt/src/Gui/Slot.cpp
 
-CMakeFiles/out.dir/src/gui/slot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gui/slot.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gui/slot.cpp > CMakeFiles/out.dir/src/gui/slot.cpp.i
+CMakeFiles/out.dir/src/Gui/Slot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gui/Slot.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gui/Slot.cpp > CMakeFiles/out.dir/src/Gui/Slot.cpp.i
 
-CMakeFiles/out.dir/src/gui/slot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gui/slot.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gui/slot.cpp -o CMakeFiles/out.dir/src/gui/slot.cpp.s
+CMakeFiles/out.dir/src/Gui/Slot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gui/Slot.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gui/Slot.cpp -o CMakeFiles/out.dir/src/Gui/Slot.cpp.s
 
-CMakeFiles/out.dir/src/gui/slot.cpp.o.requires:
+CMakeFiles/out.dir/src/Gui/Slot.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gui/slot.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gui/Slot.cpp.o.requires
 
-CMakeFiles/out.dir/src/gui/slot.cpp.o.provides: CMakeFiles/out.dir/src/gui/slot.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/slot.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gui/slot.cpp.o.provides
+CMakeFiles/out.dir/src/Gui/Slot.cpp.o.provides: CMakeFiles/out.dir/src/Gui/Slot.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Slot.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gui/Slot.cpp.o.provides
 
-CMakeFiles/out.dir/src/gui/slot.cpp.o.provides.build: CMakeFiles/out.dir/src/gui/slot.cpp.o
+CMakeFiles/out.dir/src/Gui/Slot.cpp.o.provides.build: CMakeFiles/out.dir/src/Gui/Slot.cpp.o
 
 
-CMakeFiles/out.dir/src/gui/gui.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/gui/gui.cpp.o: src/gui/gui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/gui/gui.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/gui/gui.cpp.o -c /home/dominik/Desktop/Rekt/src/gui/gui.cpp
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o: src/Gui/GraphicLoot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o -c /home/dominik/Desktop/Rekt/src/Gui/GraphicLoot.cpp
 
-CMakeFiles/out.dir/src/gui/gui.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/gui/gui.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/gui/gui.cpp > CMakeFiles/out.dir/src/gui/gui.cpp.i
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gui/GraphicLoot.cpp > CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.i
 
-CMakeFiles/out.dir/src/gui/gui.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/gui/gui.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/gui/gui.cpp -o CMakeFiles/out.dir/src/gui/gui.cpp.s
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gui/GraphicLoot.cpp -o CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.s
 
-CMakeFiles/out.dir/src/gui/gui.cpp.o.requires:
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/gui/gui.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.requires
 
-CMakeFiles/out.dir/src/gui/gui.cpp.o.provides: CMakeFiles/out.dir/src/gui/gui.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/gui.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/gui/gui.cpp.o.provides
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.provides: CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.provides
 
-CMakeFiles/out.dir/src/gui/gui.cpp.o.provides.build: CMakeFiles/out.dir/src/gui/gui.cpp.o
+CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.provides.build: CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o
+
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o: src/Gui/GraphicInv.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o -c /home/dominik/Desktop/Rekt/src/Gui/GraphicInv.cpp
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Gui/GraphicInv.cpp > CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.i
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Gui/GraphicInv.cpp -o CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.s
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.requires
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.provides: CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.provides
+
+CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.provides.build: CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o
 
 
 CMakeFiles/out.dir/src/base64/base64.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/base64/base64.cpp.o: src/base64/base64.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/base64/base64.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/base64/base64.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/base64/base64.cpp.o -c /home/dominik/Desktop/Rekt/src/base64/base64.cpp
 
 CMakeFiles/out.dir/src/base64/base64.cpp.i: cmake_force
@@ -849,133 +873,135 @@ CMakeFiles/out.dir/src/base64/base64.cpp.o.provides: CMakeFiles/out.dir/src/base
 CMakeFiles/out.dir/src/base64/base64.cpp.o.provides.build: CMakeFiles/out.dir/src/base64/base64.cpp.o
 
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/script/lua_interface.cpp.o: src/script/lua_interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/script/lua_interface.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/script/lua_interface.cpp.o -c /home/dominik/Desktop/Rekt/src/script/lua_interface.cpp
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o: src/Script/ScriptHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o -c /home/dominik/Desktop/Rekt/src/Script/ScriptHandler.cpp
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/script/lua_interface.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/script/lua_interface.cpp > CMakeFiles/out.dir/src/script/lua_interface.cpp.i
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Script/ScriptHandler.cpp > CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.i
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/script/lua_interface.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/script/lua_interface.cpp -o CMakeFiles/out.dir/src/script/lua_interface.cpp.s
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Script/ScriptHandler.cpp -o CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.s
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.o.requires:
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/script/lua_interface.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.requires
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.o.provides: CMakeFiles/out.dir/src/script/lua_interface.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/lua_interface.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/script/lua_interface.cpp.o.provides
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.provides: CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.provides
 
-CMakeFiles/out.dir/src/script/lua_interface.cpp.o.provides.build: CMakeFiles/out.dir/src/script/lua_interface.cpp.o
+CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.provides.build: CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o
 
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/script/script_handler.cpp.o: src/script/script_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/script/script_handler.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/script/script_handler.cpp.o -c /home/dominik/Desktop/Rekt/src/script/script_handler.cpp
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o: src/Script/LuaInterface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o -c /home/dominik/Desktop/Rekt/src/Script/LuaInterface.cpp
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/script/script_handler.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/script/script_handler.cpp > CMakeFiles/out.dir/src/script/script_handler.cpp.i
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Script/LuaInterface.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/Rekt/src/Script/LuaInterface.cpp > CMakeFiles/out.dir/src/Script/LuaInterface.cpp.i
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/script/script_handler.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/script/script_handler.cpp -o CMakeFiles/out.dir/src/script/script_handler.cpp.s
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Script/LuaInterface.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/Rekt/src/Script/LuaInterface.cpp -o CMakeFiles/out.dir/src/Script/LuaInterface.cpp.s
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.o.requires:
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/script/script_handler.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.requires
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.o.provides: CMakeFiles/out.dir/src/script/script_handler.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/script_handler.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/script/script_handler.cpp.o.provides
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.provides: CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.provides
 
-CMakeFiles/out.dir/src/script/script_handler.cpp.o.provides.build: CMakeFiles/out.dir/src/script/script_handler.cpp.o
+CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.provides.build: CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o
 
 
 # Object files for target out
 out_OBJECTS = \
 "CMakeFiles/out.dir/src/main.cpp.o" \
-"CMakeFiles/out.dir/src/core/game.cpp.o" \
-"CMakeFiles/out.dir/src/resource/font_cache.cpp.o" \
-"CMakeFiles/out.dir/src/resource/texture_cache.cpp.o" \
-"CMakeFiles/out.dir/src/resource/animation_cache.cpp.o" \
-"CMakeFiles/out.dir/src/resource/animation.cpp.o" \
-"CMakeFiles/out.dir/src/input/input_handler.cpp.o" \
-"CMakeFiles/out.dir/src/render/sprite.cpp.o" \
-"CMakeFiles/out.dir/src/render/indication_handler.cpp.o" \
-"CMakeFiles/out.dir/src/render/big_particle.cpp.o" \
-"CMakeFiles/out.dir/src/render/animated_sprite.cpp.o" \
-"CMakeFiles/out.dir/src/render/bar.cpp.o" \
-"CMakeFiles/out.dir/src/render/renderer.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/living.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/inventory.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/lever.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/item.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/door.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/level.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/entity.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/chest.cpp.o" \
-"CMakeFiles/out.dir/src/gameplay/map.cpp.o" \
-"CMakeFiles/out.dir/src/ai/ai_mob.cpp.o" \
-"CMakeFiles/out.dir/src/ai/ai.cpp.o" \
-"CMakeFiles/out.dir/src/ai/ai_player.cpp.o" \
-"CMakeFiles/out.dir/src/collision/collision_handler.cpp.o" \
-"CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o" \
-"CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o" \
-"CMakeFiles/out.dir/src/gui/slot.cpp.o" \
-"CMakeFiles/out.dir/src/gui/gui.cpp.o" \
+"CMakeFiles/out.dir/src/Core/Game.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/Animation.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/FontCache.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o" \
+"CMakeFiles/out.dir/src/Input/InputHandler.cpp.o" \
+"CMakeFiles/out.dir/src/Render/Bar.cpp.o" \
+"CMakeFiles/out.dir/src/Render/Sprite.cpp.o" \
+"CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o" \
+"CMakeFiles/out.dir/src/Render/Indication.cpp.o" \
+"CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o" \
+"CMakeFiles/out.dir/src/Render/BigParticle.cpp.o" \
+"CMakeFiles/out.dir/src/Render/Renderer.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Level.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Door.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Map.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Living.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o" \
+"CMakeFiles/out.dir/src/Gameplay/Item.cpp.o" \
+"CMakeFiles/out.dir/src/Ai/Ai.cpp.o" \
+"CMakeFiles/out.dir/src/Ai/AiMob.cpp.o" \
+"CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o" \
+"CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o" \
+"CMakeFiles/out.dir/src/Gui/Gui.cpp.o" \
+"CMakeFiles/out.dir/src/Gui/Slot.cpp.o" \
+"CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o" \
+"CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o" \
 "CMakeFiles/out.dir/src/base64/base64.cpp.o" \
-"CMakeFiles/out.dir/src/script/lua_interface.cpp.o" \
-"CMakeFiles/out.dir/src/script/script_handler.cpp.o"
+"CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o" \
+"CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o"
 
 # External object files for target out
 out_EXTERNAL_OBJECTS =
 
 out: CMakeFiles/out.dir/src/main.cpp.o
-out: CMakeFiles/out.dir/src/core/game.cpp.o
-out: CMakeFiles/out.dir/src/resource/font_cache.cpp.o
-out: CMakeFiles/out.dir/src/resource/texture_cache.cpp.o
-out: CMakeFiles/out.dir/src/resource/animation_cache.cpp.o
-out: CMakeFiles/out.dir/src/resource/animation.cpp.o
-out: CMakeFiles/out.dir/src/input/input_handler.cpp.o
-out: CMakeFiles/out.dir/src/render/sprite.cpp.o
-out: CMakeFiles/out.dir/src/render/indication_handler.cpp.o
-out: CMakeFiles/out.dir/src/render/big_particle.cpp.o
-out: CMakeFiles/out.dir/src/render/animated_sprite.cpp.o
-out: CMakeFiles/out.dir/src/render/bar.cpp.o
-out: CMakeFiles/out.dir/src/render/renderer.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/living.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/inventory.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/lever.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/item.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/door.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/level.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/entity.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/chest.cpp.o
-out: CMakeFiles/out.dir/src/gameplay/map.cpp.o
-out: CMakeFiles/out.dir/src/ai/ai_mob.cpp.o
-out: CMakeFiles/out.dir/src/ai/ai.cpp.o
-out: CMakeFiles/out.dir/src/ai/ai_player.cpp.o
-out: CMakeFiles/out.dir/src/collision/collision_handler.cpp.o
-out: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
-out: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o
-out: CMakeFiles/out.dir/src/gui/slot.cpp.o
-out: CMakeFiles/out.dir/src/gui/gui.cpp.o
+out: CMakeFiles/out.dir/src/Core/Game.cpp.o
+out: CMakeFiles/out.dir/src/Resource/Animation.cpp.o
+out: CMakeFiles/out.dir/src/Resource/FontCache.cpp.o
+out: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+out: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+out: CMakeFiles/out.dir/src/Input/InputHandler.cpp.o
+out: CMakeFiles/out.dir/src/Render/Bar.cpp.o
+out: CMakeFiles/out.dir/src/Render/Sprite.cpp.o
+out: CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o
+out: CMakeFiles/out.dir/src/Render/Indication.cpp.o
+out: CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o
+out: CMakeFiles/out.dir/src/Render/BigParticle.cpp.o
+out: CMakeFiles/out.dir/src/Render/Renderer.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Door.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Map.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Living.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o
+out: CMakeFiles/out.dir/src/Gameplay/Item.cpp.o
+out: CMakeFiles/out.dir/src/Ai/Ai.cpp.o
+out: CMakeFiles/out.dir/src/Ai/AiMob.cpp.o
+out: CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o
+out: CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o
+out: CMakeFiles/out.dir/src/Gui/Gui.cpp.o
+out: CMakeFiles/out.dir/src/Gui/Slot.cpp.o
+out: CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o
+out: CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o
 out: CMakeFiles/out.dir/src/base64/base64.cpp.o
-out: CMakeFiles/out.dir/src/script/lua_interface.cpp.o
-out: CMakeFiles/out.dir/src/script/script_handler.cpp.o
+out: CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o
+out: CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o
 out: CMakeFiles/out.dir/build.make
 out: CMakeFiles/out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dominik/Desktop/Rekt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking CXX executable out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -984,40 +1010,41 @@ CMakeFiles/out.dir/build: out
 .PHONY : CMakeFiles/out.dir/build
 
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/main.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/core/game.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/resource/font_cache.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/resource/texture_cache.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/resource/animation_cache.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/resource/animation.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/input/input_handler.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/sprite.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/indication_handler.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/big_particle.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/animated_sprite.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/bar.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/render/renderer.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/living.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/inventory.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/lever.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/item.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/door.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/level.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/entity.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/chest.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gameplay/map.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/ai/ai_mob.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/ai/ai.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/ai/ai_player.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/collision/collision_handler.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/slot.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/gui/gui.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Game.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/Animation.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/FontCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Input/InputHandler.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Bar.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Sprite.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Indication.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/BigParticle.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Renderer.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Door.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Map.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Living.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Item.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Ai/Ai.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Ai/AiMob.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gui/Gui.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gui/Slot.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/base64/base64.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/script/lua_interface.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/script/script_handler.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o.requires
 
 .PHONY : CMakeFiles/out.dir/requires
 

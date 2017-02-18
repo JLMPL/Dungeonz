@@ -123,86 +123,923 @@ out/fast:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/build
 .PHONY : out/fast
 
-src/ai/ai.o: src/ai/ai.cpp.o
+src/Ai/Ai.o: src/Ai/Ai.cpp.o
 
-.PHONY : src/ai/ai.o
-
-# target to build an object file
-src/ai/ai.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai.cpp.o
-.PHONY : src/ai/ai.cpp.o
-
-src/ai/ai.i: src/ai/ai.cpp.i
-
-.PHONY : src/ai/ai.i
-
-# target to preprocess a source file
-src/ai/ai.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai.cpp.i
-.PHONY : src/ai/ai.cpp.i
-
-src/ai/ai.s: src/ai/ai.cpp.s
-
-.PHONY : src/ai/ai.s
-
-# target to generate assembly for a file
-src/ai/ai.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai.cpp.s
-.PHONY : src/ai/ai.cpp.s
-
-src/ai/ai_mob.o: src/ai/ai_mob.cpp.o
-
-.PHONY : src/ai/ai_mob.o
+.PHONY : src/Ai/Ai.o
 
 # target to build an object file
-src/ai/ai_mob.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_mob.cpp.o
-.PHONY : src/ai/ai_mob.cpp.o
+src/Ai/Ai.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/Ai.cpp.o
+.PHONY : src/Ai/Ai.cpp.o
 
-src/ai/ai_mob.i: src/ai/ai_mob.cpp.i
+src/Ai/Ai.i: src/Ai/Ai.cpp.i
 
-.PHONY : src/ai/ai_mob.i
+.PHONY : src/Ai/Ai.i
 
 # target to preprocess a source file
-src/ai/ai_mob.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_mob.cpp.i
-.PHONY : src/ai/ai_mob.cpp.i
+src/Ai/Ai.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/Ai.cpp.i
+.PHONY : src/Ai/Ai.cpp.i
 
-src/ai/ai_mob.s: src/ai/ai_mob.cpp.s
+src/Ai/Ai.s: src/Ai/Ai.cpp.s
 
-.PHONY : src/ai/ai_mob.s
+.PHONY : src/Ai/Ai.s
 
 # target to generate assembly for a file
-src/ai/ai_mob.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_mob.cpp.s
-.PHONY : src/ai/ai_mob.cpp.s
+src/Ai/Ai.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/Ai.cpp.s
+.PHONY : src/Ai/Ai.cpp.s
 
-src/ai/ai_player.o: src/ai/ai_player.cpp.o
+src/Ai/AiMob.o: src/Ai/AiMob.cpp.o
 
-.PHONY : src/ai/ai_player.o
+.PHONY : src/Ai/AiMob.o
 
 # target to build an object file
-src/ai/ai_player.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_player.cpp.o
-.PHONY : src/ai/ai_player.cpp.o
+src/Ai/AiMob.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiMob.cpp.o
+.PHONY : src/Ai/AiMob.cpp.o
 
-src/ai/ai_player.i: src/ai/ai_player.cpp.i
+src/Ai/AiMob.i: src/Ai/AiMob.cpp.i
 
-.PHONY : src/ai/ai_player.i
+.PHONY : src/Ai/AiMob.i
 
 # target to preprocess a source file
-src/ai/ai_player.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_player.cpp.i
-.PHONY : src/ai/ai_player.cpp.i
+src/Ai/AiMob.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiMob.cpp.i
+.PHONY : src/Ai/AiMob.cpp.i
 
-src/ai/ai_player.s: src/ai/ai_player.cpp.s
+src/Ai/AiMob.s: src/Ai/AiMob.cpp.s
 
-.PHONY : src/ai/ai_player.s
+.PHONY : src/Ai/AiMob.s
 
 # target to generate assembly for a file
-src/ai/ai_player.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/ai/ai_player.cpp.s
-.PHONY : src/ai/ai_player.cpp.s
+src/Ai/AiMob.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiMob.cpp.s
+.PHONY : src/Ai/AiMob.cpp.s
+
+src/Ai/AiPlayer.o: src/Ai/AiPlayer.cpp.o
+
+.PHONY : src/Ai/AiPlayer.o
+
+# target to build an object file
+src/Ai/AiPlayer.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.o
+.PHONY : src/Ai/AiPlayer.cpp.o
+
+src/Ai/AiPlayer.i: src/Ai/AiPlayer.cpp.i
+
+.PHONY : src/Ai/AiPlayer.i
+
+# target to preprocess a source file
+src/Ai/AiPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.i
+.PHONY : src/Ai/AiPlayer.cpp.i
+
+src/Ai/AiPlayer.s: src/Ai/AiPlayer.cpp.s
+
+.PHONY : src/Ai/AiPlayer.s
+
+# target to generate assembly for a file
+src/Ai/AiPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Ai/AiPlayer.cpp.s
+.PHONY : src/Ai/AiPlayer.cpp.s
+
+src/Collision/CollisionHandler.o: src/Collision/CollisionHandler.cpp.o
+
+.PHONY : src/Collision/CollisionHandler.o
+
+# target to build an object file
+src/Collision/CollisionHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.o
+.PHONY : src/Collision/CollisionHandler.cpp.o
+
+src/Collision/CollisionHandler.i: src/Collision/CollisionHandler.cpp.i
+
+.PHONY : src/Collision/CollisionHandler.i
+
+# target to preprocess a source file
+src/Collision/CollisionHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.i
+.PHONY : src/Collision/CollisionHandler.cpp.i
+
+src/Collision/CollisionHandler.s: src/Collision/CollisionHandler.cpp.s
+
+.PHONY : src/Collision/CollisionHandler.s
+
+# target to generate assembly for a file
+src/Collision/CollisionHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Collision/CollisionHandler.cpp.s
+.PHONY : src/Collision/CollisionHandler.cpp.s
+
+src/Core/Game.o: src/Core/Game.cpp.o
+
+.PHONY : src/Core/Game.o
+
+# target to build an object file
+src/Core/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/Game.cpp.o
+.PHONY : src/Core/Game.cpp.o
+
+src/Core/Game.i: src/Core/Game.cpp.i
+
+.PHONY : src/Core/Game.i
+
+# target to preprocess a source file
+src/Core/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/Game.cpp.i
+.PHONY : src/Core/Game.cpp.i
+
+src/Core/Game.s: src/Core/Game.cpp.s
+
+.PHONY : src/Core/Game.s
+
+# target to generate assembly for a file
+src/Core/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/Game.cpp.s
+.PHONY : src/Core/Game.cpp.s
+
+src/Gameplay/Chest.o: src/Gameplay/Chest.cpp.o
+
+.PHONY : src/Gameplay/Chest.o
+
+# target to build an object file
+src/Gameplay/Chest.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Chest.cpp.o
+.PHONY : src/Gameplay/Chest.cpp.o
+
+src/Gameplay/Chest.i: src/Gameplay/Chest.cpp.i
+
+.PHONY : src/Gameplay/Chest.i
+
+# target to preprocess a source file
+src/Gameplay/Chest.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Chest.cpp.i
+.PHONY : src/Gameplay/Chest.cpp.i
+
+src/Gameplay/Chest.s: src/Gameplay/Chest.cpp.s
+
+.PHONY : src/Gameplay/Chest.s
+
+# target to generate assembly for a file
+src/Gameplay/Chest.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Chest.cpp.s
+.PHONY : src/Gameplay/Chest.cpp.s
+
+src/Gameplay/Door.o: src/Gameplay/Door.cpp.o
+
+.PHONY : src/Gameplay/Door.o
+
+# target to build an object file
+src/Gameplay/Door.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Door.cpp.o
+.PHONY : src/Gameplay/Door.cpp.o
+
+src/Gameplay/Door.i: src/Gameplay/Door.cpp.i
+
+.PHONY : src/Gameplay/Door.i
+
+# target to preprocess a source file
+src/Gameplay/Door.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Door.cpp.i
+.PHONY : src/Gameplay/Door.cpp.i
+
+src/Gameplay/Door.s: src/Gameplay/Door.cpp.s
+
+.PHONY : src/Gameplay/Door.s
+
+# target to generate assembly for a file
+src/Gameplay/Door.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Door.cpp.s
+.PHONY : src/Gameplay/Door.cpp.s
+
+src/Gameplay/Entity.o: src/Gameplay/Entity.cpp.o
+
+.PHONY : src/Gameplay/Entity.o
+
+# target to build an object file
+src/Gameplay/Entity.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o
+.PHONY : src/Gameplay/Entity.cpp.o
+
+src/Gameplay/Entity.i: src/Gameplay/Entity.cpp.i
+
+.PHONY : src/Gameplay/Entity.i
+
+# target to preprocess a source file
+src/Gameplay/Entity.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.i
+.PHONY : src/Gameplay/Entity.cpp.i
+
+src/Gameplay/Entity.s: src/Gameplay/Entity.cpp.s
+
+.PHONY : src/Gameplay/Entity.s
+
+# target to generate assembly for a file
+src/Gameplay/Entity.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.s
+.PHONY : src/Gameplay/Entity.cpp.s
+
+src/Gameplay/Inventory.o: src/Gameplay/Inventory.cpp.o
+
+.PHONY : src/Gameplay/Inventory.o
+
+# target to build an object file
+src/Gameplay/Inventory.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.o
+.PHONY : src/Gameplay/Inventory.cpp.o
+
+src/Gameplay/Inventory.i: src/Gameplay/Inventory.cpp.i
+
+.PHONY : src/Gameplay/Inventory.i
+
+# target to preprocess a source file
+src/Gameplay/Inventory.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.i
+.PHONY : src/Gameplay/Inventory.cpp.i
+
+src/Gameplay/Inventory.s: src/Gameplay/Inventory.cpp.s
+
+.PHONY : src/Gameplay/Inventory.s
+
+# target to generate assembly for a file
+src/Gameplay/Inventory.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Inventory.cpp.s
+.PHONY : src/Gameplay/Inventory.cpp.s
+
+src/Gameplay/Item.o: src/Gameplay/Item.cpp.o
+
+.PHONY : src/Gameplay/Item.o
+
+# target to build an object file
+src/Gameplay/Item.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Item.cpp.o
+.PHONY : src/Gameplay/Item.cpp.o
+
+src/Gameplay/Item.i: src/Gameplay/Item.cpp.i
+
+.PHONY : src/Gameplay/Item.i
+
+# target to preprocess a source file
+src/Gameplay/Item.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Item.cpp.i
+.PHONY : src/Gameplay/Item.cpp.i
+
+src/Gameplay/Item.s: src/Gameplay/Item.cpp.s
+
+.PHONY : src/Gameplay/Item.s
+
+# target to generate assembly for a file
+src/Gameplay/Item.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Item.cpp.s
+.PHONY : src/Gameplay/Item.cpp.s
+
+src/Gameplay/ItemBag.o: src/Gameplay/ItemBag.cpp.o
+
+.PHONY : src/Gameplay/ItemBag.o
+
+# target to build an object file
+src/Gameplay/ItemBag.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.o
+.PHONY : src/Gameplay/ItemBag.cpp.o
+
+src/Gameplay/ItemBag.i: src/Gameplay/ItemBag.cpp.i
+
+.PHONY : src/Gameplay/ItemBag.i
+
+# target to preprocess a source file
+src/Gameplay/ItemBag.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.i
+.PHONY : src/Gameplay/ItemBag.cpp.i
+
+src/Gameplay/ItemBag.s: src/Gameplay/ItemBag.cpp.s
+
+.PHONY : src/Gameplay/ItemBag.s
+
+# target to generate assembly for a file
+src/Gameplay/ItemBag.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/ItemBag.cpp.s
+.PHONY : src/Gameplay/ItemBag.cpp.s
+
+src/Gameplay/Level.o: src/Gameplay/Level.cpp.o
+
+.PHONY : src/Gameplay/Level.o
+
+# target to build an object file
+src/Gameplay/Level.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
+.PHONY : src/Gameplay/Level.cpp.o
+
+src/Gameplay/Level.i: src/Gameplay/Level.cpp.i
+
+.PHONY : src/Gameplay/Level.i
+
+# target to preprocess a source file
+src/Gameplay/Level.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Level.cpp.i
+.PHONY : src/Gameplay/Level.cpp.i
+
+src/Gameplay/Level.s: src/Gameplay/Level.cpp.s
+
+.PHONY : src/Gameplay/Level.s
+
+# target to generate assembly for a file
+src/Gameplay/Level.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Level.cpp.s
+.PHONY : src/Gameplay/Level.cpp.s
+
+src/Gameplay/Lever.o: src/Gameplay/Lever.cpp.o
+
+.PHONY : src/Gameplay/Lever.o
+
+# target to build an object file
+src/Gameplay/Lever.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Lever.cpp.o
+.PHONY : src/Gameplay/Lever.cpp.o
+
+src/Gameplay/Lever.i: src/Gameplay/Lever.cpp.i
+
+.PHONY : src/Gameplay/Lever.i
+
+# target to preprocess a source file
+src/Gameplay/Lever.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Lever.cpp.i
+.PHONY : src/Gameplay/Lever.cpp.i
+
+src/Gameplay/Lever.s: src/Gameplay/Lever.cpp.s
+
+.PHONY : src/Gameplay/Lever.s
+
+# target to generate assembly for a file
+src/Gameplay/Lever.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Lever.cpp.s
+.PHONY : src/Gameplay/Lever.cpp.s
+
+src/Gameplay/Living.o: src/Gameplay/Living.cpp.o
+
+.PHONY : src/Gameplay/Living.o
+
+# target to build an object file
+src/Gameplay/Living.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Living.cpp.o
+.PHONY : src/Gameplay/Living.cpp.o
+
+src/Gameplay/Living.i: src/Gameplay/Living.cpp.i
+
+.PHONY : src/Gameplay/Living.i
+
+# target to preprocess a source file
+src/Gameplay/Living.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Living.cpp.i
+.PHONY : src/Gameplay/Living.cpp.i
+
+src/Gameplay/Living.s: src/Gameplay/Living.cpp.s
+
+.PHONY : src/Gameplay/Living.s
+
+# target to generate assembly for a file
+src/Gameplay/Living.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Living.cpp.s
+.PHONY : src/Gameplay/Living.cpp.s
+
+src/Gameplay/Map.o: src/Gameplay/Map.cpp.o
+
+.PHONY : src/Gameplay/Map.o
+
+# target to build an object file
+src/Gameplay/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Map.cpp.o
+.PHONY : src/Gameplay/Map.cpp.o
+
+src/Gameplay/Map.i: src/Gameplay/Map.cpp.i
+
+.PHONY : src/Gameplay/Map.i
+
+# target to preprocess a source file
+src/Gameplay/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Map.cpp.i
+.PHONY : src/Gameplay/Map.cpp.i
+
+src/Gameplay/Map.s: src/Gameplay/Map.cpp.s
+
+.PHONY : src/Gameplay/Map.s
+
+# target to generate assembly for a file
+src/Gameplay/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Map.cpp.s
+.PHONY : src/Gameplay/Map.cpp.s
+
+src/Gameplay/SpikeTrap.o: src/Gameplay/SpikeTrap.cpp.o
+
+.PHONY : src/Gameplay/SpikeTrap.o
+
+# target to build an object file
+src/Gameplay/SpikeTrap.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.o
+.PHONY : src/Gameplay/SpikeTrap.cpp.o
+
+src/Gameplay/SpikeTrap.i: src/Gameplay/SpikeTrap.cpp.i
+
+.PHONY : src/Gameplay/SpikeTrap.i
+
+# target to preprocess a source file
+src/Gameplay/SpikeTrap.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.i
+.PHONY : src/Gameplay/SpikeTrap.cpp.i
+
+src/Gameplay/SpikeTrap.s: src/Gameplay/SpikeTrap.cpp.s
+
+.PHONY : src/Gameplay/SpikeTrap.s
+
+# target to generate assembly for a file
+src/Gameplay/SpikeTrap.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/SpikeTrap.cpp.s
+.PHONY : src/Gameplay/SpikeTrap.cpp.s
+
+src/Gui/GraphicInv.o: src/Gui/GraphicInv.cpp.o
+
+.PHONY : src/Gui/GraphicInv.o
+
+# target to build an object file
+src/Gui/GraphicInv.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.o
+.PHONY : src/Gui/GraphicInv.cpp.o
+
+src/Gui/GraphicInv.i: src/Gui/GraphicInv.cpp.i
+
+.PHONY : src/Gui/GraphicInv.i
+
+# target to preprocess a source file
+src/Gui/GraphicInv.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.i
+.PHONY : src/Gui/GraphicInv.cpp.i
+
+src/Gui/GraphicInv.s: src/Gui/GraphicInv.cpp.s
+
+.PHONY : src/Gui/GraphicInv.s
+
+# target to generate assembly for a file
+src/Gui/GraphicInv.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicInv.cpp.s
+.PHONY : src/Gui/GraphicInv.cpp.s
+
+src/Gui/GraphicLoot.o: src/Gui/GraphicLoot.cpp.o
+
+.PHONY : src/Gui/GraphicLoot.o
+
+# target to build an object file
+src/Gui/GraphicLoot.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.o
+.PHONY : src/Gui/GraphicLoot.cpp.o
+
+src/Gui/GraphicLoot.i: src/Gui/GraphicLoot.cpp.i
+
+.PHONY : src/Gui/GraphicLoot.i
+
+# target to preprocess a source file
+src/Gui/GraphicLoot.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.i
+.PHONY : src/Gui/GraphicLoot.cpp.i
+
+src/Gui/GraphicLoot.s: src/Gui/GraphicLoot.cpp.s
+
+.PHONY : src/Gui/GraphicLoot.s
+
+# target to generate assembly for a file
+src/Gui/GraphicLoot.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/GraphicLoot.cpp.s
+.PHONY : src/Gui/GraphicLoot.cpp.s
+
+src/Gui/Gui.o: src/Gui/Gui.cpp.o
+
+.PHONY : src/Gui/Gui.o
+
+# target to build an object file
+src/Gui/Gui.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Gui.cpp.o
+.PHONY : src/Gui/Gui.cpp.o
+
+src/Gui/Gui.i: src/Gui/Gui.cpp.i
+
+.PHONY : src/Gui/Gui.i
+
+# target to preprocess a source file
+src/Gui/Gui.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Gui.cpp.i
+.PHONY : src/Gui/Gui.cpp.i
+
+src/Gui/Gui.s: src/Gui/Gui.cpp.s
+
+.PHONY : src/Gui/Gui.s
+
+# target to generate assembly for a file
+src/Gui/Gui.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Gui.cpp.s
+.PHONY : src/Gui/Gui.cpp.s
+
+src/Gui/Slot.o: src/Gui/Slot.cpp.o
+
+.PHONY : src/Gui/Slot.o
+
+# target to build an object file
+src/Gui/Slot.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Slot.cpp.o
+.PHONY : src/Gui/Slot.cpp.o
+
+src/Gui/Slot.i: src/Gui/Slot.cpp.i
+
+.PHONY : src/Gui/Slot.i
+
+# target to preprocess a source file
+src/Gui/Slot.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Slot.cpp.i
+.PHONY : src/Gui/Slot.cpp.i
+
+src/Gui/Slot.s: src/Gui/Slot.cpp.s
+
+.PHONY : src/Gui/Slot.s
+
+# target to generate assembly for a file
+src/Gui/Slot.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gui/Slot.cpp.s
+.PHONY : src/Gui/Slot.cpp.s
+
+src/Input/InputHandler.o: src/Input/InputHandler.cpp.o
+
+.PHONY : src/Input/InputHandler.o
+
+# target to build an object file
+src/Input/InputHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Input/InputHandler.cpp.o
+.PHONY : src/Input/InputHandler.cpp.o
+
+src/Input/InputHandler.i: src/Input/InputHandler.cpp.i
+
+.PHONY : src/Input/InputHandler.i
+
+# target to preprocess a source file
+src/Input/InputHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Input/InputHandler.cpp.i
+.PHONY : src/Input/InputHandler.cpp.i
+
+src/Input/InputHandler.s: src/Input/InputHandler.cpp.s
+
+.PHONY : src/Input/InputHandler.s
+
+# target to generate assembly for a file
+src/Input/InputHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Input/InputHandler.cpp.s
+.PHONY : src/Input/InputHandler.cpp.s
+
+src/Render/AnimatedSprite.o: src/Render/AnimatedSprite.cpp.o
+
+.PHONY : src/Render/AnimatedSprite.o
+
+# target to build an object file
+src/Render/AnimatedSprite.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.o
+.PHONY : src/Render/AnimatedSprite.cpp.o
+
+src/Render/AnimatedSprite.i: src/Render/AnimatedSprite.cpp.i
+
+.PHONY : src/Render/AnimatedSprite.i
+
+# target to preprocess a source file
+src/Render/AnimatedSprite.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.i
+.PHONY : src/Render/AnimatedSprite.cpp.i
+
+src/Render/AnimatedSprite.s: src/Render/AnimatedSprite.cpp.s
+
+.PHONY : src/Render/AnimatedSprite.s
+
+# target to generate assembly for a file
+src/Render/AnimatedSprite.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/AnimatedSprite.cpp.s
+.PHONY : src/Render/AnimatedSprite.cpp.s
+
+src/Render/Bar.o: src/Render/Bar.cpp.o
+
+.PHONY : src/Render/Bar.o
+
+# target to build an object file
+src/Render/Bar.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Bar.cpp.o
+.PHONY : src/Render/Bar.cpp.o
+
+src/Render/Bar.i: src/Render/Bar.cpp.i
+
+.PHONY : src/Render/Bar.i
+
+# target to preprocess a source file
+src/Render/Bar.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Bar.cpp.i
+.PHONY : src/Render/Bar.cpp.i
+
+src/Render/Bar.s: src/Render/Bar.cpp.s
+
+.PHONY : src/Render/Bar.s
+
+# target to generate assembly for a file
+src/Render/Bar.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Bar.cpp.s
+.PHONY : src/Render/Bar.cpp.s
+
+src/Render/BigParticle.o: src/Render/BigParticle.cpp.o
+
+.PHONY : src/Render/BigParticle.o
+
+# target to build an object file
+src/Render/BigParticle.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/BigParticle.cpp.o
+.PHONY : src/Render/BigParticle.cpp.o
+
+src/Render/BigParticle.i: src/Render/BigParticle.cpp.i
+
+.PHONY : src/Render/BigParticle.i
+
+# target to preprocess a source file
+src/Render/BigParticle.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/BigParticle.cpp.i
+.PHONY : src/Render/BigParticle.cpp.i
+
+src/Render/BigParticle.s: src/Render/BigParticle.cpp.s
+
+.PHONY : src/Render/BigParticle.s
+
+# target to generate assembly for a file
+src/Render/BigParticle.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/BigParticle.cpp.s
+.PHONY : src/Render/BigParticle.cpp.s
+
+src/Render/Indication.o: src/Render/Indication.cpp.o
+
+.PHONY : src/Render/Indication.o
+
+# target to build an object file
+src/Render/Indication.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Indication.cpp.o
+.PHONY : src/Render/Indication.cpp.o
+
+src/Render/Indication.i: src/Render/Indication.cpp.i
+
+.PHONY : src/Render/Indication.i
+
+# target to preprocess a source file
+src/Render/Indication.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Indication.cpp.i
+.PHONY : src/Render/Indication.cpp.i
+
+src/Render/Indication.s: src/Render/Indication.cpp.s
+
+.PHONY : src/Render/Indication.s
+
+# target to generate assembly for a file
+src/Render/Indication.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Indication.cpp.s
+.PHONY : src/Render/Indication.cpp.s
+
+src/Render/IndicationHandler.o: src/Render/IndicationHandler.cpp.o
+
+.PHONY : src/Render/IndicationHandler.o
+
+# target to build an object file
+src/Render/IndicationHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.o
+.PHONY : src/Render/IndicationHandler.cpp.o
+
+src/Render/IndicationHandler.i: src/Render/IndicationHandler.cpp.i
+
+.PHONY : src/Render/IndicationHandler.i
+
+# target to preprocess a source file
+src/Render/IndicationHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.i
+.PHONY : src/Render/IndicationHandler.cpp.i
+
+src/Render/IndicationHandler.s: src/Render/IndicationHandler.cpp.s
+
+.PHONY : src/Render/IndicationHandler.s
+
+# target to generate assembly for a file
+src/Render/IndicationHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/IndicationHandler.cpp.s
+.PHONY : src/Render/IndicationHandler.cpp.s
+
+src/Render/Renderer.o: src/Render/Renderer.cpp.o
+
+.PHONY : src/Render/Renderer.o
+
+# target to build an object file
+src/Render/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer.cpp.o
+.PHONY : src/Render/Renderer.cpp.o
+
+src/Render/Renderer.i: src/Render/Renderer.cpp.i
+
+.PHONY : src/Render/Renderer.i
+
+# target to preprocess a source file
+src/Render/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer.cpp.i
+.PHONY : src/Render/Renderer.cpp.i
+
+src/Render/Renderer.s: src/Render/Renderer.cpp.s
+
+.PHONY : src/Render/Renderer.s
+
+# target to generate assembly for a file
+src/Render/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer.cpp.s
+.PHONY : src/Render/Renderer.cpp.s
+
+src/Render/Sprite.o: src/Render/Sprite.cpp.o
+
+.PHONY : src/Render/Sprite.o
+
+# target to build an object file
+src/Render/Sprite.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Sprite.cpp.o
+.PHONY : src/Render/Sprite.cpp.o
+
+src/Render/Sprite.i: src/Render/Sprite.cpp.i
+
+.PHONY : src/Render/Sprite.i
+
+# target to preprocess a source file
+src/Render/Sprite.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Sprite.cpp.i
+.PHONY : src/Render/Sprite.cpp.i
+
+src/Render/Sprite.s: src/Render/Sprite.cpp.s
+
+.PHONY : src/Render/Sprite.s
+
+# target to generate assembly for a file
+src/Render/Sprite.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Sprite.cpp.s
+.PHONY : src/Render/Sprite.cpp.s
+
+src/Resource/Animation.o: src/Resource/Animation.cpp.o
+
+.PHONY : src/Resource/Animation.o
+
+# target to build an object file
+src/Resource/Animation.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/Animation.cpp.o
+.PHONY : src/Resource/Animation.cpp.o
+
+src/Resource/Animation.i: src/Resource/Animation.cpp.i
+
+.PHONY : src/Resource/Animation.i
+
+# target to preprocess a source file
+src/Resource/Animation.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/Animation.cpp.i
+.PHONY : src/Resource/Animation.cpp.i
+
+src/Resource/Animation.s: src/Resource/Animation.cpp.s
+
+.PHONY : src/Resource/Animation.s
+
+# target to generate assembly for a file
+src/Resource/Animation.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/Animation.cpp.s
+.PHONY : src/Resource/Animation.cpp.s
+
+src/Resource/AnimationCache.o: src/Resource/AnimationCache.cpp.o
+
+.PHONY : src/Resource/AnimationCache.o
+
+# target to build an object file
+src/Resource/AnimationCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+.PHONY : src/Resource/AnimationCache.cpp.o
+
+src/Resource/AnimationCache.i: src/Resource/AnimationCache.cpp.i
+
+.PHONY : src/Resource/AnimationCache.i
+
+# target to preprocess a source file
+src/Resource/AnimationCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i
+.PHONY : src/Resource/AnimationCache.cpp.i
+
+src/Resource/AnimationCache.s: src/Resource/AnimationCache.cpp.s
+
+.PHONY : src/Resource/AnimationCache.s
+
+# target to generate assembly for a file
+src/Resource/AnimationCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s
+.PHONY : src/Resource/AnimationCache.cpp.s
+
+src/Resource/FontCache.o: src/Resource/FontCache.cpp.o
+
+.PHONY : src/Resource/FontCache.o
+
+# target to build an object file
+src/Resource/FontCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/FontCache.cpp.o
+.PHONY : src/Resource/FontCache.cpp.o
+
+src/Resource/FontCache.i: src/Resource/FontCache.cpp.i
+
+.PHONY : src/Resource/FontCache.i
+
+# target to preprocess a source file
+src/Resource/FontCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/FontCache.cpp.i
+.PHONY : src/Resource/FontCache.cpp.i
+
+src/Resource/FontCache.s: src/Resource/FontCache.cpp.s
+
+.PHONY : src/Resource/FontCache.s
+
+# target to generate assembly for a file
+src/Resource/FontCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/FontCache.cpp.s
+.PHONY : src/Resource/FontCache.cpp.s
+
+src/Resource/TextureCache.o: src/Resource/TextureCache.cpp.o
+
+.PHONY : src/Resource/TextureCache.o
+
+# target to build an object file
+src/Resource/TextureCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+.PHONY : src/Resource/TextureCache.cpp.o
+
+src/Resource/TextureCache.i: src/Resource/TextureCache.cpp.i
+
+.PHONY : src/Resource/TextureCache.i
+
+# target to preprocess a source file
+src/Resource/TextureCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i
+.PHONY : src/Resource/TextureCache.cpp.i
+
+src/Resource/TextureCache.s: src/Resource/TextureCache.cpp.s
+
+.PHONY : src/Resource/TextureCache.s
+
+# target to generate assembly for a file
+src/Resource/TextureCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s
+.PHONY : src/Resource/TextureCache.cpp.s
+
+src/Script/LuaInterface.o: src/Script/LuaInterface.cpp.o
+
+.PHONY : src/Script/LuaInterface.o
+
+# target to build an object file
+src/Script/LuaInterface.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/LuaInterface.cpp.o
+.PHONY : src/Script/LuaInterface.cpp.o
+
+src/Script/LuaInterface.i: src/Script/LuaInterface.cpp.i
+
+.PHONY : src/Script/LuaInterface.i
+
+# target to preprocess a source file
+src/Script/LuaInterface.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/LuaInterface.cpp.i
+.PHONY : src/Script/LuaInterface.cpp.i
+
+src/Script/LuaInterface.s: src/Script/LuaInterface.cpp.s
+
+.PHONY : src/Script/LuaInterface.s
+
+# target to generate assembly for a file
+src/Script/LuaInterface.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/LuaInterface.cpp.s
+.PHONY : src/Script/LuaInterface.cpp.s
+
+src/Script/ScriptHandler.o: src/Script/ScriptHandler.cpp.o
+
+.PHONY : src/Script/ScriptHandler.o
+
+# target to build an object file
+src/Script/ScriptHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.o
+.PHONY : src/Script/ScriptHandler.cpp.o
+
+src/Script/ScriptHandler.i: src/Script/ScriptHandler.cpp.i
+
+.PHONY : src/Script/ScriptHandler.i
+
+# target to preprocess a source file
+src/Script/ScriptHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.i
+.PHONY : src/Script/ScriptHandler.cpp.i
+
+src/Script/ScriptHandler.s: src/Script/ScriptHandler.cpp.s
+
+.PHONY : src/Script/ScriptHandler.s
+
+# target to generate assembly for a file
+src/Script/ScriptHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/ScriptHandler.cpp.s
+.PHONY : src/Script/ScriptHandler.cpp.s
 
 src/base64/base64.o: src/base64/base64.cpp.o
 
@@ -231,492 +1068,6 @@ src/base64/base64.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/base64/base64.cpp.s
 .PHONY : src/base64/base64.cpp.s
 
-src/collision/collision_handler.o: src/collision/collision_handler.cpp.o
-
-.PHONY : src/collision/collision_handler.o
-
-# target to build an object file
-src/collision/collision_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/collision/collision_handler.cpp.o
-.PHONY : src/collision/collision_handler.cpp.o
-
-src/collision/collision_handler.i: src/collision/collision_handler.cpp.i
-
-.PHONY : src/collision/collision_handler.i
-
-# target to preprocess a source file
-src/collision/collision_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/collision/collision_handler.cpp.i
-.PHONY : src/collision/collision_handler.cpp.i
-
-src/collision/collision_handler.s: src/collision/collision_handler.cpp.s
-
-.PHONY : src/collision/collision_handler.s
-
-# target to generate assembly for a file
-src/collision/collision_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/collision/collision_handler.cpp.s
-.PHONY : src/collision/collision_handler.cpp.s
-
-src/core/game.o: src/core/game.cpp.o
-
-.PHONY : src/core/game.o
-
-# target to build an object file
-src/core/game.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/core/game.cpp.o
-.PHONY : src/core/game.cpp.o
-
-src/core/game.i: src/core/game.cpp.i
-
-.PHONY : src/core/game.i
-
-# target to preprocess a source file
-src/core/game.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/core/game.cpp.i
-.PHONY : src/core/game.cpp.i
-
-src/core/game.s: src/core/game.cpp.s
-
-.PHONY : src/core/game.s
-
-# target to generate assembly for a file
-src/core/game.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/core/game.cpp.s
-.PHONY : src/core/game.cpp.s
-
-src/gameplay/chest.o: src/gameplay/chest.cpp.o
-
-.PHONY : src/gameplay/chest.o
-
-# target to build an object file
-src/gameplay/chest.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/chest.cpp.o
-.PHONY : src/gameplay/chest.cpp.o
-
-src/gameplay/chest.i: src/gameplay/chest.cpp.i
-
-.PHONY : src/gameplay/chest.i
-
-# target to preprocess a source file
-src/gameplay/chest.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/chest.cpp.i
-.PHONY : src/gameplay/chest.cpp.i
-
-src/gameplay/chest.s: src/gameplay/chest.cpp.s
-
-.PHONY : src/gameplay/chest.s
-
-# target to generate assembly for a file
-src/gameplay/chest.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/chest.cpp.s
-.PHONY : src/gameplay/chest.cpp.s
-
-src/gameplay/door.o: src/gameplay/door.cpp.o
-
-.PHONY : src/gameplay/door.o
-
-# target to build an object file
-src/gameplay/door.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/door.cpp.o
-.PHONY : src/gameplay/door.cpp.o
-
-src/gameplay/door.i: src/gameplay/door.cpp.i
-
-.PHONY : src/gameplay/door.i
-
-# target to preprocess a source file
-src/gameplay/door.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/door.cpp.i
-.PHONY : src/gameplay/door.cpp.i
-
-src/gameplay/door.s: src/gameplay/door.cpp.s
-
-.PHONY : src/gameplay/door.s
-
-# target to generate assembly for a file
-src/gameplay/door.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/door.cpp.s
-.PHONY : src/gameplay/door.cpp.s
-
-src/gameplay/entity.o: src/gameplay/entity.cpp.o
-
-.PHONY : src/gameplay/entity.o
-
-# target to build an object file
-src/gameplay/entity.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/entity.cpp.o
-.PHONY : src/gameplay/entity.cpp.o
-
-src/gameplay/entity.i: src/gameplay/entity.cpp.i
-
-.PHONY : src/gameplay/entity.i
-
-# target to preprocess a source file
-src/gameplay/entity.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/entity.cpp.i
-.PHONY : src/gameplay/entity.cpp.i
-
-src/gameplay/entity.s: src/gameplay/entity.cpp.s
-
-.PHONY : src/gameplay/entity.s
-
-# target to generate assembly for a file
-src/gameplay/entity.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/entity.cpp.s
-.PHONY : src/gameplay/entity.cpp.s
-
-src/gameplay/inventory.o: src/gameplay/inventory.cpp.o
-
-.PHONY : src/gameplay/inventory.o
-
-# target to build an object file
-src/gameplay/inventory.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/inventory.cpp.o
-.PHONY : src/gameplay/inventory.cpp.o
-
-src/gameplay/inventory.i: src/gameplay/inventory.cpp.i
-
-.PHONY : src/gameplay/inventory.i
-
-# target to preprocess a source file
-src/gameplay/inventory.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/inventory.cpp.i
-.PHONY : src/gameplay/inventory.cpp.i
-
-src/gameplay/inventory.s: src/gameplay/inventory.cpp.s
-
-.PHONY : src/gameplay/inventory.s
-
-# target to generate assembly for a file
-src/gameplay/inventory.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/inventory.cpp.s
-.PHONY : src/gameplay/inventory.cpp.s
-
-src/gameplay/item.o: src/gameplay/item.cpp.o
-
-.PHONY : src/gameplay/item.o
-
-# target to build an object file
-src/gameplay/item.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item.cpp.o
-.PHONY : src/gameplay/item.cpp.o
-
-src/gameplay/item.i: src/gameplay/item.cpp.i
-
-.PHONY : src/gameplay/item.i
-
-# target to preprocess a source file
-src/gameplay/item.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item.cpp.i
-.PHONY : src/gameplay/item.cpp.i
-
-src/gameplay/item.s: src/gameplay/item.cpp.s
-
-.PHONY : src/gameplay/item.s
-
-# target to generate assembly for a file
-src/gameplay/item.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item.cpp.s
-.PHONY : src/gameplay/item.cpp.s
-
-src/gameplay/item_bag.o: src/gameplay/item_bag.cpp.o
-
-.PHONY : src/gameplay/item_bag.o
-
-# target to build an object file
-src/gameplay/item_bag.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.o
-.PHONY : src/gameplay/item_bag.cpp.o
-
-src/gameplay/item_bag.i: src/gameplay/item_bag.cpp.i
-
-.PHONY : src/gameplay/item_bag.i
-
-# target to preprocess a source file
-src/gameplay/item_bag.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.i
-.PHONY : src/gameplay/item_bag.cpp.i
-
-src/gameplay/item_bag.s: src/gameplay/item_bag.cpp.s
-
-.PHONY : src/gameplay/item_bag.s
-
-# target to generate assembly for a file
-src/gameplay/item_bag.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/item_bag.cpp.s
-.PHONY : src/gameplay/item_bag.cpp.s
-
-src/gameplay/level.o: src/gameplay/level.cpp.o
-
-.PHONY : src/gameplay/level.o
-
-# target to build an object file
-src/gameplay/level.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/level.cpp.o
-.PHONY : src/gameplay/level.cpp.o
-
-src/gameplay/level.i: src/gameplay/level.cpp.i
-
-.PHONY : src/gameplay/level.i
-
-# target to preprocess a source file
-src/gameplay/level.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/level.cpp.i
-.PHONY : src/gameplay/level.cpp.i
-
-src/gameplay/level.s: src/gameplay/level.cpp.s
-
-.PHONY : src/gameplay/level.s
-
-# target to generate assembly for a file
-src/gameplay/level.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/level.cpp.s
-.PHONY : src/gameplay/level.cpp.s
-
-src/gameplay/lever.o: src/gameplay/lever.cpp.o
-
-.PHONY : src/gameplay/lever.o
-
-# target to build an object file
-src/gameplay/lever.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/lever.cpp.o
-.PHONY : src/gameplay/lever.cpp.o
-
-src/gameplay/lever.i: src/gameplay/lever.cpp.i
-
-.PHONY : src/gameplay/lever.i
-
-# target to preprocess a source file
-src/gameplay/lever.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/lever.cpp.i
-.PHONY : src/gameplay/lever.cpp.i
-
-src/gameplay/lever.s: src/gameplay/lever.cpp.s
-
-.PHONY : src/gameplay/lever.s
-
-# target to generate assembly for a file
-src/gameplay/lever.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/lever.cpp.s
-.PHONY : src/gameplay/lever.cpp.s
-
-src/gameplay/living.o: src/gameplay/living.cpp.o
-
-.PHONY : src/gameplay/living.o
-
-# target to build an object file
-src/gameplay/living.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/living.cpp.o
-.PHONY : src/gameplay/living.cpp.o
-
-src/gameplay/living.i: src/gameplay/living.cpp.i
-
-.PHONY : src/gameplay/living.i
-
-# target to preprocess a source file
-src/gameplay/living.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/living.cpp.i
-.PHONY : src/gameplay/living.cpp.i
-
-src/gameplay/living.s: src/gameplay/living.cpp.s
-
-.PHONY : src/gameplay/living.s
-
-# target to generate assembly for a file
-src/gameplay/living.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/living.cpp.s
-.PHONY : src/gameplay/living.cpp.s
-
-src/gameplay/map.o: src/gameplay/map.cpp.o
-
-.PHONY : src/gameplay/map.o
-
-# target to build an object file
-src/gameplay/map.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/map.cpp.o
-.PHONY : src/gameplay/map.cpp.o
-
-src/gameplay/map.i: src/gameplay/map.cpp.i
-
-.PHONY : src/gameplay/map.i
-
-# target to preprocess a source file
-src/gameplay/map.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/map.cpp.i
-.PHONY : src/gameplay/map.cpp.i
-
-src/gameplay/map.s: src/gameplay/map.cpp.s
-
-.PHONY : src/gameplay/map.s
-
-# target to generate assembly for a file
-src/gameplay/map.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/map.cpp.s
-.PHONY : src/gameplay/map.cpp.s
-
-src/gameplay/spike_trap.o: src/gameplay/spike_trap.cpp.o
-
-.PHONY : src/gameplay/spike_trap.o
-
-# target to build an object file
-src/gameplay/spike_trap.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.o
-.PHONY : src/gameplay/spike_trap.cpp.o
-
-src/gameplay/spike_trap.i: src/gameplay/spike_trap.cpp.i
-
-.PHONY : src/gameplay/spike_trap.i
-
-# target to preprocess a source file
-src/gameplay/spike_trap.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.i
-.PHONY : src/gameplay/spike_trap.cpp.i
-
-src/gameplay/spike_trap.s: src/gameplay/spike_trap.cpp.s
-
-.PHONY : src/gameplay/spike_trap.s
-
-# target to generate assembly for a file
-src/gameplay/spike_trap.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gameplay/spike_trap.cpp.s
-.PHONY : src/gameplay/spike_trap.cpp.s
-
-src/gui/graphic_inv.o: src/gui/graphic_inv.cpp.o
-
-.PHONY : src/gui/graphic_inv.o
-
-# target to build an object file
-src/gui/graphic_inv.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_inv.cpp.o
-.PHONY : src/gui/graphic_inv.cpp.o
-
-src/gui/graphic_inv.i: src/gui/graphic_inv.cpp.i
-
-.PHONY : src/gui/graphic_inv.i
-
-# target to preprocess a source file
-src/gui/graphic_inv.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_inv.cpp.i
-.PHONY : src/gui/graphic_inv.cpp.i
-
-src/gui/graphic_inv.s: src/gui/graphic_inv.cpp.s
-
-.PHONY : src/gui/graphic_inv.s
-
-# target to generate assembly for a file
-src/gui/graphic_inv.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_inv.cpp.s
-.PHONY : src/gui/graphic_inv.cpp.s
-
-src/gui/graphic_loot.o: src/gui/graphic_loot.cpp.o
-
-.PHONY : src/gui/graphic_loot.o
-
-# target to build an object file
-src/gui/graphic_loot.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_loot.cpp.o
-.PHONY : src/gui/graphic_loot.cpp.o
-
-src/gui/graphic_loot.i: src/gui/graphic_loot.cpp.i
-
-.PHONY : src/gui/graphic_loot.i
-
-# target to preprocess a source file
-src/gui/graphic_loot.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_loot.cpp.i
-.PHONY : src/gui/graphic_loot.cpp.i
-
-src/gui/graphic_loot.s: src/gui/graphic_loot.cpp.s
-
-.PHONY : src/gui/graphic_loot.s
-
-# target to generate assembly for a file
-src/gui/graphic_loot.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/graphic_loot.cpp.s
-.PHONY : src/gui/graphic_loot.cpp.s
-
-src/gui/gui.o: src/gui/gui.cpp.o
-
-.PHONY : src/gui/gui.o
-
-# target to build an object file
-src/gui/gui.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/gui.cpp.o
-.PHONY : src/gui/gui.cpp.o
-
-src/gui/gui.i: src/gui/gui.cpp.i
-
-.PHONY : src/gui/gui.i
-
-# target to preprocess a source file
-src/gui/gui.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/gui.cpp.i
-.PHONY : src/gui/gui.cpp.i
-
-src/gui/gui.s: src/gui/gui.cpp.s
-
-.PHONY : src/gui/gui.s
-
-# target to generate assembly for a file
-src/gui/gui.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/gui.cpp.s
-.PHONY : src/gui/gui.cpp.s
-
-src/gui/slot.o: src/gui/slot.cpp.o
-
-.PHONY : src/gui/slot.o
-
-# target to build an object file
-src/gui/slot.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/slot.cpp.o
-.PHONY : src/gui/slot.cpp.o
-
-src/gui/slot.i: src/gui/slot.cpp.i
-
-.PHONY : src/gui/slot.i
-
-# target to preprocess a source file
-src/gui/slot.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/slot.cpp.i
-.PHONY : src/gui/slot.cpp.i
-
-src/gui/slot.s: src/gui/slot.cpp.s
-
-.PHONY : src/gui/slot.s
-
-# target to generate assembly for a file
-src/gui/slot.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/gui/slot.cpp.s
-.PHONY : src/gui/slot.cpp.s
-
-src/input/input_handler.o: src/input/input_handler.cpp.o
-
-.PHONY : src/input/input_handler.o
-
-# target to build an object file
-src/input/input_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/input/input_handler.cpp.o
-.PHONY : src/input/input_handler.cpp.o
-
-src/input/input_handler.i: src/input/input_handler.cpp.i
-
-.PHONY : src/input/input_handler.i
-
-# target to preprocess a source file
-src/input/input_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/input/input_handler.cpp.i
-.PHONY : src/input/input_handler.cpp.i
-
-src/input/input_handler.s: src/input/input_handler.cpp.s
-
-.PHONY : src/input/input_handler.s
-
-# target to generate assembly for a file
-src/input/input_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/input/input_handler.cpp.s
-.PHONY : src/input/input_handler.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -744,330 +1095,6 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/render/animated_sprite.o: src/render/animated_sprite.cpp.o
-
-.PHONY : src/render/animated_sprite.o
-
-# target to build an object file
-src/render/animated_sprite.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/animated_sprite.cpp.o
-.PHONY : src/render/animated_sprite.cpp.o
-
-src/render/animated_sprite.i: src/render/animated_sprite.cpp.i
-
-.PHONY : src/render/animated_sprite.i
-
-# target to preprocess a source file
-src/render/animated_sprite.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/animated_sprite.cpp.i
-.PHONY : src/render/animated_sprite.cpp.i
-
-src/render/animated_sprite.s: src/render/animated_sprite.cpp.s
-
-.PHONY : src/render/animated_sprite.s
-
-# target to generate assembly for a file
-src/render/animated_sprite.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/animated_sprite.cpp.s
-.PHONY : src/render/animated_sprite.cpp.s
-
-src/render/bar.o: src/render/bar.cpp.o
-
-.PHONY : src/render/bar.o
-
-# target to build an object file
-src/render/bar.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/bar.cpp.o
-.PHONY : src/render/bar.cpp.o
-
-src/render/bar.i: src/render/bar.cpp.i
-
-.PHONY : src/render/bar.i
-
-# target to preprocess a source file
-src/render/bar.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/bar.cpp.i
-.PHONY : src/render/bar.cpp.i
-
-src/render/bar.s: src/render/bar.cpp.s
-
-.PHONY : src/render/bar.s
-
-# target to generate assembly for a file
-src/render/bar.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/bar.cpp.s
-.PHONY : src/render/bar.cpp.s
-
-src/render/big_particle.o: src/render/big_particle.cpp.o
-
-.PHONY : src/render/big_particle.o
-
-# target to build an object file
-src/render/big_particle.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.o
-.PHONY : src/render/big_particle.cpp.o
-
-src/render/big_particle.i: src/render/big_particle.cpp.i
-
-.PHONY : src/render/big_particle.i
-
-# target to preprocess a source file
-src/render/big_particle.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.i
-.PHONY : src/render/big_particle.cpp.i
-
-src/render/big_particle.s: src/render/big_particle.cpp.s
-
-.PHONY : src/render/big_particle.s
-
-# target to generate assembly for a file
-src/render/big_particle.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/big_particle.cpp.s
-.PHONY : src/render/big_particle.cpp.s
-
-src/render/indication_handler.o: src/render/indication_handler.cpp.o
-
-.PHONY : src/render/indication_handler.o
-
-# target to build an object file
-src/render/indication_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/indication_handler.cpp.o
-.PHONY : src/render/indication_handler.cpp.o
-
-src/render/indication_handler.i: src/render/indication_handler.cpp.i
-
-.PHONY : src/render/indication_handler.i
-
-# target to preprocess a source file
-src/render/indication_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/indication_handler.cpp.i
-.PHONY : src/render/indication_handler.cpp.i
-
-src/render/indication_handler.s: src/render/indication_handler.cpp.s
-
-.PHONY : src/render/indication_handler.s
-
-# target to generate assembly for a file
-src/render/indication_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/indication_handler.cpp.s
-.PHONY : src/render/indication_handler.cpp.s
-
-src/render/renderer.o: src/render/renderer.cpp.o
-
-.PHONY : src/render/renderer.o
-
-# target to build an object file
-src/render/renderer.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/renderer.cpp.o
-.PHONY : src/render/renderer.cpp.o
-
-src/render/renderer.i: src/render/renderer.cpp.i
-
-.PHONY : src/render/renderer.i
-
-# target to preprocess a source file
-src/render/renderer.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/renderer.cpp.i
-.PHONY : src/render/renderer.cpp.i
-
-src/render/renderer.s: src/render/renderer.cpp.s
-
-.PHONY : src/render/renderer.s
-
-# target to generate assembly for a file
-src/render/renderer.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/renderer.cpp.s
-.PHONY : src/render/renderer.cpp.s
-
-src/render/sprite.o: src/render/sprite.cpp.o
-
-.PHONY : src/render/sprite.o
-
-# target to build an object file
-src/render/sprite.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/sprite.cpp.o
-.PHONY : src/render/sprite.cpp.o
-
-src/render/sprite.i: src/render/sprite.cpp.i
-
-.PHONY : src/render/sprite.i
-
-# target to preprocess a source file
-src/render/sprite.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/sprite.cpp.i
-.PHONY : src/render/sprite.cpp.i
-
-src/render/sprite.s: src/render/sprite.cpp.s
-
-.PHONY : src/render/sprite.s
-
-# target to generate assembly for a file
-src/render/sprite.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/render/sprite.cpp.s
-.PHONY : src/render/sprite.cpp.s
-
-src/resource/animation.o: src/resource/animation.cpp.o
-
-.PHONY : src/resource/animation.o
-
-# target to build an object file
-src/resource/animation.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation.cpp.o
-.PHONY : src/resource/animation.cpp.o
-
-src/resource/animation.i: src/resource/animation.cpp.i
-
-.PHONY : src/resource/animation.i
-
-# target to preprocess a source file
-src/resource/animation.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation.cpp.i
-.PHONY : src/resource/animation.cpp.i
-
-src/resource/animation.s: src/resource/animation.cpp.s
-
-.PHONY : src/resource/animation.s
-
-# target to generate assembly for a file
-src/resource/animation.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation.cpp.s
-.PHONY : src/resource/animation.cpp.s
-
-src/resource/animation_cache.o: src/resource/animation_cache.cpp.o
-
-.PHONY : src/resource/animation_cache.o
-
-# target to build an object file
-src/resource/animation_cache.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation_cache.cpp.o
-.PHONY : src/resource/animation_cache.cpp.o
-
-src/resource/animation_cache.i: src/resource/animation_cache.cpp.i
-
-.PHONY : src/resource/animation_cache.i
-
-# target to preprocess a source file
-src/resource/animation_cache.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation_cache.cpp.i
-.PHONY : src/resource/animation_cache.cpp.i
-
-src/resource/animation_cache.s: src/resource/animation_cache.cpp.s
-
-.PHONY : src/resource/animation_cache.s
-
-# target to generate assembly for a file
-src/resource/animation_cache.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/animation_cache.cpp.s
-.PHONY : src/resource/animation_cache.cpp.s
-
-src/resource/font_cache.o: src/resource/font_cache.cpp.o
-
-.PHONY : src/resource/font_cache.o
-
-# target to build an object file
-src/resource/font_cache.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/font_cache.cpp.o
-.PHONY : src/resource/font_cache.cpp.o
-
-src/resource/font_cache.i: src/resource/font_cache.cpp.i
-
-.PHONY : src/resource/font_cache.i
-
-# target to preprocess a source file
-src/resource/font_cache.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/font_cache.cpp.i
-.PHONY : src/resource/font_cache.cpp.i
-
-src/resource/font_cache.s: src/resource/font_cache.cpp.s
-
-.PHONY : src/resource/font_cache.s
-
-# target to generate assembly for a file
-src/resource/font_cache.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/font_cache.cpp.s
-.PHONY : src/resource/font_cache.cpp.s
-
-src/resource/texture_cache.o: src/resource/texture_cache.cpp.o
-
-.PHONY : src/resource/texture_cache.o
-
-# target to build an object file
-src/resource/texture_cache.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/texture_cache.cpp.o
-.PHONY : src/resource/texture_cache.cpp.o
-
-src/resource/texture_cache.i: src/resource/texture_cache.cpp.i
-
-.PHONY : src/resource/texture_cache.i
-
-# target to preprocess a source file
-src/resource/texture_cache.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/texture_cache.cpp.i
-.PHONY : src/resource/texture_cache.cpp.i
-
-src/resource/texture_cache.s: src/resource/texture_cache.cpp.s
-
-.PHONY : src/resource/texture_cache.s
-
-# target to generate assembly for a file
-src/resource/texture_cache.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/resource/texture_cache.cpp.s
-.PHONY : src/resource/texture_cache.cpp.s
-
-src/script/lua_interface.o: src/script/lua_interface.cpp.o
-
-.PHONY : src/script/lua_interface.o
-
-# target to build an object file
-src/script/lua_interface.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/lua_interface.cpp.o
-.PHONY : src/script/lua_interface.cpp.o
-
-src/script/lua_interface.i: src/script/lua_interface.cpp.i
-
-.PHONY : src/script/lua_interface.i
-
-# target to preprocess a source file
-src/script/lua_interface.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/lua_interface.cpp.i
-.PHONY : src/script/lua_interface.cpp.i
-
-src/script/lua_interface.s: src/script/lua_interface.cpp.s
-
-.PHONY : src/script/lua_interface.s
-
-# target to generate assembly for a file
-src/script/lua_interface.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/lua_interface.cpp.s
-.PHONY : src/script/lua_interface.cpp.s
-
-src/script/script_handler.o: src/script/script_handler.cpp.o
-
-.PHONY : src/script/script_handler.o
-
-# target to build an object file
-src/script/script_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/script_handler.cpp.o
-.PHONY : src/script/script_handler.cpp.o
-
-src/script/script_handler.i: src/script/script_handler.cpp.i
-
-.PHONY : src/script/script_handler.i
-
-# target to preprocess a source file
-src/script/script_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/script_handler.cpp.i
-.PHONY : src/script/script_handler.cpp.i
-
-src/script/script_handler.s: src/script/script_handler.cpp.s
-
-.PHONY : src/script/script_handler.s
-
-# target to generate assembly for a file
-src/script/script_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/script/script_handler.cpp.s
-.PHONY : src/script/script_handler.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1077,111 +1104,114 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... out"
-	@echo "... src/ai/ai.o"
-	@echo "... src/ai/ai.i"
-	@echo "... src/ai/ai.s"
-	@echo "... src/ai/ai_mob.o"
-	@echo "... src/ai/ai_mob.i"
-	@echo "... src/ai/ai_mob.s"
-	@echo "... src/ai/ai_player.o"
-	@echo "... src/ai/ai_player.i"
-	@echo "... src/ai/ai_player.s"
+	@echo "... src/Ai/Ai.o"
+	@echo "... src/Ai/Ai.i"
+	@echo "... src/Ai/Ai.s"
+	@echo "... src/Ai/AiMob.o"
+	@echo "... src/Ai/AiMob.i"
+	@echo "... src/Ai/AiMob.s"
+	@echo "... src/Ai/AiPlayer.o"
+	@echo "... src/Ai/AiPlayer.i"
+	@echo "... src/Ai/AiPlayer.s"
+	@echo "... src/Collision/CollisionHandler.o"
+	@echo "... src/Collision/CollisionHandler.i"
+	@echo "... src/Collision/CollisionHandler.s"
+	@echo "... src/Core/Game.o"
+	@echo "... src/Core/Game.i"
+	@echo "... src/Core/Game.s"
+	@echo "... src/Gameplay/Chest.o"
+	@echo "... src/Gameplay/Chest.i"
+	@echo "... src/Gameplay/Chest.s"
+	@echo "... src/Gameplay/Door.o"
+	@echo "... src/Gameplay/Door.i"
+	@echo "... src/Gameplay/Door.s"
+	@echo "... src/Gameplay/Entity.o"
+	@echo "... src/Gameplay/Entity.i"
+	@echo "... src/Gameplay/Entity.s"
+	@echo "... src/Gameplay/Inventory.o"
+	@echo "... src/Gameplay/Inventory.i"
+	@echo "... src/Gameplay/Inventory.s"
+	@echo "... src/Gameplay/Item.o"
+	@echo "... src/Gameplay/Item.i"
+	@echo "... src/Gameplay/Item.s"
+	@echo "... src/Gameplay/ItemBag.o"
+	@echo "... src/Gameplay/ItemBag.i"
+	@echo "... src/Gameplay/ItemBag.s"
+	@echo "... src/Gameplay/Level.o"
+	@echo "... src/Gameplay/Level.i"
+	@echo "... src/Gameplay/Level.s"
+	@echo "... src/Gameplay/Lever.o"
+	@echo "... src/Gameplay/Lever.i"
+	@echo "... src/Gameplay/Lever.s"
+	@echo "... src/Gameplay/Living.o"
+	@echo "... src/Gameplay/Living.i"
+	@echo "... src/Gameplay/Living.s"
+	@echo "... src/Gameplay/Map.o"
+	@echo "... src/Gameplay/Map.i"
+	@echo "... src/Gameplay/Map.s"
+	@echo "... src/Gameplay/SpikeTrap.o"
+	@echo "... src/Gameplay/SpikeTrap.i"
+	@echo "... src/Gameplay/SpikeTrap.s"
+	@echo "... src/Gui/GraphicInv.o"
+	@echo "... src/Gui/GraphicInv.i"
+	@echo "... src/Gui/GraphicInv.s"
+	@echo "... src/Gui/GraphicLoot.o"
+	@echo "... src/Gui/GraphicLoot.i"
+	@echo "... src/Gui/GraphicLoot.s"
+	@echo "... src/Gui/Gui.o"
+	@echo "... src/Gui/Gui.i"
+	@echo "... src/Gui/Gui.s"
+	@echo "... src/Gui/Slot.o"
+	@echo "... src/Gui/Slot.i"
+	@echo "... src/Gui/Slot.s"
+	@echo "... src/Input/InputHandler.o"
+	@echo "... src/Input/InputHandler.i"
+	@echo "... src/Input/InputHandler.s"
+	@echo "... src/Render/AnimatedSprite.o"
+	@echo "... src/Render/AnimatedSprite.i"
+	@echo "... src/Render/AnimatedSprite.s"
+	@echo "... src/Render/Bar.o"
+	@echo "... src/Render/Bar.i"
+	@echo "... src/Render/Bar.s"
+	@echo "... src/Render/BigParticle.o"
+	@echo "... src/Render/BigParticle.i"
+	@echo "... src/Render/BigParticle.s"
+	@echo "... src/Render/Indication.o"
+	@echo "... src/Render/Indication.i"
+	@echo "... src/Render/Indication.s"
+	@echo "... src/Render/IndicationHandler.o"
+	@echo "... src/Render/IndicationHandler.i"
+	@echo "... src/Render/IndicationHandler.s"
+	@echo "... src/Render/Renderer.o"
+	@echo "... src/Render/Renderer.i"
+	@echo "... src/Render/Renderer.s"
+	@echo "... src/Render/Sprite.o"
+	@echo "... src/Render/Sprite.i"
+	@echo "... src/Render/Sprite.s"
+	@echo "... src/Resource/Animation.o"
+	@echo "... src/Resource/Animation.i"
+	@echo "... src/Resource/Animation.s"
+	@echo "... src/Resource/AnimationCache.o"
+	@echo "... src/Resource/AnimationCache.i"
+	@echo "... src/Resource/AnimationCache.s"
+	@echo "... src/Resource/FontCache.o"
+	@echo "... src/Resource/FontCache.i"
+	@echo "... src/Resource/FontCache.s"
+	@echo "... src/Resource/TextureCache.o"
+	@echo "... src/Resource/TextureCache.i"
+	@echo "... src/Resource/TextureCache.s"
+	@echo "... src/Script/LuaInterface.o"
+	@echo "... src/Script/LuaInterface.i"
+	@echo "... src/Script/LuaInterface.s"
+	@echo "... src/Script/ScriptHandler.o"
+	@echo "... src/Script/ScriptHandler.i"
+	@echo "... src/Script/ScriptHandler.s"
 	@echo "... src/base64/base64.o"
 	@echo "... src/base64/base64.i"
 	@echo "... src/base64/base64.s"
-	@echo "... src/collision/collision_handler.o"
-	@echo "... src/collision/collision_handler.i"
-	@echo "... src/collision/collision_handler.s"
-	@echo "... src/core/game.o"
-	@echo "... src/core/game.i"
-	@echo "... src/core/game.s"
-	@echo "... src/gameplay/chest.o"
-	@echo "... src/gameplay/chest.i"
-	@echo "... src/gameplay/chest.s"
-	@echo "... src/gameplay/door.o"
-	@echo "... src/gameplay/door.i"
-	@echo "... src/gameplay/door.s"
-	@echo "... src/gameplay/entity.o"
-	@echo "... src/gameplay/entity.i"
-	@echo "... src/gameplay/entity.s"
-	@echo "... src/gameplay/inventory.o"
-	@echo "... src/gameplay/inventory.i"
-	@echo "... src/gameplay/inventory.s"
-	@echo "... src/gameplay/item.o"
-	@echo "... src/gameplay/item.i"
-	@echo "... src/gameplay/item.s"
-	@echo "... src/gameplay/item_bag.o"
-	@echo "... src/gameplay/item_bag.i"
-	@echo "... src/gameplay/item_bag.s"
-	@echo "... src/gameplay/level.o"
-	@echo "... src/gameplay/level.i"
-	@echo "... src/gameplay/level.s"
-	@echo "... src/gameplay/lever.o"
-	@echo "... src/gameplay/lever.i"
-	@echo "... src/gameplay/lever.s"
-	@echo "... src/gameplay/living.o"
-	@echo "... src/gameplay/living.i"
-	@echo "... src/gameplay/living.s"
-	@echo "... src/gameplay/map.o"
-	@echo "... src/gameplay/map.i"
-	@echo "... src/gameplay/map.s"
-	@echo "... src/gameplay/spike_trap.o"
-	@echo "... src/gameplay/spike_trap.i"
-	@echo "... src/gameplay/spike_trap.s"
-	@echo "... src/gui/graphic_inv.o"
-	@echo "... src/gui/graphic_inv.i"
-	@echo "... src/gui/graphic_inv.s"
-	@echo "... src/gui/graphic_loot.o"
-	@echo "... src/gui/graphic_loot.i"
-	@echo "... src/gui/graphic_loot.s"
-	@echo "... src/gui/gui.o"
-	@echo "... src/gui/gui.i"
-	@echo "... src/gui/gui.s"
-	@echo "... src/gui/slot.o"
-	@echo "... src/gui/slot.i"
-	@echo "... src/gui/slot.s"
-	@echo "... src/input/input_handler.o"
-	@echo "... src/input/input_handler.i"
-	@echo "... src/input/input_handler.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/render/animated_sprite.o"
-	@echo "... src/render/animated_sprite.i"
-	@echo "... src/render/animated_sprite.s"
-	@echo "... src/render/bar.o"
-	@echo "... src/render/bar.i"
-	@echo "... src/render/bar.s"
-	@echo "... src/render/big_particle.o"
-	@echo "... src/render/big_particle.i"
-	@echo "... src/render/big_particle.s"
-	@echo "... src/render/indication_handler.o"
-	@echo "... src/render/indication_handler.i"
-	@echo "... src/render/indication_handler.s"
-	@echo "... src/render/renderer.o"
-	@echo "... src/render/renderer.i"
-	@echo "... src/render/renderer.s"
-	@echo "... src/render/sprite.o"
-	@echo "... src/render/sprite.i"
-	@echo "... src/render/sprite.s"
-	@echo "... src/resource/animation.o"
-	@echo "... src/resource/animation.i"
-	@echo "... src/resource/animation.s"
-	@echo "... src/resource/animation_cache.o"
-	@echo "... src/resource/animation_cache.i"
-	@echo "... src/resource/animation_cache.s"
-	@echo "... src/resource/font_cache.o"
-	@echo "... src/resource/font_cache.i"
-	@echo "... src/resource/font_cache.s"
-	@echo "... src/resource/texture_cache.o"
-	@echo "... src/resource/texture_cache.i"
-	@echo "... src/resource/texture_cache.s"
-	@echo "... src/script/lua_interface.o"
-	@echo "... src/script/lua_interface.i"
-	@echo "... src/script/lua_interface.s"
-	@echo "... src/script/script_handler.o"
-	@echo "... src/script/script_handler.i"
-	@echo "... src/script/script_handler.s"
 .PHONY : help
 
 
