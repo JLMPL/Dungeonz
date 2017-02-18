@@ -245,6 +245,8 @@ ItemBag.hpp
 /home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.hpp
 ../Collision/CollisionHandler.hpp
 /home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.hpp
+../Render/Renderer.hpp
+/home/dominik/Desktop/Rekt/src/Render/Renderer.hpp
 
 /home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.hpp
 Chest.hpp

@@ -60,7 +60,7 @@ void AIMob::update(float deltaTime)
 			}
 			else
 				m_state = MobState::DEAD;
-			m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_idle.ani"));
+			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 		}
 		break;
 		case MobState::MOVE:
@@ -72,7 +72,7 @@ void AIMob::update(float deltaTime)
 
 				m_target->setDirection(Direction::deduceDirection(m_direction));
 				m_target->move(m_direction * m_speed * deltaTime);
-				m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_walk.ani"));
+				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_walk.ani"));
 
 				if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 				{
@@ -90,11 +90,11 @@ void AIMob::update(float deltaTime)
 				auto enemy = static_cast<Living*>(m_focus);
 				enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
 				enemy->push(m_target->getDirection(), 5, 0.1);
-				m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_attack.ani"),
+				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_attack.ani"),
 				[&]()
 				{
 					m_state = MobState::IDLE;
-					m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_idle.ani"));
+					m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 				});
 				m_timer.restart();
 			}
@@ -105,7 +105,7 @@ void AIMob::update(float deltaTime)
 		case MobState::DEAD:
 		{
 			m_target->setDirection(Direction::UP);
-			m_target->setAnimation(AnimationCache::Get().getAnimation("data/" + m_target->getProfile().apperance + "_dead.ani"));
+			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));
 		}
 		break;
 	}

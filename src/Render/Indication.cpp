@@ -7,7 +7,7 @@ Indication::Indication()
 
 Indication::Indication(const std::string& message, const sf::Color& col, const vec2f& pos)
 {
-	text.setFont(*FontCache::Get().getFont("data/Monaco_Linux.ttf"));
+	text.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	text.setCharacterSize(10);
 	text.setString(message);
 	color = col;

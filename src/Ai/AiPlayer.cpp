@@ -38,7 +38,7 @@ void AIPlayer::update(float deltaTime)
 			{
 				if(m_timer.getElapsedTime().asMilliseconds() > 300)
 				{
-					m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_attack.ani"),
+					m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
 					[&]()
 					{
 						m_state = PlayerState::MOVING;
@@ -87,7 +87,7 @@ void AIPlayer::update(float deltaTime)
 		}
 	}
 	else
-		m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_idle.ani"));
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 }
 
 void AIPlayer::movingState(float deltaTime)
@@ -118,7 +118,7 @@ void AIPlayer::movingState(float deltaTime)
 		m_target->setDirection(Direction::RIGHT);
 	}
 
-	m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_walk.ani"));
+	m_target->setAnimation(AnimationCache::Get().getAnimation("player_walk.ani"));
 
 	if(!InputHandler::Get().isAnyKeyPressed())
 		m_state = PlayerState::IDLE;
@@ -134,7 +134,7 @@ void AIPlayer::movingState(float deltaTime)
 
 void AIPlayer::idleState(float deltaTime)
 {
-	m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_idle.ani"));
+	m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 
 	if(InputHandler::Get().isUp() or
 	   InputHandler::Get().isDown() or
@@ -157,9 +157,9 @@ void AIPlayer::attackState(float deltaTime)
 {
 	// if(m_timer.getElapsedTime().asMilliseconds() > 300)
 	// {
-	// 	// m_target->getLevel()->addBigParticle("data/blood_splash.ani", m_target->getPosition().geti(), 0.150);
+	// 	// m_target->getLevel()->addBigParticle("blood_splash.ani", m_target->getPosition().geti(), 0.150);
 
-	// 	m_target->setAnimation(AnimationCache::Get().getAnimation("data/player_attack.ani"),
+	// 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
 	// 	[&]()
 	// 	{
 	// 		m_state = PlayerState::MOVING;

@@ -20,7 +20,7 @@ void Living::init(const LivingProfile& profile)
 {
 	m_profile = profile;
 
-	m_sprite->loadFromFile("data/" + m_profile.apperance + "_walk.ani");
+	m_sprite->loadFromFile(m_profile.apperance + "_walk.ani");
 	m_code = m_profile.code;
 
 	m_box = BoxPtr_t(new Box());
@@ -124,7 +124,7 @@ void Living::damage(int damage)
 	currHp -= damage;
 	if(currHp < 0) currHp = 0;
 
-	m_level->addBigParticle("data/blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
 }
 
 void Living::setDamage(int high)

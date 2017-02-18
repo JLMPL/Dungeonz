@@ -7,6 +7,7 @@ void AnimationCache::init()
 AnimPtr_t AnimationCache::getAnimation(const std::string& path)
 {
 	auto anim = m_Animations.find(path);
+
 	if(anim == m_Animations.end())
 		return loadAnimation(path);
 	else

@@ -2,7 +2,7 @@
 #include "CollisionAlgorithm.hpp"
 #include <SFML/Window/Keyboard.hpp>
 
-constexpr float gPush = 0.02;
+constexpr float g_Push = 0.02;
 
 void CollisionHandler::init()
 {
@@ -30,13 +30,13 @@ void CollisionHandler::update(float deltaTime)
 						Collision::AABBResponse(a.rect, b.rect, move);
 						if(move.y == 0)
 						{
-							a.rect.x += move.x * 0.5 + gPush;
-							b.rect.x -= move.x * 0.5 + gPush;
+							a.rect.x += move.x * 0.5 + g_Push;
+							b.rect.x -= move.x * 0.5 + g_Push;
 						}
 						else
 						{
-							a.rect.y += move.y * 0.5 + gPush;
-							b.rect.y -= move.y * 0.5 + gPush;
+							a.rect.y += move.y * 0.5 + g_Push;
+							b.rect.y -= move.y * 0.5 + g_Push;
 						}
 						react(m_bodies[i], m_bodies[j]);
 					}
@@ -47,7 +47,7 @@ void CollisionHandler::update(float deltaTime)
 					{
 						vec2f move;
 						Collision::AABBResponse(a.rect, b.rect, move);
-						(move.y == 0) ? a.rect.x += move.x + gPush : a.rect.y += move.y + gPush;
+						(move.y == 0) ? a.rect.x += move.x + g_Push : a.rect.y += move.y + g_Push;
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
@@ -58,7 +58,7 @@ void CollisionHandler::update(float deltaTime)
 						vec2f move;
 						Collision::AABBResponse(b.rect, a.rect, move);
 
-						(move.y == 0) ? b.rect.x += move.x + gPush : b.rect.y += move.y + gPush;
+						(move.y == 0) ? b.rect.x += move.x + g_Push : b.rect.y += move.y + g_Push;
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}

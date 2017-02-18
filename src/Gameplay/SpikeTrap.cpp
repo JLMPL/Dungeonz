@@ -8,7 +8,7 @@ SpikeTrap::SpikeTrap()
 	m_type = EntityType::SPIKE_TRAP;
 
 	m_sprite = SpritePtr_t(new AnimatedSprite());
-	m_sprite->loadFromFile("data/spike_trap_idle.ani");
+	m_sprite->loadFromFile("spike_trap_idle.ani");
 	m_sprite->setOrigin({16,16});
 	m_sprite->setRect({0,0,32,32});
 
@@ -47,7 +47,7 @@ void SpikeTrap::activate()
 	{
 		m_active = true;
 		m_timer = 0;
-		m_sprite->setAnimation(AnimationCache::Get().getAnimation("data/spike_trap_stab.ani"));
+		m_sprite->setAnimation(AnimationCache::Get().getAnimation("spike_trap_stab.ani"));
 	}
 }
 
@@ -55,7 +55,7 @@ void SpikeTrap::deactivate()
 {
 	if(m_active)
 	{
-		m_sprite->setAnimation(AnimationCache::Get().getAnimation("data/spike_trap_hide.ani"),
+		m_sprite->setAnimation(AnimationCache::Get().getAnimation("spike_trap_hide.ani"),
 		[this]()
 		{
 			m_active = false;

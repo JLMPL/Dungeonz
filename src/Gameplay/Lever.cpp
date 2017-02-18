@@ -6,7 +6,7 @@ Lever::Lever()
 	m_type = EntityType::LEVER;
 
 	m_sprite = SpritePtr_t(new Sprite());
-	m_sprite->loadFromFile("data/test_lever.png");
+	m_sprite->loadFromFile("test_lever.png");
 	m_sprite->setOrigin({16,32});
 	m_sprite->setRect({0,0,32,32});
 
