@@ -11,6 +11,6 @@ __zlib__ - Decompressing map files
 __SDL2__ - Error handling  
 
 # resources
-__Monaco Font__ - Most of User interface
-__HarabaraHand Font__ - In game Notes
+__Monaco Font__ - Most of User interface  
+__HarabaraHand Font__ - In game Notes  
 
