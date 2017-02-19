@@ -25,7 +25,7 @@ void GUI::init()
 	m_bookPos = vec2i(400 - g_BookWidth/2, 300 - g_BookHeight/2);
 
 	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
-	m_bookText.setCharacterSize(20);
+	m_bookText.setCharacterSize(21);
 	m_bookText.setFillColor({0,0,0});
 }
 
