@@ -15,7 +15,8 @@ class Missile : public Entity
 	private:
 		Direction_t m_direction;
 		vec2f m_velocity;
-		float m_speed = 100;
+		float m_speed = 200;
+		sf::Clock m_warmup;
 };
 
 #endif

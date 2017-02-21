@@ -84,6 +84,11 @@ void AIPlayer::update(float deltaTime)
 				pickingState(deltaTime);
 				break;
 			}
+			case PlayerState::CASTING:
+			{
+				castState(deltaTime);
+			}
+			break;
 		}
 	}
 	else
@@ -132,9 +137,9 @@ void AIPlayer::movingState(float deltaTime)
 	}
 	else if(InputHandler::Get().isCast())
 	{
-		auto ball = m_target->getLevel()->addMissile(EntityPtr_t(new Missile()));
-		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		m_state = PlayerState::CASTING;
 	}
+	
 }
 
 void AIPlayer::idleState(float deltaTime)
@@ -155,6 +160,10 @@ void AIPlayer::idleState(float deltaTime)
 	else if(InputHandler::Get().isAction())
 	{
 		m_state = PlayerState::PICKING;
+	}
+	else if(InputHandler::Get().isCast())
+	{
+		m_state = PlayerState::CASTING;
 	}
 }
 
@@ -262,6 +271,17 @@ void AIPlayer::pickingState(float deltaTime)
 		m_timer.restart();
 	}
 	m_state = PlayerState::MOVING;
+}
+
+void AIPlayer::castState(float deltaTime)
+{
+	if(InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.5)
+	{
+		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		m_timer.restart();
+	}
+	m_state = PlayerState::IDLE;
 }
 
 void AIPlayer::focus()

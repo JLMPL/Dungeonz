@@ -8,7 +8,8 @@ enum class PlayerState
 	MOVING = 0,
 	IDLE,
 	ATTACK,
-	PICKING
+	PICKING,
+	CASTING
 };
 
 class Entity;
@@ -24,6 +25,7 @@ class AIPlayer : public AI
 		void idleState(float deltaTime);
 		void attackState(float deltaTime);
 		void pickingState(float deltaTime);
+		void castState(float deltaTime);
 
 	private:
 		float       m_speed = 100;
