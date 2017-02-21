@@ -27,6 +27,14 @@ ItemPtr_t Level::addItem(ItemPtr_t item)
 	return m_items.back();
 }
 
+Missile* Level::addMissile(EntityPtr_t missile)
+{
+	m_entities.push_back(std::move(missile));
+	m_entities.back()->setLevel(this);
+	m_entities.back()->setId(m_lastEntityId);
+	return static_cast<Missile*>(m_entities.back().get());
+}
+
 void Level::addBigParticle(const std::string& path, const vec2i& pos, float life)
 {
 	m_bigParticles.push_back(BigParticle());

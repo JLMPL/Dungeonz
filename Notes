@@ -16,7 +16,7 @@ Touched When Moving:
 -no logging here
 
 TODO:
--single particles (blood)
+
 
 I have bat I can kill bat - combat
 I killed bat I can loot bat - inventory
@@ -25,3 +25,8 @@ I can loot chests I can find keys - keys
 I can find keys I can open doors - doors
 I have doors I can open them by other means - Lever, PressPlate
 I can open door I can advance in the dungeon - character progression
+
+Spellz:
+Fireball
+Speed
+Ice

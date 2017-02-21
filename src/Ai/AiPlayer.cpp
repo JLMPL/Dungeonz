@@ -130,6 +130,11 @@ void AIPlayer::movingState(float deltaTime)
 	{
 		m_state = PlayerState::PICKING;
 	}
+	else if(InputHandler::Get().isCast())
+	{
+		auto ball = m_target->getLevel()->addMissile(EntityPtr_t(new Missile()));
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+	}
 }
 
 void AIPlayer::idleState(float deltaTime)
