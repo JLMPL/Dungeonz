@@ -234,3 +234,8 @@ Inventory& Living::accessInv()
 {
 	return m_inv;
 }
+
+bool Living::isDead() const
+{
+	return m_attributes[Attribute::HP] <= 0;
+}

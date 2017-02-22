@@ -77,6 +77,8 @@ void AIPlayer::update(float deltaTime)
 					}
 					m_timer.restart();
 				}
+				else 
+					m_state = PlayerState::IDLE;
 				break;
 			}
 			case PlayerState::PICKING:
@@ -169,49 +171,49 @@ void AIPlayer::idleState(float deltaTime)
 
 void AIPlayer::attackState(float deltaTime)
 {
-	// if(m_timer.getElapsedTime().asMilliseconds() > 300)
-	// {
-	// 	// m_target->getLevel()->addBigParticle("blood_splash.ani", m_target->getPosition().geti(), 0.150);
+	if(m_timer.getElapsedTime().asMilliseconds() > 300)
+				{
+					m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
+					[&]()
+					{
+						m_state = PlayerState::MOVING;
+					});
 
-	// 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
-	// 	[&]()
-	// 	{
-	// 		m_state = PlayerState::MOVING;
-	// 	});
+					if(m_focus)
+					{
+						float dist = length(m_focus->getPosition() - m_target->getPosition());
 
-	// 	if(m_focus)
-	// 	{
-	// 		float dist = length(m_focus->getPosition() - m_target->getPosition());
+						if(dist <= 32)
+						{
+							switch(m_focus->getType())
+							{
+								case EntityType::LIVING:
+								{
+									auto living = static_cast<Living*>(m_focus);
 
-	// 		if(dist <= 32)
-	// 		{
-	// 			switch(m_focus->getType())
-	// 			{
-	// 				case EntityType::LIVING:
-	// 				{
-	// 					auto living = static_cast<Living*>(m_focus);
+									if(living->getAttribute(Attribute::HP) > 0)
+									{
+										int damage = m_target->getAttribute(Attribute::DAMAGE);
+										living->damage(damage);
+										living->push(m_target->getDirection(), 5, 0.1);
 
-	// 					if(living->getAttribute(Attribute::HP) > 0)
-	// 					{
-	// 						int damage = m_target->getAttribute(Attribute::DAMAGE);
-	// 						living->damage(damage);
-	// 						living->push(m_target->getDirection(), 5, 0.075);
+										IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
 
-	// 						IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
-
-	// 						if(living->getAttribute(Attribute::HP) <= 0)
-	// 						{
-	// 							m_target->addXp(living->getXp());
-	// 							IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
-	// 						}
-	// 					}
-	// 					break;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// 	m_timer.restart();
-	// }
+										if(living->getAttribute(Attribute::HP) <= 0)
+										{
+											m_target->addXp(living->getXp());
+											IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
+										}
+									}
+									break;
+								}
+							}
+						}
+					}
+					m_timer.restart();
+				}
+				else 
+					m_state = PlayerState::IDLE;
 }
 
 void AIPlayer::pickingState(float deltaTime)
@@ -275,13 +277,22 @@ void AIPlayer::pickingState(float deltaTime)
 
 void AIPlayer::castState(float deltaTime)
 {
-	if(InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.5)
+	if(InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
 	{
 		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
 		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		ball->setOwner(static_cast<Entity*>(m_target));
+
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+		[&]()
+		{
+			m_state = PlayerState::IDLE;
+		});
+
 		m_timer.restart();
 	}
-	m_state = PlayerState::IDLE;
+	else
+		m_state = PlayerState::IDLE;
 }
 
 void AIPlayer::focus()

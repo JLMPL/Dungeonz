@@ -50,6 +50,7 @@ class Living : public Entity
 		bool 				 isAnimFinished() const;
 		bool 				 isBusy() const;
 		Inventory& 			 accessInv();
+		bool 				 isDead() const;
 
 	private:
 		LivingProfile m_profile;
