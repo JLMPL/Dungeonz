@@ -279,17 +279,21 @@ void AIPlayer::castState(float deltaTime)
 {
 	if(InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
 	{
-		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
-		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
-		ball->setOwner(static_cast<Entity*>(m_target));
-
-		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
-		[&]()
+		if(m_target->getAttribute(Attribute::MP) >= 10)
 		{
-			m_state = PlayerState::IDLE;
-		});
+			auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
+			ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+			ball->setOwner(static_cast<Entity*>(m_target));
 
-		m_timer.restart();
+			m_target->drainMana(10);
+			m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+			[&]()
+			{
+				m_state = PlayerState::IDLE;
+			});
+
+			m_timer.restart();
+		}
 	}
 	else
 		m_state = PlayerState::IDLE;

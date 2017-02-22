@@ -90,6 +90,7 @@ void Missile::blow(Entity* ent)
 					auto beholder = static_cast<Living*>(m_owner);
 
 					living->damage(20);
+					living->push(m_direction, 8, 0.1);
 
 					if(living->isDead())
 					{

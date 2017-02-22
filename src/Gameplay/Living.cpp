@@ -120,8 +120,11 @@ void Living::push(Direction_t dir, float dist, float duration)
 
 void Living::damage(int damage)
 {
-	int& currHp = m_attributes[Attribute::HP];
-	currHp -= damage;
+	int& currHp  = m_attributes[Attribute::HP];
+	int& defense = m_attributes[Attribute::DEFENSE];
+
+	currHp -= abs(damage - defense);
+
 	if(currHp < 0) currHp = 0;
 
 	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
@@ -155,6 +158,15 @@ void Living::restoreMana(int mana)
 void Living::restoreFullMana()
 {
 	m_attributes[Attribute::MP] = m_attributes[Attribute::MAGICKA];
+}
+
+void Living::drainMana(int mana)
+{
+	int& magicka = m_attributes[Attribute::MP];
+	magicka -= mana;
+
+	if(magicka < 0)
+		magicka = 0;
 }
 
 void Living::setEquippedItem(int where, Item* item)
