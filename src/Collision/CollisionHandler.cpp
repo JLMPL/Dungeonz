@@ -22,6 +22,7 @@ void CollisionHandler::update(float deltaTime)
 
 			if(a.enabled and b.enabled)
 			{
+				//DYNAMIC DYNAMIC
 				if(a.type == CollisionType::DYNAMIC and b.type == CollisionType::DYNAMIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
@@ -41,6 +42,8 @@ void CollisionHandler::update(float deltaTime)
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
+
+				//DYNAMIC STATIC
 				else if(a.type == CollisionType::DYNAMIC and b.type == CollisionType::STATIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
@@ -62,6 +65,8 @@ void CollisionHandler::update(float deltaTime)
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
+
+				//TRIGGER DYNAMIC
 				else if(a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::DYNAMIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
@@ -70,6 +75,22 @@ void CollisionHandler::update(float deltaTime)
 					}
 				}
 				else if(b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::DYNAMIC)
+				{
+					if(Collision::AABBOverlap(a.rect, b.rect))
+					{
+						react(m_bodies[i], m_bodies[j]);
+					}
+				}
+
+				//TRIGGER STATIC
+				else if(a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::STATIC)
+				{
+					if(Collision::AABBOverlap(a.rect, b.rect))
+					{
+						react(m_bodies[i], m_bodies[j]);
+					}
+				}
+				else if(b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::STATIC)
 				{
 					if(Collision::AABBOverlap(a.rect, b.rect))
 					{
@@ -94,14 +115,14 @@ void CollisionHandler::addBody(BoxPtr_t box)
 
 void CollisionHandler::react(BoxPtr_t a, BoxPtr_t b)
 {
-	if(b->material == a->reactMaterial)
-	{	
+	if((a->reactMaterial & b->material) == b->material)
+	{
 		if(a->callback)
 			a->callback();
 	}
 
-	if(a->material == b->reactMaterial)
-	{	
+	if((b->reactMaterial & a->material) == a->material)
+	{
 		if(b->callback)
 			b->callback();
 	}

@@ -2,6 +2,7 @@
 #define LEVEL_HPP
 #include "EntityPtr.hpp"
 #include "ItemPtr.hpp"
+#include "Missile.hpp"
 #include "Map.hpp"
 #include "../Render/BigParticle.hpp"
 #include <vector>
@@ -12,6 +13,7 @@ class Level
 		void init();
 		Entity* addEntity(EntityPtr_t entity);
 		ItemPtr_t addItem(ItemPtr_t item);
+		Missile* addMissile(std::shared_ptr<Missile> missile);
 		void addBigParticle(const std::string& path, const vec2i& pos, float life);
 		void update(float deltaTime);
 
@@ -24,6 +26,7 @@ class Level
 		uint m_lastEntityId = 0;
 		std::vector<ItemPtr_t> m_items;
 		std::vector<BigParticle> m_bigParticles;
+		std::vector<std::shared_ptr<Missile>> m_missiles;
 
 		Map map;
 };

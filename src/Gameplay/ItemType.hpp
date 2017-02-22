@@ -10,7 +10,6 @@ enum class ItemType
 	POTION,
 	FOOD,
 	BOOK,
-	GOLD,
 	MISC
 };
 

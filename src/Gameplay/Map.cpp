@@ -230,7 +230,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 
 			vec2f pos;
-			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.x = std::stof(object->first_attribute("x")->value()) - 13;
 			pos.y = std::stof(object->first_attribute("y")->value());
 
 			auto chest = (Chest*)m_level->addEntity(EntityPtr_t(new Chest()));
@@ -386,6 +386,7 @@ void Map::collisions()
 		{
 			BoxPtr_t box(new Box());
 			box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
+			box->material = CollMaterial::REGULAR;
 			m_boxes.push_back(box);
 
 			CollisionHandler::Get().addBody(m_boxes.back());

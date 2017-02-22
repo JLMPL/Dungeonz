@@ -10,6 +10,10 @@ void Level::init()
 {
 	map.setLevel(this);
 	map.loadFromFile("map_test.tmx");
+
+	// auto ball = (Missile*)addEntity(EntityPtr_t(new Missile()));
+	// ball->init(vec2f(800,400), Direction::DOWN, EntityType::FIREBALL);
+
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -25,6 +29,15 @@ ItemPtr_t Level::addItem(ItemPtr_t item)
 {
 	m_items.push_back(item);
 	return m_items.back();
+}
+
+Missile* Level::addMissile(std::shared_ptr<Missile> missile)
+{
+	m_missiles.push_back(missile);
+	m_missiles.back()->setLevel(this);
+	m_missiles.back()->setId(m_lastEntityId);
+	m_lastEntityId++;
+	return m_missiles.back().get();
 }
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, float life)
@@ -44,7 +57,18 @@ void Level::update(float deltaTime)
 			i++;
 	}
 
+	for(auto i = m_missiles.begin(); i != m_missiles.end();)
+	{
+		if((*i)->isDestroyed())
+			i = m_missiles.erase(i);
+		else 
+			i++;
+	}
+
 	for(auto& i : m_entities)
+		i->update(deltaTime);
+
+	for(auto& i : m_missiles)
 		i->update(deltaTime);
 
 	for(auto i = m_bigParticles.begin(); i != m_bigParticles.end();)

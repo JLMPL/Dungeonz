@@ -45,68 +45,92 @@ void AIMob::update(float deltaTime)
 	switch(m_state)
 	{
 		case MobState::IDLE:
-		{
-			if(m_target->getAttribute(Attribute::HP) > 0)
-			{
-				if(m_focus)
-				{
-					if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
-					{
-						m_state = MobState::ATTACK;
-					}
-					else 
-						m_state = MobState::MOVE;
-				}
-			}
-			else
-				m_state = MobState::DEAD;
-			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
-		}
-		break;
+			idleState(deltaTime);
+			break;
 		case MobState::MOVE:
-		{
-			if(m_focus)
-			{
-				m_direction = m_focus->getPosition() - m_target->getPosition();
-				m_direction = normalize(m_direction);
-
-				m_target->setDirection(Direction::deduceDirection(m_direction));
-				m_target->move(m_direction * m_speed * deltaTime);
-				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_walk.ani"));
-
-				if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
-				{
-					m_state = MobState::IDLE;
-				}
-			}
-			else
-				m_state = MobState::IDLE;
-		}
-		break;
+			moveState(deltaTime);
+			break;
 		case MobState::ATTACK:
-		{
-			if(m_timer.getElapsedTime().asMilliseconds() > 1000)
-			{
-				auto enemy = static_cast<Living*>(m_focus);
-				enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
-				enemy->push(m_target->getDirection(), 5, 0.1);
-				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_attack.ani"),
-				[&]()
-				{
-					m_state = MobState::IDLE;
-					m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
-				});
-				m_timer.restart();
-			}
-			if(m_target->getAttribute(Attribute::HP) <= 0)
-				m_state = MobState::DEAD;
-		}
-		break;
+			attackState(deltaTime);
+			break;
 		case MobState::DEAD:
-		{
-			m_target->setDirection(Direction::UP);
-			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));
-		}
-		break;
+			deadState(deltaTime);
+			break;
 	}
+}
+
+void AIMob::idleState(float deltaTime)
+{
+	if(!m_target->isDead())
+	{
+		if(m_focus)
+		{
+			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
+			{
+				m_state = MobState::ATTACK;
+			}
+			else 
+				m_state = MobState::MOVE;
+		}
+	}
+	else
+		m_state = MobState::DEAD;
+	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
+}
+
+void AIMob::moveState(float deltaTime)
+{
+	if(!m_target->isDead())
+	{
+		if(m_focus)
+		{
+			m_direction = m_focus->getPosition() - m_target->getPosition();
+			m_direction = normalize(m_direction);
+
+			m_target->setDirection(Direction::deduceDirection(m_direction));
+			m_target->move(m_direction * m_speed * deltaTime);
+			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_walk.ani"));
+
+			if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
+			{
+				m_state = MobState::IDLE;
+			}
+		}
+		else
+			m_state = MobState::IDLE;
+	}
+	else
+		m_state = MobState::DEAD;
+}
+
+void AIMob::attackState(float deltaTime)
+{
+	if(!m_target->isDead())
+	{
+		if(m_timer.getElapsedTime().asMilliseconds() > 1000)
+		{
+			auto enemy = static_cast<Living*>(m_focus);
+			enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
+			enemy->push(m_target->getDirection(), 5, 0.1);
+			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_attack.ani"),
+			[&]()
+			{
+				m_state = MobState::IDLE;
+				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
+			});
+			m_timer.restart();
+		}
+		else
+		{
+			m_state = MobState::IDLE;
+		}
+	}
+	else
+		m_state = MobState::DEAD;
+}
+
+void AIMob::deadState(float deltaTime)
+{
+	m_target->setDirection(Direction::UP);
+	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));
 }

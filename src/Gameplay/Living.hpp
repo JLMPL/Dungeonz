@@ -32,6 +32,7 @@ class Living : public Entity
 
 		void restoreMana(int mana);
 		void restoreFullMana();
+		void drainMana(int mana);
 		
 		void setEquippedItem(int where, Item* item);
 		bool isEquipped(int where, Item* item);
@@ -50,6 +51,7 @@ class Living : public Entity
 		bool 				 isAnimFinished() const;
 		bool 				 isBusy() const;
 		Inventory& 			 accessInv();
+		bool 				 isDead() const;
 
 	private:
 		LivingProfile m_profile;

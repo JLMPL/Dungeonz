@@ -19,8 +19,12 @@ class AIMob : public AI
 	public:
 		void setup() override final;
 		void update(float deltaTime) override final;
-
 		void focus();
+
+		void idleState(float deltaTime);
+		void moveState(float deltaTime);
+		void attackState(float deltaTime);
+		void deadState(float deltaTime);
 		
 	private:
 		Entity*   m_focus = nullptr;

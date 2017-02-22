@@ -13,6 +13,7 @@ enum KeyBind
 	INV,
 	USE,
 	RUN,
+	CAST,
 	NUM_KEYS
 };
 
@@ -41,6 +42,7 @@ class InputHandler
 		bool isAttack();
 		bool isInv();
 		bool isRun();
+		bool isCast();
 
 	private:
 		sf::Keyboard::Key m_keys[KeyBind::NUM_KEYS];

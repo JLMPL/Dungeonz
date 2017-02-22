@@ -1,27 +1,11 @@
-Touched When Moving:
--core
--input
--render
--resource -4/9 nice!
-
--collisions - 28.01.17
--mob (let's say rat or bat) yeah bat - 29.01.17
--push back literally [enemies when hit & shit] - 29/30.01.17
--add busy state - 29/30.01.17
--desired push duration - 30.01.2017
--shadows - 30.01.2017
--some stats [health, mana] yeah! - 30.01.2017
--animation load from txt file - 02.02.2017
--animation looping & finished - 02.02.2017
--no logging here
-
 TODO:
--single particles (blood)
+-skeleton attack animation
+-add armors
+-learn spells
+-spellbook
 
-I have bat I can kill bat - combat
-I killed bat I can loot bat - inventory
-I can loot bat I can add chests - chests
-I can loot chests I can find keys - keys
-I can find keys I can open doors - doors
-I have doors I can open them by other means - Lever, PressPlate
-I can open door I can advance in the dungeon - character progression
+Spellz: -they're gonna be so hardcoded
+Fireball
+Speed
+Ice
+

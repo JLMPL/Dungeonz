@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="35">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="48">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
-  <image source="Dungeon_tiles.png" width="320" height="320"/>
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlksOwyAMRCEh2+6inCL3v16zqCV3NDYmIR9VXYxa2cAD/5Q1pbQ+XGVT3jSBPV/EX5TQHr3/uGkgb9DvQ8naWf0WYpfzs8FYkv0G5se1ms/s1r5VrdNCPrMh17Pj+Wx9ja9zoOP7gjhPxM74mKca34r7QuKMdsbHczx+NB+tsvJW65E5fdfzmHjf4F6s/xa+1wNW33h7pT707PL4LIfRvFn5x7qKnMFitYe/p1Zkn8SqBPk96lYzdOzu4Lf4evNZL6Fv+PjZuqN81kuez6tvdl/5j/Mk0n+tdb53nhytl+ibevBlvrF5zVi9+bV6EMn9evOj8Wd3+oX8P5l/hmSm6Lryvk16y5qJV/HPyOWff5/e7pmLkg==
+   eJztlsuuwzAIRJ3XtjsrX5H//71mUaTpaMA4jdKHukD3CmMfmwGarZSyfbjNuw27LeQfLuKvYOzP3n/abRRvwPexWWyFv7Pw2/mDw1iL/wa1zrHIV35v3wZxaMxXPuZGfj5fxbf4qAHm90Z5XoRf8VmnFt/L+yryzH7F53MiflaPXvN0a/VILc/1PBXdN7yX67+HH/WA1zfRXqsPnF0RX2mY1c3Tn+sqc4bK1RH+kVqxfZarOck/o26Rgbl7B79n7Wy+6iVeGx/rKu5VvuqlaC2qb3Vf+5/nSab/euv86DzJat2Ky97dfvdMzyr05W8trAmOtXmtWMqndMx+U7TqwQzfFt0pq3Vv/tWdruRH5/0qv3f2ZPg2U7Cuom+Ts/neTLyKn9Hmz/8euwNzrICN
   </data>
  </layer>
  <layer name="Decoration" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztltEKgCAMRfcn1qP1aP3/r9WogQiim9SC7gEfxOl1Y5sSgT8QzrFV1lbDWVr7xaAjzMU8KffX/G4hfu6D+la/062d7w8D54FnWGgsvwHwhvvK5Kgf6ep1MnpqKShse++gqeNo1JG+7oXE2hNr7FpwbPP3/gt5zTnF8S7/MW/fA+8TACDnAFLvCJI=
+   eJztlt0KgDAIRn2T1eXW5er9X62khDEY+VMY5IFdRNMvnboAgj+QjrUO3i0KX9L9RaFDzN1zFdqP4r6D4tyM+tq466Xd2ieDv+AdCtjqOwi8wbkyOepnOGcdLU4vJcFe7jdI+jgrdWiue0G59oSbu7YuOGBu2/v+ibq2nBfVFNr3/zESH9bzQh+WPtHWehAE32UHlhQKFA==
   </data>
  </layer>
  <layer name="Collision" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlEsKwDAIRHOg3v98XRWK6DijFUKoEPpJ9KlR19pbLmfZ/9N879s+kX4UA9r34rXnM/3IP8vP/PfOZfGr/Ercu/Oj+mTyH+U7O8fsZ/UX/VeXtbPMe+QD4nuxsH3D5AOJopvVzTS/agPdlRq/cocdPqo3RhCD6dX3nnofHiPK1w58tt+q/K6o86vL79hUfVVqQuGrwtaE1UG9VeUrOhN8Zc4hOx1+1fbpfKWPWC6aidPCzP+ffzb/q1p+5Abn7zPp
+   eJztlFEKxDAIRHOg3v98/S3ijDPaQKAVwnYT9akxrnW2XMmK+7v52f/4y+xRDuw8yzfqV/Yovsiv4s/0qvxdfifv0/moP5X6o3pXesp51X9o313RzwrfKAbGz3JR341SDyaObdU3u/ldH+yu3PydO5zwWb8pwhjKW32eufeRMVC9TuCr763Ln4o7v6b8iU8UqxJ/9IF8u7Er81ftiYxV7VXxRr5ju4PvzDklpg6f6X6Z78wAlc9mYkc6+U/9/Pyz+G+tjtwXCjoZ
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -119,6 +119,27 @@
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="35" name="second_spikes" type="spike_trap" x="128" y="672" width="32" height="32"/>
+  <object id="36" name="second_spikes" type="spike_trap" x="128" y="704" width="32" height="32"/>
+  <object id="37" name="second_spikes" type="spike_trap" x="128" y="736" width="32" height="32"/>
+  <object id="38" name="second_spikes" type="spike_trap" x="192" y="736" width="32" height="32"/>
+  <object id="39" name="second_spikes" type="spike_trap" x="192" y="704" width="32" height="32"/>
+  <object id="40" name="second_spikes" type="spike_trap" x="192" y="672" width="32" height="32"/>
+  <object id="41" name="second_spikes" type="spike_trap" x="192" y="832" width="32" height="32"/>
+  <object id="42" name="second_spikes" type="spike_trap" x="192" y="800" width="32" height="32"/>
+  <object id="43" name="second_spikes" type="spike_trap" x="192" y="768" width="32" height="32"/>
+  <object id="44" name="second_spikes" type="spike_trap" x="128" y="832" width="32" height="32"/>
+  <object id="45" name="second_spikes" type="spike_trap" x="128" y="800" width="32" height="32"/>
+  <object id="46" name="second_spikes" type="spike_trap" x="128" y="768" width="32" height="32"/>
+  <object id="47" name="second_chest" type="chest" x="160" y="896" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_root"/>
+    <property name="item1" value="it_test_root"/>
+    <property name="item2" value="it_test_root"/>
+    <property name="item3" value="it_test_root"/>
+    <property name="item4" value="it_test_root"/>
    </properties>
   </object>
  </objectgroup>
