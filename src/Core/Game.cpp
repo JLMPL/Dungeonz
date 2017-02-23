@@ -6,8 +6,8 @@
 #include "../Resource/TextureCache.hpp"
 #include "../Resource/AnimationCache.hpp"
 #include "../Collision/CollisionHandler.hpp"
-#include "../Gui/Gui.hpp"
 #include "../Render/IndicationHandler.hpp"
+#include "../Gui/Gui.hpp"
 
 Game::Game()
 {
