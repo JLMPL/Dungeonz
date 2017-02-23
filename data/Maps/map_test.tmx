@@ -139,7 +139,7 @@
     <property name="item1" value="it_test_root"/>
     <property name="item2" value="it_test_root"/>
     <property name="item3" value="it_test_root"/>
-    <property name="item4" value="it_test_root"/>
+    <property name="item4" value="it_test_armor"/>
    </properties>
   </object>
  </objectgroup>

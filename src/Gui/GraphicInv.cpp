@@ -125,15 +125,23 @@ void GraphicInv::update()
 			m_select.setPosition(pos.getSfVecf());
 	}
 
-	for(int i = 0; i < m_inv->getAmount(); i++)
+	for(int i = 0; i < 25; i++)
 	{
 		Slot& slot = m_slots[i];
-		slot.setItem(m_inv->getItem(i).get());
+		if(i < m_inv->getAmount())
+			slot.setItem(m_inv->getItem(i).get());
 		slot.unmark();
 
-		if(m_player->isEquipped(Equip::WEAPON, slot.item))
+		if(!slot.empty)
 		{
-			slot.mark();
+			if(m_player->isEquipped(Equip::WEAPON, slot.item))
+			{
+				slot.mark();
+			}
+			else if(m_player->isEquipped(Equip::ARMOR, slot.item))
+			{
+				slot.mark();
+			}
 		}
 	}
 
@@ -151,13 +159,25 @@ void GraphicInv::update()
 				{
 					m_player->setEquippedItem(Equip::WEAPON, &item);
 					(*item.equip)(m_player);
-					m_slots[m_selected].mark();
 				}
 				else
 				{
 					m_player->setEquippedItem(Equip::WEAPON, nullptr);
 					(*item.takeoff)(m_player);
-					m_slots[m_selected].unmark();
+				}
+				break;
+			}
+			case ItemType::ARMOR:
+			{
+				if(!m_player->isEquipped(Equip::ARMOR, &item))
+				{
+					m_player->setEquippedItem(Equip::ARMOR, &item);
+					(*item.equip)(m_player);
+				}
+				else
+				{
+					m_player->setEquippedItem(Equip::ARMOR, nullptr);
+					(*item.takeoff)(m_player);
 				}
 				break;
 			}
@@ -204,6 +224,9 @@ void GraphicInv::description()
 		{
 			case ItemType::WEAPON:
 				m_desc_type.setString("Weapon");
+			break;
+			case ItemType::ARMOR:
+				m_desc_type.setString("Armor");
 			break;
 			case ItemType::FOOD:
 				m_desc_type.setString("Consumable");

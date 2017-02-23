@@ -24,8 +24,11 @@ class Living : public Entity
 		void push(Direction_t dir, float dist, float duration);
 		void damage(int damage);
 
-		void setDamage(int high);
+		void setDamage(int value);
 		void restoreBasicDamage();
+
+		void setDefense(int value);
+		void restoreBasicDefense();
 
 		void restoreHealth(int heal);
 		void restoreFullHealth();

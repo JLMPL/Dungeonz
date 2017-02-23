@@ -51,6 +51,8 @@ bool Inventory::hasItem(const std::string& code)
 
 ItemPtr_t Inventory::getItem(int index)
 {
+	if(index >= m_items.size())
+		return nullptr;
 	return m_items[index];
 }
 

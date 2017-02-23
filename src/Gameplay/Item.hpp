@@ -59,7 +59,13 @@ struct Item
 				type = ItemType::WEAPON;
 
 				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
-
+				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
+			}
+			else if(str_type == "armor")
+			{
+				type = ItemType::ARMOR;
+				
+				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
 				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
 			}
 			else if(str_type == "food")

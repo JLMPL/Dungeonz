@@ -15,6 +15,8 @@ void ScriptHandler::loadLibs(lua_State* lua)
 		addConstructor<void(*)(void)>().
 		addFunction("setDamage",          &Living::setDamage).
 		addFunction("restoreBasicDamage", &Living::restoreBasicDamage).
+		addFunction("setDefense", 		  &Living::setDefense).
+		addFunction("restoreBasicDefense",&Living::restoreBasicDefense).
 		addFunction("restoreHealth",      &Living::restoreHealth).
 		addFunction("restoreFullHealth",  &Living::restoreFullHealth).
 		addFunction("restoreMana",        &Living::restoreMana).

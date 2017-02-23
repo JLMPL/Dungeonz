@@ -123,21 +123,32 @@ void Living::damage(int damage)
 	int& currHp  = m_attributes[Attribute::HP];
 	int& defense = m_attributes[Attribute::DEFENSE];
 
-	currHp -= abs(damage - defense);
+	currHp -= damage;
 
-	if(currHp < 0) currHp = 0;
+	if(currHp < 0)
+		currHp = 0;
 
 	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
 }
 
-void Living::setDamage(int high)
+void Living::setDamage(int value)
 {
-	m_attributes[Attribute::DAMAGE] = high;
+	m_attributes[Attribute::DAMAGE] = value;
 }
 
 void Living::restoreBasicDamage()
 {
-	m_attributes[Attribute::DAMAGE] = 5;
+	m_attributes[Attribute::DAMAGE] = m_profile.damage;
+}
+
+void Living::setDefense(int value)
+{
+	m_attributes[Attribute::DEFENSE] = value;
+}
+
+void Living::restoreBasicDefense()
+{
+	m_attributes[Attribute::DEFENSE] = m_profile.defense;
 }
 
 void Living::restoreHealth(int heal)
@@ -176,10 +187,7 @@ void Living::setEquippedItem(int where, Item* item)
 
 bool Living::isEquipped(int where, Item* item)
 {
-	if(m_equipped[where] == item)
-		return true;
-	else 
-		return false;
+	return m_equipped[where] == item;
 }
 
 void Living::addXp(int xp)
