@@ -196,6 +196,7 @@ void GraphicInv::update()
 			{
 				break;
 			}
+			default:break;
 		}
 		m_timer.restart();
 	}

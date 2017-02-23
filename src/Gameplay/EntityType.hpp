@@ -9,6 +9,7 @@ enum EntityType
     DOOR,
     LEVER,
     SPIKE_TRAP,
+    PRESS_PLATE,
     ITEM_BAG,
     FIREBALL
 };

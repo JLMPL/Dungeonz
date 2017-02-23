@@ -5,6 +5,7 @@
 #include "Door.hpp"
 #include "Lever.hpp"
 #include "SpikeTrap.hpp"
+#include "PressPlate.hpp"
 #include "Chest.hpp"
 #include "ItemBag.hpp"
 #include "../Ai/AiPlayer.hpp"
@@ -311,6 +312,42 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			auto trap = (SpikeTrap*)m_level->addEntity(EntityPtr_t(new SpikeTrap()));
 			trap->setCode(name);
 			trap->setPosition(pos);
+		}
+		else if(type == "press_plate")
+		{
+			std::string name = object->first_attribute("name")->value();
+			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+			std::string type = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+
+			vec2f pos;
+			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.y = std::stof(object->first_attribute("y")->value());
+
+			auto press = (PressPlate*)m_level->addEntity(EntityPtr_t(new PressPlate()));
+			press->setCode(name);
+			press->setPosition(pos);
+			press->whom(m_level->getEntityByCode(whom));
+			// press->setActivateFunc(
+			// [=]()
+			// {
+			// 	if(type == "door")
+			// 	{
+			// 		Door* door = (Door*)m_level->getEntityByCode(whom);
+			// 		if(door)
+			// 			door->open();
+			// 	}
+			// 	else if(type == "spike_trap")
+			// 	{
+			// 		auto spikes = m_level->getEntitiesByCode(whom);
+			// 		if(!spikes.empty())
+			// 		{
+			// 			for(int i = 0; i < spikes.size(); i++)
+			// 			{
+			// 				static_cast<SpikeTrap*>(spikes[i])->disable();
+			// 			}
+			// 		}
+			// 	}
+			// });
 		}
 		else if(type == "item_bag")
 		{

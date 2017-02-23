@@ -7,7 +7,6 @@ void AI::init(Living* target)
 
 void AI::setup()
 {
-    
 }
 
 void AI::update(float deltaTime)
