@@ -6,7 +6,7 @@ enum class ItemType
 	PLAIN = 0,
 	WEAPON,
 	ARMOR,
-	SCROLL,
+	SPELL,
 	POTION,
 	FOOD,
 	BOOK,

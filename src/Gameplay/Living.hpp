@@ -4,6 +4,7 @@
 #include "LivingProfile.hpp"
 #include "Stats.hpp"
 #include "Inventory.hpp"
+#include "Spells.hpp"
 #include "../Ai/AiPtr.hpp"
 #include "../Core/Direction.hpp"
 #include "../Resource/AnimationPtr.hpp"
@@ -39,6 +40,9 @@ class Living : public Entity
 		
 		void setEquippedItem(int where, Item* item);
 		bool isEquipped(int where, Item* item);
+
+		void learnSpell(int spell);
+		bool knowsSpell(int spell);
 
 		void addXp(int xp);
 		int  getXp();
@@ -76,6 +80,7 @@ class Living : public Entity
 		int       m_attributes[Attribute::NUM_ATTS];
 		Inventory m_inv;
 		Item*     m_equipped[Equip::NUM_EQ];
+		bool	  m_spells[Spell::NUM_SPELLS];
 };
 
 #endif

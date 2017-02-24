@@ -9,7 +9,7 @@ Chest::Chest()
 	m_sprite->setOrigin({16,32});
 
 	m_box = BoxPtr_t(new Box());
-	m_box->rect = Rectf(675,333,26,16);
+	m_box->rect = Rectf(0,0,26,16);
 	m_box->type = CollisionType::STATIC;
 
 	CollisionHandler::Get().addBody(m_box);

@@ -53,6 +53,12 @@ void Living::init(const LivingProfile& profile)
 	m_attributes[Attribute::LEVEL]   = m_profile.level;
 	m_attributes[Attribute::XP]      = m_profile.xp;
 	m_attributes[Attribute::TO_NEXT] = 250;
+
+
+	for(int i = 0; i < Spell::NUM_SPELLS; i++)
+	{
+		m_spells[i] = false;
+	}
 }
 
 void Living::update(float deltaTime)
@@ -188,6 +194,16 @@ void Living::setEquippedItem(int where, Item* item)
 bool Living::isEquipped(int where, Item* item)
 {
 	return m_equipped[where] == item;
+}
+
+void Living::learnSpell(int spell)
+{
+	m_spells[spell] = true;
+}
+
+bool Living::knowsSpell(int spell)
+{
+	return m_spells[spell];
 }
 
 void Living::addXp(int xp)

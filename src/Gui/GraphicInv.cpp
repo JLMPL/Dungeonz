@@ -192,6 +192,11 @@ void GraphicInv::update()
 			{
 				(*item.effect)();
 			}
+			case ItemType::SPELL:
+			{
+				(*item.effect)(m_player);
+				break;
+			}
 			case ItemType::MISC:
 			{
 				break;
@@ -234,6 +239,9 @@ void GraphicInv::description()
 			break;
 			case ItemType::BOOK:
 				m_desc_type.setString("Book");
+			break;
+			case ItemType::SPELL:
+				m_desc_type.setString("Spell");
 			break;
 			case ItemType::MISC:
 				m_desc_type.setString("Miscellaneous");

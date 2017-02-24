@@ -10,10 +10,6 @@ void Level::init()
 {
 	map.setLevel(this);
 	map.loadFromFile("map_test.tmx");
-
-	// auto ball = (Missile*)addEntity(EntityPtr_t(new Missile()));
-	// ball->init(vec2f(800,400), Direction::DOWN, EntityType::FIREBALL);
-
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)

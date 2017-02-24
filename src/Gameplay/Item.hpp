@@ -80,6 +80,12 @@ struct Item
 				
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
+			else if(str_type == "spell")
+			{
+				type = ItemType::SPELL;
+
+				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
+			}
 			else if(str_type == "misc")
 			{
 				type = ItemType::MISC;
