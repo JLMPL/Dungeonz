@@ -15,7 +15,6 @@
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Render/Renderer.hpp"
-#include "../Render/RenderAttribute.hpp"
 #include "../Resource/TextureCache.hpp"
 #include <zlib.h>
 #include <fstream>

@@ -1,12 +1,11 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
-#include "RenderAttribute.hpp"
-#include "RenderData.hpp"
 #include "../Core/Vec2.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include <vector>
 
 //Singleton

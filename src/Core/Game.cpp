@@ -55,13 +55,6 @@ void Game::mainLoop()
 				Window.close();
 			if(Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::Escape)
 				Window.close();
-			// if(Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::R)
-			// {
-			// 	InputHandler::Get().bindKey(KeyBind::UP, sf::Keyboard::Down);
-			// 	InputHandler::Get().bindKey(KeyBind::DOWN, sf::Keyboard::Up);
-			// 	InputHandler::Get().bindKey(KeyBind::LEFT, sf::Keyboard::Right);
-			// 	InputHandler::Get().bindKey(KeyBind::RIGHT, sf::Keyboard::Left);
-			// }
 		}
 		update();
 
