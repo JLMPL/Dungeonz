@@ -22,6 +22,10 @@
 #include <iostream>
 #include <memory>
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 void Map::loadFromFile(std::string path)
 {
 	using namespace rapidxml;

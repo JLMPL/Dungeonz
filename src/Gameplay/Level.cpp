@@ -87,7 +87,7 @@ void Level::update(float deltaTime)
 	Renderer::Get().setCameraPos(camera_pos);
 
 	IndicationHandler::Get().update(deltaTime);
-	GUI::Get().update();
+	GUI::Get().update(deltaTime);
 }
 
 std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)

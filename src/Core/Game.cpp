@@ -9,6 +9,10 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Gui/Gui.hpp"
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 Game::Game()
 {
 	Window.create(sf::VideoMode(800,600), "Window", sf::Style::Close);

@@ -6,6 +6,10 @@
 #include "../Resource/FontCache.hpp"
 #include "../Gameplay/Living.hpp"
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 constexpr int gInvSize = 5;
 constexpr int gMaxItems = 25;
 

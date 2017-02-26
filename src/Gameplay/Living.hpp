@@ -41,8 +41,10 @@ class Living : public Entity
 		void setEquippedItem(int where, Item* item);
 		bool isEquipped(int where, Item* item);
 
+		void setReadySpell(int spell);
 		void learnSpell(int spell);
 		bool knowsSpell(int spell);
+		int getReadySpell();
 
 		void addXp(int xp);
 		int  getXp();
@@ -81,6 +83,7 @@ class Living : public Entity
 		Inventory m_inv;
 		Item*     m_equipped[Equip::NUM_EQ];
 		bool	  m_spells[Spell::NUM_SPELLS];
+		int 	  m_readySpell = -1;
 };
 
 #endif

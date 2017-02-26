@@ -3,6 +3,7 @@
 #include "GraphicInv.hpp"
 #include "GraphicLoot.hpp"
 #include "GuiMode.hpp"
+#include "CenterLabel.hpp"
 #include "../Render/Bar.hpp"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -22,12 +23,13 @@ class GUI
 		}
 
 		void init();
-		void update();
+		void update(float deltaTime);
 
 		void goLoot(Inventory* inv, const vec2i& pos);
 		void goRead(const std::string& content);
 		void showFocusHealthbar(int val, int max, const vec2i& pos);
 		void setFocusLabel(const std::string& label, const vec2i& pos);
+		void addLabel(const std::string& label);
 
 		void setTarget(Living* living);
 		Living* getTarget();
@@ -55,6 +57,8 @@ class GUI
 		vec2i m_bookPos;
 		sf::Sprite m_bookBack;
 		sf::Text m_bookText;
+
+		CenterLabel m_centerLabel;
 };
 
 #endif

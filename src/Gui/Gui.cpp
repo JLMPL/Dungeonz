@@ -27,9 +27,11 @@ void GUI::init()
 	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
 	m_bookText.setCharacterSize(21);
 	m_bookText.setFillColor({0,0,0});
+
+	m_centerLabel.addLabel("Suprise Suprise Mothafucka!");
 }
 
-void GUI::update()
+void GUI::update(float deltaTime)
 {
 	m_camera = Renderer::Get().getCameraPos();
 	m_sight.setPosition(m_camera.getSfVecf());
@@ -57,6 +59,9 @@ void GUI::update()
 					m_showHealthbar = false;
 				}
 			}
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::INV:
@@ -70,6 +75,9 @@ void GUI::update()
 
 			m_ginv.setPosition(m_camera);
 			m_ginv.update();
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::LOOT:
@@ -82,6 +90,9 @@ void GUI::update()
 			}
 
 			m_gloot.update();
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::READ:
@@ -147,6 +158,11 @@ void GUI::setFocusLabel(const std::string& label, const vec2i& pos)
 						   static_cast<int>(m_focusLabel.getLocalBounds().height));
 	m_focusLabel.setPosition(pos.getSfVecf());
 	m_showLabel = true;
+}
+
+void GUI::addLabel(const std::string& label)
+{
+	m_centerLabel.addLabel(label);
 }
 
 void GUI::setTarget(Living* living)

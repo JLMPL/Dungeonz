@@ -4,6 +4,7 @@
 #include "../Ai/AiPtr.hpp"
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
+#include "../Gui/Gui.hpp"
 
 Living::Living()
 {
@@ -73,16 +74,18 @@ void Living::update(float deltaTime)
 	m_sprite->setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
 	m_sprite->update(deltaTime);
 
-	if(m_attributes[Attribute::XP] >= m_attributes[Attribute::TO_NEXT])
+	if (m_attributes[Attribute::XP] >= m_attributes[Attribute::TO_NEXT])
 	{
 		m_attributes[Attribute::XP] -= m_attributes[Attribute::TO_NEXT];
 		m_attributes[Attribute::LEVEL]++;
 		m_attributes[Attribute::TO_NEXT] *= 1.5;
 		m_attributes[Attribute::HEALTH] *= 1.2;
 		m_attributes[Attribute::MAGICKA] *= 1.2;
+
+		GUI::Get().addLabel("Level Up!");
 	}
 
-	if(m_push)
+	if (m_push)
 	{
 		m_pushTimer += deltaTime * (1/m_pushDuration);
 
@@ -90,7 +93,7 @@ void Living::update(float deltaTime)
 		m_box->rect.x = pushVec.x;
 		m_box->rect.y = pushVec.y;
 
-		if(m_pushTimer >= 1)
+		if (m_pushTimer >= 1)
 			m_push = false;
 	}
 }
@@ -196,14 +199,36 @@ bool Living::isEquipped(int where, Item* item)
 	return m_equipped[where] == item;
 }
 
+void Living::setReadySpell(int spell)
+{
+	if(m_spells[spell])
+		m_readySpell = spell;
+}
+
 void Living::learnSpell(int spell)
 {
 	m_spells[spell] = true;
+	m_readySpell = spell;
+
+	switch(spell)
+	{
+		case Spell::FIREBALL:
+			GUI::Get().addLabel("Learned spell \"Fireball\"!");
+		break;
+		case Spell::FROSTBITE:
+			GUI::Get().addLabel("Learned spell \"Frostbite\"!");
+		break;
+	}
 }
 
 bool Living::knowsSpell(int spell)
 {
 	return m_spells[spell];
+}
+
+int Living::getReadySpell()
+{
+	return m_readySpell;
 }
 
 void Living::addXp(int xp)

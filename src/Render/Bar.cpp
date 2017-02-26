@@ -2,6 +2,10 @@
 #include "Renderer.hpp"
 #include "../Resource/FontCache.hpp"
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 void Bar::init(const vec2i& size, const sf::Color& color)
 {
 	m_bar.setSize(size.getSfVecf());
