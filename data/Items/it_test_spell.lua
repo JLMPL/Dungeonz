@@ -13,7 +13,7 @@ Item = {
 			user:learnSpell(Spell_Fireball)
 			gui_read("Spellen maderfakeren guwnelen\nw dupelen. Fireball shaka bum.\nKhakaka!");
 
-			print("You just learned a spell idiot!")
+			print("You just learned a Fireball spell idiot!")
 		end
 	end
 }
