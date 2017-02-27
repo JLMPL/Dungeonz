@@ -39,14 +39,14 @@ void Missile::setOwner(Entity* owner)
 
 void Missile::update(float deltaTime)
 {
-	if(m_warmup.getElapsedTime().asSeconds() > 0.2)
+	if (m_warmup.getElapsedTime().asSeconds() > 0.2)
 		m_box->enabled = true;
 
-	if(m_box->enabled == true)
+	if (m_box->enabled == true)
 	{
 		std::vector<Entity*> foundEnts = m_level->getEntitiesInRange(vec2f(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2), 24);
 
-		for(auto& i : foundEnts)
+		for (auto& i : foundEnts)
 		{
 			blow(i);
 		}
@@ -77,7 +77,7 @@ void Missile::update(float deltaTime)
 
 void Missile::blow(Entity* ent)
 {
-	if(ent)
+	if (ent)
 	{
 		switch(ent->getType())
 		{
@@ -85,14 +85,14 @@ void Missile::blow(Entity* ent)
 			{
 				auto living = static_cast<Living*>(ent);
 
-				if(!living->isDead() and living != m_owner and m_speed != 0)
+				if (!living->isDead() and living != m_owner and m_speed != 0)
 				{
 					auto beholder = static_cast<Living*>(m_owner);
 
 					living->damage(20);
 					living->push(m_direction, 8, 0.1);
 
-					if(living->isDead())
+					if (living->isDead())
 					{
 						beholder->addXp(living->getXp());
 					}

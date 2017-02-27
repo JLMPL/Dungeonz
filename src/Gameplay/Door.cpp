@@ -29,7 +29,7 @@ void Door::update(float deltaTime)
 void Door::tryOpening(Inventory* inv)
 {
 	vec2f the_pos = vec2f(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2);
-	if(inv->hasItem(m_requiredKey) and !m_isOpen)
+	if (inv->hasItem(m_requiredKey) and !m_isOpen)
 	{
 		m_isOpen = true;
 		m_box->enabled = false;
@@ -40,7 +40,7 @@ void Door::tryOpening(Inventory* inv)
 	}
 	else
 	{
-		if(!m_isOpen)
+		if (!m_isOpen)
 			IndicationHandler::Get().addIndication("Locked", sf::Color(255,0,0), the_pos + vec2f(0,-50));
 	}
 }

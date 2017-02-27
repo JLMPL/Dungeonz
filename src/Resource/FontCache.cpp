@@ -9,7 +9,7 @@ FontPtr_t FontCache::getFont(const std::string& path)
 
 	auto font = m_Fonts.find(path);
 
-	if(font == m_Fonts.end())
+	if (font == m_Fonts.end())
 		return loadFont(path);
 	else
 		return m_Fonts[path];

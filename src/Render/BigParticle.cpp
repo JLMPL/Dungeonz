@@ -14,7 +14,7 @@ void BigParticle::init(const std::string& path, float lifeLength)
 
 void BigParticle::update(float deltaTime)
 {
-	if(m_timer.getElapsedTime().asSeconds() >= m_lifeLenght)
+	if (m_timer.getElapsedTime().asSeconds() >= m_lifeLenght)
 		m_dead = true;
 
 	m_sprite.update(deltaTime);

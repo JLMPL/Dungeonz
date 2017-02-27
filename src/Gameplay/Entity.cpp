@@ -39,7 +39,7 @@ void Entity::setLevel(Level* level)
 void Entity::setPosition(const vec2f& pos)
 {
 	//m_pos = pos;
-	if(m_box)
+	if (m_box)
 	{
 		m_box->rect.x = pos.x;
 		m_box->rect.y = pos.y;
@@ -64,7 +64,7 @@ EntityType Entity::getType() const
 vec2f Entity::getPosition() const
 {
 	//return m_pos;
-	if(m_box)
+	if (m_box)
 		return vec2f(m_box->rect.x, m_box->rect.y);
 }
 

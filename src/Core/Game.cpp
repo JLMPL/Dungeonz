@@ -50,14 +50,14 @@ void Game::update()
 
 void Game::mainLoop()
 {
-	while(Window.isOpen())
+	while (Window.isOpen())
 	{
 		bench_begin = Benchmark.getElapsedTime().asMilliseconds();
-		while(Window.pollEvent(Event))
+		while (Window.pollEvent(Event))
 		{
-			if(Event.type == sf::Event::Closed)
+			if (Event.type == sf::Event::Closed)
 				Window.close();
-			if(Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::Escape)
+			if (Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::Escape)
 				Window.close();
 		}
 		update();
@@ -69,7 +69,7 @@ void Game::mainLoop()
 
 		bench_end = Benchmark.getElapsedTime().asMilliseconds();
 
-		if(bench_end % 100 == 0)
+		if (bench_end % 100 == 0)
 		{
 			Window.setTitle("Window - " + std::to_string(bench_end - bench_begin) + "ms");
 		}

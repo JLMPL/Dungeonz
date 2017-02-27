@@ -41,19 +41,19 @@ void GUI::update(float deltaTime)
 	{
 		case GUIMode::OFF:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::INV;
 				m_target->setBusy(true);
 				m_timer.restart();
 			}
 
-			if(m_showLabel)
+			if (m_showLabel)
 			{
 				Renderer::Get().submitOverlay(&m_focusLabel);
 				m_showLabel = false;
 
-				if(m_showHealthbar)
+				if (m_showHealthbar)
 				{
 					m_focusHealth.update();
 					m_showHealthbar = false;
@@ -66,7 +66,7 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::INV:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -82,7 +82,7 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::LOOT:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -97,7 +97,7 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::READ:
 		{
-			if(InputHandler::Get().isInv())
+			if (InputHandler::Get().isInv())
 			{
 				m_mode = GUIMode::OFF;
 			}
@@ -114,7 +114,7 @@ void GUI::update(float deltaTime)
 		break;
 	}
 
-	if(m_mode != GUIMode::INV and m_mode != GUIMode::READ)
+	if (m_mode != GUIMode::INV and m_mode != GUIMode::READ)
 	{
 		m_health.setMaxValue(m_target->getAttribute(Attribute::HEALTH));
 		m_health.setValue(m_target->getAttribute(Attribute::HP));

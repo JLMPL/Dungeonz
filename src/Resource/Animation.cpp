@@ -9,7 +9,7 @@ void Animation::loadFromFile(const std::string& path)
 	std::string finalpath = "data/Animations/" + path;
 	std::ifstream file(finalpath.c_str());
 
-	if(!file.good())
+	if (!file.good())
 		ShowErrorBox("Failed to load animation file \"" + finalpath + "\"!");
 	else
 	{

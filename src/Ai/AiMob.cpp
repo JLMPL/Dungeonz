@@ -16,7 +16,7 @@ void AIMob::focus()
 
 	for (auto i = ents.begin(); i != ents.end();)
 	{
-		if((*i)->getType() != EntityType::LIVING)
+		if ((*i)->getType() != EntityType::LIVING)
 			i = ents.erase(i);
 		else 
 			i++;
@@ -61,9 +61,9 @@ void AIMob::update(float deltaTime)
 
 void AIMob::idleState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_focus)
+		if (m_focus)
 		{
 			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
@@ -80,9 +80,9 @@ void AIMob::idleState(float deltaTime)
 
 void AIMob::moveState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_focus)
+		if (m_focus)
 		{
 			m_direction = m_focus->getPosition() - m_target->getPosition();
 			m_direction = normalize(m_direction);
@@ -91,7 +91,7 @@ void AIMob::moveState(float deltaTime)
 			m_target->move(m_direction * m_speed * deltaTime);
 			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_walk.ani"));
 
-			if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
+			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
 				m_state = MobState::IDLE;
 			}
@@ -105,9 +105,9 @@ void AIMob::moveState(float deltaTime)
 
 void AIMob::attackState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_timer.getElapsedTime().asMilliseconds() > 1000)
+		if (m_timer.getElapsedTime().asMilliseconds() > 1000)
 		{
 			auto enemy = static_cast<Living*>(m_focus);
 			enemy->damage(m_target->getAttribute(Attribute::DAMAGE));

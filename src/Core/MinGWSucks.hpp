@@ -6,7 +6,7 @@
 /*
     Not knowing why MinGW shipped with CodeBlocks 16.01
     doesn't support these functions. I hate compiling stuff
-    on windows it's always such a pain in the ass.
+    on windows(MinGW) it's always such a pain in the ass.
 */
 
 namespace std

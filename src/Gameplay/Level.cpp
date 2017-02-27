@@ -45,37 +45,37 @@ void Level::addBigParticle(const std::string& path, const vec2i& pos, float life
 
 void Level::update(float deltaTime)
 {
-	for(auto i = m_entities.begin(); i != m_entities.end();)
+	for (auto i = m_entities.begin(); i != m_entities.end();)
 	{
-		if((*i)->isDestroyed())
+		if ((*i)->isDestroyed())
 			i = m_entities.erase(i);
 		else
 			i++;
 	}
 
-	for(auto i = m_missiles.begin(); i != m_missiles.end();)
+	for (auto i = m_missiles.begin(); i != m_missiles.end();)
 	{
-		if((*i)->isDestroyed())
+		if ((*i)->isDestroyed())
 			i = m_missiles.erase(i);
 		else 
 			i++;
 	}
 
-	for(auto& i : m_entities)
+	for (auto& i : m_entities)
 		i->update(deltaTime);
 
-	for(auto& i : m_missiles)
+	for (auto& i : m_missiles)
 		i->update(deltaTime);
 
-	for(auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
+	for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
 	{
-		if((*i).isDead())
+		if ((*i).isDead())
 			i = m_bigParticles.erase(i);
 		else
 			i++;
 	}
 
-	for(auto& i : m_bigParticles)
+	for (auto& i : m_bigParticles)
 	{
 		i.update(deltaTime);
 	}
@@ -94,13 +94,13 @@ std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)
 {
 	std::vector<Entity*> ents;
 
-	for(int i = 0; i < m_entities.size(); i++)
+	for (int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_entities[i]->getPosition() != pos)
+		if (m_entities[i]->getPosition() != pos)
 		{
 			vec2f die = pos - m_entities[i]->getPosition();
 
-			if(length(die) <= range)
+			if (length(die) <= range)
 			{
 				ents.push_back(m_entities[i].get());
 			}
@@ -112,9 +112,9 @@ std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)
 
 Entity* Level::getEntityByCode(std::string code)
 {
-	for(int i = 0; i < m_entities.size(); i++)
+	for (int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_entities[i]->getCode() == code)
+		if (m_entities[i]->getCode() == code)
 		{
 			return m_entities[i].get();
 		}
@@ -126,9 +126,9 @@ std::vector<Entity*> Level::getEntitiesByCode(std::string code)
 {
 	std::vector<Entity*> ents;
 
-	for(int i = 0; i < m_entities.size(); i++)
+	for (int i = 0; i < m_entities.size(); i++)
 	{
-		if(m_entities[i]->getCode() == code)
+		if (m_entities[i]->getCode() == code)
 		{
 			ents.push_back(m_entities[i].get());
 		}

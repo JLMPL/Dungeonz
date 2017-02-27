@@ -28,7 +28,7 @@ void ItemBag::update(float deltaTime)
 	m_shadow.setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2 + 2});
 	Renderer::Get().submitBackground(&m_shadow);
 
-	if(m_inv.getAmount() <= 0)
+	if (m_inv.getAmount() <= 0)
 	{
 		m_destroy = true;
 	}

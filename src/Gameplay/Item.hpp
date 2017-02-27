@@ -31,7 +31,7 @@ struct Item
 		std::string finalpath = "data/Items/" + path;
 		std::ifstream file(finalpath.c_str());
 
-		if(!file.good())
+		if (!file.good())
 		{
 			ShowErrorBox("Failed to load Item file \"" + finalpath + "\"");
 		}
@@ -54,39 +54,39 @@ struct Item
 
 			std::string str_type = ref_theItem["type"];
 
-			if(str_type == "weapon")
+			if (str_type == "weapon")
 			{
 				type = ItemType::WEAPON;
 
 				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
 				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
 			}
-			else if(str_type == "armor")
+			else if (str_type == "armor")
 			{
 				type = ItemType::ARMOR;
 				
 				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
 				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
 			}
-			else if(str_type == "food")
+			else if (str_type == "food")
 			{
 				type = ItemType::FOOD;
 				
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
-			else if(str_type == "book")
+			else if (str_type == "book")
 			{
 				type = ItemType::BOOK;
 				
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
-			else if(str_type == "spell")
+			else if (str_type == "spell")
 			{
 				type = ItemType::SPELL;
 
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
-			else if(str_type == "misc")
+			else if (str_type == "misc")
 			{
 				type = ItemType::MISC;
 			}

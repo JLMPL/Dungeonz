@@ -8,7 +8,7 @@
 
 void Renderer::init(sf::RenderWindow* window)
 {
-	if(!window)
+	if (!window)
 		ShowErrorBox("Failed to initialize renderer with window!");
 	else
 	{
@@ -84,22 +84,22 @@ void Renderer::sort()
 
 void Renderer::render()
 {
-	for(auto& i : m_backgroundData)
+	for (auto& i : m_backgroundData)
 		m_window->draw(*i);
 
-	for(auto& i : m_backCircleData)
+	for (auto& i : m_backCircleData)
 		m_window->draw(*i);
 
-	for(auto& i : m_sortedData)
+	for (auto& i : m_sortedData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overRectData)
+	for (auto& i : m_overRectData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overSpriteData)
+	for (auto& i : m_overSpriteData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overTextData)
+	for (auto& i : m_overTextData)
 		m_window->draw(*i);
 }
 

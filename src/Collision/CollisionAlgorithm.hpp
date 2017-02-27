@@ -14,13 +14,13 @@ static bool AABBResponse(const Rectf& a, const Rectf& b, vec2f& move)
     float top    = b.y - (a.y + a.h);
     float bottom = (b.y + b.h) - a.y;
 
-    if(left > 0 or right < 0 or top > 0 or bottom < 0)
+    if (left > 0 or right < 0 or top > 0 or bottom < 0)
         return false;
 
     move.x = abs(left) < right ? left : right;
     move.y = abs(top) < bottom ? top : bottom;
 
-    if(abs(move.x) < abs(move.y))
+    if (abs(move.x) < abs(move.y))
         move.y = 0;
     else
         move.x = 0;
@@ -30,13 +30,13 @@ static bool AABBResponse(const Rectf& a, const Rectf& b, vec2f& move)
 
 static bool AABBOverlap(const Rectf& a, const Rectf& b)
 {
-    if(a.x > b.x + b.w)
+    if (a.x > b.x + b.w)
         return false;
-    if(a.x + a.w < b.x)
+    if (a.x + a.w < b.x)
         return false;
-    if(a.y > b.y + b.h)
+    if (a.y > b.y + b.h)
         return false;
-    if(a.y + a.h < b.y)
+    if (a.y + a.h < b.y)
         return false;
     return true;
 }

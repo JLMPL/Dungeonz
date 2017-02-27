@@ -31,7 +31,7 @@ void Living::init(const LivingProfile& profile)
 	m_box->reactMaterial = CollMaterial::TRAP;
 	m_box->callback = [this]()
 	{
-		if(this->m_trapTimer > 750 + 60 + 160)
+		if (this->m_trapTimer > 750 + 60 + 160)
 		{
 			this->damage(2);
 			this->m_trapTimer = 0;
@@ -56,7 +56,7 @@ void Living::init(const LivingProfile& profile)
 	m_attributes[Attribute::TO_NEXT] = 250;
 
 
-	for(int i = 0; i < Spell::NUM_SPELLS; i++)
+	for (int i = 0; i < Spell::NUM_SPELLS; i++)
 	{
 		m_spells[i] = false;
 	}
@@ -100,7 +100,7 @@ void Living::update(float deltaTime)
 
 void Living::push(Direction_t dir, float dist, float duration)
 {
-	if(!m_busy and !m_push)
+	if (!m_busy and !m_push)
 	{
 		m_push = true;
 		m_pushDir = dir;
@@ -134,7 +134,7 @@ void Living::damage(int damage)
 
 	currHp -= damage;
 
-	if(currHp < 0)
+	if (currHp < 0)
 		currHp = 0;
 
 	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
@@ -185,7 +185,7 @@ void Living::drainMana(int mana)
 	int& magicka = m_attributes[Attribute::MP];
 	magicka -= mana;
 
-	if(magicka < 0)
+	if (magicka < 0)
 		magicka = 0;
 }
 
@@ -201,7 +201,7 @@ bool Living::isEquipped(int where, Item* item)
 
 void Living::setReadySpell(int spell)
 {
-	if(m_spells[spell])
+	if (m_spells[spell])
 		m_readySpell = spell;
 }
 
@@ -251,13 +251,13 @@ void Living::setAI(AIPtr_t ai)
 void Living::setDirection(Direction_t facing)
 {
 	m_facing = facing;
-	if(m_sprite)
+	if (m_sprite)
 		m_sprite->setDirection(m_facing);
 }
 
 void Living::setAnimation(AnimPtr_t anim, std::function<void ()> call)
 {
-	if(m_sprite)
+	if (m_sprite)
 		m_sprite->setAnimation(anim, call);
 }
 

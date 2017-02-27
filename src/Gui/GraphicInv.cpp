@@ -21,7 +21,7 @@ constexpr int gStatsHeight = 192;
 
 GraphicInv::GraphicInv()
 {
-	for(int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < gMaxItems; i++)
 		m_slots.push_back(Slot());
 
 	m_invPos = vec2i(640, 220);
@@ -117,32 +117,32 @@ void GraphicInv::update()
 		m_timer.restart();
 	}
 
-	for(int i = 0; i < gInvSize; i++)
-	for(int j = 0; j < gInvSize; j++)
+	for (int i = 0; i < gInvSize; i++)
+	for (int j = 0; j < gInvSize; j++)
 	{
 		Slot& slot = m_slots[i * gInvSize + j];
 		vec2i pos = vec2i(m_pos.x + m_invPos.x + j*32, m_pos.y + m_invPos.y + i*32);
 		slot.setPosition(pos);
 		slot.empty = true;
 
-		if(m_selected == i * gInvSize + j)
+		if (m_selected == i * gInvSize + j)
 			m_select.setPosition(pos.getSfVecf());
 	}
 
-	for(int i = 0; i < 25; i++)
+	for (int i = 0; i < 25; i++)
 	{
 		Slot& slot = m_slots[i];
-		if(i < m_inv->getAmount())
+		if (i < m_inv->getAmount())
 			slot.setItem(m_inv->getItem(i).get());
 		slot.unmark();
 
-		if(!slot.empty)
+		if (!slot.empty)
 		{
-			if(m_player->isEquipped(Equip::WEAPON, slot.item))
+			if (m_player->isEquipped(Equip::WEAPON, slot.item))
 			{
 				slot.mark();
 			}
-			else if(m_player->isEquipped(Equip::ARMOR, slot.item))
+			else if (m_player->isEquipped(Equip::ARMOR, slot.item))
 			{
 				slot.mark();
 			}
@@ -159,7 +159,7 @@ void GraphicInv::update()
 		{
 			case ItemType::WEAPON:
 			{
-				if(!m_player->isEquipped(Equip::WEAPON, &item))
+				if (!m_player->isEquipped(Equip::WEAPON, &item))
 				{
 					m_player->setEquippedItem(Equip::WEAPON, &item);
 					(*item.equip)(m_player);
@@ -173,7 +173,7 @@ void GraphicInv::update()
 			}
 			case ItemType::ARMOR:
 			{
-				if(!m_player->isEquipped(Equip::ARMOR, &item))
+				if (!m_player->isEquipped(Equip::ARMOR, &item))
 				{
 					m_player->setEquippedItem(Equip::ARMOR, &item);
 					(*item.equip)(m_player);
@@ -210,10 +210,10 @@ void GraphicInv::update()
 		m_timer.restart();
 	}
 
-	for(auto& i : m_slots)
+	for (auto& i : m_slots)
 	{
 		Renderer::Get().submitOverlay(&i.rect);
-		if(!i.empty)
+		if (!i.empty)
 			Renderer::Get().submitOverlay(&i.sprite);
 		Renderer::Get().submitOverlay(&m_select);
 	}
@@ -225,7 +225,7 @@ void GraphicInv::update()
 void GraphicInv::description()
 {
 	Slot& slot = m_slots[m_selected];
-	if(!slot.empty)
+	if (!slot.empty)
 	{
 		m_desc_name.setString(slot.item->name);
 		m_desc_name.setOrigin({static_cast<int>(m_desc_name.getLocalBounds().width/2), 0});

@@ -27,11 +27,11 @@ SpikeTrap::SpikeTrap()
 
 void SpikeTrap::update(float deltaTime)
 {
-	if(m_enabled)
+	if (m_enabled)
 	{
 		m_timer += 1000 * deltaTime;
 
-		if(m_timer >= 750)
+		if (m_timer >= 750)
 		{
 			deactivate();
 		}
@@ -43,7 +43,7 @@ void SpikeTrap::update(float deltaTime)
 
 void SpikeTrap::activate()
 {
-	if(!m_active and m_enabled)
+	if (!m_active and m_enabled)
 	{
 		m_active = true;
 		m_timer = 0;
@@ -53,7 +53,7 @@ void SpikeTrap::activate()
 
 void SpikeTrap::deactivate()
 {
-	if(m_active)
+	if (m_active)
 	{
 		m_sprite->setAnimation(AnimationCache::Get().getAnimation("spike_trap_hide.ani"),
 		[this]()

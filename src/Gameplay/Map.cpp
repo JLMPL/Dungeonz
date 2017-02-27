@@ -35,13 +35,13 @@ void Map::loadFromFile(std::string path)
 	std::string line;
 	std::string content;
 
-	if(!file.good())
+	if (!file.good())
 	{
 		ShowErrorBox("Something went wrong with " + finalpath + " file.");
 	}
 	else
 	{
-		while(!file.eof())
+		while (!file.eof())
 		{
 			std::getline(file, line);
 			content += line;
@@ -74,9 +74,9 @@ void Map::loadTileset(rapidxml::xml_node<>* tileset)
 
 	m_texture = TextureCache::Get().getTexture(texturePath);
 
-	for(int i = 0; i < height/32; i++)
+	for (int i = 0; i < height/32; i++)
 	{
-		for(int j = 0; j < width/32; j++)
+		for (int j = 0; j < width/32; j++)
 		{
 			Tile tile;
 			tile.sprite.setTexture(*m_texture);
@@ -111,8 +111,8 @@ void Map::loadLayer(rapidxml::xml_node<>* layere)
 {
 	std::string rawData = layere->first_node("data")->value();
 
-	for(int i = 0; i < rawData.size(); i++)
-		if(rawData[i] == '=') rawData[i] = ' ';
+	for (int i = 0; i < rawData.size(); i++)
+		if (rawData[i] == '=') rawData[i] = ' ';
 
 	std::stringstream ass(rawData);
 	std::string raw;
@@ -128,9 +128,9 @@ void Map::loadLayer(rapidxml::xml_node<>* layere)
 	TileLayer layer;
 	layer.tiles.resize(m_width * m_height);
 
-	for(int i = 0; i < data.size(); i++)
+	for (int i = 0; i < data.size(); i++)
 	{
-		if(data[i] >= 1)
+		if (data[i] >= 1)
 		{
 			layer.tiles[i] = m_tileset[data[i]-1];
 		}
@@ -142,9 +142,9 @@ void Map::loadLayer(rapidxml::xml_node<>* layere)
 		}
 	}
 
-	for(int i = 0; i < m_height; i++)
+	for (int i = 0; i < m_height; i++)
 	{
-		for(int j = 0; j < m_height; j++)
+		for (int j = 0; j < m_height; j++)
 		{
 			layer.tiles[m_width * i + j].position = vec2i(j * 32, i * 32);
 			layer.tiles[m_width * i + j].sprite.setPosition(j * 32, i * 32);
@@ -159,11 +159,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 	using namespace rapidxml;
 	xml_node<>* object = objects->first_node("object");
 
-	while(object)
+	while (object)
 	{
 		std::string type = object->first_attribute("type")->value();
 
-		if(type == "spawn")
+		if (type == "spawn")
 		{
 			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
 			std::string item1 = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
@@ -185,33 +185,33 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			living->setAI(AIPtr_t(new AIMob()));
 			living->setPosition(pos + vec2f(16,16));
 
-			if(item0 != "-")
+			if (item0 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				living->accessInv().addItem(item);
 			}
-			if(item1 != "-")
+			if (item1 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				living->accessInv().addItem(item);
 			}
-			if(item2 != "-")
+			if (item2 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				living->accessInv().addItem(item);
 			}
-			if(item3 != "-")
+			if (item3 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				living->accessInv().addItem(item);
 			}
-			if(item4 != "-")
+			if (item4 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				living->accessInv().addItem(item);
 			}
 		}
-		else if(type == "door")
+		else if (type == "door")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string item = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -224,7 +224,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			door->setPosition(pos + vec2f(0,30));
 			door->setRequiredItem(item);
 		}
-		else if(type == "chest")
+		else if (type == "chest")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -241,33 +241,33 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			chest->setCode(name);
 			chest->setPosition(pos + vec2f(16,16));
 
-			if(item0 != "-")
+			if (item0 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
-			if(item1 != "-")
+			if (item1 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
-			if(item2 != "-")
+			if (item2 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
-			if(item3 != "-")
+			if (item3 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
-			if(item4 != "-")
+			if (item4 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				chest->accessInv().addItem(item);
 			}
 		}
-		else if(type == "lever")
+		else if (type == "lever")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -285,18 +285,18 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			lever->setActivateFunc(
 			[=]()
 			{
-				if(type == "door")
+				if (type == "door")
 				{
 					Door* door = (Door*)m_level->getEntityByCode(whom);
-					if(door)
+					if (door)
 						door->open();
 				}
-				else if(type == "spike_trap")
+				else if (type == "spike_trap")
 				{
 					auto spikes = m_level->getEntitiesByCode(whom);
-					if(!spikes.empty())
+					if (!spikes.empty())
 					{
-						for(int i = 0; i < spikes.size(); i++)
+						for (int i = 0; i < spikes.size(); i++)
 						{
 							static_cast<SpikeTrap*>(spikes[i])->disable();
 						}
@@ -304,7 +304,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 				}
 			});
 		}
-		else if(type == "spike_trap")
+		else if (type == "spike_trap")
 		{
 			std::string name = object->first_attribute("name")->value();
 			// std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -316,7 +316,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			trap->setCode(name);
 			trap->setPosition(pos);
 		}
-		else if(type == "press_plate")
+		else if (type == "press_plate")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -333,18 +333,18 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			// press->setActivateFunc(
 			// [=]()
 			// {
-			// 	if(type == "door")
+			// 	if (type == "door")
 			// 	{
 			// 		Door* door = (Door*)m_level->getEntityByCode(whom);
-			// 		if(door)
+			// 		if (door)
 			// 			door->open();
 			// 	}
-			// 	else if(type == "spike_trap")
+			// 	else if (type == "spike_trap")
 			// 	{
 			// 		auto spikes = m_level->getEntitiesByCode(whom);
-			// 		if(!spikes.empty())
+			// 		if (!spikes.empty())
 			// 		{
-			// 			for(int i = 0; i < spikes.size(); i++)
+			// 			for (int i = 0; i < spikes.size(); i++)
 			// 			{
 			// 				static_cast<SpikeTrap*>(spikes[i])->disable();
 			// 			}
@@ -352,7 +352,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			// 	}
 			// });
 		}
-		else if(type == "item_bag")
+		else if (type == "item_bag")
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
@@ -369,33 +369,33 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			bag->setCode(name);
 			bag->setPosition(pos + vec2f(16,16));
 
-			if(item0 != "-")
+			if (item0 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
-			if(item1 != "-")
+			if (item1 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
-			if(item2 != "-")
+			if (item2 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
-			if(item3 != "-")
+			if (item3 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
-			if(item4 != "-")
+			if (item4 != "-")
 			{
 				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
 		}
-		else if(type == "start")
+		else if (type == "start")
 		{
 			// std::string name = object->first_attribute("name")->value();
 			vec2f pos;
@@ -418,11 +418,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 void Map::collisions()
 {
-	for(int i = 0; i < m_layers[2].tiles.size(); i++)
+	for (int i = 0; i < m_layers[2].tiles.size(); i++)
 	{
 		auto& tile = m_layers[2].tiles[i];
 
-		if(tile.rect.x == 96 and tile.rect.y == 128)
+		if (tile.rect.x == 96 and tile.rect.y == 128)
 		{
 			BoxPtr_t box(new Box());
 			box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
@@ -436,24 +436,24 @@ void Map::collisions()
 
 void Map::update()
 {
-	// for(int i = 0; i < m_tileset.size(); i++)
+	// for (int i = 0; i < m_tileset.size(); i++)
 	// {
 	//     m_tileset[i].sprite.setPosition(i * 32, 0);
 	//     Renderer::Get().submit(&m_tileset[i].sprite);
 	// }
 
-	for(int i = 0; i < m_layers[0].tiles.size(); i++)
+	for (int i = 0; i < m_layers[0].tiles.size(); i++)
 	{
 		Renderer::Get().submitBackground(&m_layers[0].tiles[i].sprite);
 	}
 
-	for(int i = 0; i < m_layers[1].tiles.size(); i++)
+	for (int i = 0; i < m_layers[1].tiles.size(); i++)
 	{
 		Renderer::Get().submitBackground(&m_layers[1].tiles[i].sprite);
 	}
 
-	if(false)
-	for(int i = 0; i < m_layers[2].tiles.size(); i++)
+	if (false)
+	for (int i = 0; i < m_layers[2].tiles.size(); i++)
 	{
 		Renderer::Get().submitBackground(&m_layers[2].tiles[i].sprite);
 	}

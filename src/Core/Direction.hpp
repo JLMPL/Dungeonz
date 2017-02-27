@@ -16,16 +16,16 @@ static Direction_t deduceDirection(vec2f dir)
 {
     float d = dot(dir, vec2f(0,-1));
 
-    if(d >= 0.5)
+    if (d >= 0.5)
         return UP;
 
-    else if(d <= -0.5)
+    else if (d <= -0.5)
         return DOWN;
 
-    else if(d < 0.5 and d > -0.5 and dir.x >= 0)
+    else if (d < 0.5 and d > -0.5 and dir.x >= 0)
         return RIGHT;
 
-    else if(d < 0.5 and d > -0.5 and dir.x <= 0)
+    else if (d < 0.5 and d > -0.5 and dir.x <= 0)
         return LEFT;
 }
 

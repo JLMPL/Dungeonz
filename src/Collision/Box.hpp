@@ -26,14 +26,14 @@ struct Box
 		shape.setOutlineThickness(-1);
 		
 		int eno;
-		if(enabled)
+		if (enabled)
 			eno = 128;
 		else
 			eno = 32;
 
-		if(type == CollisionType::STATIC)
+		if (type == CollisionType::STATIC)
 			shape.setOutlineColor({0,0,255,eno});
-		else if(type == CollisionType::DYNAMIC)
+		else if (type == CollisionType::DYNAMIC)
 			shape.setOutlineColor({0,255,0,eno});
 		else 
 			shape.setOutlineColor({255,0,0,eno});

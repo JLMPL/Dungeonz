@@ -11,9 +11,7 @@ Item = {
 	effect = function(user)
 		if user:knowsSpell(Spell_Fireball) == false then
 			user:learnSpell(Spell_Fireball)
-			gui_read("Spellen maderfakeren guwnelen\nw dupelen. Fireball shaka bum.\nKhakaka!");
-
-			print("You just learned a Fireball spell idiot!")
+			gui_read("Shmaten faken shiten biten.\nTrolololo!");
 		end
 	end
 }

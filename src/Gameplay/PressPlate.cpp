@@ -25,7 +25,7 @@ PressPlate::PressPlate()
 
 void PressPlate::update(float deltaTime)
 {
-	if(m_timer.getElapsedTime().asSeconds() >= 5 and m_active)
+	if (m_timer.getElapsedTime().asSeconds() >= 5 and m_active)
 	{
 		deactivate();
 	}

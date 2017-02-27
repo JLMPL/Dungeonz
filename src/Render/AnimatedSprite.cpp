@@ -13,20 +13,20 @@ void AnimatedSprite::update(float deltaTime)
 {
 	m_time += 1000 * deltaTime;
 
-	if(m_anim)
+	if (m_anim)
 	{
-		if(m_finished)
+		if (m_finished)
 			m_finished = false;
 		else
 		{
-			if(m_time >= m_anim->duration)
+			if (m_time >= m_anim->duration)
 			{
 				m_frame++;
 				m_time = 0;
 			}
-			if(m_frame > m_anim->numFrames -1)
+			if (m_frame > m_anim->numFrames -1)
 			{
-				if(m_anim->looping)
+				if (m_anim->looping)
 				{
 					m_frame = 0;
 					m_call();
@@ -68,19 +68,19 @@ void AnimatedSprite::reset()
 
 void AnimatedSprite::setAnimation(AnimPtr_t anim, std::function<void ()> call)
 {
-	if(m_anim != anim)
+	if (m_anim != anim)
 	{
 		m_nextAnim = anim;
 		m_nextCall = call;
 
-		if(m_anim)
+		if (m_anim)
 		{
-			if(m_anim->looping)
+			if (m_anim->looping)
 			{
 				m_finished = true;
 				reset();
 			}
-			else if(m_frame == m_anim->numFrames -1)
+			else if (m_frame == m_anim->numFrames -1)
 			{
 				m_finished = true;
 				reset();
