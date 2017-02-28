@@ -12,10 +12,11 @@ Spellbook::Spellbook()
 	m_background.setFillColor({0x20,0x20,0x20});
 	m_background.setPosition({400 - g_spellBookWidth/2, 300 - g_spellBookHeight/2});
 
-	for(int i = 0; i < Spell::NUM_SPELLS; i++)
-	{
-		m_options.push_back(SpellOption("fire_icon.png", "Test Spell\nThis another line has nice potential!"));
-	}
+	m_options.push_back(SpellOption("fire_icon.png", "Fireball\nExplodes in da face!"));
+	m_options.push_back(SpellOption("fire_icon.png", "Frostbite\nFreezes the shit out of enemies!"));
+	m_options.push_back(SpellOption("fire_icon.png", "Speed\nLet's you run like a horny rabbit!"));
+	m_options.push_back(SpellOption("fire_icon.png", "Lightning\nDoes it get more badass?"));
+
 
 	m_selection.setSize({g_spellBookWidth -12, 32});
 	m_selection.setFillColor({0,0,0,0});
