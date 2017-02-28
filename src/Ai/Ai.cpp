@@ -1,14 +1,14 @@
 #include "Ai.hpp"
 
-void AI::init(Living* target)
+void Ai::init(Living* target)
 {
     m_target = target;
 }
 
-void AI::setup()
+void Ai::setup()
 {
 }
 
-void AI::update(float deltaTime)
+void Ai::update(float deltaTime)
 {
 }

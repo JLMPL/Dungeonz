@@ -14,6 +14,7 @@ enum KeyBind
 	USE,
 	RUN,
 	CAST,
+	SPELLBOOK,
 	NUM_KEYS
 };
 
@@ -43,6 +44,7 @@ class InputHandler
 		bool isInv();
 		bool isRun();
 		bool isCast();
+		bool isSpellbook();
 
 	private:
 		sf::Keyboard::Key m_keys[KeyBind::NUM_KEYS];

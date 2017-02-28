@@ -29,6 +29,7 @@ void GUI::init()
 	m_bookText.setFillColor({0,0,0});
 
 	m_centerLabel.addLabel("Suprise Suprise Mothafucka!");
+	m_centerLabel.addLabel("Again You Little Shit!");
 }
 
 void GUI::update(float deltaTime)
@@ -37,13 +38,20 @@ void GUI::update(float deltaTime)
 	m_sight.setPosition(m_camera.getSfVecf());
 	// Renderer::Get().submitOverlay(RenderData(&m_sight), RenderAttribute::OVERLAY);
 
-	switch(m_mode)
+	switch (m_mode)
 	{
 		case GUIMode::OFF:
 		{
 			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::INV;
+				m_target->setBusy(true);
+				m_timer.restart();
+			}
+
+			if (InputHandler::Get().isSpellbook() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			{
+				m_mode = GUIMode::SPELLBOOK;
 				m_target->setBusy(true);
 				m_timer.restart();
 			}
@@ -112,18 +120,31 @@ void GUI::update(float deltaTime)
 			Renderer::Get().submitOverlay(&m_bookText);
 		}
 		break;
+		case GUIMode::SPELLBOOK:
+		{
+			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			{
+				m_mode = GUIMode::OFF;
+				m_target->setBusy(false);
+				m_timer.restart();
+			}
+
+			m_spellbook.setPosition(m_camera);
+			m_spellbook.update(deltaTime);
+		}
+		break;
 	}
 
 	if (m_mode != GUIMode::INV and m_mode != GUIMode::READ)
 	{
 		m_health.setMaxValue(m_target->getAttribute(Attribute::HEALTH));
 		m_health.setValue(m_target->getAttribute(Attribute::HP));
-		m_health.setPosition(m_camera + vec2i(5, 600-30));
+		m_health.setPosition(m_camera + vec2i(5, 600 -30));
 		m_health.update();
 
 		m_magicka.setMaxValue(m_target->getAttribute(Attribute::MAGICKA));
 		m_magicka.setValue(m_target->getAttribute(Attribute::MP));
-		m_magicka.setPosition(m_camera + vec2i(5, 600-15));
+		m_magicka.setPosition(m_camera + vec2i(5, 600 -15));
 		m_magicka.update();
 	}
 }
@@ -171,6 +192,7 @@ void GUI::setTarget(Living* living)
 	m_ginv.setInv(&m_target->accessInv());
 	m_ginv.setTarget(m_target);
 	m_gloot.setTargetInv(&m_target->accessInv());
+	m_spellbook.setTarget(m_target);
 }
 
 Living* GUI::getTarget()

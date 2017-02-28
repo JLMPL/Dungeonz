@@ -15,18 +15,18 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-void AIPlayer::setup()
+void AiPlayer::setup()
 {
 	m_state = PlayerState::MOVING;
 }
 
-void AIPlayer::update(float deltaTime)
+void AiPlayer::update(float deltaTime)
 {
 	if (!m_target->isBusy())
 	{
 		focus();
 
-		switch(m_state)
+		switch (m_state)
 		{
 			case PlayerState::MOVING:
 			{
@@ -59,7 +59,7 @@ void AIPlayer::update(float deltaTime)
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 }
 
-void AIPlayer::movingState(float deltaTime)
+void AiPlayer::movingState(float deltaTime)
 {
 	if (InputHandler::Get().isRun())
 		m_speed = m_runSpeed;
@@ -106,7 +106,7 @@ void AIPlayer::movingState(float deltaTime)
 	
 }
 
-void AIPlayer::idleState(float deltaTime)
+void AiPlayer::idleState(float deltaTime)
 {
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 
@@ -131,7 +131,7 @@ void AIPlayer::idleState(float deltaTime)
 	}
 }
 
-void AIPlayer::attackState(float deltaTime)
+void AiPlayer::attackState(float deltaTime)
 {
 	if (m_timer.getElapsedTime().asMilliseconds() > 300)
 	{
@@ -147,7 +147,7 @@ void AIPlayer::attackState(float deltaTime)
 
 			if (dist <= 32)
 			{
-				switch(m_focus->getType())
+				switch (m_focus->getType())
 				{
 					case EntityType::LIVING:
 					{
@@ -178,7 +178,7 @@ void AIPlayer::attackState(float deltaTime)
 		m_state = PlayerState::IDLE;
 }
 
-void AIPlayer::pickingState(float deltaTime)
+void AiPlayer::pickingState(float deltaTime)
 {
 	if (m_focus and m_timer.getElapsedTime().asMilliseconds() > 150)
 	{
@@ -186,7 +186,7 @@ void AIPlayer::pickingState(float deltaTime)
 
 		if (dist <= 32)
 		{
-			switch(m_focus->getType())
+			switch (m_focus->getType())
 			{
 				case EntityType::LIVING:
 				{
@@ -237,11 +237,11 @@ void AIPlayer::pickingState(float deltaTime)
 	m_state = PlayerState::MOVING;
 }
 
-void AIPlayer::castState(float deltaTime)
+void AiPlayer::castState(float deltaTime)
 {
 	if (InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
 	{
-		switch(m_target->getReadySpell())
+		switch (m_target->getReadySpell())
 		{
 			case Spell::FIREBALL:
 			{
@@ -272,7 +272,7 @@ void AIPlayer::castState(float deltaTime)
 		m_state = PlayerState::IDLE;
 }
 
-void AIPlayer::focus()
+void AiPlayer::focus()
 {
 	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 48);
 	m_focus = nullptr;
@@ -293,7 +293,7 @@ void AIPlayer::focus()
 
 		m_focus = ents[0];
 
-		switch(m_focus->getType())
+		switch (m_focus->getType())
 		{
 			case EntityType::LIVING:
 			{

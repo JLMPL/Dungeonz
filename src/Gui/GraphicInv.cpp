@@ -155,7 +155,7 @@ void GraphicInv::update()
 	{
 		Item& item = *m_slots[m_selected].item;
 
-		switch(item.type)
+		switch (item.type)
 		{
 			case ItemType::WEAPON:
 			{
@@ -230,7 +230,7 @@ void GraphicInv::description()
 		m_desc_name.setString(slot.item->name);
 		m_desc_name.setOrigin({static_cast<int>(m_desc_name.getLocalBounds().width/2), 0});
 		
-		switch(slot.item->type)
+		switch (slot.item->type)
 		{
 			case ItemType::WEAPON:
 				m_desc_type.setString("Weapon");

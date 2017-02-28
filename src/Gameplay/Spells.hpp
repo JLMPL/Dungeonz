@@ -5,6 +5,8 @@ enum Spell
 {
 	FIREBALL = 0,
 	FROSTBITE,
+	SPEED,
+	LIGHTING,
 	NUM_SPELLS
 };
 

@@ -44,7 +44,7 @@ void PressPlate::activate()
 	m_active = true;
 	m_timer.restart();
 
-	switch(m_whom->getType())
+	switch (m_whom->getType())
 	{
 		case EntityType::DOOR:
 		{

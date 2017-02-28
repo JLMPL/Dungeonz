@@ -4,6 +4,7 @@
 #include "GraphicLoot.hpp"
 #include "GuiMode.hpp"
 #include "CenterLabel.hpp"
+#include "Spellbook.hpp"
 #include "../Render/Bar.hpp"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -59,6 +60,8 @@ class GUI
 		sf::Text m_bookText;
 
 		CenterLabel m_centerLabel;
+
+		Spellbook m_spellbook;
 };
 
 #endif

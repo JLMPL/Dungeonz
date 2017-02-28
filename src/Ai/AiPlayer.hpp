@@ -14,7 +14,7 @@ enum class PlayerState
 
 class Entity;
 
-class AIPlayer : public AI
+class AiPlayer : public Ai
 {
 	public:
 		void setup() override final;

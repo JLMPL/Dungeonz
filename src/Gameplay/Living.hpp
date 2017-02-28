@@ -49,7 +49,7 @@ class Living : public Entity
 		void addXp(int xp);
 		int  getXp();
 
-		void setAI(AIPtr_t ai);
+		void setAi(AiPtr_t ai);
 		void setDirection(Direction_t facing);
 		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
 		void setBusy(bool busy);
@@ -65,7 +65,7 @@ class Living : public Entity
 	private:
 		LivingProfile m_profile;
 		Direction_t   m_facing;
-		AIPtr_t       m_ai = nullptr;
+		AiPtr_t       m_ai = nullptr;
 		bool          m_busy = false;
 
 		sf::CircleShape m_shadow;

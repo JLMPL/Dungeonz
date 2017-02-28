@@ -3,13 +3,13 @@
 #include "../Gameplay/Level.hpp"
 #include "../Resource/AnimationCache.hpp"
 
-void AIMob::setup()
+void AiMob::setup()
 {
 	m_state = MobState::IDLE;
 	m_target->setDirection(Direction::DOWN);
 }
 
-void AIMob::focus()
+void AiMob::focus()
 {
 	m_focus = nullptr;
 	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 100);
@@ -38,11 +38,11 @@ void AIMob::focus()
 	}
 }
 
-void AIMob::update(float deltaTime)
+void AiMob::update(float deltaTime)
 {
 	focus();
 	
-	switch(m_state)
+	switch (m_state)
 	{
 		case MobState::IDLE:
 			idleState(deltaTime);
@@ -59,7 +59,7 @@ void AIMob::update(float deltaTime)
 	}
 }
 
-void AIMob::idleState(float deltaTime)
+void AiMob::idleState(float deltaTime)
 {
 	if (!m_target->isDead())
 	{
@@ -78,7 +78,7 @@ void AIMob::idleState(float deltaTime)
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 }
 
-void AIMob::moveState(float deltaTime)
+void AiMob::moveState(float deltaTime)
 {
 	if (!m_target->isDead())
 	{
@@ -103,7 +103,7 @@ void AIMob::moveState(float deltaTime)
 		m_state = MobState::DEAD;
 }
 
-void AIMob::attackState(float deltaTime)
+void AiMob::attackState(float deltaTime)
 {
 	if (!m_target->isDead())
 	{
@@ -129,7 +129,7 @@ void AIMob::attackState(float deltaTime)
 		m_state = MobState::DEAD;
 }
 
-void AIMob::deadState(float deltaTime)
+void AiMob::deadState(float deltaTime)
 {
 	m_target->setDirection(Direction::UP);
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));

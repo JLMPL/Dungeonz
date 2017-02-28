@@ -52,7 +52,7 @@ void Missile::update(float deltaTime)
 		}
 	}
 
-	switch(m_direction)
+	switch (m_direction)
 	{
 		case Direction::UP:
 			m_velocity = vec2f(0,-1);
@@ -79,7 +79,7 @@ void Missile::blow(Entity* ent)
 {
 	if (ent)
 	{
-		switch(ent->getType())
+		switch (ent->getType())
 		{
 			case EntityType::LIVING:
 			{

@@ -109,7 +109,7 @@ void Living::push(Direction_t dir, float dist, float duration)
 
 		m_pushStart = vec2f(m_box->rect.x, m_box->rect.y);
 
-		switch(m_pushDir)
+		switch (m_pushDir)
 		{
 			case Direction::UP:
 				m_pushEnd = m_pushStart + vec2f(0, -dist);
@@ -210,7 +210,7 @@ void Living::learnSpell(int spell)
 	m_spells[spell] = true;
 	m_readySpell = spell;
 
-	switch(spell)
+	switch (spell)
 	{
 		case Spell::FIREBALL:
 			GUI::Get().addLabel("Learned spell \"Fireball\"!");
@@ -241,7 +241,7 @@ int Living::getXp()
 	return m_profile.xp;
 }
 
-void Living::setAI(AIPtr_t ai)
+void Living::setAi(AiPtr_t ai)
 {
 	m_ai = std::move(ai);
 	m_ai->init(this);

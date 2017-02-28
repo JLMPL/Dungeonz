@@ -1,32 +1,32 @@
 #include "Map.hpp"
 #include "LivingProfile.hpp"
-#include "Living.hpp"
-#include "Level.hpp"
 #include "Door.hpp"
+#include "Level.hpp"
 #include "Lever.hpp"
+#include "Chest.hpp"
+#include "Living.hpp"
+#include "ItemBag.hpp"
 #include "SpikeTrap.hpp"
 #include "PressPlate.hpp"
-#include "Chest.hpp"
-#include "ItemBag.hpp"
-#include "../Ai/AiPlayer.hpp"
-#include "../Ai/AiMob.hpp"
-#include "../base64/base64.h"
-#include "../Core/Error.hpp"
-#include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include "../Ai/AiMob.hpp"
+#include "../Core/Error.hpp"
+#include "../Ai/AiPlayer.hpp"
+#include "../base64/base64.h"
 #include "../Render/Renderer.hpp"
 #include "../Resource/TextureCache.hpp"
+#include "../Collision/CollisionHandler.hpp"
 #include <zlib.h>
+#include <memory>
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include <memory>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-void Map::loadFromFile(std::string path)
+void Map::loadFromFile(const std::string& path)
 {
 	using namespace rapidxml;
 
@@ -182,7 +182,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 			auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
 			living->init(profile);
-			living->setAI(AIPtr_t(new AIMob()));
+			living->setAi(AiPtr_t(new AiMob()));
 			living->setPosition(pos + vec2f(16,16));
 
 			if (item0 != "-")
@@ -407,7 +407,8 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
 			auto player = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
 			player->init(profile);
-			player->setAI(AIPtr_t(new AIPlayer()));
+			player->setCode("pc_player");
+			player->setAi(AiPtr_t(new AiPlayer()));
 			player->setPosition(pos);
 
 			GUI::Get().setTarget(player);
@@ -436,11 +437,13 @@ void Map::collisions()
 
 void Map::update()
 {
-	// for (int i = 0; i < m_tileset.size(); i++)
-	// {
-	//     m_tileset[i].sprite.setPosition(i * 32, 0);
-	//     Renderer::Get().submit(&m_tileset[i].sprite);
-	// }
+	/*/
+	for (int i = 0; i < m_tileset.size(); i++)
+	{
+		m_tileset[i].sprite.setPosition(i * 32, 0);
+		Renderer::Get().submit(&m_tileset[i].sprite);
+	}
+	//*/
 
 	for (int i = 0; i < m_layers[0].tiles.size(); i++)
 	{

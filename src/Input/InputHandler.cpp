@@ -2,15 +2,16 @@
 
 void InputHandler::init()
 {
-	m_keys[KeyBind::UP]     = sf::Keyboard::Up;
-	m_keys[KeyBind::DOWN]   = sf::Keyboard::Down;
-	m_keys[KeyBind::LEFT]   = sf::Keyboard::Left;
-	m_keys[KeyBind::RIGHT]  = sf::Keyboard::Right;
-	m_keys[KeyBind::ACTION] = sf::Keyboard::E;
-	m_keys[KeyBind::ATTACK] = sf::Keyboard::F;
-	m_keys[KeyBind::INV]    = sf::Keyboard::Tab;
-	m_keys[KeyBind::RUN]	= sf::Keyboard::LShift;
-	m_keys[KeyBind::CAST]	= sf::Keyboard::R;
+	m_keys[KeyBind::UP]        = sf::Keyboard::Up;
+	m_keys[KeyBind::DOWN]      = sf::Keyboard::Down;
+	m_keys[KeyBind::LEFT]      = sf::Keyboard::Left;
+	m_keys[KeyBind::RIGHT]     = sf::Keyboard::Right;
+	m_keys[KeyBind::ACTION]    = sf::Keyboard::E;
+	m_keys[KeyBind::ATTACK]    = sf::Keyboard::F;
+	m_keys[KeyBind::INV]       = sf::Keyboard::Tab;
+	m_keys[KeyBind::RUN]	   = sf::Keyboard::LShift;
+	m_keys[KeyBind::CAST]	   = sf::Keyboard::R;
+	m_keys[KeyBind::SPELLBOOK] = sf::Keyboard::S;
 }
 
 bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
@@ -27,7 +28,8 @@ bool InputHandler::isAnyKeyPressed()
 		sf::Keyboard::isKeyPressed(m_keys[KeyBind::ACTION]) or
 		sf::Keyboard::isKeyPressed(m_keys[KeyBind::ATTACK]) or
 		sf::Keyboard::isKeyPressed(m_keys[KeyBind::INV]) or
-		sf::Keyboard::isKeyPressed(m_keys[KeyBind::CAST]))
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::CAST]) or
+		sf::Keyboard::isKeyPressed(m_keys[KeyBind::SPELLBOOK]))
 	{
 		return true;
 	}
@@ -82,4 +84,9 @@ bool InputHandler::isRun()
 bool InputHandler::isCast()
 {
 	return sf::Keyboard::isKeyPressed(m_keys[KeyBind::CAST]);
+}
+
+bool InputHandler::isSpellbook()
+{
+	return sf::Keyboard::isKeyPressed(m_keys[KeyBind::SPELLBOOK]);
 }

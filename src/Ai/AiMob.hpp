@@ -14,7 +14,7 @@ enum class MobState
 	DEAD
 };
 
-class AIMob : public AI
+class AiMob : public Ai
 {
 	public:
 		void setup() override final;
