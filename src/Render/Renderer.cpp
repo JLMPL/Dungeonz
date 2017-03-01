@@ -33,6 +33,16 @@ void Renderer::submitSorted(sf::Sprite* data)
 	m_sortedData.push_back(data);
 }
 
+void Renderer::submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type)
+{
+	Line line = {draw, count, type};
+	// line.verts = draw;
+	// line.count = count;
+	// line.type = type;
+
+	m_linesData.push_back(line);
+}
+
 void Renderer::submitOverlay(sf::RectangleShape* data)
 {
 	m_overRectData.push_back(data);
@@ -94,6 +104,9 @@ void Renderer::render()
 	for (auto& i : m_sortedData)
 		m_window->draw(*i);
 
+	for (auto& i : m_linesData)
+		m_window->draw(i.verts, i.count, i.type);
+
 	for (auto& i : m_overRectData)
 		m_window->draw(*i);
 
@@ -120,6 +133,8 @@ void Renderer::clearAll()
 	m_backgroundData.clear();
 	m_backCircleData.clear();
 	m_sortedData.clear();
+
+	m_linesData.clear();
 
 	m_overRectData.clear();
 	m_overSpriteData.clear();

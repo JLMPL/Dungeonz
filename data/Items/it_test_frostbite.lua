@@ -3,7 +3,7 @@ Spell_Frostbite = 1
 
 Item = {
 	code = "it_test_frostbite",
-	name = "Frostbite Spell",
+	name = "Frostbite",
 	image = "test_note.png",
 	type = "spell",
 	desc = "It'll freeze your balls off!",

@@ -6,6 +6,7 @@
 #include "../Gameplay/Door.hpp"
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
+#include "../Gameplay/Lightning.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
@@ -244,26 +245,15 @@ void AiPlayer::castState(float deltaTime)
 		switch (m_target->getReadySpell())
 		{
 			case Spell::FIREBALL:
-			{
-				if (m_target->getAttribute(Attribute::MP) >= 10)
-				{
-					auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
-					ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
-					ball->setOwner(static_cast<Entity*>(m_target));
+				castFireball();
+				break;
 
-					m_target->drainMana(10);
-					m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
-					[&]()
-					{
-						m_state = PlayerState::IDLE;
-					});
-
-					m_timer.restart();
-				}
-			}	
-			break;
 			case Spell::FROSTBITE:
-			break;
+				break;
+
+			case Spell::LIGHTNING:
+				castLightning(deltaTime);
+				break;
 
 			default:break;
 		}
@@ -272,23 +262,72 @@ void AiPlayer::castState(float deltaTime)
 		m_state = PlayerState::IDLE;
 }
 
+void AiPlayer::castFireball()
+{
+	if (m_target->getAttribute(Attribute::MP) >= 10)
+	{
+		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		ball->setOwner(static_cast<Entity*>(m_target));
+
+		m_target->drainMana(10);
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+		[&]()
+		{
+			m_state = PlayerState::IDLE;
+		});
+
+		m_timer.restart();
+	}
+}
+
+void AiPlayer::castLightning(float deltaTime)
+{
+	if (m_focus and m_focus->getType() == EntityType::LIVING)
+	{
+		auto bolt = (Lightning*)m_target->getLevel()->addEntity(EntityPtr_t(new Lightning()));
+		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
+				   m_focus->getFakePos().getf() + vec2f(0,-20));
+
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
+
+		//damage
+		static_cast<Living*>(m_focus)->damage(4);
+		//mana
+
+		m_timer.restart();
+	}
+}
+
 void AiPlayer::focus()
 {
-	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 48);
+	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 128);
 	m_focus = nullptr;
 
 	if (ents.size() > 0)
 	{
 		if (ents.size() > 1)
 		{
-			std::sort(begin(ents), end(ents),
-			[&](Entity* a, Entity* b)
+			for (auto i = ents.begin(); i != ents.end();)
 			{
-				float dista = length(a->getPosition() - m_target->getPosition());
-				float distb = length(b->getPosition() - m_target->getPosition());
+				if ((*i)->getType() == EntityType::SPIKE_TRAP or
+					(*i)->getType() == EntityType::PRESS_PLATE)
+					i = ents.erase(i);
+				else
+					i++;
+			}
 
-				return dista < distb;
-			});
+			if (ents.size() > 1)
+			{
+				std::sort(begin(ents), end(ents),
+				[&](Entity* a, Entity* b)
+				{
+					float dista = length(a->getPosition() - m_target->getPosition());
+					float distb = length(b->getPosition() - m_target->getPosition());
+
+					return dista < distb;
+				});
+			}
 		}
 
 		m_focus = ents[0];

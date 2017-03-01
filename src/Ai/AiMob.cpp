@@ -16,7 +16,7 @@ void AiMob::focus()
 
 	for (auto i = ents.begin(); i != ents.end();)
 	{
-		if ((*i)->getType() != EntityType::LIVING)
+		if ((*i)->getCode() != "pc_player")
 			i = ents.erase(i);
 		else 
 			i++;
@@ -121,9 +121,7 @@ void AiMob::attackState(float deltaTime)
 			m_timer.restart();
 		}
 		else
-		{
 			m_state = MobState::IDLE;
-		}
 	}
 	else
 		m_state = MobState::DEAD;

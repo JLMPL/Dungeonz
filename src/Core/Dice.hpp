@@ -2,12 +2,12 @@
 #define DICE_HPP
 #include <cstdlib>
 
-namespace dice
+namespace Dice
 {
 
 static int roll(int min, int max)
 {
-	return (rand()%(max-min)) + min;
+	return (rand() % (max - min)) + min;
 }
 
 };

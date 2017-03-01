@@ -60,6 +60,8 @@ void Living::init(const LivingProfile& profile)
 	{
 		m_spells[i] = false;
 	}
+
+	m_spells[Spell::LIGHTNING] = true;
 }
 
 void Living::update(float deltaTime)

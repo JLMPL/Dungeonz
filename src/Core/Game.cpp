@@ -5,8 +5,8 @@
 #include "../Resource/FontCache.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Resource/AnimationCache.hpp"
-#include "../Collision/CollisionHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
+#include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
 
 #ifdef _WIN32

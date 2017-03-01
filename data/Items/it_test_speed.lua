@@ -3,7 +3,7 @@ Spell_Speed = 2
 
 Item = {
 	code = "it_test_speed",
-	name = "Speed Spell",
+	name = "Speed",
 	image = "test_note.png",
 	type = "spell",
 	desc = "Run forrest run!",

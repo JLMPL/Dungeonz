@@ -9,6 +9,13 @@
 #include <SFML/System/Thread.hpp>
 #include <vector>
 
+struct Line
+{
+	sf::Vertex* verts;
+	int count = 0;
+	sf::PrimitiveType type;
+};
+
 //Singleton
 class Renderer
 {
@@ -24,6 +31,7 @@ class Renderer
 		void submitBackground(sf::CircleShape* data);
 		void submitBackground(sf::Sprite* data);
 		void submitSorted(sf::Sprite* data);
+		void submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type);
 
 		void submitOverlay(sf::RectangleShape* data);
 		void submitOverlay(sf::Sprite* data);
@@ -45,6 +53,8 @@ class Renderer
 		std::vector<sf::CircleShape*> m_backCircleData;
 		std::vector<sf::Sprite*> m_backgroundData;
 		std::vector<sf::Sprite*> m_sortedData;
+
+		std::vector<Line> m_linesData;
 
 		//gui
 		std::vector<sf::RectangleShape*> m_overRectData;

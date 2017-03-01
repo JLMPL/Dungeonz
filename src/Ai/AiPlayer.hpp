@@ -27,6 +27,9 @@ class AiPlayer : public Ai
 		void pickingState(float deltaTime);
 		void castState(float deltaTime);
 
+		void castFireball();
+		void castLightning(float deltaTime);
+
 	private:
 		float       m_speed = 100;
 		float 	    m_runSpeed = 100;
