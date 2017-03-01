@@ -273,8 +273,6 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
 			std::string type = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
 
-			printf("%s\n", type.c_str());
-
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());
 			pos.y = std::stof(object->first_attribute("y")->value());

@@ -1,8 +1,9 @@
 TODO:
 -learn spells
--damage vs defense computation
 -skeleton attack animation
--spellbook
+-damage vs defense computation
+-rolling as dodging
+-saves
 
 Spellz: -they're gonna be so hardcoded
   Fireball - Shoot the fireball on the face, and explode.
@@ -12,5 +13,7 @@ Spellz: -they're gonna be so hardcoded
 
 
 Tester's notes:
-Item selection in inv more obvious.
-Dropping items
+-Item selection in inv more obvious.
+-Dropping items
+-They're using esc to exit menus
+-Suggested rolling

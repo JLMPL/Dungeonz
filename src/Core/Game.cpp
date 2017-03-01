@@ -62,10 +62,8 @@ void Game::mainLoop()
 		}
 		update();
 
-		Window.clear();
+		Renderer::Get().submitOverlay(&version);
 		Renderer::Get().flush();
-		Window.draw(version);
-		Window.display();
 
 		bench_end = Benchmark.getElapsedTime().asMilliseconds();
 

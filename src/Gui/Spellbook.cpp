@@ -1,7 +1,9 @@
 #include "Spellbook.hpp"
 #include "../Gameplay/Spells.hpp"
+#include "../Gameplay/Living.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Resource/TextureCache.hpp"
+#include "../Input/InputHandler.hpp"
 
 constexpr int g_spellBookWidth = 256 * 1.5;
 constexpr int g_spellBookHeight = Spell::NUM_SPELLS * 32 + 10;
@@ -26,23 +28,48 @@ Spellbook::Spellbook()
 
 void Spellbook::update(float deltaTime)
 {
+	if (InputHandler::Get().isUp() and m_timer.getElapsedTime().asMilliseconds() > 150)
+	{
+		if (m_chosen > 0)
+			m_chosen--;
+		m_timer.restart();
+	}
+	else if (InputHandler::Get().isDown() and m_timer.getElapsedTime().asMilliseconds() > 150)
+	{
+		if (m_chosen < Spell::NUM_SPELLS -1)
+			m_chosen++;
+		m_timer.restart();
+	}
+	else if (InputHandler::Get().isAction() and m_timer.getElapsedTime().asMilliseconds() > 150)
+	{
+		if (m_target->knowsSpell(m_chosen))
+			m_target->setReadySpell(m_chosen);
+		m_timer.restart();
+	}
+
 	vec2i pos = m_position + vec2i(400 - g_spellBookWidth/2, 300 - g_spellBookHeight/2);
 	m_background.setPosition(pos.getSfVecf());
 
-	for(int i = 0; i < Spell::NUM_SPELLS; i++)
+	for (int i = 0; i < Spell::NUM_SPELLS; i++)
 	{
 		auto poz = pos + vec2i(5, i * 32 + 5);
 		m_options[i].setPosition(poz);
+		m_options[i].disable();
 
-		if(i == m_chosen)
+		if (i == m_chosen)
 		{
 			m_selection.setPosition(poz.getSfVecf());
+		}
+
+		if (m_target->knowsSpell(i))
+		{
+			m_options[i].enable();
 		}
 	}
 
 	Renderer::Get().submitOverlay(&m_background);
 
-	for(auto& i : m_options)
+	for (auto& i : m_options)
 		i.draw();
 
 	Renderer::Get().submitOverlay(&m_selection);

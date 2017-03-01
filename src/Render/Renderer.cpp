@@ -5,6 +5,7 @@
 #include "../Collision/CollisionAlgorithm.hpp"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
+#include <memory>
 
 void Renderer::init(sf::RenderWindow* window)
 {
@@ -105,11 +106,13 @@ void Renderer::render()
 
 void Renderer::flush()
 {
+	m_window->clear();
 	updateCamera();
 	cull();
 	sort();
 	render();
 	clearAll();
+	m_window->display();
 }
 
 void Renderer::clearAll()

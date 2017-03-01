@@ -12,7 +12,7 @@ class Inventory
 		void removeItem(Item* item);
 		bool hasItem(const std::string& code);
 
-		ItemPtr_t getItem(int index);
+		const ItemPtr_t& getItem(int index);
 		int getAmount();
 
 	private:
