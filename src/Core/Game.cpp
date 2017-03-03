@@ -28,7 +28,7 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.2.1 WIP");
+	version.setString("Version 0.2.2 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	level.init();
@@ -57,7 +57,7 @@ void Game::mainLoop()
 		{
 			if (Event.type == sf::Event::Closed)
 				Window.close();
-			if (Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::Escape)
+			if (Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::F4)
 				Window.close();
 		}
 		update();

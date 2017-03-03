@@ -305,11 +305,11 @@ void GraphicInv::stats()
 	m_mana_bar.setPosition(mana_bar_pos);
 
 	auto damage_pos = m_pos + m_stats_pos + vec2i(10, 128);
-	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::DAMAGE)));
+	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::DAMAGE)) + "pt");
 	m_stats_damage.setPosition(damage_pos.getSfVecf());
 
 	auto defense_pos = m_pos + m_stats_pos + vec2i(10, 142);
-	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)));
+	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)) + "%");
 	m_stats_defense.setPosition(defense_pos.getSfVecf());
 
 	Renderer::Get().submitOverlay(&m_stats_bcg);

@@ -1,19 +1,22 @@
 TODO:
--learn spells
 -skeleton attack animation
 -damage vs defense computation
--rolling as dodging
 -saves
+-dropping items
+
 
 Spellz: -they're gonna be so hardcoded
   Fireball - Shoot the fireball on the face, and explode.
   Speed - Run like a crazy fukin rabbit.
   Ice - Shot it on the face, and freeze the mofo.
   Lighting - Zip some fuckers in the balls.
+  Heal - Why didn't I think of that.
 
 
-Tester's notes:
+Testers' notes:
 -Item selection in inv more obvious.
 -Dropping items
--They're using esc to exit menus
--Suggested rolling
+
+
+-They're using esc to exit menus - done
+-Suggested rolling - added to list

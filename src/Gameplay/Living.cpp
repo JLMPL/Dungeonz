@@ -2,6 +2,7 @@
 #include "Level.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Ai/AiPtr.hpp"
+#include "../Ai/AiPlayer.hpp"
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
@@ -131,15 +132,33 @@ void Living::push(Direction_t dir, float dist, float duration)
 
 void Living::damage(int damage)
 {
-	int& currHp  = m_attributes[Attribute::HP];
-	int& defense = m_attributes[Attribute::DEFENSE];
+	auto state = static_cast<AiPlayer*>(m_ai.get());
 
-	currHp -= damage;
+	bool dodmg = true;
 
-	if (currHp < 0)
-		currHp = 0;
+	if(!state)
+		dodmg = true;
 
-	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+	else if(state->getState() == PlayerState::ROLLING)
+		dodmg = false;
+
+	else
+		dodmg = true;
+
+	if(dodmg)
+	{
+		int& currHp  = m_attributes[Attribute::HP];
+		int& defense = m_attributes[Attribute::DEFENSE];
+
+		int finalDamage = damage - (damage * (0.01 * defense));
+
+		currHp -= finalDamage;
+
+		if (currHp < 0)
+			currHp = 0;
+
+		m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+	}
 }
 
 void Living::setDamage(int value)

@@ -30,30 +30,23 @@ void AiPlayer::update(float deltaTime)
 		switch (m_state)
 		{
 			case PlayerState::MOVING:
-			{
 				movingState(deltaTime);
-			}
-			break;
+				break;
 			case PlayerState::IDLE:
-			{
 				idleState(deltaTime);
-			}
-			break;
+				break;
 			case PlayerState::ATTACK:
-			{
 				attackState(deltaTime);
-			}
-			break;
+				break;
 			case PlayerState::PICKING:
-			{
 				pickingState(deltaTime);
-			}
-			break;
+				break;
 			case PlayerState::CASTING:
-			{
 				castState(deltaTime);
-			}
-			break;
+				break;
+			case PlayerState::ROLLING:
+				rollState(deltaTime);
+				break;
 		}
 	}
 	else
@@ -91,7 +84,9 @@ void AiPlayer::movingState(float deltaTime)
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_walk.ani"));
 
 	if (!InputHandler::Get().isAnyKeyPressed())
+	{
 		m_state = PlayerState::IDLE;
+	}
 	else if (InputHandler::Get().isAttack())
 	{
 		m_state = PlayerState::ATTACK;
@@ -104,7 +99,11 @@ void AiPlayer::movingState(float deltaTime)
 	{
 		m_state = PlayerState::CASTING;
 	}
-	
+
+	if (InputHandler::Get().isRoll())
+	{
+		m_state = PlayerState::ROLLING;
+	}
 }
 
 void AiPlayer::idleState(float deltaTime)
@@ -112,9 +111,9 @@ void AiPlayer::idleState(float deltaTime)
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 
 	if (InputHandler::Get().isUp() or
-	   InputHandler::Get().isDown() or
-	   InputHandler::Get().isLeft() or
-	   InputHandler::Get().isRight())
+		InputHandler::Get().isDown() or
+		InputHandler::Get().isLeft() or
+		InputHandler::Get().isRight())
 	{
 		m_state = PlayerState::MOVING;
 	}
@@ -238,6 +237,32 @@ void AiPlayer::pickingState(float deltaTime)
 	m_state = PlayerState::MOVING;
 }
 
+void AiPlayer::rollState(float deltaTime)
+{
+	switch (m_target->getDirection())
+	{
+		case Direction::UP:
+			m_target->move(vec2f(0, -m_runSpeed * deltaTime));
+			break;
+		case Direction::DOWN:
+			m_target->move(vec2f(0, m_runSpeed * deltaTime));
+			break;
+		case Direction::LEFT:
+			m_target->move(vec2f(-m_runSpeed * deltaTime, 0));
+			break;
+		case Direction::RIGHT:
+			m_target->move(vec2f(m_runSpeed * deltaTime, 0));
+			break;
+	}
+
+	m_target->setAnimation(AnimationCache::Get().getAnimation("player_roll.ani"),
+	[&]()
+	{
+		m_state = PlayerState::IDLE;
+		m_timer.restart();
+	});
+}
+
 void AiPlayer::castState(float deltaTime)
 {
 	if (InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
@@ -247,10 +272,9 @@ void AiPlayer::castState(float deltaTime)
 			case Spell::FIREBALL:
 				castFireball();
 				break;
-
 			case Spell::FROSTBITE:
+				//shet
 				break;
-
 			case Spell::LIGHTNING:
 				castLightning(deltaTime);
 				break;
@@ -299,9 +323,11 @@ void AiPlayer::castLightning(float deltaTime)
 	}
 }
 
+
+
 void AiPlayer::focus()
 {
-	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 128);
+	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 96);
 	m_focus = nullptr;
 
 	if (ents.size() > 0)
@@ -371,4 +397,9 @@ void AiPlayer::focus()
 			break;
 		}
 	}
+}
+
+PlayerState AiPlayer::getState()
+{
+	return m_state;
 }

@@ -74,7 +74,8 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::INV:
 		{
-			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -90,7 +91,8 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::LOOT:
 		{
-			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -105,9 +107,11 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::READ:
 		{
-			if (InputHandler::Get().isInv())
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::OFF;
+				m_mode = GUIMode::INV;
+				m_timer.restart();
 			}
 
 			vec2i pos = m_camera + m_bookPos;
@@ -122,7 +126,8 @@ void GUI::update(float deltaTime)
 		break;
 		case GUIMode::SPELLBOOK:
 		{
-			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
