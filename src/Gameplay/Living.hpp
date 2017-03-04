@@ -4,6 +4,7 @@
 #include "LivingProfile.hpp"
 #include "Stats.hpp"
 #include "Inventory.hpp"
+#include "Spells.hpp"
 #include "../Ai/AiPtr.hpp"
 #include "../Core/Direction.hpp"
 #include "../Resource/AnimationPtr.hpp"
@@ -24,8 +25,11 @@ class Living : public Entity
 		void push(Direction_t dir, float dist, float duration);
 		void damage(int damage);
 
-		void setDamage(int high);
+		void setDamage(int value);
 		void restoreBasicDamage();
+
+		void setDefense(int value);
+		void restoreBasicDefense();
 
 		void restoreHealth(int heal);
 		void restoreFullHealth();
@@ -37,10 +41,15 @@ class Living : public Entity
 		void setEquippedItem(int where, Item* item);
 		bool isEquipped(int where, Item* item);
 
+		void setReadySpell(int spell);
+		void learnSpell(int spell);
+		bool knowsSpell(int spell);
+		int getReadySpell();
+
 		void addXp(int xp);
 		int  getXp();
 
-		void setAI(AIPtr_t ai);
+		void setAi(AiPtr_t ai);
 		void setDirection(Direction_t facing);
 		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
 		void setBusy(bool busy);
@@ -56,7 +65,7 @@ class Living : public Entity
 	private:
 		LivingProfile m_profile;
 		Direction_t   m_facing;
-		AIPtr_t       m_ai = nullptr;
+		AiPtr_t       m_ai = nullptr;
 		bool          m_busy = false;
 
 		sf::CircleShape m_shadow;
@@ -73,6 +82,8 @@ class Living : public Entity
 		int       m_attributes[Attribute::NUM_ATTS];
 		Inventory m_inv;
 		Item*     m_equipped[Equip::NUM_EQ];
+		bool	  m_spells[Spell::NUM_SPELLS];
+		int 	  m_readySpell = -1;
 };
 
 #endif

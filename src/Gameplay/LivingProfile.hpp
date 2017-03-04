@@ -21,7 +21,7 @@ struct LivingProfile
         std::string finalpath = "data/Living/" + path;
     	std::ifstream file(finalpath.c_str());
 
-        if(!file.good())
+        if (!file.good())
         {
             printf("Failed to load LivingProfile \"%s\"!", finalpath.c_str());
         }

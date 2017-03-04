@@ -6,7 +6,6 @@ Item = {
 	desc = "It's not nearly as tasty as shit, but It will have to do.",
 
 	effect = function(user)
-		print("Tfoo! Awful!");
 		user:restoreHealth(10);
 	end
 }

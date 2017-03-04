@@ -6,120 +6,76 @@
 #include "../Gameplay/Door.hpp"
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
+#include "../Gameplay/Lightning.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
 #include "../Resource/AnimationCache.hpp"
 
-void AIPlayer::setup()
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
+void AiPlayer::setup()
 {
 	m_state = PlayerState::MOVING;
 }
 
-void AIPlayer::update(float deltaTime)
+void AiPlayer::update(float deltaTime)
 {
-	if(!m_target->isBusy())
+	if (!m_target->isBusy())
 	{
 		focus();
 
-		switch(m_state)
+		switch (m_state)
 		{
 			case PlayerState::MOVING:
-			{
 				movingState(deltaTime);
 				break;
-			}
 			case PlayerState::IDLE:
-			{
 				idleState(deltaTime);
 				break;
-			}
 			case PlayerState::ATTACK:
-			{
-				if(m_timer.getElapsedTime().asMilliseconds() > 300)
-				{
-					m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
-					[&]()
-					{
-						m_state = PlayerState::MOVING;
-					});
-
-					if(m_focus)
-					{
-						float dist = length(m_focus->getPosition() - m_target->getPosition());
-
-						if(dist <= 32)
-						{
-							switch(m_focus->getType())
-							{
-								case EntityType::LIVING:
-								{
-									auto living = static_cast<Living*>(m_focus);
-
-									if(living->getAttribute(Attribute::HP) > 0)
-									{
-										int damage = m_target->getAttribute(Attribute::DAMAGE);
-										living->damage(damage);
-										living->push(m_target->getDirection(), 5, 0.1);
-
-										IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
-
-										if(living->getAttribute(Attribute::HP) <= 0)
-										{
-											m_target->addXp(living->getXp());
-											IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
-										}
-									}
-									break;
-								}
-							}
-						}
-					}
-					m_timer.restart();
-				}
-				else 
-					m_state = PlayerState::IDLE;
+				attackState(deltaTime);
 				break;
-			}
 			case PlayerState::PICKING:
-			{
 				pickingState(deltaTime);
 				break;
-			}
 			case PlayerState::CASTING:
-			{
 				castState(deltaTime);
-			}
-			break;
+				break;
+			case PlayerState::ROLLING:
+				rollState(deltaTime);
+				break;
 		}
 	}
 	else
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 }
 
-void AIPlayer::movingState(float deltaTime)
+void AiPlayer::movingState(float deltaTime)
 {
-	if(InputHandler::Get().isRun())
+	if (InputHandler::Get().isRun())
 		m_speed = m_runSpeed;
 	else
 		m_speed = m_walkSpeed;
 
-	if(InputHandler::Get().isUp())
+	if (InputHandler::Get().isUp())
 	{
 		m_target->move({0, -deltaTime * m_speed});
 		m_target->setDirection(Direction::UP);
 	}
-	else if(InputHandler::Get().isDown())
+	else if (InputHandler::Get().isDown())
 	{
 		m_target->move({0, deltaTime * m_speed});
 		m_target->setDirection(Direction::DOWN);
 	}
-	if(InputHandler::Get().isLeft())
+	if (InputHandler::Get().isLeft())
 	{
 		m_target->move({-deltaTime * m_speed, 0});
 		m_target->setDirection(Direction::LEFT);
 	}
-	else if(InputHandler::Get().isRight())
+	else if (InputHandler::Get().isRight())
 	{
 		m_target->move({deltaTime * m_speed, 0});
 		m_target->setDirection(Direction::RIGHT);
@@ -127,104 +83,110 @@ void AIPlayer::movingState(float deltaTime)
 
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_walk.ani"));
 
-	if(!InputHandler::Get().isAnyKeyPressed())
+	if (!InputHandler::Get().isAnyKeyPressed())
+	{
 		m_state = PlayerState::IDLE;
-	else if(InputHandler::Get().isAttack())
+	}
+	else if (InputHandler::Get().isAttack())
 	{
 		m_state = PlayerState::ATTACK;
 	}
-	else if(InputHandler::Get().isAction())
+	else if (InputHandler::Get().isAction())
 	{
 		m_state = PlayerState::PICKING;
 	}
-	else if(InputHandler::Get().isCast())
+	else if (InputHandler::Get().isCast())
 	{
 		m_state = PlayerState::CASTING;
 	}
-	
+
+	if (InputHandler::Get().isRoll())
+	{
+		m_state = PlayerState::ROLLING;
+	}
 }
 
-void AIPlayer::idleState(float deltaTime)
+void AiPlayer::idleState(float deltaTime)
 {
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
 
-	if(InputHandler::Get().isUp() or
-	   InputHandler::Get().isDown() or
-	   InputHandler::Get().isLeft() or
-	   InputHandler::Get().isRight())
+	if (InputHandler::Get().isUp() or
+		InputHandler::Get().isDown() or
+		InputHandler::Get().isLeft() or
+		InputHandler::Get().isRight())
 	{
 		m_state = PlayerState::MOVING;
 	}
-	else if(InputHandler::Get().isAttack())
+	else if (InputHandler::Get().isAttack())
 	{
 		m_state = PlayerState::ATTACK;
 	}
-	else if(InputHandler::Get().isAction())
+	else if (InputHandler::Get().isAction())
 	{
 		m_state = PlayerState::PICKING;
 	}
-	else if(InputHandler::Get().isCast())
+	else if (InputHandler::Get().isCast())
 	{
 		m_state = PlayerState::CASTING;
 	}
 }
 
-void AIPlayer::attackState(float deltaTime)
+void AiPlayer::attackState(float deltaTime)
 {
-	if(m_timer.getElapsedTime().asMilliseconds() > 300)
+	if (m_timer.getElapsedTime().asMilliseconds() > 300)
+	{
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
+		[&]()
+		{
+			m_state = PlayerState::MOVING;
+		});
+
+		if (m_focus)
+		{
+			float dist = length(m_focus->getPosition() - m_target->getPosition());
+
+			if (dist <= 32)
+			{
+				switch (m_focus->getType())
 				{
-					m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
-					[&]()
+					case EntityType::LIVING:
 					{
-						m_state = PlayerState::MOVING;
-					});
+						auto living = static_cast<Living*>(m_focus);
 
-					if(m_focus)
-					{
-						float dist = length(m_focus->getPosition() - m_target->getPosition());
-
-						if(dist <= 32)
+						if (living->getAttribute(Attribute::HP) > 0)
 						{
-							switch(m_focus->getType())
+							int damage = m_target->getAttribute(Attribute::DAMAGE);
+							living->damage(damage);
+							living->push(m_target->getDirection(), 5, 0.1);
+
+							IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
+
+							if (living->getAttribute(Attribute::HP) <= 0)
 							{
-								case EntityType::LIVING:
-								{
-									auto living = static_cast<Living*>(m_focus);
-
-									if(living->getAttribute(Attribute::HP) > 0)
-									{
-										int damage = m_target->getAttribute(Attribute::DAMAGE);
-										living->damage(damage);
-										living->push(m_target->getDirection(), 5, 0.1);
-
-										IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
-
-										if(living->getAttribute(Attribute::HP) <= 0)
-										{
-											m_target->addXp(living->getXp());
-											IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
-										}
-									}
-									break;
-								}
+								m_target->addXp(living->getXp());
+								IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
 							}
 						}
+						break;
 					}
-					m_timer.restart();
 				}
-				else 
-					m_state = PlayerState::IDLE;
+			}
+		}
+		m_timer.restart();
+	}
+	else 
+		m_state = PlayerState::IDLE;
 }
 
-void AIPlayer::pickingState(float deltaTime)
+void AiPlayer::pickingState(float deltaTime)
 {
-	if(m_focus and m_timer.getElapsedTime().asMilliseconds() > 150)
+	if (m_focus and m_timer.getElapsedTime().asMilliseconds() > 150)
 	{
 		float dist = length(m_focus->getPosition() - m_target->getPosition());
 
-		if(dist <= 32)
+		if (dist <= 32)
 		{
-			switch(m_focus->getType())
+			switch (m_focus->getType())
 			{
 				case EntityType::LIVING:
 				{
@@ -241,9 +203,9 @@ void AIPlayer::pickingState(float deltaTime)
 				case EntityType::CHEST:
 				{
 					auto chest = static_cast<Chest*>(m_focus);
-					if(true/*chest->isOpen()*/)
+					if (true/*chest->isOpen()*/)
 					{
-						if(chest->accessInv().getAmount() > 0)
+						if (chest->accessInv().getAmount() > 0)
 							GUI::Get().goLoot(&chest->accessInv(), chest->getPosition().geti());
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), chest->getPosition() + vec2f(0,-50));
@@ -275,52 +237,128 @@ void AIPlayer::pickingState(float deltaTime)
 	m_state = PlayerState::MOVING;
 }
 
-void AIPlayer::castState(float deltaTime)
+void AiPlayer::rollState(float deltaTime)
 {
-	if(InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
+	switch (m_target->getDirection())
 	{
-		if(m_target->getAttribute(Attribute::MP) >= 10)
+		case Direction::UP:
+			m_target->move(vec2f(0, -m_runSpeed * deltaTime));
+			break;
+		case Direction::DOWN:
+			m_target->move(vec2f(0, m_runSpeed * deltaTime));
+			break;
+		case Direction::LEFT:
+			m_target->move(vec2f(-m_runSpeed * deltaTime, 0));
+			break;
+		case Direction::RIGHT:
+			m_target->move(vec2f(m_runSpeed * deltaTime, 0));
+			break;
+	}
+
+	m_target->setAnimation(AnimationCache::Get().getAnimation("player_roll.ani"),
+	[&]()
+	{
+		m_state = PlayerState::IDLE;
+		m_timer.restart();
+	});
+}
+
+void AiPlayer::castState(float deltaTime)
+{
+	if (InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
+	{
+		switch (m_target->getReadySpell())
 		{
-			auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
-			ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
-			ball->setOwner(static_cast<Entity*>(m_target));
+			case Spell::FIREBALL:
+				castFireball();
+				break;
+			case Spell::FROSTBITE:
+				//shet
+				break;
+			case Spell::LIGHTNING:
+				castLightning(deltaTime);
+				break;
 
-			m_target->drainMana(10);
-			m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
-			[&]()
-			{
-				m_state = PlayerState::IDLE;
-			});
-
-			m_timer.restart();
+			default:break;
 		}
 	}
 	else
 		m_state = PlayerState::IDLE;
 }
 
-void AIPlayer::focus()
+void AiPlayer::castFireball()
 {
-	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 48);
+	if (m_target->getAttribute(Attribute::MP) >= 10)
+	{
+		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		ball->setOwner(static_cast<Entity*>(m_target));
+
+		m_target->drainMana(10);
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+		[&]()
+		{
+			m_state = PlayerState::IDLE;
+		});
+
+		m_timer.restart();
+	}
+}
+
+void AiPlayer::castLightning(float deltaTime)
+{
+	if (m_focus and m_focus->getType() == EntityType::LIVING)
+	{
+		auto bolt = (Lightning*)m_target->getLevel()->addEntity(EntityPtr_t(new Lightning()));
+		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
+				   m_focus->getFakePos().getf() + vec2f(0,-20));
+
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
+
+		//damage
+		static_cast<Living*>(m_focus)->damage(4);
+		//mana
+
+		m_timer.restart();
+	}
+}
+
+
+
+void AiPlayer::focus()
+{
+	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 96);
 	m_focus = nullptr;
 
-	if(ents.size() > 0)
+	if (ents.size() > 0)
 	{
-		if(ents.size() > 1)
+		if (ents.size() > 1)
 		{
-			std::sort(begin(ents), end(ents),
-			[&](Entity* a, Entity* b)
+			for (auto i = ents.begin(); i != ents.end();)
 			{
-				float dista = length(a->getPosition() - m_target->getPosition());
-				float distb = length(b->getPosition() - m_target->getPosition());
+				if ((*i)->getType() == EntityType::SPIKE_TRAP or
+					(*i)->getType() == EntityType::PRESS_PLATE)
+					i = ents.erase(i);
+				else
+					i++;
+			}
 
-				return dista < distb;
-			});
+			if (ents.size() > 1)
+			{
+				std::sort(begin(ents), end(ents),
+				[&](Entity* a, Entity* b)
+				{
+					float dista = length(a->getPosition() - m_target->getPosition());
+					float distb = length(b->getPosition() - m_target->getPosition());
+
+					return dista < distb;
+				});
+			}
 		}
 
 		m_focus = ents[0];
 
-		switch(m_focus->getType())
+		switch (m_focus->getType())
 		{
 			case EntityType::LIVING:
 			{
@@ -331,32 +369,37 @@ void AIPlayer::focus()
 				GUI::Get().showFocusHealthbar(focal->getAttribute(Attribute::HP),
 											  focal->getAttribute(Attribute::HEALTH),
 											  pos);
-				break;
 			}
+			break;
 			case EntityType::CHEST:
 			{
 				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
 				GUI::Get().setFocusLabel("Chest", pos);
-				break;
 			}
+			break;
 			case EntityType::DOOR:
 			{
 				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
 				GUI::Get().setFocusLabel("Door", pos);
-				break;
 			}
+			break;
 			case EntityType::LEVER:
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Lever", pos);
-				break;
 			}
+			break;
 			case EntityType::ITEM_BAG:
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Bag", pos);
-				break;
 			}
+			break;
 		}
 	}
+}
+
+PlayerState AiPlayer::getState()
+{
+	return m_state;
 }

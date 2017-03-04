@@ -5,10 +5,11 @@
 #include "../Collision/CollisionAlgorithm.hpp"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
+#include <memory>
 
 void Renderer::init(sf::RenderWindow* window)
 {
-	if(!window)
+	if (!window)
 		ShowErrorBox("Failed to initialize renderer with window!");
 	else
 	{
@@ -30,6 +31,16 @@ void Renderer::submitBackground(sf::Sprite* data)
 void Renderer::submitSorted(sf::Sprite* data)
 {
 	m_sortedData.push_back(data);
+}
+
+void Renderer::submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type)
+{
+	Line line = {draw, count, type};
+	// line.verts = draw;
+	// line.count = count;
+	// line.type = type;
+
+	m_linesData.push_back(line);
 }
 
 void Renderer::submitOverlay(sf::RectangleShape* data)
@@ -84,32 +95,37 @@ void Renderer::sort()
 
 void Renderer::render()
 {
-	for(auto& i : m_backgroundData)
+	for (auto& i : m_backgroundData)
 		m_window->draw(*i);
 
-	for(auto& i : m_backCircleData)
+	for (auto& i : m_backCircleData)
 		m_window->draw(*i);
 
-	for(auto& i : m_sortedData)
+	for (auto& i : m_sortedData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overRectData)
+	for (auto& i : m_linesData)
+		m_window->draw(i.verts, i.count, i.type);
+
+	for (auto& i : m_overRectData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overSpriteData)
+	for (auto& i : m_overSpriteData)
 		m_window->draw(*i);
 
-	for(auto& i : m_overTextData)
+	for (auto& i : m_overTextData)
 		m_window->draw(*i);
 }
 
 void Renderer::flush()
 {
+	m_window->clear();
 	updateCamera();
 	cull();
 	sort();
 	render();
 	clearAll();
+	m_window->display();
 }
 
 void Renderer::clearAll()
@@ -117,6 +133,8 @@ void Renderer::clearAll()
 	m_backgroundData.clear();
 	m_backCircleData.clear();
 	m_sortedData.clear();
+
+	m_linesData.clear();
 
 	m_overRectData.clear();
 	m_overSpriteData.clear();

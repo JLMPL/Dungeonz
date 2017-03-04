@@ -8,7 +8,7 @@ constexpr int gMaxItems = 5;
 
 GraphicLoot::GraphicLoot()
 {
-	for(int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < gMaxItems; i++)
 		m_slots.push_back(Slot());
 
 	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
@@ -37,7 +37,7 @@ void GraphicLoot::update()
 		m_slots[i].setPosition(pos);
 		m_slots[i].empty = true;
 
-		if(m_selected == i)
+		if (m_selected == i)
 			m_select.setPosition(pos.getSfVecf());
 	}
 

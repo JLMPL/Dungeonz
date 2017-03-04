@@ -6,6 +6,10 @@
 #include "../Resource/FontCache.hpp"
 #include "../Gameplay/Living.hpp"
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 constexpr int gInvSize = 5;
 constexpr int gMaxItems = 25;
 
@@ -17,7 +21,7 @@ constexpr int gStatsHeight = 192;
 
 GraphicInv::GraphicInv()
 {
-	for(int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < gMaxItems; i++)
 		m_slots.push_back(Slot());
 
 	m_invPos = vec2i(640, 220);
@@ -113,27 +117,35 @@ void GraphicInv::update()
 		m_timer.restart();
 	}
 
-	for(int i = 0; i < gInvSize; i++)
-	for(int j = 0; j < gInvSize; j++)
+	for (int i = 0; i < gInvSize; i++)
+	for (int j = 0; j < gInvSize; j++)
 	{
 		Slot& slot = m_slots[i * gInvSize + j];
 		vec2i pos = vec2i(m_pos.x + m_invPos.x + j*32, m_pos.y + m_invPos.y + i*32);
 		slot.setPosition(pos);
 		slot.empty = true;
 
-		if(m_selected == i * gInvSize + j)
+		if (m_selected == i * gInvSize + j)
 			m_select.setPosition(pos.getSfVecf());
 	}
 
-	for(int i = 0; i < m_inv->getAmount(); i++)
+	for (int i = 0; i < 25; i++)
 	{
 		Slot& slot = m_slots[i];
-		slot.setItem(m_inv->getItem(i).get());
+		if (i < m_inv->getAmount())
+			slot.setItem(m_inv->getItem(i).get());
 		slot.unmark();
 
-		if(m_player->isEquipped(Equip::WEAPON, slot.item))
+		if (!slot.empty)
 		{
-			slot.mark();
+			if (m_player->isEquipped(Equip::WEAPON, slot.item))
+			{
+				slot.mark();
+			}
+			else if (m_player->isEquipped(Equip::ARMOR, slot.item))
+			{
+				slot.mark();
+			}
 		}
 	}
 
@@ -143,21 +155,33 @@ void GraphicInv::update()
 	{
 		Item& item = *m_slots[m_selected].item;
 
-		switch(item.type)
+		switch (item.type)
 		{
 			case ItemType::WEAPON:
 			{
-				if(!m_player->isEquipped(Equip::WEAPON, &item))
+				if (!m_player->isEquipped(Equip::WEAPON, &item))
 				{
 					m_player->setEquippedItem(Equip::WEAPON, &item);
 					(*item.equip)(m_player);
-					m_slots[m_selected].mark();
 				}
 				else
 				{
 					m_player->setEquippedItem(Equip::WEAPON, nullptr);
 					(*item.takeoff)(m_player);
-					m_slots[m_selected].unmark();
+				}
+				break;
+			}
+			case ItemType::ARMOR:
+			{
+				if (!m_player->isEquipped(Equip::ARMOR, &item))
+				{
+					m_player->setEquippedItem(Equip::ARMOR, &item);
+					(*item.equip)(m_player);
+				}
+				else
+				{
+					m_player->setEquippedItem(Equip::ARMOR, nullptr);
+					(*item.takeoff)(m_player);
 				}
 				break;
 			}
@@ -172,18 +196,24 @@ void GraphicInv::update()
 			{
 				(*item.effect)();
 			}
+			case ItemType::SPELL:
+			{
+				(*item.effect)(m_player);
+				break;
+			}
 			case ItemType::MISC:
 			{
 				break;
 			}
+			default:break;
 		}
 		m_timer.restart();
 	}
 
-	for(auto& i : m_slots)
+	for (auto& i : m_slots)
 	{
 		Renderer::Get().submitOverlay(&i.rect);
-		if(!i.empty)
+		if (!i.empty)
 			Renderer::Get().submitOverlay(&i.sprite);
 		Renderer::Get().submitOverlay(&m_select);
 	}
@@ -195,21 +225,27 @@ void GraphicInv::update()
 void GraphicInv::description()
 {
 	Slot& slot = m_slots[m_selected];
-	if(!slot.empty)
+	if (!slot.empty)
 	{
 		m_desc_name.setString(slot.item->name);
 		m_desc_name.setOrigin({static_cast<int>(m_desc_name.getLocalBounds().width/2), 0});
 		
-		switch(slot.item->type)
+		switch (slot.item->type)
 		{
 			case ItemType::WEAPON:
 				m_desc_type.setString("Weapon");
+			break;
+			case ItemType::ARMOR:
+				m_desc_type.setString("Armor");
 			break;
 			case ItemType::FOOD:
 				m_desc_type.setString("Consumable");
 			break;
 			case ItemType::BOOK:
 				m_desc_type.setString("Book");
+			break;
+			case ItemType::SPELL:
+				m_desc_type.setString("Spell");
 			break;
 			case ItemType::MISC:
 				m_desc_type.setString("Miscellaneous");
@@ -269,11 +305,11 @@ void GraphicInv::stats()
 	m_mana_bar.setPosition(mana_bar_pos);
 
 	auto damage_pos = m_pos + m_stats_pos + vec2i(10, 128);
-	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::DAMAGE)));
+	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::DAMAGE)) + "pt");
 	m_stats_damage.setPosition(damage_pos.getSfVecf());
 
 	auto defense_pos = m_pos + m_stats_pos + vec2i(10, 142);
-	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)));
+	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)) + "%");
 	m_stats_defense.setPosition(defense_pos.getSfVecf());
 
 	Renderer::Get().submitOverlay(&m_stats_bcg);

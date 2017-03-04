@@ -2,8 +2,10 @@
 #include "Level.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Ai/AiPtr.hpp"
+#include "../Ai/AiPlayer.hpp"
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
+#include "../Gui/Gui.hpp"
 
 Living::Living()
 {
@@ -30,7 +32,7 @@ void Living::init(const LivingProfile& profile)
 	m_box->reactMaterial = CollMaterial::TRAP;
 	m_box->callback = [this]()
 	{
-		if(this->m_trapTimer > 750 + 60 + 160)
+		if (this->m_trapTimer > 750 + 60 + 160)
 		{
 			this->damage(2);
 			this->m_trapTimer = 0;
@@ -53,6 +55,14 @@ void Living::init(const LivingProfile& profile)
 	m_attributes[Attribute::LEVEL]   = m_profile.level;
 	m_attributes[Attribute::XP]      = m_profile.xp;
 	m_attributes[Attribute::TO_NEXT] = 250;
+
+
+	for (int i = 0; i < Spell::NUM_SPELLS; i++)
+	{
+		m_spells[i] = false;
+	}
+
+	m_spells[Spell::LIGHTNING] = true;
 }
 
 void Living::update(float deltaTime)
@@ -67,16 +77,18 @@ void Living::update(float deltaTime)
 	m_sprite->setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
 	m_sprite->update(deltaTime);
 
-	if(m_attributes[Attribute::XP] >= m_attributes[Attribute::TO_NEXT])
+	if (m_attributes[Attribute::XP] >= m_attributes[Attribute::TO_NEXT])
 	{
 		m_attributes[Attribute::XP] -= m_attributes[Attribute::TO_NEXT];
 		m_attributes[Attribute::LEVEL]++;
 		m_attributes[Attribute::TO_NEXT] *= 1.5;
 		m_attributes[Attribute::HEALTH] *= 1.2;
 		m_attributes[Attribute::MAGICKA] *= 1.2;
+
+		GUI::Get().addLabel("Level Up!");
 	}
 
-	if(m_push)
+	if (m_push)
 	{
 		m_pushTimer += deltaTime * (1/m_pushDuration);
 
@@ -84,14 +96,14 @@ void Living::update(float deltaTime)
 		m_box->rect.x = pushVec.x;
 		m_box->rect.y = pushVec.y;
 
-		if(m_pushTimer >= 1)
+		if (m_pushTimer >= 1)
 			m_push = false;
 	}
 }
 
 void Living::push(Direction_t dir, float dist, float duration)
 {
-	if(!m_busy and !m_push)
+	if (!m_busy and !m_push)
 	{
 		m_push = true;
 		m_pushDir = dir;
@@ -100,7 +112,7 @@ void Living::push(Direction_t dir, float dist, float duration)
 
 		m_pushStart = vec2f(m_box->rect.x, m_box->rect.y);
 
-		switch(m_pushDir)
+		switch (m_pushDir)
 		{
 			case Direction::UP:
 				m_pushEnd = m_pushStart + vec2f(0, -dist);
@@ -120,24 +132,53 @@ void Living::push(Direction_t dir, float dist, float duration)
 
 void Living::damage(int damage)
 {
-	int& currHp  = m_attributes[Attribute::HP];
-	int& defense = m_attributes[Attribute::DEFENSE];
+	auto state = static_cast<AiPlayer*>(m_ai.get());
 
-	currHp -= abs(damage - defense);
+	bool dodmg = true;
 
-	if(currHp < 0) currHp = 0;
+	if(!state)
+		dodmg = true;
 
-	m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+	else if(state->getState() == PlayerState::ROLLING)
+		dodmg = false;
+
+	else
+		dodmg = true;
+
+	if(dodmg)
+	{
+		int& currHp  = m_attributes[Attribute::HP];
+		int& defense = m_attributes[Attribute::DEFENSE];
+
+		int finalDamage = damage - (damage * (0.01 * defense));
+
+		currHp -= finalDamage;
+
+		if (currHp < 0)
+			currHp = 0;
+
+		m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+	}
 }
 
-void Living::setDamage(int high)
+void Living::setDamage(int value)
 {
-	m_attributes[Attribute::DAMAGE] = high;
+	m_attributes[Attribute::DAMAGE] = value;
 }
 
 void Living::restoreBasicDamage()
 {
-	m_attributes[Attribute::DAMAGE] = 5;
+	m_attributes[Attribute::DAMAGE] = m_profile.damage;
+}
+
+void Living::setDefense(int value)
+{
+	m_attributes[Attribute::DEFENSE] = value;
+}
+
+void Living::restoreBasicDefense()
+{
+	m_attributes[Attribute::DEFENSE] = m_profile.defense;
 }
 
 void Living::restoreHealth(int heal)
@@ -165,7 +206,7 @@ void Living::drainMana(int mana)
 	int& magicka = m_attributes[Attribute::MP];
 	magicka -= mana;
 
-	if(magicka < 0)
+	if (magicka < 0)
 		magicka = 0;
 }
 
@@ -176,10 +217,45 @@ void Living::setEquippedItem(int where, Item* item)
 
 bool Living::isEquipped(int where, Item* item)
 {
-	if(m_equipped[where] == item)
-		return true;
-	else 
-		return false;
+	return m_equipped[where] == item;
+}
+
+void Living::setReadySpell(int spell)
+{
+	if (m_spells[spell])
+		m_readySpell = spell;
+}
+
+void Living::learnSpell(int spell)
+{
+	m_spells[spell] = true;
+	m_readySpell = spell;
+
+	switch (spell)
+	{
+		case Spell::FIREBALL:
+			GUI::Get().addLabel("Learned spell \"Fireball\"!");
+		break;
+		case Spell::FROSTBITE:
+			GUI::Get().addLabel("Learned spell \"Frostbite\"!");
+		break;
+		case Spell::SPEED:
+			GUI::Get().addLabel("Learned spell \"Speed\"!");
+		break;
+		case Spell::LIGHTNING:
+			GUI::Get().addLabel("Learned spell \"Lightning\"!");
+		break;
+	}
+}
+
+bool Living::knowsSpell(int spell)
+{
+	return m_spells[spell];
+}
+
+int Living::getReadySpell()
+{
+	return m_readySpell;
 }
 
 void Living::addXp(int xp)
@@ -192,7 +268,7 @@ int Living::getXp()
 	return m_profile.xp;
 }
 
-void Living::setAI(AIPtr_t ai)
+void Living::setAi(AiPtr_t ai)
 {
 	m_ai = std::move(ai);
 	m_ai->init(this);
@@ -202,13 +278,13 @@ void Living::setAI(AIPtr_t ai)
 void Living::setDirection(Direction_t facing)
 {
 	m_facing = facing;
-	if(m_sprite)
+	if (m_sprite)
 		m_sprite->setDirection(m_facing);
 }
 
 void Living::setAnimation(AnimPtr_t anim, std::function<void ()> call)
 {
-	if(m_sprite)
+	if (m_sprite)
 		m_sprite->setAnimation(anim, call);
 }
 

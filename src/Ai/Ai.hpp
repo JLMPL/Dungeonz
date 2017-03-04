@@ -3,7 +3,7 @@
 
 class Living;
 
-class AI
+class Ai
 {
     public:
         void init(Living* target);

@@ -5,9 +5,13 @@
 #include "../Resource/FontCache.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Resource/AnimationCache.hpp"
+#include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
-#include "../Render/IndicationHandler.hpp"
+
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
 
 Game::Game()
 {
@@ -24,7 +28,7 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.1.9 WIP");
+	version.setString("Version 0.2.2 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	level.init();
@@ -46,33 +50,24 @@ void Game::update()
 
 void Game::mainLoop()
 {
-	while(Window.isOpen())
+	while (Window.isOpen())
 	{
 		bench_begin = Benchmark.getElapsedTime().asMilliseconds();
-		while(Window.pollEvent(Event))
+		while (Window.pollEvent(Event))
 		{
-			if(Event.type == sf::Event::Closed)
+			if (Event.type == sf::Event::Closed)
 				Window.close();
-			if(Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::Escape)
+			if (Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::F4)
 				Window.close();
-			// if(Event.type == sf::Event::KeyPressed and Event.key.code == sf::Keyboard::R)
-			// {
-			// 	InputHandler::Get().bindKey(KeyBind::UP, sf::Keyboard::Down);
-			// 	InputHandler::Get().bindKey(KeyBind::DOWN, sf::Keyboard::Up);
-			// 	InputHandler::Get().bindKey(KeyBind::LEFT, sf::Keyboard::Right);
-			// 	InputHandler::Get().bindKey(KeyBind::RIGHT, sf::Keyboard::Left);
-			// }
 		}
 		update();
 
-		Window.clear();
+		Renderer::Get().submitOverlay(&version);
 		Renderer::Get().flush();
-		Window.draw(version);
-		Window.display();
 
 		bench_end = Benchmark.getElapsedTime().asMilliseconds();
 
-		if(bench_end % 100 == 0)
+		if (bench_end % 100 == 0)
 		{
 			Window.setTitle("Window - " + std::to_string(bench_end - bench_begin) + "ms");
 		}

@@ -27,41 +27,55 @@ void GUI::init()
 	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
 	m_bookText.setCharacterSize(21);
 	m_bookText.setFillColor({0,0,0});
+
+	m_centerLabel.addLabel("Suprise Suprise Mothafucka!");
+	m_centerLabel.addLabel("Again You Little Shit!");
 }
 
-void GUI::update()
+void GUI::update(float deltaTime)
 {
 	m_camera = Renderer::Get().getCameraPos();
 	m_sight.setPosition(m_camera.getSfVecf());
 	// Renderer::Get().submitOverlay(RenderData(&m_sight), RenderAttribute::OVERLAY);
 
-	switch(m_mode)
+	switch (m_mode)
 	{
 		case GUIMode::OFF:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::INV;
 				m_target->setBusy(true);
 				m_timer.restart();
 			}
 
-			if(m_showLabel)
+			if (InputHandler::Get().isSpellbook() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			{
+				m_mode = GUIMode::SPELLBOOK;
+				m_target->setBusy(true);
+				m_timer.restart();
+			}
+
+			if (m_showLabel)
 			{
 				Renderer::Get().submitOverlay(&m_focusLabel);
 				m_showLabel = false;
 
-				if(m_showHealthbar)
+				if (m_showHealthbar)
 				{
 					m_focusHealth.update();
 					m_showHealthbar = false;
 				}
 			}
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::INV:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -70,11 +84,15 @@ void GUI::update()
 
 			m_ginv.setPosition(m_camera);
 			m_ginv.update();
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::LOOT:
 		{
-			if(InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
 				m_mode = GUIMode::OFF;
 				m_target->setBusy(false);
@@ -82,13 +100,18 @@ void GUI::update()
 			}
 
 			m_gloot.update();
+
+			m_centerLabel.setPosition(m_camera);
+			m_centerLabel.update(deltaTime);
 		}
 		break;
 		case GUIMode::READ:
 		{
-			if(InputHandler::Get().isInv())
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::OFF;
+				m_mode = GUIMode::INV;
+				m_timer.restart();
 			}
 
 			vec2i pos = m_camera + m_bookPos;
@@ -101,18 +124,32 @@ void GUI::update()
 			Renderer::Get().submitOverlay(&m_bookText);
 		}
 		break;
+		case GUIMode::SPELLBOOK:
+		{
+			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
+			if (m_timer.getElapsedTime().asMilliseconds() > 200)
+			{
+				m_mode = GUIMode::OFF;
+				m_target->setBusy(false);
+				m_timer.restart();
+			}
+
+			m_spellbook.setPosition(m_camera);
+			m_spellbook.update(deltaTime);
+		}
+		break;
 	}
 
-	if(m_mode != GUIMode::INV and m_mode != GUIMode::READ)
+	if (m_mode != GUIMode::INV and m_mode != GUIMode::READ)
 	{
 		m_health.setMaxValue(m_target->getAttribute(Attribute::HEALTH));
 		m_health.setValue(m_target->getAttribute(Attribute::HP));
-		m_health.setPosition(m_camera + vec2i(5, 600-30));
+		m_health.setPosition(m_camera + vec2i(5, 600 -30));
 		m_health.update();
 
 		m_magicka.setMaxValue(m_target->getAttribute(Attribute::MAGICKA));
 		m_magicka.setValue(m_target->getAttribute(Attribute::MP));
-		m_magicka.setPosition(m_camera + vec2i(5, 600-15));
+		m_magicka.setPosition(m_camera + vec2i(5, 600 -15));
 		m_magicka.update();
 	}
 }
@@ -149,12 +186,18 @@ void GUI::setFocusLabel(const std::string& label, const vec2i& pos)
 	m_showLabel = true;
 }
 
+void GUI::addLabel(const std::string& label)
+{
+	m_centerLabel.addLabel(label);
+}
+
 void GUI::setTarget(Living* living)
 {
 	m_target = living;
 	m_ginv.setInv(&m_target->accessInv());
 	m_ginv.setTarget(m_target);
 	m_gloot.setTargetInv(&m_target->accessInv());
+	m_spellbook.setTarget(m_target);
 }
 
 Living* GUI::getTarget()

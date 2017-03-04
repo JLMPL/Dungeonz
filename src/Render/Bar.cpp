@@ -2,6 +2,10 @@
 #include "Renderer.hpp"
 #include "../Resource/FontCache.hpp"
 
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
 void Bar::init(const vec2i& size, const sf::Color& color)
 {
 	m_bar.setSize(size.getSfVecf());
@@ -20,9 +24,9 @@ void Bar::init(const vec2i& size, const sf::Color& color)
 
 void Bar::update()
 {
-	if(m_value > m_max)
+	if (m_value > m_max)
 		m_value = m_max;
-	else if(m_value < 0)
+	else if (m_value < 0)
 		m_value = 0;
 
 	float factor = static_cast<float>(m_value) / static_cast<float>(m_max);
@@ -35,7 +39,7 @@ void Bar::update()
 	Renderer::Get().submitOverlay(&m_bcg);
 	Renderer::Get().submitOverlay(&m_bar);
 
-	if(m_showStats)
+	if (m_showStats)
 	{
 		m_stats.setString(std::to_string(m_value) + "/" + std::to_string(m_max));
 		m_stats.setOrigin(static_cast<int>(m_stats.getLocalBounds().width/2), 

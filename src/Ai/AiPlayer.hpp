@@ -9,12 +9,13 @@ enum class PlayerState
 	IDLE,
 	ATTACK,
 	PICKING,
-	CASTING
+	CASTING,
+	ROLLING
 };
 
 class Entity;
 
-class AIPlayer : public AI
+class AiPlayer : public Ai
 {
 	public:
 		void setup() override final;
@@ -26,6 +27,12 @@ class AIPlayer : public AI
 		void attackState(float deltaTime);
 		void pickingState(float deltaTime);
 		void castState(float deltaTime);
+		void rollState(float deltaTime);
+
+		void castFireball();
+		void castLightning(float deltaTime);
+		
+		PlayerState getState();
 
 	private:
 		float       m_speed = 100;

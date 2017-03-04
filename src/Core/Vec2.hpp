@@ -94,7 +94,7 @@ static vec2<T> normalize(const vec2<T>& v)
 {
 	vec2<T> vec = v;
 	float len = length(v);
-	if(len != 0)
+	if (len != 0)
 	{
 		vec.x /= len;
 		vec.y /= len;

@@ -3,20 +3,20 @@
 #include "../Gameplay/Level.hpp"
 #include "../Resource/AnimationCache.hpp"
 
-void AIMob::setup()
+void AiMob::setup()
 {
 	m_state = MobState::IDLE;
 	m_target->setDirection(Direction::DOWN);
 }
 
-void AIMob::focus()
+void AiMob::focus()
 {
 	m_focus = nullptr;
 	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 100);
 
 	for (auto i = ents.begin(); i != ents.end();)
 	{
-		if((*i)->getType() != EntityType::LIVING)
+		if ((*i)->getCode() != "pc_player")
 			i = ents.erase(i);
 		else 
 			i++;
@@ -38,11 +38,11 @@ void AIMob::focus()
 	}
 }
 
-void AIMob::update(float deltaTime)
+void AiMob::update(float deltaTime)
 {
 	focus();
 	
-	switch(m_state)
+	switch (m_state)
 	{
 		case MobState::IDLE:
 			idleState(deltaTime);
@@ -59,11 +59,11 @@ void AIMob::update(float deltaTime)
 	}
 }
 
-void AIMob::idleState(float deltaTime)
+void AiMob::idleState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_focus)
+		if (m_focus)
 		{
 			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
@@ -78,11 +78,11 @@ void AIMob::idleState(float deltaTime)
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 }
 
-void AIMob::moveState(float deltaTime)
+void AiMob::moveState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_focus)
+		if (m_focus)
 		{
 			m_direction = m_focus->getPosition() - m_target->getPosition();
 			m_direction = normalize(m_direction);
@@ -91,7 +91,7 @@ void AIMob::moveState(float deltaTime)
 			m_target->move(m_direction * m_speed * deltaTime);
 			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_walk.ani"));
 
-			if(distance(m_target->getPosition(), m_focus->getPosition()) < 28)
+			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
 				m_state = MobState::IDLE;
 			}
@@ -103,11 +103,11 @@ void AIMob::moveState(float deltaTime)
 		m_state = MobState::DEAD;
 }
 
-void AIMob::attackState(float deltaTime)
+void AiMob::attackState(float deltaTime)
 {
-	if(!m_target->isDead())
+	if (!m_target->isDead())
 	{
-		if(m_timer.getElapsedTime().asMilliseconds() > 1000)
+		if (m_timer.getElapsedTime().asMilliseconds() > 1000)
 		{
 			auto enemy = static_cast<Living*>(m_focus);
 			enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
@@ -121,15 +121,13 @@ void AIMob::attackState(float deltaTime)
 			m_timer.restart();
 		}
 		else
-		{
 			m_state = MobState::IDLE;
-		}
 	}
 	else
 		m_state = MobState::DEAD;
 }
 
-void AIMob::deadState(float deltaTime)
+void AiMob::deadState(float deltaTime)
 {
 	m_target->setDirection(Direction::UP);
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));

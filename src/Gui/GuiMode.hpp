@@ -6,7 +6,8 @@ enum class GUIMode
 	OFF,
 	INV,
 	LOOT,
-	READ
+	READ,
+	SPELLBOOK
 };
 
 #endif

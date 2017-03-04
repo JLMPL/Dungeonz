@@ -31,7 +31,7 @@ struct TileLayer
 class Map
 {
 	public:
-		void loadFromFile(std::string path);
+		void loadFromFile(const std::string& path);
 		void loadTileset(rapidxml::xml_node<>* tileset);
 		void loadLayers(rapidxml::xml_node<>* map);
 		void loadLayer(rapidxml::xml_node<>* layer);

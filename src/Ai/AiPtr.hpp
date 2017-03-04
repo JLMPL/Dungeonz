@@ -3,6 +3,6 @@
 #include "Ai.hpp"
 #include <memory>
 
-using AIPtr_t = std::unique_ptr<AI>;
+using AiPtr_t = std::unique_ptr<Ai>;
 
 #endif
