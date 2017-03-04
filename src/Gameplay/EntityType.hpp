@@ -3,15 +3,15 @@
 
 enum class EntityType
 {
-    PLAIN,
-    LIVING,
-    CHEST,
-    DOOR,
-    LEVER,
-    SPIKE_TRAP,
-    PRESS_PLATE,
-    ITEM_BAG,
-    FIREBALL
+    Plain,
+    Living,
+    Chest,
+    Door,
+    Lever,
+    SpikeTrap,
+    PressPlate,
+    ItemBag,
+    Fireball
 };
 
 #endif

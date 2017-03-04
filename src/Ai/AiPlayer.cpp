@@ -6,7 +6,7 @@
 #include "../Gameplay/Door.hpp"
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
-#include "../Gameplay/Lightning.hpp"
+#include "../Gameplay/LightningBolt.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
@@ -18,7 +18,7 @@
 
 void AiPlayer::setup()
 {
-	m_state = PlayerState::MOVING;
+	m_state = PlayerState::Moving;
 }
 
 void AiPlayer::update(float deltaTime)
@@ -29,22 +29,22 @@ void AiPlayer::update(float deltaTime)
 
 		switch (m_state)
 		{
-			case PlayerState::MOVING:
+			case PlayerState::Moving:
 				movingState(deltaTime);
 				break;
-			case PlayerState::IDLE:
+			case PlayerState::Idle:
 				idleState(deltaTime);
 				break;
-			case PlayerState::ATTACK:
+			case PlayerState::Attack:
 				attackState(deltaTime);
 				break;
-			case PlayerState::PICKING:
+			case PlayerState::Picking:
 				pickingState(deltaTime);
 				break;
-			case PlayerState::CASTING:
+			case PlayerState::Casting:
 				castState(deltaTime);
 				break;
-			case PlayerState::ROLLING:
+			case PlayerState::Rolling:
 				rollState(deltaTime);
 				break;
 		}
@@ -63,46 +63,46 @@ void AiPlayer::movingState(float deltaTime)
 	if (InputHandler::Get().isUp())
 	{
 		m_target->move({0, -deltaTime * m_speed});
-		m_target->setDirection(Direction::UP);
+		m_target->setDirection(Direction::Up);
 	}
 	else if (InputHandler::Get().isDown())
 	{
 		m_target->move({0, deltaTime * m_speed});
-		m_target->setDirection(Direction::DOWN);
+		m_target->setDirection(Direction::Down);
 	}
 	if (InputHandler::Get().isLeft())
 	{
 		m_target->move({-deltaTime * m_speed, 0});
-		m_target->setDirection(Direction::LEFT);
+		m_target->setDirection(Direction::Left);
 	}
 	else if (InputHandler::Get().isRight())
 	{
 		m_target->move({deltaTime * m_speed, 0});
-		m_target->setDirection(Direction::RIGHT);
+		m_target->setDirection(Direction::Right);
 	}
 
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_walk.ani"));
 
 	if (!InputHandler::Get().isAnyKeyPressed())
 	{
-		m_state = PlayerState::IDLE;
+		m_state = PlayerState::Idle;
 	}
 	else if (InputHandler::Get().isAttack())
 	{
-		m_state = PlayerState::ATTACK;
+		m_state = PlayerState::Attack;
 	}
 	else if (InputHandler::Get().isAction())
 	{
-		m_state = PlayerState::PICKING;
+		m_state = PlayerState::Picking;
 	}
 	else if (InputHandler::Get().isCast())
 	{
-		m_state = PlayerState::CASTING;
+		m_state = PlayerState::Casting;
 	}
 
 	if (InputHandler::Get().isRoll())
 	{
-		m_state = PlayerState::ROLLING;
+		m_state = PlayerState::Rolling;
 	}
 }
 
@@ -115,19 +115,19 @@ void AiPlayer::idleState(float deltaTime)
 		InputHandler::Get().isLeft() or
 		InputHandler::Get().isRight())
 	{
-		m_state = PlayerState::MOVING;
+		m_state = PlayerState::Moving;
 	}
 	else if (InputHandler::Get().isAttack())
 	{
-		m_state = PlayerState::ATTACK;
+		m_state = PlayerState::Attack;
 	}
 	else if (InputHandler::Get().isAction())
 	{
-		m_state = PlayerState::PICKING;
+		m_state = PlayerState::Picking;
 	}
 	else if (InputHandler::Get().isCast())
 	{
-		m_state = PlayerState::CASTING;
+		m_state = PlayerState::Casting;
 	}
 }
 
@@ -138,7 +138,7 @@ void AiPlayer::attackState(float deltaTime)
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_attack.ani"),
 		[&]()
 		{
-			m_state = PlayerState::MOVING;
+			m_state = PlayerState::Moving;
 		});
 
 		if (m_focus)
@@ -149,19 +149,19 @@ void AiPlayer::attackState(float deltaTime)
 			{
 				switch (m_focus->getType())
 				{
-					case EntityType::LIVING:
+					case EntityType::Living:
 					{
 						auto living = static_cast<Living*>(m_focus);
 
-						if (living->getAttribute(Attribute::HP) > 0)
+						if (living->getAttribute(Attribute::Hp) > 0)
 						{
-							int damage = m_target->getAttribute(Attribute::DAMAGE);
+							int damage = m_target->getAttribute(Attribute::Damage);
 							living->damage(damage);
 							living->push(m_target->getDirection(), 5, 0.1);
 
 							IndicationHandler::Get().addIndication("-" + std::to_string(damage), sf::Color(0,255,0), m_focus->getPosition() + vec2f(0,-50));
 
-							if (living->getAttribute(Attribute::HP) <= 0)
+							if (living->getAttribute(Attribute::Hp) <= 0)
 							{
 								m_target->addXp(living->getXp());
 								IndicationHandler::Get().addIndication("+" + std::to_string(living->getXp()) + "xp", sf::Color(0,128,255), m_target->getPosition() + vec2f(0,-35));
@@ -175,7 +175,7 @@ void AiPlayer::attackState(float deltaTime)
 		m_timer.restart();
 	}
 	else 
-		m_state = PlayerState::IDLE;
+		m_state = PlayerState::Idle;
 }
 
 void AiPlayer::pickingState(float deltaTime)
@@ -188,10 +188,10 @@ void AiPlayer::pickingState(float deltaTime)
 		{
 			switch (m_focus->getType())
 			{
-				case EntityType::LIVING:
+				case EntityType::Living:
 				{
 					auto living = static_cast<Living*>(m_focus);
-					if (living->getAttribute(Attribute::HP) <= 0)
+					if (living->getAttribute(Attribute::Hp) <= 0)
 					{
 						if (living->accessInv().getAmount() > 0)
 							GUI::Get().goLoot(&living->accessInv(), living->getPosition().geti());
@@ -200,7 +200,7 @@ void AiPlayer::pickingState(float deltaTime)
 					}
 					break;
 				}
-				case EntityType::CHEST:
+				case EntityType::Chest:
 				{
 					auto chest = static_cast<Chest*>(m_focus);
 					if (true/*chest->isOpen()*/)
@@ -212,19 +212,19 @@ void AiPlayer::pickingState(float deltaTime)
 					}
 					break;
 				}
-				case EntityType::DOOR:
+				case EntityType::Door:
 				{
 					auto door = static_cast<Door*>(m_focus);
 					door->tryOpening(&m_target->accessInv());
 					break;
 				}
-				case EntityType::LEVER:
+				case EntityType::Lever:
 				{
 					auto lever = static_cast<Lever*>(m_focus);
 					lever->activate();
 					break;
 				}
-				case EntityType::ITEM_BAG:
+				case EntityType::ItemBag:
 				{
 					auto bag = static_cast<ItemBag*>(m_focus);
 					GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
@@ -234,23 +234,23 @@ void AiPlayer::pickingState(float deltaTime)
 		}
 		m_timer.restart();
 	}
-	m_state = PlayerState::MOVING;
+	m_state = PlayerState::Moving;
 }
 
 void AiPlayer::rollState(float deltaTime)
 {
 	switch (m_target->getDirection())
 	{
-		case Direction::UP:
+		case Direction::Up:
 			m_target->move(vec2f(0, -m_runSpeed * deltaTime));
 			break;
-		case Direction::DOWN:
+		case Direction::Down:
 			m_target->move(vec2f(0, m_runSpeed * deltaTime));
 			break;
-		case Direction::LEFT:
+		case Direction::Left:
 			m_target->move(vec2f(-m_runSpeed * deltaTime, 0));
 			break;
-		case Direction::RIGHT:
+		case Direction::Right:
 			m_target->move(vec2f(m_runSpeed * deltaTime, 0));
 			break;
 	}
@@ -258,7 +258,7 @@ void AiPlayer::rollState(float deltaTime)
 	m_target->setAnimation(AnimationCache::Get().getAnimation("player_roll.ani"),
 	[&]()
 	{
-		m_state = PlayerState::IDLE;
+		m_state = PlayerState::Idle;
 		m_timer.restart();
 	});
 }
@@ -269,13 +269,13 @@ void AiPlayer::castState(float deltaTime)
 	{
 		switch (m_target->getReadySpell())
 		{
-			case Spell::FIREBALL:
+			case Spell::Fireball:
 				castFireball();
 				break;
-			case Spell::FROSTBITE:
+			case Spell::Frostbite:
 				//shet
 				break;
-			case Spell::LIGHTNING:
+			case Spell::Lightning:
 				castLightning(deltaTime);
 				break;
 
@@ -283,22 +283,22 @@ void AiPlayer::castState(float deltaTime)
 		}
 	}
 	else
-		m_state = PlayerState::IDLE;
+		m_state = PlayerState::Idle;
 }
 
 void AiPlayer::castFireball()
 {
-	if (m_target->getAttribute(Attribute::MP) >= 10)
+	if (m_target->getAttribute(Attribute::Mp) >= 10)
 	{
 		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
-		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::FIREBALL);
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
 		ball->setOwner(static_cast<Entity*>(m_target));
 
 		m_target->drainMana(10);
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
 		[&]()
 		{
-			m_state = PlayerState::IDLE;
+			m_state = PlayerState::Idle;
 		});
 
 		m_timer.restart();
@@ -307,9 +307,11 @@ void AiPlayer::castFireball()
 
 void AiPlayer::castLightning(float deltaTime)
 {
-	if (m_focus and m_focus->getType() == EntityType::LIVING)
+	if (m_focus and
+		m_focus->getType() == EntityType::Living and
+		m_target->getAttribute(Attribute::Mp) >= 1)
 	{
-		auto bolt = (Lightning*)m_target->getLevel()->addEntity(EntityPtr_t(new Lightning()));
+		auto bolt = (LightningBolt*)m_target->getLevel()->addEntity(EntityPtr_t(new LightningBolt()));
 		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
 				   m_focus->getFakePos().getf() + vec2f(0,-20));
 
@@ -317,13 +319,14 @@ void AiPlayer::castLightning(float deltaTime)
 
 		//damage
 		static_cast<Living*>(m_focus)->damage(4);
+		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
 		//mana
+
+		m_target->drainMana(1);
 
 		m_timer.restart();
 	}
 }
-
-
 
 void AiPlayer::focus()
 {
@@ -336,8 +339,8 @@ void AiPlayer::focus()
 		{
 			for (auto i = ents.begin(); i != ents.end();)
 			{
-				if ((*i)->getType() == EntityType::SPIKE_TRAP or
-					(*i)->getType() == EntityType::PRESS_PLATE)
+				if ((*i)->getType() == EntityType::SpikeTrap or
+					(*i)->getType() == EntityType::PressPlate)
 					i = ents.erase(i);
 				else
 					i++;
@@ -360,36 +363,36 @@ void AiPlayer::focus()
 
 		switch (m_focus->getType())
 		{
-			case EntityType::LIVING:
+			case EntityType::Living:
 			{
 				auto focal = static_cast<Living*>(m_focus);
 				std::string name = focal->getProfile().name;
 				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
 				GUI::Get().setFocusLabel(name, pos);
-				GUI::Get().showFocusHealthbar(focal->getAttribute(Attribute::HP),
-											  focal->getAttribute(Attribute::HEALTH),
+				GUI::Get().showFocusHealthbar(focal->getAttribute(Attribute::Hp),
+											  focal->getAttribute(Attribute::Health),
 											  pos);
 			}
 			break;
-			case EntityType::CHEST:
+			case EntityType::Chest:
 			{
 				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
 				GUI::Get().setFocusLabel("Chest", pos);
 			}
 			break;
-			case EntityType::DOOR:
+			case EntityType::Door:
 			{
 				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
 				GUI::Get().setFocusLabel("Door", pos);
 			}
 			break;
-			case EntityType::LEVER:
+			case EntityType::Lever:
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Lever", pos);
 			}
 			break;
-			case EntityType::ITEM_BAG:
+			case EntityType::ItemBag:
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Bag", pos);

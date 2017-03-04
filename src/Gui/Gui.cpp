@@ -10,7 +10,7 @@ constexpr int g_BookHeight = 512;
 
 void GUI::init()
 {
-	m_mode = GUIMode::OFF;
+	m_mode = GUIMode::Off;
 	m_focusLabel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_focusLabel.setCharacterSize(10);
 
@@ -30,6 +30,13 @@ void GUI::init()
 
 	m_centerLabel.addLabel("Suprise Suprise Mothafucka!");
 	m_centerLabel.addLabel("Again You Little Shit!");
+
+	m_spellbook.setExitFunction(
+	[&]()
+	{
+		m_mode = GUIMode::Off;
+		m_target->setBusy(false);
+	});
 }
 
 void GUI::update(float deltaTime)
@@ -40,18 +47,18 @@ void GUI::update(float deltaTime)
 
 	switch (m_mode)
 	{
-		case GUIMode::OFF:
+		case GUIMode::Off:
 		{
 			if (InputHandler::Get().isInv() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::INV;
+				m_mode = GUIMode::Inv;
 				m_target->setBusy(true);
 				m_timer.restart();
 			}
 
 			if (InputHandler::Get().isSpellbook() and m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::SPELLBOOK;
+				m_mode = GUIMode::Spellbook;
 				m_target->setBusy(true);
 				m_timer.restart();
 			}
@@ -72,12 +79,12 @@ void GUI::update(float deltaTime)
 			m_centerLabel.update(deltaTime);
 		}
 		break;
-		case GUIMode::INV:
+		case GUIMode::Inv:
 		{
 			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
 			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::OFF;
+				m_mode = GUIMode::Off;
 				m_target->setBusy(false);
 				m_timer.restart();
 			}
@@ -89,12 +96,12 @@ void GUI::update(float deltaTime)
 			m_centerLabel.update(deltaTime);
 		}
 		break;
-		case GUIMode::LOOT:
+		case GUIMode::Loot:
 		{
 			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
 			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::OFF;
+				m_mode = GUIMode::Off;
 				m_target->setBusy(false);
 				m_timer.restart();
 			}
@@ -105,12 +112,12 @@ void GUI::update(float deltaTime)
 			m_centerLabel.update(deltaTime);
 		}
 		break;
-		case GUIMode::READ:
+		case GUIMode::Read:
 		{
 			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
 			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::INV;
+				m_mode = GUIMode::Inv;
 				m_timer.restart();
 			}
 
@@ -124,12 +131,12 @@ void GUI::update(float deltaTime)
 			Renderer::Get().submitOverlay(&m_bookText);
 		}
 		break;
-		case GUIMode::SPELLBOOK:
+		case GUIMode::Spellbook:
 		{
 			if (InputHandler::Get().isInv() or InputHandler::Get().isEscape())
 			if (m_timer.getElapsedTime().asMilliseconds() > 200)
 			{
-				m_mode = GUIMode::OFF;
+				m_mode = GUIMode::Off;
 				m_target->setBusy(false);
 				m_timer.restart();
 			}
@@ -140,15 +147,15 @@ void GUI::update(float deltaTime)
 		break;
 	}
 
-	if (m_mode != GUIMode::INV and m_mode != GUIMode::READ)
+	if (m_mode != GUIMode::Inv and m_mode != GUIMode::Read)
 	{
-		m_health.setMaxValue(m_target->getAttribute(Attribute::HEALTH));
-		m_health.setValue(m_target->getAttribute(Attribute::HP));
+		m_health.setMaxValue(m_target->getAttribute(Attribute::Health));
+		m_health.setValue(m_target->getAttribute(Attribute::Hp));
 		m_health.setPosition(m_camera + vec2i(5, 600 -30));
 		m_health.update();
 
-		m_magicka.setMaxValue(m_target->getAttribute(Attribute::MAGICKA));
-		m_magicka.setValue(m_target->getAttribute(Attribute::MP));
+		m_magicka.setMaxValue(m_target->getAttribute(Attribute::Magicka));
+		m_magicka.setValue(m_target->getAttribute(Attribute::Mp));
 		m_magicka.setPosition(m_camera + vec2i(5, 600 -15));
 		m_magicka.update();
 	}
@@ -156,7 +163,7 @@ void GUI::update(float deltaTime)
 
 void GUI::goLoot(Inventory* inv, const vec2i& pos)
 {
-	m_mode = GUIMode::LOOT;
+	m_mode = GUIMode::Loot;
 	m_gloot.setInv(inv);
 	m_gloot.setPosition(pos);
 	m_gloot.reset();
@@ -165,7 +172,7 @@ void GUI::goLoot(Inventory* inv, const vec2i& pos)
 
 void GUI::goRead(const std::string& content)
 {
-	m_mode = GUIMode::READ;
+	m_mode = GUIMode::Read;
 	m_bookText.setString(content);
 }
 

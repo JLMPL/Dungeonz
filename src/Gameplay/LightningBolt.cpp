@@ -1,12 +1,12 @@
-#include "Lightning.hpp"
+#include "LightningBolt.hpp"
 #include "../Core/Dice.hpp"
 #include "../Render/Renderer.hpp"
 
-Lightning::Lightning()
+LightningBolt::LightningBolt()
 {
 }
 
-void Lightning::init(const vec2f& start, const vec2f& end)
+void LightningBolt::init(const vec2f& start, const vec2f& end)
 {
 	m_start = start;
 	m_end = end;
@@ -23,7 +23,7 @@ void Lightning::init(const vec2f& start, const vec2f& end)
 	compute();
 }
 
-void Lightning::update(float deltaTime)
+void LightningBolt::update(float deltaTime)
 {
 	if (m_life.getElapsedTime().asMilliseconds() >= 200)
 		destroy();
@@ -38,7 +38,7 @@ void Lightning::update(float deltaTime)
 	Renderer::Get().submitLine(m_secLine, 10, sf::LineStrip);
 }
 
-void Lightning::compute()
+void LightningBolt::compute()
 {
 	float what = 0;
 	for(int i = 0; i < 10; i++)

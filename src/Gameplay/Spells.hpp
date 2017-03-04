@@ -3,11 +3,11 @@
 
 enum Spell
 {
-	FIREBALL = 0,
-	FROSTBITE,
-	SPEED,
-	LIGHTNING,
-	NUM_SPELLS
+	Fireball = 0,
+	Frostbite,
+	Speed,
+	Lightning,
+	NumSpells
 };
 
 #endif

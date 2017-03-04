@@ -29,7 +29,7 @@ class Sprite
 
 	protected:
 		sf::Sprite  m_sprite;
-		Direction_t m_direction = Direction::UP;
+		Direction_t m_direction = Direction::Up;
 };
 
 #endif

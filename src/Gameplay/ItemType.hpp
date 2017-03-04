@@ -3,14 +3,14 @@
 
 enum class ItemType
 {
-	PLAIN = 0,
-	WEAPON,
-	ARMOR,
-	SPELL,
-	POTION,
-	FOOD,
-	BOOK,
-	MISC
+	Plain = 0,
+	Weapon,
+	Armor,
+	Spell,
+	Potion,
+	Food,
+	Book,
+	Misc
 };
 
 #endif

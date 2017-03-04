@@ -5,12 +5,12 @@
 
 enum class PlayerState
 {
-	MOVING = 0,
-	IDLE,
-	ATTACK,
-	PICKING,
-	CASTING,
-	ROLLING
+	Moving = 0,
+	Idle,
+	Attack,
+	Picking,
+	Casting,
+	Rolling
 };
 
 class Entity;

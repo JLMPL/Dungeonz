@@ -32,7 +32,7 @@ class Entity
 	protected:
 		uint        m_id;
 		std::string m_code;
-		EntityType  m_type = EntityType::PLAIN;
+		EntityType  m_type = EntityType::Plain;
 		Level*      m_level = nullptr;
 		SpritePtr_t m_sprite = nullptr;
 		vec2f       m_pos;

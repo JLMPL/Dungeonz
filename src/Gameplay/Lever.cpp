@@ -3,7 +3,7 @@
 
 Lever::Lever()
 {
-	m_type = EntityType::LEVER;
+	m_type = EntityType::Lever;
 
 	m_sprite = SpritePtr_t(new Sprite());
 	m_sprite->loadFromFile("test_lever.png");
@@ -12,7 +12,7 @@ Lever::Lever()
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,0,0);
-	m_box->type = CollisionType::STATIC;
+	m_box->type = CollisionType::Static;
 	m_box->enabled = false;
 
 	CollisionHandler::Get().addBody(m_box);

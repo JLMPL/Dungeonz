@@ -1,13 +1,14 @@
 #include "Door.hpp"
 #include "Inventory.hpp"
-#include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
-#include "../Resource/AnimationCache.hpp"
+#include "../Render/AnimatedSprite.hpp"
 #include "../Render/IndicationHandler.hpp"
+#include "../Resource/AnimationCache.hpp"
+
 
 Door::Door()
 {
-	m_type = EntityType::DOOR;
+	m_type = EntityType::Door;
 
 	m_sprite = SpritePtr_t(new AnimatedSprite());
 	m_sprite->loadFromFile("door_idle.ani");
@@ -15,7 +16,7 @@ Door::Door()
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(736,350,32,4);
-	m_box->type = CollisionType::STATIC;
+	m_box->type = CollisionType::Static;
 
 	CollisionHandler::Get().addBody(m_box);
 }

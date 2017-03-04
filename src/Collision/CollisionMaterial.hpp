@@ -3,10 +3,10 @@
 
 namespace CollMaterial
 {
-constexpr int NONE    = 1 << 0;
-constexpr int REGULAR = 1 << 1;
-constexpr int TRAP    = 1 << 2;
-constexpr int LIVING  = 1 << 3;
+constexpr int None    = 1 << 0;
+constexpr int Regular = 1 << 1;
+constexpr int Trap    = 1 << 2;
+constexpr int Living  = 1 << 3;
 }
 
 using CollMaterial_t = int;

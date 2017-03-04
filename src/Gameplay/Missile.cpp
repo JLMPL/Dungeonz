@@ -13,8 +13,8 @@ Missile::Missile()
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,8,8);
-	m_box->type = CollisionType::TRIGGER_VOLUME;
-	m_box->reactMaterial = CollMaterial::REGULAR | CollMaterial::LIVING;
+	m_box->type = CollisionType::TriggerVolume;
+	m_box->reactMaterial = CollMaterial::Regular | CollMaterial::Living;
 	m_box->callback = [this]()
 	{
 		this->blow(nullptr);
@@ -54,16 +54,16 @@ void Missile::update(float deltaTime)
 
 	switch (m_direction)
 	{
-		case Direction::UP:
+		case Direction::Up:
 			m_velocity = vec2f(0,-1);
 			break;
-		case Direction::DOWN:
+		case Direction::Down:
 			m_velocity = vec2f(0,1);
 			break;
-		case Direction::LEFT:
+		case Direction::Left:
 			m_velocity = vec2f(-1,0);
 			break;
-		case Direction::RIGHT:
+		case Direction::Right:
 			m_velocity = vec2f(1,0);
 			break;
 	}
@@ -81,7 +81,7 @@ void Missile::blow(Entity* ent)
 	{
 		switch (ent->getType())
 		{
-			case EntityType::LIVING:
+			case EntityType::Living:
 			{
 				auto living = static_cast<Living*>(ent);
 

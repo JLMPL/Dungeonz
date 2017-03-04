@@ -5,10 +5,10 @@
 #include <SFML/Graphics/Vertex.hpp>
 #include <SFML/System/Clock.hpp>
 
-class Lightning : public Entity
+class LightningBolt : public Entity
 {
 	public:
-		Lightning();
+		LightningBolt();
 
 		void init(const vec2f& start, const vec2f& end);
 		void update(float deltaTime) override final;

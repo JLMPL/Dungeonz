@@ -3,9 +3,9 @@
 
 enum class CollisionType : int
 {
-    STATIC = 0,
-    DYNAMIC,
-    TRIGGER_VOLUME
+    Static = 0,
+    Dynamic,
+    TriggerVolume
 };
 
 #endif

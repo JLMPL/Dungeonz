@@ -5,7 +5,7 @@
 
 SpikeTrap::SpikeTrap()
 {
-	m_type = EntityType::SPIKE_TRAP;
+	m_type = EntityType::SpikeTrap;
 
 	m_sprite = SpritePtr_t(new AnimatedSprite());
 	m_sprite->loadFromFile("spike_trap_idle.ani");
@@ -14,9 +14,9 @@ SpikeTrap::SpikeTrap()
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,32,32);
-	m_box->type = CollisionType::TRIGGER_VOLUME;
-	m_box->material = CollMaterial::TRAP;
-	m_box->reactMaterial = CollMaterial::LIVING;
+	m_box->type = CollisionType::TriggerVolume;
+	m_box->material = CollMaterial::Trap;
+	m_box->reactMaterial = CollMaterial::Living;
 	m_box->callback = [this]()
 	{
 		this->activate();

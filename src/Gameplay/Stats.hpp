@@ -3,30 +3,30 @@
 
 enum Attribute
 {
-	HP = 0,
-	HEALTH,
-	MP,
-	MAGICKA,
+	Hp = 0,
+	Health,
+	Mp,
+	Magicka,
 
 	STR,
 	DEX,
 	INT,
 
-	DAMAGE,
-	DEFENSE,
+	Damage,
+	Defense,
 
-	LEVEL,
-	XP,
-	TO_NEXT,
+	currLevel,
+	Xp,
+	ToNext,
 
-	NUM_ATTS
+	NumAtts
 };
 
 enum Equip
 {
-	WEAPON,
-	ARMOR,
-	NUM_EQ
+	Weapon,
+	Armor,
+	NumEq
 };
 
 #endif

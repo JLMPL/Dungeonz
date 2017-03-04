@@ -4,7 +4,7 @@
 
 PressPlate::PressPlate()
 {
-	m_type = EntityType::PRESS_PLATE;
+	m_type = EntityType::PressPlate;
 
 	m_sprite = SpritePtr_t(new Sprite());
 	m_sprite->loadFromFile("press_plate.png");
@@ -13,8 +13,8 @@ PressPlate::PressPlate()
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,32,32);
-	m_box->type = CollisionType::TRIGGER_VOLUME;
-	m_box->reactMaterial = CollMaterial::LIVING;
+	m_box->type = CollisionType::TriggerVolume;
+	m_box->reactMaterial = CollMaterial::Living;
 	m_box->callback = [this]()
 	{
 		activate();
@@ -46,7 +46,7 @@ void PressPlate::activate()
 
 	switch (m_whom->getType())
 	{
-		case EntityType::DOOR:
+		case EntityType::Door:
 		{
 			auto door = static_cast<Door*>(m_whom);
 			door->open();

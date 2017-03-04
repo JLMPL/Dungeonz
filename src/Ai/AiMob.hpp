@@ -8,10 +8,10 @@ class Entity;
 
 enum class MobState
 {
-	IDLE,
-	MOVE,
-	ATTACK,
-	DEAD
+	Idle,
+	Move,
+	Attack,
+	Dead
 };
 
 class AiMob : public Ai

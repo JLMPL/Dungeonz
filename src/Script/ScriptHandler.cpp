@@ -28,7 +28,7 @@ void ScriptHandler::loadLibs(lua_State* lua)
 
 	// getGlobalNamespace(lua).
 	// beginNamespace("spell").
-	// 	addProperty("Fireball", static_cast<int>(Spell::FIREBALL)).
+	// 	addProperty("Fireball", static_cast<int>(Spell::Fireball)).
 	// endNamespace();
 
 	getGlobalNamespace(lua).

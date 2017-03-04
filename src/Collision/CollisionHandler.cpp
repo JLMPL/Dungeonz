@@ -23,7 +23,7 @@ void CollisionHandler::update(float deltaTime)
 			if (a.enabled and b.enabled)
 			{
 				//DYNAMIC DYNAMIC
-				if (a.type == CollisionType::DYNAMIC and b.type == CollisionType::DYNAMIC)
+				if (a.type == CollisionType::Dynamic and b.type == CollisionType::Dynamic)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
@@ -44,7 +44,7 @@ void CollisionHandler::update(float deltaTime)
 				}
 
 				//DYNAMIC STATIC
-				else if (a.type == CollisionType::DYNAMIC and b.type == CollisionType::STATIC)
+				else if (a.type == CollisionType::Dynamic and b.type == CollisionType::Static)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
@@ -54,7 +54,7 @@ void CollisionHandler::update(float deltaTime)
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
-				else if (a.type == CollisionType::STATIC and b.type == CollisionType::DYNAMIC)
+				else if (a.type == CollisionType::Static and b.type == CollisionType::Dynamic)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
@@ -67,14 +67,14 @@ void CollisionHandler::update(float deltaTime)
 				}
 
 				//TRIGGER DYNAMIC
-				else if (a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::DYNAMIC)
+				else if (a.type == CollisionType::TriggerVolume and b.type == CollisionType::Dynamic)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
-				else if (b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::DYNAMIC)
+				else if (b.type == CollisionType::TriggerVolume and a.type == CollisionType::Dynamic)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
@@ -83,14 +83,14 @@ void CollisionHandler::update(float deltaTime)
 				}
 
 				//TRIGGER STATIC
-				else if (a.type == CollisionType::TRIGGER_VOLUME and b.type == CollisionType::STATIC)
+				else if (a.type == CollisionType::TriggerVolume and b.type == CollisionType::Static)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{
 						react(m_bodies[i], m_bodies[j]);
 					}
 				}
-				else if (b.type == CollisionType::TRIGGER_VOLUME and a.type == CollisionType::STATIC)
+				else if (b.type == CollisionType::TriggerVolume and a.type == CollisionType::Static)
 				{
 					if (Collision::AABBOverlap(a.rect, b.rect))
 					{

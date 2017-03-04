@@ -10,9 +10,9 @@
 struct Box
 {
 	Rectf rect;
-	CollisionType type = CollisionType::STATIC;
-	CollMaterial_t material = CollMaterial::NONE;
-	CollMaterial_t reactMaterial = CollMaterial::NONE;
+	CollisionType type = CollisionType::Static;
+	CollMaterial_t material = CollMaterial::None;
+	CollMaterial_t reactMaterial = CollMaterial::None;
 	bool enabled = true;
 	std::function<void ()> callback;
 
@@ -31,9 +31,9 @@ struct Box
 		else
 			eno = 32;
 
-		if (type == CollisionType::STATIC)
+		if (type == CollisionType::Static)
 			shape.setOutlineColor({0,0,255,eno});
-		else if (type == CollisionType::DYNAMIC)
+		else if (type == CollisionType::Dynamic)
 			shape.setOutlineColor({0,255,0,eno});
 		else 
 			shape.setOutlineColor({255,0,0,eno});
