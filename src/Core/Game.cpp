@@ -31,9 +31,15 @@ Game::Game()
 	version.setString("Version 0.2.2 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
+	m_splashState.init();
+	m_splashState.setExitFunc(
+	[&]()
+	{
+		m_currentState = &m_playingState;
+	});
 	m_playingState.init();
 
-	m_currentState = &m_playingState;
+	m_currentState = &m_splashState;
 }
 
 Game::~Game()

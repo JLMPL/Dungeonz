@@ -2,7 +2,6 @@
 
 StatePlaying::StatePlaying()
 {
-
 }
 
 void StatePlaying::init()

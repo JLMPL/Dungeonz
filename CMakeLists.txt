@@ -20,6 +20,7 @@ file(GLOB collision "src/Collision/*.cpp")
 file(GLOB gui   	"src/Gui/*.cpp")
 file(GLOB base64 	"src/base64/*.cpp")
 file(GLOB script 	"src/Script/*.cpp")
+file(GLOB state 	"src/GameState/*.cpp")
 
 add_executable(out
     ${src}
@@ -33,5 +34,6 @@ add_executable(out
 	${gui}
 	${base64}
 	${script}
+	${state}
 )
 target_link_libraries(out ${PROJECT_LINK_LIBS})

@@ -1,6 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 #include "../GameState/StatePlaying.hpp"
+#include "../GameState/StateSplash.hpp"
 #include <SFML/Graphics.hpp>
 
 class Game
@@ -28,6 +29,7 @@ class Game
 
 		sf::Text version;
 		
+		StateSplash m_splashState;
 		StatePlaying m_playingState;
 		GameState* m_currentState;
 };
