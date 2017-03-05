@@ -138,11 +138,11 @@ void GraphicInv::update()
 
 		if (!slot.empty)
 		{
-			if (m_player->isEquipped(Equip::WEAPON, slot.item))
+			if (m_player->isEquipped(Equip::Weapon, slot.item))
 			{
 				slot.mark();
 			}
-			else if (m_player->isEquipped(Equip::ARMOR, slot.item))
+			else if (m_player->isEquipped(Equip::Armor, slot.item))
 			{
 				slot.mark();
 			}
@@ -157,51 +157,51 @@ void GraphicInv::update()
 
 		switch (item.type)
 		{
-			case ItemType::WEAPON:
+			case ItemType::Weapon:
 			{
-				if (!m_player->isEquipped(Equip::WEAPON, &item))
+				if (!m_player->isEquipped(Equip::Weapon, &item))
 				{
-					m_player->setEquippedItem(Equip::WEAPON, &item);
+					m_player->setEquippedItem(Equip::Weapon, &item);
 					(*item.equip)(m_player);
 				}
 				else
 				{
-					m_player->setEquippedItem(Equip::WEAPON, nullptr);
+					m_player->setEquippedItem(Equip::Weapon, nullptr);
 					(*item.takeoff)(m_player);
 				}
 				break;
 			}
-			case ItemType::ARMOR:
+			case ItemType::Armor:
 			{
-				if (!m_player->isEquipped(Equip::ARMOR, &item))
+				if (!m_player->isEquipped(Equip::Armor, &item))
 				{
-					m_player->setEquippedItem(Equip::ARMOR, &item);
+					m_player->setEquippedItem(Equip::Armor, &item);
 					(*item.equip)(m_player);
 				}
 				else
 				{
-					m_player->setEquippedItem(Equip::ARMOR, nullptr);
+					m_player->setEquippedItem(Equip::Armor, nullptr);
 					(*item.takeoff)(m_player);
 				}
 				break;
 			}
-			case ItemType::FOOD:
+			case ItemType::Food:
 			{
 				(*item.effect)(m_player);
 				m_player->accessInv().removeItem(&item);
 				m_slots[m_selected].empty = true;
 				break;
 			}
-			case ItemType::BOOK:
+			case ItemType::Book:
 			{
 				(*item.effect)();
 			}
-			case ItemType::SPELL:
+			case ItemType::Spell:
 			{
 				(*item.effect)(m_player);
 				break;
 			}
-			case ItemType::MISC:
+			case ItemType::Misc:
 			{
 				break;
 			}
@@ -232,22 +232,22 @@ void GraphicInv::description()
 		
 		switch (slot.item->type)
 		{
-			case ItemType::WEAPON:
+			case ItemType::Weapon:
 				m_desc_type.setString("Weapon");
 			break;
-			case ItemType::ARMOR:
+			case ItemType::Armor:
 				m_desc_type.setString("Armor");
 			break;
-			case ItemType::FOOD:
+			case ItemType::Food:
 				m_desc_type.setString("Consumable");
 			break;
-			case ItemType::BOOK:
+			case ItemType::Book:
 				m_desc_type.setString("Book");
 			break;
-			case ItemType::SPELL:
+			case ItemType::Spell:
 				m_desc_type.setString("Spell");
 			break;
-			case ItemType::MISC:
+			case ItemType::Misc:
 				m_desc_type.setString("Miscellaneous");
 			break;
 		}
@@ -281,35 +281,35 @@ void GraphicInv::stats()
 
 	auto level_pos = m_pos + m_stats_pos + vec2i(10,5);
 	m_stats_level.setPosition(level_pos.getSfVecf());
-	m_stats_level.setString("Level " + std::to_string(m_player->getAttribute(Attribute::LEVEL)));
+	m_stats_level.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
 
 	auto xp_bar_pos = m_pos + m_stats_pos + vec2i(10,24);
-	m_xp_bar.setMaxValue(m_player->getAttribute(Attribute::TO_NEXT));
-	m_xp_bar.setValue(m_player->getAttribute(Attribute::XP));
+	m_xp_bar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
+	m_xp_bar.setValue(m_player->getAttribute(Attribute::Xp));
 	m_xp_bar.setPosition(xp_bar_pos);
 
 	auto health_pos = m_pos + m_stats_pos + vec2i(10, 45);
 	m_stats_health.setPosition(health_pos.getSfVecf());
 
 	auto health_bar_pos = m_pos + m_stats_pos + vec2i(10,64);
-	m_health_bar.setMaxValue(m_player->getAttribute(Attribute::HEALTH));
-	m_health_bar.setValue(m_player->getAttribute(Attribute::HP));
+	m_health_bar.setMaxValue(m_player->getAttribute(Attribute::Health));
+	m_health_bar.setValue(m_player->getAttribute(Attribute::Hp));
 	m_health_bar.setPosition(health_bar_pos);
 
 	auto mana_pos = m_pos + m_stats_pos + vec2i(10, 85);
 	m_stats_mana.setPosition(mana_pos.getSfVecf());
 
 	auto mana_bar_pos = m_pos + m_stats_pos + vec2i(10,104);
-	m_mana_bar.setMaxValue(m_player->getAttribute(Attribute::MAGICKA));
-	m_mana_bar.setValue(m_player->getAttribute(Attribute::MP));
+	m_mana_bar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
+	m_mana_bar.setValue(m_player->getAttribute(Attribute::Mp));
 	m_mana_bar.setPosition(mana_bar_pos);
 
 	auto damage_pos = m_pos + m_stats_pos + vec2i(10, 128);
-	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::DAMAGE)) + "pt");
+	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
 	m_stats_damage.setPosition(damage_pos.getSfVecf());
 
 	auto defense_pos = m_pos + m_stats_pos + vec2i(10, 142);
-	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::DEFENSE)) + "%");
+	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
 	m_stats_defense.setPosition(defense_pos.getSfVecf());
 
 	Renderer::Get().submitOverlay(&m_stats_bcg);

@@ -425,7 +425,7 @@ void Map::collisions()
 		{
 			BoxPtr_t box(new Box());
 			box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
-			box->material = CollMaterial::REGULAR;
+			box->material = CollMaterial::Regular;
 			m_boxes.push_back(box);
 
 			CollisionHandler::Get().addBody(m_boxes.back());

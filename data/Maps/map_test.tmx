@@ -116,7 +116,7 @@
    <properties>
     <property name="item0" value="it_test_item"/>
     <property name="item1" value="it_test_note"/>
-    <property name="item2" value="-"/>
+    <property name="item2" value="it_test_speed"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
    </properties>

@@ -79,10 +79,10 @@ class Living : public Entity
 
 		float 		m_trapTimer = 0;
 
-		int       m_attributes[Attribute::NUM_ATTS];
+		int       m_attributes[Attribute::NumAtts];
 		Inventory m_inv;
-		Item*     m_equipped[Equip::NUM_EQ];
-		bool	  m_spells[Spell::NUM_SPELLS];
+		Item*     m_equipped[Equip::NumEq];
+		bool	  m_spells[Spell::NumSpells];
 		int 	  m_readySpell = -1;
 };
 

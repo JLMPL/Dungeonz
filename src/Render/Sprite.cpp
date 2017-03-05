@@ -18,7 +18,8 @@ void Sprite::setRect(Recti rect)
 
 void Sprite::setOrigin(vec2i origin)
 {
-	m_sprite.setOrigin(origin.getSfVecf());
+	m_origin = origin;
+	m_sprite.setOrigin(m_origin.getSfVecf());
 }
 
 void Sprite::setPosition(const vec2i& pos)
@@ -39,4 +40,9 @@ void Sprite::draw()
 vec2i Sprite::getPosition() const
 {
 	return vec2i(m_sprite.getPosition().x, m_sprite.getPosition().y);
+}
+
+vec2i Sprite::getOrigin() const
+{
+	return m_origin;
 }

@@ -5,8 +5,8 @@
 
 void AiMob::setup()
 {
-	m_state = MobState::IDLE;
-	m_target->setDirection(Direction::DOWN);
+	m_state = MobState::Idle;
+	m_target->setDirection(Direction::Down);
 }
 
 void AiMob::focus()
@@ -44,16 +44,16 @@ void AiMob::update(float deltaTime)
 	
 	switch (m_state)
 	{
-		case MobState::IDLE:
+		case MobState::Idle:
 			idleState(deltaTime);
 			break;
-		case MobState::MOVE:
+		case MobState::Move:
 			moveState(deltaTime);
 			break;
-		case MobState::ATTACK:
+		case MobState::Attack:
 			attackState(deltaTime);
 			break;
-		case MobState::DEAD:
+		case MobState::Dead:
 			deadState(deltaTime);
 			break;
 	}
@@ -67,14 +67,14 @@ void AiMob::idleState(float deltaTime)
 		{
 			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
-				m_state = MobState::ATTACK;
+				m_state = MobState::Attack;
 			}
 			else 
-				m_state = MobState::MOVE;
+				m_state = MobState::Move;
 		}
 	}
 	else
-		m_state = MobState::DEAD;
+		m_state = MobState::Dead;
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 }
 
@@ -93,14 +93,14 @@ void AiMob::moveState(float deltaTime)
 
 			if (distance(m_target->getPosition(), m_focus->getPosition()) < 28)
 			{
-				m_state = MobState::IDLE;
+				m_state = MobState::Idle;
 			}
 		}
 		else
-			m_state = MobState::IDLE;
+			m_state = MobState::Idle;
 	}
 	else
-		m_state = MobState::DEAD;
+		m_state = MobState::Dead;
 }
 
 void AiMob::attackState(float deltaTime)
@@ -110,25 +110,25 @@ void AiMob::attackState(float deltaTime)
 		if (m_timer.getElapsedTime().asMilliseconds() > 1000)
 		{
 			auto enemy = static_cast<Living*>(m_focus);
-			enemy->damage(m_target->getAttribute(Attribute::DAMAGE));
+			enemy->damage(m_target->getAttribute(Attribute::Damage));
 			enemy->push(m_target->getDirection(), 5, 0.1);
 			m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_attack.ani"),
 			[&]()
 			{
-				m_state = MobState::IDLE;
+				m_state = MobState::Idle;
 				m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 			});
 			m_timer.restart();
 		}
 		else
-			m_state = MobState::IDLE;
+			m_state = MobState::Idle;
 	}
 	else
-		m_state = MobState::DEAD;
+		m_state = MobState::Dead;
 }
 
 void AiMob::deadState(float deltaTime)
 {
-	m_target->setDirection(Direction::UP);
+	m_target->setDirection(Direction::Up);
 	m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_dead.ani"));
 }

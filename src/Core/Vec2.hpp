@@ -17,6 +17,13 @@ struct vec2
 		this->y = y;
 	}
 
+	template <typename U>
+	vec2(const vec2<U>& vec)
+	{
+		x = static_cast<T>(vec.x);
+		y = static_cast<T>(vec.y);
+	}
+
 	template <typename S>
 	vec2<T> operator*(S s)
 	{

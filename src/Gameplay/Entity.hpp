@@ -4,6 +4,10 @@
 #include "../Render/SpritePtr.hpp"
 #include "../Collision/BoxPtr.hpp"
 
+#ifdef _WIN32
+using uint = unsigned int;
+#define
+
 class Level;
 
 class Entity
@@ -32,7 +36,7 @@ class Entity
 	protected:
 		uint        m_id;
 		std::string m_code;
-		EntityType  m_type = EntityType::PLAIN;
+		EntityType  m_type = EntityType::Plain;
 		Level*      m_level = nullptr;
 		SpritePtr_t m_sprite = nullptr;
 		vec2f       m_pos;

@@ -5,12 +5,12 @@
 
 enum class PlayerState
 {
-	MOVING = 0,
-	IDLE,
-	ATTACK,
-	PICKING,
-	CASTING,
-	ROLLING
+	Moving = 0,
+	Idle,
+	Attack,
+	Picking,
+	Casting,
+	Rolling
 };
 
 class Entity;
@@ -31,16 +31,22 @@ class AiPlayer : public Ai
 
 		void castFireball();
 		void castLightning(float deltaTime);
+		void castSpeed();
 		
 		PlayerState getState();
 
 	private:
 		float       m_speed = 100;
-		float 	    m_runSpeed = 100;
+		float 	    m_runSpeed = 120;
 		float 	    m_walkSpeed = 50;
 		Entity*     m_focus;
 		sf::Clock   m_timer;
 		PlayerState m_state;
+
+		sf::Clock m_speedSpellTimer;
+		bool	  m_speedSpellActive = false;
+
+		sf::Clock m_manaRestoreTimer;
 };
 
 #endif

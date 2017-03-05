@@ -3,11 +3,11 @@
 
 enum class GUIMode 
 {
-	OFF,
-	INV,
-	LOOT,
-	READ,
-	SPELLBOOK
+	Off,
+	Inv,
+	Loot,
+	Read,
+	Spellbook
 };
 
 #endif

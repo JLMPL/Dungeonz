@@ -4,14 +4,14 @@
 
 ItemBag::ItemBag()
 {
-	m_type = EntityType::ITEM_BAG;
+	m_type = EntityType::ItemBag;
 	m_sprite = SpritePtr_t(new Sprite());
 	m_sprite->loadFromFile("bag.png");
 	m_sprite->setOrigin({8,16});
 
 	m_box = BoxPtr_t(new Box());
 	m_box->rect = Rectf(0,0,4,4);
-	m_box->type = CollisionType::DYNAMIC;
+	m_box->type = CollisionType::Dynamic;
 
 	CollisionHandler::Get().addBody(m_box);
 

@@ -56,39 +56,39 @@ struct Item
 
 			if (str_type == "weapon")
 			{
-				type = ItemType::WEAPON;
+				type = ItemType::Weapon;
 
 				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
 				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
 			}
 			else if (str_type == "armor")
 			{
-				type = ItemType::ARMOR;
+				type = ItemType::Armor;
 				
 				equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
 				takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
 			}
 			else if (str_type == "food")
 			{
-				type = ItemType::FOOD;
+				type = ItemType::Food;
 				
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
 			else if (str_type == "book")
 			{
-				type = ItemType::BOOK;
+				type = ItemType::Book;
 				
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
 			else if (str_type == "spell")
 			{
-				type = ItemType::SPELL;
+				type = ItemType::Spell;
 
 				effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
 			}
 			else if (str_type == "misc")
 			{
-				type = ItemType::MISC;
+				type = ItemType::Misc;
 			}
 			// lua_close(lua);
 		}

@@ -14,7 +14,7 @@ class Level
 		Entity* addEntity(EntityPtr_t entity);
 		ItemPtr_t addItem(ItemPtr_t item);
 		Missile* addMissile(std::shared_ptr<Missile> missile);
-		void addBigParticle(const std::string& path, const vec2i& pos, float life);
+		void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
 		void update(float deltaTime);
 
 		std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);

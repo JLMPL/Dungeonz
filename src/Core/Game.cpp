@@ -31,7 +31,15 @@ Game::Game()
 	version.setString("Version 0.2.2 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
-	level.init();
+	m_splashState.init();
+	m_splashState.setExitFunc(
+	[&]()
+	{
+		m_currentState = &m_playingState;
+	});
+	m_playingState.init();
+
+	m_currentState = &m_splashState;
 }
 
 Game::~Game()
@@ -42,7 +50,7 @@ void Game::update()
 {
 	deltaTime = Clock.restart().asSeconds();
 
-	level.update(deltaTime);
+	m_currentState->update(deltaTime);
 
 	auto ver_pos = Renderer::Get().getCameraPos() + vec2i(5,5);
 	version.setPosition(ver_pos.getSfVecf());
