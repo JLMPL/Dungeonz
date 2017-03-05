@@ -26,10 +26,12 @@ class Sprite
 		void setDirection(Direction_t dir);
 
 		vec2i getPosition() const;
+		vec2i getOrigin() const;
 
 	protected:
 		sf::Sprite  m_sprite;
 		Direction_t m_direction = Direction::Up;
+		vec2i m_origin;
 };
 
 #endif

@@ -51,12 +51,22 @@ void AiPlayer::update(float deltaTime)
 	}
 	else
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));
+
+	if (m_manaRestoreTimer.getElapsedTime().asSeconds() >= 1)
+	{
+		m_target->restoreMana(1);
+		m_manaRestoreTimer.restart();
+	}
 }
 
 void AiPlayer::movingState(float deltaTime)
 {
-	if (InputHandler::Get().isRun())
+	if (InputHandler::Get().isRun() or m_speedSpellActive)
+	{
 		m_speed = m_runSpeed;
+		if (m_speedSpellTimer.getElapsedTime().asSeconds() >= 30)
+			m_speedSpellActive = false;
+	}
 	else
 		m_speed = m_walkSpeed;
 
@@ -275,6 +285,9 @@ void AiPlayer::castState(float deltaTime)
 			case Spell::Frostbite:
 				//shet
 				break;
+			case Spell::Speed:
+				castSpeed();
+				break;
 			case Spell::Lightning:
 				castLightning(deltaTime);
 				break;
@@ -294,7 +307,7 @@ void AiPlayer::castFireball()
 		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
 		ball->setOwner(static_cast<Entity*>(m_target));
 
-		m_target->drainMana(10);
+		m_target->drainMana(8);
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
 		[&]()
 		{
@@ -322,9 +335,24 @@ void AiPlayer::castLightning(float deltaTime)
 		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
 		//mana
 
-		m_target->drainMana(1);
+		m_target->drainMana(2);
 
 		m_timer.restart();
+	}
+}
+
+void AiPlayer::castSpeed()
+{
+	if (m_target->getAttribute(Attribute::Mp) >= 10 and !m_speedSpellActive)
+	{
+		m_speedSpellActive = true;
+		m_speedSpellTimer.restart();
+
+		m_target->drainMana(25);
+
+		m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
+		IndicationHandler::Get().addIndication("Speed", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
+
 	}
 }
 

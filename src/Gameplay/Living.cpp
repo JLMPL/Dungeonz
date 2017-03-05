@@ -69,6 +69,12 @@ void Living::update(float deltaTime)
 {
 	m_trapTimer += 1000 * deltaTime;
 
+	if (m_attributes[Attribute::Mp] > m_attributes[Attribute::Magicka])
+		m_attributes[Attribute::Mp] = m_attributes[Attribute::Magicka];
+
+	if (m_attributes[Attribute::Hp] > m_attributes[Attribute::Health])
+		m_attributes[Attribute::Hp] = m_attributes[Attribute::Health];
+
 	m_ai->update(deltaTime);
 
 	m_shadow.setPosition({m_box->rect.x + m_box->rect.w /2, m_box->rect.y + m_box->rect.h /2});
@@ -155,7 +161,7 @@ void Living::damage(int damage)
 		if (currHp < 0)
 			currHp = 0;
 
-		m_level->addBigParticle("blood_splash.ani", vec2i(m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2 + 1), 0.150);
+		m_level->addBigParticle("blood_splash.ani", getFakePos() + vec2i(0, 1), vec2i(0, -20), 0.150);
 	}
 }
 

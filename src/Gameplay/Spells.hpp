@@ -7,6 +7,7 @@ enum Spell
 	Frostbite,
 	Speed,
 	Lightning,
+	Heal,
 	NumSpells
 };
 

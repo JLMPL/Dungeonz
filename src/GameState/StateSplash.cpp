@@ -13,7 +13,7 @@ void StateSplash::init()
 
 	m_sfmlLogo.setTexture(*TextureCache::Get().getTexture("sfml-logo-small.png"));
 	m_sfmlLogo.setOrigin(m_sfmlLogo.getLocalBounds().width/2, m_sfmlLogo.getLocalBounds().height/2);
-	m_sfmlLogo.setPosition({400,250});
+	m_sfmlLogo.setPosition({400,300-24});
 
 	Renderer::Get().setCameraPos({400,300});
 }

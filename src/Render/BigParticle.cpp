@@ -4,10 +4,12 @@ BigParticle::BigParticle()
 {
 }
 
-void BigParticle::init(const std::string& path, float lifeLength)
+void BigParticle::init(const std::string& path, const vec2i& offset, float lifeLength)
 {
 	m_sprite.loadFromFile(path);
-	m_sprite.setOrigin(vec2i(12,25));
+	vec2i orig = m_sprite.getOrigin();
+	m_sprite.setOrigin(orig - offset);
+	
 	m_lifeLenght = lifeLength;
 	m_timer.restart();
 }

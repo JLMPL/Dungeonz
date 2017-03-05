@@ -9,7 +9,7 @@ class BigParticle
 	public:
 		BigParticle();
 
-		void init(const std::string& path, float lifeLenght);
+		void init(const std::string& path, const vec2i& offset, float lifeLenght);
 		void update(float deltaTime);
 		void setPosition(const vec2i& pos);
 		bool isDead();

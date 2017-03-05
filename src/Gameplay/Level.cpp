@@ -36,10 +36,10 @@ Missile* Level::addMissile(std::shared_ptr<Missile> missile)
 	return m_missiles.back().get();
 }
 
-void Level::addBigParticle(const std::string& path, const vec2i& pos, float life)
+void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
 	m_bigParticles.push_back(BigParticle());
-	m_bigParticles.back().init(path, life);
+	m_bigParticles.back().init(path, offset, life);
 	m_bigParticles.back().setPosition(pos);
 }
 
