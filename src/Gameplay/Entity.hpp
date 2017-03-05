@@ -4,6 +4,10 @@
 #include "../Render/SpritePtr.hpp"
 #include "../Collision/BoxPtr.hpp"
 
+#ifdef _WIN32
+using uint = unsigned int;
+#define
+
 class Level;
 
 class Entity
