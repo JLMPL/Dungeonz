@@ -59,10 +59,8 @@ void Living::init(const LivingProfile& profile)
 
 	for (int i = 0; i < Spell::NumSpells; i++)
 	{
-		m_spells[i] = false;
+		m_spells[i] = true;
 	}
-
-	m_spells[Spell::Lightning] = true;
 }
 
 void Living::update(float deltaTime)

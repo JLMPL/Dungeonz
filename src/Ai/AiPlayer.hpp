@@ -32,6 +32,7 @@ class AiPlayer : public Ai
 		void castFireball();
 		void castLightning(float deltaTime);
 		void castSpeed();
+		void castHeal();
 		
 		PlayerState getState();
 

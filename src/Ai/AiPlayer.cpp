@@ -16,6 +16,12 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
+constexpr int g_fireballCost = 12;
+constexpr int g_frostbiteCost = 16;
+constexpr int g_speedCost = 25;
+constexpr int g_lightningCost = 2;
+constexpr int g_healCost = 10;
+
 void AiPlayer::setup()
 {
 	m_state = PlayerState::Moving;
@@ -275,7 +281,7 @@ void AiPlayer::rollState(float deltaTime)
 
 void AiPlayer::castState(float deltaTime)
 {
-	if (InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.2)
+	if (InputHandler::Get().isCast() and m_timer.getElapsedTime().asSeconds() > 0.3)
 	{
 		switch (m_target->getReadySpell())
 		{
@@ -291,6 +297,9 @@ void AiPlayer::castState(float deltaTime)
 			case Spell::Lightning:
 				castLightning(deltaTime);
 				break;
+			case Spell::Heal:
+				castHeal();
+				break;
 
 			default:break;
 		}
@@ -301,13 +310,13 @@ void AiPlayer::castState(float deltaTime)
 
 void AiPlayer::castFireball()
 {
-	if (m_target->getAttribute(Attribute::Mp) >= 10)
+	if (m_target->getAttribute(Attribute::Mp) >= g_fireballCost)
 	{
 		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
 		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
 		ball->setOwner(static_cast<Entity*>(m_target));
 
-		m_target->drainMana(8);
+		m_target->drainMana(g_fireballCost);
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
 		[&]()
 		{
@@ -322,7 +331,7 @@ void AiPlayer::castLightning(float deltaTime)
 {
 	if (m_focus and
 		m_focus->getType() == EntityType::Living and
-		m_target->getAttribute(Attribute::Mp) >= 1)
+		m_target->getAttribute(Attribute::Mp) >= g_lightningCost)
 	{
 		auto bolt = (LightningBolt*)m_target->getLevel()->addEntity(EntityPtr_t(new LightningBolt()));
 		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
@@ -335,7 +344,7 @@ void AiPlayer::castLightning(float deltaTime)
 		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
 		//mana
 
-		m_target->drainMana(2);
+		m_target->drainMana(g_lightningCost);
 
 		m_timer.restart();
 	}
@@ -343,16 +352,28 @@ void AiPlayer::castLightning(float deltaTime)
 
 void AiPlayer::castSpeed()
 {
-	if (m_target->getAttribute(Attribute::Mp) >= 10 and !m_speedSpellActive)
+	if (m_target->getAttribute(Attribute::Mp) >= g_speedCost and !m_speedSpellActive)
 	{
 		m_speedSpellActive = true;
 		m_speedSpellTimer.restart();
 
-		m_target->drainMana(25);
+		m_target->drainMana(g_speedCost);
 
 		m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
 		IndicationHandler::Get().addIndication("Speed", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
 
+	}
+}
+
+void AiPlayer::castHeal()
+{
+	if (m_target->getAttribute(Attribute::Mp) >= g_healCost)
+	{
+		m_target->restoreHealth(12);
+		m_target->drainMana(g_healCost);
+		m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
+		IndicationHandler::Get().addIndication("Heal", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
+		m_timer.restart();
 	}
 }
 

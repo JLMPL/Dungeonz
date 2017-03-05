@@ -28,7 +28,7 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.2.2 WIP");
+	version.setString("Version 0.2.3 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	m_splashState.init();
