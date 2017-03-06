@@ -9,3 +9,4 @@ Item = {
 		user:restoreHealth(10);
 	end
 }
+

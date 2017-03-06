@@ -1,6 +1,7 @@
 #ifndef ANIMATION_CACHE_HPP
 #define ANIMATION_CACHE_HPP
 #include "AnimationPtr.hpp"
+#include "../zip/zip.h"
 #include <map>
 
 //Singleton
@@ -14,6 +15,7 @@ class AnimationCache
         }
 
         void init();
+        ~AnimationCache();
 
         AnimPtr_t getAnimation(const std::string& path);
 
@@ -22,6 +24,7 @@ class AnimationCache
 
     private:
         std::map<std::string, AnimPtr_t> m_Animations;
+        struct zip_t* m_zip = nullptr;
 };
 
 #endif
