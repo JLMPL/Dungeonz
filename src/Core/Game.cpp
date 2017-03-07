@@ -16,12 +16,22 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
+constexpr int g_majorVersion = 0;
+constexpr int g_minorVersion = 2;
+constexpr int g_updateVersion = 4;
+
 Game::Game()
 {
 	loadCfg();
 
-	//Window.create(sf::VideoMode(800, 600), "Window", sf::Style::Close); //res
-	Window.create(sf::VideoMode(Screen::Get().width, Screen::Get().height), "Window", sf::Style::Close);
+	Uint32 style = sf::Style::Close;
+
+	if (Screen::Get().fullscreen)
+		style = sf::Style::Fullscreen;
+
+	sf::VideoMode mode(Screen::Get().width, Screen::Get().height);
+
+	Window.create(mode, "", style);
 
 	TextureCache::Get().init();
 	FontCache::Get().init();
@@ -34,7 +44,9 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.2.3 WIP");
+	version.setString("Version " + std::to_string(g_majorVersion) + "." +
+								   std::to_string(g_minorVersion) + "." +
+								   std::to_string(g_updateVersion) + " WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
 	m_playingState.init();
@@ -80,7 +92,7 @@ void Game::loadCfg()
 		while (!file.eof())
 		{
 			std::getline(file, line);
-			printf("%s\n", line.c_str());
+			// printf("%s\n", line.c_str());
 
 			if (line.find("//") != std::string::npos)
 				continue;
@@ -90,13 +102,14 @@ void Game::loadCfg()
 				sstr = std::stringstream(line);
 
 				std::string junk;
+				sstr >> junk;
+				sstr >> junk;
 
-				sstr >> junk;
-				sstr >> junk;
-				Screen::Get().width = std::stoi(junk);
+				int target = std::stoi(junk);
+
+				if (target < 640) target = 640;
+				Screen::Get().width = target;
 				Screen::Get().halfWidth = Screen::Get().width/2;
-
-				std::cout << Screen::Get().width << std::endl;
 			}
 			else if (line.find("screen_height") != std::string::npos)
 			{
@@ -104,13 +117,23 @@ void Game::loadCfg()
 				sstr = std::stringstream(line);
 
 				std::string junk;
+				sstr >> junk;
+				sstr >> junk;
 
-				sstr >> junk;
-				sstr >> junk;
-				Screen::Get().height = std::stoi(junk);
+				int target = std::stoi(junk);
+
+				if (target < 480) target = 480;
+				Screen::Get().height = target;
 				Screen::Get().halfHeight = Screen::Get().height/2;
-
-				std::cout << Screen::Get().height << std::endl;
+			}
+			else if (line.find("screen_full") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				
+				if (line.find("true") != std::string::npos)
+					Screen::Get().fullscreen = true;
+				else
+					Screen::Get().fullscreen = false;
 			}
 		}
 	}

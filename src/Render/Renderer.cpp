@@ -15,7 +15,6 @@ void Renderer::init(sf::RenderWindow* window)
 	else
 	{
 		m_window = window;
-		//m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(800, 600)); //res
 		m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width, Screen::Get().height));
 	}
 }
@@ -67,13 +66,6 @@ void Renderer::updateCamera()
 
 void Renderer::cull()
 {
-	/*
-	Rectf cameraRect(m_camera.getCenter().x - 400,
-					 m_camera.getCenter().y - 300, 
-					 800,
-					 600);
-	*///res
-
 	Rectf cameraRect(m_camera.getCenter().x - Screen::Get().halfWidth,
 					 m_camera.getCenter().y - Screen::Get().halfHeight, 
 					 Screen::Get().width,
@@ -160,6 +152,5 @@ void Renderer::setCameraPos(const vec2i& pos)
 
 vec2i Renderer::getCameraPos() const
 {
-	//res
 	return vec2i(m_camera.getCenter().x - Screen::Get().halfWidth, m_camera.getCenter().y - Screen::Get().halfHeight);
 }

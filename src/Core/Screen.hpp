@@ -13,6 +13,7 @@ struct Screen
 	int height = 0;
 	int halfWidth = 0;
 	int halfHeight = 0;
+	bool fullscreen = false;
 };
 
 #endif

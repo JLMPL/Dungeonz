@@ -13,8 +13,8 @@ Spellbook::Spellbook()
 {
 	m_background.setSize({g_spellBookWidth, g_spellBookHeight});
 	m_background.setFillColor({0x20,0x20,0x20});
-	// m_background.setPosition({400 - g_spellBookWidth/2, 300 - g_spellBookHeight/2}); //res
-	m_background.setPosition({Screen::Get().halfWidth - g_spellBookWidth/2, Screen::Get().halfHeight - g_spellBookHeight/2});
+	m_background.setPosition({Screen::Get().halfWidth - g_spellBookWidth/2,
+							  Screen::Get().halfHeight - g_spellBookHeight/2});
 
 	m_options.push_back(SpellOption("fire_icon.png", "Fireball\nExplodes in da face!"));
 	m_options.push_back(SpellOption("fire_icon.png", "Frostbite\nFreezes the shit out of enemies!"));
@@ -52,7 +52,6 @@ void Spellbook::update(float deltaTime)
 		m_timer.restart();
 	}
 
-	// vec2i pos = m_position + vec2i(400 - g_spellBookWidth/2, 300 - g_spellBookHeight/2); //res
 	vec2i pos = m_position + vec2i(Screen::Get().halfWidth - g_spellBookWidth/2,
 								   Screen::Get().halfHeight - g_spellBookHeight/2);
 	m_background.setPosition(pos.getSfVecf());

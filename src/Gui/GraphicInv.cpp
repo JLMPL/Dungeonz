@@ -11,22 +11,21 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-constexpr int gInvSize = 5;
-constexpr int gMaxItems = 25;
+constexpr int g_invSize = 6;
+constexpr int g_maxItems = g_invSize * g_invSize;
 
-constexpr int gDescWidth = 384;
-constexpr int gDescHeight = 128;
+constexpr int g_descWidth = 384;
+constexpr int g_descHeight = 128;
 
-constexpr int gStatsWidth = 192;
-constexpr int gStatsHeight = 192;
+constexpr int g_statsWidth = 192;
+constexpr int g_statsHeight = 192;
 
 GraphicInv::GraphicInv()
 {
-	for (int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < g_maxItems; i++)
 		m_slots.push_back(Slot());
 
-	// m_invPos = vec2i(640, 220); //res
-	m_invPos = vec2i(Screen::Get().width - 32 * gInvSize, Screen::Get().halfHeight - (gInvSize*32)/2);
+	m_invPos = vec2i(Screen::Get().width - 32 * g_invSize, Screen::Get().halfHeight - (g_invSize*32)/2);
 	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
 	
 	initDesc();
@@ -35,11 +34,10 @@ GraphicInv::GraphicInv()
 
 void GraphicInv::initDesc()
 {
-	m_desc_back = sf::RectangleShape(sf::Vector2f(gDescWidth, gDescHeight));
+	m_desc_back = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
 	m_desc_back.setFillColor({0x20,0x20,0x20});
 
-	// m_desc_back_pos = vec2i(400 - (gDescWidth /2), 600 - gDescHeight); //res
-	m_desc_back_pos = vec2i(Screen::Get().halfWidth - (gDescWidth /2), Screen::Get().height - gDescHeight);
+	m_desc_back_pos = vec2i(Screen::Get().halfWidth - (g_descWidth /2), Screen::Get().height - g_descHeight);
 
 	m_desc_name.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_desc_name.setCharacterSize(16);
@@ -54,31 +52,31 @@ void GraphicInv::initDesc()
 
 void GraphicInv::initStats()
 {
-	m_stats_bcg.setSize({gStatsWidth,gStatsHeight});
+	m_stats_bcg.setSize({g_statsWidth, g_statsHeight});
 	m_stats_bcg.setFillColor({0x20,0x20,0x20});
 
-	// m_stats_pos = vec2i(0, 300 - gStatsHeight/2);
-	m_stats_pos = vec2i(0, Screen::Get().halfHeight - gStatsHeight/2);
+	// m_stats_pos = vec2i(0, 300 - g_statsHeight/2);
+	m_stats_pos = vec2i(0, Screen::Get().halfHeight - g_statsHeight/2);
 
 	m_stats_level.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_level.setCharacterSize(10);
 	m_stats_level.setString("Level");
 
-	m_xp_bar.init({gStatsWidth - 20,14}, {128,0,128});
+	m_xp_bar.init({g_statsWidth - 20,14}, {128,0,128});
 	m_xp_bar.setShowStats(true);
 
 	m_stats_health.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_health.setCharacterSize(10);
 	m_stats_health.setString("Health");
 
-	m_health_bar.init({gStatsWidth - 20,14}, {192,0,0});
+	m_health_bar.init({g_statsWidth - 20,14}, {192,0,0});
 	m_health_bar.setShowStats(true);
 
 	m_stats_mana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_mana.setCharacterSize(10);
 	m_stats_mana.setString("Magicka");
 
-	m_mana_bar.init({gStatsWidth - 20,14}, {0,0,192});
+	m_mana_bar.init({g_statsWidth - 20,14}, {0,0,192});
 	m_mana_bar.setShowStats(true);
 
 	m_stats_damage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
@@ -121,15 +119,15 @@ void GraphicInv::update()
 		m_timer.restart();
 	}
 
-	for (int i = 0; i < gInvSize; i++)
-	for (int j = 0; j < gInvSize; j++)
+	for (int i = 0; i < g_invSize; i++)
+	for (int j = 0; j < g_invSize; j++)
 	{
-		Slot& slot = m_slots[i * gInvSize + j];
+		Slot& slot = m_slots[i * g_invSize + j];
 		vec2i pos = vec2i(m_pos.x + m_invPos.x + j*32, m_pos.y + m_invPos.y + i*32);
 		slot.setPosition(pos);
 		slot.empty = true;
 
-		if (m_selected == i * gInvSize + j)
+		if (m_selected == i * g_invSize + j)
 			m_select.setPosition(pos.getSfVecf());
 	}
 
@@ -263,10 +261,10 @@ void GraphicInv::description()
 	auto the_pos = m_pos + m_desc_back_pos;
 	m_desc_back.setPosition(the_pos.getSfVecf());
 
-	auto other_pos = m_pos + m_desc_back_pos + vec2i(gDescWidth/2, 10);
+	auto other_pos = m_pos + m_desc_back_pos + vec2i(g_descWidth/2, 10);
 	m_desc_name.setPosition(other_pos.getSfVecf());
 
-	auto type_pos = m_pos + m_desc_back_pos + vec2i(gDescWidth/2, 30);
+	auto type_pos = m_pos + m_desc_back_pos + vec2i(g_descWidth/2, 30);
 	m_desc_type.setPosition(type_pos.getSfVecf());
 
 	auto desc_pos = m_pos + m_desc_back_pos + vec2i(30, 50);

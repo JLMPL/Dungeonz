@@ -4,11 +4,11 @@
 #include "../Resource/TextureCache.hpp"
 #include "../Input/InputHandler.hpp"
 
-constexpr int gMaxItems = 5;
+constexpr int g_maxItems = 5;
 
 GraphicLoot::GraphicLoot()
 {
-	for (int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < g_maxItems; i++)
 		m_slots.push_back(Slot());
 
 	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
@@ -31,7 +31,7 @@ void GraphicLoot::update()
 		m_timer.restart();
 	}
 
-	for (int i = 0; i < gMaxItems; i++)
+	for (int i = 0; i < g_maxItems; i++)
 	{
 		vec2i pos = vec2i((m_pos.x -80) + i *32, m_pos.y -64);
 		m_slots[i].setPosition(pos);
