@@ -25,7 +25,9 @@ void CenterLabel::update(float deltaTime)
 		m_label.setString(m_waitingLabels.front());
 		m_label.setOrigin({static_cast<int>(m_label.getLocalBounds().width/2),
 						   static_cast<int>(m_label.getLocalBounds().height/2)});
-		m_label.setPosition(vec2i(m_position + vec2i(400, static_cast<int>(600 /3))).getSfVecf());
+		// m_label.setPosition(vec2i(m_position + vec2i(400, static_cast<int>(600 /3))).getSfVecf()); //res
+		m_label.setPosition(vec2i(m_position + vec2i(Screen::Get().halfWidth,
+								  static_cast<int>(Screen::Get().height /3))).getSfVecf());
 		Renderer::Get().submitOverlay(&m_label);
 
 		if (m_timer >= 2000)

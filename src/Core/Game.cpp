@@ -20,7 +20,8 @@ Game::Game()
 {
 	loadCfg();
 
-	Window.create(sf::VideoMode(800, 600), "Window", sf::Style::Close);
+	//Window.create(sf::VideoMode(800, 600), "Window", sf::Style::Close); //res
+	Window.create(sf::VideoMode(Screen::Get().width, Screen::Get().height), "Window", sf::Style::Close);
 
 	TextureCache::Get().init();
 	FontCache::Get().init();

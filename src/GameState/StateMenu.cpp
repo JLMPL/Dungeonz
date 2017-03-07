@@ -16,7 +16,8 @@ void StateMenu::init()
 	m_tmpLogo.setCharacterSize(128);
 	m_tmpLogo.setString("Dungeonz");
 	m_tmpLogo.setOrigin(m_tmpLogo.getLocalBounds().width /2, 0);
-	m_tmpLogo.setPosition({400, 0});
+	// m_tmpLogo.setPosition({400, 0}); //res
+	m_tmpLogo.setPosition({Screen::Get().halfWidth, 0});
 
 	for (int i = 0; i < MenuOptions::NumMenuOptions; i++)
 	{
@@ -31,7 +32,8 @@ void StateMenu::init()
 	for (int i = 0; i < MenuOptions::NumMenuOptions; i++)
 	{
 		m_options[i].setOrigin(static_cast<int>(m_options[i].getLocalBounds().width /2), 0);
-		m_options[i].setPosition(400, 300 + i * g_menuOptionsOffset);
+		// m_options[i].setPosition(400, 300 + i * g_menuOptionsOffset); //res
+		m_options[i].setPosition(Screen::Get().halfWidth, Screen::Get().halfHeight + i * g_menuOptionsOffset);
 	}
 }
 

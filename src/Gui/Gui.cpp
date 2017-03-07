@@ -23,7 +23,8 @@ void GUI::init()
 	m_focusHealth.init({32,4}, {192,0,0});
 
 	m_bookBack.setTexture(*TextureCache::Get().getTexture("page.png"));
-	m_bookPos = vec2i(400 - g_BookWidth/2, 300 - g_BookHeight/2);
+	// m_bookPos = vec2i(400 - g_BookWidth/2, 300 - g_BookHeight/2); //res
+	m_bookPos = vec2i(Screen::Get().halfWidth - g_BookWidth/2, Screen::Get().halfHeight - g_BookHeight/2);
 
 	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
 	m_bookText.setCharacterSize(21);
@@ -35,6 +36,9 @@ void GUI::init()
 		m_mode = GUIMode::Off;
 		m_target->setBusy(false);
 	});
+
+	addLabel("Shit Fuck Ass in correct order not!");
+	addLabel("AssShitFuck is the only correct order!");
 }
 
 void GUI::update(float deltaTime)
@@ -149,12 +153,14 @@ void GUI::update(float deltaTime)
 	{
 		m_health.setMaxValue(m_target->getAttribute(Attribute::Health));
 		m_health.setValue(m_target->getAttribute(Attribute::Hp));
-		m_health.setPosition(m_camera + vec2i(5, 600 -30));
+		// m_health.setPosition(m_camera + vec2i(5, 600 -30)); //res
+		m_health.setPosition(m_camera + vec2i(5, Screen::Get().height -30));
 		m_health.update();
 
 		m_magicka.setMaxValue(m_target->getAttribute(Attribute::Magicka));
 		m_magicka.setValue(m_target->getAttribute(Attribute::Mp));
-		m_magicka.setPosition(m_camera + vec2i(5, 600 -15));
+		// m_magicka.setPosition(m_camera + vec2i(5, 600 -15)); //res
+		m_magicka.setPosition(m_camera + vec2i(5, Screen::Get().height -15));
 		m_magicka.update();
 	}
 }
