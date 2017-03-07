@@ -1,7 +1,6 @@
 #ifndef TEXTURE_CACHE_HPP
 #define TEXTURE_CACHE_HPP
 #include "TexturePtr.hpp"
-#include "../zip/zip.h"
 #include <map>
 
 //Singleton
@@ -24,7 +23,6 @@ class TextureCache
 
     private:
         std::map<std::string, TexturePtr_t> m_Textures;
-        struct zip_t* m_zip = nullptr;
 };
 
 #endif

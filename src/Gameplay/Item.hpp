@@ -3,7 +3,6 @@
 #include "ItemType.hpp"
 #include "../Script/ScriptHandler.hpp"
 #include "../Core/Error.hpp"
-#include "../zip/zip.h"
 #include <string>
 #include <memory>
 #include <fstream>
@@ -44,22 +43,22 @@ struct Item
 
 		// struct zip_t* zip = zip_open("data/items.pak", 0, 'r');
 
-		// zip_entry_open(zip, path.c_str());
+		// zip_entry_open(zip, "it_test_meat.lua");
 		// zip_entry_read(zip, &buffer, &buffer_size);
 
 		// if (!buffer)
 		// 	printf("Failed to load %s!\n", path.c_str());
 
-		// zip_entry_close(zip);
-		// zip_close(zip);
-
 		// const char* str = static_cast<char*>(buffer);
 		// std::string cont = str;
 
-		// free(buffer);
-
 		// printf("%s\n%d\n", cont.c_str(), buffer_size);
 
+		// zip_entry_close(zip);
+		// zip_close(zip);
+		// free(buffer);
+
+		//*/
 			using namespace luabridge;
 
 			lua_State* lua = luaL_newstate();
@@ -113,6 +112,8 @@ struct Item
 			{
 				type = ItemType::Misc;
 			}
+
+		//*/
 
 		// lua_close(lua);
 		}
