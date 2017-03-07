@@ -1,4 +1,5 @@
 #include "Spellbook.hpp"
+#include "../Core/Screen.hpp"
 #include "../Gameplay/Spells.hpp"
 #include "../Gameplay/Living.hpp"
 #include "../Render/Renderer.hpp"

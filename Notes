@@ -1,5 +1,4 @@
 TODO:
--fix loading items (think gonna have to look for another lib)
 -skeleton attack animation
 -damage vs defense computation
 -saves
@@ -26,6 +25,3 @@ Testers' notes:
 -Item selection in inv more obvious.
 -Dropping items
 
-
--They're using esc to exit menus - done
--Suggested rolling - added to list

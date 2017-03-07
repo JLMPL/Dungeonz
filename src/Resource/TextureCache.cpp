@@ -4,10 +4,6 @@ void TextureCache::init()
 {
 }
 
-TextureCache::~TextureCache()
-{
-}
-
 TexturePtr_t TextureCache::getTexture(const std::string& path)
 {
 	auto texture = m_Textures.find(path);

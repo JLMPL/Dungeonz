@@ -14,7 +14,6 @@ class TextureCache
         }
 
         void init();
-        ~TextureCache();
         
         TexturePtr_t getTexture(const std::string& path);
 

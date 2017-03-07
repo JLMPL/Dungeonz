@@ -1,4 +1,5 @@
 #include "GraphicInv.hpp"
+#include "../Core/Screen.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Gameplay/Inventory.hpp"
 #include "../Resource/TextureCache.hpp"
@@ -54,7 +55,7 @@ void GraphicInv::initStats()
 	m_stats_bcg.setSize({gStatsWidth,gStatsHeight});
 	m_stats_bcg.setFillColor({0x20,0x20,0x20});
 
-	m_stats_pos = vec2i(0,300-gStatsHeight/2);
+	m_stats_pos = vec2i(0, 300 - gStatsHeight/2);
 
 	m_stats_level.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_stats_level.setCharacterSize(10);

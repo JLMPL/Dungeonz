@@ -14,7 +14,6 @@ class AnimationCache
         }
 
         void init();
-        ~AnimationCache();
 
         AnimPtr_t getAnimation(const std::string& path);
 

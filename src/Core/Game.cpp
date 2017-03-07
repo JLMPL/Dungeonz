@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Error.hpp"
+#include "Screen.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Resource/FontCache.hpp"
@@ -8,6 +9,8 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include <fstream>
+#include <sstream>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
@@ -15,7 +18,9 @@
 
 Game::Game()
 {
-	Window.create(sf::VideoMode(800,600), "Window", sf::Style::Close);
+	loadCfg();
+
+	Window.create(sf::VideoMode(800, 600), "Window", sf::Style::Close);
 
 	TextureCache::Get().init();
 	FontCache::Get().init();
@@ -31,19 +36,83 @@ Game::Game()
 	version.setString("Version 0.2.3 WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
+	m_playingState.init();
+
 	m_splashState.init();
 	m_splashState.setExitFunc(
 	[&]()
 	{
+		m_currentState = &m_menuState;
+	});
+
+	m_menuState.init();
+	m_menuState.setNewGameFunc(
+	[&]()
+	{
 		m_currentState = &m_playingState;
 	});
-	m_playingState.init();
+	m_menuState.setExitFunc(
+	[&]()
+	{
+		Window.close();
+	});
 
 	m_currentState = &m_splashState;
 }
 
 Game::~Game()
 {
+}
+
+#include <iostream>
+
+void Game::loadCfg()
+{
+	std::ifstream file("config.cfg");
+	std::string line;
+	std::stringstream sstr;
+
+	if (!file.good())
+		printf("Could not find cfg file");
+	else
+	{
+		while (!file.eof())
+		{
+			std::getline(file, line);
+			printf("%s\n", line.c_str());
+
+			if (line.find("//") != std::string::npos)
+				continue;
+			else if (line.find("screen_width") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				sstr = std::stringstream(line);
+
+				std::string junk;
+
+				sstr >> junk;
+				sstr >> junk;
+				Screen::Width = std::stoi(junk);
+				Screen::HalfWidth = Screen::Width/2;
+
+				std::cout << Screen::Width << std::endl;
+			}
+			else if (line.find("screen_height") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				sstr = std::stringstream(line);
+
+				std::string junk;
+
+				sstr >> junk;
+				sstr >> junk;
+				Screen::Height = std::stoi(junk);
+				Screen::HalfHeight = Screen::Height/2;
+
+				std::cout << Screen::Height << std::endl;
+			}
+		}
+	}
 }
 
 void Game::update()

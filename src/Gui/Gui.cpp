@@ -1,4 +1,5 @@
 #include "Gui.hpp"
+#include "../Core/Screen.hpp"
 #include "../Resource/FontCache.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Render/Renderer.hpp"
@@ -27,9 +28,6 @@ void GUI::init()
 	m_bookText.setFont(*FontCache::Get().getFont("HarabaraHand.ttf"));
 	m_bookText.setCharacterSize(21);
 	m_bookText.setFillColor({0,0,0});
-
-	m_centerLabel.addLabel("Suprise Suprise Mothafucka!");
-	m_centerLabel.addLabel("Again You Little Shit!");
 
 	m_spellbook.setExitFunction(
 	[&]()

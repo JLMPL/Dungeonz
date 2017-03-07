@@ -2,6 +2,7 @@
 #define GAME_HPP
 #include "../GameState/StatePlaying.hpp"
 #include "../GameState/StateSplash.hpp"
+#include "../GameState/StateMenu.hpp"
 #include <SFML/Graphics.hpp>
 
 class Game
@@ -12,6 +13,8 @@ class Game
 
 		void update();
 		void mainLoop();
+
+		void loadCfg();
 
 	private:
 		sf::RenderWindow Window;
@@ -31,6 +34,7 @@ class Game
 		
 		StateSplash m_splashState;
 		StatePlaying m_playingState;
+		StateMenu m_menuState;
 		GameState* m_currentState;
 };
 
