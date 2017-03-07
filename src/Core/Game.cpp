@@ -92,10 +92,10 @@ void Game::loadCfg()
 
 				sstr >> junk;
 				sstr >> junk;
-				Screen::Width = std::stoi(junk);
-				Screen::HalfWidth = Screen::Width/2;
+				Screen::Get().width = std::stoi(junk);
+				Screen::Get().halfWidth = Screen::Get().width/2;
 
-				std::cout << Screen::Width << std::endl;
+				std::cout << Screen::Get().width << std::endl;
 			}
 			else if (line.find("screen_height") != std::string::npos)
 			{
@@ -106,10 +106,10 @@ void Game::loadCfg()
 
 				sstr >> junk;
 				sstr >> junk;
-				Screen::Height = std::stoi(junk);
-				Screen::HalfHeight = Screen::Height/2;
+				Screen::Get().height = std::stoi(junk);
+				Screen::Get().halfHeight = Screen::Get().height/2;
 
-				std::cout << Screen::Height << std::endl;
+				std::cout << Screen::Get().height << std::endl;
 			}
 		}
 	}
