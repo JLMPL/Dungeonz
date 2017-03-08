@@ -1,11 +1,10 @@
 TODO:
 -skeleton attack animation
--damage vs defense computation
 -saves
 -dropping items
 
 
-Spellz: -they're gonna be so hardcoded
+Spellz: - they're gonna be so hardcoded
   Fireball - Shoot the fireball on the face, and explode.
   Speed - Run like a crazy fukin rabbit.
   Ice - Shot it on the face, and freeze the mofo.
@@ -22,6 +21,5 @@ Monsterz:
 
 
 Testers' notes:
--Item selection in inv more obvious.
--Dropping items
+  
 

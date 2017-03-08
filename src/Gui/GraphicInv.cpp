@@ -34,17 +34,17 @@ GraphicInv::GraphicInv()
 
 void GraphicInv::initDesc()
 {
-	m_desc_back = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
-	m_desc_back.setFillColor({0x20,0x20,0x20});
+	m_descBack = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
+	m_descBack.setFillColor({0x20,0x20,0x20});
 
-	m_desc_back_pos = vec2i(Screen::Get().halfWidth - (g_descWidth /2), Screen::Get().height - g_descHeight);
+	m_descBackPos = vec2i(Screen::Get().halfWidth - (g_descWidth /2), Screen::Get().height - g_descHeight);
 
-	m_desc_name.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_desc_name.setCharacterSize(16);
+	m_descName.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_descName.setCharacterSize(16);
 
-	m_desc_type.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_desc_type.setCharacterSize(10);
-	m_desc_type.setFillColor({0x80,0x80,0x80});
+	m_descType.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_descType.setCharacterSize(10);
+	m_descType.setFillColor({0x80,0x80,0x80});
 
 	m_desc.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	m_desc.setCharacterSize(10);
@@ -52,40 +52,39 @@ void GraphicInv::initDesc()
 
 void GraphicInv::initStats()
 {
-	m_stats_bcg.setSize({g_statsWidth, g_statsHeight});
-	m_stats_bcg.setFillColor({0x20,0x20,0x20});
+	m_statsBcg.setSize({g_statsWidth, g_statsHeight});
+	m_statsBcg.setFillColor({0x20,0x20,0x20});
 
-	// m_stats_pos = vec2i(0, 300 - g_statsHeight/2);
-	m_stats_pos = vec2i(0, Screen::Get().halfHeight - g_statsHeight/2);
+	// m_statsPos = vec2i(0, 300 - g_statsHeight/2);
+	m_statsPos = vec2i(0, Screen::Get().halfHeight - g_statsHeight/2);
 
-	m_stats_level.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_stats_level.setCharacterSize(10);
-	m_stats_level.setString("Level");
+	m_statsLevel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_statsLevel.setCharacterSize(10);
+	m_statsLevel.setString("Level");
 
-	m_xp_bar.init({g_statsWidth - 20,14}, {128,0,128});
-	m_xp_bar.setShowStats(true);
+	m_xpBar.init({g_statsWidth - 20,14}, {128,0,128});
+	m_xpBar.setShowStats(true);
 
-	m_stats_health.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_stats_health.setCharacterSize(10);
-	m_stats_health.setString("Health");
+	m_statsHealth.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_statsHealth.setCharacterSize(10);
+	m_statsHealth.setString("Health");
 
-	m_health_bar.init({g_statsWidth - 20,14}, {192,0,0});
-	m_health_bar.setShowStats(true);
+	m_healthBar.init({g_statsWidth - 20,14}, {192,0,0});
+	m_healthBar.setShowStats(true);
 
-	m_stats_mana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_stats_mana.setCharacterSize(10);
-	m_stats_mana.setString("Magicka");
+	m_statsMana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_statsMana.setCharacterSize(10);
+	m_statsMana.setString("Magicka");
 
-	m_mana_bar.init({g_statsWidth - 20,14}, {0,0,192});
-	m_mana_bar.setShowStats(true);
+	m_manaBar.init({g_statsWidth - 20,14}, {0,0,192});
+	m_manaBar.setShowStats(true);
 
-	m_stats_damage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_stats_damage.setCharacterSize(10);
+	m_statsDamage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_statsDamage.setCharacterSize(10);
 
-	m_stats_defense.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_stats_defense.setCharacterSize(10);
+	m_statsDefense.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+	m_statsDefense.setCharacterSize(10);
 }
-
 
 void GraphicInv::update()
 {	
@@ -93,14 +92,14 @@ void GraphicInv::update()
 		m_timer.getElapsedTime().asMilliseconds() > 150 and
 		m_selected > 4)
 	{
-		m_selected -= 5;
+		m_selected -= g_invSize;
 		m_timer.restart();
 	}
 	else if (InputHandler::Get().isDown() and
 		m_timer.getElapsedTime().asMilliseconds() > 150 and
 		m_selected < 20)
 	{
-		m_selected += 5;
+		m_selected += g_invSize;
 		m_timer.restart();
 	}
 
@@ -229,101 +228,101 @@ void GraphicInv::description()
 	Slot& slot = m_slots[m_selected];
 	if (!slot.empty)
 	{
-		m_desc_name.setString(slot.item->name);
-		m_desc_name.setOrigin({static_cast<int>(m_desc_name.getLocalBounds().width/2), 0});
+		m_descName.setString(slot.item->name);
+		m_descName.setOrigin({static_cast<int>(m_descName.getLocalBounds().width/2), 0});
 		
 		switch (slot.item->type)
 		{
 			case ItemType::Weapon:
-				m_desc_type.setString("Weapon");
+				m_descType.setString("Weapon");
 			break;
 			case ItemType::Armor:
-				m_desc_type.setString("Armor");
+				m_descType.setString("Armor");
 			break;
 			case ItemType::Food:
-				m_desc_type.setString("Consumable");
+				m_descType.setString("Consumable");
 			break;
 			case ItemType::Book:
-				m_desc_type.setString("Book");
+				m_descType.setString("Book");
 			break;
 			case ItemType::Spell:
-				m_desc_type.setString("Spell");
+				m_descType.setString("Spell");
 			break;
 			case ItemType::Misc:
-				m_desc_type.setString("Miscellaneous");
+				m_descType.setString("Miscellaneous");
 			break;
 		}
 		
-		m_desc_type.setOrigin({static_cast<int>(m_desc_type.getLocalBounds().width/2), 0});
+		m_descType.setOrigin({static_cast<int>(m_descType.getLocalBounds().width/2), 0});
 		m_desc.setString(slot.item->desc);
 	}
 
-	auto the_pos = m_pos + m_desc_back_pos;
-	m_desc_back.setPosition(the_pos.getSfVecf());
+	auto the_pos = m_pos + m_descBackPos;
+	m_descBack.setPosition(the_pos.getSfVecf());
 
-	auto other_pos = m_pos + m_desc_back_pos + vec2i(g_descWidth/2, 10);
-	m_desc_name.setPosition(other_pos.getSfVecf());
+	auto other_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 10);
+	m_descName.setPosition(other_pos.getSfVecf());
 
-	auto type_pos = m_pos + m_desc_back_pos + vec2i(g_descWidth/2, 30);
-	m_desc_type.setPosition(type_pos.getSfVecf());
+	auto type_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 30);
+	m_descType.setPosition(type_pos.getSfVecf());
 
-	auto desc_pos = m_pos + m_desc_back_pos + vec2i(30, 50);
+	auto desc_pos = m_pos + m_descBackPos + vec2i(30, 50);
 	m_desc.setPosition(desc_pos.getSfVecf());
 
-	Renderer::Get().submitOverlay(&m_desc_back);
-	Renderer::Get().submitOverlay(&m_desc_name);
-	Renderer::Get().submitOverlay(&m_desc_type);
+	Renderer::Get().submitOverlay(&m_descBack);
+	Renderer::Get().submitOverlay(&m_descName);
+	Renderer::Get().submitOverlay(&m_descType);
 	Renderer::Get().submitOverlay(&m_desc);
 }
 
 void GraphicInv::stats()
 {
-	auto pos = m_pos + m_stats_pos;
-	m_stats_bcg.setPosition(pos.getSfVecf());
+	auto pos = m_pos + m_statsPos;
+	m_statsBcg.setPosition(pos.getSfVecf());
 
-	auto level_pos = m_pos + m_stats_pos + vec2i(10,5);
-	m_stats_level.setPosition(level_pos.getSfVecf());
-	m_stats_level.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
+	auto level_pos = m_pos + m_statsPos + vec2i(10,5);
+	m_statsLevel.setPosition(level_pos.getSfVecf());
+	m_statsLevel.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
 
-	auto xp_bar_pos = m_pos + m_stats_pos + vec2i(10,24);
-	m_xp_bar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
-	m_xp_bar.setValue(m_player->getAttribute(Attribute::Xp));
-	m_xp_bar.setPosition(xp_bar_pos);
+	auto xp_bar_pos = m_pos + m_statsPos + vec2i(10,24);
+	m_xpBar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
+	m_xpBar.setValue(m_player->getAttribute(Attribute::Xp));
+	m_xpBar.setPosition(xp_bar_pos);
 
-	auto health_pos = m_pos + m_stats_pos + vec2i(10, 45);
-	m_stats_health.setPosition(health_pos.getSfVecf());
+	auto health_pos = m_pos + m_statsPos + vec2i(10, 45);
+	m_statsHealth.setPosition(health_pos.getSfVecf());
 
-	auto health_bar_pos = m_pos + m_stats_pos + vec2i(10,64);
-	m_health_bar.setMaxValue(m_player->getAttribute(Attribute::Health));
-	m_health_bar.setValue(m_player->getAttribute(Attribute::Hp));
-	m_health_bar.setPosition(health_bar_pos);
+	auto health_bar_pos = m_pos + m_statsPos + vec2i(10,64);
+	m_healthBar.setMaxValue(m_player->getAttribute(Attribute::Health));
+	m_healthBar.setValue(m_player->getAttribute(Attribute::Hp));
+	m_healthBar.setPosition(health_bar_pos);
 
-	auto mana_pos = m_pos + m_stats_pos + vec2i(10, 85);
-	m_stats_mana.setPosition(mana_pos.getSfVecf());
+	auto mana_pos = m_pos + m_statsPos + vec2i(10, 85);
+	m_statsMana.setPosition(mana_pos.getSfVecf());
 
-	auto mana_bar_pos = m_pos + m_stats_pos + vec2i(10,104);
-	m_mana_bar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
-	m_mana_bar.setValue(m_player->getAttribute(Attribute::Mp));
-	m_mana_bar.setPosition(mana_bar_pos);
+	auto mana_bar_pos = m_pos + m_statsPos + vec2i(10,104);
+	m_manaBar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
+	m_manaBar.setValue(m_player->getAttribute(Attribute::Mp));
+	m_manaBar.setPosition(mana_bar_pos);
 
-	auto damage_pos = m_pos + m_stats_pos + vec2i(10, 128);
-	m_stats_damage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
-	m_stats_damage.setPosition(damage_pos.getSfVecf());
+	auto damage_pos = m_pos + m_statsPos + vec2i(10, 128);
+	m_statsDamage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
+	m_statsDamage.setPosition(damage_pos.getSfVecf());
 
-	auto defense_pos = m_pos + m_stats_pos + vec2i(10, 142);
-	m_stats_defense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
-	m_stats_defense.setPosition(defense_pos.getSfVecf());
+	auto defense_pos = m_pos + m_statsPos + vec2i(10, 142);
+	m_statsDefense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
+	m_statsDefense.setPosition(defense_pos.getSfVecf());
 
-	Renderer::Get().submitOverlay(&m_stats_bcg);
-	Renderer::Get().submitOverlay(&m_stats_level);
-	Renderer::Get().submitOverlay(&m_stats_health);
-	Renderer::Get().submitOverlay(&m_stats_mana);
-	Renderer::Get().submitOverlay(&m_stats_damage);
-	Renderer::Get().submitOverlay(&m_stats_defense);
+	Renderer::Get().submitOverlay(&m_statsBcg);
+	Renderer::Get().submitOverlay(&m_statsLevel);
+	Renderer::Get().submitOverlay(&m_statsHealth);
+	Renderer::Get().submitOverlay(&m_statsMana);
+	Renderer::Get().submitOverlay(&m_statsDamage);
+	Renderer::Get().submitOverlay(&m_statsDefense);
 
-	m_xp_bar.update();
-	m_health_bar.update();
-	m_mana_bar.update();
+	m_xpBar.update();
+	m_healthBar.update();
+	m_manaBar.update();
 }
 
 void GraphicInv::setPosition(const vec2i& pos)

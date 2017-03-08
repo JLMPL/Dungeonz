@@ -12,6 +12,12 @@ enum MenuOptions
 	NumMenuOptions
 };
 
+enum class MenuState
+{
+	MainScreen,
+	HelpScreen
+};
+
 class StateMenu : public GameState
 {
 	public:
@@ -21,15 +27,22 @@ class StateMenu : public GameState
 		void update(float deltaTime) override final;
 		void leave() override final;
 
+		void menuState();
+		void helpState();
+
 		void setNewGameFunc(std::function<void ()> func);
 
 	private:
 		std::function<void ()> m_newGameFunc;
 		sf::Text m_tmpLogo;
 
-		int m_chosen = 0;
+		int m_chosen = 1;
 		sf::Text m_options[MenuOptions::NumMenuOptions];
 		sf::Clock m_timer;
+
+		sf::Text m_helpText;
+
+		MenuState m_state = MenuState::MainScreen;
 };
 
 #endif

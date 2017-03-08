@@ -35,26 +35,26 @@ class GraphicInv
 
 		Living* m_player;
 
-		vec2i m_desc_back_pos;
-		sf::RectangleShape m_desc_back;
-		sf::Text m_desc_name;
-		sf::Text m_desc_type;
+		vec2i m_descBackPos;
+		sf::RectangleShape m_descBack;
+		sf::Text m_descName;
+		sf::Text m_descType;
 		sf::Text m_desc;
 
-		vec2i m_stats_pos;
-		sf::RectangleShape m_stats_bcg;
+		vec2i m_statsPos;
+		sf::RectangleShape m_statsBcg;
 
-		sf::Text m_stats_level;
-		Bar m_xp_bar;
+		sf::Text m_statsLevel;
+		Bar m_xpBar;
 
-		sf::Text m_stats_health;
-		Bar m_health_bar;
+		sf::Text m_statsHealth;
+		Bar m_healthBar;
 
-		sf::Text m_stats_mana;
-		Bar m_mana_bar;
+		sf::Text m_statsMana;
+		Bar m_manaBar;
 
-		sf::Text m_stats_damage;
-		sf::Text m_stats_defense;
+		sf::Text m_statsDamage;
+		sf::Text m_statsDefense;
 };
 
 #endif
