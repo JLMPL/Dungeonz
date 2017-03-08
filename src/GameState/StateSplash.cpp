@@ -1,7 +1,9 @@
 #include "StateSplash.hpp"
+#include "../Core/Vec2.hpp"
+#include "../Core/Screen.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Render/Renderer.hpp"
-#include "../Core/Vec2.hpp"
+#include "../Input/InputHandler.hpp"
 
 StateSplash::StateSplash()
 {
@@ -13,13 +15,18 @@ void StateSplash::init()
 
 	m_sfmlLogo.setTexture(*TextureCache::Get().getTexture("sfml-logo-small.png"));
 	m_sfmlLogo.setOrigin(m_sfmlLogo.getLocalBounds().width/2, m_sfmlLogo.getLocalBounds().height/2);
-	m_sfmlLogo.setPosition({400,300-24});
+	m_sfmlLogo.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight -24});
 
-	Renderer::Get().setCameraPos({400,300});
+	Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
 }
 
 void StateSplash::update(float deltaTime)
 {
+	if (InputHandler::Get().isEscape())
+	{
+		leave();
+	}
+
 	switch (m_stage)
 	{
 		case 0:

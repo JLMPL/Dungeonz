@@ -6,7 +6,7 @@
 
 #ifdef _WIN32
 using uint = unsigned int;
-#define
+#endif
 
 class Level;
 

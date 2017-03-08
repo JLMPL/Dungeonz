@@ -1,5 +1,6 @@
 #include "Renderer.hpp"
 #include "Sprite.hpp"
+#include "../Core/Screen.hpp"
 #include "../Core/Error.hpp"
 #include "../Core/Rect.hpp"
 #include "../Collision/CollisionAlgorithm.hpp"
@@ -14,7 +15,7 @@ void Renderer::init(sf::RenderWindow* window)
 	else
 	{
 		m_window = window;
-		m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(800,600));
+		m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width, Screen::Get().height));
 	}
 }
 
@@ -35,10 +36,10 @@ void Renderer::submitSorted(sf::Sprite* data)
 
 void Renderer::submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type)
 {
-	Line line = {draw, count, type};
-	// line.verts = draw;
-	// line.count = count;
-	// line.type = type;
+	Line line;// = {draw, count, type}; <- Fuck you MinGW!
+	line.verts = draw;
+	line.count = count;
+	line.type = type;
 
 	m_linesData.push_back(line);
 }
@@ -65,7 +66,10 @@ void Renderer::updateCamera()
 
 void Renderer::cull()
 {
-	Rectf cameraRect(m_camera.getCenter().x - 400, m_camera.getCenter().y - 300, 800, 600);
+	Rectf cameraRect(m_camera.getCenter().x - Screen::Get().halfWidth,
+					 m_camera.getCenter().y - Screen::Get().halfHeight, 
+					 Screen::Get().width,
+					 Screen::Get().height);
 
 	for (auto i = m_backgroundData.begin(); i != m_backgroundData.end();)
 	{ 
@@ -148,5 +152,5 @@ void Renderer::setCameraPos(const vec2i& pos)
 
 vec2i Renderer::getCameraPos() const
 {
-	return vec2i(m_camera.getCenter().x - 400, m_camera.getCenter().y - 300);
+	return vec2i(m_camera.getCenter().x - Screen::Get().halfWidth, m_camera.getCenter().y - Screen::Get().halfHeight);
 }

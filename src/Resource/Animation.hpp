@@ -13,6 +13,7 @@ struct Animation
 	bool looping = false;
 
 	void loadFromFile(const std::string& path);
+	void loadFromMemory(void* mems);
 };
 
 #endif

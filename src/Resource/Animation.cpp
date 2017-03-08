@@ -1,6 +1,7 @@
 #include "Animation.hpp"
 #include "../Core/Error.hpp"
 #include <fstream>
+#include <sstream>
 
 #include <iostream>
 
@@ -21,15 +22,23 @@ void Animation::loadFromFile(const std::string& path)
 		file >> origin.x;
 		file >> origin.y;
 		file >> looping;
-
-		// std::cout << image << "\n";
-		// std::cout << numFrames << "\n";
-		// std::cout << duration << "\n";
-		// std::cout << size.x << "\n";
-		// std::cout << size.y << "\n";
-		// std::cout << origin.x << "\n";
-		// std::cout << origin.y << "\n";
-		// std::cout << looping << "\n";
 	}
 	file.close();
+}
+
+void Animation::loadFromMemory(void* mems)
+{
+	const char* file = (char*)mems;
+
+	std::string cont = file;
+	std::stringstream stream(cont);
+
+	stream >> image;
+	stream >> numFrames;
+	stream >> duration;
+	stream >> size.x;
+	stream >> size.y;
+	stream >> origin.x;
+	stream >> origin.y;
+	stream >> looping;
 }

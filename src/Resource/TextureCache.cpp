@@ -2,7 +2,6 @@
 
 void TextureCache::init()
 {
-
 }
 
 TexturePtr_t TextureCache::getTexture(const std::string& path)

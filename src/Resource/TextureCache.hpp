@@ -14,7 +14,7 @@ class TextureCache
         }
 
         void init();
-
+        
         TexturePtr_t getTexture(const std::string& path);
 
     private:

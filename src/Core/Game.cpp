@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Error.hpp"
+#include "Screen.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Resource/FontCache.hpp"
@@ -8,14 +9,29 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include <fstream>
+#include <sstream>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
 #endif
 
+constexpr int g_majorVersion = 0;
+constexpr int g_minorVersion = 2;
+constexpr int g_updateVersion = 4;
+
 Game::Game()
 {
-	Window.create(sf::VideoMode(800,600), "Window", sf::Style::Close);
+	loadCfg();
+
+	Uint32 style = sf::Style::Close;
+
+	if (Screen::Get().fullscreen)
+		style = sf::Style::Fullscreen;
+
+	sf::VideoMode mode(Screen::Get().width, Screen::Get().height);
+
+	Window.create(mode, "", style);
 
 	TextureCache::Get().init();
 	FontCache::Get().init();
@@ -28,22 +44,99 @@ Game::Game()
 
 	version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
 	version.setCharacterSize(10);
-	version.setString("Version 0.2.2 WIP");
+	version.setString("Version " + std::to_string(g_majorVersion) + "." +
+								   std::to_string(g_minorVersion) + "." +
+								   std::to_string(g_updateVersion) + " WIP");
 	version.setPosition(sf::Vector2f(5,5));
+
+	m_playingState.init();
 
 	m_splashState.init();
 	m_splashState.setExitFunc(
 	[&]()
 	{
+		m_currentState = &m_menuState;
+	});
+
+	m_menuState.init();
+	m_menuState.setNewGameFunc(
+	[&]()
+	{
 		m_currentState = &m_playingState;
 	});
-	m_playingState.init();
+	m_menuState.setExitFunc(
+	[&]()
+	{
+		Window.close();
+	});
 
 	m_currentState = &m_splashState;
 }
 
 Game::~Game()
 {
+}
+
+#include <iostream>
+
+void Game::loadCfg()
+{
+	std::ifstream file("config.cfg");
+	std::string line;
+	std::stringstream sstr;
+
+	if (!file.good())
+		printf("Could not find cfg file");
+	else
+	{
+		while (!file.eof())
+		{
+			std::getline(file, line);
+			// printf("%s\n", line.c_str());
+
+			if (line.find("//") != std::string::npos)
+				continue;
+			else if (line.find("screen_width") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				sstr = std::stringstream(line);
+
+				std::string junk;
+				sstr >> junk;
+				sstr >> junk;
+
+				int target = std::stoi(junk);
+
+				if (target < 640) target = 640;
+				Screen::Get().width = target;
+				Screen::Get().halfWidth = Screen::Get().width/2;
+			}
+			else if (line.find("screen_height") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				sstr = std::stringstream(line);
+
+				std::string junk;
+				sstr >> junk;
+				sstr >> junk;
+
+				int target = std::stoi(junk);
+
+				if (target < 480) target = 480;
+				Screen::Get().height = target;
+				Screen::Get().halfHeight = Screen::Get().height/2;
+			}
+			else if (line.find("screen_full") != std::string::npos)
+			{
+				line[line.find("=")] = ' ';
+				
+				if (line.find("true") != std::string::npos)
+					Screen::Get().fullscreen = true;
+				else
+					Screen::Get().fullscreen = false;
+			}
+		}
+	}
 }
 
 void Game::update()

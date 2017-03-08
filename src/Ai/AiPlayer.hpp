@@ -30,8 +30,10 @@ class AiPlayer : public Ai
 		void rollState(float deltaTime);
 
 		void castFireball();
+		void castFrostbite();
 		void castLightning(float deltaTime);
 		void castSpeed();
+		void castHeal();
 		
 		PlayerState getState();
 
