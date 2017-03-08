@@ -3,6 +3,7 @@
 #include "../Resource/FontCache.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Input/InputHandler.hpp"
+#include <fstream>
 
 constexpr int g_menuOptionsOffset = 48;
 
@@ -38,10 +39,31 @@ void StateMenu::init()
 
     m_helpText.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
     m_helpText.setCharacterSize(30);
-    m_helpText.setString("There you go! Your beloved manual.\n\nUp, Down, Left, Right = Movement\nF = Attack\nD = Dodge/Roll\nE = Use, Interact, Take, Loot\nR = Cast a selected spell\nS = Spellbook\nEsc = Bitch please...");
+    loadHelp();
     m_helpText.setOrigin(static_cast<int>(m_helpText.getLocalBounds().width/2),
                          static_cast<int>(m_helpText.getLocalBounds().height/2));
     m_helpText.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight});
+}
+
+void StateMenu::loadHelp()
+{
+    std::ifstream file("data/help");
+    std::string line;
+    std::string content;
+
+    if (!file.good())
+        printf("Error: Couldn't load \"data/help\" file!\n");
+    else
+    {
+        while (!file.eof())
+        {
+            std::getline(file, line);
+            content += line + '\n';
+        }
+    }
+    m_helpText.setString(content);
+
+    file.close();
 }
 
 void StateMenu::update(float deltaTime)
@@ -50,10 +72,10 @@ void StateMenu::update(float deltaTime)
     {
         case MenuState::MainScreen:
             menuState();
-        break;
+            break;
         case MenuState::HelpScreen:
             helpState();
-        break;
+            break;
     }
 }
 

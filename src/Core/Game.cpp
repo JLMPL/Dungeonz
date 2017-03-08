@@ -10,7 +10,6 @@
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
 #include <fstream>
-#include <sstream>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
@@ -92,20 +91,19 @@ void Game::loadCfg()
 		while (!file.eof())
 		{
 			std::getline(file, line);
-			// printf("%s\n", line.c_str());
 
 			if (line.find("//") != std::string::npos)
+				continue;
+			else if (line.find("[") != std::string::npos)
 				continue;
 			else if (line.find("screen_width") != std::string::npos)
 			{
 				line[line.find("=")] = ' ';
-				sstr = std::stringstream(line);
 
-				std::string junk;
-				sstr >> junk;
-				sstr >> junk;
+				int target;
+				char junk[32];
 
-				int target = std::stoi(junk);
+				sscanf(line.c_str(), "%s %d", junk, &target);
 
 				if (target < 640) target = 640;
 				Screen::Get().width = target;
@@ -114,13 +112,11 @@ void Game::loadCfg()
 			else if (line.find("screen_height") != std::string::npos)
 			{
 				line[line.find("=")] = ' ';
-				sstr = std::stringstream(line);
 
-				std::string junk;
-				sstr >> junk;
-				sstr >> junk;
+				int target;
+				char junk[32];
 
-				int target = std::stoi(junk);
+				sscanf(line.c_str(), "%s %d", junk, &target);
 
 				if (target < 480) target = 480;
 				Screen::Get().height = target;
