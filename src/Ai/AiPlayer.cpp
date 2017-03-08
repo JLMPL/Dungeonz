@@ -289,7 +289,7 @@ void AiPlayer::castState(float deltaTime)
 				castFireball();
 				break;
 			case Spell::Frostbite:
-				//shet
+				castFrostbite();
 				break;
 			case Spell::Speed:
 				castSpeed();
@@ -312,11 +312,30 @@ void AiPlayer::castFireball()
 {
 	if (m_target->getAttribute(Attribute::Mp) >= g_fireballCost)
 	{
-		auto ball = (Missile*)m_target->getLevel()->addMissile(std::shared_ptr<Missile>(new Missile()));
+		auto ball = (FireMissile*)m_target->getLevel()->addFireMissile(std::shared_ptr<FireMissile>(new FireMissile()));
 		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
 		ball->setOwner(static_cast<Entity*>(m_target));
 
 		m_target->drainMana(g_fireballCost);
+		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+		[&]()
+		{
+			m_state = PlayerState::Idle;
+		});
+
+		m_timer.restart();
+	}
+}
+
+void AiPlayer::castFrostbite()
+{
+	if (m_target->getAttribute(Attribute::Mp) >= g_frostbiteCost)
+	{
+		auto ball = (IceMissile*)m_target->getLevel()->addIceMissile(std::shared_ptr<IceMissile>(new IceMissile()));
+		ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
+		ball->setOwner(static_cast<Entity*>(m_target));
+
+		m_target->drainMana(g_frostbiteCost);
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
 		[&]()
 		{

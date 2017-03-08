@@ -38,7 +38,7 @@ void StateMenu::init()
 
     m_helpText.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
     m_helpText.setCharacterSize(30);
-    m_helpText.setString("There you go! Your beloved manual.\n\nUp, Down, Left, Right = Movement\nF = Attack\nD = Dodge/Roll\nE = Use, Interact, Take, Loot\nR = Cast a selected spell\nS = Spellbook\n");
+    m_helpText.setString("There you go! Your beloved manual.\n\nUp, Down, Left, Right = Movement\nF = Attack\nD = Dodge/Roll\nE = Use, Interact, Take, Loot\nR = Cast a selected spell\nS = Spellbook\nEsc = Bitch please...");
     m_helpText.setOrigin(static_cast<int>(m_helpText.getLocalBounds().width/2),
                          static_cast<int>(m_helpText.getLocalBounds().height/2));
     m_helpText.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight});

@@ -40,22 +40,25 @@ void AiMob::focus()
 
 void AiMob::update(float deltaTime)
 {
-	focus();
-	
-	switch (m_state)
+	if (!m_target->isBusy())
 	{
-		case MobState::Idle:
-			idleState(deltaTime);
-			break;
-		case MobState::Move:
-			moveState(deltaTime);
-			break;
-		case MobState::Attack:
-			attackState(deltaTime);
-			break;
-		case MobState::Dead:
-			deadState(deltaTime);
-			break;
+		focus();
+		
+		switch (m_state)
+		{
+			case MobState::Idle:
+				idleState(deltaTime);
+				break;
+			case MobState::Move:
+				moveState(deltaTime);
+				break;
+			case MobState::Attack:
+				attackState(deltaTime);
+				break;
+			case MobState::Dead:
+				deadState(deltaTime);
+				break;
+		}
 	}
 }
 

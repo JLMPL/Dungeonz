@@ -25,6 +25,8 @@ class Living : public Entity
 		void push(Direction_t dir, float dist, float duration);
 		void damage(int damage);
 
+		void freeze(int time);
+
 		void setDamage(int value);
 		void restoreBasicDamage();
 
@@ -76,6 +78,10 @@ class Living : public Entity
 		vec2f 		m_pushStart;
 		vec2f 		m_pushEnd;
 		float       m_pushDuration;
+
+		bool 		m_isFrozen = false;
+		int 		m_frozenDuration = 0;
+		sf::Clock 	m_frozenTimer;
 
 		float 		m_trapTimer = 0;
 

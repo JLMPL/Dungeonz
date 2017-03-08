@@ -27,13 +27,22 @@ ItemPtr_t Level::addItem(ItemPtr_t item)
 	return m_items.back();
 }
 
-Missile* Level::addMissile(std::shared_ptr<Missile> missile)
+FireMissile* Level::addFireMissile(std::shared_ptr<FireMissile> missile)
 {
 	m_missiles.push_back(missile);
 	m_missiles.back()->setLevel(this);
 	m_missiles.back()->setId(m_lastEntityId);
 	m_lastEntityId++;
 	return m_missiles.back().get();
+}
+
+IceMissile* Level::addIceMissile(std::shared_ptr<IceMissile> missile)
+{
+	m_iceMissiles.push_back(missile);
+	m_iceMissiles.back()->setLevel(this);
+	m_iceMissiles.back()->setId(m_lastEntityId);
+	m_lastEntityId++;
+	return m_iceMissiles.back().get();
 }
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
@@ -61,10 +70,21 @@ void Level::update(float deltaTime)
 			i++;
 	}
 
+	for (auto i = m_iceMissiles.begin(); i != m_iceMissiles.end();)
+	{
+		if ((*i)->isDestroyed())
+			i = m_iceMissiles.erase(i);
+		else 
+			i++;
+	}
+
 	for (auto& i : m_entities)
 		i->update(deltaTime);
 
 	for (auto& i : m_missiles)
+		i->update(deltaTime);
+
+	for (auto& i : m_iceMissiles)
 		i->update(deltaTime);
 
 	for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
