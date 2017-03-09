@@ -2,6 +2,7 @@ TODO:
 -skeleton attack animation
 -saves
 -dropping items
+-enemies sight raycast
 
 
 Spellz: - they're gonna be so hardcoded
@@ -12,10 +13,10 @@ Spellz: - they're gonna be so hardcoded
   Heal - Why didn't I think of that.
 
 Monsterz:
-  Bat
+  Bat -
   Rat
   Goblin
-  Skeleton
+  Skeleton -
   Skeleton Mage
   There's got to be boss.
 
