@@ -27,7 +27,9 @@ void Level::init(const std::string& map, Living* player)
 		for (auto& i : m_entities)
 		{
 			if (i->getCode() == "pc_player")
+			{
 				i.reset(std::move(player));
+			}
 		}
 	}
 }
@@ -65,6 +67,15 @@ IceMissile* Level::addIceMissile(std::shared_ptr<IceMissile> missile)
 	return m_iceMissiles.back().get();
 }
 
+LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
+{
+	m_lightnings.push_back(bolt);
+	m_lightnings.back()->setLevel(this);
+	m_lightnings.back()->setId(m_lastEntityId);
+	m_lastEntityId++;
+	return m_lightnings.back().get();
+}
+
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
 	m_bigParticles.push_back(BigParticle());
@@ -98,6 +109,14 @@ void Level::update(float deltaTime)
 			i++;
 	}
 
+	for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
+	{
+		if ((*i)->isDestroyed())
+			i = m_lightnings.erase(i);
+		else
+			i++;
+	}
+
 	for (auto& i : m_entities)
 		i->update(deltaTime);
 
@@ -105,6 +124,9 @@ void Level::update(float deltaTime)
 		i->update(deltaTime);
 
 	for (auto& i : m_iceMissiles)
+		i->update(deltaTime);
+
+	for (auto& i : m_lightnings)
 		i->update(deltaTime);
 
 	for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)

@@ -7,6 +7,7 @@
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
 #include "../Gameplay/LightningBolt.hpp"
+#include "../Gameplay/Exit.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
@@ -246,6 +247,12 @@ void AiPlayer::pickingState(float deltaTime)
 					GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
 				}
 				break;
+				case EntityType::Exit:
+				{
+					auto exit = static_cast<Exit*>(m_focus);
+					
+				}
+				break;
 			}
 		}
 		m_timer.restart();
@@ -352,14 +359,15 @@ void AiPlayer::castLightning(float deltaTime)
 		m_focus->getType() == EntityType::Living and
 		m_target->getAttribute(Attribute::Mp) >= g_lightningCost)
 	{
-		auto bolt = (LightningBolt*)m_target->getLevel()->addEntity(EntityPtr_t(new LightningBolt()));
+		auto bolt = m_target->getLevel()->addLightningBolt(std::shared_ptr<LightningBolt>(new LightningBolt()));
 		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
 				   m_focus->getFakePos().getf() + vec2f(0,-20));
 
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
 
-		static_cast<Living*>(m_focus)->damage(4);
-		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
+		Living* focal = static_cast<Living*>(m_focus);
+		focal->damage(4);
+		focal->push(m_target->getDirection(), 5, 0.1);
 
 		m_target->drainMana(g_lightningCost);
 
@@ -464,6 +472,13 @@ void AiPlayer::focus()
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Bag", pos);
+			}
+			break;
+			case EntityType::Exit:
+			{
+				auto exit = static_cast<Exit*>(m_focus);
+				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
+				GUI::Get().setFocusLabel(exit->getNext(), pos);
 			}
 			break;
 		}

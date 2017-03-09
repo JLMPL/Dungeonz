@@ -15,7 +15,7 @@
  </layer>
  <layer name="Collision" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDFagQwU81O0f1T/49BMbz7S0nxx1o/YPPfuR0xeu9EasuqFoPzHiwzn+B6P9A61/IPIfvvJ+INof9LKfGPHR9E9f/QPt/8GQ/4jF+AAAssgc4Q==
+   eJxjYBgFo2AUDFagQwU81O0f1T/49BMbz8PZfnLUjdpPuv3I8YsrvolVNxTtJ0Z8OMf/YLR/oPUPRP7DV94ORPuDXvYTIz6a/umrf6D9PxjyH7EYHwAAeBMdZQ==
   </data>
  </layer>
  <objectgroup name="Objects">

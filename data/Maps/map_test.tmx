@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="99">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
-  <image source="Dungeon_tiles.png" width="320" height="320"/>
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="32" height="32">
   <data encoding="base64" compression="zlib">
@@ -235,6 +235,11 @@
     <property name="item2" value="it_test_speed"/>
     <property name="item3" value="it_test_lightning"/>
     <property name="item4" value="it_test_armor"/>
+   </properties>
+  </object>
+  <object id="98" name="the_exit" type="exit" x="480" y="32" width="32" height="32">
+   <properties>
+    <property name="next" value="second_test.tmx"/>
    </properties>
   </object>
  </objectgroup>
