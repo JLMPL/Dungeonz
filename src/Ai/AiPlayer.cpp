@@ -214,8 +214,8 @@ void AiPlayer::pickingState(float deltaTime)
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), living->getPosition() + vec2f(0,-50));
 					}
-					break;
 				}
+				break;
 				case EntityType::Chest:
 				{
 					auto chest = static_cast<Chest*>(m_focus);
@@ -226,26 +226,26 @@ void AiPlayer::pickingState(float deltaTime)
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), chest->getPosition() + vec2f(0,-50));
 					}
-					break;
 				}
+				break;
 				case EntityType::Door:
 				{
 					auto door = static_cast<Door*>(m_focus);
 					door->tryOpening(&m_target->accessInv());
-					break;
 				}
+				break;
 				case EntityType::Lever:
 				{
 					auto lever = static_cast<Lever*>(m_focus);
 					lever->activate();
-					break;
 				}
+				break;
 				case EntityType::ItemBag:
 				{
 					auto bag = static_cast<ItemBag*>(m_focus);
 					GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
-					break;
 				}
+				break;
 			}
 		}
 		m_timer.restart();
@@ -358,10 +358,8 @@ void AiPlayer::castLightning(float deltaTime)
 
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
 
-		//damage
 		static_cast<Living*>(m_focus)->damage(4);
 		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
-		//mana
 
 		m_target->drainMana(g_lightningCost);
 
@@ -409,7 +407,9 @@ void AiPlayer::focus()
 			{
 				if ((*i)->getType() == EntityType::SpikeTrap or
 					(*i)->getType() == EntityType::PressPlate)
+				{
 					i = ents.erase(i);
+				}
 				else
 					i++;
 			}

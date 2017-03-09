@@ -48,9 +48,7 @@ void IceMissile::update(float deltaTime)
                                          								   m_box->rect.y + m_box->rect.h/2), 24);
         
         for (auto& i : foundEnts)
-        {
             blow(i);
-        }
     }
 
     switch (m_direction)

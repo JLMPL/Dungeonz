@@ -6,10 +6,30 @@
 #include "../Gui/Gui.hpp"
 #include "../Render/IndicationHandler.hpp"
 
-void Level::init()
+void Level::init(const std::string& map, Living* player)
 {
-	map.setLevel(this);
-	map.loadFromFile("map_test.tmx");
+	m_map.setLevel(this);
+	m_map.loadFromFile(map);
+
+	if (player)
+	{
+		Inventory inv;
+		for (int i = 0; i < player->accessInv().getAmount(); i++)
+		{
+			ItemPtr_t item;
+			item->loadFromFile(player->accessInv().getItem(i)->code + ".lua");
+			addItem(item);
+			inv.addItem(item);
+		}
+
+		player->accessInv() = inv;
+
+		for (auto& i : m_entities)
+		{
+			if (i->getCode() == "pc_player")
+				i.reset(std::move(player));
+		}
+	}
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -100,7 +120,7 @@ void Level::update(float deltaTime)
 		i.update(deltaTime);
 	}
 
-	map.update();
+	m_map.update();
 	CollisionHandler::Get().update(deltaTime);
 
 	auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
@@ -154,4 +174,13 @@ std::vector<Entity*> Level::getEntitiesByCode(std::string code)
 		}
 	}
 	return ents;
+}
+
+Living* Level::getPlayer()
+{
+	for (auto& i : m_entities)
+	{
+		if (i->getCode() == "pc_player")
+			return static_cast<Living*>(i.get());
+	}
 }

@@ -6,7 +6,7 @@ StatePlaying::StatePlaying()
 
 void StatePlaying::init()
 {
-	level.init();
+	level.init("second_test.tmx", nullptr);
 }
 
 void StatePlaying::update(float deltaTime)
