@@ -12,8 +12,12 @@ class Exit : public Entity
 		void setNext(const std::string& next);
 		const std::string& getNext() const;
 
+		void setFunc(std::function<void ()> func);
+		void goFurther();
+
 	private:
 		std::string m_next;
+		std::function<void ()> m_exit;
 };
 
 #endif

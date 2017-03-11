@@ -14,8 +14,12 @@ class StatePlaying : public GameState
 		void update(float deltaTime) override final;
 		void leave() override final;
 
+		void setLevel(const std::string& level);
+
 	private:
-		Level level;
+		Level m_level;
+
+		std::unique_ptr<Level> m_currLevel;
 };
 
 #endif

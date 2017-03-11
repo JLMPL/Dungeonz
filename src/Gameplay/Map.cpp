@@ -400,11 +400,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string next = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
 
 			vec2f pos;
-			pos.x = std::stof(object->first_attribute("x")->value()) + 16;
+			pos.x = std::stof(object->first_attribute("x")->value());
 			pos.y = std::stof(object->first_attribute("y")->value()) + 32;
 
 			auto exit = (Exit*)m_level->addEntity(EntityPtr_t(new Exit()));
-			exit->setCode(name);
+			exit->setCode("exit");
 			exit->setPosition(pos);
 			exit->setNext(next);
 		}

@@ -1,4 +1,5 @@
 #include "Exit.hpp"
+#include "../Collision/CollisionHandler.hpp"
 
 Exit::Exit()
 {
@@ -9,16 +10,23 @@ Exit::Exit()
 	m_sprite->setOrigin({16,32});
 
 	m_box = BoxPtr_t(new Box());
-	m_box->rect = Rectf(0,0,1,1);
+	m_box->rect = Rectf(0,0,32,4);
 	m_box->type = CollisionType::Static;
-	m_box->enabled = false;
+	m_box->enabled = true;
+	m_box->material = CollMaterial::Regular;
+	m_box->reactMaterial = CollMaterial::Living;
+	m_box->callback = [&]()
+	{
+		goFurther();
+		printf("Yeszzdfaz!\n");
+	};
 
-	// CollisionHandler::Get().addBody(m_box);
+	CollisionHandler::Get().addBody(m_box);
 }
 
 void Exit::update(float deltaTime)
 {
-	m_sprite->setPosition({m_box->rect.x, m_box->rect.y});
+	m_sprite->setPosition({m_box->rect.x + m_box->rect.w/2, m_box->rect.y});
 	m_sprite->draw();
 }
 
@@ -30,4 +38,15 @@ void Exit::setNext(const std::string& next)
 const std::string& Exit::getNext() const
 {
 	return m_next;
+}
+
+void Exit::setFunc(std::function<void ()> func)
+{
+	m_exit = func;	
+}
+
+void Exit::goFurther()
+{
+	if (m_exit)
+		m_exit();
 }

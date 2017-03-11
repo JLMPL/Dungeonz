@@ -11,27 +11,27 @@ void Level::init(const std::string& map, Living* player)
 	m_map.setLevel(this);
 	m_map.loadFromFile(map);
 
-	if (player)
-	{
-		Inventory inv;
-		for (int i = 0; i < player->accessInv().getAmount(); i++)
-		{
-			ItemPtr_t item;
-			item->loadFromFile(player->accessInv().getItem(i)->code + ".lua");
-			addItem(item);
-			inv.addItem(item);
-		}
+	// if (player)
+	// {
+	// 	Inventory inv;
+	// 	for (int i = 0; i < player->accessInv().getAmount(); i++)
+	// 	{
+	// 		ItemPtr_t item;
+	// 		item->loadFromFile(player->accessInv().getItem(i)->code + ".lua");
+	// 		addItem(item);
+	// 		inv.addItem(item);
+	// 	}
 
-		player->accessInv() = inv;
+	// 	player->accessInv() = inv;
 
-		for (auto& i : m_entities)
-		{
-			if (i->getCode() == "pc_player")
-			{
-				i.reset(std::move(player));
-			}
-		}
-	}
+	// 	for (auto& i : m_entities)
+	// 	{
+	// 		if (i->getCode() == "pc_player")
+	// 		{
+	// 			i.reset(&player);
+	// 		}
+	// 	}
+	// }
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -74,6 +74,12 @@ LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
 	m_lightnings.back()->setId(m_lastEntityId);
 	m_lastEntityId++;
 	return m_lightnings.back().get();
+}
+
+Exit* Level::addExit(EntityPtr_t exit)
+{
+	m_exit = std::move(exit);
+	return static_cast<Exit*>(m_exit.get());
 }
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
@@ -128,6 +134,8 @@ void Level::update(float deltaTime)
 
 	for (auto& i : m_lightnings)
 		i->update(deltaTime);
+
+	// m_exit->update(deltaTime);
 
 	for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
 	{
@@ -205,4 +213,9 @@ Living* Level::getPlayer()
 		if (i->getCode() == "pc_player")
 			return static_cast<Living*>(i.get());
 	}
+}
+
+Exit* Level::getExit()
+{
+	return static_cast<Exit*>(m_exit.get());
 }

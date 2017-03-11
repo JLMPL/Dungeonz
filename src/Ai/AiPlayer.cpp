@@ -250,7 +250,7 @@ void AiPlayer::pickingState(float deltaTime)
 				case EntityType::Exit:
 				{
 					auto exit = static_cast<Exit*>(m_focus);
-					
+					exit->goFurther();
 				}
 				break;
 			}

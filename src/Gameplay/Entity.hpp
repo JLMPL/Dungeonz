@@ -3,6 +3,7 @@
 #include "EntityType.hpp"
 #include "../Render/SpritePtr.hpp"
 #include "../Collision/BoxPtr.hpp"
+#include <cstring>
 
 #ifdef _WIN32
 using uint = unsigned int;
