@@ -54,12 +54,6 @@ LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
 	return m_lightnings.back().get();
 }
 
-Exit* Level::addExit(EntityPtr_t exit)
-{
-	m_exit = std::move(exit);
-	return static_cast<Exit*>(m_exit.get());
-}
-
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
 	m_bigParticles.push_back(BigParticle());
@@ -112,8 +106,6 @@ void Level::update(float deltaTime)
 
 	for (auto& i : m_lightnings)
 		i->update(deltaTime);
-
-	// m_exit->update(deltaTime);
 
 	for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
 	{

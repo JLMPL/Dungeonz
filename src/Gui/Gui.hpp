@@ -12,11 +12,18 @@
 
 class Living;
 class Inventory;
+class StatePlaying;
 
 //Singleton
 class GUI
 {
 	public:
+
+		GUI()
+		{
+			printf("Gui Created!\n");
+		}
+
 		static GUI& Get()
 		{
 			static GUI self;
@@ -36,6 +43,9 @@ class GUI
 
 		void setTarget(Living* living);
 		Living* getTarget();
+
+		void setPlayingState(StatePlaying* state);
+		void begForLevel(const std::string& level);
 
 	private:
 
@@ -68,6 +78,8 @@ class GUI
 		sf::Text m_deathSentence;
 		sf::RectangleShape m_deathFade;
 		float m_deathTimer = 0;
+
+		StatePlaying* m_playingState;
 };
 
 #endif

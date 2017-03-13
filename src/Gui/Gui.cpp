@@ -5,6 +5,7 @@
 #include "../Render/Renderer.hpp"
 #include "../Gameplay/Living.hpp"
 #include "../Input/InputHandler.hpp"
+#include "../GameState/StatePlaying.hpp"
 
 constexpr int g_BookWidth = 256*1.5;
 constexpr int g_BookHeight = 512;
@@ -252,4 +253,14 @@ void GUI::setTarget(Living* living)
 Living* GUI::getTarget()
 {
 	return m_target;
+}
+
+void GUI::setPlayingState(StatePlaying* state)
+{
+	m_playingState = state;
+}
+
+void GUI::begForLevel(const std::string& level)
+{
+	m_playingState->begForLevel(level);
 }

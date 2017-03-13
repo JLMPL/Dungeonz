@@ -1,8 +1,14 @@
 #ifndef SCREEN_HPP
 #define SCREEN_HPP
+#include <stdio.h>
 
 struct Screen
 {
+	Screen()
+	{
+		printf("Screen Created!\n");
+	}
+
 	static Screen& Get()
 	{
 		static Screen self;
