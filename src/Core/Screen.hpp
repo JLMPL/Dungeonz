@@ -4,11 +4,6 @@
 
 struct Screen
 {
-	Screen()
-	{
-		printf("Screen Created!\n");
-	}
-
 	static Screen& Get()
 	{
 		static Screen self;

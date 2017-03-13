@@ -18,12 +18,6 @@ class StatePlaying;
 class GUI
 {
 	public:
-
-		GUI()
-		{
-			printf("Gui Created!\n");
-		}
-
 		static GUI& Get()
 		{
 			static GUI self;
@@ -46,8 +40,6 @@ class GUI
 
 		void setPlayingState(StatePlaying* state);
 		void begForLevel(const std::string& level);
-
-	private:
 
 	private:
 		GUIMode m_mode;

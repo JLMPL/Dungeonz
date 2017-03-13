@@ -27,7 +27,7 @@ GraphicInv::GraphicInv()
 	for (int i = 0; i < g_maxItems; i++)
 		m_slots.push_back(Slot());
 
-	m_invPos = {800 - 32 * g_invSize, 300 - (g_invSize*16)};// = vec2i(Screen::Get().width - 32 * g_invSize, Screen::Get().halfHeight - (g_invSize*32)/2);
+	m_invPos = {800 - 32 * g_invSize, 300 - (g_invSize*16)};
 	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
 	
 	initDesc();
@@ -57,7 +57,6 @@ void GraphicInv::initStats()
 	m_statsBcg.setSize({g_statsWidth, g_statsHeight});
 	m_statsBcg.setFillColor({0x20,0x20,0x20});
 
-	// m_statsPos = vec2i(0, 300 - g_statsHeight/2);
 	m_statsPos = vec2i(0, 300 - (g_statsHeight/2));
 
 	m_statsLevel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
