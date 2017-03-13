@@ -15,9 +15,9 @@ Exit::Exit()
 	m_box->enabled = true;
 	m_box->material = CollMaterial::Regular;
 	m_box->reactMaterial = CollMaterial::Living;
-	m_box->callback = [&]()
+	m_box->callback = [this]()
 	{
-		goFurther();
+		// this->goFurther();
 		printf("Yeszzdfaz!\n");
 	};
 
@@ -47,6 +47,5 @@ void Exit::setFunc(std::function<void ()> func)
 
 void Exit::goFurther()
 {
-	if (m_exit)
-		m_exit();
+	m_exit();
 }

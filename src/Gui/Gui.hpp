@@ -32,6 +32,8 @@ class GUI
 		void setFocusLabel(const std::string& label, const vec2i& pos);
 		void addLabel(const std::string& label);
 
+		void goDead();
+
 		void setTarget(Living* living);
 		Living* getTarget();
 
@@ -62,6 +64,10 @@ class GUI
 		CenterLabel m_centerLabel;
 
 		Spellbook m_spellbook;
+
+		sf::Text m_deathSentence;
+		sf::RectangleShape m_deathFade;
+		float m_deathTimer = 0;
 };
 
 #endif

@@ -38,6 +38,15 @@ void GUI::init()
 
 	addLabel("Shit Fuck Ass in correct order not!");
 	addLabel("AssShitFuck is the only correct order!");
+
+	m_deathSentence.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
+	m_deathSentence.setCharacterSize(48);
+	m_deathSentence.setString("It's over");
+	m_deathSentence.setOrigin(static_cast<int>(m_deathSentence.getLocalBounds().width/2),
+							  static_cast<int>(m_deathSentence.getLocalBounds().height/2));
+
+	m_deathFade.setSize({Screen::Get().width, Screen::Get().height});
+	m_deathFade.setFillColor({0,0,0,128});
 }
 
 void GUI::update(float deltaTime)
@@ -146,9 +155,30 @@ void GUI::update(float deltaTime)
 			m_spellbook.update(deltaTime);
 		}
 		break;
+		case GUIMode::Death:
+		{	
+			m_deathTimer += (deltaTime /2);
+			float howmuch = lerp(0, 255, m_deathTimer);
+
+			if (howmuch < 0) howmuch = 0;
+			if (howmuch > 255) howmuch = 255;
+
+			m_deathFade.setFillColor({0,0,0, howmuch});
+			m_deathSentence.setFillColor({255, 255 - howmuch, 255 - howmuch, 255});
+
+			m_deathSentence.setPosition(m_camera.x + Screen::Get().halfWidth,
+									   (m_camera.y - 32) + Screen::Get().halfHeight);
+			m_deathFade.setPosition(m_camera.getSfVecf());
+
+			Renderer::Get().submitOverlay(&m_deathFade);
+			Renderer::Get().submitOverlay(&m_deathSentence);
+		}
+		break;
 	}
 
-	if (m_mode != GUIMode::Inv and m_mode != GUIMode::Read)
+	if (m_mode != GUIMode::Inv and
+		m_mode != GUIMode::Read and
+		m_mode != GUIMode::Death)
 	{
 		m_health.setMaxValue(m_target->getAttribute(Attribute::Health));
 		m_health.setValue(m_target->getAttribute(Attribute::Hp));
@@ -159,6 +189,12 @@ void GUI::update(float deltaTime)
 		m_magicka.setValue(m_target->getAttribute(Attribute::Mp));
 		m_magicka.setPosition(m_camera + vec2i(5, Screen::Get().height -15));
 		m_magicka.update();
+	}
+
+	if (m_target->isDead() and m_mode != GUIMode::Death)
+	{
+		m_target->setBusy(true);
+		goDead();
 	}
 }
 
@@ -198,6 +234,11 @@ void GUI::addLabel(const std::string& label)
 {
 	m_centerLabel.addLabel(label);
 }
+
+void GUI::goDead()
+{
+	m_mode = GUIMode::Death;
+}	
 
 void GUI::setTarget(Living* living)
 {

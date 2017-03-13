@@ -3,6 +3,12 @@
 #include "GameState.hpp"
 #include "../Gameplay/Level.hpp"
 
+enum class TheLevel
+{
+	First,
+	Second
+};
+
 class Level;
 
 class StatePlaying : public GameState
@@ -17,9 +23,11 @@ class StatePlaying : public GameState
 		void setLevel(const std::string& level);
 
 	private:
-		Level m_level;
+		Level m_levelO;
+		Level m_second;
 
-		std::unique_ptr<Level> m_currLevel;
+		TheLevel m_current = TheLevel::First;
+		std::unique_ptr<Level> m_level;
 };
 
 #endif

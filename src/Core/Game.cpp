@@ -17,7 +17,7 @@
 
 constexpr int g_majorVersion = 0;
 constexpr int g_minorVersion = 2;
-constexpr int g_updateVersion = 4;
+constexpr int g_updateVersion = 5;
 
 Game::Game()
 {

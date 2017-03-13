@@ -15,7 +15,7 @@ class Living;
 class Level
 {
 	public:
-		void init(const std::string& map, Living* player);
+		void init(const std::string& map);
 		void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
 		void update(float deltaTime);
 
@@ -31,7 +31,6 @@ class Level
 		std::vector<Entity*> getEntitiesByCode(std::string code);
 
 		Living* getPlayer();
-		Exit* getExit();
 
 	private:
 		std::vector<EntityPtr_t> m_entities;
@@ -41,11 +40,8 @@ class Level
 		std::vector<std::shared_ptr<FireMissile>> m_missiles;
 		std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
 		std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
-		EntityPtr_t m_exit;
 
 		Map m_map;
-
-		bool m_gotPlayer = false;
 };
 
 #endif

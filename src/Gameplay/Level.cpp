@@ -6,32 +6,10 @@
 #include "../Gui/Gui.hpp"
 #include "../Render/IndicationHandler.hpp"
 
-void Level::init(const std::string& map, Living* player)
+void Level::init(const std::string& map)
 {
 	m_map.setLevel(this);
 	m_map.loadFromFile(map);
-
-	// if (player)
-	// {
-	// 	Inventory inv;
-	// 	for (int i = 0; i < player->accessInv().getAmount(); i++)
-	// 	{
-	// 		ItemPtr_t item;
-	// 		item->loadFromFile(player->accessInv().getItem(i)->code + ".lua");
-	// 		addItem(item);
-	// 		inv.addItem(item);
-	// 	}
-
-	// 	player->accessInv() = inv;
-
-	// 	for (auto& i : m_entities)
-	// 	{
-	// 		if (i->getCode() == "pc_player")
-	// 		{
-	// 			i.reset(&player);
-	// 		}
-	// 	}
-	// }
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -213,9 +191,4 @@ Living* Level::getPlayer()
 		if (i->getCode() == "pc_player")
 			return static_cast<Living*>(i.get());
 	}
-}
-
-Exit* Level::getExit()
-{
-	return static_cast<Exit*>(m_exit.get());
 }

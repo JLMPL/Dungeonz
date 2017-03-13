@@ -65,7 +65,7 @@
   <object id="23" name="first_spikes" type="spike_trap" x="480" y="640" width="32" height="32"/>
   <object id="24" name="first_spikes" type="spike_trap" x="448" y="608" width="32" height="32"/>
   <object id="25" name="first_spikes" type="spike_trap" x="480" y="608" width="32" height="32"/>
-  <object id="26" name="player_spawn" type="start" x="448" y="928" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="192" y="960" width="32" height="32"/>
   <object id="27" name="spike_lever" type="lever" x="736" y="640" width="32" height="32">
    <properties>
     <property name="activate" value="first_spikes"/>
@@ -112,7 +112,7 @@
     <property name="spawn" value="mob_skeleton"/>
    </properties>
   </object>
-  <object id="34" name="one_bag" type="item_bag" x="512" y="940.5" width="32" height="32">
+  <object id="34" name="one_bag" type="item_bag" x="512" y="928" width="32" height="32">
    <properties>
     <property name="item0" value="it_test_item"/>
     <property name="item1" value="it_test_note"/>

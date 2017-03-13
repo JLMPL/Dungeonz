@@ -18,6 +18,8 @@ class CollisionHandler
 
 		void addBody(BoxPtr_t box);
 
+		void cleanUp();
+
 	private:
 		void react(BoxPtr_t a, BoxPtr_t b);
 		void clean();
