@@ -220,13 +220,15 @@ void AiPlayer::pickingState(float deltaTime)
 				case EntityType::Chest:
 				{
 					auto chest = static_cast<Chest*>(m_focus);
-					if (true/*chest->isOpen()*/)
+					if (chest->isOpen())
 					{
 						if (chest->accessInv().getAmount() > 0)
 							GUI::Get().goLoot(&chest->accessInv(), chest->getPosition().geti());
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), chest->getPosition() + vec2f(0,-50));
 					}
+					else
+						chest->tryOpening(&m_target->accessInv());
 				}
 				break;
 				case EntityType::Door:

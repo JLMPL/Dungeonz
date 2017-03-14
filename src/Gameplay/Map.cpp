@@ -233,6 +233,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string key = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value()) - 13;
@@ -241,6 +242,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			auto chest = (Chest*)m_level->addEntity(EntityPtr_t(new Chest()));
 			chest->setCode(name);
 			chest->setPosition(pos + vec2f(16,16));
+
+			if (key != "-")
+				chest->setRequiredItem(key);
+			else
+				chest->open();
 
 			if (item0 != "-")
 			{

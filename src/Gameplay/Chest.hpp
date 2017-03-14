@@ -9,10 +9,18 @@ class Chest : public Entity
 		Chest();
 
 		void update(float deltaTime);
+
+		void setRequiredItem(const std::string& item);
+		void tryOpening(Inventory* inv);
+		void open();
+
+		bool isOpen();
 		Inventory& accessInv();
 
 	protected:
 		Inventory m_inv;
+		std::string m_requiredKey;
+		bool m_isOpen = false;
 };
 
 #endif

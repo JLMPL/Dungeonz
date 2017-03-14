@@ -1,6 +1,5 @@
 TODO:
--skeleton attack animation
--saves
+-saves (checkpoints on the beginning of dungeon level)
 -dropping items
 -enemies sight raycast
 
@@ -12,6 +11,7 @@ Spellz: - they're gonna be so hardcoded
   Lighting - Zip some fuckers in the balls.
   Heal - Why didn't I think of that.
 
+
 Monsterz:
   Bat -
   Rat
@@ -22,5 +22,5 @@ Monsterz:
 
 
 Testers' notes:
-  
+  -Segfaults
 

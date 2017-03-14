@@ -5,7 +5,6 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Resource/AnimationCache.hpp"
 
-
 Door::Door()
 {
 	m_type = EntityType::Door;

@@ -17,7 +17,7 @@
 
 constexpr int g_majorVersion = 0;
 constexpr int g_minorVersion = 2;
-constexpr int g_updateVersion = 5;
+constexpr int g_updateVersion = 6; //<- Everytime I add a public feature
 
 Game::Game()
 {
