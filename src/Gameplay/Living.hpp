@@ -42,9 +42,10 @@ class Living : public Entity
 		
 		void setEquippedItem(int where, Item* item);
 		bool isEquipped(int where, Item* item);
+		Item* getEquippedItem(int where);
 
 		void setReadySpell(int spell);
-		void learnSpell(int spell);
+		void learnSpell(int spell, bool showLabel);
 		bool knowsSpell(int spell);
 		int getReadySpell();
 
@@ -55,6 +56,7 @@ class Living : public Entity
 		void setDirection(Direction_t facing);
 		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
 		void setBusy(bool busy);
+		void setAttribute(Attribute att, int value);
 		
 		const LivingProfile& getProfile() const;
 		Direction_t          getDirection() const;

@@ -12,7 +12,7 @@ StatePlaying::StatePlaying()
 void StatePlaying::init()
 {
 	m_level = std::unique_ptr<Level>(new Level());
-	m_level->init("map_test.tmx");
+	m_level->init("map_test.tmx", true);
 }
 
 void StatePlaying::update(float deltaTime)
@@ -35,8 +35,9 @@ void StatePlaying::leave()
 
 void StatePlaying::setLevel(const std::string& level)
 {
+	m_level->leave();
 	m_level.reset(new Level());
-	m_level->init(level);
+	m_level->init(level, false);
 }
 
 void StatePlaying::begForLevel(const std::string& level)

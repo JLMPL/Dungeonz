@@ -5,11 +5,180 @@
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Render/IndicationHandler.hpp"
+#include <fstream>
 
-void Level::init(const std::string& map)
+#ifdef _WIN32
+#include "../Core/MinGWSucks.hpp"
+#endif
+
+void Level::init(const std::string& map, bool isFirst)
 {
 	m_map.setLevel(this);
 	m_map.loadFromFile(map);
+
+	if (!isFirst)
+		loadTravel();
+}
+
+void Level::loadTravel()
+{
+	Living* player = (Living*)getEntityByCode("pc_player");
+
+	std::ifstream file("data/travel.sav");
+
+	int hp;
+	int health;
+	int mp;
+	int magicka;
+	int curr;
+	int xp;
+	int tonext;
+
+	file >> hp;
+	file >> health;
+	file >> mp;
+	file >> magicka;
+	file >> curr;
+	file >> xp;
+	file >> tonext;
+
+	player->setAttribute(Attribute::Hp, hp);
+	player->setAttribute(Attribute::Health, health);
+	player->setAttribute(Attribute::Mp, mp);
+	player->setAttribute(Attribute::Magicka, magicka);
+
+	player->setAttribute(Attribute::currLevel, curr);
+	player->setAttribute(Attribute::Xp, xp);
+	player->setAttribute(Attribute::ToNext, tonext);
+
+	//SPELLZ
+	bool is;
+	for (std::size_t i = 0; i < Spell::NumSpells; i++)
+	{
+		file >> is;
+
+		if (is)
+			player->learnSpell(i, false);
+	}
+
+	int ready;
+	file >> ready;
+	player->setReadySpell(ready);
+
+	//ITEMS
+	int amount;
+	std::string aitem;
+	file >> amount;
+
+	for (std::size_t i = 0; i < amount; i++)
+	{
+		file >> aitem;
+
+		ItemPtr_t item = ItemPtr_t(new Item());
+		item->loadFromFile(aitem + ".lua");
+		player->accessInv().addItem(item);
+	}
+
+	//EQUIPPED
+	std::string weapon;
+	std::string armor;
+
+	file >> weapon;
+	file >> armor;
+
+	if (weapon != "0")
+	{
+		for (std::size_t i = 0; i < player->accessInv().getAmount(); i++)
+		{
+			auto item = player->accessInv().getItem(i);
+			if (item->code == weapon)
+			{
+				player->setEquippedItem(Equip::Weapon, item.get());
+				(*item->equip)(player);
+			}
+		}
+	}
+
+	if (armor != "0")
+	{
+		for (std::size_t i = 0; i < player->accessInv().getAmount(); i++)
+		{
+			auto item = player->accessInv().getItem(i);
+			if (item->code == armor)
+			{
+				player->setEquippedItem(Equip::Armor, item.get());
+				(*item->equip)(player);
+			}
+		}
+	}
+}
+
+void Level::saveTravel()
+{
+	Living* player = (Living*)getEntityByCode("pc_player");
+
+	std::ofstream file("data/travel.sav");
+
+	//STATS
+	file << player->getAttribute(Attribute::Hp);
+	file << '\n';
+	file << player->getAttribute(Attribute::Health);
+	file << '\n';
+
+	file << player->getAttribute(Attribute::Mp);
+	file << '\n';
+	file << player->getAttribute(Attribute::Magicka);
+	file << '\n';
+
+	file << player->getAttribute(Attribute::currLevel);
+	file << '\n';
+	file << player->getAttribute(Attribute::Xp);
+	file << '\n';
+	file << player->getAttribute(Attribute::ToNext);
+	file << '\n';
+	//SPELLS
+
+	for (std::size_t i = 0; i < Spell::NumSpells; i++)
+	{
+		if (player->knowsSpell(i))
+			file << "1\n";
+		else
+			file << "0\n";
+	}
+
+	file << player->getReadySpell();
+	file << '\n';
+
+	//ITEMS
+	int amount = player->accessInv().getAmount();
+	file << amount;
+	file << '\n';
+
+	for (std::size_t i = 0; i < amount; i++)
+	{
+		file << player->accessInv().getItem(i)->code;
+		file << '\n';
+	}
+	//EQUIPPED
+
+	Item* weapon = player->getEquippedItem(Equip::Weapon);
+	Item* armor = player->getEquippedItem(Equip::Armor);
+
+	if (weapon)
+	{
+		file << weapon->code;
+		file << "\n";
+	}
+	else
+		file << "0\n";
+
+	if (armor)
+	{
+		file << armor->code;
+		file << "\n";
+	}
+	else
+		file << "0\n";
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -128,6 +297,11 @@ void Level::update(float deltaTime)
 
 	IndicationHandler::Get().update(deltaTime);
 	GUI::Get().update(deltaTime);
+}
+
+void Level::leave()
+{
+	saveTravel();
 }
 
 std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)

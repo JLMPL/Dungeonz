@@ -56,10 +56,9 @@ void Living::init(const LivingProfile& profile)
     m_attributes[Attribute::Xp]      = m_profile.xp;
     m_attributes[Attribute::ToNext] = 250;
 
-
     for (int i = 0; i < Spell::NumSpells; i++)
     {
-        m_spells[i] = true;
+        m_spells[i] = false;
     }
 }
 
@@ -247,17 +246,23 @@ bool Living::isEquipped(int where, Item* item)
     return m_equipped[where] == item;
 }
 
+Item* Living::getEquippedItem(int where)
+{
+    return m_equipped[where];
+}
+
 void Living::setReadySpell(int spell)
 {
     if (m_spells[spell])
         m_readySpell = spell;
 }
 
-void Living::learnSpell(int spell)
+void Living::learnSpell(int spell, bool showLabel)
 {
     m_spells[spell] = true;
     m_readySpell = spell;
 
+    if (showLabel)
     switch (spell)
     {
         case Spell::Fireball:
@@ -318,6 +323,11 @@ void Living::setAnimation(AnimPtr_t anim, std::function<void ()> call)
 void Living::setBusy(bool busy)
 {
     m_busy = busy;
+}
+
+void Living::setAttribute(Attribute att, int value)
+{
+    m_attributes[att] = value;
 }
 
 const LivingProfile& Living::getProfile() const

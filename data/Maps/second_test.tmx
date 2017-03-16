@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="105">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="107">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
@@ -83,6 +83,26 @@
   <object id="104" name="final_door" type="door" x="512" y="512" width="32" height="32">
    <properties>
     <property name="key" value="it_test_key"/>
+   </properties>
+  </object>
+  <object id="105" name="skell_spawn" type="spawn" x="320" y="320" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="106" name="skell_spawn" type="spawn" x="704" y="320" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
    </properties>
   </object>
  </objectgroup>

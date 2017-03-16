@@ -33,10 +33,10 @@ void Chest::tryOpening(Inventory* inv)
 	{
 		m_isOpen = true;
 		inv->removeItem(m_requiredKey);
-		IndicationHandler::Get().addIndication("unlocked", sf::Color(0,255,0), getPosition() + vec2f(0,-50));
+		IndicationHandler::Get().addIndication("Unlocked", sf::Color(0,255,0), getPosition() + vec2f(0,-50));
 	}
 	else
-		IndicationHandler::Get().addIndication("closed", sf::Color(255,255,0), getPosition() + vec2f(0,-50));
+		IndicationHandler::Get().addIndication("Locked", sf::Color(255,255,0), getPosition() + vec2f(0,-50));
 }
 
 void Chest::open()

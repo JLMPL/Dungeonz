@@ -10,7 +10,7 @@ Item = {
 
 	effect = function(user)
 		if user:knowsSpell(Spell_Speed) == false then
-			user:learnSpell(Spell_Speed)
+			user:learnSpell(Spell_Speed, true)
 			gui_read("I'm usain bold!");
 		end
 	end

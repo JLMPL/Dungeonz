@@ -15,9 +15,13 @@ class Living;
 class Level
 {
 	public:
-		void init(const std::string& map);
+		void init(const std::string& map, bool isFirst);
 		void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
 		void update(float deltaTime);
+		void leave();
+
+		void loadTravel();
+		void saveTravel();
 
 		Entity*        addEntity(EntityPtr_t entity);
 		ItemPtr_t      addItem(ItemPtr_t item);
