@@ -24,6 +24,7 @@ class StateMenu : public GameState
 		StateMenu();
 
 		void init() override final;
+		void loadHelp();
 		void update(float deltaTime) override final;
 		void leave() override final;
 

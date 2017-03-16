@@ -10,7 +10,7 @@ Item = {
 
 	effect = function(user)
 		if user:knowsSpell(Spell_Fireball) == false then
-			user:learnSpell(Spell_Fireball)
+			user:learnSpell(Spell_Fireball, true)
 			gui_read("Shmaten faken shiten biten.\nTrolololo!");
 		end
 	end

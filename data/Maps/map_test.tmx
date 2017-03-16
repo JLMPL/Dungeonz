@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="99">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
-  <image source="Dungeon_tiles.png" width="320" height="320"/>
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="32" height="32">
   <data encoding="base64" compression="zlib">
@@ -15,7 +15,7 @@
  </layer>
  <layer name="Collision" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlFEKxDAIRHOg3v98/S3ijDPaQKAVwnYT9akxrnW2XMmK+7v52f/4y+xRDuw8yzfqV/Yovsiv4s/0qvxdfifv0/moP5X6o3pXesp51X9o313RzwrfKAbGz3JR341SDyaObdU3u/ldH+yu3PydO5zwWb8pwhjKW32eufeRMVC9TuCr763Ln4o7v6b8iU8UqxJ/9IF8u7Er81ftiYxV7VXxRr5ju4PvzDklpg6f6X6Z78wAlc9mYkc6+U/9/Pyz+G+tjtwXCjoZ
+   eJztlF0KgEAIhD1Q9z9fryE6zmgLQglLtT9+Y7qa7bYrGBY8T/Kjb5Yf6b+IdRSvn2fOZTEx+qN9VfwqvxP3dr7PNeKjPco+Zr2qv2xeHd6PufdMA+JHsbD3hvkfyJSzVd2c5nd9oFyp8Ss5nPBRvTGGGMxdfa6p+YgY2f/awGfvW5c/NbV/TfkTn5lWRr/3kflWtTP9l62JiFXNVXo9Xzl7gq/0OUZTh4/2fpmv9ACWj3pixzrxT/38/F38t0bHbnctOe0=
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -41,6 +41,7 @@
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
+    <property name="key" value="-"/>
    </properties>
   </object>
   <object id="8" name="extra_lever" type="lever" x="846.5" y="128" width="32" height="32">
@@ -112,7 +113,7 @@
     <property name="spawn" value="mob_skeleton"/>
    </properties>
   </object>
-  <object id="34" name="one_bag" type="item_bag" x="512" y="940.5" width="32" height="32">
+  <object id="34" name="one_bag" type="item_bag" x="512" y="928" width="32" height="32">
    <properties>
     <property name="item0" value="it_test_item"/>
     <property name="item1" value="it_test_note"/>
@@ -140,6 +141,7 @@
     <property name="item2" value="it_test_root"/>
     <property name="item3" value="it_test_root"/>
     <property name="item4" value="it_test_root"/>
+    <property name="key" value="-"/>
    </properties>
   </object>
   <object id="48" name="plate" type="press_plate" x="320" y="480" width="32" height="32">
@@ -148,7 +150,7 @@
     <property name="type" value="door"/>
    </properties>
   </object>
-  <object id="89" name="skell_spawn" type="spawn" x="256" y="896" width="32" height="32">
+  <object id="89" name="skell_spawn" type="spawn" x="64" y="896" width="32" height="32">
    <properties>
     <property name="item0" value="-"/>
     <property name="item1" value="-"/>
@@ -168,66 +170,6 @@
     <property name="spawn" value="mob_skeleton"/>
    </properties>
   </object>
-  <object id="91" name="skell_spawn" type="spawn" x="256" y="864" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="92" name="skell_spawn" type="spawn" x="288" y="864" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="93" name="skell_spawn" type="spawn" x="256" y="832" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="94" name="skell_spawn" type="spawn" x="288" y="832" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="95" name="skell_spawn" type="spawn" x="256" y="800" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="96" name="skell_spawn" type="spawn" x="288" y="800" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
   <object id="97" name="second_chest" type="chest" x="160" y="896" width="32" height="32">
    <properties>
     <property name="item0" value="it_test_spell"/>
@@ -235,6 +177,12 @@
     <property name="item2" value="it_test_speed"/>
     <property name="item3" value="it_test_lightning"/>
     <property name="item4" value="it_test_armor"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="98" name="the_exit" type="exit" x="480" y="32" width="32" height="32">
+   <properties>
+    <property name="next" value="second_test.tmx"/>
    </properties>
   </object>
  </objectgroup>

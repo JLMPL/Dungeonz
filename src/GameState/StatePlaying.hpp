@@ -3,6 +3,12 @@
 #include "GameState.hpp"
 #include "../Gameplay/Level.hpp"
 
+enum class TheLevel
+{
+	First,
+	Second
+};
+
 class Level;
 
 class StatePlaying : public GameState
@@ -14,8 +20,13 @@ class StatePlaying : public GameState
 		void update(float deltaTime) override final;
 		void leave() override final;
 
+		void setLevel(const std::string& level);
+		void begForLevel(const std::string& level);
+
 	private:
-		Level level;
+		std::unique_ptr<Level> m_level;
+		std::string m_consider;
+		bool m_considered = true;
 };
 
 #endif

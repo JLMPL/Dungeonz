@@ -10,7 +10,7 @@ Item = {
 
 	effect = function(user)
 		if user:knowsSpell(Spell_Frostbite) == false then
-			user:learnSpell(Spell_Frostbite)
+			user:learnSpell(Spell_Frostbite, true)
 			gui_read("Frosty saves the day!");
 		end
 	end

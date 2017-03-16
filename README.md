@@ -1,6 +1,6 @@
 # Dungeonz
 Simple 2D Top-Down Realtime Dungeon-Crawler made for competition.
-Project is still unnamed and It's not likely to change anytime soon.
+It seems like "Dungeonz" will be the name of the game.
 
 # libs
 __SFML 2.4.1__ - Rendering  

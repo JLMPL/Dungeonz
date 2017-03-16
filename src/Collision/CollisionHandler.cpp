@@ -101,11 +101,12 @@ void CollisionHandler::update(float deltaTime)
 		}
 	}
 
-	if (false)
+	/*/
 	for (int i = 0; i < m_bodies.size(); i++)
 	{
 		m_bodies[i]->draw();
 	}
+	//*/
 }
 
 void CollisionHandler::addBody(BoxPtr_t box)
@@ -140,4 +141,11 @@ void CollisionHandler::clean()
 		}
 		else i++;
 	}
+}
+
+void CollisionHandler::cleanUp()
+{
+	for (std::size_t i = 0; i < m_bodies.size(); i++)
+		m_bodies[i].reset();
+	m_bodies.clear();
 }

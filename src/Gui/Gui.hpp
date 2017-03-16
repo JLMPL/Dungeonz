@@ -12,6 +12,7 @@
 
 class Living;
 class Inventory;
+class StatePlaying;
 
 //Singleton
 class GUI
@@ -32,10 +33,13 @@ class GUI
 		void setFocusLabel(const std::string& label, const vec2i& pos);
 		void addLabel(const std::string& label);
 
+		void goDead();
+
 		void setTarget(Living* living);
 		Living* getTarget();
 
-	private:
+		void setPlayingState(StatePlaying* state);
+		void begForLevel(const std::string& level);
 
 	private:
 		GUIMode m_mode;
@@ -62,6 +66,12 @@ class GUI
 		CenterLabel m_centerLabel;
 
 		Spellbook m_spellbook;
+
+		sf::Text m_deathSentence;
+		sf::RectangleShape m_deathFade;
+		float m_deathTimer = 0;
+
+		StatePlaying* m_playingState;
 };
 
 #endif

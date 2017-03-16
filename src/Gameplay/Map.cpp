@@ -1,6 +1,7 @@
 #include "Map.hpp"
 #include "LivingProfile.hpp"
 #include "Door.hpp"
+#include "Exit.hpp"
 #include "Level.hpp"
 #include "Lever.hpp"
 #include "Chest.hpp"
@@ -232,6 +233,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 			std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+			std::string key = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
 
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value()) - 13;
@@ -240,6 +242,11 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			auto chest = (Chest*)m_level->addEntity(EntityPtr_t(new Chest()));
 			chest->setCode(name);
 			chest->setPosition(pos + vec2f(16,16));
+
+			if (key != "-")
+				chest->setRequiredItem(key);
+			else
+				chest->open();
 
 			if (item0 != "-")
 			{
@@ -392,6 +399,20 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 				auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
 				bag->accessInv().addItem(item);
 			}
+		}
+		else if (type == "exit")
+		{
+			std::string name = object->first_attribute("name")->value();
+			std::string next = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+
+			vec2f pos;
+			pos.x = std::stof(object->first_attribute("x")->value());
+			pos.y = std::stof(object->first_attribute("y")->value()) + 32;
+
+			auto exit = (Exit*)m_level->addEntity(EntityPtr_t(new Exit()));
+			exit->setCode("exit");
+			exit->setPosition(pos);
+			exit->setNext(next);
 		}
 		else if (type == "start")
 		{

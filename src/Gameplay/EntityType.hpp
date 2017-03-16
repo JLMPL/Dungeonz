@@ -11,7 +11,8 @@ enum class EntityType
     SpikeTrap,
     PressPlate,
     ItemBag,
-    Fireball
+    Fireball,
+    Exit
 };
 
 #endif

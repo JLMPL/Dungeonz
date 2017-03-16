@@ -1,25 +1,25 @@
 TODO:
--skeleton attack animation
--saves
+-saves (checkpoints on the beginning of dungeon level)
+-enemies sight raycast
 -dropping items
 
-
-Spellz: - they're gonna be so hardcoded
+Spellz: done
   Fireball - Shoot the fireball on the face, and explode.
   Speed - Run like a crazy fukin rabbit.
   Ice - Shot it on the face, and freeze the mofo.
   Lighting - Zip some fuckers in the balls.
   Heal - Why didn't I think of that.
 
-Monsterz:
-  Bat
+
+Monsterz: 2/5
+  Bat -
   Rat
   Goblin
-  Skeleton
+  Skeleton -
   Skeleton Mage
   There's got to be boss.
 
 
 Testers' notes:
-  
+  -Segfaults
 

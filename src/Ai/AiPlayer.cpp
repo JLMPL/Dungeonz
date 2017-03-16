@@ -7,6 +7,7 @@
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
 #include "../Gameplay/LightningBolt.hpp"
+#include "../Gameplay/Exit.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../Render/IndicationHandler.hpp"
@@ -214,38 +215,46 @@ void AiPlayer::pickingState(float deltaTime)
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), living->getPosition() + vec2f(0,-50));
 					}
-					break;
 				}
+				break;
 				case EntityType::Chest:
 				{
 					auto chest = static_cast<Chest*>(m_focus);
-					if (true/*chest->isOpen()*/)
+					if (chest->isOpen())
 					{
 						if (chest->accessInv().getAmount() > 0)
 							GUI::Get().goLoot(&chest->accessInv(), chest->getPosition().geti());
 						else
 							IndicationHandler::Get().addIndication("empty", sf::Color(255,255,0), chest->getPosition() + vec2f(0,-50));
 					}
-					break;
+					else
+						chest->tryOpening(&m_target->accessInv());
 				}
+				break;
 				case EntityType::Door:
 				{
 					auto door = static_cast<Door*>(m_focus);
 					door->tryOpening(&m_target->accessInv());
-					break;
 				}
+				break;
 				case EntityType::Lever:
 				{
 					auto lever = static_cast<Lever*>(m_focus);
 					lever->activate();
-					break;
 				}
+				break;
 				case EntityType::ItemBag:
 				{
 					auto bag = static_cast<ItemBag*>(m_focus);
 					GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
-					break;
 				}
+				break;
+				case EntityType::Exit:
+				{
+					auto exit = static_cast<Exit*>(m_focus);
+					exit->goFurther();
+				}
+				break;
 			}
 		}
 		m_timer.restart();
@@ -352,16 +361,15 @@ void AiPlayer::castLightning(float deltaTime)
 		m_focus->getType() == EntityType::Living and
 		m_target->getAttribute(Attribute::Mp) >= g_lightningCost)
 	{
-		auto bolt = (LightningBolt*)m_target->getLevel()->addEntity(EntityPtr_t(new LightningBolt()));
+		auto bolt = m_target->getLevel()->addLightningBolt(std::shared_ptr<LightningBolt>(new LightningBolt()));
 		bolt->init(m_target->getFakePos().getf() + vec2f(0,-20),
 				   m_focus->getFakePos().getf() + vec2f(0,-20));
 
 		m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
 
-		//damage
-		static_cast<Living*>(m_focus)->damage(4);
-		static_cast<Living*>(m_focus)->push(m_target->getDirection(), 5, 0.1);
-		//mana
+		Living* focal = static_cast<Living*>(m_focus);
+		focal->damage(4);
+		focal->push(m_target->getDirection(), 5, 0.1);
 
 		m_target->drainMana(g_lightningCost);
 
@@ -409,7 +417,9 @@ void AiPlayer::focus()
 			{
 				if ((*i)->getType() == EntityType::SpikeTrap or
 					(*i)->getType() == EntityType::PressPlate)
+				{
 					i = ents.erase(i);
+				}
 				else
 					i++;
 			}
@@ -464,6 +474,13 @@ void AiPlayer::focus()
 			{
 				vec2i pos = vec2i(m_focus->getPosition().x, m_focus->getPosition().y - 40);
 				GUI::Get().setFocusLabel("Bag", pos);
+			}
+			break;
+			case EntityType::Exit:
+			{
+				auto exit = static_cast<Exit*>(m_focus);
+				vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
+				GUI::Get().setFocusLabel(exit->getNext(), pos);
 			}
 			break;
 		}
