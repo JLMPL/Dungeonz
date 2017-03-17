@@ -17,6 +17,7 @@ class CollisionHandler
 		void update(float deltaTime);
 
 		void addBody(BoxPtr_t box);
+		vec2f castRay(vec2f origin, vec2f end);
 
 		void cleanUp();
 

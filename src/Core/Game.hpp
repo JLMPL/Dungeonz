@@ -3,6 +3,7 @@
 #include "../GameState/StatePlaying.hpp"
 #include "../GameState/StateSplash.hpp"
 #include "../GameState/StateMenu.hpp"
+#include "../GameState/States.hpp"
 #include <SFML/Graphics.hpp>
 
 class Game

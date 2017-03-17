@@ -3,6 +3,10 @@
 #include "Ai.hpp"
 #include <SFML/System/Clock.hpp>
 
+//*/
+#include <SFML/Graphics.hpp>
+//*/
+
 enum class PlayerState
 {
 	Moving = 0,
@@ -49,6 +53,9 @@ class AiPlayer : public Ai
 		bool	  m_speedSpellActive = false;
 
 		sf::Clock m_manaRestoreTimer;
+
+		sf::RectangleShape m_hitPoint;
+		sf::Vertex m_ray[2];
 };
 
 #endif

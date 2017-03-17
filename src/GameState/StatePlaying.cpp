@@ -23,9 +23,6 @@ void StatePlaying::update(float deltaTime)
 		m_considered = true;
 	}
 
-	if (InputHandler::Get().isKeyPressed(sf::Keyboard::P))
-		setLevel("second_test.tmx");
-
 	m_level->update(deltaTime);
 }
 

@@ -1,4 +1,5 @@
 #include "Gui.hpp"
+#include "../Core/Game.hpp"
 #include "../Core/Screen.hpp"
 #include "../Resource/FontCache.hpp"
 #include "../Resource/TextureCache.hpp"
@@ -6,6 +7,7 @@
 #include "../Gameplay/Living.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../GameState/StatePlaying.hpp"
+#include "../GameState/States.hpp"
 
 constexpr int g_BookWidth = 256*1.5;
 constexpr int g_BookHeight = 512;

@@ -13,6 +13,11 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Resource/AnimationCache.hpp"
 
+//*/
+#include "../Collision/CollisionHandler.hpp"
+#include "../Render/Renderer.hpp"
+//*/
+
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
 #endif
@@ -26,6 +31,10 @@ constexpr int g_healCost = 10;
 void AiPlayer::setup()
 {
 	m_state = PlayerState::Moving;
+
+	m_hitPoint.setSize({8,8});
+	m_hitPoint.setFillColor({255,0,0});
+	m_hitPoint.setOrigin({4,4});
 }
 
 void AiPlayer::update(float deltaTime)
@@ -64,6 +73,25 @@ void AiPlayer::update(float deltaTime)
 		m_target->restoreMana(1);
 		m_manaRestoreTimer.restart();
 	}
+
+	/*/
+
+	m_ray[0] = sf::Vertex({m_target->getFakePos().getSfVecf()});
+	if (m_focus)
+		m_ray[1] = sf::Vertex({m_focus->getFakePos().getSfVecf()});
+	else
+		m_ray[1] = sf::Vertex({m_target->getFakePos().getSfVecf()});
+
+	Renderer::Get().submitLine(m_ray, 2, sf::Lines);
+
+	if (m_focus)
+	{
+		vec2f pos = CollisionHandler::Get().castRay(m_target->getFakePos().getf(), m_focus->getFakePos().getf());
+		m_hitPoint.setPosition(pos.getSfVecf());
+		Renderer::Get().submitOverlay(&m_hitPoint);
+	}
+
+	//*/
 }
 
 void AiPlayer::movingState(float deltaTime)

@@ -52,16 +52,17 @@ Game::Game()
 
 	m_splashState.init();
 	m_splashState.setExitFunc(
-	[&]()
+	[this]()
 	{
 		m_currentState = &m_menuState;
 	});
 
 	m_menuState.init();
 	m_menuState.setNewGameFunc(
-	[&]()
+	[this]()
 	{
 		m_currentState = &m_playingState;
+
 	});
 	m_menuState.setExitFunc(
 	[&]()
@@ -75,8 +76,6 @@ Game::Game()
 Game::~Game()
 {
 }
-
-#include <iostream>
 
 void Game::loadCfg()
 {
@@ -136,7 +135,7 @@ void Game::loadCfg()
 }
 
 void Game::update()
-{
+{	
 	deltaTime = Clock.restart().asSeconds();
 
 	m_currentState->update(deltaTime);

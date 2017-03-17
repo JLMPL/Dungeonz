@@ -2,6 +2,8 @@
 #include "../Gameplay/Living.hpp"
 #include "../Gameplay/Level.hpp"
 #include "../Resource/AnimationCache.hpp"
+#include "../Collision/CollisionHandler.hpp"
+#include "../Collision/CollisionAlgorithm.hpp"
 
 void AiMob::setup()
 {
@@ -12,13 +14,19 @@ void AiMob::setup()
 void AiMob::focus()
 {
 	m_focus = nullptr;
-	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 100);
+	auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 200);
 
 	for (auto i = ents.begin(); i != ents.end();)
 	{
 		if ((*i)->getCode() != "pc_player")
+		{
 			i = ents.erase(i);
-		else 
+		}
+		else if (CollisionHandler::Get().castRay(m_target->getFakePos().getf(), (*i)->getFakePos().getf()) != Collision::infVec)
+		{
+			i = ents.erase(i);
+		}
+		else
 			i++;
 	}
 

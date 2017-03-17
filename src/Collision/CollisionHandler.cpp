@@ -101,7 +101,7 @@ void CollisionHandler::update(float deltaTime)
 		}
 	}
 
-	/*/
+	//*/
 	for (int i = 0; i < m_bodies.size(); i++)
 	{
 		m_bodies[i]->draw();
@@ -112,6 +112,45 @@ void CollisionHandler::update(float deltaTime)
 void CollisionHandler::addBody(BoxPtr_t box)
 {
 	m_bodies.push_back(box);
+}
+
+vec2f CollisionHandler::castRay(vec2f origin, vec2f end)
+{
+	if (!m_bodies.empty())
+	{
+		std::vector<vec2f> results;
+		for (std::size_t i = 0; i < m_bodies.size(); i++)
+		{
+			if (m_bodies[i]->type == CollisionType::Static)
+				results.push_back(Collision::lineVsRect(origin, end, m_bodies[i]->rect));
+		}
+
+		for (auto i = results.begin(); i != results.end();)
+		{
+			if ((*i).x == Collision::inf)
+				i = results.erase(i);
+			else
+				i++;
+		}
+
+		std::sort(results.begin(), results.end(),
+		[&](vec2f& a, vec2f& b)
+		{
+			vec2f sub = a - origin;
+	        float dist0 = sub.x * sub.x + sub.y * sub.y;
+
+	        sub = b - origin;
+	        float dist1 = sub.x * sub.x + sub.y * sub.y;
+
+	        if (dist0 < dist1)
+	            return true;
+	        return false;
+		});
+
+		return results[0];
+	}
+	else
+		return vec2f(Collision::inf, Collision::inf);
 }
 
 void CollisionHandler::react(BoxPtr_t a, BoxPtr_t b)
