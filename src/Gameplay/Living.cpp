@@ -46,20 +46,23 @@ void Living::init(const LivingProfile& profile)
 
     CollisionHandler::Get().addBody(m_box);
 
-    m_attributes[Attribute::Hp]      = m_profile.health;
-    m_attributes[Attribute::Health]  = m_profile.health;
-    m_attributes[Attribute::Mp]      = m_profile.magicka;
-    m_attributes[Attribute::Magicka] = m_profile.magicka;
-    m_attributes[Attribute::Damage]  = m_profile.damage;
-    m_attributes[Attribute::Defense] = m_profile.defense;
-    m_attributes[Attribute::currLevel]   = m_profile.level;
-    m_attributes[Attribute::Xp]      = m_profile.xp;
-    m_attributes[Attribute::ToNext] = 250;
+    m_attributes[Attribute::Hp]        = m_profile.health;
+    m_attributes[Attribute::Health]    = m_profile.health;
+    m_attributes[Attribute::Mp]        = m_profile.magicka;
+    m_attributes[Attribute::Magicka]   = m_profile.magicka;
+    m_attributes[Attribute::Damage]    = m_profile.damage;
+    m_attributes[Attribute::Defense]   = m_profile.defense;
+    m_attributes[Attribute::currLevel] = m_profile.level;
+    m_attributes[Attribute::Xp]        = m_profile.xp;
+    m_attributes[Attribute::ToNext]    = 250;
 
     for (int i = 0; i < Spell::NumSpells; i++)
     {
         m_spells[i] = false;
     }
+
+    m_equipped[Equip::Weapon] = nullptr;
+    m_equipped[Equip::Armor] = nullptr;
 }
 
 void Living::update(float deltaTime)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="107">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="127">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztllEKgCAMhmfla2/SKbpV9z9DBUow3KTmJsQePtxg9LP5ax4AcDiO4xAsFyEz53Vq5Dexk/4moId+EvBXfUldL/3iyzhIH/tsxPxxbKkfchyU9Wu91uZP1Um5fRbzd0uM++XqvrBX+kxA+42r09p/Lsf7v6OepPprI9f2/9bILc7fm/lrYKWzwPOmoO57rk4K9a7g/gfa58/9b+f/0fqanA55MtE=
+   eJztlsEOhCAMRGVXrt6MP+j/f8N6kGTSMKVWitnEQyPG0kHm0bBP07S/8cYR8xFpUOSK/jY4pP46OJh+lL+t+vh9Bo+Qi+/5/DTek5ifoT7WZvro0V2Py7jUb/mP46WDxx7/ca1P6rP5Gj+j9AuXuZHn4d+iLznT1nmVf+v+y7G2Tg//Wt10jlOw/7V/re0/y7urj/6hd5rPLM+jj/4x3rS8KP4tPkfxL/sy69NR/Mu+zPp0ZP+z7n+v88fyr+R5z1/t7ljjTLtjevln9wrGmcz7N/4Xg34k/5thfiT/nro99J+IHyeF0G4=
   </data>
  </layer>
  <layer name="Decoration" width="32" height="32">
@@ -15,11 +15,11 @@
  </layer>
  <layer name="Collision" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDFagQwU81O0f1T/49BMbz8PZfnLUUdN+HSzs4Wg/NruwhT8x6oai/cSIj8T0P5D2D7R+evqfmHp9INof9LKfGPHR9E9f/QPt/8GQ/4jF+AAA+F4eFQ==
+   eJztlFsKQCEIRF1Q+19fv5fwxQ2bMRoQpLSTJok8PYkMkH35p8XKP9Frr/8MfM3/Iy+/A39XVfV778vGr5i/dR3BH4of3dPaY+ZrLK3/mbiO/Cg3irt1/rN8Sx3+f4b6LVvPysQh+Oj5Q/Mtsc5/Jr+yfhQfYRPWDjg1
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="26" name="player_spawn" type="start" x="512" y="960" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="512" y="448" width="32" height="32"/>
   <object id="98" name="skell_spawn" type="spawn" x="320" y="704" width="32" height="32">
    <properties>
     <property name="item0" value="-"/>
@@ -72,7 +72,7 @@
   </object>
   <object id="103" name="left_chest" type="chest" x="416" y="608" width="32" height="32">
    <properties>
-    <property name="item0" value="-"/>
+    <property name="item0" value="it_test_heal"/>
     <property name="item1" value="it_test_item"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
@@ -103,6 +103,49 @@
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
     <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="107" name="right_spikes" type="spike_trap" x="672" y="576" width="32" height="32"/>
+  <object id="113" name="left_spikes" type="spike_trap" x="352" y="576" width="32" height="32"/>
+  <object id="115" name="left_plate" type="press_plate" x="448" y="704" width="32" height="32">
+   <properties>
+    <property name="activate" value="left_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="116" name="right_plate" type="press_plate" x="576" y="704" width="32" height="32">
+   <properties>
+    <property name="activate" value="right_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="117" name="spike_lever" type="lever" x="960" y="320" width="32" height="32">
+   <properties>
+    <property name="activate" value="firsters"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="118" name="firsters" type="spike_trap" x="864" y="448" width="32" height="32"/>
+  <object id="119" name="firsters" type="spike_trap" x="896" y="448" width="32" height="32"/>
+  <object id="120" name="spike_lever2" type="lever" x="960" y="512" width="32" height="32">
+   <properties>
+    <property name="activate" value="seconders"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="121" name="seconders" type="spike_trap" x="864" y="640" width="32" height="32"/>
+  <object id="122" name="seconders" type="spike_trap" x="896" y="640" width="32" height="32"/>
+  <object id="123" name="thirders" type="spike_trap" x="896" y="832" width="32" height="32"/>
+  <object id="124" name="thirders" type="spike_trap" x="864" y="832" width="32" height="32"/>
+  <object id="125" name="spike_lever3" type="lever" x="960" y="704" width="32" height="32">
+   <properties>
+    <property name="activate" value="thirders"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="126" name="the_exit" type="exit" x="512" y="416" width="32" height="32">
+   <properties>
+    <property name="next" value="demo_test.tmx"/>
    </properties>
   </object>
  </objectgroup>

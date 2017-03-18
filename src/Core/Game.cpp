@@ -62,7 +62,6 @@ Game::Game()
 	[this]()
 	{
 		m_currentState = &m_playingState;
-
 	});
 	m_menuState.setExitFunc(
 	[&]()

@@ -111,8 +111,10 @@ void Level::loadTravel()
 			}
 		}
 	}
+	file.close();
 }
 
+/*
 void Level::saveTravel()
 {
 	Living* player = (Living*)getEntityByCode("pc_player");
@@ -179,6 +181,67 @@ void Level::saveTravel()
 	}
 	else
 		file << "0\n";
+
+	file.close();
+}
+*/
+
+void Level::saveTravel()
+{
+	Living* player = (Living*)getEntityByCode("pc_player");
+
+	FILE* file = fopen("data/travel.sav", "w");
+
+	//STATS
+	fprintf(file, "%d\n", player->getAttribute(Attribute::Hp));
+	fprintf(file, "%d\n", player->getAttribute(Attribute::Health));
+
+	fprintf(file, "%d\n", player->getAttribute(Attribute::Mp));
+	fprintf(file, "%d\n", player->getAttribute(Attribute::Magicka));
+
+	fprintf(file, "%d\n", player->getAttribute(Attribute::currLevel));
+	fprintf(file, "%d\n", player->getAttribute(Attribute::Xp));
+	fprintf(file, "%d\n", player->getAttribute(Attribute::ToNext));
+	//SPELLS
+
+	for (std::size_t i = 0; i < Spell::NumSpells; i++)
+	{
+		if (player->knowsSpell(i))
+			fprintf(file, "1\n");
+		else
+			fprintf(file, "0\n");
+	}
+
+	fprintf(file, "%d\n", player->getReadySpell());
+
+	//ITEMS
+	int amount = player->accessInv().getAmount();
+	fprintf(file, "%d\n", amount);
+
+	for (std::size_t i = 0; i < amount; i++)
+	{
+		fprintf(file, "%s\n", player->accessInv().getItem(i)->code.c_str());
+	}
+	//EQUIPPED
+
+	Item* weapon = player->getEquippedItem(Equip::Weapon);
+	Item* armor = player->getEquippedItem(Equip::Armor);
+
+	if (weapon)
+	{
+		fprintf(file, "%s\n", weapon->code.c_str());
+	}
+	else
+		fprintf(file, "0\n");
+
+	if (armor)
+	{
+		fprintf(file, "%s\n", armor->code.c_str());
+	}
+	else
+		fprintf(file, "0\n");
+
+	fclose(file);
 }
 
 Entity* Level::addEntity(EntityPtr_t entity)
@@ -340,7 +403,7 @@ std::vector<Entity*> Level::getEntitiesByCode(std::string code)
 {
 	std::vector<Entity*> ents;
 
-	for (int i = 0; i < m_entities.size(); i++)
+	for (std::size_t i = 0; i < m_entities.size(); i++)
 	{
 		if (m_entities[i]->getCode() == code)
 		{

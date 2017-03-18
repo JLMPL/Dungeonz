@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="78">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1VsKwyAQBVCziJJ1dQ/Z/xpKPgp20ESbh6WcjwNKxc41E7OklBYAAAAAAAAAAAAAAADgVNMP1DAq92rOxqNruivzO/fqkY1H13e1OX3mjkbXd7VHGJfyTxXf/mfco2V+JNfRdXPFGT3XOr87f/4MSn3R+27U9ot9V5v39uBWfbGW0j5790Jv/rhfnqtl3tqDMVdJaZ+4Zu9eOHI35vnieWzNS/vUsm2d2frbM1Nae1f+nvdgq6d6vmHx3P7pO9eav/asOc8LQIb26g==
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="992" y="1984" width="32" height="32"/>
+  <object id="6" name="rf_lever" type="lever" x="1472" y="1664" width="32" height="32">
+   <properties>
+    <property name="activate" value="ct_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="7" name="rf_door" type="door" x="1312" y="1856" width="32" height="32">
+   <properties>
+    <property name="key" value="it_rf_key"/>
+   </properties>
+  </object>
+  <object id="8" name="rf_chest" type="chest" x="1632" y="1792" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_rf_key"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="9" name="ct_door" type="door" x="768" y="1920" width="32" height="32">
+   <properties>
+    <property name="key" value="it_test_key"/>
+   </properties>
+  </object>
+  <object id="63" name="shit" type="spike_trap" x="576" y="1888" width="32" height="32"/>
+  <object id="66" name="ct_plate" type="press_plate" x="608" y="1888" width="32" height="32">
+   <properties>
+    <property name="activate" value="shit"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="76" name="shit" type="spike_trap" x="576" y="1920" width="32" height="32"/>
+  <object id="77" name="shit" type="spike_trap" x="576" y="1856" width="32" height="32"/>
+ </objectgroup>
+</map>

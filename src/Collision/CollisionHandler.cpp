@@ -101,7 +101,7 @@ void CollisionHandler::update(float deltaTime)
 		}
 	}
 
-	//*/
+	/*/
 	for (int i = 0; i < m_bodies.size(); i++)
 	{
 		m_bodies[i]->draw();
