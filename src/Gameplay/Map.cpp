@@ -325,7 +325,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 		{
 			std::string name = object->first_attribute("name")->value();
 			std::string whom = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
-			// std::string type = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+			std::string type = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
 
 			vec2f pos;
 			pos.x = std::stof(object->first_attribute("x")->value());
@@ -335,9 +335,40 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 			press->setCode(name);
 			press->setPosition(pos);
 
-			printf("fuuuuuuck = %d\n", m_level->getEntitiesByCode(whom).size());
+			press->setActivateFunc(
+			[=]()
+			{
+				if (type == "door")
+				{
+					Door* door = (Door*)m_level->getEntityByCode(whom);
 
-			press->whom(m_level->getEntitiesByCode(whom));
+					if (door)
+						door->open();
+				}
+				else if (type == "spike_trap")
+				{
+					auto spikes = m_level->getEntitiesByCode(whom);
+					
+					for (std::size_t i = 0; i < spikes.size(); i++)
+					{
+						static_cast<SpikeTrap*>(spikes[i])->disable();
+					}
+				}
+			});
+
+			press->setDeactivateFunc(
+			[=]()
+			{
+				if (type == "spike_trap")
+				{
+					auto spikes = m_level->getEntitiesByCode(whom);
+
+					for (std::size_t i = 0; i < spikes.size(); i++)
+					{
+						static_cast<SpikeTrap*>(spikes[i])->enable();
+					}
+				}
+			});
 		}
 		else if (type == "item_bag")
 		{

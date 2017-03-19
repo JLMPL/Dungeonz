@@ -48,7 +48,13 @@ Game::Game()
 								   std::to_string(g_updateVersion) + " WIP");
 	version.setPosition(sf::Vector2f(5,5));
 
-	m_playingState.init();
+	GUI::Get().setBackToMenuFunc(
+	[this]()
+	{
+		this->m_currentState = &this->m_menuState;
+		Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
+	});
+
 
 	m_splashState.init();
 	m_splashState.setExitFunc(
@@ -61,6 +67,7 @@ Game::Game()
 	m_menuState.setNewGameFunc(
 	[this]()
 	{
+		m_playingState.init();
 		m_currentState = &m_playingState;
 	});
 	m_menuState.setExitFunc(

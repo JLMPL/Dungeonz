@@ -41,6 +41,8 @@ class GUI
 		void setPlayingState(StatePlaying* state);
 		void begForLevel(const std::string& level);
 
+		void setBackToMenuFunc(std::function<void ()> func);
+
 	private:
 		GUIMode m_mode;
 		sf::Clock m_timer;
@@ -72,6 +74,8 @@ class GUI
 		float m_deathTimer = 0;
 
 		StatePlaying* m_playingState;
+
+		std::function<void ()> m_backToMenuFunc;
 };
 
 #endif

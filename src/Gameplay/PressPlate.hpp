@@ -2,6 +2,7 @@
 #define PRESS_PLATE_HPP
 #include "Entity.hpp"
 #include <vector>
+#include <functional>
 
 class PressPlate : public Entity
 {
@@ -10,15 +11,18 @@ class PressPlate : public Entity
 
 		void update(float deltaTime) override final;
 
-		void whom(const std::vector<Entity*>& entity);
-
 		void activate();
 		void deactivate();
 
+		void setActivateFunc(std::function<void ()> func);
+		void setDeactivateFunc(std::function<void ()> func);
+
 	private:
-		bool      m_active = false;
+		bool m_active = false;
 		sf::Clock m_timer;
-		std::vector<Entity*> m_whom;
+
+		std::function<void ()> m_activateFunc;
+		std::function<void ()> m_deactivateFunc;
 };
 
 #endif

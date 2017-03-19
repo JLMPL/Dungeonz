@@ -175,6 +175,13 @@ void GUI::update(float deltaTime)
 
 			Renderer::Get().submitOverlay(&m_deathFade);
 			Renderer::Get().submitOverlay(&m_deathSentence);
+
+			if (howmuch >= 254)
+			{
+				m_backToMenuFunc();
+				m_mode = GUIMode::Off;
+				m_deathTimer = 0;
+			}
 		}
 		break;
 	}
@@ -265,4 +272,9 @@ void GUI::setPlayingState(StatePlaying* state)
 void GUI::begForLevel(const std::string& level)
 {
 	m_playingState->begForLevel(level);
+}
+
+void GUI::setBackToMenuFunc(std::function<void ()> func)
+{
+	m_backToMenuFunc = func;
 }

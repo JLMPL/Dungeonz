@@ -52,6 +52,12 @@ struct vec2
 	}
 
 	template <typename U>
+	bool operator==(const vec2<U>& v) const
+	{
+		return x == static_cast<T>(v.x) and y == static_cast<T>(v.y);
+	}
+
+	template <typename U>
 	bool operator!=(const vec2<U>& v) const
 	{
 		return x != static_cast<T>(v.x) and y != static_cast<T>(v.y);

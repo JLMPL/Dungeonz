@@ -32,7 +32,7 @@ void Living::init(const LivingProfile& profile)
     m_box->reactMaterial = CollMaterial::Trap;
     m_box->callback = [this]()
     {
-        if (this->m_trapTimer > 750 + 60 + 160)
+        if (this->m_trapTimer > 750)
         {
             this->damage(2);
             this->m_trapTimer = 0;

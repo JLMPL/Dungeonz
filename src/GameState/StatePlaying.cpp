@@ -7,11 +7,14 @@
 StatePlaying::StatePlaying()
 {
 	GUI::Get().setPlayingState(this);
+	m_level = nullptr;
 }
 
 void StatePlaying::init()
 {
-	m_level = std::unique_ptr<Level>(new Level());
+	if (m_level)
+		m_level->leave();
+	m_level.reset(new Level());
 	m_level->init("map_test.tmx", true);
 }
 

@@ -10,10 +10,11 @@
 #include "../Gameplay/Exit.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
-#include "../Render/IndicationHandler.hpp"
 #include "../Resource/AnimationCache.hpp"
+#include "../Render/IndicationHandler.hpp"
+#include "../Collision/CollisionAlgorithm.hpp"
 
-//*/
+/*/
 #include "../Collision/CollisionHandler.hpp"
 #include "../Render/Renderer.hpp"
 //*/
@@ -22,11 +23,11 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-constexpr int g_fireballCost = 12;
-constexpr int g_frostbiteCost = 16;
-constexpr int g_speedCost = 25;
-constexpr int g_lightningCost = 2;
-constexpr int g_healCost = 10;
+constexpr int g_fireballCost = 15;
+constexpr int g_frostbiteCost = 20;
+constexpr int g_speedCost = 35;
+constexpr int g_lightningCost = 5;
+constexpr int g_healCost = 32;
 
 void AiPlayer::setup()
 {
