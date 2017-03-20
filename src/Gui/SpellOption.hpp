@@ -6,17 +6,17 @@
 
 struct SpellOption
 {
-	sf::Sprite icon;
-	sf::Text label;
+    sf::Sprite icon;
+    sf::Text label;
 
-	SpellOption();
-	SpellOption(const std::string& _icon, const std::string& _label);
+    SpellOption();
+    SpellOption(const std::string& _icon, const std::string& _label);
 
-	void draw();
-	void enable();
-	void disable();
+    void draw();
+    void enable();
+    void disable();
 
-	void setPosition(const vec2i& pos);
+    void setPosition(const vec2i& pos);
 };
 
 #endif

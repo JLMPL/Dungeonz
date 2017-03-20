@@ -14,38 +14,38 @@ class Living;
 
 class Level
 {
-	public:
-		void init(const std::string& map, bool isFirst);
-		void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
-		void update(float deltaTime);
-		void leave();
+    public:
+        void init(const std::string& map, bool isFirst);
+        void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
+        void update(float deltaTime);
+        void leave();
 
-		void loadTravel();
-		void saveTravel();
+        void loadTravel();
+        void saveTravel();
 
-		Entity*        addEntity(EntityPtr_t entity);
-		ItemPtr_t      addItem(ItemPtr_t item);
-		FireMissile*   addFireMissile(std::shared_ptr<FireMissile> missile);
-		IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
-		LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
-		Exit* 		   addExit(EntityPtr_t exit);
+        Entity*        addEntity(EntityPtr_t entity);
+        ItemPtr_t      addItem(ItemPtr_t item);
+        FireMissile*   addFireMissile(std::shared_ptr<FireMissile> missile);
+        IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
+        LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
+        Exit*          addExit(EntityPtr_t exit);
 
-		std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
-		Entity* getEntityByCode(std::string code);
-		std::vector<Entity*> getEntitiesByCode(std::string code);
+        std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
+        Entity* getEntityByCode(std::string code);
+        std::vector<Entity*> getEntitiesByCode(std::string code);
 
-		Living* getPlayer();
+        Living* getPlayer();
 
-	private:
-		std::vector<EntityPtr_t> m_entities;
-		uint m_lastEntityId = 0;
-		std::vector<ItemPtr_t> m_items;
-		std::vector<BigParticle> m_bigParticles;
-		std::vector<std::shared_ptr<FireMissile>> m_missiles;
-		std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
-		std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
+    private:
+        std::vector<EntityPtr_t> m_entities;
+        uint m_lastEntityId = 0;
+        std::vector<ItemPtr_t> m_items;
+        std::vector<BigParticle> m_bigParticles;
+        std::vector<std::shared_ptr<FireMissile>> m_missiles;
+        std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
+        std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
 
-		Map m_map;
+        Map m_map;
 };
 
 #endif

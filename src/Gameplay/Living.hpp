@@ -13,85 +13,85 @@
 
 class Living : public Entity
 {
-	public:
-		using Base = Entity;
+    public:
+        using Base = Entity;
 
-		Living();
-		Living   (const LivingProfile& profile);
-		void init(const LivingProfile& profile);
+        Living();
+        Living   (const LivingProfile& profile);
+        void init(const LivingProfile& profile);
 
-		void update(float deltaTime) override final;
+        void update(float deltaTime) override final;
 
-		void push(Direction_t dir, float dist, float duration);
-		void damage(int damage);
+        void push(Direction_t dir, float dist, float duration);
+        void damage(int damage);
 
-		void freeze(int time);
+        void freeze(int time);
 
-		void setDamage(int value);
-		void restoreBasicDamage();
+        void setDamage(int value);
+        void restoreBasicDamage();
 
-		void setDefense(int value);
-		void restoreBasicDefense();
+        void setDefense(int value);
+        void restoreBasicDefense();
 
-		void restoreHealth(int heal);
-		void restoreFullHealth();
+        void restoreHealth(int heal);
+        void restoreFullHealth();
 
-		void restoreMana(int mana);
-		void restoreFullMana();
-		void drainMana(int mana);
-		
-		void setEquippedItem(int where, Item* item);
-		bool isEquipped(int where, Item* item);
-		Item* getEquippedItem(int where);
+        void restoreMana(int mana);
+        void restoreFullMana();
+        void drainMana(int mana);
+        
+        void setEquippedItem(int where, Item* item);
+        bool isEquipped(int where, Item* item);
+        Item* getEquippedItem(int where);
 
-		void setReadySpell(int spell);
-		void learnSpell(int spell, bool showLabel);
-		bool knowsSpell(int spell);
-		int getReadySpell();
+        void setReadySpell(int spell);
+        void learnSpell(int spell, bool showLabel);
+        bool knowsSpell(int spell);
+        int getReadySpell();
 
-		void addXp(int xp);
-		int  getXp();
+        void addXp(int xp);
+        int  getXp();
 
-		void setAi(AiPtr_t ai);
-		void setDirection(Direction_t facing);
-		void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
-		void setBusy(bool busy);
-		void setAttribute(Attribute att, int value);
-		
-		const LivingProfile& getProfile() const;
-		Direction_t          getDirection() const;
-		int 				 getAttribute(Attribute att) const;
-		bool 				 isAnimFinished() const;
-		bool 				 isBusy() const;
-		Inventory& 			 accessInv();
-		bool 				 isDead() const;
+        void setAi(AiPtr_t ai);
+        void setDirection(Direction_t facing);
+        void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
+        void setBusy(bool busy);
+        void setAttribute(Attribute att, int value);
+        
+        const LivingProfile& getProfile() const;
+        Direction_t          getDirection() const;
+        int                  getAttribute(Attribute att) const;
+        bool                 isAnimFinished() const;
+        bool                 isBusy() const;
+        Inventory&           accessInv();
+        bool                 isDead() const;
 
-	private:
-		LivingProfile m_profile;
-		Direction_t   m_facing;
-		AiPtr_t       m_ai = nullptr;
-		bool          m_busy = false;
+    private:
+        LivingProfile m_profile;
+        Direction_t   m_facing;
+        AiPtr_t       m_ai = nullptr;
+        bool          m_busy = false;
 
-		sf::CircleShape m_shadow;
+        sf::CircleShape m_shadow;
 
-		bool        m_push = false;
-		Direction_t m_pushDir;
-		float		m_pushTimer;
-		vec2f 		m_pushStart;
-		vec2f 		m_pushEnd;
-		float       m_pushDuration;
+        bool        m_push = false;
+        Direction_t m_pushDir;
+        float       m_pushTimer;
+        vec2f       m_pushStart;
+        vec2f       m_pushEnd;
+        float       m_pushDuration;
 
-		bool 		m_isFrozen = false;
-		int 		m_frozenDuration = 0;
-		sf::Clock 	m_frozenTimer;
+        bool        m_isFrozen = false;
+        int         m_frozenDuration = 0;
+        sf::Clock   m_frozenTimer;
 
-		float 		m_trapTimer = 0;
+        float       m_trapTimer = 0;
 
-		int       m_attributes[Attribute::NumAtts];
-		Inventory m_inv;
-		Item*     m_equipped[Equip::NumEq];
-		bool	  m_spells[Spell::NumSpells];
-		int 	  m_readySpell = -1;
+        int       m_attributes[Attribute::NumAtts];
+        Inventory m_inv;
+        Item*     m_equipped[Equip::NumEq];
+        bool      m_spells[Spell::NumSpells];
+        int       m_readySpell = -1;
 };
 
 #endif

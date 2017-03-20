@@ -3,7 +3,7 @@
 
 struct DoorProfile
 {
-	std::string requiredKey;
+    std::string requiredKey;
 };
 
 #endif

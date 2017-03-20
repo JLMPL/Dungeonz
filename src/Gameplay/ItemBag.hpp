@@ -4,13 +4,13 @@
 
 class ItemBag : public Chest
 {
-	public:
-		ItemBag();
+    public:
+        ItemBag();
 
-		void update(float deltaTime);
-		
-	private:
-		sf::CircleShape m_shadow;
+        void update(float deltaTime);
+        
+    private:
+        sf::CircleShape m_shadow;
 };
 
 #endif

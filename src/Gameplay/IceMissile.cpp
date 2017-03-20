@@ -7,7 +7,7 @@
 
 IceMissile::IceMissile()
 {
-	m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = SpritePtr_t(new AnimatedSprite());
     m_sprite->loadFromFile("iceball.ani");
     m_sprite->setOrigin({12,12});
 
@@ -26,7 +26,7 @@ IceMissile::IceMissile()
 
 void IceMissile::init(vec2f origin, Direction_t dir, EntityType type)
 {
-	m_type = type;
+    m_type = type;
     m_direction = dir;
     m_box->rect.x = origin.x;
     m_box->rect.y = origin.y;
@@ -39,13 +39,13 @@ void IceMissile::setOwner(Entity* owner)
 
 void IceMissile::update(float deltaTime)
 {
-	if (m_warmup.getElapsedTime().asSeconds() > 0.2)
+    if (m_warmup.getElapsedTime().asSeconds() > 0.2)
         m_box->enabled = true;
 
     if (m_box->enabled == true)
     {
         std::vector<Entity*> foundEnts = m_level->getEntitiesInRange(vec2f(m_box->rect.x + m_box->rect.w/2,
-                                         								   m_box->rect.y + m_box->rect.h/2), 24);
+                                                                           m_box->rect.y + m_box->rect.h/2), 24);
         
         for (auto& i : foundEnts)
             blow(i);
@@ -76,7 +76,7 @@ void IceMissile::update(float deltaTime)
 
 void IceMissile::blow(Entity* ent)
 {
-	if (ent)
+    if (ent)
     {
         switch (ent->getType())
         {

@@ -6,23 +6,23 @@
 
 class PressPlate : public Entity
 {
-	public:
-		PressPlate();
+    public:
+        PressPlate();
 
-		void update(float deltaTime) override final;
+        void update(float deltaTime) override final;
 
-		void activate();
-		void deactivate();
+        void activate();
+        void deactivate();
 
-		void setActivateFunc(std::function<void ()> func);
-		void setDeactivateFunc(std::function<void ()> func);
+        void setActivateFunc(std::function<void ()> func);
+        void setDeactivateFunc(std::function<void ()> func);
 
-	private:
-		bool m_active = false;
-		sf::Clock m_timer;
+    private:
+        bool m_active = false;
+        sf::Clock m_timer;
 
-		std::function<void ()> m_activateFunc;
-		std::function<void ()> m_deactivateFunc;
+        std::function<void ()> m_activateFunc;
+        std::function<void ()> m_deactivateFunc;
 };
 
 #endif

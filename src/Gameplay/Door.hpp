@@ -6,18 +6,18 @@ class Inventory;
 
 class Door : public Entity
 {
-	public:
-		Door();
+    public:
+        Door();
 
-		void update(float deltaTime);
-		void tryOpening(Inventory* inv);
-		void open();
+        void update(float deltaTime);
+        void tryOpening(Inventory* inv);
+        void open();
 
-		void setRequiredItem(const std::string& code);
-		
-	private:
-		std::string m_requiredKey;
-		bool m_isOpen = false;
+        void setRequiredItem(const std::string& code);
+        
+    private:
+        std::string m_requiredKey;
+        bool m_isOpen = false;
 };
 
 #endif

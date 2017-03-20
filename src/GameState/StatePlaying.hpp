@@ -5,28 +5,28 @@
 
 enum class TheLevel
 {
-	First,
-	Second
+    First,
+    Second
 };
 
 class Level;
 
 class StatePlaying : public GameState
 {
-	public:
-		StatePlaying();
+    public:
+        StatePlaying();
 
-		void init() override final;
-		void update(float deltaTime) override final;
-		void leave() override final;
+        void init() override final;
+        void update(float deltaTime) override final;
+        void leave() override final;
 
-		void setLevel(const std::string& level);
-		void begForLevel(const std::string& level);
+        void setLevel(const std::string& level);
+        void begForLevel(const std::string& level);
 
-	private:
-		std::unique_ptr<Level> m_level;
-		std::string m_consider;
-		bool m_considered = true;
+    private:
+        std::unique_ptr<Level> m_level;
+        std::string m_consider;
+        bool m_considered = true;
 };
 
 #endif

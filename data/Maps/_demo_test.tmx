@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="126">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1k0OgjAQhmE4BOnBvIIegngbt+w9nzGhcTKZTluw/OVdPMEKhn5lhnrvuu4OAAAAAAAAAAAAAAAAAAAA4JIejr3ntoWnY++5bWF0eL97F9o73z/yl2Y9W/aa5790DY6+Dkvq/0r59VpY31v7Qszm7R9nzG/l0PuCd65k/3irz0epmTGRQ/eFdy7XP7JuztIzOtck1OaXdaP75Kj5J0dpft0vso5a5J/UsdUalOb3+qXFfqLnqc/fZv087oXUOHfPwTk3imOuT7bMH+ZxEFLjf+T3eqnl8+8T4pwHITWW9VCTP/bJ92jtr6+K3Evzp/bomEvntMayHiS5ltYaP7rffwtrDnv1f8wXVN7cWOcL4ppgkO/7Ne+/Nc/fy5+rezm28g2G1Fy8/Ln3X0lufd/a3yxRk98irz3Lf8JW1tb9BwH8cW8=
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1UkOhCAQBVDvv+oj994GqtBWhryXGENEUj9MxwEAAAAAAAAAAAAA7OiTeHYW5ZN/b/Lf+746+X/P+syd0NN3Fa1Mpb6ZfCvmf2PMGddHzxq+Ov+t/TOraP9H/57HaPVbTU/+O+M8JXvW1+YvcycchXepjhFqddXarTpbfTL35ZMy93ip3nM7OhNL/9b+fzt/5nv0Lo0Xrf/MeTl6/mt1ZNbBP2ofvf+vtqOxs+t8pfP/TqZR+/9Js2X6AvQBgNE=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="992" y="1984" width="32" height="32"/>
+  <object id="6" name="rf_lever" type="lever" x="1344" y="1696" width="32" height="32">
+   <properties>
+    <property name="activate" value="ct_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="7" name="rf_door" type="door" x="1216" y="1888" width="32" height="32">
+   <properties>
+    <property name="key" value="it_rf_key"/>
+   </properties>
+  </object>
+  <object id="8" name="rf_chest" type="chest" x="1344" y="1888" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_rf_key"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="9" name="ct_door" type="door" x="768" y="1920" width="32" height="32">
+   <properties>
+    <property name="key" value="it_test_key"/>
+   </properties>
+  </object>
+  <object id="63" name="shit" type="spike_trap" x="704" y="1888" width="32" height="32"/>
+  <object id="66" name="ct_plate" type="press_plate" x="736" y="1888" width="32" height="32">
+   <properties>
+    <property name="activate" value="shit"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="76" name="shit" type="spike_trap" x="704" y="1920" width="32" height="32"/>
+  <object id="77" name="shit" type="spike_trap" x="704" y="1856" width="32" height="32"/>
+  <object id="78" name="shit" type="spike_trap" x="704" y="1824" width="32" height="32"/>
+  <object id="79" name="shit" type="spike_trap" x="704" y="1952" width="32" height="32"/>
+  <object id="80" name="shit" type="spike_trap" x="672" y="1952" width="32" height="32"/>
+  <object id="81" name="shit" type="spike_trap" x="672" y="1920" width="32" height="32"/>
+  <object id="82" name="shit" type="spike_trap" x="640" y="1920" width="32" height="32"/>
+  <object id="83" name="shit" type="spike_trap" x="640" y="1952" width="32" height="32"/>
+  <object id="84" name="shit" type="spike_trap" x="640" y="1824" width="32" height="32"/>
+  <object id="85" name="shit" type="spike_trap" x="640" y="1856" width="32" height="32"/>
+  <object id="86" name="shit" type="spike_trap" x="608" y="1856" width="32" height="32"/>
+  <object id="87" name="shit" type="spike_trap" x="608" y="1824" width="32" height="32"/>
+  <object id="88" name="shit" type="spike_trap" x="576" y="1856" width="32" height="32"/>
+  <object id="89" name="shit" type="spike_trap" x="576" y="1824" width="32" height="32"/>
+  <object id="90" name="shit" type="spike_trap" x="576" y="1920" width="32" height="32"/>
+  <object id="91" name="shit" type="spike_trap" x="576" y="1952" width="32" height="32"/>
+  <object id="92" name="shit" type="spike_trap" x="544" y="1952" width="32" height="32"/>
+  <object id="93" name="shit" type="spike_trap" x="544" y="1920" width="32" height="32"/>
+  <object id="94" name="shit" type="spike_trap" x="512" y="1952" width="32" height="32"/>
+  <object id="95" name="shit" type="spike_trap" x="512" y="1920" width="32" height="32"/>
+  <object id="96" name="shit" type="spike_trap" x="512" y="1824" width="32" height="32"/>
+  <object id="97" name="shit" type="spike_trap" x="512" y="1856" width="32" height="32"/>
+  <object id="98" name="shit" type="spike_trap" x="480" y="1856" width="32" height="32"/>
+  <object id="99" name="shit" type="spike_trap" x="480" y="1824" width="32" height="32"/>
+  <object id="100" name="shit" type="spike_trap" x="448" y="1856" width="32" height="32"/>
+  <object id="101" name="shit" type="spike_trap" x="448" y="1824" width="32" height="32"/>
+  <object id="102" name="shit" type="spike_trap" x="448" y="1920" width="32" height="32"/>
+  <object id="103" name="shit" type="spike_trap" x="448" y="1952" width="32" height="32"/>
+  <object id="104" name="shit" type="spike_trap" x="416" y="1952" width="32" height="32"/>
+  <object id="105" name="shit" type="spike_trap" x="416" y="1920" width="32" height="32"/>
+  <object id="106" name="shit" type="spike_trap" x="384" y="1952" width="32" height="32"/>
+  <object id="107" name="shit" type="spike_trap" x="384" y="1920" width="32" height="32"/>
+  <object id="108" name="shit" type="spike_trap" x="384" y="1824" width="32" height="32"/>
+  <object id="109" name="shit" type="spike_trap" x="384" y="1856" width="32" height="32"/>
+  <object id="114" name="shit" type="spike_trap" x="640" y="1888" width="32" height="32"/>
+  <object id="115" name="shit" type="spike_trap" x="576" y="1888" width="32" height="32"/>
+  <object id="117" name="shit" type="spike_trap" x="448" y="1888" width="32" height="32"/>
+  <object id="118" name="shit" type="spike_trap" x="384" y="1888" width="32" height="32"/>
+  <object id="124" name="ct_plate" type="press_plate" x="352" y="1888" width="32" height="32">
+   <properties>
+    <property name="activate" value="shit"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="125" name="shit" type="spike_trap" x="512" y="1888" width="32" height="32"/>
+ </objectgroup>
+</map>

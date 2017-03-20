@@ -15,44 +15,44 @@ class Level;
 
 struct Tile
 {
-	Tile(){}
+    Tile(){}
 
-	sf::Sprite sprite;
-	vec2i position;
-	Recti rect;
-	bool empty = false;
+    sf::Sprite sprite;
+    vec2i position;
+    Recti rect;
+    bool empty = false;
 };
 
 struct TileLayer
 {
-	std::vector<Tile> tiles;
+    std::vector<Tile> tiles;
 };
 
 class Map
 {
-	public:
-		void loadFromFile(const std::string& path);
-		void loadTileset(rapidxml::xml_node<>* tileset);
-		void loadLayers(rapidxml::xml_node<>* map);
-		void loadLayer(rapidxml::xml_node<>* layer);
-		void loadObjects(rapidxml::xml_node<>* objects);
-		void collisions();
+    public:
+        void loadFromFile(const std::string& path);
+        void loadTileset(rapidxml::xml_node<>* tileset);
+        void loadLayers(rapidxml::xml_node<>* map);
+        void loadLayer(rapidxml::xml_node<>* layer);
+        void loadObjects(rapidxml::xml_node<>* objects);
+        void collisions();
 
-		void update();
+        void update();
 
-		void setLevel(Level* level);
+        void setLevel(Level* level);
 
-	private:
-		std::vector<Tile> m_tileset;
-		std::vector<TileLayer> m_layers;
-		TexturePtr_t m_texture;
+    private:
+        std::vector<Tile> m_tileset;
+        std::vector<TileLayer> m_layers;
+        TexturePtr_t m_texture;
 
-		Level* m_level;
+        Level* m_level;
 
-		std::vector<BoxPtr_t> m_boxes;
+        std::vector<BoxPtr_t> m_boxes;
 
-		int m_width = 0;
-		int m_height = 0;
+        int m_width = 0;
+        int m_height = 0;
 };
 
 #endif

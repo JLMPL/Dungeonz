@@ -7,7 +7,7 @@ namespace Dice
 
 static int roll(int min, int max)
 {
-	return (rand() % (max - min)) + min;
+    return (rand() % (max - min)) + min;
 }
 
 };

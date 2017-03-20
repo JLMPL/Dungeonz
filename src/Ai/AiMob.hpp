@@ -8,30 +8,30 @@ class Entity;
 
 enum class MobState
 {
-	Idle,
-	Move,
-	Attack,
-	Dead
+    Idle,
+    Move,
+    Attack,
+    Dead
 };
 
 class AiMob : public Ai
 {
-	public:
-		void setup() override final;
-		void update(float deltaTime) override final;
-		void focus();
+    public:
+        void setup() override final;
+        void update(float deltaTime) override final;
+        void focus();
 
-		void idleState(float deltaTime);
-		void moveState(float deltaTime);
-		void attackState(float deltaTime);
-		void deadState(float deltaTime);
-		
-	private:
-		Entity*   m_focus = nullptr;
-		MobState  m_state;
-		float     m_speed = 30;
-		vec2f     m_direction;
-		sf::Clock m_timer;
+        void idleState(float deltaTime);
+        void moveState(float deltaTime);
+        void attackState(float deltaTime);
+        void deadState(float deltaTime);
+        
+    private:
+        Entity*   m_focus = nullptr;
+        MobState  m_state;
+        float     m_speed = 30;
+        vec2f     m_direction;
+        sf::Clock m_timer;
 };
 
 

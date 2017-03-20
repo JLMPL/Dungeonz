@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="112">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztkzEKACEMBPURkidd7f8/c1UgLFkPNXKFKaYIqLMsppdSepIkSZJcTDV482nE4M2YKTpfM+CsHiGwbFF+9TQC9oW97fq9M6PzeG8mw9f8p9/yTJyd8dv/s+Lf2Qv714S8ydDsq/9v1CXbO8yKOxLl995i7+/4scu64N8Bu5TC/+EJv7fD4rhsR6f9rCfNFt3BbM4b/VG897QXjA==
+  </data>
+ </layer>
+ <layer name="Decoration" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYHkATiE0H2A3GA2i3PMPA+38U0A7A0rciHjXyNHaDFgG7h2L6wxee9AAmA2w/oTQ1CoYXAAD78QKt
+  </data>
+ </layer>
+ <layer name="Collision" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztlV0KACEIhDuQ9z/fvi5iOaMJCzsD0Q/qZ2i0liRJkiT9VwaMaX62n8wP5Z/8O3llfNafjXPj/l2+ufVuP8F/20Z8f76rc6cvMz7rW+VH5+j76/Rxpe5ITNb2NLP1vnl/c7ZR/Kn6+5npzS4/yiNaT/Fv9njGR/6QKT6qL/CrPe71ANU3G9k=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="bat_spawn" type="spawn" x="-416" y="320" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="4" name="final_door" type="door" x="-832" y="256" width="32" height="32">
+   <properties>
+    <property name="key" value="it_test_key"/>
+   </properties>
+  </object>
+  <object id="6" name="first_chest" type="chest" x="-160" y="544" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="it_test_item"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="8" name="extra_lever" type="lever" x="-145.5" y="96" width="32" height="32">
+   <properties>
+    <property name="activate" value="final_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="10" name="first_spikes" type="spike_trap" x="-544" y="800" width="32" height="32"/>
+  <object id="11" name="first_spikes" type="spike_trap" x="-512" y="800" width="32" height="32"/>
+  <object id="12" name="first_spikes" type="spike_trap" x="-512" y="768" width="32" height="32"/>
+  <object id="13" name="first_spikes" type="spike_trap" x="-544" y="768" width="32" height="32"/>
+  <object id="14" name="first_spikes" type="spike_trap" x="-512" y="704" width="32" height="32"/>
+  <object id="15" name="first_spikes" type="spike_trap" x="-512" y="736" width="32" height="32"/>
+  <object id="16" name="first_spikes" type="spike_trap" x="-544" y="736" width="32" height="32"/>
+  <object id="17" name="first_spikes" type="spike_trap" x="-544" y="704" width="32" height="32"/>
+  <object id="18" name="first_spikes" type="spike_trap" x="-544" y="672" width="32" height="32"/>
+  <object id="19" name="first_spikes" type="spike_trap" x="-512" y="672" width="32" height="32"/>
+  <object id="20" name="first_spikes" type="spike_trap" x="-544" y="640" width="32" height="32"/>
+  <object id="21" name="first_spikes" type="spike_trap" x="-512" y="640" width="32" height="32"/>
+  <object id="22" name="first_spikes" type="spike_trap" x="-544" y="608" width="32" height="32"/>
+  <object id="23" name="first_spikes" type="spike_trap" x="-512" y="608" width="32" height="32"/>
+  <object id="24" name="first_spikes" type="spike_trap" x="-544" y="576" width="32" height="32"/>
+  <object id="25" name="first_spikes" type="spike_trap" x="-512" y="576" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="480" y="928" width="32" height="32"/>
+  <object id="27" name="spike_lever" type="lever" x="-256" y="608" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="30" name="skell_spawn" type="spawn" x="-640" y="192" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_item"/>
+    <property name="item1" value="it_test_note"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="31" name="skell_spawn" type="spawn" x="-640" y="544" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_key"/>
+    <property name="item1" value="it_test_better"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="32" name="bat_spawn" type="spawn" x="-416" y="128" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="33" name="skell_spawn" type="spawn" x="128" y="512" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="34" name="one_bag" type="item_bag" x="-512" y="896" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_item"/>
+    <property name="item1" value="it_test_note"/>
+    <property name="item2" value="it_test_speed"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="35" name="second_spikes" type="spike_trap" x="-864" y="640" width="32" height="32"/>
+  <object id="36" name="second_spikes" type="spike_trap" x="-864" y="672" width="32" height="32"/>
+  <object id="37" name="second_spikes" type="spike_trap" x="-864" y="704" width="32" height="32"/>
+  <object id="38" name="second_spikes" type="spike_trap" x="-800" y="704" width="32" height="32"/>
+  <object id="39" name="second_spikes" type="spike_trap" x="-800" y="672" width="32" height="32"/>
+  <object id="40" name="second_spikes" type="spike_trap" x="-800" y="640" width="32" height="32"/>
+  <object id="41" name="second_spikes" type="spike_trap" x="-800" y="800" width="32" height="32"/>
+  <object id="42" name="second_spikes" type="spike_trap" x="-800" y="768" width="32" height="32"/>
+  <object id="43" name="second_spikes" type="spike_trap" x="-800" y="736" width="32" height="32"/>
+  <object id="44" name="second_spikes" type="spike_trap" x="-864" y="800" width="32" height="32"/>
+  <object id="45" name="second_spikes" type="spike_trap" x="-864" y="768" width="32" height="32"/>
+  <object id="46" name="second_spikes" type="spike_trap" x="-864" y="736" width="32" height="32"/>
+  <object id="47" name="third_chest" type="chest" x="-864" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_root"/>
+    <property name="item1" value="it_test_root"/>
+    <property name="item2" value="it_test_root"/>
+    <property name="item3" value="it_test_root"/>
+    <property name="item4" value="it_test_root"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="48" name="plate" type="press_plate" x="-672" y="448" width="32" height="32">
+   <properties>
+    <property name="activate" value="final_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="89" name="skell_spawn" type="spawn" x="-928" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="90" name="skell_spawn" type="spawn" x="-704" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="97" name="second_chest" type="chest" x="-832" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_spell"/>
+    <property name="item1" value="it_test_frostbite"/>
+    <property name="item2" value="it_test_speed"/>
+    <property name="item3" value="it_test_lightning"/>
+    <property name="item4" value="it_test_armor"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="98" name="the_exit" type="exit" x="-512" y="0" width="32" height="32">
+   <properties>
+    <property name="next" value="second_test.tmx"/>
+   </properties>
+  </object>
+  <object id="99" name="skell_spawn" type="spawn" x="256" y="512" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="101" name="bat_spawn" type="spawn" x="512" y="544" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="102" name="bat_spawn" type="spawn" x="704" y="576" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="103" name="bat_spawn" type="spawn" x="704" y="736" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="104" name="bat_spawn" type="spawn" x="192" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_meat"/>
+    <property name="item1" value="it_test_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="105" name="rt_chest" type="chest" x="704" y="704" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_rt_key"/>
+    <property name="item1" value="it_test_better"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="106" name="lu_chest" type="chest" x="128" y="480" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_fr_key"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="it_lu_key"/>
+   </properties>
+  </object>
+  <object id="107" name="rt_door" type="door" x="608" y="704" width="32" height="32">
+   <properties>
+    <property name="key" value="it_rt_key"/>
+   </properties>
+  </object>
+  <object id="108" name="rt_bag" type="item_bag" x="704" y="544" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_lu_key"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="110" name="fr_door" type="door" x="256" y="608" width="32" height="32">
+   <properties>
+    <property name="key" value="it_fr_key"/>
+   </properties>
+  </object>
+  <object id="111" name="rt_bag" type="item_bag" x="512" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_test_item"/>
+    <property name="item1" value="it_note_start"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

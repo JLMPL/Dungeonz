@@ -6,19 +6,19 @@
 
 class CenterLabel
 {
-	public:
-		CenterLabel();
+    public:
+        CenterLabel();
 
-		void update(float deltaTime);
-		void addLabel(const std::string& label);
+        void update(float deltaTime);
+        void addLabel(const std::string& label);
 
-		void setPosition(const vec2i& pos);
+        void setPosition(const vec2i& pos);
 
-	private:
-		std::deque<std::string> m_waitingLabels;
-		vec2i m_position;
-		sf::Text m_label;
-		float m_timer;
+    private:
+        std::deque<std::string> m_waitingLabels;
+        vec2i m_position;
+        sf::Text m_label;
+        float m_timer;
 };
 
 #endif

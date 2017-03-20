@@ -6,27 +6,27 @@
 //Singleton
 class CollisionHandler
 {
-	public:
-		static CollisionHandler& Get()
-		{
-			static CollisionHandler self;
-			return self;
-		}
+    public:
+        static CollisionHandler& Get()
+        {
+            static CollisionHandler self;
+            return self;
+        }
 
-		void init();
-		void update(float deltaTime);
+        void init();
+        void update(float deltaTime);
 
-		void addBody(BoxPtr_t box);
-		vec2f castRay(vec2f origin, vec2f end);
+        void addBody(BoxPtr_t box);
+        vec2f castRay(vec2f origin, vec2f end);
 
-		void cleanUp();
+        void cleanUp();
 
-	private:
-		void react(BoxPtr_t a, BoxPtr_t b);
-		void clean();
+    private:
+        void react(BoxPtr_t a, BoxPtr_t b);
+        void clean();
 
-	private:
-		std::vector<BoxPtr_t> m_bodies;
+    private:
+        std::vector<BoxPtr_t> m_bodies;
 };
 
 #endif

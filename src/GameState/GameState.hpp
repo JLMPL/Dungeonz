@@ -5,21 +5,21 @@
 
 class GameState
 {
-	public:
-		GameState() {}
-		virtual ~GameState() {}
+    public:
+        GameState() {}
+        virtual ~GameState() {}
 
-		virtual void init() = 0;
-		virtual void update(float deltaTime) = 0;
-		virtual void leave() = 0;
+        virtual void init() = 0;
+        virtual void update(float deltaTime) = 0;
+        virtual void leave() = 0;
 
-		virtual void setExitFunc(std::function<void ()> func);
+        virtual void setExitFunc(std::function<void ()> func);
 
-		StateType getType();
+        StateType getType();
 
-	protected:
-		StateType m_type;
-		std::function<void ()> m_exitFunction;
+    protected:
+        StateType m_type;
+        std::function<void ()> m_exitFunction;
 };
 
 #endif

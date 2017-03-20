@@ -5,22 +5,22 @@
 
 class Chest : public Entity
 {
-	public:
-		Chest();
+    public:
+        Chest();
 
-		void update(float deltaTime);
+        void update(float deltaTime);
 
-		void setRequiredItem(const std::string& item);
-		void tryOpening(Inventory* inv);
-		void open();
+        void setRequiredItem(const std::string& item);
+        void tryOpening(Inventory* inv);
+        void open();
 
-		bool isOpen();
-		Inventory& accessInv();
+        bool isOpen();
+        Inventory& accessInv();
 
-	protected:
-		Inventory m_inv;
-		std::string m_requiredKey;
-		bool m_isOpen = false;
+    protected:
+        Inventory m_inv;
+        std::string m_requiredKey;
+        bool m_isOpen = false;
 };
 
 #endif

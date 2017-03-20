@@ -3,5 +3,5 @@
 
 void gui_read(std::string content)
 {
-	GUI::Get().goRead(content);
+    GUI::Get().goRead(content);
 }

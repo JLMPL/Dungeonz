@@ -3,9 +3,9 @@
 
 enum class StateType
 {
-	Playing,
-	Menu,
-	Splash
+    Playing,
+    Menu,
+    Splash
 };
 
 #endif

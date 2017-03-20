@@ -7,18 +7,18 @@
 
 struct Slot
 {
-	sf::RectangleShape rect;
-	sf::Sprite sprite;
-	Item* item;
-	bool empty = true;
+    sf::RectangleShape rect;
+    sf::Sprite sprite;
+    Item* item;
+    bool empty = true;
 
-	Slot();
+    Slot();
 
-	void mark();
-	void unmark();
+    void mark();
+    void unmark();
 
-	void setPosition(const vec2i& pos);
-	void setItem(Item* itmw);
+    void setPosition(const vec2i& pos);
+    void setItem(Item* itmw);
 };
 
 #endif

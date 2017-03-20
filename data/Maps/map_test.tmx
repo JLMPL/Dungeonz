@@ -66,7 +66,7 @@
   <object id="23" name="first_spikes" type="spike_trap" x="480" y="640" width="32" height="32"/>
   <object id="24" name="first_spikes" type="spike_trap" x="448" y="608" width="32" height="32"/>
   <object id="25" name="first_spikes" type="spike_trap" x="480" y="608" width="32" height="32"/>
-  <object id="26" name="player_spawn" type="start" x="736" y="672" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="480" y="64" width="32" height="32"/>
   <object id="27" name="spike_lever" type="lever" x="736" y="640" width="32" height="32">
    <properties>
     <property name="activate" value="first_spikes"/>

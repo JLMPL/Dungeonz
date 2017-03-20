@@ -1,8 +1,9 @@
 TODO:
--saves (checkpoints on the beginning of dungeon level)
+-hiders || cullers no better name for that
 -dropping items
--press plate multiple stuffs
--back to menu when ded
+-saves (checkpoints on the beginning of dungeon level)
+-pathfinding
+
 
 Spellz: done
   Fireball - Shoot the fireball on the face, and explode.

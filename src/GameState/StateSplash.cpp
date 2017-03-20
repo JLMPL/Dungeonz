@@ -7,78 +7,78 @@
 
 StateSplash::StateSplash()
 {
-	m_type = StateType::Splash;
+    m_type = StateType::Splash;
 }
 
 void StateSplash::init()
 {
-	m_timer.restart();
+    m_timer.restart();
 
-	m_sfmlLogo.setTexture(*TextureCache::Get().getTexture("sfml-logo-small.png"));
-	m_sfmlLogo.setOrigin(static_cast<int>(m_sfmlLogo.getLocalBounds().width/2),
-						 static_cast<int>(m_sfmlLogo.getLocalBounds().height/2));
-	m_sfmlLogo.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight -24});
+    m_sfmlLogo.setTexture(*TextureCache::Get().getTexture("sfml-logo-small.png"));
+    m_sfmlLogo.setOrigin(static_cast<int>(m_sfmlLogo.getLocalBounds().width/2),
+                         static_cast<int>(m_sfmlLogo.getLocalBounds().height/2));
+    m_sfmlLogo.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight -24});
 
-	Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
+    Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
 }
 
 void StateSplash::update(float deltaTime)
 {
-	if (InputHandler::Get().isEscape())
-	{
-		leave();
-	}
+    if (InputHandler::Get().isEscape())
+    {
+        leave();
+    }
 
-	switch (m_stage)
-	{
-		case 0:
-		{
-			float color = lerp(0, 255, m_timer.getElapsedTime().asSeconds());
-			if (color > 255) color = 255;
+    switch (m_stage)
+    {
+        case 0:
+        {
+            float color = lerp(0, 255, m_timer.getElapsedTime().asSeconds());
+            if (color > 255) color = 255;
 
-			m_sfmlLogo.setColor({255,255,255, static_cast<int>(color)});
+            m_sfmlLogo.setColor({255,255,255, static_cast<int>(color)});
 
-			if (m_timer.getElapsedTime().asSeconds() > 1)
-			{
-				m_stage++;
-				m_timer.restart();
-			}
-		}
-		break;
-		case 1:
-		{
-			if (m_timer.getElapsedTime().asSeconds() >= 1)
-			{
-				m_stage++;
-				m_timer.restart();
-			}
-		}
-		break;
-		case 2:
-		{
-			float color = lerp(255, 0, m_timer.getElapsedTime().asSeconds());
-			if (color < 0) color = 0;
+            if (m_timer.getElapsedTime().asSeconds() > 1)
+            {
+                m_stage++;
+                m_timer.restart();
+            }
+        }
+        break;
+        case 1:
+        {
+            if (m_timer.getElapsedTime().asSeconds() >= 1)
+            {
+                m_stage++;
+                m_timer.restart();
+            }
+        }
+        break;
+        case 2:
+        {
+            float color = lerp(255, 0, m_timer.getElapsedTime().asSeconds());
+            if (color < 0) color = 0;
 
-			m_sfmlLogo.setColor({255,255,255, static_cast<int>(color)});
+            m_sfmlLogo.setColor({255,255,255, static_cast<int>(color)});
 
-			if (m_timer.getElapsedTime().asSeconds() > 1)
-			{
-				m_stage++;
-				m_timer.restart();
-			}
-		}
-		break;
-		case 3:
-		{
-			leave();
-		}
-		break;
-	}
+            if (m_timer.getElapsedTime().asSeconds() > 1)
+            {
+                m_stage++;
+                m_timer.restart();
+            }
+        }
+        break;
+        case 3:
+        {
+            leave();
+        }
+        break;
+    }
 
-	Renderer::Get().submitBackground(&m_sfmlLogo);
+    Renderer::Get().submitBackground(&m_sfmlLogo);
 }
 
 void StateSplash::leave()
 {
-	m_exitFunction();
+    m_exitFunction();
 }
