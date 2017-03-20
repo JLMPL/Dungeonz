@@ -9,6 +9,9 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include "../GameState/StatePlaying.hpp"
+#include "../GameState/StateSplash.hpp"
+#include "../GameState/StateMenu.hpp"
 #include <fstream>
 
 #ifdef _WIN32
@@ -51,32 +54,11 @@ Game::Game()
 	GUI::Get().setBackToMenuFunc(
 	[this]()
 	{
-		this->m_currentState = &this->m_menuState;
+		begForState(new StateMenu());
 		Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
 	});
 
-
-	m_splashState.init();
-	m_splashState.setExitFunc(
-	[this]()
-	{
-		m_currentState = &m_menuState;
-	});
-
-	m_menuState.init();
-	m_menuState.setNewGameFunc(
-	[this]()
-	{
-		m_playingState.init();
-		m_currentState = &m_playingState;
-	});
-	m_menuState.setExitFunc(
-	[&]()
-	{
-		Window.close();
-	});
-
-	m_currentState = &m_splashState;
+	begForState(new StateSplash());
 }
 
 Game::~Game()
@@ -144,6 +126,11 @@ void Game::update()
 {	
 	deltaTime = Clock.restart().asSeconds();
 
+	if (m_currentState.get() != m_nextState)
+	{
+		setState(m_nextState);
+	}
+
 	m_currentState->update(deltaTime);
 
 	auto ver_pos = Renderer::Get().getCameraPos() + vec2i(5,5);
@@ -155,6 +142,7 @@ void Game::mainLoop()
 	while (Window.isOpen())
 	{
 		bench_begin = Benchmark.getElapsedTime().asMilliseconds();
+
 		while (Window.pollEvent(Event))
 		{
 			if (Event.type == sf::Event::Closed)
@@ -174,4 +162,47 @@ void Game::mainLoop()
 			Window.setTitle("Window - " + std::to_string(bench_end - bench_begin) + "ms");
 		}
 	}
+}
+
+void Game::setState(GameState* state)
+{
+	if (m_currentState)
+		m_currentState->leave();
+	m_currentState.reset(state);
+	m_currentState->init();
+
+	switch (m_currentState->getType())
+	{
+		case StateType::Splash:
+		{
+			auto splash = static_cast<StateSplash*>(m_currentState.get());
+			splash->setExitFunc(
+			[this]()
+			{
+				begForState(new StateMenu());
+			});
+		}
+		break;
+		case StateType::Menu:
+		{
+			auto menu = static_cast<StateMenu*>(m_currentState.get());
+			menu->setNewGameFunc(
+			[this]()
+			{
+				begForState(new StatePlaying());
+			});
+
+			menu->setExitFunc(
+			[this]()
+			{
+				Window.close();
+			});
+		}
+		break;
+	}
+}
+
+void Game::begForState(GameState* state)
+{
+	m_nextState = state;
 }

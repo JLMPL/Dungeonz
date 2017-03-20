@@ -1,9 +1,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
-#include "../GameState/StatePlaying.hpp"
-#include "../GameState/StateSplash.hpp"
-#include "../GameState/StateMenu.hpp"
-#include "../GameState/States.hpp"
+#include "../GameState/GameState.hpp"
 #include <SFML/Graphics.hpp>
 
 class Game
@@ -16,6 +13,9 @@ class Game
 		void mainLoop();
 
 		void loadCfg();
+
+		void setState(GameState* state);
+		void begForState(GameState* state);
 
 	private:
 		sf::RenderWindow Window;
@@ -33,10 +33,11 @@ class Game
 
 		sf::Text version;
 		
-		StateSplash m_splashState;
-		StatePlaying m_playingState;
-		StateMenu m_menuState;
-		GameState* m_currentState;
+		// StateSplash m_splashState;
+		// StatePlaying m_playingState;
+		// StateMenu m_menuState;
+		std::unique_ptr<GameState> m_currentState = nullptr;
+		GameState* m_nextState = nullptr;
 };
 
 #endif

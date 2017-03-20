@@ -178,6 +178,7 @@ void GUI::update(float deltaTime)
 
 			if (howmuch >= 254)
 			{
+				howmuch = 0;
 				m_backToMenuFunc();
 				m_mode = GUIMode::Off;
 				m_deathTimer = 0;
@@ -201,11 +202,11 @@ void GUI::update(float deltaTime)
 		m_magicka.update();
 	}
 
-	if (m_target->isDead() and m_mode != GUIMode::Death)
-	{
-		m_target->setBusy(true);
-		goDead();
-	}
+	// if (m_target->isDead() and m_mode != GUIMode::Death)
+	// {
+	// 	// m_target->setBusy(true);
+	// 	// goDead();
+	// }
 }
 
 void GUI::goLoot(Inventory* inv, const vec2i& pos)

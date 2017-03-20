@@ -7,6 +7,7 @@
 StatePlaying::StatePlaying()
 {
 	GUI::Get().setPlayingState(this);
+	m_type = StateType::Playing;
 	m_level = nullptr;
 }
 

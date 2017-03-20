@@ -75,6 +75,12 @@ void AiPlayer::update(float deltaTime)
 		m_manaRestoreTimer.restart();
 	}
 
+	if (m_target->isDead() and !m_target->isBusy())
+	{
+		GUI::Get().goDead();
+		m_target->setBusy(true);
+	}
+
 	/*/
 
 	m_ray[0] = sf::Vertex({m_target->getFakePos().getSfVecf()});
