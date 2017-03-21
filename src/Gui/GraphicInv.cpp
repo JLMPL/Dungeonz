@@ -20,19 +20,14 @@ constexpr int g_descHeight = 128;
 constexpr int g_statsWidth = 192;
 constexpr int g_statsHeight = 192;
 
-//Screen::Get().resolution problem
-
 GraphicInv::GraphicInv()
 {
-    
 }
 
 void GraphicInv::init(int width, int height)
 {
     m_width = width;
     m_height = height;
-
-    printf("%dx%d\n", m_width, m_height);
 
     for (int i = 0; i < g_maxItems; i++)
         m_slots.push_back(Slot());

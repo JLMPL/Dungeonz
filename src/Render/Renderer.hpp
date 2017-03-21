@@ -32,6 +32,7 @@ class Renderer
         void submitBackground(sf::Sprite* data);
         void submitSorted(sf::Sprite* data);
         void submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type);
+        void submitForeground(sf::Sprite* data);
 
         void submitOverlay(sf::RectangleShape* data);
         void submitOverlay(sf::Sprite* data);
@@ -53,10 +54,10 @@ class Renderer
         std::vector<sf::CircleShape*> m_backCircleData;
         std::vector<sf::Sprite*> m_backgroundData;
         std::vector<sf::Sprite*> m_sortedData;
+        std::vector<sf::Sprite*> m_foregroundData;
 
         std::vector<Line> m_linesData;
 
-        //gui
         std::vector<sf::RectangleShape*> m_overRectData;
         std::vector<sf::Sprite*>         m_overSpriteData;
         std::vector<sf::Text*>           m_overTextData;

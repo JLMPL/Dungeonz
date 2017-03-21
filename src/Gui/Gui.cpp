@@ -58,7 +58,7 @@ void GUI::update(float deltaTime)
 {
     m_camera = Renderer::Get().getCameraPos();
     m_sight.setPosition(m_camera.getSfVecf());
-    Renderer::Get().submitOverlay(&m_sight);
+    Renderer::Get().submitForeground(&m_sight);
 
     switch (m_mode)
     {

@@ -15,7 +15,7 @@ void Renderer::init(sf::RenderWindow* window)
     else
     {
         m_window = window;
-        m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width, Screen::Get().height));
+        m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width/2, Screen::Get().height/2));
     }
 }
 
@@ -42,6 +42,11 @@ void Renderer::submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type)
     line.type = type;
 
     m_linesData.push_back(line);
+}
+
+void Renderer::submitForeground(sf::Sprite* data)
+{
+    m_foregroundData.push_back(data);
 }
 
 void Renderer::submitOverlay(sf::RectangleShape* data)
@@ -108,6 +113,9 @@ void Renderer::render()
     for (auto& i : m_sortedData)
         m_window->draw(*i);
 
+    for (auto& i : m_foregroundData)
+        m_window->draw(*i);
+
     for (auto& i : m_linesData)
         m_window->draw(i.verts, i.count, i.type);
 
@@ -137,6 +145,7 @@ void Renderer::clearAll()
     m_backgroundData.clear();
     m_backCircleData.clear();
     m_sortedData.clear();
+    m_foregroundData.clear();
 
     m_linesData.clear();
 

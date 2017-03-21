@@ -466,6 +466,15 @@ void AiPlayer::focus()
             {
                 i = ents.erase(i);
             }
+            else if ((*i)->getType() == EntityType::Living)
+            {
+                auto one = static_cast<Living*>(*i);
+                if (one->isDead() and one->accessInv().getAmount() == 0)
+                {
+                    i = ents.erase(i);
+                }
+                else i++;
+            }
             else
                 i++;
         }
