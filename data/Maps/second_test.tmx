@@ -19,7 +19,7 @@
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="26" name="player_spawn" type="start" x="512" y="448" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="512" y="960" width="32" height="32"/>
   <object id="98" name="skell_spawn" type="spawn" x="320" y="704" width="32" height="32">
    <properties>
     <property name="item0" value="-"/>

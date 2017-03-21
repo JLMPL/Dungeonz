@@ -36,6 +36,7 @@ class Map
         void loadLayers(rapidxml::xml_node<>* map);
         void loadLayer(rapidxml::xml_node<>* layer);
         void loadObjects(rapidxml::xml_node<>* objects);
+        void loadOccluders(rapidxml::xml_node<>* occluders);
         void collisions();
 
         void update();

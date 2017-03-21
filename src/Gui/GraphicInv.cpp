@@ -91,14 +91,14 @@ void GraphicInv::update()
 {   
     if (InputHandler::Get().isUp() and
         m_timer.getElapsedTime().asMilliseconds() > 150 and
-        m_selected > 4)
+        m_selected > g_invSize-1)
     {
         m_selected -= g_invSize;
         m_timer.restart();
     }
     else if (InputHandler::Get().isDown() and
         m_timer.getElapsedTime().asMilliseconds() > 150 and
-        m_selected < 20)
+        m_selected < g_maxItems - g_invSize)
     {
         m_selected += g_invSize;
         m_timer.restart();
@@ -113,7 +113,7 @@ void GraphicInv::update()
     }
     else if (InputHandler::Get().isRight() and
         m_timer.getElapsedTime().asMilliseconds() > 150 and
-        m_selected < 25)
+        m_selected < g_maxItems-1)
     {
         m_selected++;
         m_timer.restart();
@@ -131,7 +131,7 @@ void GraphicInv::update()
             m_select.setPosition(pos.getSfVecf());
     }
 
-    for (int i = 0; i < 25; i++)
+    for (int i = 0; i < g_maxItems; i++)
     {
         Slot& slot = m_slots[i];
         if (i < m_inv->getAmount())
@@ -171,8 +171,8 @@ void GraphicInv::update()
                     m_player->setEquippedItem(Equip::Weapon, nullptr);
                     (*item.takeoff)(m_player);
                 }
-                break;
             }
+            break;
             case ItemType::Armor:
             {
                 if (!m_player->isEquipped(Equip::Armor, &item))
@@ -185,15 +185,15 @@ void GraphicInv::update()
                     m_player->setEquippedItem(Equip::Armor, nullptr);
                     (*item.takeoff)(m_player);
                 }
-                break;
             }
+            break;
             case ItemType::Food:
             {
                 (*item.effect)(m_player);
                 m_player->accessInv().removeItem(&item);
                 m_slots[m_selected].empty = true;
-                break;
             }
+            break;
             case ItemType::Book:
             {
                 (*item.effect)();
@@ -201,12 +201,10 @@ void GraphicInv::update()
             case ItemType::Spell:
             {
                 (*item.effect)(m_player);
-                break;
             }
+            break;
             case ItemType::Misc:
-            {
                 break;
-            }
             default:break;
         }
         m_timer.restart();
@@ -236,39 +234,39 @@ void GraphicInv::description()
         {
             case ItemType::Weapon:
                 m_descType.setString("Weapon");
-            break;
+                break;
             case ItemType::Armor:
                 m_descType.setString("Armor");
-            break;
+                break;
             case ItemType::Food:
                 m_descType.setString("Consumable");
-            break;
+                break;
             case ItemType::Book:
                 m_descType.setString("Book");
-            break;
+                break;
             case ItemType::Spell:
                 m_descType.setString("Spell");
-            break;
+                break;
             case ItemType::Misc:
                 m_descType.setString("Miscellaneous");
-            break;
+                break;
         }
         
         m_descType.setOrigin({static_cast<int>(m_descType.getLocalBounds().width/2), 0});
         m_desc.setString(slot.item->desc);
     }
 
-    auto the_pos = m_pos + m_descBackPos;
-    m_descBack.setPosition(the_pos.getSfVecf());
+    auto thePos = m_pos + m_descBackPos;
+    m_descBack.setPosition(thePos.getSfVecf());
 
-    auto other_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 10);
-    m_descName.setPosition(other_pos.getSfVecf());
+    auto otherPos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 10);
+    m_descName.setPosition(otherPos.getSfVecf());
 
-    auto type_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 30);
-    m_descType.setPosition(type_pos.getSfVecf());
+    auto typePos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 30);
+    m_descType.setPosition(typePos.getSfVecf());
 
-    auto desc_pos = m_pos + m_descBackPos + vec2i(30, 50);
-    m_desc.setPosition(desc_pos.getSfVecf());
+    auto descPos = m_pos + m_descBackPos + vec2i(30, 50);
+    m_desc.setPosition(descPos.getSfVecf());
 
     Renderer::Get().submitOverlay(&m_descBack);
     Renderer::Get().submitOverlay(&m_descName);
@@ -281,38 +279,38 @@ void GraphicInv::stats()
     auto pos = m_pos + m_statsPos;
     m_statsBcg.setPosition(pos.getSfVecf());
 
-    auto level_pos = m_pos + m_statsPos + vec2i(10,5);
-    m_statsLevel.setPosition(level_pos.getSfVecf());
+    auto levelPos = m_pos + m_statsPos + vec2i(10,5);
+    m_statsLevel.setPosition(levelPos.getSfVecf());
     m_statsLevel.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
 
-    auto xp_bar_pos = m_pos + m_statsPos + vec2i(10,24);
+    auto xpBarPos = m_pos + m_statsPos + vec2i(10,24);
     m_xpBar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
     m_xpBar.setValue(m_player->getAttribute(Attribute::Xp));
-    m_xpBar.setPosition(xp_bar_pos);
+    m_xpBar.setPosition(xpBarPos);
 
-    auto health_pos = m_pos + m_statsPos + vec2i(10, 45);
-    m_statsHealth.setPosition(health_pos.getSfVecf());
+    auto healthPos = m_pos + m_statsPos + vec2i(10, 45);
+    m_statsHealth.setPosition(healthPos.getSfVecf());
 
-    auto health_bar_pos = m_pos + m_statsPos + vec2i(10,64);
+    auto healthBarPos = m_pos + m_statsPos + vec2i(10,64);
     m_healthBar.setMaxValue(m_player->getAttribute(Attribute::Health));
     m_healthBar.setValue(m_player->getAttribute(Attribute::Hp));
-    m_healthBar.setPosition(health_bar_pos);
+    m_healthBar.setPosition(healthBarPos);
 
-    auto mana_pos = m_pos + m_statsPos + vec2i(10, 85);
-    m_statsMana.setPosition(mana_pos.getSfVecf());
+    auto manaPos = m_pos + m_statsPos + vec2i(10, 85);
+    m_statsMana.setPosition(manaPos.getSfVecf());
 
-    auto mana_bar_pos = m_pos + m_statsPos + vec2i(10,104);
+    auto manaBarPos = m_pos + m_statsPos + vec2i(10,104);
     m_manaBar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
     m_manaBar.setValue(m_player->getAttribute(Attribute::Mp));
-    m_manaBar.setPosition(mana_bar_pos);
+    m_manaBar.setPosition(manaBarPos);
 
-    auto damage_pos = m_pos + m_statsPos + vec2i(10, 128);
+    auto damagePos = m_pos + m_statsPos + vec2i(10, 128);
     m_statsDamage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
-    m_statsDamage.setPosition(damage_pos.getSfVecf());
+    m_statsDamage.setPosition(damagePos.getSfVecf());
 
-    auto defense_pos = m_pos + m_statsPos + vec2i(10, 142);
+    auto defensePos = m_pos + m_statsPos + vec2i(10, 142);
     m_statsDefense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
-    m_statsDefense.setPosition(defense_pos.getSfVecf());
+    m_statsDefense.setPosition(defensePos.getSfVecf());
 
     Renderer::Get().submitOverlay(&m_statsBcg);
     Renderer::Get().submitOverlay(&m_statsLevel);

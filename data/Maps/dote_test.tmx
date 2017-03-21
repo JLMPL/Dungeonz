@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="112">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="382">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztkzEKACEMBPURkidd7f8/c1UgLFkPNXKFKaYIqLMsppdSepIkSZJcTDV482nE4M2YKTpfM+CsHiGwbFF+9TQC9oW97fq9M6PzeG8mw9f8p9/yTJyd8dv/s+Lf2Qv714S8ydDsq/9v1CXbO8yKOxLl995i7+/4scu64N8Bu5TC/+EJv7fD4rhsR6f9rCfNFt3BbM4b/VG897QXjA==
+   eJztlkEKhTAMRNNDSI7k2vtf5ruwUEKSZtpUxO9iECH0jWmc9iCi49OjVQaUyecBZfK3U/v17KnWZfNLkF8W8TnI50V8VN/+v2f/PV93cO7iy/zs5Wk2X+anlqetp41y817+v3KuC/l5b51DUX8ev3K8vNF8IXng8bUar340D2St9o7w0Tzu8VvtQC3ClzOO8mfuQu2ssbOmpuo94y4kvzty57LOiQy+to619gzfyjaEPyPZSyZ7Dlfwo2d626PVfKtP1Vt2D1Cf/8jP0g+PmPhr
   </data>
  </layer>
  <layer name="Decoration" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwSgYHkATiE0H2A3GA2i3PMPA+38U0A7A0rciHjXyNHaDFgG7h2L6wxee9AAmA2w/oTQ1CoYXAAD78QKt
+   eJzt0jEOABAMheHeBCMr7n81DNaaaDT/l3STvFaeCAAAgA95TjfeoRpmB7G/H/fsfiflzepAvLhDOWR3+a+D2n++0IzzT52CLwNALwMC
   </data>
  </layer>
- <layer name="Collision" width="32" height="32" visible="0">
+ <layer name="Collision" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlV0KACEIhDuQ9z/fvi5iOaMJCzsD0Q/qZ2i0liRJkiT9VwaMaX62n8wP5Z/8O3llfNafjXPj/l2+ufVuP8F/20Z8f76rc6cvMz7rW+VH5+j76/Rxpe5ITNb2NLP1vnl/c7ZR/Kn6+5npzS4/yiNaT/Fv9njGR/6QKT6qL/CrPe71ANU3G9k=
+   eJztlV0OgDAIgz2Q9z+fr8YUWuRnM5HELBrg2+jA4/htZzsTTxV/Ms7Ko+aL+n+FPxW3K391/Vfzp+JQHm++dM8fb1/3tSJfZJ5264zeWf0n+F585n/E+Mwsf1WnivNn+ZamSg2j5/N8EP/5vWMeMH40Ntobnobq/UY5IvyJ3mZ+3qroneGzPrD2inJU6q/yM6b2MKpRJ5/d8Uq+ol8XX7Ud+G/uN7ILSiwmrQ==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -260,7 +260,7 @@
     <property name="key" value="it_rt_key"/>
    </properties>
   </object>
-  <object id="108" name="rt_bag" type="item_bag" x="704" y="544" width="32" height="32">
+  <object id="108" name="rt_bag" type="item_bag" x="800" y="544" width="32" height="32">
    <properties>
     <property name="item0" value="it_lu_key"/>
     <property name="item1" value="-"/>
@@ -283,5 +283,329 @@
     <property name="item4" value="-"/>
    </properties>
   </object>
+  <object id="112" name="skell_spawn" type="spawn" x="448" y="192" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="113" name="skell_spawn" type="spawn" x="512" y="192" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="114" name="skell_spawn" type="spawn" x="448" y="224" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="115" name="skell_spawn" type="spawn" x="512" y="224" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="116" name="skell_spawn" type="spawn" x="448" y="256" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="117" name="skell_spawn" type="spawn" x="512" y="256" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="118" name="skell_spawn" type="spawn" x="448" y="288" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="119" name="skell_spawn" type="spawn" x="512" y="288" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Occlusion">
+  <object id="120" type="occluder" x="480" y="352" width="32" height="32"/>
+  <object id="121" type="occluder" x="448" y="352" width="32" height="32"/>
+  <object id="122" type="occluder" x="416" y="352" width="32" height="32"/>
+  <object id="123" type="occluder" x="384" y="352" width="32" height="32"/>
+  <object id="124" type="occluder" x="352" y="352" width="32" height="32"/>
+  <object id="125" type="occluder" x="320" y="320" width="32" height="64"/>
+  <object id="126" type="occluder" x="288" y="352" width="32" height="32"/>
+  <object id="127" type="occluder" x="288" y="320" width="32" height="32"/>
+  <object id="128" type="occluder" x="288" y="288" width="32" height="32"/>
+  <object id="129" type="occluder" x="288" y="256" width="32" height="32"/>
+  <object id="130" type="occluder" x="320" y="256" width="32" height="32"/>
+  <object id="131" type="occluder" x="352" y="256" width="32" height="32"/>
+  <object id="132" type="occluder" x="352" y="288" width="32" height="32"/>
+  <object id="133" type="occluder" x="352" y="320" width="32" height="32"/>
+  <object id="134" type="occluder" x="288" y="96" width="32" height="64"/>
+  <object id="135" type="occluder" x="320" y="96" width="32" height="64"/>
+  <object id="136" type="occluder" x="352" y="96" width="32" height="64"/>
+  <object id="137" type="occluder" x="384" y="96" width="32" height="64"/>
+  <object id="138" type="occluder" x="416" y="96" width="32" height="64"/>
+  <object id="139" type="occluder" x="448" y="96" width="32" height="64"/>
+  <object id="140" type="occluder" x="480" y="96" width="32" height="64"/>
+  <object id="141" type="occluder" x="512" y="96" width="32" height="64"/>
+  <object id="142" type="occluder" x="544" y="96" width="32" height="64"/>
+  <object id="143" type="occluder" x="576" y="96" width="32" height="64"/>
+  <object id="144" type="occluder" x="608" y="96" width="32" height="64"/>
+  <object id="145" type="occluder" x="640" y="96" width="32" height="64"/>
+  <object id="146" type="occluder" x="672" y="96" width="32" height="64"/>
+  <object id="147" type="occluder" x="640" y="192" width="32" height="64"/>
+  <object id="148" type="occluder" x="640" y="320" width="32" height="64"/>
+  <object id="149" type="occluder" x="448" y="320" width="32" height="32"/>
+  <object id="150" type="occluder" x="384" y="320" width="32" height="32"/>
+  <object id="151" type="occluder" x="416" y="320" width="32" height="32"/>
+  <object id="152" type="occluder" x="480" y="320" width="32" height="32"/>
+  <object id="153" type="occluder" x="448" y="288" width="32" height="32"/>
+  <object id="154" type="occluder" x="384" y="288" width="32" height="32"/>
+  <object id="155" type="occluder" x="416" y="288" width="32" height="32"/>
+  <object id="156" type="occluder" x="480" y="288" width="32" height="32"/>
+  <object id="157" type="occluder" x="448" y="256" width="32" height="32"/>
+  <object id="158" type="occluder" x="384" y="256" width="32" height="32"/>
+  <object id="159" type="occluder" x="416" y="256" width="32" height="32"/>
+  <object id="160" type="occluder" x="480" y="256" width="32" height="32"/>
+  <object id="161" type="occluder" x="352" y="224" width="32" height="32"/>
+  <object id="162" type="occluder" x="480" y="192" width="32" height="32"/>
+  <object id="163" type="occluder" x="384" y="192" width="32" height="32"/>
+  <object id="164" type="occluder" x="448" y="192" width="32" height="32"/>
+  <object id="165" type="occluder" x="480" y="224" width="32" height="32"/>
+  <object id="166" type="occluder" x="416" y="224" width="32" height="32"/>
+  <object id="167" type="occluder" x="448" y="224" width="32" height="32"/>
+  <object id="168" type="occluder" x="416" y="192" width="32" height="32"/>
+  <object id="169" type="occluder" x="384" y="224" width="32" height="32"/>
+  <object id="170" type="occluder" x="352" y="192" width="32" height="32"/>
+  <object id="171" type="occluder" x="416" y="160" width="32" height="32"/>
+  <object id="172" type="occluder" x="384" y="160" width="32" height="32"/>
+  <object id="173" type="occluder" x="448" y="160" width="32" height="32"/>
+  <object id="174" type="occluder" x="352" y="160" width="32" height="32"/>
+  <object id="175" type="occluder" x="480" y="160" width="32" height="32"/>
+  <object id="176" type="occluder" x="288" y="224" width="32" height="32"/>
+  <object id="178" type="occluder" x="288" y="160" width="32" height="32"/>
+  <object id="179" type="occluder" x="288" y="192" width="32" height="32"/>
+  <object id="180" type="occluder" x="512" y="320" width="32" height="32"/>
+  <object id="181" type="occluder" x="512" y="256" width="32" height="32"/>
+  <object id="182" type="occluder" x="512" y="224" width="32" height="32"/>
+  <object id="183" type="occluder" x="576" y="320" width="32" height="32"/>
+  <object id="184" type="occluder" x="576" y="288" width="32" height="32"/>
+  <object id="185" type="occluder" x="576" y="192" width="32" height="32"/>
+  <object id="186" type="occluder" x="544" y="192" width="32" height="32"/>
+  <object id="187" type="occluder" x="544" y="352" width="32" height="32"/>
+  <object id="188" type="occluder" x="544" y="160" width="32" height="32"/>
+  <object id="189" type="occluder" x="576" y="224" width="32" height="32"/>
+  <object id="190" type="occluder" x="544" y="288" width="32" height="32"/>
+  <object id="191" type="occluder" x="512" y="192" width="32" height="32"/>
+  <object id="192" type="occluder" x="512" y="160" width="32" height="32"/>
+  <object id="193" type="occluder" x="576" y="352" width="32" height="32"/>
+  <object id="194" type="occluder" x="576" y="256" width="32" height="32"/>
+  <object id="195" type="occluder" x="544" y="320" width="32" height="32"/>
+  <object id="196" type="occluder" x="544" y="224" width="32" height="32"/>
+  <object id="197" type="occluder" x="512" y="352" width="32" height="32"/>
+  <object id="198" type="occluder" x="576" y="160" width="32" height="32"/>
+  <object id="199" type="occluder" x="544" y="256" width="32" height="32"/>
+  <object id="200" type="occluder" x="512" y="288" width="32" height="32"/>
+  <object id="204" type="occluder" x="608" y="192" width="32" height="32"/>
+  <object id="205" type="occluder" x="608" y="288" width="32" height="32"/>
+  <object id="206" type="occluder" x="608" y="352" width="32" height="32"/>
+  <object id="207" type="occluder" x="608" y="224" width="32" height="32"/>
+  <object id="208" type="occluder" x="608" y="160" width="32" height="32"/>
+  <object id="209" type="occluder" x="608" y="256" width="32" height="32"/>
+  <object id="210" type="occluder" x="608" y="320" width="32" height="32"/>
+  <object id="211" type="occluder" x="640" y="256" width="32" height="32"/>
+  <object id="212" type="occluder" x="672" y="160" width="32" height="32"/>
+  <object id="213" type="occluder" x="672" y="192" width="32" height="32"/>
+  <object id="214" type="occluder" x="672" y="224" width="32" height="32"/>
+  <object id="215" type="occluder" x="672" y="256" width="32" height="32"/>
+  <object id="216" type="occluder" x="672" y="288" width="32" height="32"/>
+  <object id="217" type="occluder" x="672" y="320" width="32" height="32"/>
+  <object id="218" type="occluder" x="672" y="352" width="32" height="32"/>
+  <object id="219" type="occluder" x="480" y="384" width="32" height="32"/>
+  <object id="220" type="occluder" x="480" y="416" width="32" height="32"/>
+  <object id="221" type="occluder" x="480" y="448" width="32" height="32"/>
+  <object id="222" type="occluder" x="480" y="480" width="32" height="32"/>
+  <object id="223" type="occluder" x="320" y="192" width="32" height="64"/>
+  <object id="230" type="occluder" x="448" y="544" width="32" height="32"/>
+  <object id="231" type="occluder" x="512" y="544" width="32" height="32"/>
+  <object id="232" type="occluder" x="384" y="544" width="32" height="32"/>
+  <object id="233" type="occluder" x="544" y="544" width="32" height="32"/>
+  <object id="234" type="occluder" x="480" y="544" width="32" height="32"/>
+  <object id="235" type="occluder" x="416" y="544" width="32" height="32"/>
+  <object id="236" type="occluder" x="448" y="576" width="32" height="32"/>
+  <object id="237" type="occluder" x="512" y="576" width="32" height="32"/>
+  <object id="238" type="occluder" x="384" y="576" width="32" height="32"/>
+  <object id="239" type="occluder" x="544" y="576" width="32" height="32"/>
+  <object id="240" type="occluder" x="480" y="576" width="32" height="32"/>
+  <object id="241" type="occluder" x="416" y="576" width="32" height="32"/>
+  <object id="242" type="occluder" x="448" y="608" width="32" height="32"/>
+  <object id="243" type="occluder" x="512" y="608" width="32" height="32"/>
+  <object id="244" type="occluder" x="384" y="608" width="32" height="32"/>
+  <object id="245" type="occluder" x="544" y="608" width="32" height="32"/>
+  <object id="246" type="occluder" x="480" y="608" width="32" height="32"/>
+  <object id="247" type="occluder" x="416" y="608" width="32" height="32"/>
+  <object id="248" type="occluder" x="256" y="544" width="32" height="32"/>
+  <object id="252" type="occluder" x="288" y="544" width="32" height="32"/>
+  <object id="253" type="occluder" x="224" y="544" width="32" height="32"/>
+  <object id="254" type="occluder" x="288" y="576" width="32" height="32"/>
+  <object id="255" type="occluder" x="256" y="576" width="32" height="32"/>
+  <object id="256" type="occluder" x="224" y="576" width="32" height="32"/>
+  <object id="260" type="occluder" x="288" y="512" width="32" height="32"/>
+  <object id="263" type="occluder" x="224" y="512" width="32" height="32"/>
+  <object id="264" type="occluder" x="256" y="512" width="32" height="32"/>
+  <object id="266" type="occluder" x="480" y="512" width="32" height="32"/>
+  <object id="267" type="occluder" x="448" y="480" width="32" height="64"/>
+  <object id="268" type="occluder" x="512" y="480" width="32" height="64"/>
+  <object id="269" type="occluder" x="544" y="480" width="32" height="64"/>
+  <object id="270" type="occluder" x="416" y="480" width="32" height="64"/>
+  <object id="271" type="occluder" x="384" y="480" width="32" height="64"/>
+  <object id="272" type="occluder" x="288" y="448" width="32" height="64"/>
+  <object id="273" type="occluder" x="256" y="448" width="32" height="64"/>
+  <object id="274" type="occluder" x="224" y="448" width="32" height="64"/>
+  <object id="275" type="occluder" x="320" y="512" width="32" height="64"/>
+  <object id="276" type="occluder" x="352" y="512" width="32" height="64"/>
+  <object id="277" type="occluder" x="96" y="448" width="32" height="64"/>
+  <object id="278" type="occluder" x="128" y="448" width="32" height="64"/>
+  <object id="279" type="occluder" x="160" y="448" width="32" height="64"/>
+  <object id="280" type="occluder" x="160" y="672" width="32" height="64"/>
+  <object id="281" type="occluder" x="192" y="672" width="32" height="64"/>
+  <object id="282" type="occluder" x="224" y="672" width="32" height="64"/>
+  <object id="283" type="occluder" x="128" y="800" width="32" height="64"/>
+  <object id="284" type="occluder" x="160" y="800" width="32" height="64"/>
+  <object id="285" type="occluder" x="224" y="800" width="32" height="64"/>
+  <object id="286" type="occluder" x="256" y="800" width="32" height="64"/>
+  <object id="287" type="occluder" x="288" y="832" width="32" height="64"/>
+  <object id="288" type="occluder" x="448" y="864" width="32" height="64"/>
+  <object id="289" type="occluder" x="512" y="864" width="32" height="64"/>
+  <object id="290" type="occluder" x="608" y="512" width="32" height="64"/>
+  <object id="291" type="occluder" x="640" y="512" width="32" height="64"/>
+  <object id="292" type="occluder" x="672" y="512" width="32" height="64"/>
+  <object id="293" type="occluder" x="704" y="512" width="32" height="64"/>
+  <object id="294" type="occluder" x="736" y="512" width="32" height="64"/>
+  <object id="295" type="occluder" x="768" y="576" width="32" height="64"/>
+  <object id="296" type="occluder" x="800" y="512" width="32" height="64"/>
+  <object id="297" type="occluder" x="768" y="672" width="32" height="64"/>
+  <object id="298" type="occluder" x="736" y="672" width="32" height="64"/>
+  <object id="299" type="occluder" x="704" y="672" width="32" height="64"/>
+  <object id="300" type="occluder" x="672" y="672" width="32" height="64"/>
+  <object id="302" type="occluder" x="640" y="704" width="32" height="64"/>
+  <object id="303" type="occluder" x="512" y="704" width="32" height="64"/>
+  <object id="304" type="occluder" x="480" y="704" width="32" height="64"/>
+  <object id="305" type="occluder" x="544" y="704" width="32" height="64"/>
+  <object id="306" type="occluder" x="576" y="704" width="32" height="64"/>
+  <object id="307" type="occluder" x="384" y="704" width="32" height="64"/>
+  <object id="308" type="occluder" x="352" y="704" width="32" height="64"/>
+  <object id="309" type="occluder" x="416" y="704" width="32" height="64"/>
+  <object id="310" type="occluder" x="448" y="704" width="32" height="64"/>
+  <object id="311" type="occluder" x="320" y="704" width="32" height="64"/>
+  <object id="312" type="occluder" x="96" y="512" width="32" height="32"/>
+  <object id="313" type="occluder" x="128" y="512" width="32" height="32"/>
+  <object id="314" type="occluder" x="160" y="512" width="32" height="32"/>
+  <object id="315" type="occluder" x="96" y="544" width="32" height="32"/>
+  <object id="316" type="occluder" x="128" y="544" width="32" height="32"/>
+  <object id="317" type="occluder" x="160" y="544" width="32" height="32"/>
+  <object id="318" type="occluder" x="96" y="576" width="32" height="32"/>
+  <object id="319" type="occluder" x="128" y="576" width="32" height="32"/>
+  <object id="320" type="occluder" x="160" y="576" width="32" height="32"/>
+  <object id="321" type="occluder" x="128" y="864" width="32" height="32"/>
+  <object id="322" type="occluder" x="160" y="864" width="32" height="32"/>
+  <object id="323" type="occluder" x="192" y="864" width="32" height="32"/>
+  <object id="324" type="occluder" x="128" y="896" width="32" height="32"/>
+  <object id="325" type="occluder" x="160" y="896" width="32" height="32"/>
+  <object id="326" type="occluder" x="192" y="896" width="32" height="32"/>
+  <object id="327" type="occluder" x="224" y="896" width="32" height="32"/>
+  <object id="328" type="occluder" x="256" y="864" width="32" height="32"/>
+  <object id="329" type="occluder" x="256" y="896" width="32" height="32"/>
+  <object id="330" type="occluder" x="224" y="864" width="32" height="32"/>
+  <object id="331" type="occluder" x="192" y="800" width="32" height="32"/>
+  <object id="332" type="occluder" x="192" y="832" width="32" height="32"/>
+  <object id="333" type="occluder" x="192" y="736" width="32" height="32"/>
+  <object id="334" type="occluder" x="192" y="768" width="32" height="32"/>
+  <object id="335" type="occluder" x="128" y="672" width="32" height="32"/>
+  <object id="336" type="occluder" x="128" y="704" width="32" height="32"/>
+  <object id="337" type="occluder" x="128" y="608" width="32" height="32"/>
+  <object id="338" type="occluder" x="128" y="640" width="32" height="32"/>
+  <object id="339" type="occluder" x="256" y="608" width="32" height="32"/>
+  <object id="340" type="occluder" x="256" y="640" width="32" height="32"/>
+  <object id="341" type="occluder" x="256" y="672" width="32" height="32"/>
+  <object id="342" type="occluder" x="256" y="704" width="32" height="32"/>
+  <object id="343" type="occluder" x="320" y="832" width="32" height="32"/>
+  <object id="344" type="occluder" x="320" y="864" width="32" height="32"/>
+  <object id="345" type="occluder" x="320" y="768" width="32" height="32"/>
+  <object id="346" type="occluder" x="320" y="800" width="32" height="32"/>
+  <object id="347" type="occluder" x="480" y="768" width="32" height="32"/>
+  <object id="348" type="occluder" x="480" y="800" width="32" height="32"/>
+  <object id="349" type="occluder" x="480" y="832" width="32" height="32"/>
+  <object id="350" type="occluder" x="480" y="864" width="32" height="32"/>
+  <object id="351" type="occluder" x="480" y="896" width="32" height="32"/>
+  <object id="352" type="occluder" x="480" y="928" width="32" height="32"/>
+  <object id="353" type="occluder" x="480" y="960" width="32" height="32"/>
+  <object id="354" type="occluder" x="448" y="960" width="32" height="32"/>
+  <object id="355" type="occluder" x="448" y="928" width="32" height="32"/>
+  <object id="356" type="occluder" x="512" y="960" width="32" height="32"/>
+  <object id="357" type="occluder" x="512" y="928" width="32" height="32"/>
+  <object id="358" type="occluder" x="608" y="736" width="32" height="32"/>
+  <object id="359" type="occluder" x="608" y="704" width="32" height="32"/>
+  <object id="360" type="occluder" x="608" y="672" width="32" height="32"/>
+  <object id="361" type="occluder" x="608" y="640" width="32" height="32"/>
+  <object id="362" type="occluder" x="608" y="608" width="32" height="32"/>
+  <object id="363" type="occluder" x="608" y="576" width="32" height="32"/>
+  <object id="364" type="occluder" x="640" y="576" width="32" height="32"/>
+  <object id="365" type="occluder" x="640" y="608" width="32" height="32"/>
+  <object id="366" type="occluder" x="672" y="576" width="32" height="32"/>
+  <object id="367" type="occluder" x="672" y="608" width="32" height="32"/>
+  <object id="368" type="occluder" x="704" y="576" width="32" height="32"/>
+  <object id="369" type="occluder" x="704" y="608" width="32" height="32"/>
+  <object id="370" type="occluder" x="736" y="576" width="32" height="32"/>
+  <object id="371" type="occluder" x="736" y="608" width="32" height="32"/>
+  <object id="372" type="occluder" x="800" y="576" width="32" height="32"/>
+  <object id="373" type="occluder" x="800" y="608" width="32" height="32"/>
+  <object id="374" type="occluder" x="672" y="736" width="32" height="32"/>
+  <object id="375" type="occluder" x="672" y="768" width="32" height="32"/>
+  <object id="376" type="occluder" x="704" y="736" width="32" height="32"/>
+  <object id="377" type="occluder" x="704" y="768" width="32" height="32"/>
+  <object id="378" type="occluder" x="736" y="736" width="32" height="32"/>
+  <object id="379" type="occluder" x="736" y="768" width="32" height="32"/>
+  <object id="380" type="occluder" x="768" y="736" width="32" height="32"/>
+  <object id="381" type="occluder" x="768" y="768" width="32" height="32"/>
  </objectgroup>
 </map>

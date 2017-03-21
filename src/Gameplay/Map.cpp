@@ -106,6 +106,9 @@ void Map::loadLayers(rapidxml::xml_node<>* map)
 
     xml_node<>* objects = map->first_node("objectgroup");
     loadObjects(objects);
+
+    xml_node<>* occluders = objects->next_sibling("objectgroup");
+    loadOccluders(occluders);
 }
 
 void Map::loadLayer(rapidxml::xml_node<>* layere)
@@ -446,6 +449,21 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             GUI::Get().setTarget(player);
         }
         object = object->next_sibling("object");
+    }
+}
+
+void Map::loadOccluders(rapidxml::xml_node<>* occluders)
+{
+    using namespace rapidxml;
+    xml_node<>* occs = occluders->first_node("object");
+
+    printf("Occluders later!\n");
+
+    while (occs)
+    {
+        // printf("yeah occluders!\n");
+
+        occs = occs->next_sibling("object");
     }
 }
 

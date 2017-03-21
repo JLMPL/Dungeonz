@@ -13,10 +13,7 @@ StatePlaying::StatePlaying()
 
 void StatePlaying::init()
 {
-    if (m_level)
-        m_level->leave();
-    m_level.reset(new Level());
-    m_level->init("map_test.tmx", true);
+    setLevel("dote_test.tmx");
 }
 
 void StatePlaying::update(float deltaTime)
@@ -36,7 +33,8 @@ void StatePlaying::leave()
 
 void StatePlaying::setLevel(const std::string& level)
 {
-    m_level->leave();
+    if (m_level)
+        m_level->leave();
     m_level.reset(new Level());
     m_level->init(level, false);
 }
