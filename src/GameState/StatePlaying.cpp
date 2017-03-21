@@ -13,14 +13,14 @@ StatePlaying::StatePlaying()
 
 void StatePlaying::init()
 {
-    setLevel("dote_test.tmx");
+    setLevel("dote_test.tmx", true);
 }
 
 void StatePlaying::update(float deltaTime)
 {
     if (!m_considered)
     {
-        setLevel(m_consider);
+        setLevel(m_consider, false);
         m_considered = true;
     }
 
@@ -31,12 +31,12 @@ void StatePlaying::leave()
 {
 }
 
-void StatePlaying::setLevel(const std::string& level)
+void StatePlaying::setLevel(const std::string& level, bool first)
 {
     if (m_level)
         m_level->leave();
     m_level.reset(new Level());
-    m_level->init(level, false);
+    m_level->init(level, first);
 }
 
 void StatePlaying::begForLevel(const std::string& level)

@@ -24,10 +24,20 @@ constexpr int g_statsHeight = 192;
 
 GraphicInv::GraphicInv()
 {
+    
+}
+
+void GraphicInv::init(int width, int height)
+{
+    m_width = width;
+    m_height = height;
+
+    printf("%dx%d\n", m_width, m_height);
+
     for (int i = 0; i < g_maxItems; i++)
         m_slots.push_back(Slot());
 
-    m_invPos = {800 - 32 * g_invSize, 300 - (g_invSize*16)};
+    m_invPos = {m_width - 32 * g_invSize, (m_height/2) - (g_invSize*16)};
     m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
     
     initDesc();
@@ -39,7 +49,7 @@ void GraphicInv::initDesc()
     m_descBack = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
     m_descBack.setFillColor({0x20,0x20,0x20});
 
-    m_descBackPos = vec2i(400 - (g_descWidth /2), 600 - g_descHeight);
+    m_descBackPos = vec2i((m_width/2) - (g_descWidth /2), m_height - g_descHeight);
 
     m_descName.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
     m_descName.setCharacterSize(16);
@@ -57,7 +67,7 @@ void GraphicInv::initStats()
     m_statsBcg.setSize({g_statsWidth, g_statsHeight});
     m_statsBcg.setFillColor({0x20,0x20,0x20});
 
-    m_statsPos = vec2i(0, 300 - (g_statsHeight/2));
+    m_statsPos = vec2i(0, (m_height/2) - (g_statsHeight/2));
 
     m_statsLevel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
     m_statsLevel.setCharacterSize(10);

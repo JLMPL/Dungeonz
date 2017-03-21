@@ -13,6 +13,8 @@ class GraphicInv
     public:
         GraphicInv();
 
+        void init(int _width, int _height);
+
         void initDesc();
         void initStats();
 
@@ -32,6 +34,9 @@ class GraphicInv
         sf::Sprite        m_select;
         int               m_selected = 0;
         sf::Clock         m_timer;
+
+        int m_width = 0;
+        int m_height = 0;
 
         Living* m_player;
 

@@ -20,7 +20,7 @@ class StatePlaying : public GameState
         void update(float deltaTime) override final;
         void leave() override final;
 
-        void setLevel(const std::string& level);
+        void setLevel(const std::string& level, bool first);
         void begForLevel(const std::string& level);
 
     private:

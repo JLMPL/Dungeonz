@@ -50,13 +50,15 @@ void GUI::init()
 
     m_deathFade.setSize({Screen::Get().width, Screen::Get().height});
     m_deathFade.setFillColor({0,0,0,128});
+
+    m_ginv.init(Screen::Get().width, Screen::Get().height);
 }
 
 void GUI::update(float deltaTime)
 {
     m_camera = Renderer::Get().getCameraPos();
     m_sight.setPosition(m_camera.getSfVecf());
-    // Renderer::Get().submitOverlay(RenderData(&m_sight), RenderAttribute::OVERLAY);
+    Renderer::Get().submitOverlay(&m_sight);
 
     switch (m_mode)
     {
@@ -201,12 +203,6 @@ void GUI::update(float deltaTime)
         m_magicka.setPosition(m_camera + vec2i(5, Screen::Get().height -15));
         m_magicka.update();
     }
-
-    // if (m_target->isDead() and m_mode != GUIMode::Death)
-    // {
-    //  // m_target->setBusy(true);
-    //  // goDead();
-    // }
 }
 
 void GUI::goLoot(Inventory* inv, const vec2i& pos)

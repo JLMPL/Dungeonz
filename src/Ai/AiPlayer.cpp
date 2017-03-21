@@ -14,7 +14,7 @@
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionAlgorithm.hpp"
 
-/*/
+//*/
 #include "../Collision/CollisionHandler.hpp"
 #include "../Render/Renderer.hpp"
 //*/
@@ -444,36 +444,70 @@ void AiPlayer::focus()
     auto ents = m_target->getLevel()->getEntitiesInRange(m_target->getPosition(), 96);
     m_focus = nullptr;
 
-    if (ents.size() > 0)
+    if (!ents.empty())
     {
-        if (ents.size() > 1)
+        for (auto i = ents.begin(); i != ents.end();)
         {
-            for (auto i = ents.begin(); i != ents.end();)
+            vec2f cast = CollisionHandler::Get().castRay(m_target->getFakePos().getf(), (*i)->getFakePos().getf());
+            Direction_t dire = Direction::deduceDirection(normalize((*i)->getFakePos().getf() - m_target->getFakePos().getf()));
+
+            if ((*i)->getType() == EntityType::SpikeTrap or
+                (*i)->getType() == EntityType::PressPlate)
             {
-                if ((*i)->getType() == EntityType::SpikeTrap or
-                    (*i)->getType() == EntityType::PressPlate)
-                {
-                    i = ents.erase(i);
-                }
-                else
-                    i++;
+                i = ents.erase(i);
             }
-
-            if (ents.size() > 1)
+            else if (cast != Collision::infVec and
+                    (*i)->getType() != EntityType::Door and
+                    (*i)->getType() != EntityType::Chest)
             {
-                std::sort(begin(ents), end(ents),
-                [&](Entity* a, Entity* b)
-                {
-                    float dista = length(a->getPosition() - m_target->getPosition());
-                    float distb = length(b->getPosition() - m_target->getPosition());
+                i = ents.erase(i);
+            }
+            else if (dire != m_target->getDirection())
+            {
+                i = ents.erase(i);
+            }
+            else
+                i++;
+        }
 
-                    return dista < distb;
-                });
+        Entity* theent = nullptr;
+        for (std::size_t i = 0; i < ents.size(); i++)
+        {
+            if (theent == nullptr)
+                theent = ents[i];
+            else
+            {
+                float dista = length(theent->getPosition() - m_target->getPosition());
+                float distb = length(ents[i]->getPosition() - m_target->getPosition());
+
+                if (distb < dista)
+                {
+                    theent = ents[i];
+                }
             }
         }
 
-        m_focus = ents[0];
+        m_focus = theent;
 
+        // if (ents.size() > 1)
+        // {
+        //     std::sort(begin(ents), end(ents),
+        //     [&](Entity* a, Entity* b)
+        //     {
+        //         float dista = length(a->getPosition() - m_target->getPosition());
+        //         float distb = length(b->getPosition() - m_target->getPosition());
+
+        //         return dista < distb;
+        //     });
+
+        //     m_focus = ents[0];
+        // }
+    }
+    else
+        m_focus = nullptr;
+
+    if (m_focus)
+    {
         switch (m_focus->getType())
         {
             case EntityType::Living:
