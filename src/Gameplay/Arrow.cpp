@@ -13,7 +13,7 @@ Arrow::Arrow()
 
     m_box = BoxPtr_t(new Box());
     m_box->type = CollisionType::TriggerVolume;
-    m_box->reactMaterial = CollMaterial::Regular | CollMaterial::Living;
+    m_box->reactMaterial = CollMaterial::Regular;
     m_box->callback = [this]()
     {
         blow(nullptr);
@@ -88,11 +88,8 @@ void Arrow::blow(Entity* ent)
                 {
                     auto beholder = static_cast<Living*>(m_owner);
 
-                    if (!living->isDead())
-                    {
-                        living->damage(20);
-                        // living->push(m_direction, 8, 0.1);
-                    }
+                    living->damage(100);
+                    // living->push(m_direction, 8, 0.1);
 
                     if (living->isDead())
                     {
@@ -102,6 +99,8 @@ void Arrow::blow(Entity* ent)
                     m_speed = 0;
                     destroy();
                 }
+                else if (living->isDead())
+                    return;
             }
             break;
         }
