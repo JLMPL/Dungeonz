@@ -39,9 +39,6 @@ void GUI::init()
         m_target->setBusy(false);
     });
 
-    addLabel("Shit Fuck Ass in correct order not!");
-    addLabel("AssShitFuck is the only correct order!");
-
     m_deathSentence.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
     m_deathSentence.setCharacterSize(48);
     m_deathSentence.setString("It's over");
@@ -58,7 +55,7 @@ void GUI::update(float deltaTime)
 {
     m_camera = Renderer::Get().getCameraPos();
     m_sight.setPosition(m_camera.getSfVecf());
-    Renderer::Get().submitForeground(&m_sight);
+    // Renderer::Get().submitForeground(&m_sight);
 
     switch (m_mode)
     {
