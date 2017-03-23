@@ -17,6 +17,7 @@ enum KeyBind
     Spellz,
     Escape,
     Roll,
+    Shoot,
     NumKeys
 };
 
@@ -49,6 +50,7 @@ class InputHandler
         bool isSpellbook();
         bool isEscape();
         bool isRoll();
+        bool isShoot();
 
     private:
         sf::Keyboard::Key m_keys[KeyBind::NumKeys];

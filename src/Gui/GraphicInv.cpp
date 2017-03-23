@@ -153,6 +153,10 @@ void GraphicInv::update()
             {
                 slot.mark();
             }
+            else if (m_player->isEquipped(Equip::Bow, slot.item))
+            {
+                slot.mark();
+            }
         }
     }
 
@@ -188,6 +192,20 @@ void GraphicInv::update()
                 else
                 {
                     m_player->setEquippedItem(Equip::Armor, nullptr);
+                    (*item.takeoff)(m_player);
+                }
+            }
+            break;
+            case ItemType::Bow:
+            {
+                if (!m_player->isEquipped(Equip::Bow, &item))
+                {
+                    m_player->setEquippedItem(Equip::Bow, &item);
+                    (*item.equip)(m_player);
+                }
+                else
+                {
+                    m_player->setEquippedItem(Equip::Bow, nullptr);
                     (*item.takeoff)(m_player);
                 }
             }

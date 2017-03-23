@@ -7,6 +7,7 @@
 #include "../Gameplay/Lever.hpp"
 #include "../Gameplay/ItemBag.hpp"
 #include "../Gameplay/LightningBolt.hpp"
+#include "../Gameplay/Arrow.hpp"
 #include "../Gameplay/Exit.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Input/InputHandler.hpp"
@@ -63,6 +64,9 @@ void AiPlayer::update(float deltaTime)
                 break;
             case PlayerState::Rolling:
                 rollState(deltaTime);
+                break;
+            case PlayerState::Shoot:
+                shootState(deltaTime);
                 break;
         }
     }
@@ -151,6 +155,10 @@ void AiPlayer::movingState(float deltaTime)
     {
         m_state = PlayerState::Casting;
     }
+    else if (InputHandler::Get().isShoot())
+    {
+        m_state = PlayerState::Shoot;
+    }
 
     if (InputHandler::Get().isRoll())
     {
@@ -180,6 +188,10 @@ void AiPlayer::idleState(float deltaTime)
     else if (InputHandler::Get().isCast())
     {
         m_state = PlayerState::Casting;
+    }
+    else if (InputHandler::Get().isShoot())
+    {
+        m_state = PlayerState::Shoot;
     }
 }
 
@@ -347,6 +359,27 @@ void AiPlayer::castState(float deltaTime)
 
             default:break;
         }
+    }
+    else
+        m_state = PlayerState::Idle;
+}
+
+void AiPlayer::shootState(float deltaTime)
+{
+    if (m_timer.getElapsedTime().asMilliseconds() >= 400 and
+        m_target->getEquippedItem(Equip::Bow))
+    {
+        auto arrow = m_target->getLevel()->addArrow(std::shared_ptr<Arrow>(new Arrow()));
+        arrow->init(m_target->getFakePos().getf(), m_target->getDirection());
+        arrow->setOwner(static_cast<Entity*>(m_target));
+
+        m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+        [&]()
+        {
+            m_state = PlayerState::Idle;
+        });
+
+        m_timer.restart();
     }
     else
         m_state = PlayerState::Idle;

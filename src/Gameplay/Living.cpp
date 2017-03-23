@@ -63,6 +63,7 @@ void Living::init(const LivingProfile& profile)
 
     m_equipped[Equip::Weapon] = nullptr;
     m_equipped[Equip::Armor] = nullptr;
+    m_equipped[Equip::Bow] = nullptr;
 }
 
 void Living::update(float deltaTime)

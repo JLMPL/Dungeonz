@@ -26,6 +26,7 @@ enum Equip
 {
     Weapon,
     Armor,
+    Bow,
     NumEq
 };
 

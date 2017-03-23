@@ -5,7 +5,7 @@
 #include "FireMissile.hpp"
 #include "IceMissile.hpp"
 #include "LightningBolt.hpp"
-#include "Exit.hpp"
+#include "Arrow.hpp"
 #include "Map.hpp"
 #include "../Render/BigParticle.hpp"
 #include <vector>
@@ -28,7 +28,7 @@ class Level
         FireMissile*   addFireMissile(std::shared_ptr<FireMissile> missile);
         IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
         LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
-        Exit*          addExit(EntityPtr_t exit);
+        Arrow*         addArrow(std::shared_ptr<Arrow> arrow);
 
         std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
         Entity* getEntityByCode(std::string code);
@@ -44,6 +44,7 @@ class Level
         std::vector<std::shared_ptr<FireMissile>> m_missiles;
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
         std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
+        std::vector<std::shared_ptr<Arrow>> m_arrows;
 
         Map m_map;
 };

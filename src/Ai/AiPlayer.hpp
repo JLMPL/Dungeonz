@@ -14,7 +14,8 @@ enum class PlayerState
     Attack,
     Picking,
     Casting,
-    Rolling
+    Rolling,
+    Shoot
 };
 
 class Entity;
@@ -32,6 +33,7 @@ class AiPlayer : public Ai
         void pickingState(float deltaTime);
         void castState   (float deltaTime);
         void rollState   (float deltaTime);
+        void shootState  (float deltaTime);
 
         void castFireball();
         void castFrostbite();

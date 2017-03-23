@@ -286,6 +286,15 @@ LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
     return m_lightnings.back().get();
 }
 
+Arrow* Level::addArrow(std::shared_ptr<Arrow> arrow)
+{
+    m_arrows.push_back(arrow);
+    m_arrows.back()->setLevel(this);
+    m_arrows.back()->setId(m_lastEntityId);
+    m_lastEntityId++;
+    return m_arrows.back().get();
+}
+
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
     m_bigParticles.push_back(BigParticle());
@@ -327,6 +336,22 @@ void Level::update(float deltaTime)
             i++;
     }
 
+    for (auto i = m_arrows.begin(); i != m_arrows.end();)
+    {
+        if ((*i)->isDestroyed())
+            i = m_arrows.erase(i);
+        else
+            i++;
+    }
+
+    for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
+    {
+        if ((*i).isDead())
+            i = m_bigParticles.erase(i);
+        else
+            i++;
+    }
+
     for (auto& i : m_entities)
         i->update(deltaTime);
 
@@ -339,18 +364,11 @@ void Level::update(float deltaTime)
     for (auto& i : m_lightnings)
         i->update(deltaTime);
 
-    for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
-    {
-        if ((*i).isDead())
-            i = m_bigParticles.erase(i);
-        else
-            i++;
-    }
+    for (auto& i : m_arrows)
+        i->update(deltaTime);
 
     for (auto& i : m_bigParticles)
-    {
         i.update(deltaTime);
-    }
 
     m_map.update();
     CollisionHandler::Get().update(deltaTime);

@@ -10,6 +10,7 @@ enum class ItemType
     Potion,
     Food,
     Book,
+    Bow,
     Misc
 };
 

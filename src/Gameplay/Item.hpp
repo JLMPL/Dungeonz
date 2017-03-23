@@ -112,6 +112,13 @@ struct Item
             {
                 type = ItemType::Misc;
             }
+            else if (str_type == "bow")
+            {
+                type = ItemType::Bow;
+
+                equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
+                takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
+            }
 
         //*/
 

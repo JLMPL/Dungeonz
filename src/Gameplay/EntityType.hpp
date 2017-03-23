@@ -12,7 +12,8 @@ enum class EntityType
     PressPlate,
     ItemBag,
     Fireball,
-    Exit
+    Exit,
+    Arrow
 };
 
 #endif

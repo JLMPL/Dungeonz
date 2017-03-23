@@ -14,6 +14,7 @@ void InputHandler::init()
     m_keys[KeyBind::Spellz]    = sf::Keyboard::S;
     m_keys[KeyBind::Escape]    = sf::Keyboard::Escape;
     m_keys[KeyBind::Roll]      = sf::Keyboard::D;
+    m_keys[KeyBind::Shoot]     = sf::Keyboard::W;
 }
 
 bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
@@ -23,16 +24,17 @@ bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
 
 bool InputHandler::isAnyKeyPressed()
 {
-    if (sf::Keyboard::isKeyPressed(m_keys[KeyBind::Up])        or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Down])      or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Left])      or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Right])     or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Action])    or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Attack])    or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Inv])       or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Cast])      or
+    if (sf::Keyboard::isKeyPressed(m_keys[KeyBind::Up])     or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Down])   or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Left])   or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Right])  or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Action]) or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Attack]) or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Inv])    or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Cast])   or
         sf::Keyboard::isKeyPressed(m_keys[KeyBind::Spellz]) or
-        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Roll]))
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Roll])   or
+        sf::Keyboard::isKeyPressed(m_keys[KeyBind::Shoot]))
     {
         return true;
     }
@@ -102,4 +104,9 @@ bool InputHandler::isEscape()
 bool InputHandler::isRoll()
 {
     return sf::Keyboard::isKeyPressed(m_keys[KeyBind::Roll]);
+}
+
+bool InputHandler::isShoot()
+{
+    return sf::Keyboard::isKeyPressed(m_keys[KeyBind::Shoot]);
 }

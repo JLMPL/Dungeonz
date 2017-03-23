@@ -15,7 +15,7 @@ void Renderer::init(sf::RenderWindow* window)
     else
     {
         m_window = window;
-        m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width/2, Screen::Get().height/2));
+        m_camera = sf::View(sf::Vector2f(0,0), sf::Vector2f(Screen::Get().width, Screen::Get().height));
     }
 }
 
