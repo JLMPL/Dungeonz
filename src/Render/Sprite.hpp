@@ -10,28 +10,28 @@
 
 class Sprite
 {
-	public:
-		virtual ~Sprite() {}
-		virtual void loadFromFile(const std::string& path);
+    public:
+        virtual ~Sprite() {}
+        virtual void loadFromFile(const std::string& path);
 
-		virtual void update(float deltaTime) {}
-		virtual void setAnimation(AnimPtr_t anim, std::function<void ()> cell = [](){}) {};
+        virtual void update(float deltaTime) {}
+        virtual void setAnimation(AnimPtr_t anim, std::function<void ()> cell = [](){}) {};
 
-		void draw();
+        void draw();
 
-		void setSize(vec2i size);
-		void setRect(Recti rect);
-		void setOrigin(vec2i origin);
-		void setPosition(const vec2i& pos);
-		void setDirection(Direction_t dir);
+        void setSize(vec2i size);
+        void setRect(Recti rect);
+        void setOrigin(vec2i origin);
+        void setPosition(const vec2i& pos);
+        void setDirection(Direction_t dir);
 
-		vec2i getPosition() const;
-		vec2i getOrigin() const;
+        vec2i getPosition() const;
+        vec2i getOrigin() const;
 
-	protected:
-		sf::Sprite  m_sprite;
-		Direction_t m_direction = Direction::Up;
-		vec2i m_origin;
+    protected:
+        sf::Sprite  m_sprite;
+        Direction_t m_direction = Direction::Up;
+        vec2i m_origin;
 };
 
 #endif

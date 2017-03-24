@@ -1,7 +1,7 @@
 TODO:
 -saves (checkpoints on the beginning of dungeon level)
--enemies sight raycast
--dropping items
+-pathfinding
+
 
 Spellz: done
   Fireball - Shoot the fireball on the face, and explode.

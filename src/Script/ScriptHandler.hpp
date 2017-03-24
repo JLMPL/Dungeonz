@@ -10,17 +10,17 @@ extern "C"
 
 class ScriptHandler
 {
-	public:
-		static ScriptHandler& Get()
-		{
-			static ScriptHandler self;
-			return self;
-		}
+    public:
+        static ScriptHandler& Get()
+        {
+            static ScriptHandler self;
+            return self;
+        }
 
-		void init();
-		void loadLibs(lua_State* lua);
-		
-	private:
+        void init();
+        void loadLibs(lua_State* lua);
+        
+    private:
 };
 
 #endif

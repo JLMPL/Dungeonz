@@ -1,23 +1,28 @@
 #ifndef PRESS_PLATE_HPP
 #define PRESS_PLATE_HPP
 #include "Entity.hpp"
+#include <vector>
+#include <functional>
 
 class PressPlate : public Entity
 {
-	public:
-		PressPlate();
+    public:
+        PressPlate();
 
-		void update(float deltaTime) override final;
+        void update(float deltaTime) override final;
 
-		void whom(Entity* entity);
+        void activate();
+        void deactivate();
 
-		void activate();
-		void deactivate();
+        void setActivateFunc(std::function<void ()> func);
+        void setDeactivateFunc(std::function<void ()> func);
 
-	private:
-		bool      m_active = false;
-		sf::Clock m_timer;
-		Entity*   m_whom = nullptr;
+    private:
+        bool m_active = false;
+        sf::Clock m_timer;
+
+        std::function<void ()> m_activateFunc;
+        std::function<void ()> m_deactivateFunc;
 };
 
 #endif

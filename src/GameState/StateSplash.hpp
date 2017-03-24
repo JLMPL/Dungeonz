@@ -6,19 +6,19 @@
 
 class StateSplash : public GameState
 {
-	public:
-		StateSplash();
+    public:
+        StateSplash();
 
-		void init() override final;
-		void update(float deltaTime) override final;
-		void leave() override final;
+        void init() override final;
+        void update(float deltaTime) override final;
+        void leave() override final;
 
-	private:
-		sf::Sprite m_sfmlLogo;
-		sf::Sprite m_luaLogo;
-		sf::Clock m_timer;
+    private:
+        sf::Sprite m_sfmlLogo;
+        sf::Sprite m_luaLogo;
+        sf::Clock m_timer;
 
-		int m_stage = 0;
+        int m_stage = 0;
 };
 
 #endif

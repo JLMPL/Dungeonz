@@ -19,7 +19,7 @@ struct LivingProfile
     void loadFromFile(std::string path)
     {
         std::string finalpath = "data/Living/" + path;
-    	std::ifstream file(finalpath.c_str());
+        std::ifstream file(finalpath.c_str());
 
         if (!file.good())
         {
@@ -27,17 +27,17 @@ struct LivingProfile
         }
         else
         {
-        	file >> code;
-        	file >> apperance;
-    		file >> name;
-    		file >> health;
-    		file >> magicka;
-    		file >> damage;
-    		file >> defense;
-    		file >> level;
-    		file >> xp;
+            file >> code;
+            file >> apperance;
+            file >> name;
+            file >> health;
+            file >> magicka;
+            file >> damage;
+            file >> defense;
+            file >> level;
+            file >> xp;
         }
-    	file.close();
+        file.close();
     }
 };
 

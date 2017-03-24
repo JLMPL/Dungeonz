@@ -4,20 +4,20 @@
 
 class Exit : public Entity
 {
-	public:
-		Exit();
+    public:
+        Exit();
 
-		void update(float deltaTime) override final;
+        void update(float deltaTime) override final;
 
-		void setNext(const std::string& next);
-		const std::string& getNext() const;
+        void setNext(const std::string& next);
+        const std::string& getNext() const;
 
-		void setFunc(std::function<void ()> func);
-		void goFurther();
+        void setFunc(std::function<void ()> func);
+        void goFurther();
 
-	private:
-		std::string m_next;
-		std::function<void ()> m_exit;
+    private:
+        std::string m_next;
+        std::function<void ()> m_exit;
 };
 
 #endif

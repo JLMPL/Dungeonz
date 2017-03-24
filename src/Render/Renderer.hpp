@@ -11,56 +11,57 @@
 
 struct Line
 {
-	sf::Vertex* verts;
-	int count = 0;
-	sf::PrimitiveType type;
+    sf::Vertex* verts;
+    int count = 0;
+    sf::PrimitiveType type;
 };
 
 //Singleton
 class Renderer
 {
-	public:
-		static Renderer& Get()
-		{
-			static Renderer self;
-			return self;
-		}
+    public:
+        static Renderer& Get()
+        {
+            static Renderer self;
+            return self;
+        }
 
-		void init(sf::RenderWindow* window);
+        void init(sf::RenderWindow* window);
 
-		void submitBackground(sf::CircleShape* data);
-		void submitBackground(sf::Sprite* data);
-		void submitSorted(sf::Sprite* data);
-		void submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type);
+        void submitBackground(sf::CircleShape* data);
+        void submitBackground(sf::Sprite* data);
+        void submitSorted(sf::Sprite* data);
+        void submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type);
+        void submitForeground(sf::Sprite* data);
 
-		void submitOverlay(sf::RectangleShape* data);
-		void submitOverlay(sf::Sprite* data);
-		void submitOverlay(sf::Text* data);
-		void flush();
+        void submitOverlay(sf::RectangleShape* data);
+        void submitOverlay(sf::Sprite* data);
+        void submitOverlay(sf::Text* data);
+        void flush();
 
-		void setCameraPos(const vec2i& pos);
-		vec2i getCameraPos() const;
+        void setCameraPos(const vec2i& pos);
+        vec2i getCameraPos() const;
 
-	private:
-		void updateCamera();
-		void cull();
-		void sort();
-		void render();
-		void clearAll();
+    private:
+        void updateCamera();
+        void cull();
+        void sort();
+        void render();
+        void clearAll();
 
-	private:
-		sf::RenderWindow* m_window = nullptr;
-		std::vector<sf::CircleShape*> m_backCircleData;
-		std::vector<sf::Sprite*> m_backgroundData;
-		std::vector<sf::Sprite*> m_sortedData;
+    private:
+        sf::RenderWindow* m_window = nullptr;
+        std::vector<sf::CircleShape*> m_backCircleData;
+        std::vector<sf::Sprite*> m_backgroundData;
+        std::vector<sf::Sprite*> m_sortedData;
+        std::vector<sf::Sprite*> m_foregroundData;
 
-		std::vector<Line> m_linesData;
+        std::vector<Line> m_linesData;
 
-		//gui
-		std::vector<sf::RectangleShape*> m_overRectData;
-		std::vector<sf::Sprite*>         m_overSpriteData;
-		std::vector<sf::Text*>           m_overTextData;
-		sf::View m_camera;
+        std::vector<sf::RectangleShape*> m_overRectData;
+        std::vector<sf::Sprite*>         m_overSpriteData;
+        std::vector<sf::Text*>           m_overTextData;
+        sf::View m_camera;
 };
 
 #endif

@@ -6,42 +6,41 @@
 
 StatePlaying::StatePlaying()
 {
-	GUI::Get().setPlayingState(this);
+    GUI::Get().setPlayingState(this);
+    m_type = StateType::Playing;
+    m_level = nullptr;
 }
 
 void StatePlaying::init()
 {
-	m_level = std::unique_ptr<Level>(new Level());
-	m_level->init("map_test.tmx", true);
+    setLevel("dote_test.tmx", true);
 }
 
 void StatePlaying::update(float deltaTime)
 {
-	if (!m_considered)
-	{
-		setLevel(m_consider);
-		m_considered = true;
-	}
+    if (!m_considered)
+    {
+        setLevel(m_consider, false);
+        m_considered = true;
+    }
 
-	if (InputHandler::Get().isKeyPressed(sf::Keyboard::P))
-		setLevel("second_test.tmx");
-
-	m_level->update(deltaTime);
+    m_level->update(deltaTime);
 }
 
 void StatePlaying::leave()
 {
 }
 
-void StatePlaying::setLevel(const std::string& level)
+void StatePlaying::setLevel(const std::string& level, bool first)
 {
-	m_level->leave();
-	m_level.reset(new Level());
-	m_level->init(level, false);
+    if (m_level)
+        m_level->leave();
+    m_level.reset(new Level());
+    m_level->init(level, first);
 }
 
 void StatePlaying::begForLevel(const std::string& level)
 {
-	m_consider = level;
-	m_considered = false;
+    m_consider = level;
+    m_considered = false;
 }

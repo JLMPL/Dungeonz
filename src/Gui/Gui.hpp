@@ -17,61 +17,65 @@ class StatePlaying;
 //Singleton
 class GUI
 {
-	public:
-		static GUI& Get()
-		{
-			static GUI self;
-			return self;
-		}
+    public:
+        static GUI& Get()
+        {
+            static GUI self;
+            return self;
+        }
 
-		void init();
-		void update(float deltaTime);
+        void init();
+        void update(float deltaTime);
 
-		void goLoot(Inventory* inv, const vec2i& pos);
-		void goRead(const std::string& content);
-		void showFocusHealthbar(int val, int max, const vec2i& pos);
-		void setFocusLabel(const std::string& label, const vec2i& pos);
-		void addLabel(const std::string& label);
+        void goLoot(Inventory* inv, const vec2i& pos);
+        void goRead(const std::string& content);
+        void showFocusHealthbar(int val, int max, const vec2i& pos);
+        void setFocusLabel(const std::string& label, const vec2i& pos);
+        void addLabel(const std::string& label);
 
-		void goDead();
+        void goDead();
 
-		void setTarget(Living* living);
-		Living* getTarget();
+        void setTarget(Living* living);
+        Living* getTarget();
 
-		void setPlayingState(StatePlaying* state);
-		void begForLevel(const std::string& level);
+        void setPlayingState(StatePlaying* state);
+        void begForLevel(const std::string& level);
 
-	private:
-		GUIMode m_mode;
-		sf::Clock m_timer;
-		sf::Sprite m_sight;
-		vec2i m_camera;
+        void setBackToMenuFunc(std::function<void ()> func);
 
-		bool m_showLabel = false;
-		sf::Text m_focusLabel;
-		bool m_showHealthbar = false;
-		Bar m_focusHealth;
+    private:
+        GUIMode m_mode;
+        sf::Clock m_timer;
+        sf::Sprite m_sight;
+        vec2i m_camera;
 
-		Living* m_target;
+        bool m_showLabel = false;
+        sf::Text m_focusLabel;
+        bool m_showHealthbar = false;
+        Bar m_focusHealth;
 
-		GraphicInv m_ginv;
-		GraphicLoot m_gloot;
-		Bar m_health;
-		Bar m_magicka;
+        Living* m_target;
 
-		vec2i m_bookPos;
-		sf::Sprite m_bookBack;
-		sf::Text m_bookText;
+        GraphicInv m_ginv;
+        GraphicLoot m_gloot;
+        Bar m_health;
+        Bar m_magicka;
 
-		CenterLabel m_centerLabel;
+        vec2i m_bookPos;
+        sf::Sprite m_bookBack;
+        sf::Text m_bookText;
 
-		Spellbook m_spellbook;
+        CenterLabel m_centerLabel;
 
-		sf::Text m_deathSentence;
-		sf::RectangleShape m_deathFade;
-		float m_deathTimer = 0;
+        Spellbook m_spellbook;
 
-		StatePlaying* m_playingState;
+        sf::Text m_deathSentence;
+        sf::RectangleShape m_deathFade;
+        float m_deathTimer = 0;
+
+        StatePlaying* m_playingState;
+
+        std::function<void ()> m_backToMenuFunc;
 };
 
 #endif

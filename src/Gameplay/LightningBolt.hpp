@@ -7,20 +7,20 @@
 
 class LightningBolt : public Entity
 {
-	public:
-		LightningBolt();
+    public:
+        LightningBolt();
 
-		void init(const vec2f& start, const vec2f& end);
-		void update(float deltaTime) override final;
-		void compute();
+        void init(const vec2f& start, const vec2f& end);
+        void update(float deltaTime) override final;
+        void compute();
 
-	private:
-		sf::Vertex m_line[10];
-		sf::Vertex m_secLine[10];
-		vec2f      m_start;
-		vec2f      m_end;
-		sf::Clock  m_timer;
-		sf::Clock  m_life;
+    private:
+        sf::Vertex m_line[10];
+        sf::Vertex m_secLine[10];
+        vec2f      m_start;
+        vec2f      m_end;
+        sf::Clock  m_timer;
+        sf::Clock  m_life;
 };
 
 #endif

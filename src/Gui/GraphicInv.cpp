@@ -6,6 +6,8 @@
 #include "../Input/InputHandler.hpp"
 #include "../Resource/FontCache.hpp"
 #include "../Gameplay/Living.hpp"
+#include "../Gameplay/Level.hpp"
+#include "../Gameplay/ItemBag.hpp"
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
@@ -20,323 +22,394 @@ constexpr int g_descHeight = 128;
 constexpr int g_statsWidth = 192;
 constexpr int g_statsHeight = 192;
 
-//Screen::Get().resolution problem
-
 GraphicInv::GraphicInv()
 {
-	for (int i = 0; i < g_maxItems; i++)
-		m_slots.push_back(Slot());
+}
 
-	m_invPos = {800 - 32 * g_invSize, 300 - (g_invSize*16)};
-	m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
-	
-	initDesc();
-	initStats();
+void GraphicInv::init(int width, int height)
+{
+    m_width = width;
+    m_height = height;
+
+    for (int i = 0; i < g_maxItems; i++)
+        m_slots.push_back(Slot());
+
+    m_invPos = {m_width - 32 * g_invSize, (m_height/2) - (g_invSize*16)};
+    m_select.setTexture(*TextureCache::Get().getTexture("selection.png"));
+    
+    initDesc();
+    initStats();
 }
 
 void GraphicInv::initDesc()
 {
-	m_descBack = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
-	m_descBack.setFillColor({0x20,0x20,0x20});
+    m_descBack = sf::RectangleShape(sf::Vector2f(g_descWidth, g_descHeight));
+    m_descBack.setFillColor({0x20,0x20,0x20});
 
-	m_descBackPos = vec2i(400 - (g_descWidth /2), 600 - g_descHeight);
+    m_descBackPos = vec2i((m_width/2) - (g_descWidth /2), m_height - g_descHeight);
 
-	m_descName.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_descName.setCharacterSize(16);
+    m_descName.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_descName.setCharacterSize(16);
 
-	m_descType.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_descType.setCharacterSize(10);
-	m_descType.setFillColor({0x80,0x80,0x80});
+    m_descType.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_descType.setCharacterSize(10);
+    m_descType.setFillColor({0x80,0x80,0x80});
 
-	m_desc.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_desc.setCharacterSize(10);
+    m_desc.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_desc.setCharacterSize(10);
 }
 
 void GraphicInv::initStats()
 {
-	m_statsBcg.setSize({g_statsWidth, g_statsHeight});
-	m_statsBcg.setFillColor({0x20,0x20,0x20});
+    m_statsBcg.setSize({g_statsWidth, g_statsHeight});
+    m_statsBcg.setFillColor({0x20,0x20,0x20});
 
-	m_statsPos = vec2i(0, 300 - (g_statsHeight/2));
+    m_statsPos = vec2i(0, (m_height/2) - (g_statsHeight/2));
 
-	m_statsLevel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_statsLevel.setCharacterSize(10);
-	m_statsLevel.setString("Level");
+    m_statsLevel.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_statsLevel.setCharacterSize(10);
+    m_statsLevel.setString("Level");
 
-	m_xpBar.init({g_statsWidth - 20,14}, {128,0,128});
-	m_xpBar.setShowStats(true);
+    m_xpBar.init({g_statsWidth - 20,14}, {128,0,128});
+    m_xpBar.setShowStats(true);
 
-	m_statsHealth.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_statsHealth.setCharacterSize(10);
-	m_statsHealth.setString("Health");
+    m_statsHealth.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_statsHealth.setCharacterSize(10);
+    m_statsHealth.setString("Health");
 
-	m_healthBar.init({g_statsWidth - 20,14}, {192,0,0});
-	m_healthBar.setShowStats(true);
+    m_healthBar.init({g_statsWidth - 20,14}, {192,0,0});
+    m_healthBar.setShowStats(true);
 
-	m_statsMana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_statsMana.setCharacterSize(10);
-	m_statsMana.setString("Magicka");
+    m_statsMana.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_statsMana.setCharacterSize(10);
+    m_statsMana.setString("Magicka");
 
-	m_manaBar.init({g_statsWidth - 20,14}, {0,0,192});
-	m_manaBar.setShowStats(true);
+    m_manaBar.init({g_statsWidth - 20,14}, {0,0,192});
+    m_manaBar.setShowStats(true);
 
-	m_statsDamage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_statsDamage.setCharacterSize(10);
+    m_statsDamage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_statsDamage.setCharacterSize(10);
 
-	m_statsDefense.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-	m_statsDefense.setCharacterSize(10);
+    m_statsDefense.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_statsDefense.setCharacterSize(10);
 }
 
 void GraphicInv::update()
-{	
-	if (InputHandler::Get().isUp() and
-		m_timer.getElapsedTime().asMilliseconds() > 150 and
-		m_selected > 4)
-	{
-		m_selected -= g_invSize;
-		m_timer.restart();
-	}
-	else if (InputHandler::Get().isDown() and
-		m_timer.getElapsedTime().asMilliseconds() > 150 and
-		m_selected < 20)
-	{
-		m_selected += g_invSize;
-		m_timer.restart();
-	}
+{   
+    if (InputHandler::Get().isUp() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        m_selected > g_invSize-1)
+    {
+        m_selected -= g_invSize;
+        m_timer.restart();
+    }
+    else if (InputHandler::Get().isDown() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        m_selected < g_maxItems - g_invSize)
+    {
+        m_selected += g_invSize;
+        m_timer.restart();
+    }
 
-	if (InputHandler::Get().isLeft() and
-		m_timer.getElapsedTime().asMilliseconds() > 150 and
-		m_selected > 0)
-	{
-		m_selected--;
-		m_timer.restart();
-	}
-	else if (InputHandler::Get().isRight() and
-		m_timer.getElapsedTime().asMilliseconds() > 150 and
-		m_selected < 25)
-	{
-		m_selected++;
-		m_timer.restart();
-	}
+    if (InputHandler::Get().isLeft() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        m_selected > 0)
+    {
+        m_selected--;
+        m_timer.restart();
+    }
+    else if (InputHandler::Get().isRight() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        m_selected < g_maxItems-1)
+    {
+        m_selected++;
+        m_timer.restart();
+    }
 
-	for (int i = 0; i < g_invSize; i++)
-	for (int j = 0; j < g_invSize; j++)
-	{
-		Slot& slot = m_slots[i * g_invSize + j];
-		vec2i pos = vec2i(m_pos.x + m_invPos.x + j*32, m_pos.y + m_invPos.y + i*32);
-		slot.setPosition(pos);
-		slot.empty = true;
+    for (int i = 0; i < g_invSize; i++)
+    for (int j = 0; j < g_invSize; j++)
+    {
+        Slot& slot = m_slots[i * g_invSize + j];
+        vec2i pos = vec2i(m_pos.x + m_invPos.x + j*32, m_pos.y + m_invPos.y + i*32);
+        slot.setPosition(pos);
+        slot.empty = true;
 
-		if (m_selected == i * g_invSize + j)
-			m_select.setPosition(pos.getSfVecf());
-	}
+        if (m_selected == i * g_invSize + j)
+            m_select.setPosition(pos.getSfVecf());
+    }
 
-	for (int i = 0; i < 25; i++)
-	{
-		Slot& slot = m_slots[i];
-		if (i < m_inv->getAmount())
-			slot.setItem(m_inv->getItem(i).get());
-		slot.unmark();
+    for (int i = 0; i < g_maxItems; i++)
+    {
+        Slot& slot = m_slots[i];
+        if (i < m_inv->getAmount())
+            slot.setItem(m_inv->getItem(i).get());
+        slot.unmark();
 
-		if (!slot.empty)
-		{
-			if (m_player->isEquipped(Equip::Weapon, slot.item))
-			{
-				slot.mark();
-			}
-			else if (m_player->isEquipped(Equip::Armor, slot.item))
-			{
-				slot.mark();
-			}
-		}
-	}
+        if (!slot.empty)
+        {
+            if (m_player->isEquipped(Equip::Weapon, slot.item))
+            {
+                slot.mark();
+            }
+            else if (m_player->isEquipped(Equip::Armor, slot.item))
+            {
+                slot.mark();
+            }
+            else if (m_player->isEquipped(Equip::Bow, slot.item))
+            {
+                slot.mark();
+            }
+        }
+    }
 
-	if (InputHandler::Get().isAction() and
-		m_timer.getElapsedTime().asMilliseconds() > 150 and
-		!m_slots[m_selected].empty)
-	{
-		Item& item = *m_slots[m_selected].item;
+    if (InputHandler::Get().isAction() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        !m_slots[m_selected].empty)
+    {
+        Item& item = *m_slots[m_selected].item;
 
-		switch (item.type)
-		{
-			case ItemType::Weapon:
-			{
-				if (!m_player->isEquipped(Equip::Weapon, &item))
-				{
-					m_player->setEquippedItem(Equip::Weapon, &item);
-					(*item.equip)(m_player);
-				}
-				else
-				{
-					m_player->setEquippedItem(Equip::Weapon, nullptr);
-					(*item.takeoff)(m_player);
-				}
-				break;
-			}
-			case ItemType::Armor:
-			{
-				if (!m_player->isEquipped(Equip::Armor, &item))
-				{
-					m_player->setEquippedItem(Equip::Armor, &item);
-					(*item.equip)(m_player);
-				}
-				else
-				{
-					m_player->setEquippedItem(Equip::Armor, nullptr);
-					(*item.takeoff)(m_player);
-				}
-				break;
-			}
-			case ItemType::Food:
-			{
-				(*item.effect)(m_player);
-				m_player->accessInv().removeItem(&item);
-				m_slots[m_selected].empty = true;
-				break;
-			}
-			case ItemType::Book:
-			{
-				(*item.effect)();
-			}
-			case ItemType::Spell:
-			{
-				(*item.effect)(m_player);
-				break;
-			}
-			case ItemType::Misc:
-			{
-				break;
-			}
-			default:break;
-		}
-		m_timer.restart();
-	}
+        switch (item.type)
+        {
+            case ItemType::Weapon:
+            {
+                if (!m_player->isEquipped(Equip::Weapon, &item))
+                {
+                    m_player->setEquippedItem(Equip::Weapon, &item);
+                    (*item.equip)(m_player);
+                }
+                else
+                {
+                    m_player->setEquippedItem(Equip::Weapon, nullptr);
+                    (*item.takeoff)(m_player);
+                }
+            }
+            break;
+            case ItemType::Armor:
+            {
+                if (!m_player->isEquipped(Equip::Armor, &item))
+                {
+                    m_player->setEquippedItem(Equip::Armor, &item);
+                    (*item.equip)(m_player);
+                }
+                else
+                {
+                    m_player->setEquippedItem(Equip::Armor, nullptr);
+                    (*item.takeoff)(m_player);
+                }
+            }
+            break;
+            case ItemType::Bow:
+            {
+                if (!m_player->isEquipped(Equip::Bow, &item))
+                {
+                    m_player->setEquippedItem(Equip::Bow, &item);
+                    (*item.equip)(m_player);
+                }
+                else
+                {
+                    m_player->setEquippedItem(Equip::Bow, nullptr);
+                    (*item.takeoff)(m_player);
+                }
+            }
+            break;
+            case ItemType::Food:
+            {
+                (*item.effect)(m_player);
+                m_player->accessInv().removeItem(&item);
+                m_slots[m_selected].empty = true;
+            }
+            break;
+            case ItemType::Book:
+            {
+                (*item.effect)();
+            }
+            break;
+            case ItemType::Spell:
+            {
+                (*item.effect)(m_player);
+                m_player->accessInv().removeItem(&item);
+            }
+            break;
+            case ItemType::Misc:
+                break;
+            default:break;
+        }
+        m_timer.restart();
+    }
+    else if (InputHandler::Get().isCast() and
+        m_timer.getElapsedTime().asMilliseconds() > 150 and
+        !m_slots[m_selected].empty)
+    {
+        Item& item = *m_slots[m_selected].item;
 
-	for (auto& i : m_slots)
-	{
-		Renderer::Get().submitOverlay(&i.rect);
-		if (!i.empty)
-			Renderer::Get().submitOverlay(&i.sprite);
-		Renderer::Get().submitOverlay(&m_select);
-	}
-	
-	description();
-	stats();
+        auto ents = m_player->getLevel()->getEntitiesInRange(m_player->getFakePos().getf(), 32);
+
+        for (auto i = ents.begin(); i != ents.end();)
+        {
+            if ((*i)->getType() != EntityType::ItemBag)
+                i = ents.erase(i);
+            else
+                i++;
+        }
+
+        std::sort(ents.begin(), ents.end(),
+        [this](const Entity* a, const Entity* b)
+        {
+            float dist0 = length(a->getFakePos().getf() - m_player->getFakePos().getf());
+            float dist1 = length(b->getFakePos().getf() - m_player->getFakePos().getf());
+
+            if (dist0 < dist1)
+                return true;
+            return false;
+        });
+
+        ItemBag* bag = nullptr;
+
+        printf("size = %u\n", ents.size());
+
+        // if (!ents.empty())
+        // {
+            // printf("Entsz!\n");
+            // bag = static_cast<ItemBag*>(ents[0]);
+        // }
+        // else
+        // {
+            bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
+            bag->setCode("spitoff");
+            bag->setPosition(m_player->getFakePos().getf());
+        // }
+
+        bag->accessInv().addItem(ItemPtr_t(&item)); //<- suckin' double free
+        m_player->accessInv().removeItem(&item);
+
+        m_timer.restart();
+    }
+
+    for (auto& i : m_slots)
+    {
+        Renderer::Get().submitOverlay(&i.rect);
+        if (!i.empty)
+            Renderer::Get().submitOverlay(&i.sprite);
+        Renderer::Get().submitOverlay(&m_select);
+    }
+    
+    description();
+    stats();
 }
 
 void GraphicInv::description()
 {
-	Slot& slot = m_slots[m_selected];
-	if (!slot.empty)
-	{
-		m_descName.setString(slot.item->name);
-		m_descName.setOrigin({static_cast<int>(m_descName.getLocalBounds().width/2), 0});
-		
-		switch (slot.item->type)
-		{
-			case ItemType::Weapon:
-				m_descType.setString("Weapon");
-			break;
-			case ItemType::Armor:
-				m_descType.setString("Armor");
-			break;
-			case ItemType::Food:
-				m_descType.setString("Consumable");
-			break;
-			case ItemType::Book:
-				m_descType.setString("Book");
-			break;
-			case ItemType::Spell:
-				m_descType.setString("Spell");
-			break;
-			case ItemType::Misc:
-				m_descType.setString("Miscellaneous");
-			break;
-		}
-		
-		m_descType.setOrigin({static_cast<int>(m_descType.getLocalBounds().width/2), 0});
-		m_desc.setString(slot.item->desc);
-	}
+    Slot& slot = m_slots[m_selected];
+    if (!slot.empty)
+    {
+        m_descName.setString(slot.item->name);
+        m_descName.setOrigin({static_cast<int>(m_descName.getLocalBounds().width/2), 0});
+        
+        switch (slot.item->type)
+        {
+            case ItemType::Weapon:
+                m_descType.setString("Weapon");
+                break;
+            case ItemType::Armor:
+                m_descType.setString("Armor");
+                break;
+            case ItemType::Food:
+                m_descType.setString("Consumable");
+                break;
+            case ItemType::Book:
+                m_descType.setString("Book");
+                break;
+            case ItemType::Spell:
+                m_descType.setString("Spell");
+                break;
+            case ItemType::Misc:
+                m_descType.setString("Miscellaneous");
+                break;
+        }
+        
+        m_descType.setOrigin({static_cast<int>(m_descType.getLocalBounds().width/2), 0});
+        m_desc.setString(slot.item->desc);
+    }
 
-	auto the_pos = m_pos + m_descBackPos;
-	m_descBack.setPosition(the_pos.getSfVecf());
+    auto thePos = m_pos + m_descBackPos;
+    m_descBack.setPosition(thePos.getSfVecf());
 
-	auto other_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 10);
-	m_descName.setPosition(other_pos.getSfVecf());
+    auto otherPos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 10);
+    m_descName.setPosition(otherPos.getSfVecf());
 
-	auto type_pos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 30);
-	m_descType.setPosition(type_pos.getSfVecf());
+    auto typePos = m_pos + m_descBackPos + vec2i(g_descWidth/2, 30);
+    m_descType.setPosition(typePos.getSfVecf());
 
-	auto desc_pos = m_pos + m_descBackPos + vec2i(30, 50);
-	m_desc.setPosition(desc_pos.getSfVecf());
+    auto descPos = m_pos + m_descBackPos + vec2i(30, 50);
+    m_desc.setPosition(descPos.getSfVecf());
 
-	Renderer::Get().submitOverlay(&m_descBack);
-	Renderer::Get().submitOverlay(&m_descName);
-	Renderer::Get().submitOverlay(&m_descType);
-	Renderer::Get().submitOverlay(&m_desc);
+    Renderer::Get().submitOverlay(&m_descBack);
+    Renderer::Get().submitOverlay(&m_descName);
+    Renderer::Get().submitOverlay(&m_descType);
+    Renderer::Get().submitOverlay(&m_desc);
 }
 
 void GraphicInv::stats()
 {
-	auto pos = m_pos + m_statsPos;
-	m_statsBcg.setPosition(pos.getSfVecf());
+    auto pos = m_pos + m_statsPos;
+    m_statsBcg.setPosition(pos.getSfVecf());
 
-	auto level_pos = m_pos + m_statsPos + vec2i(10,5);
-	m_statsLevel.setPosition(level_pos.getSfVecf());
-	m_statsLevel.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
+    auto levelPos = m_pos + m_statsPos + vec2i(10,5);
+    m_statsLevel.setPosition(levelPos.getSfVecf());
+    m_statsLevel.setString("Level " + std::to_string(m_player->getAttribute(Attribute::currLevel)));
 
-	auto xp_bar_pos = m_pos + m_statsPos + vec2i(10,24);
-	m_xpBar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
-	m_xpBar.setValue(m_player->getAttribute(Attribute::Xp));
-	m_xpBar.setPosition(xp_bar_pos);
+    auto xpBarPos = m_pos + m_statsPos + vec2i(10,24);
+    m_xpBar.setMaxValue(m_player->getAttribute(Attribute::ToNext));
+    m_xpBar.setValue(m_player->getAttribute(Attribute::Xp));
+    m_xpBar.setPosition(xpBarPos);
 
-	auto health_pos = m_pos + m_statsPos + vec2i(10, 45);
-	m_statsHealth.setPosition(health_pos.getSfVecf());
+    auto healthPos = m_pos + m_statsPos + vec2i(10, 45);
+    m_statsHealth.setPosition(healthPos.getSfVecf());
 
-	auto health_bar_pos = m_pos + m_statsPos + vec2i(10,64);
-	m_healthBar.setMaxValue(m_player->getAttribute(Attribute::Health));
-	m_healthBar.setValue(m_player->getAttribute(Attribute::Hp));
-	m_healthBar.setPosition(health_bar_pos);
+    auto healthBarPos = m_pos + m_statsPos + vec2i(10,64);
+    m_healthBar.setMaxValue(m_player->getAttribute(Attribute::Health));
+    m_healthBar.setValue(m_player->getAttribute(Attribute::Hp));
+    m_healthBar.setPosition(healthBarPos);
 
-	auto mana_pos = m_pos + m_statsPos + vec2i(10, 85);
-	m_statsMana.setPosition(mana_pos.getSfVecf());
+    auto manaPos = m_pos + m_statsPos + vec2i(10, 85);
+    m_statsMana.setPosition(manaPos.getSfVecf());
 
-	auto mana_bar_pos = m_pos + m_statsPos + vec2i(10,104);
-	m_manaBar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
-	m_manaBar.setValue(m_player->getAttribute(Attribute::Mp));
-	m_manaBar.setPosition(mana_bar_pos);
+    auto manaBarPos = m_pos + m_statsPos + vec2i(10,104);
+    m_manaBar.setMaxValue(m_player->getAttribute(Attribute::Magicka));
+    m_manaBar.setValue(m_player->getAttribute(Attribute::Mp));
+    m_manaBar.setPosition(manaBarPos);
 
-	auto damage_pos = m_pos + m_statsPos + vec2i(10, 128);
-	m_statsDamage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
-	m_statsDamage.setPosition(damage_pos.getSfVecf());
+    auto damagePos = m_pos + m_statsPos + vec2i(10, 128);
+    m_statsDamage.setString("Damage " + std::to_string(m_player->getAttribute(Attribute::Damage)) + "pt");
+    m_statsDamage.setPosition(damagePos.getSfVecf());
 
-	auto defense_pos = m_pos + m_statsPos + vec2i(10, 142);
-	m_statsDefense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
-	m_statsDefense.setPosition(defense_pos.getSfVecf());
+    auto defensePos = m_pos + m_statsPos + vec2i(10, 142);
+    m_statsDefense.setString("Defense " + std::to_string(m_player->getAttribute(Attribute::Defense)) + "%");
+    m_statsDefense.setPosition(defensePos.getSfVecf());
 
-	Renderer::Get().submitOverlay(&m_statsBcg);
-	Renderer::Get().submitOverlay(&m_statsLevel);
-	Renderer::Get().submitOverlay(&m_statsHealth);
-	Renderer::Get().submitOverlay(&m_statsMana);
-	Renderer::Get().submitOverlay(&m_statsDamage);
-	Renderer::Get().submitOverlay(&m_statsDefense);
+    Renderer::Get().submitOverlay(&m_statsBcg);
+    Renderer::Get().submitOverlay(&m_statsLevel);
+    Renderer::Get().submitOverlay(&m_statsHealth);
+    Renderer::Get().submitOverlay(&m_statsMana);
+    Renderer::Get().submitOverlay(&m_statsDamage);
+    Renderer::Get().submitOverlay(&m_statsDefense);
 
-	m_xpBar.update();
-	m_healthBar.update();
-	m_manaBar.update();
+    m_xpBar.update();
+    m_healthBar.update();
+    m_manaBar.update();
 }
 
 void GraphicInv::setPosition(const vec2i& pos)
 {
-	m_pos = pos;
+    m_pos = pos;
 }
 
 void GraphicInv::setInv(Inventory* inv)
 {
-	m_inv = inv;
+    m_inv = inv;
 }
 
 void GraphicInv::setTarget(Living* player)
 {
-	m_player = player;
+    m_player = player;
 }
