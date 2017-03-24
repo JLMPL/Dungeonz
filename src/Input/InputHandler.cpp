@@ -2,19 +2,19 @@
 
 void InputHandler::init()
 {
-    m_keys[KeyBind::Up]        = sf::Keyboard::Up;
-    m_keys[KeyBind::Down]      = sf::Keyboard::Down;
-    m_keys[KeyBind::Left]      = sf::Keyboard::Left;
-    m_keys[KeyBind::Right]     = sf::Keyboard::Right;
-    m_keys[KeyBind::Action]    = sf::Keyboard::E;
-    m_keys[KeyBind::Attack]    = sf::Keyboard::F;
-    m_keys[KeyBind::Inv]       = sf::Keyboard::Tab;
-    m_keys[KeyBind::Run]       = sf::Keyboard::LShift;
-    m_keys[KeyBind::Cast]      = sf::Keyboard::R;
-    m_keys[KeyBind::Spellz]    = sf::Keyboard::S;
-    m_keys[KeyBind::Escape]    = sf::Keyboard::Escape;
-    m_keys[KeyBind::Roll]      = sf::Keyboard::D;
-    m_keys[KeyBind::Shoot]     = sf::Keyboard::W;
+    m_keys[KeyBind::Up]     = sf::Keyboard::Up;
+    m_keys[KeyBind::Down]   = sf::Keyboard::Down;
+    m_keys[KeyBind::Left]   = sf::Keyboard::Left;
+    m_keys[KeyBind::Right]  = sf::Keyboard::Right;
+    m_keys[KeyBind::Action] = sf::Keyboard::E;
+    m_keys[KeyBind::Attack] = sf::Keyboard::F;
+    m_keys[KeyBind::Inv]    = sf::Keyboard::Tab;
+    m_keys[KeyBind::Run]    = sf::Keyboard::LShift;
+    m_keys[KeyBind::Cast]   = sf::Keyboard::R;
+    m_keys[KeyBind::Spellz] = sf::Keyboard::S;
+    m_keys[KeyBind::Escape] = sf::Keyboard::Escape;
+    m_keys[KeyBind::Roll]   = sf::Keyboard::D;
+    m_keys[KeyBind::Shoot]  = sf::Keyboard::W;
 }
 
 bool InputHandler::isKeyPressed(sf::Keyboard::Key key)
