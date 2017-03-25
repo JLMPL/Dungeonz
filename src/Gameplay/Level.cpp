@@ -92,9 +92,11 @@ void Level::loadTravel(const std::string& path, bool save)
     //EQUIPPED
     std::string weapon;
     std::string armor;
+    std::string bow;
 
     file >> weapon;
     file >> armor;
+    file >> bow;
 
     if (weapon != "0")
     {
@@ -117,6 +119,19 @@ void Level::loadTravel(const std::string& path, bool save)
             if (item->code == armor)
             {
                 player->setEquippedItem(Equip::Armor, item.get());
+                (*item->equip)(player);
+            }
+        }
+    }
+
+    if (bow != "0")
+    {
+        for (std::size_t i = 0; i < player->accessInv().getAmount(); i++)
+        {
+            auto item = player->accessInv().getItem(i);
+            if (item->code == bow)
+            {
+                player->setEquippedItem(Equip::Bow, item.get());
                 (*item->equip)(player);
             }
         }
@@ -170,18 +185,20 @@ void Level::saveTravel(const std::string& path, bool save)
 
     Item* weapon = player->getEquippedItem(Equip::Weapon);
     Item* armor = player->getEquippedItem(Equip::Armor);
+    Item* bow = player->getEquippedItem(Equip::Bow);
 
     if (weapon)
-    {
         fprintf(file, "%s\n", weapon->code.c_str());
-    }
     else
         fprintf(file, "0\n");
 
     if (armor)
-    {
         fprintf(file, "%s\n", armor->code.c_str());
-    }
+    else
+        fprintf(file, "0\n");
+
+    if (bow)
+        fprintf(file, "%s\n", bow->code.c_str());
     else
         fprintf(file, "0\n");
 

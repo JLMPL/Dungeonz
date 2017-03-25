@@ -1,5 +1,5 @@
 #second_test.tmx
-40
+38
 40
 40
 40
@@ -12,6 +12,16 @@
 0
 0
 -1
+9
+it_test_item
+it_test_note
+it_test_speed
+it_test_bow
+it_test_arrow
+it_test_arrow
+it_test_arrow
+it_test_arrow
+it_test_arrow
+it_test_item
 0
-0
-0
+it_test_bow

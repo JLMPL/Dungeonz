@@ -376,7 +376,7 @@ void AiPlayer::shootState(float deltaTime)
 
         m_target->accessInv().removeItem("it_test_arrow");
 
-        m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+        m_target->setAnimation(AnimationCache::Get().getAnimation("player_shoot.ani"),
         [&]()
         {
             m_state = PlayerState::Idle;
