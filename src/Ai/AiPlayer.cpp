@@ -14,6 +14,7 @@
 #include "../Resource/AnimationCache.hpp"
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionAlgorithm.hpp"
+#include "../Sound/SoundHandler.hpp"
 
 //*/
 #include "../Collision/CollisionHandler.hpp"
@@ -68,6 +69,12 @@ void AiPlayer::update(float deltaTime)
             case PlayerState::Shoot:
                 shootState(deltaTime);
                 break;
+        }
+
+        if (m_state == PlayerState::Moving and m_stepTimer.getElapsedTime().asSeconds() > 0.3)
+        {
+            SoundHandler::Get().playSound(SoundEffect::StepEffect);
+            m_stepTimer.restart();
         }
     }
     else
@@ -403,6 +410,8 @@ void AiPlayer::castFireball()
             m_state = PlayerState::Idle;
         });
 
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
         m_timer.restart();
     }
 }
@@ -421,6 +430,8 @@ void AiPlayer::castFrostbite()
         {
             m_state = PlayerState::Idle;
         });
+
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
 
         m_timer.restart();
     }
@@ -460,6 +471,9 @@ void AiPlayer::castSpeed()
         m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
         IndicationHandler::Get().addIndication("Speed", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
 
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
+        m_timer.restart();
     }
 }
 
@@ -470,7 +484,10 @@ void AiPlayer::castHeal()
         m_target->restoreHealth(12);
         m_target->drainMana(g_healCost);
         m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
+
         IndicationHandler::Get().addIndication("Heal", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
         m_timer.restart();
     }
 }

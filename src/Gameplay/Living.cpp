@@ -6,6 +6,7 @@
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include "../Sound/SoundHandler.hpp"
 
 Living::Living()
 {
@@ -58,7 +59,7 @@ void Living::init(const LivingProfile& profile)
 
     for (int i = 0; i < Spell::NumSpells; i++)
     {
-        m_spells[i] = false;
+        m_spells[i] = true;
     }
 
     m_equipped[Equip::Weapon] = nullptr;
@@ -176,6 +177,7 @@ void Living::damage(int damage)
             currHp = 0;
 
         m_level->addBigParticle("blood_splash.ani", getFakePos() + vec2i(0, 1), vec2i(0, -20), 0.150);
+        SoundHandler::Get().playSound(SoundEffect::HitEffect);
     }
 }
 

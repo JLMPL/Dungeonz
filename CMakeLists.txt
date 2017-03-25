@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(ASS)
 
-set(PROJECT_LINK_LIBS -lSDL2main -lSDL2 -lSDL2_image -lsfml-graphics-d -lsfml-window-d -lsfml-system-d -llua5.2 -lz)
+set(PROJECT_LINK_LIBS -lSDL2main -lSDL2 -lSDL2_image -lsfml-graphics-d -lsfml-window-d -lsfml-audio-d -lsfml-system-d -llua5.2 -lz)
 link_directories(/usr/local/lib)
 
 set(FLAGS -g -std=c++14 -Wall)
@@ -21,6 +21,7 @@ file(GLOB gui   	"src/Gui/*.cpp")
 file(GLOB base64 	"src/base64/*.cpp")
 file(GLOB script 	"src/Script/*.cpp")
 file(GLOB state 	"src/GameState/*.cpp")
+file(GLOB sound     "src/Sound/*.cpp")
 
 add_executable(out
     ${src}
@@ -35,5 +36,6 @@ add_executable(out
 	${base64}
 	${script}
 	${state}
+	${sound}
 )
 target_link_libraries(out ${PROJECT_LINK_LIBS})

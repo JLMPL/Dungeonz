@@ -58,6 +58,8 @@ class AiPlayer : public Ai
 
         sf::RectangleShape m_hitPoint;
         sf::Vertex m_ray[2];
+
+        sf::Clock m_stepTimer;
 };
 
 #endif
