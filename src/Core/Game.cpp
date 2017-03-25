@@ -196,6 +196,12 @@ void Game::setState(GameState* state)
                 begForState(new StatePlaying());
             });
 
+            menu->setContinueFunc(
+            [this](const std::string& level)
+            {
+                begForState(new StatePlaying(level));
+            });
+
             menu->setExitFunc(
             [this]()
             {

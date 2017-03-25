@@ -494,7 +494,8 @@ void AiPlayer::focus()
             }
             else if (cast != Collision::infVec and
                     (*i)->getType() != EntityType::Door and
-                    (*i)->getType() != EntityType::Chest)
+                    (*i)->getType() != EntityType::Chest and
+                    (*i)->getType() != EntityType::Exit)
             {
                 i = ents.erase(i);
             }

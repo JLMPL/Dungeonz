@@ -7,6 +7,7 @@
 enum MenuOptions
 {
     NewGame,
+    Continue,
     HowToPlay,
     Exit,
     NumMenuOptions
@@ -32,9 +33,13 @@ class StateMenu : public GameState
         void helpState();
 
         void setNewGameFunc(std::function<void ()> func);
+        void setContinueFunc(std::function<void (const std::string&)> func);
+
+        std::string whereILeft();
 
     private:
         std::function<void ()> m_newGameFunc;
+        std::function<void (const std::string&)> m_continueFunc;
         sf::Text m_tmpLogo;
 
         int m_chosen = 1;

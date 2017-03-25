@@ -9,11 +9,20 @@ StatePlaying::StatePlaying()
     GUI::Get().setPlayingState(this);
     m_type = StateType::Playing;
     m_level = nullptr;
+    m_loadFirst = "map_test.tmx";
+}
+
+StatePlaying::StatePlaying(const std::string& loadFirst)
+{
+    GUI::Get().setPlayingState(this);
+    m_type = StateType::Playing;
+    m_level = nullptr;
+    m_loadFirst = loadFirst;
 }
 
 void StatePlaying::init()
 {
-    setLevel("dote_test.tmx", true);
+    setLevel(m_loadFirst, true);
 }
 
 void StatePlaying::update(float deltaTime)

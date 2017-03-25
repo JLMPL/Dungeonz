@@ -15,6 +15,7 @@ class StatePlaying : public GameState
 {
     public:
         StatePlaying();
+        StatePlaying(const std::string& loadFirst);
 
         void init() override final;
         void update(float deltaTime) override final;
@@ -27,6 +28,8 @@ class StatePlaying : public GameState
         std::unique_ptr<Level> m_level;
         std::string m_consider;
         bool m_considered = true;
+
+        std::string m_loadFirst;
 };
 
 #endif
