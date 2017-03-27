@@ -1,5 +1,6 @@
 TODO:
--bow animation
+-all graphics mine
+-more sounds
 -saves (loading inv)
 -the monsters (maybe the skeleton mage first)
 
@@ -19,5 +20,5 @@ Monsterz: 2/5
 
 
 Testers' notes:
-  -Segfaults ?don't seem to happen anymore
+  -Segfaults
 

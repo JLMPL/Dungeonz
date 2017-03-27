@@ -8,6 +8,7 @@ enum SoundEffect
     SpellEffect,
     StepEffect,
     FailEffect,
+    TakeEffect,
     NumSounds
 };
 
@@ -21,13 +22,20 @@ class SoundHandler
             return self;
         }
 
+        ~SoundHandler();
+
         void init();
+
+        void playMusic();
         void playSound(int effect, bool loop = false);
         void stopSound(int effect);
 
     private:
         sf::SoundBuffer m_buffers[SoundEffect::NumSounds];
         sf::Sound m_sounds[SoundEffect::NumSounds];
+
+        sf::SoundBuffer m_musicBuffer;
+        sf::Sound m_music;
 };
 
 #endif

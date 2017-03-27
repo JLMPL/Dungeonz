@@ -65,6 +65,8 @@ Game::Game()
     });
 
     begForState(new StateSplash());
+
+    SoundHandler::Get().playMusic();
 }
 
 Game::~Game()

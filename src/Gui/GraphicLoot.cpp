@@ -3,6 +3,7 @@
 #include "../Gameplay/Inventory.hpp"
 #include "../Resource/TextureCache.hpp"
 #include "../Input/InputHandler.hpp"
+#include "../Sound/SoundHandler.hpp"
 
 constexpr int g_maxItems = 5;
 
@@ -55,6 +56,8 @@ void GraphicLoot::update()
         {
             m_inv->removeItem(m_inv->getItem(m_selected)->code);
             m_slots[m_selected].empty = true;
+
+            // SoundHandler::Get().playSound(SoundEffect::TakeEffect);
         }
 
         m_timer.restart();

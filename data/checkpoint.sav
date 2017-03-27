@@ -1,5 +1,5 @@
-#map_test.tmx
-40
+#dote_test.tmx
+37
 40
 40
 40
@@ -11,8 +11,11 @@
 1
 1
 1
--1
-0
+4
+3
+it_test_item
+it_test_heal
+it_test_item
 0
 0
 0
