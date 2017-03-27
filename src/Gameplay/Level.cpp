@@ -344,6 +344,14 @@ void Level::update(float deltaTime)
 void Level::leave()
 {
     saveTravel("data/travel.sav", false);
+
+    m_entities.clear();
+    m_items.clear();
+    m_bigParticles.clear();
+    m_missiles.clear();
+    m_iceMissiles.clear();
+    m_lightnings.clear();
+    m_arrows.clear();
 }
 
 std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)

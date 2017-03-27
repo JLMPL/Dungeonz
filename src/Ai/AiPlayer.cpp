@@ -70,12 +70,6 @@ void AiPlayer::update(float deltaTime)
                 shootState(deltaTime);
                 break;
         }
-
-        if (m_state == PlayerState::Moving and m_stepTimer.getElapsedTime().asSeconds() > 0.3)
-        {
-            SoundHandler::Get().playSound(SoundEffect::StepEffect);
-            m_stepTimer.restart();
-        }
     }
     else
         m_target->setAnimation(AnimationCache::Get().getAnimation("player_idle.ani"));

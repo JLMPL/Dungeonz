@@ -44,7 +44,7 @@ void GraphicLoot::update()
 
     for (int i = 0; i < m_inv->getAmount(); i++)
     {
-        m_slots[i].setItem(m_inv->getItem(i).get());
+        m_slots[i].setItem(m_inv->getItem(i));
     }
 
     if (InputHandler::Get().isAction() and

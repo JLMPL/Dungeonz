@@ -25,7 +25,7 @@ class StatePlaying : public GameState
         void begForLevel(const std::string& level);
 
     private:
-        std::unique_ptr<Level> m_level;
+        Level m_level;
         std::string m_consider;
         bool m_considered = true;
 
