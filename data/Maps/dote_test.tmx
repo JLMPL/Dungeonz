@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="384">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="385">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
@@ -19,7 +19,7 @@
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="26" name="player_spawn" type="start" x="480" y="928" width="32" height="32"/>
+  <object id="26" name="player_spawn" type="start" x="672" y="320" width="32" height="32"/>
   <object id="33" name="skell_spawn" type="spawn" x="128" y="512" width="32" height="32">
    <properties>
     <property name="item0" value="-"/>
@@ -128,86 +128,6 @@
     <property name="item4" value="-"/>
    </properties>
   </object>
-  <object id="112" name="skell_spawn" type="spawn" x="448" y="192" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="113" name="skell_spawn" type="spawn" x="512" y="192" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="114" name="skell_spawn" type="spawn" x="448" y="224" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="115" name="skell_spawn" type="spawn" x="512" y="224" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="116" name="skell_spawn" type="spawn" x="448" y="256" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="117" name="skell_spawn" type="spawn" x="512" y="256" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="118" name="skell_spawn" type="spawn" x="448" y="288" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
-  <object id="119" name="skell_spawn" type="spawn" x="512" y="288" width="32" height="32">
-   <properties>
-    <property name="item0" value="-"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-    <property name="spawn" value="mob_skeleton"/>
-   </properties>
-  </object>
   <object id="383" name="az_chest" type="chest" x="480" y="128" width="32" height="32">
    <properties>
     <property name="item0" value="it_test_spell"/>
@@ -216,6 +136,16 @@
     <property name="item3" value="it_test_lightning"/>
     <property name="item4" value="it_test_heal"/>
     <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="384" name="mage_spawn" type="spawn_mage" x="480" y="192" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
    </properties>
   </object>
  </objectgroup>

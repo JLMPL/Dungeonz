@@ -11,14 +11,15 @@ enum class MobState
     Idle,
     Move,
     Attack,
+    Flee,
     Dead
 };
 
 class AiMob : public Ai
 {
     public:
-        void setup() override final;
-        void update(float deltaTime) override final;
+        void setup() override;
+        void update(float deltaTime) override;
         void focus();
 
         void idleState(float deltaTime);

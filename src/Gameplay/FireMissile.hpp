@@ -10,6 +10,8 @@ class FireMissile : public Entity
         void init(vec2f origin, Direction_t dir, EntityType type);
         void setOwner(Entity* owner);
 
+        void setDirection(const vec2f& dir);
+
         void update(float deltaTime) override final;
         void blow(Entity* ent);
 

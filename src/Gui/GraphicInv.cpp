@@ -265,8 +265,6 @@ void GraphicInv::update()
 
         ItemBag* bag = nullptr;
 
-        printf("size = %u\n", ents.size());
-
         // if (!ents.empty())
         // {
             // printf("Entsz!\n");

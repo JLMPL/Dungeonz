@@ -86,6 +86,7 @@ void AiMob::idleState(float deltaTime)
     }
     else
         m_state = MobState::Dead;
+    
     m_target->setAnimation(AnimationCache::Get().getAnimation(m_target->getProfile().apperance + "_idle.ani"));
 }
 
