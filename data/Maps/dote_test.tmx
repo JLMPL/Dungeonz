@@ -140,7 +140,7 @@
   </object>
   <object id="384" name="mage_spawn" type="spawn_mage" x="480" y="192" width="32" height="32">
    <properties>
-    <property name="item0" value="-"/>
+    <property name="item0" value="it_test_spell"/>
     <property name="item1" value="-"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>

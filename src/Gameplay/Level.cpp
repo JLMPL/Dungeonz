@@ -11,17 +11,35 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-void Level::init(const std::string& map, bool isFirst)
+void Level::init(const std::string& map, InitMode mode)
 {
     m_map.setLevel(this);
     m_map.loadFromFile(map);
 
     m_mapName = map;
 
-    if (!isFirst)
-        loadTravel("data/travel.sav", false);
+    printf("\n");
 
-    saveTravel("data/checkpoint.sav", true);
+    switch(mode)
+    {
+        case InitMode::First:
+            printf("This first!\n");
+            break;
+        case InitMode::Another:
+        {
+            loadTravel("data/travel.sav", false);
+            saveTravel("data/checkpoint.sav", true);
+            GUI::Get().addLabel("Game Saved!");
+            printf("This another!\n");
+        }
+        break;
+        case InitMode::LoadCheckpoint:
+            loadTravel("data/checkpoint.sav", true); //<- here it screws
+            printf("This loaded!\n");
+            break;
+    }
+
+    // saveTravel("data/checkpoint.sav", true);
 }
 
 void Level::loadTravel(const std::string& path, bool save)
@@ -32,9 +50,13 @@ void Level::loadTravel(const std::string& path, bool save)
 
     if (save)
     {
-        int shit;
+        std::string shit;
         file >> shit;
+
+        printf("loaded check!\n");
     }
+    else
+        printf("loaded travel\n");
 
     int hp;
     int health;
@@ -141,15 +163,17 @@ void Level::loadTravel(const std::string& path, bool save)
 
 void Level::saveTravel(const std::string& path, bool save)
 {
-    printf("saving!\n");
     Living* player = (Living*)getEntityByCode("pc_player");
 
     FILE* file = fopen(path.c_str(), "w");
 
     if (save)
     {
-        fprintf(file, "#%s\n", m_mapName.c_str());
+        fprintf(file, "%s\n", m_mapName.c_str());
+        printf("Saved check!\n");
     }
+    else
+        printf("saved travel\n");
 
     //STATS
     fprintf(file, "%d\n", player->getAttribute(Attribute::Hp));

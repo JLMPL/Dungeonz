@@ -160,5 +160,5 @@ std::string StateMenu::whereILeft()
 
     std::string str = cstr;
     
-    return str.substr(1, str.size()-1);
+    return str;
 }

@@ -21,7 +21,7 @@
 
 constexpr int g_majorVersion = 0;
 constexpr int g_minorVersion = 3;
-constexpr int g_updateVersion = 2; //<- Everytime I add a public feature (mem checks)
+constexpr int g_updateVersion = 3; //<- Everytime I add a public feature
 
 Game::Game()
 {

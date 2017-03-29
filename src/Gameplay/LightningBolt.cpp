@@ -34,8 +34,8 @@ void LightningBolt::update(float deltaTime)
         m_timer.restart();
     }
 
-    Renderer::Get().submitLine(m_line, 10, sf::LineStrip);
-    Renderer::Get().submitLine(m_secLine, 10, sf::LineStrip);
+    Renderer::Get().submitPrimitive(m_line, 10, sf::LineStrip);
+    Renderer::Get().submitPrimitive(m_secLine, 10, sf::LineStrip);
 }
 
 void LightningBolt::compute()

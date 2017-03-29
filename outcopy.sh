@@ -14,3 +14,11 @@ rm -r cmake_install.cmake
 cp -r Makefile ..
 rm -r Makefile
 
+cp -r run.sh ..
+rm -r run.sh
+
+cp -r count.sh ..
+rm -r count.sh
+
+cp -r Notes ..
+rm -r Notes

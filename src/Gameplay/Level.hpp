@@ -15,7 +15,14 @@ class Living;
 class Level
 {
     public:
-        void init(const std::string& map, bool isFirst);
+        enum class InitMode
+        {
+            First,
+            Another,
+            LoadCheckpoint
+        };
+        
+        void init(const std::string& map, InitMode mode);
         void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
         void update(float deltaTime);
         void leave();
