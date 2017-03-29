@@ -142,20 +142,20 @@ void GraphicInv::update()
     {
         Slot& slot = m_slots[i];
         if (i < m_inv->getAmount())
-            slot.setItem(m_inv->getItem(i).get());
+            slot.setItem(m_inv->getItem(i));
         slot.unmark();
 
         if (!slot.empty)
         {
-            if (m_player->isEquipped(Equip::Weapon, slot.item))
+            if (m_player->isEquipped(Equip::Weapon, slot.item.get()))
             {
                 slot.mark();
             }
-            else if (m_player->isEquipped(Equip::Armor, slot.item))
+            else if (m_player->isEquipped(Equip::Armor, slot.item.get()))
             {
                 slot.mark();
             }
-            else if (m_player->isEquipped(Equip::Bow, slot.item))
+            else if (m_player->isEquipped(Equip::Bow, slot.item.get()))
             {
                 slot.mark();
             }
@@ -265,8 +265,6 @@ void GraphicInv::update()
 
         ItemBag* bag = nullptr;
 
-        printf("size = %u\n", ents.size());
-
         // if (!ents.empty())
         // {
             // printf("Entsz!\n");
@@ -274,13 +272,13 @@ void GraphicInv::update()
         // }
         // else
         // {
-            bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
-            bag->setCode("spitoff");
-            bag->setPosition(m_player->getFakePos().getf());
+            // bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
+            // bag->setCode("spitoff");
+            // bag->setPosition(m_player->getFakePos().getf());
         // }
 
-        bag->accessInv().addItem(ItemPtr_t(&item)); //<- suckin' double free
-        m_player->accessInv().removeItem(&item);
+        // bag->accessInv().addItem(ItemPtr_t(&item)); //<- suckin' double free
+        // m_player->accessInv().removeItem(&item);
 
         m_timer.restart();
     }

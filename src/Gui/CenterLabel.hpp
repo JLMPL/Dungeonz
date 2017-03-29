@@ -2,6 +2,7 @@
 #define CENTER_LABEL_HPP
 #include "../Core/Vec2.hpp"
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Vertex.hpp>
 #include <queue>
 
 class CenterLabel
@@ -19,6 +20,8 @@ class CenterLabel
         vec2i m_position;
         sf::Text m_label;
         float m_timer;
+
+        sf::Vertex m_vertices[8];
 };
 
 #endif

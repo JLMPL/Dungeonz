@@ -8,6 +8,7 @@
 #include "../Resource/AnimationCache.hpp"
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionHandler.hpp"
+#include "../Sound/SoundHandler.hpp"
 #include "../Gui/Gui.hpp"
 #include "../GameState/StatePlaying.hpp"
 #include "../GameState/StateSplash.hpp"
@@ -20,7 +21,7 @@
 
 constexpr int g_majorVersion = 0;
 constexpr int g_minorVersion = 3;
-constexpr int g_updateVersion = 0; //<- Everytime I add a public feature
+constexpr int g_updateVersion = 3; //<- Everytime I add a public feature
 
 Game::Game()
 {
@@ -47,6 +48,7 @@ Game::Game()
     CollisionHandler::Get().init();
     Renderer::Get().init(&Window);
     IndicationHandler::Get().init();
+    SoundHandler::Get().init();
 
     version.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
     version.setCharacterSize(10);
@@ -63,6 +65,8 @@ Game::Game()
     });
 
     begForState(new StateSplash());
+
+    SoundHandler::Get().playMusic();
 }
 
 Game::~Game()
@@ -194,6 +198,12 @@ void Game::setState(GameState* state)
             [this]()
             {
                 begForState(new StatePlaying());
+            });
+
+            menu->setContinueFunc(
+            [this](const std::string& level)
+            {
+                begForState(new StatePlaying(level));
             });
 
             menu->setExitFunc(

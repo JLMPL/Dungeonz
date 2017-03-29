@@ -31,7 +31,7 @@ class Renderer
         void submitBackground(sf::CircleShape* data);
         void submitBackground(sf::Sprite* data);
         void submitSorted(sf::Sprite* data);
-        void submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type);
+        void submitPrimitive(sf::Vertex* draw, int count, sf::PrimitiveType type);
         void submitForeground(sf::Sprite* data);
 
         void submitOverlay(sf::RectangleShape* data);

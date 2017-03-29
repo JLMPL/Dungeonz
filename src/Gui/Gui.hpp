@@ -6,6 +6,7 @@
 #include "CenterLabel.hpp"
 #include "Spellbook.hpp"
 #include "../Render/Bar.hpp"
+#include "../Gameplay/Level.hpp"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Clock.hpp>
@@ -39,7 +40,7 @@ class GUI
         Living* getTarget();
 
         void setPlayingState(StatePlaying* state);
-        void begForLevel(const std::string& level);
+        void begForLevel(const std::string& level, Level::InitMode mode);
 
         void setBackToMenuFunc(std::function<void ()> func);
 

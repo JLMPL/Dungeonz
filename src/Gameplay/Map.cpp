@@ -11,8 +11,9 @@
 #include "PressPlate.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Ai/AiMob.hpp"
-#include "../Core/Error.hpp"
 #include "../Ai/AiPlayer.hpp"
+#include "../Ai/AiMobMage.hpp"
+#include "../Core/Error.hpp"
 #include "../base64/base64.h"
 #include "../Render/Renderer.hpp"
 #include "../Resource/TextureCache.hpp"
@@ -179,11 +180,59 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
             LivingProfile profile;
             profile.loadFromFile(whom + ".chr");
-            profile.loadFromFile(whom + ".chr");
+            // profile.loadFromFile(whom + ".chr");
 
             auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
             living->init(profile);
             living->setAi(AiPtr_t(new AiMob()));
+            living->setPosition(pos + vec2f(16,16));
+
+            if (item0 != "-")
+            {
+                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+            if (item1 != "-")
+            {
+                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+            if (item2 != "-")
+            {
+                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+            if (item3 != "-")
+            {
+                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+            if (item4 != "-")
+            {
+                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+        }
+        else if (type == "spawn_mage")
+        {
+            std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+            std::string item1 = object->first_node("properties")->first_node("property")->next_sibling()->first_attribute("value")->value();
+            std::string item2 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->first_attribute("value")->value();
+            std::string item3 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+            std::string item4 = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+            std::string whom  = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+            
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            LivingProfile profile;
+            profile.loadFromFile(whom + ".chr");
+            // profile.loadFromFile(whom + ".chr");
+
+            auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            living->init(profile);
+            living->setAi(AiPtr_t(new AiMobMage()));
             living->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")

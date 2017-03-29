@@ -9,7 +9,7 @@ struct Slot
 {
     sf::RectangleShape rect;
     sf::Sprite sprite;
-    Item* item;
+    ItemPtr_t item = nullptr;
     bool empty = true;
 
     Slot();
@@ -18,7 +18,7 @@ struct Slot
     void unmark();
 
     void setPosition(const vec2i& pos);
-    void setItem(Item* itmw);
+    void setItem(ItemPtr_t itmw);
 };
 
 #endif

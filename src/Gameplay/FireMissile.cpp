@@ -30,6 +30,22 @@ void FireMissile::init(vec2f origin, Direction_t dir, EntityType type)
     m_direction = dir;
     m_box->rect.x = origin.x;
     m_box->rect.y = origin.y;
+
+    switch (m_direction)
+    {
+        case Direction::Up:
+            m_velocity = vec2f(0,-1);
+            break;
+        case Direction::Down:
+            m_velocity = vec2f(0,1);
+            break;
+        case Direction::Left:
+            m_velocity = vec2f(-1,0);
+            break;
+        case Direction::Right:
+            m_velocity = vec2f(1,0);
+            break;
+    }
 }
 
 void FireMissile::setOwner(Entity* owner)
@@ -51,22 +67,6 @@ void FireMissile::update(float deltaTime)
         {
             blow(i);
         }
-    }
-
-    switch (m_direction)
-    {
-        case Direction::Up:
-            m_velocity = vec2f(0,-1);
-            break;
-        case Direction::Down:
-            m_velocity = vec2f(0,1);
-            break;
-        case Direction::Left:
-            m_velocity = vec2f(-1,0);
-            break;
-        case Direction::Right:
-            m_velocity = vec2f(1,0);
-            break;
     }
 
     vec2f translation(m_velocity * m_speed * deltaTime);
@@ -118,4 +118,9 @@ void FireMissile::blow(Entity* ent)
             destroy();
         });
     }
+}
+
+void FireMissile::setDirection(const vec2f& dir)
+{
+    m_velocity = dir;
 }

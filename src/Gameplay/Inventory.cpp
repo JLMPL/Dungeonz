@@ -2,7 +2,7 @@
 
 bool Inventory::addItem(ItemPtr_t item)
 {
-    if (m_items.size() < 25)
+    if (m_items.size() < 6*6)
     {
         m_items.push_back(item);
         return true;

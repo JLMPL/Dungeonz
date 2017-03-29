@@ -49,6 +49,9 @@ void GUI::init()
     m_deathFade.setFillColor({0,0,0,128});
 
     m_ginv.init(Screen::Get().width, Screen::Get().height);
+
+    m_centerLabel.addLabel("The Test 0!");
+    m_centerLabel.addLabel("Another test is already there!");
 }
 
 void GUI::update(float deltaTime)
@@ -263,9 +266,9 @@ void GUI::setPlayingState(StatePlaying* state)
     m_playingState = state;
 }
 
-void GUI::begForLevel(const std::string& level)
+void GUI::begForLevel(const std::string& level, Level::InitMode mode)
 {
-    m_playingState->begForLevel(level);
+    m_playingState->begForLevel(level, mode);
 }
 
 void GUI::setBackToMenuFunc(std::function<void ()> func)

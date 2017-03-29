@@ -34,7 +34,7 @@ void Renderer::submitSorted(sf::Sprite* data)
     m_sortedData.push_back(data);
 }
 
-void Renderer::submitLine(sf::Vertex* draw, int count, sf::PrimitiveType type)
+void Renderer::submitPrimitive(sf::Vertex* draw, int count, sf::PrimitiveType type)
 {
     Line line;// = {draw, count, type}; <- Fuck you MinGW!
     line.verts = draw;

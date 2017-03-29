@@ -14,6 +14,7 @@
 #include "../Resource/AnimationCache.hpp"
 #include "../Render/IndicationHandler.hpp"
 #include "../Collision/CollisionAlgorithm.hpp"
+#include "../Sound/SoundHandler.hpp"
 
 //*/
 #include "../Collision/CollisionHandler.hpp"
@@ -376,7 +377,7 @@ void AiPlayer::shootState(float deltaTime)
 
         m_target->accessInv().removeItem("it_test_arrow");
 
-        m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"),
+        m_target->setAnimation(AnimationCache::Get().getAnimation("player_shoot.ani"),
         [&]()
         {
             m_state = PlayerState::Idle;
@@ -403,6 +404,8 @@ void AiPlayer::castFireball()
             m_state = PlayerState::Idle;
         });
 
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
         m_timer.restart();
     }
 }
@@ -421,6 +424,8 @@ void AiPlayer::castFrostbite()
         {
             m_state = PlayerState::Idle;
         });
+
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
 
         m_timer.restart();
     }
@@ -460,6 +465,9 @@ void AiPlayer::castSpeed()
         m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
         IndicationHandler::Get().addIndication("Speed", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
 
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
+        m_timer.restart();
     }
 }
 
@@ -470,7 +478,10 @@ void AiPlayer::castHeal()
         m_target->restoreHealth(12);
         m_target->drainMana(g_healCost);
         m_target->getLevel()->addBigParticle("magic_works.ani", m_target->getFakePos(), vec2i(0, -20), 0.150);
+
         IndicationHandler::Get().addIndication("Heal", sf::Color(0,192,255), vec2f(m_target->getFakePos()) + vec2f(0, -40));
+        SoundHandler::Get().playSound(SoundEffect::SpellEffect);
+
         m_timer.restart();
     }
 }
@@ -494,7 +505,8 @@ void AiPlayer::focus()
             }
             else if (cast != Collision::infVec and
                     (*i)->getType() != EntityType::Door and
-                    (*i)->getType() != EntityType::Chest)
+                    (*i)->getType() != EntityType::Chest and
+                    (*i)->getType() != EntityType::Exit)
             {
                 i = ents.erase(i);
             }

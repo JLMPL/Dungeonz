@@ -25,7 +25,7 @@ void Slot::setPosition(const vec2i& pos)
     sprite.setPosition(pos.getSfVecf());
 }
 
-void Slot::setItem(Item* itmw)
+void Slot::setItem(ItemPtr_t itmw)
 {
     item = itmw;
     sprite.setTexture(*TextureCache::Get().getTexture(item->image));

@@ -1,6 +1,7 @@
 #include "Exit.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include "Level.hpp"
 
 Exit::Exit()
 {
@@ -48,5 +49,5 @@ void Exit::setFunc(std::function<void ()> func)
 
 void Exit::goFurther()
 {
-    GUI::Get().begForLevel(m_next);
+    GUI::Get().begForLevel(m_next, Level::InitMode::Another);
 }

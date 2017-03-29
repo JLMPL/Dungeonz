@@ -28,6 +28,7 @@ void StateMenu::init()
     }
 
     m_options[MenuOptions::NewGame].setString("New Game");
+    m_options[MenuOptions::Continue].setString("Continue");
     m_options[MenuOptions::HowToPlay].setString("How To Play");
     m_options[MenuOptions::Exit].setString("Exit");
 
@@ -101,6 +102,9 @@ void StateMenu::menuState()
             case MenuOptions::NewGame:
                 m_newGameFunc();
                 break;
+            case MenuOptions::Continue:
+                m_continueFunc(whereILeft());
+                break;
             case MenuOptions::HowToPlay:
                 m_state = MenuState::HelpScreen;
                 break;
@@ -139,4 +143,22 @@ void StateMenu::leave()
 void StateMenu::setNewGameFunc(std::function<void ()> func)
 {
     m_newGameFunc = func;
+}
+
+void StateMenu::setContinueFunc(std::function<void (const std::string&)> func)
+{
+    m_continueFunc = func;
+}
+
+std::string StateMenu::whereILeft()
+{
+    char cstr[32];
+
+    FILE* file = fopen("data/checkpoint.sav", "r");
+    fscanf(file, "%s", cstr);
+    fclose(file);
+
+    std::string str = cstr;
+    
+    return str;
 }

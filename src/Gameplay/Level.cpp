@@ -11,20 +11,52 @@
 #include "../Core/MinGWSucks.hpp"
 #endif
 
-void Level::init(const std::string& map, bool isFirst)
+void Level::init(const std::string& map, InitMode mode)
 {
     m_map.setLevel(this);
     m_map.loadFromFile(map);
 
-    if (!isFirst)
-        loadTravel();
+    m_mapName = map;
+
+    printf("\n");
+
+    switch(mode)
+    {
+        case InitMode::First:
+            printf("This first!\n");
+            break;
+        case InitMode::Another:
+        {
+            loadTravel("data/travel.sav", false);
+            saveTravel("data/checkpoint.sav", true);
+            GUI::Get().addLabel("Game Saved!");
+            printf("This another!\n");
+        }
+        break;
+        case InitMode::LoadCheckpoint:
+            loadTravel("data/checkpoint.sav", true); //<- here it screws
+            printf("This loaded!\n");
+            break;
+    }
+
+    // saveTravel("data/checkpoint.sav", true);
 }
 
-void Level::loadTravel()
+void Level::loadTravel(const std::string& path, bool save)
 {
     Living* player = (Living*)getEntityByCode("pc_player");
 
-    std::ifstream file("data/travel.sav");
+    std::ifstream file(path.c_str());
+
+    if (save)
+    {
+        std::string shit;
+        file >> shit;
+
+        printf("loaded check!\n");
+    }
+    else
+        printf("loaded travel\n");
 
     int hp;
     int health;
@@ -82,9 +114,11 @@ void Level::loadTravel()
     //EQUIPPED
     std::string weapon;
     std::string armor;
+    std::string bow;
 
     file >> weapon;
     file >> armor;
+    file >> bow;
 
     if (weapon != "0")
     {
@@ -111,86 +145,35 @@ void Level::loadTravel()
             }
         }
     }
+
+    if (bow != "0")
+    {
+        for (std::size_t i = 0; i < player->accessInv().getAmount(); i++)
+        {
+            auto item = player->accessInv().getItem(i);
+            if (item->code == bow)
+            {
+                player->setEquippedItem(Equip::Bow, item.get());
+                (*item->equip)(player);
+            }
+        }
+    }
     file.close();
 }
 
-/*
-void Level::saveTravel()
+void Level::saveTravel(const std::string& path, bool save)
 {
     Living* player = (Living*)getEntityByCode("pc_player");
 
-    std::ofstream file("data/travel.sav");
+    FILE* file = fopen(path.c_str(), "w");
 
-    //STATS
-    file << player->getAttribute(Attribute::Hp);
-    file << '\n';
-    file << player->getAttribute(Attribute::Health);
-    file << '\n';
-
-    file << player->getAttribute(Attribute::Mp);
-    file << '\n';
-    file << player->getAttribute(Attribute::Magicka);
-    file << '\n';
-
-    file << player->getAttribute(Attribute::currLevel);
-    file << '\n';
-    file << player->getAttribute(Attribute::Xp);
-    file << '\n';
-    file << player->getAttribute(Attribute::ToNext);
-    file << '\n';
-    //SPELLS
-
-    for (std::size_t i = 0; i < Spell::NumSpells; i++)
+    if (save)
     {
-        if (player->knowsSpell(i))
-            file << "1\n";
-        else
-            file << "0\n";
-    }
-
-    file << player->getReadySpell();
-    file << '\n';
-
-    //ITEMS
-    int amount = player->accessInv().getAmount();
-    file << amount;
-    file << '\n';
-
-    for (std::size_t i = 0; i < amount; i++)
-    {
-        file << player->accessInv().getItem(i)->code;
-        file << '\n';
-    }
-    //EQUIPPED
-
-    Item* weapon = player->getEquippedItem(Equip::Weapon);
-    Item* armor = player->getEquippedItem(Equip::Armor);
-
-    if (weapon)
-    {
-        file << weapon->code;
-        file << "\n";
+        fprintf(file, "%s\n", m_mapName.c_str());
+        printf("Saved check!\n");
     }
     else
-        file << "0\n";
-
-    if (armor)
-    {
-        file << armor->code;
-        file << "\n";
-    }
-    else
-        file << "0\n";
-
-    file.close();
-}
-*/
-
-void Level::saveTravel()
-{
-    Living* player = (Living*)getEntityByCode("pc_player");
-
-    FILE* file = fopen("data/travel.sav", "w");
+        printf("saved travel\n");
 
     //STATS
     fprintf(file, "%d\n", player->getAttribute(Attribute::Hp));
@@ -226,18 +209,20 @@ void Level::saveTravel()
 
     Item* weapon = player->getEquippedItem(Equip::Weapon);
     Item* armor = player->getEquippedItem(Equip::Armor);
+    Item* bow = player->getEquippedItem(Equip::Bow);
 
     if (weapon)
-    {
         fprintf(file, "%s\n", weapon->code.c_str());
-    }
     else
         fprintf(file, "0\n");
 
     if (armor)
-    {
         fprintf(file, "%s\n", armor->code.c_str());
-    }
+    else
+        fprintf(file, "0\n");
+
+    if (bow)
+        fprintf(file, "%s\n", bow->code.c_str());
     else
         fprintf(file, "0\n");
 
@@ -382,7 +367,15 @@ void Level::update(float deltaTime)
 
 void Level::leave()
 {
-    saveTravel();
+    saveTravel("data/travel.sav", false);
+
+    m_entities.clear();
+    m_items.clear();
+    m_bigParticles.clear();
+    m_missiles.clear();
+    m_iceMissiles.clear();
+    m_lightnings.clear();
+    m_arrows.clear();
 }
 
 std::vector<Entity*> Level::getEntitiesInRange(const vec2f& pos, float range)

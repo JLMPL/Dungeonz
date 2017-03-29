@@ -6,6 +6,7 @@
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Gui/Gui.hpp"
+#include "../Sound/SoundHandler.hpp"
 
 Living::Living()
 {
@@ -22,7 +23,7 @@ void Living::init(const LivingProfile& profile)
 {
     m_profile = profile;
 
-    m_sprite->loadFromFile(m_profile.apperance + "_walk.ani");
+    m_sprite->loadFromFile(m_profile.apperance + "_idle.ani");
     m_code = m_profile.code;
 
     m_box = BoxPtr_t(new Box());
@@ -54,11 +55,15 @@ void Living::init(const LivingProfile& profile)
     m_attributes[Attribute::Defense]   = m_profile.defense;
     m_attributes[Attribute::currLevel] = m_profile.level;
     m_attributes[Attribute::Xp]        = m_profile.xp;
-    m_attributes[Attribute::ToNext]    = 250;
+    
+    if (m_profile.code == "pc_player")
+        m_attributes[Attribute::ToNext] = 250;
+    else 
+        m_attributes[Attribute::ToNext] = 1000000;
 
     for (int i = 0; i < Spell::NumSpells; i++)
     {
-        m_spells[i] = false;
+        m_spells[i] = true;
     }
 
     m_equipped[Equip::Weapon] = nullptr;
@@ -176,6 +181,7 @@ void Living::damage(int damage)
             currHp = 0;
 
         m_level->addBigParticle("blood_splash.ani", getFakePos() + vec2i(0, 1), vec2i(0, -20), 0.150);
+        SoundHandler::Get().playSound(SoundEffect::HitEffect);
     }
 }
 

@@ -15,13 +15,20 @@ class Living;
 class Level
 {
     public:
-        void init(const std::string& map, bool isFirst);
+        enum class InitMode
+        {
+            First,
+            Another,
+            LoadCheckpoint
+        };
+        
+        void init(const std::string& map, InitMode mode);
         void addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life);
         void update(float deltaTime);
         void leave();
 
-        void loadTravel();
-        void saveTravel();
+        void loadTravel(const std::string& path, bool save);
+        void saveTravel(const std::string& path, bool save);
 
         Entity*        addEntity(EntityPtr_t entity);
         ItemPtr_t      addItem(ItemPtr_t item);
@@ -45,6 +52,8 @@ class Level
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
         std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
         std::vector<std::shared_ptr<Arrow>> m_arrows;
+
+        std::string m_mapName;
 
         Map m_map;
 };
