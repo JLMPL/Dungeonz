@@ -348,9 +348,9 @@ void AiPlayer::castState(float deltaTime)
             case Spell::Frostbite:
                 castFrostbite();
                 break;
-            case Spell::Speed:
-                castSpeed();
-                break;
+            // case Spell::Speed:
+            //     castSpeed();
+            //     break;
             case Spell::Lightning:
                 castLightning(deltaTime);
                 break;
@@ -444,7 +444,7 @@ void AiPlayer::castLightning(float deltaTime)
         m_target->setAnimation(AnimationCache::Get().getAnimation("player_cast.ani"));
 
         Living* focal = static_cast<Living*>(m_focus);
-        focal->damage(4);
+        focal->damage(8);
         focal->push(m_target->getDirection(), 5, 0.1);
 
         m_target->drainMana(g_lightningCost);
