@@ -5,7 +5,7 @@ enum Spell
 {
     Fireball = 0,
     Frostbite,
-    Speed,
+    // Speed,
     Lightning,
     Heal,
     NumSpells

@@ -281,11 +281,14 @@ void Living::learnSpell(int spell, bool showLabel)
         case Spell::Frostbite:
             GUI::Get().addLabel("Learned spell \"Frostbite\"!");
         break;
-        case Spell::Speed:
-            GUI::Get().addLabel("Learned spell \"Speed\"!");
-        break;
+        // case Spell::Speed:
+        //     GUI::Get().addLabel("Learned spell \"Speed\"!");
+        // break;
         case Spell::Lightning:
             GUI::Get().addLabel("Learned spell \"Lightning\"!");
+        break;
+        case Spell::Heal:
+            GUI::Get().addLabel("Learned spell \"Heal\"!");
         break;
     }
 }
