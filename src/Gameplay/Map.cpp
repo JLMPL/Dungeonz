@@ -62,6 +62,7 @@ void Map::loadFromFile(const std::string& path)
         loadTileset(tileset);
         loadLayers(map);
         collisions();
+        makeChunks();
     }
 }
 
@@ -498,6 +499,36 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
     }
 }
 
+void Map::makeChunks()
+{
+    for(int l = 0; l < m_layers.size(); l++)
+    {
+        m_layers[l].chunks.resize(2);
+        for(auto& i : m_layers[l].chunks)
+            i.resize(2);
+
+        for(uint h = 0; h < m_layers[l].chunks.size(); h++)
+        {
+            for(uint w = 0; w < m_layers[l].chunks[h].size(); w++)
+            {
+                for(uint i = h*16; i < h*16 + 16; i++)
+                {
+                    for(uint j = w*16; j < w*16 + 16; j++)
+                    {
+                        if(!m_layers[l].tiles[m_width * j + i].empty)
+                        {
+                            Tile& tile = m_layers[l].tiles[m_width * j + i];
+                            m_layers[l].chunks[h][w].addTile(tile);
+                        }
+                    }
+                }
+
+                m_layers[l].chunks[h][w].setTexture(m_texture);
+            }
+        }
+    }
+}
+
 void Map::collisions()
 {
     for (int i = 0; i < m_layers[2].tiles.size(); i++)
@@ -526,14 +557,22 @@ void Map::update()
     }
     //*/
 
-    for (int i = 0; i < m_layers[0].tiles.size(); i++)
+    for (int i = 0; i < m_layers[0].chunks.size(); i++)
     {
-        Renderer::Get().submitBackground(&m_layers[0].tiles[i].sprite);
+        // Renderer::Get().submitBackground(&m_layers[0].tiles[i].sprite);
+        m_layers[0].chunks[0][0].render();
+        m_layers[0].chunks[0][1].render();
+        m_layers[0].chunks[1][0].render();
+        m_layers[0].chunks[1][1].render();
     }
 
-    for (int i = 0; i < m_layers[1].tiles.size(); i++)
+    for (int i = 0; i < m_layers[1].chunks.size(); i++)
     {
-        Renderer::Get().submitBackground(&m_layers[1].tiles[i].sprite);
+        // Renderer::Get().submitBackground(&m_layers[1].tiles[i].sprite);
+        // m_layers[1].chunks[0][0].render();
+        // m_layers[1].chunks[0][1].render();
+        // m_layers[1].chunks[1][0].render();
+        // m_layers[1].chunks[1][1].render();
     }
 
     if (false)

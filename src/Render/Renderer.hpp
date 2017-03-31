@@ -6,6 +6,7 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/System/Thread.hpp>
 #include <vector>
 
@@ -33,6 +34,7 @@ class Renderer
         void submitSorted(sf::Sprite* data);
         void submitPrimitive(sf::Vertex* draw, int count, sf::PrimitiveType type);
         void submitForeground(sf::Sprite* data);
+        void submitArray(sf::VertexArray* array, const sf::RenderStates& states);
 
         void submitOverlay(sf::RectangleShape* data);
         void submitOverlay(sf::Sprite* data);
@@ -55,6 +57,8 @@ class Renderer
         std::vector<sf::Sprite*> m_backgroundData;
         std::vector<sf::Sprite*> m_sortedData;
         std::vector<sf::Sprite*> m_foregroundData;
+
+        std::vector<std::pair<sf::VertexArray*, sf::RenderStates>> m_arrayData;
 
         std::vector<Line> m_linesData;
 

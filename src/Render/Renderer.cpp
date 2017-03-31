@@ -49,6 +49,11 @@ void Renderer::submitForeground(sf::Sprite* data)
     m_foregroundData.push_back(data);
 }
 
+void Renderer::submitArray(sf::VertexArray* array, const sf::RenderStates& states)
+{
+    m_arrayData.push_back(std::make_pair(array, states));
+}
+
 void Renderer::submitOverlay(sf::RectangleShape* data)
 {
     m_overRectData.push_back(data);
@@ -107,6 +112,9 @@ void Renderer::render()
     for (auto& i : m_backgroundData)
         m_window->draw(*i);
 
+    for (auto& i : m_arrayData)
+        m_window->draw(*i.first, i.second);
+
     for (auto& i : m_backCircleData)
         m_window->draw(*i);
 
@@ -146,6 +154,8 @@ void Renderer::clearAll()
     m_backCircleData.clear();
     m_sortedData.clear();
     m_foregroundData.clear();
+
+    m_arrayData.clear();
 
     m_linesData.clear();
 
