@@ -282,9 +282,9 @@ Arrow* Level::addArrow(std::shared_ptr<Arrow> arrow)
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
-    m_bigParticles.push_back(BigParticle());
-    m_bigParticles.back().init(path, offset, life);
-    m_bigParticles.back().setPosition(pos);
+    m_bigParticles.push_back(std::shared_ptr<BigParticle>(new BigParticle()));
+    m_bigParticles.back()->init(path, offset, life);
+    m_bigParticles.back()->setPosition(pos);
 }
 
 void Level::update(float deltaTime)
@@ -331,7 +331,7 @@ void Level::update(float deltaTime)
 
     for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
     {
-        if ((*i).isDead())
+        if ((*i)->isDead())
             i = m_bigParticles.erase(i);
         else
             i++;
@@ -353,7 +353,7 @@ void Level::update(float deltaTime)
         i->update(deltaTime);
 
     for (auto& i : m_bigParticles)
-        i.update(deltaTime);
+        i->update(deltaTime);
 
     m_map.update();
     CollisionHandler::Get().update(deltaTime);

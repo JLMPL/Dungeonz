@@ -47,7 +47,7 @@ class Level
         std::vector<EntityPtr_t> m_entities;
         uint m_lastEntityId = 0;
         std::vector<ItemPtr_t> m_items;
-        std::vector<BigParticle> m_bigParticles;
+        std::vector<std::shared_ptr<BigParticle>> m_bigParticles;
         std::vector<std::shared_ptr<FireMissile>> m_missiles;
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
         std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
