@@ -294,7 +294,16 @@ void AiPlayer::pickingState(float deltaTime)
                 case EntityType::ItemBag:
                 {
                     auto bag = static_cast<ItemBag*>(m_focus);
-                    GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
+                    if (bag->accessInv().getAmount() > 1)
+                    {
+                        GUI::Get().goLoot(&bag->accessInv(), bag->getPosition().geti());
+                    }
+                    else
+                    {
+                        const ItemPtr_t& item = bag->accessInv().getItem(0);
+                        m_target->accessInv().addItem(item);
+                        bag->accessInv().removeItem(item->code);
+                    }
                 }
                 break;
                 case EntityType::Exit:
