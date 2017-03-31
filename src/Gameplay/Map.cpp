@@ -557,26 +557,24 @@ void Map::update()
     }
     //*/
 
-    for (int i = 0; i < m_layers[0].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
     {
-        // Renderer::Get().submitBackground(&m_layers[0].tiles[i].sprite);
-        m_layers[0].chunks[0][0].render();
-        m_layers[0].chunks[0][1].render();
-        m_layers[0].chunks[1][0].render();
-        m_layers[0].chunks[1][1].render();
+        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        {
+            m_layers[0].chunks[i][j].render();
+        }
     }
 
-    for (int i = 0; i < m_layers[1].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
     {
-        // Renderer::Get().submitBackground(&m_layers[1].tiles[i].sprite);
-        // m_layers[1].chunks[0][0].render();
-        // m_layers[1].chunks[0][1].render();
-        // m_layers[1].chunks[1][0].render();
-        // m_layers[1].chunks[1][1].render();
+        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        {
+            m_layers[1].chunks[i][j].render();
+        }
     }
 
     if (false)
-    for (int i = 0; i < m_layers[2].tiles.size(); i++)
+    for (std::size_t i = 0; i < m_layers[2].tiles.size(); i++)
     {
         Renderer::Get().submitBackground(&m_layers[2].tiles[i].sprite);
     }

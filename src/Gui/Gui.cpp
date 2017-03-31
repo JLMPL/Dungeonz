@@ -50,8 +50,8 @@ void GUI::init()
 
     m_ginv.init(Screen::Get().width, Screen::Get().height);
 
-    m_centerLabel.addLabel("The Test 0!");
-    m_centerLabel.addLabel("Another test is already there!");
+    // m_centerLabel.addLabel("The Test 0!");
+    // m_centerLabel.addLabel("Another test is already there!");
 }
 
 void GUI::update(float deltaTime)
