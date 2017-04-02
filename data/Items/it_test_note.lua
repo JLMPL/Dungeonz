@@ -1,7 +1,7 @@
 Item = {
 	code = "it_test_note",
 	name = "Journal Page",
-	image = "test_note.png",
+	image = "it_note.png",
 	type = "book",
 	desc = "A Single page torn from a bigger tome.",
 

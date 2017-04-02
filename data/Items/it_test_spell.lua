@@ -4,7 +4,7 @@ Spell_Fireball = 0
 Item = {
 	code = "it_test_spell",
 	name = "Fireball",
-	image = "test_note.png",
+	image = "it_note.png",
 	type = "spell",
 	desc = "I'm suprised this didn't burn.",
 

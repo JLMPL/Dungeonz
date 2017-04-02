@@ -4,7 +4,7 @@ Spell_Heal = 4
 Item = {
 	code = "it_test_heal",
 	name = "Heal",
-	image = "test_note.png",
+	image = "it_note.png",
 	type = "spell",
 	desc = "Put that there.",
 
