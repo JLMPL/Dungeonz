@@ -23,23 +23,22 @@ void Level::init(const std::string& map, InitMode mode)
     switch(mode)
     {
         case InitMode::First:
-            printf("This first!\n");
-            break;
+        {
+            saveTravel("data/checkpoint.sav", true);
+            GUI::Get().addLabel("Game Saved!");
+        }
+        break;
         case InitMode::Another:
         {
             loadTravel("data/travel.sav", false);
             saveTravel("data/checkpoint.sav", true);
             GUI::Get().addLabel("Game Saved!");
-            printf("This another!\n");
         }
         break;
         case InitMode::LoadCheckpoint:
-            loadTravel("data/checkpoint.sav", true); //<- here it screws
-            printf("This loaded!\n");
+            loadTravel("data/checkpoint.sav", true);
             break;
     }
-
-    // saveTravel("data/checkpoint.sav", true);
 }
 
 void Level::loadTravel(const std::string& path, bool save)
