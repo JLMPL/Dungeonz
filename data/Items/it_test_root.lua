@@ -1,7 +1,7 @@
 Item = {
 	code = "it_test_root",
 	name = "Edible Root",
-	image = "item_meat.png",
+	image = "it_meat.png",
 	type = "food",
 	desc = "This peed on root smells like magicka.",
 
