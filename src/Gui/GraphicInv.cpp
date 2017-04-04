@@ -240,45 +240,14 @@ void GraphicInv::update()
         m_timer.getElapsedTime().asMilliseconds() > 150 and
         !m_slots[m_selected].empty)
     {
-        Item& item = *m_slots[m_selected].item;
+        ItemPtr_t item = m_slots[m_selected].item;
 
-        auto ents = m_player->getLevel()->getEntitiesInRange(m_player->getFakePos().getf(), 32);
+        ItemBag* bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
+        bag->setCode("spitoff");
+        bag->setPosition(m_player->getFakePos().getf());
 
-        for (auto i = ents.begin(); i != ents.end();)
-        {
-            if ((*i)->getType() != EntityType::ItemBag)
-                i = ents.erase(i);
-            else
-                i++;
-        }
-
-        std::sort(ents.begin(), ents.end(),
-        [this](const Entity* a, const Entity* b)
-        {
-            float dist0 = length(a->getFakePos().getf() - m_player->getFakePos().getf());
-            float dist1 = length(b->getFakePos().getf() - m_player->getFakePos().getf());
-
-            if (dist0 < dist1)
-                return true;
-            return false;
-        });
-
-        ItemBag* bag = nullptr;
-
-        // if (!ents.empty())
-        // {
-            // printf("Entsz!\n");
-            // bag = static_cast<ItemBag*>(ents[0]);
-        // }
-        // else
-        // {
-            // bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
-            // bag->setCode("spitoff");
-            // bag->setPosition(m_player->getFakePos().getf());
-        // }
-
-        // bag->accessInv().addItem(ItemPtr_t(&item)); //<- suckin' double free
-        // m_player->accessInv().removeItem(&item);
+        bag->accessInv().addItem(item);
+        m_player->accessInv().removeItem(item.get());
 
         m_timer.restart();
     }

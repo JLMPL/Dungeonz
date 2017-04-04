@@ -1,7 +1,7 @@
 Item = {
 	code = "it_note_start",
 	name = "Journal Page",
-	image = "test_note.png",
+	image = "it_note.png",
 	type = "book",
 	desc = "Dirty note.",
 

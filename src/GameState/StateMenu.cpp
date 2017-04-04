@@ -3,6 +3,7 @@
 #include "../Resource/FontCache.hpp"
 #include "../Render/Renderer.hpp"
 #include "../Input/InputHandler.hpp"
+#include "../Core/Files.hpp"
 #include <fstream>
 
 constexpr int g_menuOptionsOffset = 48;
@@ -45,6 +46,24 @@ void StateMenu::init()
     m_helpText.setOrigin(static_cast<int>(m_helpText.getLocalBounds().width/2),
                          static_cast<int>(m_helpText.getLocalBounds().height/2));
     m_helpText.setPosition({Screen::Get().halfWidth, Screen::Get().halfHeight});
+
+    initWarning();
+    chosenMessage();
+}
+
+void StateMenu::initWarning()
+{
+    m_warningMessage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_warningMessage.setCharacterSize(16);
+    m_warningMessage.setFillColor({255,255,255});
+    m_warningMessage.setPosition(Screen::Get().halfWidth, Screen::Get().height - 48);
+}
+
+void StateMenu::setupWarning(const std::string& message)
+{
+    m_warningMessage.setString(message);
+    m_warningMessage.setOrigin(static_cast<int>(m_warningMessage.getLocalBounds().width/2), m_warningMessage.getLocalBounds().height);
+    m_warningMessage.setPosition(Screen::Get().halfWidth, Screen::Get().height - 48);
 }
 
 void StateMenu::loadHelp()
@@ -79,6 +98,8 @@ void StateMenu::update(float deltaTime)
             helpState();
             break;
     }
+
+    Renderer::Get().submitOverlay(&m_warningMessage);
 }
 
 void StateMenu::menuState()
@@ -87,12 +108,16 @@ void StateMenu::menuState()
     {
         if (m_chosen > 0)
             m_chosen--;
+
+        chosenMessage();
         m_timer.restart();
     }
     else if (InputHandler::Get().isDown() and m_timer.getElapsedTime().asMilliseconds() > 150)
     {
         if (m_chosen < MenuOptions::NumMenuOptions -1)
             m_chosen++;
+
+        chosenMessage();        
         m_timer.restart();
     }
     else if (InputHandler::Get().isKeyPressed(sf::Keyboard::Return))
@@ -100,11 +125,16 @@ void StateMenu::menuState()
         switch (m_chosen)
         {
             case MenuOptions::NewGame:
+            {
                 m_newGameFunc();
-                break;
+            }
+            break;
             case MenuOptions::Continue:
-                m_continueFunc(whereILeft());
-                break;
+            {
+                if (Files::doesFileExist("data/checkpoint.sav"))
+                    m_continueFunc(whereILeft());
+            }
+            break;
             case MenuOptions::HowToPlay:
                 m_state = MenuState::HelpScreen;
                 break;
@@ -134,6 +164,36 @@ void StateMenu::helpState()
     }
 
     Renderer::Get().submitOverlay(&m_helpText);
+}
+
+void StateMenu::chosenMessage()
+{
+    std::string appendix;
+
+    switch (m_chosen)
+    {
+        case MenuOptions::NewGame:
+        {
+            if (Files::doesFileExist("data/checkpoint.sav"))
+                appendix = "(Your current save will be overriden!)";
+
+            setupWarning("Starts a new game. " + appendix);
+        }
+        break;
+        case MenuOptions::Continue:
+        {
+            if (!Files::doesFileExist("data/checkpoint.sav"))
+                appendix = "(No saves on disk)";
+            setupWarning("Loads saved game. " + appendix);
+        }
+        break;
+        case MenuOptions::HowToPlay:
+            setupWarning("Instructions");
+            break;
+        case MenuOptions::Exit:
+            setupWarning("Close the program.");
+            break;
+    }
 }
 
 void StateMenu::leave()

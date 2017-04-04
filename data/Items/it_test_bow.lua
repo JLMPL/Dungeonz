@@ -1,7 +1,7 @@
 Item = {
 	code = "it_test_bow",
 	name = "Yes a bow",
-	image = "bow.png",
+	image = "it_bow.png",
 	type = "bow",
 	desc = "You can actually shoot that thing.",
 

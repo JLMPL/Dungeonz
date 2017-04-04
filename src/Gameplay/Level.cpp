@@ -23,23 +23,22 @@ void Level::init(const std::string& map, InitMode mode)
     switch(mode)
     {
         case InitMode::First:
-            printf("This first!\n");
-            break;
+        {
+            saveTravel("data/checkpoint.sav", true);
+            GUI::Get().addLabel("Game Saved!");
+        }
+        break;
         case InitMode::Another:
         {
             loadTravel("data/travel.sav", false);
             saveTravel("data/checkpoint.sav", true);
             GUI::Get().addLabel("Game Saved!");
-            printf("This another!\n");
         }
         break;
         case InitMode::LoadCheckpoint:
-            loadTravel("data/checkpoint.sav", true); //<- here it screws
-            printf("This loaded!\n");
+            loadTravel("data/checkpoint.sav", true);
             break;
     }
-
-    // saveTravel("data/checkpoint.sav", true);
 }
 
 void Level::loadTravel(const std::string& path, bool save)
@@ -282,9 +281,9 @@ Arrow* Level::addArrow(std::shared_ptr<Arrow> arrow)
 
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
-    m_bigParticles.push_back(BigParticle());
-    m_bigParticles.back().init(path, offset, life);
-    m_bigParticles.back().setPosition(pos);
+    m_bigParticles.push_back(std::shared_ptr<BigParticle>(new BigParticle()));
+    m_bigParticles.back()->init(path, offset, life);
+    m_bigParticles.back()->setPosition(pos);
 }
 
 void Level::update(float deltaTime)
@@ -331,7 +330,7 @@ void Level::update(float deltaTime)
 
     for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
     {
-        if ((*i).isDead())
+        if ((*i)->isDead())
             i = m_bigParticles.erase(i);
         else
             i++;
@@ -353,7 +352,7 @@ void Level::update(float deltaTime)
         i->update(deltaTime);
 
     for (auto& i : m_bigParticles)
-        i.update(deltaTime);
+        i->update(deltaTime);
 
     m_map.update();
     CollisionHandler::Get().update(deltaTime);

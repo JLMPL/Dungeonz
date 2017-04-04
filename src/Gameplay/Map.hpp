@@ -1,11 +1,9 @@
 #ifndef MAP_HPP
 #define MAP_HPP
-#include "../rapidxml/rapidxml.hpp"
-#include "../Core/Vec2.hpp"
-#include "../Core/Rect.hpp"
+#include "Chunk.hpp"
 #include "../Resource/TexturePtr.hpp"
 #include "../Collision/BoxPtr.hpp"
-#include <SFML/Graphics.hpp>
+#include "../rapidxml/rapidxml.hpp"
 #include <vector>
 #include <string>
 #include <memory>
@@ -13,19 +11,10 @@
 
 class Level;
 
-struct Tile
-{
-    Tile(){}
-
-    sf::Sprite sprite;
-    vec2i position;
-    Recti rect;
-    bool empty = false;
-};
-
 struct TileLayer
 {
     std::vector<Tile> tiles;
+    std::vector<std::vector<Chunk>> chunks;
 };
 
 class Map
@@ -36,6 +25,7 @@ class Map
         void loadLayers(rapidxml::xml_node<>* map);
         void loadLayer(rapidxml::xml_node<>* layer);
         void loadObjects(rapidxml::xml_node<>* objects);
+        void makeChunks();
         void collisions();
 
         void update();
