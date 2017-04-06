@@ -22,3 +22,6 @@ rm -r count.sh
 
 cp -r Notes ..
 rm -r Notes
+
+cp -r Progression ..
+rm -r Progression

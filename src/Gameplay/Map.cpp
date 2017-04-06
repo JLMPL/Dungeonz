@@ -503,9 +503,9 @@ void Map::makeChunks()
 {
     for(int l = 0; l < m_layers.size(); l++)
     {
-        m_layers[l].chunks.resize(2);
+        m_layers[l].chunks.resize(m_width/16);
         for(auto& i : m_layers[l].chunks)
-            i.resize(2);
+            i.resize(m_width/16);
 
         for(uint h = 0; h < m_layers[l].chunks.size(); h++)
         {
@@ -557,17 +557,17 @@ void Map::update()
     }
     //*/
 
-    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[0].chunks.size(); i++)
     {
-        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        for (std::size_t j = 0; j < m_layers[0].chunks[i].size(); j++)
         {
             m_layers[0].chunks[i][j].render();
         }
     }
 
-    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[1].chunks.size(); i++)
     {
-        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        for (std::size_t j = 0; j < m_layers[1].chunks[i].size(); j++)
         {
             m_layers[1].chunks[i][j].render();
         }

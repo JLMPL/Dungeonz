@@ -8,7 +8,7 @@ StatePlaying::StatePlaying()
 {
     GUI::Get().setPlayingState(this);
     m_type = StateType::Playing;
-    m_loadFirst = "map_test.tmx";
+    m_loadFirst = "level_0.tmx";
     m_conMode = Level::InitMode::First;
 }
 

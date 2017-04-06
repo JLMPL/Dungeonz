@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="30">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmEkOgzAMRcMhEEfqmvtfpuoiqrE8JClgk/7FW4VWecZDwl5K2QEAAAAAwM+8BojeM/zhD3/4wx/+8If/Vf4LwfNfEric6f/x2Qie/5bA5cx4fHxWQs0B7Xdrgr2f6b8ytmLn+Oz+NQb/4q/F4Rf/hRHt2uLPYzDqz/tp1n6pzYO1jPe/6s5zKeNZYsR/Kd8ZIa1T9+xnKcuf12+l+m3Kekv9ZMHy5/Vb4TPCWs/eA0fy33u/VnyiPHvj7+XuE3KbwuPv5eRM/rQn8XhoOTmTP+1JtEdbfX4mf6kfUX+th8/iz2PQ8gz8j2tSfWSf7b3+FlJ9ZJntPTE4I34a0X53+Ev/pflLc+Xp/vVbKf1GqJ31pbnydP+9HOufrln3oOga8e7sPe9f+16k/Sban9/Zrec0tByXztbZ/L07uVWvPJettajcbs1dy0Gr1x6iPVv9W5/L7HR1vKL3AH/4R8DvdtJ6hrPsVfC7nTUjo/d6Bd6snH02ePNvdn/qGb0H+MM/Am8Gzg6fgdH7uRvcgf7XG/4gA29aR6LL
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztl2sOhCAMhD2Q9z/fhh8mhpR2WB62dL7ErKEgjn2x10UIIYQQQgghhBBCyDxu4ULmnoCkxdJvzYmEpEPzbwb9z3jr22jrooHEujR2kn7L19IYWiOj1Eu0Dlr6e76lN97v/k/+I3XTO6g+JF4ixf9DrU/TgNijMfOdo9XAwkz/t569k97vP5r/1rWbu7pHc/aE82+tD63Z0jhq90QrPq/qV4qHE/WjNs0eTT9ao6S1rWdqdm/0nOmlMS0/vq7tCKj+3jpg7eMFq2cj62fO+4KRnG31T6m31vO85Mgu/ZbOE/S3bL3P2sXM/Nfi2aP/kfPue56Vs5ZN20MbX0Vvr5u1l5f6t3M/j/1v1P9WXnjobRroe0pnPq+aVjLSJ08gs34r/iPk+whIrbTmRybCWXYl9H/f/7vT9D9k7gGFzPqznwFbNTAL1J87/guZ618hq9898QNgnz/x
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="1024" y="1888" width="32" height="32"/>
+  <object id="2" name="beg_bag" type="item_bag" x="1248" y="1664" width="32" height="32">
+   <properties>
+    <property name="item0" value="Weapons/it_sword_0"/>
+    <property name="item1" value="Armors/it_armor_0"/>
+    <property name="item2" value="Keys/it_key_0"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="3" name="note_bag" type="item_bag" x="1024" y="1696" width="32" height="32">
+   <properties>
+    <property name="item0" value="Notes/it_start_note"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="4" name="bat_spawn" type="spawn" x="1088" y="1408" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="5" name="beg_door" type="door" x="992" y="1600" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_0"/>
+   </properties>
+  </object>
+  <object id="6" name="bat_spawn" type="spawn" x="672" y="1152" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="7" name="bat_spawn" type="spawn" x="1632" y="1312" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_bat_meat"/>
+    <property name="item1" value="Keys/it_key_1"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="8" name="left_door" type="door" x="672" y="1344" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_1"/>
+   </properties>
+  </object>
+  <object id="9" name="fist_lever" type="lever" x="608" y="1056" width="32" height="32">
+   <properties>
+    <property name="activate" value="fist_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="10" name="fist_door" type="door" x="1280" y="1152" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_3"/>
+   </properties>
+  </object>
+  <object id="11" name="first_rat" type="spawn" x="640" y="1024" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_rat"/>
+   </properties>
+  </object>
+  <object id="12" name="bat_spawn" type="spawn" x="1280" y="896" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="13" name="finri_door" type="door" x="1280" y="832" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_3"/>
+   </properties>
+  </object>
+  <object id="14" name="finle_door" type="door" x="1280" y="768" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_none"/>
+   </properties>
+  </object>
+  <object id="15" name="bat_spawn" type="spawn" x="1664" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="17" name="note_bag" type="item_bag" x="1696" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="Keys/it_key_3"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="24" name="add_bag" type="item_bag" x="1632" y="768" width="32" height="32">
+   <properties>
+    <property name="item0" value="Keys/it_key_2"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="25" name="add_door" type="door" x="1024" y="928" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_2"/>
+   </properties>
+  </object>
+  <object id="26" name="shit_door" type="door" x="768" y="1056" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_none"/>
+   </properties>
+  </object>
+  <object id="27" name="add_lever" type="lever" x="928" y="1152" width="32" height="32">
+   <properties>
+    <property name="activate" value="shit_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="28" name="add_bag" type="item_bag" x="992" y="1152" width="32" height="32">
+   <properties>
+    <property name="item0" value="Food/it_potion_health_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="29" name="finle_door" type="lever" x="960" y="608" width="32" height="32">
+   <properties>
+    <property name="activate" value="finle_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
