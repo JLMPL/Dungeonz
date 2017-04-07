@@ -272,7 +272,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
             auto door = (Door*)m_level->addEntity(EntityPtr_t(new Door()));
             door->setCode(name);
-            door->setPosition(pos + vec2f(0,30));
+            door->setPosition(pos);
             door->setRequiredItem(item);
         }
         else if (type == "chest")
@@ -342,19 +342,18 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             {
                 if (type == "door")
                 {
-                    Door* door = (Door*)m_level->getEntityByCode(whom);
-                    if (door)
-                        door->open();
+                    auto door = m_level->getEntitiesByCode(whom);
+                    for (int i = 0; i < door.size(); i++)
+                    {
+                        static_cast<Door*>(door[i])->open();
+                    }
                 }
                 else if (type == "spike_trap")
                 {
                     auto spikes = m_level->getEntitiesByCode(whom);
-                    if (!spikes.empty())
+                    for (int i = 0; i < spikes.size(); i++)
                     {
-                        for (int i = 0; i < spikes.size(); i++)
-                        {
-                            static_cast<SpikeTrap*>(spikes[i])->disable();
-                        }
+                        static_cast<SpikeTrap*>(spikes[i])->disable();
                     }
                 }
             });

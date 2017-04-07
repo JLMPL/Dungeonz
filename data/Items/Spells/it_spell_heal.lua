@@ -6,7 +6,7 @@ Item = {
 	name = "Heal",
 	image = "it_note.png",
 	type = "spell",
-	desc = "Put that there.",
+	desc = "Put that there.\nRequires 32pt magicka",
 
 	effect = function(user)
 		if user:knowsSpell(Spell_Heal) == false then

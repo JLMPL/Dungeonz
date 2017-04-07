@@ -3,7 +3,7 @@ Item = {
 	name = "Small Red Potion",
 	image = "it_potion_red.png",
 	type = "food",
-	desc = "This one doesn't really taste bad.",
+	desc = "This one doesn't really taste bad.\nRestores 30pt health",
 
 	effect = function(user)
 		user:restoreHealth(30);

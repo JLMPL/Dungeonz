@@ -35,7 +35,7 @@ void Living::init(const LivingProfile& profile)
     {
         if (this->m_trapTimer > 750)
         {
-            this->damage(2);
+            this->damage(5);
             this->m_trapTimer = 0;
         }
     };
@@ -63,7 +63,7 @@ void Living::init(const LivingProfile& profile)
 
     for (int i = 0; i < Spell::NumSpells; i++)
     {
-        m_spells[i] = true;
+        m_spells[i] = false;
     }
 
     m_equipped[Equip::Weapon] = nullptr;

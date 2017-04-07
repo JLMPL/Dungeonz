@@ -249,7 +249,7 @@ void AiPlayer::pickingState(float deltaTime)
     {
         float dist = length(m_focus->getPosition() - m_target->getPosition());
 
-        if (dist <= 32)
+        if (dist <= 48)
         {
             switch (m_focus->getType())
             {
