@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="90">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmEsOwjAMRMMhKo6Ude5/GdRFJWRi4r+TNotRoZTiZ49t1FZKaVtbW1tbW1uPVJ0ghmxZ5qAKtPnn4tfEtCI/ZNbEdQd+jQdW5bfywF34pR7w4I/MkTYHlvy1yGKw5uf8vhV/Zo9oPODBH8mO8VLjsOaPZh/lwHoejK6fiZ/rBaofevfN5rfKAZWfOnexvHnlapSDWn7jylKGD7DPn8QPr3miB7K5vfhhXSXfieCN4Ofm4G71X6EXInqeE8tqnh/1e1ZdsRp78FfGvZ/Gn117a94R3yw1z+KHfuDGeR5fQkXngMIi0Vuo6Pp7+PQ8HkKtzv8v7n+cI36vGRHFzuHnzgVNHqj30vQCZBzxc+aCBT9lB0g9g9Ufy82r8OaCF3/vGm3PUOr/VvJL+r/H6DEnqP6X8Gvnf8SctOCXcq7E/33Og3l2/mvnHeV3/2XxW+QD42/g/LXzjq/XrfT7IotfkhNt/3vxe3rKit+j/pG1vyO/1/zDOOFe0NZu1vpf94Tve3tBG3MUu8X+w/ZCNL9k93H4e5we899y9kf0P/wti/23Cn/vmUjvf9RszBT+Burc4+89E8F84ZELac9z64/xY+LEm+0FyJ/ds9G5sPzfvqKezr+Vqw9XV5WZ
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztz7EJQCEQREEtQmzC/uv7qSB4mXzuZmCDDV9rAAAAAAAAAAAAAAC80INlN4NVNLZVpF9/5X4A+LMV/Oz03392+s/x1gdd7gP5
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="1056" y="1920" width="32" height="32"/>
+  <object id="39" name="run_plate" type="press_plate" x="1024" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="40" name="run_plate" type="press_plate" x="1056" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="41" name="run_plate" type="press_plate" x="1088" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="42" name="first_spikes" type="spike_trap" x="1056" y="1664" width="32" height="32"/>
+  <object id="43" name="first_spikes" type="spike_trap" x="1024" y="1632" width="32" height="32"/>
+  <object id="44" name="first_spikes" type="spike_trap" x="1056" y="1792" width="32" height="32"/>
+  <object id="45" name="first_spikes" type="spike_trap" x="1024" y="1760" width="32" height="32"/>
+  <object id="46" name="first_spikes" type="spike_trap" x="1024" y="1792" width="32" height="32"/>
+  <object id="47" name="first_spikes" type="spike_trap" x="1056" y="1696" width="32" height="32"/>
+  <object id="48" name="first_spikes" type="spike_trap" x="1024" y="1600" width="32" height="32"/>
+  <object id="49" name="first_spikes" type="spike_trap" x="1024" y="1696" width="32" height="32"/>
+  <object id="50" name="first_spikes" type="spike_trap" x="1056" y="1760" width="32" height="32"/>
+  <object id="51" name="first_spikes" type="spike_trap" x="1056" y="1824" width="32" height="32"/>
+  <object id="52" name="first_spikes" type="spike_trap" x="1024" y="1824" width="32" height="32"/>
+  <object id="53" name="first_spikes" type="spike_trap" x="1056" y="1600" width="32" height="32"/>
+  <object id="54" name="first_spikes" type="spike_trap" x="1024" y="1664" width="32" height="32"/>
+  <object id="55" name="first_spikes" type="spike_trap" x="1056" y="1632" width="32" height="32"/>
+  <object id="56" name="first_spikes" type="spike_trap" x="1056" y="1728" width="32" height="32"/>
+  <object id="57" name="first_spikes" type="spike_trap" x="1024" y="1728" width="32" height="32"/>
+  <object id="58" name="first_spikes" type="spike_trap" x="1088" y="1792" width="32" height="32"/>
+  <object id="59" name="first_spikes" type="spike_trap" x="1088" y="1664" width="32" height="32"/>
+  <object id="60" name="first_spikes" type="spike_trap" x="1088" y="1696" width="32" height="32"/>
+  <object id="61" name="first_spikes" type="spike_trap" x="1088" y="1600" width="32" height="32"/>
+  <object id="62" name="first_spikes" type="spike_trap" x="1088" y="1760" width="32" height="32"/>
+  <object id="63" name="first_spikes" type="spike_trap" x="1088" y="1728" width="32" height="32"/>
+  <object id="64" name="first_spikes" type="spike_trap" x="1088" y="1824" width="32" height="32"/>
+  <object id="65" name="first_spikes" type="spike_trap" x="1088" y="1632" width="32" height="32"/>
+  <object id="66" name="first_spikes" type="spike_trap" x="1056" y="1408" width="32" height="32"/>
+  <object id="67" name="first_spikes" type="spike_trap" x="1024" y="1408" width="32" height="32"/>
+  <object id="68" name="first_spikes" type="spike_trap" x="1088" y="1536" width="32" height="32"/>
+  <object id="69" name="first_spikes" type="spike_trap" x="1056" y="1568" width="32" height="32"/>
+  <object id="70" name="first_spikes" type="spike_trap" x="1056" y="1376" width="32" height="32"/>
+  <object id="71" name="first_spikes" type="spike_trap" x="1088" y="1440" width="32" height="32"/>
+  <object id="72" name="first_spikes" type="spike_trap" x="1088" y="1568" width="32" height="32"/>
+  <object id="73" name="first_spikes" type="spike_trap" x="1024" y="1568" width="32" height="32"/>
+  <object id="74" name="first_spikes" type="spike_trap" x="1056" y="1504" width="32" height="32"/>
+  <object id="76" name="first_spikes" type="spike_trap" x="1088" y="1472" width="32" height="32"/>
+  <object id="77" name="first_spikes" type="spike_trap" x="1088" y="1376" width="32" height="32"/>
+  <object id="79" name="first_spikes" type="spike_trap" x="1024" y="1504" width="32" height="32"/>
+  <object id="81" name="first_spikes" type="spike_trap" x="1024" y="1440" width="32" height="32"/>
+  <object id="82" name="first_spikes" type="spike_trap" x="1056" y="1536" width="32" height="32"/>
+  <object id="83" name="first_spikes" type="spike_trap" x="1088" y="1408" width="32" height="32"/>
+  <object id="84" name="first_spikes" type="spike_trap" x="1056" y="1472" width="32" height="32"/>
+  <object id="85" name="first_spikes" type="spike_trap" x="1024" y="1472" width="32" height="32"/>
+  <object id="86" name="first_spikes" type="spike_trap" x="1024" y="1376" width="32" height="32"/>
+  <object id="87" name="first_spikes" type="spike_trap" x="1056" y="1440" width="32" height="32"/>
+  <object id="88" name="first_spikes" type="spike_trap" x="1088" y="1504" width="32" height="32"/>
+  <object id="89" name="first_spikes" type="spike_trap" x="1024" y="1536" width="32" height="32"/>
+ </objectgroup>
+</map>

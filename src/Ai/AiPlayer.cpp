@@ -378,13 +378,13 @@ void AiPlayer::shootState(float deltaTime)
 {
     if (m_timer.getElapsedTime().asMilliseconds() >= 500 and
         m_target->getEquippedItem(Equip::Bow) and
-        m_target->accessInv().hasItem("it_test_arrow"))
+        m_target->accessInv().hasItem("it_arrow"))
     {
         auto arrow = m_target->getLevel()->addArrow(std::shared_ptr<Arrow>(new Arrow()));
         arrow->init(m_target->getFakePos().getf(), m_target->getDirection());
         arrow->setOwner(static_cast<Entity*>(m_target));
 
-        m_target->accessInv().removeItem("it_test_arrow");
+        m_target->accessInv().removeItem("it_arrow");
 
         m_target->setAnimation(AnimationCache::Get().getAnimation("player_shoot.ani"),
         [&]()

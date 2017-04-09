@@ -75,7 +75,7 @@ Game::~Game()
 
 void Game::loadCfg()
 {
-    std::ifstream file("config.cfg");
+    std::ifstream file("config");
     std::string line;
     std::stringstream sstr;
 
