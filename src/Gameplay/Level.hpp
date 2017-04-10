@@ -6,6 +6,7 @@
 #include "IceMissile.hpp"
 #include "LightningBolt.hpp"
 #include "Arrow.hpp"
+#include "Decoration.hpp"
 #include "Map.hpp"
 #include "../Render/BigParticle.hpp"
 #include <vector>
@@ -36,6 +37,7 @@ class Level
         IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
         LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
         Arrow*         addArrow(std::shared_ptr<Arrow> arrow);
+        Decoration*    addDecoration(Decoration::Ptr decor);
 
         std::vector<Entity*> getEntitiesInRange(const vec2f& pos, float range);
         Entity* getEntityByCode(std::string code);
@@ -52,6 +54,7 @@ class Level
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
         std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
         std::vector<std::shared_ptr<Arrow>> m_arrows;
+        std::vector<Decoration::Ptr> m_decorations;
 
         std::string m_mapName;
 

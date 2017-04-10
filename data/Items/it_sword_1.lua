@@ -1,11 +1,11 @@
-item_damage = 30;
+item_damage = 14;
 
 Item = {
 	code = "it_sword_1",
-	name = "Not that rusty sword",
+	name = "Dirty Sword",
 	image = "it_sword.png",
 	type = "weapon",
-	desc = "This one really looks good. It can be really useful",
+	desc = "This one looks fine. It can be really useful",
 
 	equip = function(user)
 		user:setDamage(item_damage)

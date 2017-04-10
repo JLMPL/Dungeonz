@@ -1,6 +1,6 @@
 Item = {
 	code = "it_note_start",
-	name = "Dirty note",
+	name = "First Note",
 	image = "it_note.png",
 	type = "book",
 	desc = "Dirty one. But it's not too old.",

@@ -279,6 +279,12 @@ Arrow* Level::addArrow(std::shared_ptr<Arrow> arrow)
     return m_arrows.back().get();
 }
 
+Decoration* Level::addDecoration(Decoration::Ptr decor)
+{
+    m_decorations.push_back(decor);
+    return m_decorations.back().get();
+}
+
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
     m_bigParticles.push_back(std::shared_ptr<BigParticle>(new BigParticle()));
@@ -352,6 +358,9 @@ void Level::update(float deltaTime)
         i->update(deltaTime);
 
     for (auto& i : m_bigParticles)
+        i->update(deltaTime);
+
+    for (auto& i : m_decorations)
         i->update(deltaTime);
 
     m_map.update();

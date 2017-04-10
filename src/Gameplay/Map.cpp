@@ -9,6 +9,7 @@
 #include "ItemBag.hpp"
 #include "SpikeTrap.hpp"
 #include "PressPlate.hpp"
+#include "Decoration.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Ai/AiMob.hpp"
 #include "../Ai/AiPlayer.hpp"
@@ -475,6 +476,18 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             exit->setCode("exit");
             exit->setPosition(pos);
             exit->setNext(next);
+        }
+        else if (type == "decoration")
+        {
+            std::string name = object->first_attribute("name")->value();
+            std::string visual = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            auto decor = (Decoration*)m_level->addDecoration(Decoration::Ptr(new Decoration()));
+            decor->init(visual);
+            decor->setPosition(pos);
         }
         else if (type == "start")
         {

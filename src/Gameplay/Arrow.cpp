@@ -1,6 +1,7 @@
 #include "Arrow.hpp"
 #include "Level.hpp"
 #include "Living.hpp"
+#include "Lever.hpp"
 #include "../Collision/CollisionHandler.hpp"
 
 Arrow::Arrow()
@@ -101,6 +102,15 @@ void Arrow::blow(Entity* ent)
                 }
                 else if (living->isDead())
                     return;
+            }
+            break;
+            case EntityType::Lever:
+            {
+                auto lever = static_cast<Lever*>(ent);
+
+                lever->activate();
+                // m_speed = 0;
+                // destroy();
             }
             break;
         }
