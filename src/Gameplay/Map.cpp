@@ -549,7 +549,7 @@ void Map::collisions()
 
         if (tile.rect.x == 96 and tile.rect.y == 128)
         {
-            BoxPtr_t box(new Box());
+            Box::Ptr box(new Box());
             box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
             box->material = CollMaterial::Regular;
             m_boxes.push_back(box);

@@ -25,9 +25,9 @@ void Living::init(const LivingProfile& profile)
     m_sprite->loadFromFile(m_profile.apperance + "_idle.ani");
     m_code = m_profile.code;
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,14,6);
-    m_box->type = CollisionType::Dynamic;
+    m_box->type = Box::Type::Dynamic;
     m_box->material = CollMaterial::Living;
     m_box->reactMaterial = CollMaterial::Trap;
     m_box->callback = [this]()

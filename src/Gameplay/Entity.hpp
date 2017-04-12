@@ -2,7 +2,7 @@
 #define ENTITY_HPP
 // #include "EntityType.hpp"
 #include "../Render/SpritePtr.hpp"
-#include "../Collision/BoxPtr.hpp"
+#include "../Collision/Box.hpp"
 #include <cstring>
 #include <memory>
 
@@ -59,7 +59,7 @@ class Entity
         Level*      m_level = nullptr;
         SpritePtr_t m_sprite = nullptr;
         vec2f       m_pos;
-        BoxPtr_t    m_box;
+        Box::Ptr    m_box;
         bool        m_destroy = false;
 };
 

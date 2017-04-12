@@ -11,9 +11,9 @@ FireMissile::FireMissile()
     m_sprite->loadFromFile("fajerbol.ani");
     m_sprite->setOrigin({12,12});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,8,8);
-    m_box->type = CollisionType::TriggerVolume;
+    m_box->type = Box::Type::TriggerVolume;
     m_box->reactMaterial = CollMaterial::Regular | CollMaterial::Living;
     m_box->callback = [this]()
     {

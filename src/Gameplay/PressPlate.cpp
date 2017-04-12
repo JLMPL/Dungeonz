@@ -12,9 +12,9 @@ PressPlate::PressPlate()
     m_sprite->setOrigin({0,0});
     m_sprite->setRect({0,0,32,32});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,32,32);
-    m_box->type = CollisionType::TriggerVolume;
+    m_box->type = Box::Type::TriggerVolume;
     m_box->reactMaterial = CollMaterial::Living;
     m_box->callback = [this]()
     {

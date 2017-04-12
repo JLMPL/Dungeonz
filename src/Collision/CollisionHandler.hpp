@@ -1,6 +1,6 @@
 #ifndef COLLISION_HANDLER_HPP
 #define COLLISION_HANDLER_HPP
-#include "BoxPtr.hpp"
+#include "Box.hpp"
 #include <vector>
 
 //Singleton
@@ -16,17 +16,17 @@ class CollisionHandler
         void init();
         void update(float deltaTime);
 
-        void addBody(BoxPtr_t box);
+        void addBody(Box::Ptr box);
         vec2f castRay(vec2f origin, vec2f end);
 
         void cleanUp();
 
     private:
-        void react(BoxPtr_t a, BoxPtr_t b);
+        void react(Box::Ptr a, Box::Ptr b);
         void clean();
 
     private:
-        std::vector<BoxPtr_t> m_bodies;
+        std::vector<Box::Ptr> m_bodies;
 };
 
 #endif

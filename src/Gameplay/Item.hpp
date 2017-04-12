@@ -1,6 +1,5 @@
 #ifndef ITEM_HPP
 #define ITEM_HPP
-#include "ItemType.hpp"
 #include "../Script/ScriptHandler.hpp"
 #include "../Core/Error.hpp"
 #include <string>
@@ -12,7 +11,20 @@ struct Item
 {
     using Ptr = std::shared_ptr<Item>;
 
-    ItemType type;
+    enum class Type
+    {
+        Plain = 0,
+        Weapon,
+        Armor,
+        Spell,
+        Potion,
+        Food,
+        Book,
+        Bow,
+        Misc
+    };
+
+    Type type;
     std::string code;
     std::string name;
     std::string image;
@@ -60,43 +72,43 @@ struct Item
 
             if (str_type == "weapon")
             {
-                type = ItemType::Weapon;
+                type = Type::Weapon;
 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
             }
             else if (str_type == "armor")
             {
-                type = ItemType::Armor;
+                type = Type::Armor;
                 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
             }
             else if (str_type == "food")
             {
-                type = ItemType::Food;
+                type = Type::Food;
                 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "book")
             {
-                type = ItemType::Book;
+                type = Type::Book;
                 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "spell")
             {
-                type = ItemType::Spell;
+                type = Type::Spell;
 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "misc")
             {
-                type = ItemType::Misc;
+                type = Type::Misc;
             }
             else if (str_type == "bow")
             {
-                type = ItemType::Bow;
+                type = Type::Bow;
 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));

@@ -13,9 +13,9 @@ Door::Door()
     m_sprite->loadFromFile("door_idle.ani");
     m_sprite->setOrigin({16,32});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(736,350,32,32);
-    m_box->type = CollisionType::Static;
+    m_box->type = Box::Type::Static;
 
     CollisionHandler::Get().addBody(m_box);
 }

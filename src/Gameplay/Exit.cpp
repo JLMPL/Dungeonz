@@ -11,9 +11,9 @@ Exit::Exit()
     m_sprite->loadFromFile("exit_door.png");
     m_sprite->setOrigin({16,32});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,32,4);
-    m_box->type = CollisionType::Static;
+    m_box->type = Box::Type::Static;
     m_box->enabled = true;
     // m_box->material = CollMaterial::Regular;
     // m_box->reactMaterial = CollMaterial::Living;
