@@ -5,7 +5,7 @@
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztlksSxCAIRDMHyNKaI2Wd+19maraUJoAgor3oqhiN4TX4uY/juCEIgiAIgqBuXQpFxwx+8IMf/OAH/yz8Wb0BP/h35pf68fZddPwR/CudDeC35890r7Dk791TwT8f/yUcm4ndkikbdwT/jF5I4szGro2DE6d0bmt2zlzanGj5PTg1/Jp6pPFr+UfWtUcdSNdIxH7G4ffeqyT+e/Fb8nH2hKd2Vv7aupf2R61/b739qyzCX1vTtXpfid9irqKcw4Od9nHi+o/5dKiQ9ggPWmzaWvl2qJC2d+5rPjx5wq1hK41cB1Z7hITvNOafwYezotJ4T8fTcSO5rOuA1oR2XDSvhQctfjpvYf5/FtU4pPnPzM+tjZ34pefbU380iyb3Ev43v6J5kH99HWjOv5nPvB4fns6/Ffl787+aB1nudeAHv4cH3PvfamrxR8c1mp8+76id2aF4/QCiOsPz
+   eJztmUsOwjAMRMsBWEYcqeve/zKIBRuraRxnYuczixGUpsFvPGkquI7juCiKoiiKoqhmnQZF10x+8pOf/OQn/yj8s3pDfvLvzF/rR+m66Poj+FfaG8hf5q+9V8z0XKGt0XLfHJ0dyWXJyQhC93Umdm/+aFY0f1rAi5o6UfwzsJXqLPHnakGy9cw2Iv+9e4vivsSrtf/eufbIgZbfi13Lj8q4ht+THcl2FuZ8Wm9/fm92NP/duteej17/vVX6rlX4ZcZz+V+JHzFXMs7Rg12e09T1G/NqUBLHHh7k2KxZ+TQoiePevb/z4ckTbYZR8lwHqHtEDd8bzD+CD+8bpczncrwc58mFzoHMhHVcNC/Cgxy/nDfq+bfVh5I32t81ZuPXZmMn/tr97el8NIul9zX8Jb+iedh/ew4s+9/Ie16LD0/734r8rf1fzYNZnuvIT/4eHtT8r7eScvzRdXnzy/c7amd2Kl5f0drAoQ==
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64">
@@ -18,7 +18,7 @@
    eJztz0ENAAAIA7EJwr8+NJCQ7NMquEsAAAAAAAAAAAAAAAC4mnZAmX8AAIB/CywZAIU=
   </data>
  </layer>
- <objectgroup name="Objects">
+ <objectgroup name="Objects" visible="0">
   <object id="1" name="player_spawn" type="start" x="992" y="1856" width="32" height="32"/>
   <object id="38" name="the_exit" type="exit" x="1024" y="672" width="32" height="32">
    <properties>
