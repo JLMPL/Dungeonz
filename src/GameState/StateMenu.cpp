@@ -10,7 +10,7 @@ constexpr int g_menuOptionsOffset = 48;
 
 StateMenu::StateMenu()
 {
-    m_type = StateType::Menu;
+    m_type = Type::Menu;
 }
 
 void StateMenu::init()

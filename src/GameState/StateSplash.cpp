@@ -7,7 +7,7 @@
 
 StateSplash::StateSplash()
 {
-    m_type = StateType::Splash;
+    m_type = Type::Splash;
 }
 
 void StateSplash::init()

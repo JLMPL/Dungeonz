@@ -7,7 +7,7 @@
 StatePlaying::StatePlaying()
 {
     GUI::Get().setPlayingState(this);
-    m_type = StateType::Playing;
+    m_type = Type::Playing;
     m_loadFirst = "level_0.tmx";
     m_conMode = Level::InitMode::First;
 }
@@ -15,7 +15,7 @@ StatePlaying::StatePlaying()
 StatePlaying::StatePlaying(const std::string& loadFirst)
 {
     GUI::Get().setPlayingState(this);
-    m_type = StateType::Playing;
+    m_type = Type::Playing;
     m_loadFirst = loadFirst;
     m_conMode = Level::InitMode::LoadCheckpoint;
 }

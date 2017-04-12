@@ -1,11 +1,17 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
-#include "States.hpp"
 #include <functional>
 
 class GameState
 {
     public:
+        enum class Type
+        {
+            Playing,
+            Menu,
+            Splash
+        };
+
         GameState() {}
         virtual ~GameState() {}
 
@@ -15,10 +21,10 @@ class GameState
 
         virtual void setExitFunc(std::function<void ()> func);
 
-        StateType getType();
+        Type getType();
 
     protected:
-        StateType m_type;
+        Type m_type;
         std::function<void ()> m_exitFunction;
 };
 

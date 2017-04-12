@@ -181,7 +181,7 @@ void Game::setState(GameState* state)
 
     switch (m_currentState->getType())
     {
-        case StateType::Splash:
+        case GameState::Type::Splash:
         {
             auto splash = static_cast<StateSplash*>(m_currentState.get());
             splash->setExitFunc(
@@ -191,7 +191,7 @@ void Game::setState(GameState* state)
             });
         }
         break;
-        case StateType::Menu:
+        case GameState::Type::Menu:
         {
             auto menu = static_cast<StateMenu*>(m_currentState.get());
             menu->setNewGameFunc(
