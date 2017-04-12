@@ -1,7 +1,6 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
-// #include "EntityType.hpp"
-#include "../Render/SpritePtr.hpp"
+#include "../Render/Sprite.hpp"
 #include "../Collision/Box.hpp"
 #include <cstring>
 #include <memory>
@@ -57,7 +56,7 @@ class Entity
         std::string m_code;
         Type  m_type = Type::Plain;
         Level*      m_level = nullptr;
-        SpritePtr_t m_sprite = nullptr;
+        Sprite::Ptr m_sprite = nullptr;
         vec2f       m_pos;
         Box::Ptr    m_box;
         bool        m_destroy = false;

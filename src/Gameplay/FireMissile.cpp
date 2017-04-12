@@ -7,7 +7,7 @@
 
 FireMissile::FireMissile()
 {
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
     m_sprite->loadFromFile("fajerbol.ani");
     m_sprite->setOrigin({12,12});
 

@@ -11,6 +11,8 @@
 class Sprite
 {
     public:
+        using Ptr = std::unique_ptr<Sprite>;
+
         virtual ~Sprite() {}
         virtual void loadFromFile(const std::string& path);
 

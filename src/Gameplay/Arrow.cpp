@@ -8,7 +8,7 @@ Arrow::Arrow()
 {
     m_type = Entity::Type::Arrow;
 
-    m_sprite = SpritePtr_t(new Sprite());
+    m_sprite = Sprite::Ptr(new Sprite());
     m_sprite->loadFromFile("arrow.png");
     m_sprite->setOrigin({12,12});
 

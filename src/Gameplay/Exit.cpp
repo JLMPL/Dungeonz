@@ -7,7 +7,7 @@ Exit::Exit()
 {
     m_type = Entity::Type::Exit;
 
-    m_sprite = SpritePtr_t(new Sprite());
+    m_sprite = Sprite::Ptr(new Sprite());
     m_sprite->loadFromFile("exit_door.png");
     m_sprite->setOrigin({16,32});
 

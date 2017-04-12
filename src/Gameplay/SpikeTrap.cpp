@@ -7,7 +7,7 @@ SpikeTrap::SpikeTrap()
 {
     m_type = Entity::Type::SpikeTrap;
 
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
     m_sprite->loadFromFile("spike_trap_idle.ani");
     m_sprite->setOrigin({16,16});
     m_sprite->setRect({0,0,32,32});

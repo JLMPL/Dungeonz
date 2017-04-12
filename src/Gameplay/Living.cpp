@@ -10,7 +10,7 @@
 Living::Living()
 {
     m_type = Entity::Type::Living;
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
 }
 
 Living::Living(const LivingProfile& profile)
