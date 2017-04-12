@@ -25,8 +25,8 @@
     <property name="item0" value="it_sword_0"/>
     <property name="item1" value="it_armor_0"/>
     <property name="item2" value="it_key_0"/>
-    <property name="item3" value="it_bow"/>
-    <property name="item4" value="it_arrow"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
    </properties>
   </object>
   <object id="3" name="note_bag" type="item_bag" x="992" y="1696" width="32" height="32">

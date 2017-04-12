@@ -24,7 +24,7 @@ IceMissile::IceMissile()
     CollisionHandler::Get().addBody(m_box);
 }
 
-void IceMissile::init(vec2f origin, Direction_t dir, EntityType type)
+void IceMissile::init(vec2f origin, Direction_t dir, Entity::Type type)
 {
     m_type = type;
     m_direction = dir;
@@ -80,7 +80,7 @@ void IceMissile::blow(Entity* ent)
     {
         switch (ent->getType())
         {
-            case EntityType::Living:
+            case Entity::Type::Living:
             {
                 auto living = static_cast<Living*>(ent);
 

@@ -184,34 +184,34 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             profile.loadFromFile(whom + ".chr");
             // profile.loadFromFile(whom + ".chr");
 
-            auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto living = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             living->init(profile);
-            living->setAi(AiPtr_t(new AiMob()));
+            living->setAi(Ai::Ptr(new AiMob()));
             living->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 living->accessInv().addItem(item);
             }
         }
@@ -232,34 +232,34 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             profile.loadFromFile(whom + ".chr");
             // profile.loadFromFile(whom + ".chr");
 
-            auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto living = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             living->init(profile);
-            living->setAi(AiPtr_t(new AiMobMage()));
+            living->setAi(Ai::Ptr(new AiMobMage()));
             living->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 living->accessInv().addItem(item);
             }
         }
@@ -271,7 +271,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto door = (Door*)m_level->addEntity(EntityPtr_t(new Door()));
+            auto door = (Door*)m_level->addEntity(Entity::Ptr(new Door()));
             door->setCode(name);
             door->setPosition(pos);
             door->setRequiredItem(item);
@@ -290,7 +290,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value()) - 13;
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto chest = (Chest*)m_level->addEntity(EntityPtr_t(new Chest()));
+            auto chest = (Chest*)m_level->addEntity(Entity::Ptr(new Chest()));
             chest->setCode(name);
             chest->setPosition(pos + vec2f(16,16));
 
@@ -301,27 +301,27 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 chest->accessInv().addItem(item);
             }
         }
@@ -335,7 +335,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto lever = (Lever*)m_level->addEntity(EntityPtr_t(new Lever()));
+            auto lever = (Lever*)m_level->addEntity(Entity::Ptr(new Lever()));
             lever->setCode(name);
             lever->setPosition(pos + vec2f(16,16));
             lever->setActivateFunc(
@@ -367,7 +367,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto trap = (SpikeTrap*)m_level->addEntity(EntityPtr_t(new SpikeTrap()));
+            auto trap = (SpikeTrap*)m_level->addEntity(Entity::Ptr(new SpikeTrap()));
             trap->setCode(name);
             trap->setPosition(pos);
         }
@@ -381,7 +381,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto press = (PressPlate*)m_level->addEntity(EntityPtr_t(new PressPlate()));
+            auto press = (PressPlate*)m_level->addEntity(Entity::Ptr(new PressPlate()));
             press->setCode(name);
             press->setPosition(pos);
 
@@ -433,33 +433,33 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto bag = (ItemBag*)m_level->addEntity(EntityPtr_t(new ItemBag()));
+            auto bag = (ItemBag*)m_level->addEntity(Entity::Ptr(new ItemBag()));
             bag->setCode(name);
             bag->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 bag->accessInv().addItem(item);
             }
         }
@@ -472,7 +472,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value()) + 32;
 
-            auto exit = (Exit*)m_level->addEntity(EntityPtr_t(new Exit()));
+            auto exit = (Exit*)m_level->addEntity(Entity::Ptr(new Exit()));
             exit->setCode("exit");
             exit->setPosition(pos);
             exit->setNext(next);
@@ -499,10 +499,10 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             LivingProfile profile;
             profile.loadFromFile("pc_player.chr");
 
-            auto player = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto player = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             player->init(profile);
             player->setCode("pc_player");
-            player->setAi(AiPtr_t(new AiPlayer()));
+            player->setAi(Ai::Ptr(new AiPlayer()));
             player->setPosition(pos);
 
             GUI::Get().setTarget(player);

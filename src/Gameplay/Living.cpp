@@ -1,7 +1,6 @@
 #include "Living.hpp"
 #include "Level.hpp"
 #include "../Resource/TextureCache.hpp"
-#include "../Ai/AiPtr.hpp"
 #include "../Ai/AiPlayer.hpp"
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
@@ -10,7 +9,7 @@
 
 Living::Living()
 {
-    m_type = EntityType::Living;
+    m_type = Entity::Type::Living;
     m_sprite = SpritePtr_t(new AnimatedSprite());
 }
 
@@ -163,7 +162,7 @@ void Living::damage(int damage)
 
     if(!state)
         dodmg = true;
-    else if(state->getState() == PlayerState::Rolling)
+    else if(state->getState() == AiPlayer::State::Rolling)
         dodmg = false;
     else
         dodmg = true;
@@ -313,7 +312,7 @@ int Living::getXp()
     return m_profile.xp;
 }
 
-void Living::setAi(AiPtr_t ai)
+void Living::setAi(Ai::Ptr ai)
 {
     m_ai = std::move(ai);
     m_ai->init(this);

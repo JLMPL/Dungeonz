@@ -5,7 +5,7 @@
 
 PressPlate::PressPlate()
 {
-    m_type = EntityType::PressPlate;
+    m_type = Entity::Type::PressPlate;
 
     m_sprite = SpritePtr_t(new Sprite());
     m_sprite->loadFromFile("press_plate.png");

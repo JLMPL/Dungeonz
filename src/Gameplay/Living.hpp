@@ -5,7 +5,7 @@
 #include "Stats.hpp"
 #include "Inventory.hpp"
 #include "Spells.hpp"
-#include "../Ai/AiPtr.hpp"
+#include "../Ai/Ai.hpp"
 #include "../Core/Direction.hpp"
 #include "../Resource/AnimationPtr.hpp"
 #include <SFML/Graphics/CircleShape.hpp>
@@ -52,7 +52,7 @@ class Living : public Entity
         void addXp(int xp);
         int  getXp();
 
-        void setAi(AiPtr_t ai);
+        void setAi(Ai::Ptr ai);
         void setDirection(Direction_t facing);
         void setAnimation(AnimPtr_t anim, std::function<void ()> call = [](){});
         void setBusy(bool busy);
@@ -72,7 +72,7 @@ class Living : public Entity
     private:
         LivingProfile m_profile;
         Direction_t   m_facing;
-        AiPtr_t       m_ai = nullptr;
+        Ai::Ptr       m_ai = nullptr;
         bool          m_busy = false;
 
         sf::CircleShape m_shadow;

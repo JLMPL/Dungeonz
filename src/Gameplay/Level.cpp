@@ -105,7 +105,7 @@ void Level::loadTravel(const std::string& path, bool save)
     {
         file >> aitem;
 
-        ItemPtr_t item = ItemPtr_t(new Item());
+        Item::Ptr item = Item::Ptr(new Item());
         item->loadFromFile(aitem + ".lua");
         player->accessInv().addItem(item);
     }
@@ -228,7 +228,7 @@ void Level::saveTravel(const std::string& path, bool save)
     fclose(file);
 }
 
-Entity* Level::addEntity(EntityPtr_t entity)
+Entity* Level::addEntity(Entity::Ptr entity)
 {
     m_entities.push_back(std::move(entity));
     m_entities.back()->setLevel(this);
@@ -237,7 +237,7 @@ Entity* Level::addEntity(EntityPtr_t entity)
     return m_entities.back().get();
 }
 
-ItemPtr_t Level::addItem(ItemPtr_t item)
+Item::Ptr Level::addItem(Item::Ptr item)
 {
     m_items.push_back(item);
     return m_items.back();

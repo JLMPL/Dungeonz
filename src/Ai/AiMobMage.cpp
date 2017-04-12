@@ -140,7 +140,7 @@ void AiMobMage::attackState(float deltaTime)
             // enemy->push(m_target->getDirection(), 5, 0.1);
 
             auto ball = (FireMissile*)m_target->getLevel()->addFireMissile(std::shared_ptr<FireMissile>(new FireMissile()));
-            ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
+            ball->init(m_target->getPosition(), m_target->getDirection(), Entity::Type::Fireball);
             ball->setOwner(static_cast<Entity*>(m_target));
             ball->setDirection(normalize(m_focus->getPosition() - m_target->getPosition()));
 

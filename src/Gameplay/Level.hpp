@@ -1,7 +1,7 @@
 #ifndef LEVEL_HPP
 #define LEVEL_HPP
-#include "EntityPtr.hpp"
-#include "ItemPtr.hpp"
+#include "Entity.hpp"
+#include "Item.hpp"
 #include "FireMissile.hpp"
 #include "IceMissile.hpp"
 #include "LightningBolt.hpp"
@@ -31,8 +31,8 @@ class Level
         void loadTravel(const std::string& path, bool save);
         void saveTravel(const std::string& path, bool save);
 
-        Entity*        addEntity(EntityPtr_t entity);
-        ItemPtr_t      addItem(ItemPtr_t item);
+        Entity*        addEntity(Entity::Ptr entity);
+        Item::Ptr      addItem(Item::Ptr item);
         FireMissile*   addFireMissile(std::shared_ptr<FireMissile> missile);
         IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
         LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
@@ -46,9 +46,9 @@ class Level
         Living* getPlayer();
 
     private:
-        std::vector<EntityPtr_t> m_entities;
+        std::vector<Entity::Ptr> m_entities;
         uint m_lastEntityId = 0;
-        std::vector<ItemPtr_t> m_items;
+        std::vector<Item::Ptr> m_items;
         std::vector<std::shared_ptr<BigParticle>> m_bigParticles;
         std::vector<std::shared_ptr<FireMissile>> m_missiles;
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;

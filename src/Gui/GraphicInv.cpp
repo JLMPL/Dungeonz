@@ -240,9 +240,9 @@ void GraphicInv::update()
         m_timer.getElapsedTime().asMilliseconds() > 150 and
         !m_slots[m_selected].empty)
     {
-        ItemPtr_t item = m_slots[m_selected].item;
+        Item::Ptr item = m_slots[m_selected].item;
 
-        ItemBag* bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
+        ItemBag* bag = (ItemBag*)m_player->getLevel()->addEntity(Entity::Ptr(new ItemBag()));
         bag->setCode("spitoff");
         bag->setPosition(m_player->getFakePos().getf());
 

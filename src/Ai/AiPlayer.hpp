@@ -7,22 +7,22 @@
 #include <SFML/Graphics.hpp>
 //*/
 
-enum class PlayerState
-{
-    Moving = 0,
-    Idle,
-    Attack,
-    Picking,
-    Casting,
-    Rolling,
-    Shoot
-};
-
 class Entity;
 
 class AiPlayer : public Ai
 {
     public:
+        enum class State
+        {
+            Moving = 0,
+            Idle,
+            Attack,
+            Picking,
+            Casting,
+            Rolling,
+            Shoot
+        };
+
         void setup() override final;
         void update(float deltaTime) override final;
         void focus();
@@ -41,7 +41,7 @@ class AiPlayer : public Ai
         void castSpeed();
         void castHeal();
         
-        PlayerState getState();
+        State getState();
 
     private:
         float       m_speed = 100;
@@ -49,7 +49,7 @@ class AiPlayer : public Ai
         float       m_walkSpeed = 100;
         Entity*     m_focus;
         sf::Clock   m_timer;
-        PlayerState m_state;
+        State m_state;
 
         sf::Clock m_speedSpellTimer;
         bool      m_speedSpellActive = false;

@@ -4,7 +4,7 @@
 
 ItemBag::ItemBag()
 {
-    m_type = EntityType::ItemBag;
+    m_type = Entity::Type::ItemBag;
     m_sprite = SpritePtr_t(new Sprite());
     m_sprite->loadFromFile("bag.png");
     m_sprite->setOrigin({8,16});

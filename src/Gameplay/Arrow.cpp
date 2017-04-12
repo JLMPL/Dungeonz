@@ -6,7 +6,7 @@
 
 Arrow::Arrow()
 {
-    m_type = EntityType::Arrow;
+    m_type = Entity::Type::Arrow;
 
     m_sprite = SpritePtr_t(new Sprite());
     m_sprite->loadFromFile("arrow.png");
@@ -81,7 +81,7 @@ void Arrow::blow(Entity* ent)
     {
         switch (ent->getType())
         {
-            case EntityType::Living:
+            case Entity::Type::Living:
             {
                 auto living = static_cast<Living*>(ent);
 
@@ -104,7 +104,7 @@ void Arrow::blow(Entity* ent)
                     return;
             }
             break;
-            case EntityType::Lever:
+            case Entity::Type::Lever:
             {
                 auto lever = static_cast<Lever*>(ent);
 

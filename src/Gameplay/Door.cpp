@@ -7,7 +7,7 @@
 
 Door::Door()
 {
-    m_type = EntityType::Door;
+    m_type = Entity::Type::Door;
 
     m_sprite = SpritePtr_t(new AnimatedSprite());
     m_sprite->loadFromFile("door_idle.ani");

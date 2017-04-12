@@ -3,7 +3,7 @@
 
 Lever::Lever()
 {
-    m_type = EntityType::Lever;
+    m_type = Entity::Type::Lever;
 
     m_sprite = SpritePtr_t(new Sprite());
     m_sprite->loadFromFile("test_lever.png");

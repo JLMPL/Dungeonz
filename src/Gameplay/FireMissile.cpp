@@ -24,7 +24,7 @@ FireMissile::FireMissile()
     CollisionHandler::Get().addBody(m_box);
 }
 
-void FireMissile::init(vec2f origin, Direction_t dir, EntityType type)
+void FireMissile::init(vec2f origin, Direction_t dir, Entity::Type type)
 {
     m_type = type;
     m_direction = dir;
@@ -82,7 +82,7 @@ void FireMissile::blow(Entity* ent)
     {
         switch (ent->getType())
         {
-            case EntityType::Living:
+            case Entity::Type::Living:
             {
                 auto living = static_cast<Living*>(ent);
 

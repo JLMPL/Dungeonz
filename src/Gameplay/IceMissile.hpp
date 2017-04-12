@@ -7,7 +7,7 @@ class IceMissile : public Entity
     public:
         IceMissile();
 
-        void init(vec2f origin, Direction_t dir, EntityType type);
+        void init(vec2f origin, Direction_t dir, Entity::Type type);
         void setOwner(Entity* owner);
 
         void update(float deltaTime) override final;
