@@ -1,5 +1,5 @@
-level_0.tmx
-40
+level_2.tmx
+33
 40
 40
 40
@@ -11,7 +11,16 @@ level_0.tmx
 0
 0
 -1
+9
+it_sword_0
+it_armor_0
+it_key_0
+it_bow
+it_bow
+it_arrow
+it_arrow
+it_arrow
+it_note_shoot_lever
 0
 0
-0
-0
+it_bow

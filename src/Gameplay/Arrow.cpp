@@ -17,7 +17,7 @@ Arrow::Arrow()
     m_box->reactMaterial = CollMaterial::Regular;
     m_box->callback = [this]()
     {
-        blow(nullptr);
+        // blow(nullptr);
     };
     m_box->enabled = false;
 

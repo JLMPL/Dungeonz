@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="112">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="144">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztmEuOxCAMRJkDzDLqI2Wd+19mVkiWx8ZlYyDpsChFonHi519IX6WUa2tra2tra+uVOm/gw2plxuAMaPPfi7/Hpyfyc+Yev76Bv6cGnsqfVQPfwh+tgRH8M2PUG4NM/rPEfMjm9zw/i39lj/TUwAj+mewaL+pHNv9sdisG2fPA2n8nfm8toPUg3Xc1f1YMUH507mpxGxUrKwZn+e/XKq2oA+33N/HzPW+sgdXco/h5XiM2M3hn8Htj8G35f0IvzOh5jy9Pq3mr31flVcvxCP7Tce+38a/OfTavxRfN+Q9R6ze6R1pbzc/rAdWHiHN9BEnrs2vAep4n5wcR5zoESeuz89/blxoj3yfxS+sWvxQLmoPZ/EeRGZH9Hn40B3fmrz0izbkou/TcTH5rH/X7l0jLU+17hF96Z0jq5UfeAVrMkLxVO+qndB/knSFpBL+0J8qP9Af6zrDuG+l/ba4ifZLFb+1H7Href9E5MZJfeobm8x34PXUa4W/5/AZ+reZ7+qBl05ons/hbZ4aV/NIeK1cR/taZQYtHS/ys3LLx8vNc8dxE+L02lr/St6YWp8pi8dPzSitXI/h5jJF8VbXOlJSl1Tv03DKi/7PzT++HninRObJi/nvnHXpW9vCjvkb5e3Pe8hudbRqvJ1d355e+K/madi/J5u78XNIM4GuWLbWZxZ8Vh+qX9t3F+0Gqe34dza/5E+Xn/6ccbL31Hwy/Rvit+YLmPFIftXYlfq0feN3Tq8Xvna1XwVlm1L9mi9S/lberyMyj+a36R2y1vSi/Zz2b36p/xNbau7VGfyGFcU0=
+   eJztmM2OwyAMhKnUHre3qI+Uc97/ZbaHRou8YzyAgaThMKpEgPizh590CyFsU1NTU1NTU5fUeoAYRsszB2uBJv+x+GtiOiO/ZK6J6xv4azxwVn4vD3wLf6kHWvD3zFFtDjz511AWgzd/zvu9+EeukRoPtODvya7xsnF48/dmt3LgvR9Y/Y/En+sF1g9o3tH8Xjlg+dl9V8tbq1xZOVjD/7hGaYQPtOdX4pd9ruiB0dyt+GVdS8b04O3Bn5uDb6v/GdZCjzWfE8vZPG+t91F11Wrcgn/NmPtq/KNr781r8ZXW/P7W7a1H4tlN9LmDttH8q4iVrdErkuR6AT1BW28PMCxszZdIkmsBQu29659iS8WD8pTiQPyo3eJHuYhr4MV/+8Rj+X8JmJHNKcvP1sDT/7tHvfifn2dPIi85ku/19n+qXxz3T6TcnCJ+eWYgyX2nhB/xSf9rOWPqto+L40TzMGcGUgt+WasafmZ9sGeGNW/J+tf21SVg5hb8Vn9mXM35h56N5kfv0GI+An+OT0v4UzFfgV/zfM06YPm1ca35U3eGkfyaR6y7Xy4/ew9j2eVdOTUml1/WStamhD93jBUv+q5D/WIWi/8e/u4rqVq14Jc5Zuq1S7tfSpbU2onvLS3Wv3f94/nYOyW7j7Ta/2uZNX5r7bP8ktFz//Pml3Gze5vGixjPyi+/v9A3mTbXXYxB/2UejV8K7QGyzRobj+nF75WHPS7tu0uuB+R7+duaX4unlH8/96X2dnRmPkSf/beE39pf2JqX+GP3LuLX1oP0ffxr8efurVvgWXr4XxvL+N+q2xYwc2t+y//MWK0vy5/T7s1v+Z8Za/WdGqNfG9ltMA==
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64">
@@ -15,7 +15,7 @@
  </layer>
  <layer name="Collision" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztz6ENAEAIBEEKov/6XiBJeIcgM8mJkxsBAAAAAAAAAAAAAAAAAAAlP/86/fO/Tn8fux4BeQI9
+   eJztllEOxCAIBT1Q73++/W0MIKBstZ1JmlQL1CcqtgYAAAAAAAAAAAAAAAAAAAAAIHMJj/XNep4mM6bexuMv9e+i32rf+1fnbRf9l/Au2Y1iVOe/Yv9E9Us22v6X2pqfd6wz/jMxvfp7Gy1nmfxV6c/k31qHo/Uh9WXqxVP6PTG1tjaPGZ5a/zMxI2N+a/6957h2rlTV4VGN08YQ2f9abG/NqCCjX/rmbc+MowL0j/9brX/2bjBDdv+3lpsPK37EZxTPe1a+Vb8nXqb+Va3/qE80XqZ2ecZzgv5Zv5l6Hzn/VtX+1fmXYvXv1r//jXc+s3XHOjN30G+hzY1nziyfu03vsxPRHHt8T9TvqXWjb5Ltm/Rbe0WLdYr+qpin6P96/r++/zN23vN/5V1uNdZdMFL/d9b4A8r1RtE=
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -158,20 +158,20 @@
     <property name="spawn" value="mob_bat"/>
    </properties>
   </object>
-  <object id="99" name="first_chest" type="chest" x="800" y="1984" width="32" height="32">
+  <object id="99" name="first_chest" type="chest" x="64" y="1600" width="32" height="32">
    <properties>
     <property name="item0" value="it_spell_frostbite"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
+    <property name="item1" value="it_potion_magicka_0"/>
+    <property name="item2" value="it_potion_magicka_0"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
     <property name="key" value="-"/>
    </properties>
   </object>
-  <object id="100" name="secpike" type="spike_trap" x="800" y="1952" width="32" height="32"/>
-  <object id="101" name="secpike" type="spike_trap" x="768" y="1984" width="32" height="32"/>
-  <object id="102" name="secpike" type="spike_trap" x="832" y="1984" width="32" height="32"/>
-  <object id="107" name="sord_chest" type="chest" x="800" y="1440" width="32" height="32">
+  <object id="100" name="secpike" type="spike_trap" x="64" y="1632" width="32" height="32"/>
+  <object id="101" name="secpike" type="spike_trap" x="32" y="1600" width="32" height="32"/>
+  <object id="102" name="secpike" type="spike_trap" x="96" y="1600" width="32" height="32"/>
+  <object id="107" name="sord_chest" type="chest" x="832" y="1632" width="32" height="32">
    <properties>
     <property name="item0" value="it_sword_1"/>
     <property name="item1" value="-"/>
@@ -219,6 +219,162 @@
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
     <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="112" name="t" type="decoration" x="32" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="113" name="t" type="decoration" x="96" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="114" name="secpike" type="spike_trap" x="32" y="1632" width="32" height="32"/>
+  <object id="115" name="secpike" type="spike_trap" x="96" y="1632" width="32" height="32"/>
+  <object id="116" name="the_exit" type="exit" x="384" y="1120" width="32" height="32">
+   <properties>
+    <property name="next" value="level_2.tmx"/>
+   </properties>
+  </object>
+  <object id="117" name="last_lever" type="lever" x="800" y="1984" width="32" height="32">
+   <properties>
+    <property name="activate" value="last_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="118" name="last_door" type="door" x="384" y="1216" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_sec_none"/>
+   </properties>
+  </object>
+  <object id="119" name="beg_bag" type="item_bag" x="864" y="1984" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_root"/>
+    <property name="item1" value="it_root"/>
+    <property name="item2" value="it_root"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="120" name="t" type="decoration" x="1056" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="121" name="t" type="decoration" x="1152" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="123" name="t" type="decoration" x="1248" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="124" name="t" type="decoration" x="1312" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="125" name="t" type="decoration" x="1504" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="126" name="t" type="decoration" x="1632" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="127" name="t" type="decoration" x="1728" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="128" name="t" type="decoration" x="1792" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="129" name="t" type="decoration" x="800" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="130" name="t" type="decoration" x="704" y="1152" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="131" name="t" type="decoration" x="768" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="132" name="t" type="decoration" x="768" y="1856" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="133" name="t" type="decoration" x="768" y="1952" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="134" name="t" type="decoration" x="608" y="1856" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="135" name="t" type="decoration" x="448" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="136" name="t" type="decoration" x="320" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="137" name="t" type="decoration" x="352" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="138" name="t" type="decoration" x="416" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="139" name="t" type="decoration" x="352" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="140" name="t" type="decoration" x="416" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="141" name="t" type="decoration" x="352" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="142" name="t" type="decoration" x="416" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="143" name="arbag" type="item_bag" x="1504" y="1632" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="it_armor_1"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
    </properties>
   </object>
  </objectgroup>

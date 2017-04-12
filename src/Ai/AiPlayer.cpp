@@ -42,6 +42,20 @@ void AiPlayer::setup()
 
 void AiPlayer::update(float deltaTime)
 {
+    m_noclipTimer += 1000 * deltaTime;
+
+    if (InputHandler::Get().isKeyPressed(sf::Keyboard::Return) and
+        m_noclipTimer >= 500)
+    {
+        m_noclip = !m_noclip;
+        m_noclipTimer = 0;
+
+        if (m_noclip)
+            m_target->disableCollision();
+        else
+            m_target->enableCollision();
+    }
+
     if (!m_target->isBusy())
     {
         focus();

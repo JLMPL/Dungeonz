@@ -66,6 +66,9 @@ class Living : public Entity
         Inventory&           accessInv();
         bool                 isDead() const;
 
+        void enableCollision();
+        void disableCollision();
+
     private:
         LivingProfile m_profile;
         Direction_t   m_facing;

@@ -60,6 +60,9 @@ class AiPlayer : public Ai
         sf::Vertex m_ray[2];
 
         sf::Clock m_stepTimer;
+
+        bool m_noclip = false;
+        float m_noclipTimer = 0;
 };
 
 #endif

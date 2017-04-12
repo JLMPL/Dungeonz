@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="67">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztlksSxCAIRDMHyNKaI2Wd+19maraUJoAgor3oqhiN4TX4uY/juCEIgiAIgqBuXQpFxwx+8IMf/OAH/yz8Wb0BP/h35pf68fZddPwR/CudDeC35890r7Dk791TwT8f/yUcm4ndkikbdwT/jF5I4szGro2DE6d0bmt2zlzanGj5PTg1/Jp6pPFr+UfWtUcdSNdIxH7G4ffeqyT+e/Fb8nH2hKd2Vv7aupf2R61/b739qyzCX1vTtXpfid9irqKcw4Od9nHi+o/5dKiQ9ggPWmzaWvl2qJC2d+5rPjx5wq1hK41cB1Z7hITvNOafwYezotJ4T8fTcSO5rOuA1oR2XDSvhQctfjpvYf5/FtU4pPnPzM+tjZ34pefbU380iyb3Ev43v6J5kH99HWjOv5nPvB4fns6/Ffl787+aB1nudeAHv4cH3PvfamrxR8c1mp8+76id2aF4/QCiOsPz
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztz0ENAAAIA7EJwr8+NJCQ7NMquEsAAAAAAAAAAAAAAAC4mnZAmX8AAIB/CywZAIU=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="992" y="1856" width="32" height="32"/>
+  <object id="38" name="the_exit" type="exit" x="1024" y="672" width="32" height="32">
+   <properties>
+    <property name="next" value="level_1.tmx"/>
+   </properties>
+  </object>
+  <object id="41" name="t" type="decoration" x="896" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="43" name="t" type="decoration" x="1088" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="59" name="mage_spawn" type="spawn" x="1088" y="1376" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_spell_fireball"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="60" name="fidor" type="door" x="992" y="1472" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_none"/>
+   </properties>
+  </object>
+  <object id="61" name="filev" type="lever" x="896" y="1376" width="32" height="32">
+   <properties>
+    <property name="activate" value="fidor"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="62" name="better_weapon_here" type="chest" x="1376" y="1600" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_sword_2"/>
+    <property name="item1" value="it_key_tri_0"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="63" name="gofudor" type="door" x="1312" y="1280" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_tri_0"/>
+   </properties>
+  </object>
+  <object id="64" name="t" type="decoration" x="1280" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="65" name="t" type="decoration" x="1344" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="66" name="mor_arowz" type="item_bag" x="864" y="1600" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_arrow"/>
+    <property name="item1" value="it_arrow"/>
+    <property name="item2" value="it_arrow"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

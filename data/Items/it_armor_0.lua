@@ -1,4 +1,4 @@
-item_defense = 20;
+item_defense = 15;
 
 Item = {
 	code = "it_armor_0",

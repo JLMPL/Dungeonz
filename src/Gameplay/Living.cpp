@@ -377,3 +377,13 @@ bool Living::isDead() const
 {
     return m_attributes[Attribute::Hp] <= 0;
 }
+
+void Living::enableCollision()
+{
+    m_box->enabled = true;
+}
+
+void Living::disableCollision()
+{
+    m_box->enabled = false;
+}
