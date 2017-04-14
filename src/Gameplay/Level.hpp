@@ -4,6 +4,7 @@
 #include "Item.hpp"
 #include "FireMissile.hpp"
 #include "IceMissile.hpp"
+#include "BossMissile.hpp"
 #include "LightningBolt.hpp"
 #include "Arrow.hpp"
 #include "Decoration.hpp"
@@ -35,6 +36,7 @@ class Level
         Item::Ptr      addItem(Item::Ptr item);
         FireMissile*   addFireMissile(std::shared_ptr<FireMissile> missile);
         IceMissile*    addIceMissile(std::shared_ptr<IceMissile> missile);
+        BossMissile*   addBossMissile(std::shared_ptr<BossMissile> missile);
         LightningBolt* addLightningBolt(std::shared_ptr<LightningBolt> bolt);
         Arrow*         addArrow(std::shared_ptr<Arrow> arrow);
         Decoration*    addDecoration(Decoration::Ptr decor);
@@ -52,6 +54,7 @@ class Level
         std::vector<std::shared_ptr<BigParticle>> m_bigParticles;
         std::vector<std::shared_ptr<FireMissile>> m_missiles;
         std::vector<std::shared_ptr<IceMissile>> m_iceMissiles;
+        std::vector<std::shared_ptr<BossMissile>> m_bossMissiles;
         std::vector<std::shared_ptr<LightningBolt>> m_lightnings;
         std::vector<std::shared_ptr<Arrow>> m_arrows;
         std::vector<Decoration::Ptr> m_decorations;

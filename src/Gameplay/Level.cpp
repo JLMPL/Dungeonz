@@ -261,6 +261,15 @@ IceMissile* Level::addIceMissile(std::shared_ptr<IceMissile> missile)
     return m_iceMissiles.back().get();
 }
 
+BossMissile* Level::addBossMissile(std::shared_ptr<BossMissile> missile)
+{
+    m_bossMissiles.push_back(missile);
+    m_bossMissiles.back()->setLevel(this);
+    m_bossMissiles.back()->setId(m_lastEntityId);
+    m_lastEntityId++;
+    return m_bossMissiles.back().get();
+}
+
 LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
 {
     m_lightnings.push_back(bolt);
@@ -318,6 +327,14 @@ void Level::update(float deltaTime)
             i++;
     }
 
+    for (auto i = m_bossMissiles.begin(); i != m_bossMissiles.end();)
+    {
+        if ((*i)->isDestroyed())
+            i = m_bossMissiles.erase(i);
+        else
+            i++;
+    }
+
     for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
     {
         if ((*i)->isDestroyed())
@@ -349,6 +366,9 @@ void Level::update(float deltaTime)
         i->update(deltaTime);
 
     for (auto& i : m_iceMissiles)
+        i->update(deltaTime);
+
+    for (auto& i : m_bossMissiles)
         i->update(deltaTime);
 
     for (auto& i : m_lightnings)

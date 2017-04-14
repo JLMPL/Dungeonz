@@ -13,7 +13,7 @@
    eJzt2EEKwjAQAMD8RHqMPbb+/2satFiWil40hp2BhRBy2GRJ0rQUAAAAAAAA4Bem3gl0UG9xecT6on/ukFcPcZ7bGmSWpfbcZdvz0ejzXsqzhi0y3mlR9jVY3w+BvxXPtNHP6NFtdTjv2pm0d8G8a2ebf1R7J8BHsrzpT+X4n0ZTD/qysV8BaHdB1u94AAD4tivkwQn3
   </data>
  </layer>
- <layer name="Collision" width="64" height="64" visible="0">
+ <layer name="Collision" width="64" height="64">
   <data encoding="base64" compression="zlib">
    eJztllEOhCAMBT2Q9z+f8c+QFvooUIpvErO7oMBsafG6CCGEEEIIIYQQQgiJ4f5cf+QuPk/iFi7pnkvpy07pRH/9HvrXx7Hk0m6M8G/VjZ35rr2n/tXinMH/xeonuUq/M+3/l9Kv5mDpz8bINWeugWgNt/it9u85hyz5L42n9UXGv+ccsp5vkv9uzPJH2iNB9rA1nrX9vhueNVn8V4PWlbIPeX5Xf7Rd828939rnEft/VE2yvMehcY72R/PCO6dnzF5GzdHrL+3/2n2jcyQ6/i3/kfNqz/fUf6lmIXNK36XfyFgrmOGv/e8r4o/irf8tx1r+I+uZBVIvRs41q/551nTSXFa88W/lRWRsLVjXuku+RkF//zmZGfrr7VlqnYfd32Nnw/gz///uj7SfBv2x9tOg/z/OOUIy8AAooEQR
   </data>

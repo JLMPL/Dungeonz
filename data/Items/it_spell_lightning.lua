@@ -1,5 +1,5 @@
 
-Spell_Lightning = 3
+Spell_Lightning = 2
 
 Item = {
 	code = "it_spell_lightning",

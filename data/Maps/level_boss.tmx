@@ -5,7 +5,7 @@
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2EsKwzAMBFAXmmWXOVPXuf9lSimFEOKPYksjxbMYSCG4erLjfLaU0sYwDMMwDMN0530h6Jrpp59++umn34s/am/op7/Xf6e9ocV+dM7mn33+S+ej67fwS/eKSM8VrTVe2Te920e6rqwTDxk9r5Hs1n6U8WEQz714GcSjff+fq2JajKPtLWMh/drzXBr/rBYLv/W6lqwDbb+VvdVvPf8IvyT03+/6p9+vX7MfXv0Wz3+lMUu/Pfl7enBmK43nzT/yGqj1xPP8a++XEfyWfUD4NV2e/WjzWQ+0/Wgj2u+5B9/aJN+yVuH5Edb//rgW73v6iH5o+dE2iT/Xi5z/mX7fupfg/tp6WHfWf5aUv+eh6x/dB+k9H123xvznrosozzw9Pbijj376W3vg/Z3O2o+uy9p/PJ4xM9sZfD5HnHZT
+   eJzt2E0KgzAQBeAIddmlZ+ra+1+mSCmEYOJMnL+Yt3hgQdL5JjGN3VNKO4IgCIIgCHI7n4541ww//PDDDz/8Ufyj9gZ++O/6n7Q3UOylczb/7PPfut+7fgs/d68Y6VxBrbFn34xul3T1rJMIkZ7XkezWfi/jYpDIvXgbJKI9/85NMRSjtJ0yVumX7kM+rvU8t8Y/q+WocxH2/8fzWtecdaC9/q3sVP/Z/D/Nzwn8un6v3zX4Y/o1+xHVb3H+a43Z+hzJf6cHZ7bWeNH8ks/AVU8iz7/2fjmC37IPHn5NV49fug/5uNHcZQ+OOjXf/7yNFL/2+vd2tvyc/7I25v0jrP/8+irR93SJfmj5vW0cf60XNf8r/fa8dXD/1XrYMus/a6r/5nvXL90H7pnHu26N+a89F7Uzn7dBsgdP9MEPP7UH0d/prP3edVn7y+sZM7Md8c8XjjB2yw==
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64">
@@ -15,14 +15,14 @@
  </layer>
  <layer name="Collision" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2NEKQEAQBVAf5P+/zyuSMJE7e05pSrq5rfWw0wQAAAAAAADA3vzB9Wdvv5/+/6Z/dn6V/tn5Vfpn51fpn51fpX92fpX+2flV+mfnV+mfnV/15Cyr0/nXHfNujkb/7Vzf7/rNr53t/6Pnurnaq3v/0dff/h+T/ts5Gv17/98gwQIN9xZZ
+   eJzt2EEKwyAUBNAcqPc/X7exlND2a8l834MghDA4qFl4HAAAAAAAAAC8evzhubPV80vpP3ueq3Jn0z87v0r/7Pwq/bPzq/TPzq/SPzu/Sv/s/Cr9x/HuubPpn51f9ctdVqf7r2+k7OlV9B/H8/uue/7s6vy/+66bT3t177/7+jv/e9J/HHejf+//GyR4AnV1F7k=
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="1" name="player_spawn" type="start" x="992" y="1856" width="32" height="32"/>
+  <object id="1" name="player_spawn" type="start" x="1344" y="1504" width="32" height="32"/>
   <object id="67" name="first_chest" type="chest" x="1216" y="1696" width="32" height="32">
    <properties>
-    <property name="item0" value="it_key_boss"/>
+    <property name="item0" value="-"/>
     <property name="item1" value="-"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
@@ -50,14 +50,14 @@
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="73" name="boss" type="boss" x="992" y="1152" width="32" height="32">
+  <object id="73" name="boss" type="spawn_boss" x="992" y="1184" width="32" height="32">
    <properties>
-    <property name="item0" value="it_gem"/>
+    <property name="item0" value="-"/>
     <property name="item1" value="-"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
-    <property name="spawn" value="mob_bat"/>
+    <property name="spawn" value="mob_boss"/>
    </properties>
   </object>
   <object id="74" name="t" type="decoration" x="608" y="896" width="32" height="32">

@@ -1,5 +1,5 @@
 
-Spell_Heal = 4
+Spell_Heal = 3
 
 Item = {
 	code = "it_spell_heal",

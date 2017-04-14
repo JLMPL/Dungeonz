@@ -111,7 +111,7 @@
   <object id="93" name="first_rat" type="spawn" x="1472" y="1600" width="32" height="32">
    <properties>
     <property name="item0" value="it_key_sec_0"/>
-    <property name="item1" value="-"/>
+    <property name="item1" value="it_rat_meat"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
     <property name="item4" value="-"/>
