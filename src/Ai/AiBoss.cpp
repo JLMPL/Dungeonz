@@ -121,7 +121,7 @@ void AiBoss::attackState(float deltaTime)
 {
     if (!m_target->isDead())
     {
-        if (m_timer.getElapsedTime().asMilliseconds() > 1750)
+        if (m_timer.getElapsedTime().asMilliseconds() > 1500)
         {
             auto ball = (BossMissile*)m_target->getLevel()->addBossMissile(std::shared_ptr<BossMissile>(new BossMissile()));
             ball->init(m_target->getPosition(), m_target->getDirection(), BossMissile::Type::Big);

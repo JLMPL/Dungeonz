@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="196">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmE2OwyAMhRlpOrvpruqRsu79LzPTRSRqYcc4Bgx5i08Vaer4pf6DLaW0AQAAAAAAAAAAAGR8//PlyC2Aphp+HXiS9WhNvXkYfkPjLmrcPAxo7D4LjNbK6T+Kf3qP9b2O1sr56XHPlfS/DL+x2FhZfxS0+rk5gqvrq+kv1XOprq+kvzY2buT6vr4H0Et9P1ubudig1/f1aM3e+o/sRu6BrfzK8+EnfeZFlL73ptWeRsqDSPp7xBVFsx8fvVc68vHIP0m/1Eej7JU0/knzUG39i1YnNXtg6d1cQX/r50XR72FPW/NH6y7p7zGzvmtJPjOfrf9newzN89b6S7OChz1rj+mdi975r6lf0jOuor+UJ6X+vap+bf9urb/H+7TG/2gtI/Rviu8jc0a/dy+eDe9ePBs0LmbOg1ru6XPmpesVyHs+zW16Tsud20o2osOdY+w1b2M+8/sindXUIs1Akv5V5iON71S/xcbM0LinOb6ifq4OzJjjFrg6sNJ/LFGK6avrBwAAAKLwB8o6+6A=
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt2MEKwyAMgGHZi5Qd2x3bvv+rdYEJVjoUKok1/wdie1KJRGMIAAAAAAAAQNmeNI/2rPdiCue4S/+xmw6Ah3lZT8DIGs7nJrkTANBCr+eq1rzmb1uCfU0Wz/bl17TP+FV5vJz2vead/VuvfzMcL9bnlrjTjuVO/p6bzcJGrNm87mmJn3Y+64nk06v1T8l3r/euFmT/X+19D28Z/2Ivnp7XSuI9YrSY1pL97TnvAQAA1Bi5DipJ66D8PdKDkevAGlIPel07AKB/B0Q3DQA=
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztllEOxCAIRD1Q73++/W1cUYFRwc5Lmqbuig4IWAohhBBCCCGEEEIIluf1ZOUxPO+5peTXr/2ufSH5R1pv5NcdtDRo3j27lt9P6Pd+W+OvGV+FtHdLLdDsPZp+z3yPfo8PESBi7tXfeu9iZf736kE0/Yj+N7OOtG4E/ZbzPzNX+k89Xsq/7dUganaEOVYsOYuwP5oTAYR+ye4oPyKgjZvGruf37Mzo19bgnXj3t+scrWJ2XWvcdvtRy+p1Z+tudP2WO5Wm70bRv7o+je6Mu5H0r1wPqd9zFotiDAX6/GvmUb99DMVp/dacQHFS/0mbb9vI/oKO/8leZAGR/3UvyoRHf7S7iIWb7qK7keL+Bf29c58tByR6OTDKhZZvstWHXr2v/dB6n7gfIZnZp6TfazcCo/hL5+Dk/RiJpgdqekEW/RKaepi5/knMxDS7xh7U3x676Yz3uDGnCSHkNn78XVIp
+  </data>
+ </layer>
+ <objectgroup name="Objects" visible="0">
+  <object id="1" name="player_spawn" type="start" x="1760" y="1280" width="32" height="32"/>
+  <object id="38" name="the_exit" type="exit" x="1408" y="576" width="32" height="32">
+   <properties>
+    <property name="next" value="level_boss.tmx"/>
+   </properties>
+  </object>
+  <object id="41" name="t" type="decoration" x="1728" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="43" name="t" type="decoration" x="1792" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="62" name="better_weapon_here" type="chest" x="1408" y="864" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="63" name="epic_door" type="door" x="1344" y="832" width="32" height="32">
+   <properties>
+    <property name="key" value="none"/>
+   </properties>
+  </object>
+  <object id="130" name="epic_door" type="door" x="1472" y="832" width="32" height="32">
+   <properties>
+    <property name="key" value="none"/>
+   </properties>
+  </object>
+  <object id="131" name="ddorrs" type="door" x="1408" y="928" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_fur_bewe"/>
+   </properties>
+  </object>
+  <object id="132" name="heal_chest" type="chest" x="1120" y="1600" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_spell_heal"/>
+    <property name="item1" value="it_potion_magicka_0"/>
+    <property name="item2" value="it_root"/>
+    <property name="item3" value="it_root"/>
+    <property name="item4" value="it_potion_health_0"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="133" name="spk" type="spike_trap" x="1088" y="1600" width="32" height="32"/>
+  <object id="134" name="spk" type="spike_trap" x="1120" y="1632" width="32" height="32"/>
+  <object id="135" name="spk" type="spike_trap" x="1152" y="1600" width="32" height="32"/>
+  <object id="136" name="spk" type="spike_trap" x="1088" y="1632" width="32" height="32"/>
+  <object id="137" name="spk" type="spike_trap" x="1152" y="1632" width="32" height="32"/>
+  <object id="138" name="t" type="decoration" x="1088" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="139" name="t" type="decoration" x="1152" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="140" name="second" type="chest" x="896" y="1760" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_fur_r_second"/>
+    <property name="item1" value="it_potion_magicka_0"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="141" name="first" type="chest" x="736" y="1792" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_fur_r_first"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="142" name="third" type="chest" x="544" y="1632" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_fur_r_third"/>
+    <property name="item1" value="it_potion_health_0"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="143" name="second_need_first" type="door" x="864" y="1696" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_fur_r_first"/>
+   </properties>
+  </object>
+  <object id="144" name="third_need_second" type="door" x="640" y="1632" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_fur_r_second"/>
+   </properties>
+  </object>
+  <object id="145" name="final_n_third" type="door" x="1024" y="1632" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_fur_r_third"/>
+   </properties>
+  </object>
+  <object id="146" name="skeleaz" type="spawn" x="992" y="1088" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="147" name="skeleaz" type="spawn" x="833" y="1087" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="148" name="skeleaz" type="spawn" x="832" y="1312" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="150" name="mage_spawn" type="spawn_mage" x="416" y="1344" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_spell_fireball"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
+   </properties>
+  </object>
+  <object id="151" name="better_armor" type="chest" x="288" y="1344" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_armor_3"/>
+    <property name="item1" value="it_key_fur_bewe"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="152" name="skeleaz" type="spawn" x="288" y="1248" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="153" name="finle_lever" type="lever" x="640" y="896" width="32" height="32">
+   <properties>
+    <property name="activate" value="epic_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="166" name="beg_bag" type="item_bag" x="928" y="544" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_note_asshole"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="167" name="t" type="decoration" x="1632" y="992" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="168" name="t" type="decoration" x="1792" y="992" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="169" name="t" type="decoration" x="1472" y="928" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="170" name="t" type="decoration" x="1344" y="928" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="171" name="t" type="decoration" x="1376" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="172" name="t" type="decoration" x="1440" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="173" name="t" type="decoration" x="1504" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="174" name="t" type="decoration" x="1312" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="175" name="t" type="decoration" x="1376" y="576" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="176" name="t" type="decoration" x="1440" y="576" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="177" name="t" type="decoration" x="1216" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="178" name="t" type="decoration" x="1088" y="768" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="179" name="t" type="decoration" x="992" y="768" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="180" name="t" type="decoration" x="896" y="512" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="181" name="t" type="decoration" x="960" y="512" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="182" name="t" type="decoration" x="800" y="512" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="183" name="t" type="decoration" x="672" y="512" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="184" name="t" type="decoration" x="512" y="512" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="185" name="t" type="decoration" x="384" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="186" name="t" type="decoration" x="512" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="187" name="t" type="decoration" x="544" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="188" name="t" type="decoration" x="704" y="1728" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="189" name="t" type="decoration" x="928" y="1696" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="190" name="t" type="decoration" x="832" y="1024" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="191" name="t" type="decoration" x="992" y="1024" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="192" name="t" type="decoration" x="768" y="1440" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="193" name="t" type="decoration" x="896" y="1440" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="194" name="t" type="decoration" x="864" y="1536" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="195" name="t" type="decoration" x="800" y="1536" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

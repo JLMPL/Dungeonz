@@ -5,7 +5,7 @@
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztmMuywiAMhqtjl7pjfKSu+/4voy4YmUxCCffLv/imHgsevjQE6LFt2wEAAAAAAAAAAAAAivD4chO4f9mddnuB/98aE8BBPs/EKv42z+/bP793hdfo/lfP2K0Dboy0ceqV39hPQkhcuLkwIvDn/VeB8/9B1393jQ+9R+tFyH6iF39fjmvvlZxDL+Fawt/u9XryN8K1hL+P2LqZw/9Frivlf+rv2LjN4B9TO2xfGgPN3NPeywmtT9zawq05XB2L6e87P9Q4G6fkWy1q+afGLnYMvnlT0z8m33K6S+eI2vmv7V96fDP7X60VtdYBH9K7TFunuXMM53k6n+n3Uhx68I+t1TnOwybDb+Twj+1rz8Kas6y0R2h5xg3Z20jjeydgyN8j5X9M/5Z7oRD/mHmi8XsO4C+9v5LG92Qwwve0PW3Xg7/0XDTPJ7Rtb+tfaX/uPcJK/jQGvfprnWbz52pgjvp/1b4X/1Lr/9W749a5kBq/EZ9/qZi0HkOP/q3Peq39VwH+7ccAf/jDHwAwIx+Hledu
+   eJztmE2OgzAMRplqWHZ2iCNl3ftfZoo0UTOWDXacP+BbPIGaUPISx0kI0zQFAAAAAAAAAAAAAFCF7zdfAo83c1JvrvD+3qwKArm/EouCQO7PSIzzx/SJ79ngdXZ/KbajV5oH0j6y9tOobG1/EdJxPcoBV/fX0tujtP9d4Pw36PqfrvHaMpovNPuJUfyl9T5klGnJaf+PcPX6c3M87vX25r81b3hzyCpca/jTnJ+Smze9/svfmKfXWv57Y9xr/OO4pNec/juzf+7zMV5Wpg+0784pKwnNT9zawq058/R/Lq8Zz6fv5M4PLc7GXH7SIuU3y/Oaslb+nmc98bo3b2rPAxr/1ngr6S6dI1rHv/X52u1r5Z8zlt72Ha0VrdaBPaRvmTFPc+cYzvOV3NPfpX4Ywd+SwyXnXJYC/+HFm9+2+LGcZaU9Qs8zrmZvI7XPc6bdi6+W/p4zuGdPX2qP4fXXvF8qt/g9T+Avfb+S2vdkWITfaX1abwR/Ke4t46OtO8L6R/2luCzhz31HuJM/7YNR/a1OV/PncmCJ/H9UfxR/aa/i9Ze+Hfb0L9l/Zxz/Wn3Suw0j+vc+6/X2vwvw798G+MMf/gCAK/IL60boZg==
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64">
@@ -22,7 +22,7 @@
   <object id="1" name="player_spawn" type="start" x="1248" y="1856" width="32" height="32"/>
   <object id="38" name="the_exit" type="exit" x="1312" y="544" width="32" height="32">
    <properties>
-    <property name="next" value="level_boss.tmx"/>
+    <property name="next" value="level_3.tmx"/>
    </properties>
   </object>
   <object id="41" name="t" type="decoration" x="1152" y="1280" width="32" height="32">
@@ -92,7 +92,7 @@
   </object>
   <object id="67" name="better_armor_here" type="chest" x="1248" y="576" width="32" height="32">
    <properties>
-    <property name="item0" value="it_sword_2"/>
+    <property name="item0" value="it_armor_2"/>
     <property name="item1" value="-"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>

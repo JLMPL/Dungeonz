@@ -1,4 +1,4 @@
-item_damage = 20;
+item_damage = 26;
 
 Item = {
 	code = "it_sword_2",
