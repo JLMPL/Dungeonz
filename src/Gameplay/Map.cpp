@@ -10,6 +10,7 @@
 #include "SpikeTrap.hpp"
 #include "PressPlate.hpp"
 #include "Decoration.hpp"
+#include "ShootTrap.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Ai/AiMob.hpp"
 #include "../Ai/AiPlayer.hpp"
@@ -24,7 +25,6 @@
 #include <memory>
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
@@ -383,6 +383,29 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
                     }
                 }
             });
+        }
+        else if (type == "shoot_trap")
+        {
+            std::string name = object->first_attribute("name")->value();
+            std::string dire = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            Direction_t dir = Direction::Down;
+            if (dire == "up")
+                dir = Direction::Up;
+            else if (dire == "down")
+                dir = Direction::Down;
+            else if (dire == "left")
+                dir = Direction::Left;
+            else 
+                dir = Direction::Right;
+
+            auto trap = (ShootTrap*)m_level->addEntity(Entity::Ptr(new ShootTrap(dir)));
+            trap->setCode(name);
+            trap->setPosition(pos);
         }
         else if (type == "spike_trap")
         {

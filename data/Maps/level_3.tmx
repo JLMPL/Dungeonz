@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="196">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="202">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztmE2OwyAMhRlpOrvpruqRsu79LzPTRSRqYcc4Bgx5i08Vaer4pf6DLaW0AQAAAAAAAAAAAGR8//PlyC2Aphp+HXiS9WhNvXkYfkPjLmrcPAxo7D4LjNbK6T+Kf3qP9b2O1sr56XHPlfS/DL+x2FhZfxS0+rk5gqvrq+kv1XOprq+kvzY2buT6vr4H0Et9P1ubudig1/f1aM3e+o/sRu6BrfzK8+EnfeZFlL73ptWeRsqDSPp7xBVFsx8fvVc68vHIP0m/1Eej7JU0/knzUG39i1YnNXtg6d1cQX/r50XR72FPW/NH6y7p7zGzvmtJPjOfrf9newzN89b6S7OChz1rj+mdi975r6lf0jOuor+UJ6X+vap+bf9urb/H+7TG/2gtI/Rviu8jc0a/dy+eDe9ePBs0LmbOg1ru6XPmpesVyHs+zW16Tsud20o2osOdY+w1b2M+8/sindXUIs1Akv5V5iON71S/xcbM0LinOb6ifq4OzJjjFrg6sNJ/LFGK6avrBwAAAKLwB8o6+6A=
+   eJztmMtuxCAMRanUdtfZRfNJWff/f6atVCTGwo4x5pm7OJo603G44AdwhhBOAAAAAAAAAAAAgIT3X94c+ZhAUwlfDjyJPVqThSNBY9Pf1sbd6Lg5/tfuKLA5NO97Zlhh3VM7xnv6tzb+rfPWat3juKmOKzv6qJn30fqtcPq/le+VbI0PD6w1v7X+EetvseMzbh/B1fWZ9Mf1PApsmv+5ei7V9Zn00zzQ2CX+c70+fR7txyD9JbXO4j8XE/R5tHvrv6pxLXpTi3luHRueftN8+AyvedGr75XGhqdfKQ9m0t8jriia8/jos9LVGK/GJ+mX+ujos1Iufjmk/VBp/ZutTmr6pTQ3d9Df+n2z6Pfwp635o3Xn9PfYs/7VknTPXFv/a3sMzfPW+nN7BQ9/1h7TOxe987/2zHMX/bk8yfXvXfVr+3dr/T3m0xr/o7WM0H8qvp+ZGv3evXg1vHvxatC4WDkPSnmE1z0vtXcg7fk0t+k9LXdvK/mYHe4eI9a8k/lM/2+mu5pSpD2QpH+X/ZFm7FS/xcfK0LinOb6jfq4OrJjjFrg6sNMaS+Ri+u76AQAAgFn4AZSW5fg=
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64" visible="0">
@@ -18,7 +18,7 @@
    eJztllEOxCAIRD1Q73++/W1cUYFRwc5Lmqbuig4IWAohhBBCCCGEEEIIluf1ZOUxPO+5peTXr/2ufSH5R1pv5NcdtDRo3j27lt9P6Pd+W+OvGV+FtHdLLdDsPZp+z3yPfo8PESBi7tXfeu9iZf736kE0/Yj+N7OOtG4E/ZbzPzNX+k89Xsq/7dUganaEOVYsOYuwP5oTAYR+ye4oPyKgjZvGruf37Mzo19bgnXj3t+scrWJ2XWvcdvtRy+p1Z+tudP2WO5Wm70bRv7o+je6Mu5H0r1wPqd9zFotiDAX6/GvmUb99DMVp/dacQHFS/0mbb9vI/oKO/8leZAGR/3UvyoRHf7S7iIWb7qK7keL+Bf29c58tByR6OTDKhZZvstWHXr2v/dB6n7gfIZnZp6TfazcCo/hL5+Dk/RiJpgdqekEW/RKaepi5/knMxDS7xh7U3x676Yz3uDGnCSHkNn78XVIp
   </data>
  </layer>
- <objectgroup name="Objects" visible="0">
+ <objectgroup name="Objects">
   <object id="1" name="player_spawn" type="start" x="1760" y="1280" width="32" height="32"/>
   <object id="38" name="the_exit" type="exit" x="1408" y="576" width="32" height="32">
    <properties>
@@ -280,17 +280,17 @@
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="182" name="t" type="decoration" x="800" y="512" width="32" height="32">
+  <object id="182" name="t" type="decoration" x="832" y="512" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="183" name="t" type="decoration" x="672" y="512" width="32" height="32">
+  <object id="183" name="t" type="decoration" x="640" y="512" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="184" name="t" type="decoration" x="512" y="512" width="32" height="32">
+  <object id="184" name="t" type="decoration" x="416" y="512" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
    </properties>
@@ -348,6 +348,36 @@
   <object id="195" name="t" type="decoration" x="800" y="1536" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="196" name="shote" type="shoot_trap" x="672" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="197" name="shote" type="shoot_trap" x="736" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="198" name="shote" type="shoot_trap" x="800" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="199" name="shote" type="shoot_trap" x="608" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="200" name="shote" type="shoot_trap" x="544" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="201" name="shote" type="shoot_trap" x="480" y="512" width="32" height="32">
+   <properties>
+    <property name="direction" value="down"/>
    </properties>
   </object>
  </objectgroup>

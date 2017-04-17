@@ -34,7 +34,7 @@ struct Box
         shape.setPosition(rect.x, rect.y);
         shape.setOutlineThickness(-1);
         
-        int eno;
+        sf::Uint8 eno;
         if (enabled)
             eno = 128;
         else

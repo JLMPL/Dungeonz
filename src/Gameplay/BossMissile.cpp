@@ -80,7 +80,7 @@ void BossMissile::setOwner(Entity* owner)
 
 void BossMissile::update(float deltaTime)
 {
-    if (m_warmup.getElapsedTime().asSeconds() > 0.2)
+    if (m_warmup.getElapsedTime().asMilliseconds() > 175)
         m_box->enabled = true;
 
     if (m_box->enabled == true)

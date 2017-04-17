@@ -5,7 +5,6 @@
 #include <string>
 #include <memory>
 #include <fstream>
-#include <iostream>
 
 struct Item
 {

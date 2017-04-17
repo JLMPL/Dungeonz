@@ -28,7 +28,8 @@ class Entity
             ItemBag,
             Fireball,
             Exit,
-            Arrow
+            Arrow,
+            ShootTrap
         };
 
         virtual ~Entity();

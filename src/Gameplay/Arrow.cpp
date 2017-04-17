@@ -56,13 +56,16 @@ void Arrow::init(const vec2f& pos, Direction_t dir)
 
 void Arrow::update(float deltaTime)
 {
+    if (m_decayTimer.getElapsedTime().asSeconds() >= m_decay)
+        blow(nullptr);
+
     if (m_warmup.getElapsedTime().asMilliseconds() > 150)
         m_box->enabled = true;
 
     if (m_box->enabled == true)
     {
         std::vector<Entity*> foundEnts = m_level->getEntitiesInRange(vec2f(m_box->rect.x + m_box->rect.w/2,
-                                         m_box->rect.y + m_box->rect.h/2), 24);
+                                         m_box->rect.y + m_box->rect.h/2), 10);
         
         for (auto& i : foundEnts)
             blow(i);
@@ -89,7 +92,7 @@ void Arrow::blow(Entity* ent)
                 {
                     auto beholder = static_cast<Living*>(m_owner);
 
-                    living->damage(100);
+                    living->damage(m_damage);
                     // living->push(m_direction, 8, 0.1);
 
                     if (living->isDead())
@@ -125,4 +128,14 @@ void Arrow::blow(Entity* ent)
 void Arrow::setOwner(Entity* owner)
 {
     m_owner = owner;
+}
+
+void Arrow::setDamage(int damage)
+{
+    m_damage = damage;
+}
+
+void Arrow::setDecay(float seconds)
+{
+    m_decay = seconds;
 }

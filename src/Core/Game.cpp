@@ -27,7 +27,7 @@ Game::Game()
 {
     loadCfg();
 
-    Uint32 style = sf::Style::Close;
+    sf::Uint32 style = sf::Style::Close;
 
     if (Screen::Get().fullscreen)
         style = sf::Style::Fullscreen;

@@ -1,10 +1,12 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.5.0)
 project(ASS)
 
-set(PROJECT_LINK_LIBS -lSDL2main -lSDL2 -lSDL2_image -lsfml-graphics-d -lsfml-window-d -lsfml-audio-d -lsfml-system-d -llua5.2 -lz)
+set(PROJECT_LINK_LIBS -lsfml-graphics-d -lsfml-window-d -lsfml-audio-d -lsfml-system-d -llua5.2 -lz)
 link_directories(/usr/local/lib)
 
-set(FLAGS -g -std=c++14 -Wall)
+#-Wfatal-errors -Wall
+
+set(FLAGS -g -std=c++14 -Wfatal-errors)
 add_definitions(${FLAGS})
 
 include_directories(src)
