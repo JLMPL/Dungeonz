@@ -9,7 +9,8 @@ class GameState
         {
             Playing,
             Menu,
-            Splash
+            Splash,
+            Scrolling
         };
 
         GameState() {}

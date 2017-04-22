@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="202">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="204">
  <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
  </tileset>
  <layer name="Dungeon" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztmMtuxCAMRanUdtfZRfNJWff/f6atVCTGwo4x5pm7OJo603G44AdwhhBOAAAAAAAAAAAAgIT3X94c+ZhAUwlfDjyJPVqThSNBY9Pf1sbd6Lg5/tfuKLA5NO97Zlhh3VM7xnv6tzb+rfPWat3juKmOKzv6qJn30fqtcPq/le+VbI0PD6w1v7X+EetvseMzbh/B1fWZ9Mf1PApsmv+5ei7V9Zn00zzQ2CX+c70+fR7txyD9JbXO4j8XE/R5tHvrv6pxLXpTi3luHRueftN8+AyvedGr75XGhqdfKQ9m0t8jriia8/jos9LVGK/GJ+mX+ujos1Iufjmk/VBp/ZutTmr6pTQ3d9Df+n2z6Pfwp635o3Xn9PfYs/7VknTPXFv/a3sMzfPW+nN7BQ9/1h7TOxe987/2zHMX/bk8yfXvXfVr+3dr/T3m0xr/o7WM0H8qvp+ZGv3evXg1vHvxatC4WDkPSnmE1z0vtXcg7fk0t+k9LXdvK/mYHe4eI9a8k/lM/2+mu5pSpD2QpH+X/ZFm7FS/xcfK0LinOb6jfq4OrJjjFrg6sNMaS+Ri+u76AQAAgFn4AZSW5fg=
+   eJztmMtuAyEMRanUdNfsRvmkWef/f6atVCRiYcfmZWDu4ijxTMJwwa/hDCGcAAAAAAAAAAAAAAmfv3w05DaBJgvfDXgQ21tTCUeCxqb/rfU7b785/vfuMNgcmuc9Mqyw76kd/T39rvX/0nXrte9x3lTHOzuOUbPu3vpL4fQ/lc+VbM0YLSjN+b31e+x/iR2vcX0El9dn0h/38zDYNP5z+VzK6zPpp3GgsbVzz/nGjVyP9t1JvyXXafaS3sv5BL0e7dH63+W4Wv3WNR+tv4VvWOedxsNXeI2LUXWv1jcolnGlOJhJv4dfad7Hvd+Vaucn6ZfqqPe7Us5/OaR+yJpHZsuTmnworc0V9Pd+3iz6W4ynzfneunP6R/Ssf7kk7Zlr839tjaFx3lt/rldoMV5pjRkdi63jv7anvYr+XJzk6veu+rX1u7f+EetZ6v/eWjz0n4r7M1Ojv3UtXo3WtXg1qF+sHAdW7uG156X2DqQ1n8Y2Paflzm2lMWaHO8eIOe9kPtPfzXRWY0XqgST9u/RHmrlT/SVjrAz1exrjO+rn8sCKMV4Clwd22mOJnE9fXT8AAAAwCz/L8+H/
   </data>
  </layer>
  <layer name="Decoration" width="64" height="64" visible="0">
@@ -13,16 +13,16 @@
    eJzt2MEKwyAMgGHZi5Qd2x3bvv+rdYEJVjoUKok1/wdie1KJRGMIAAAAAAAAQNmeNI/2rPdiCue4S/+xmw6Ah3lZT8DIGs7nJrkTANBCr+eq1rzmb1uCfU0Wz/bl17TP+FV5vJz2vead/VuvfzMcL9bnlrjTjuVO/p6bzcJGrNm87mmJn3Y+64nk06v1T8l3r/euFmT/X+19D28Z/2Ivnp7XSuI9YrSY1pL97TnvAQAA1Bi5DipJ66D8PdKDkevAGlIPel07AKB/B0Q3DQA=
   </data>
  </layer>
- <layer name="Collision" width="64" height="64" visible="0">
+ <layer name="Collision" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztllEOxCAIRD1Q73++/W1cUYFRwc5Lmqbuig4IWAohhBBCCCGEEEIIluf1ZOUxPO+5peTXr/2ufSH5R1pv5NcdtDRo3j27lt9P6Pd+W+OvGV+FtHdLLdDsPZp+z3yPfo8PESBi7tXfeu9iZf736kE0/Yj+N7OOtG4E/ZbzPzNX+k89Xsq/7dUganaEOVYsOYuwP5oTAYR+ye4oPyKgjZvGruf37Mzo19bgnXj3t+scrWJ2XWvcdvtRy+p1Z+tudP2WO5Wm70bRv7o+je6Mu5H0r1wPqd9zFotiDAX6/GvmUb99DMVp/dacQHFS/0mbb9vI/oKO/8leZAGR/3UvyoRHf7S7iIWb7qK7keL+Bf29c58tByR6OTDKhZZvstWHXr2v/dB6n7gfIZnZp6TfazcCo/hL5+Dk/RiJpgdqekEW/RKaepi5/knMxDS7xh7U3x676Yz3uDGnCSHkNn78XVIp
+   eJztlmsOxCAIhD3Q3v98+7fpivIYRdz5kqapVmRUwNYIIYQQQgghhBBCsHweT1U+juc5trX6+q3f77WQ1keab7auO+hpsLxHdj39Gfqj3979t7SvQvLdkwssvp+mPzI+oj+yhggQex7V33vvYmX8j/LBafoR9U8zjzTvCfo9519jQ+p7t7f2a3s1yJzd6/do2a3fErPW+qex2xtzAlY/tP9r4uMEIjlhZjfSXx2NfuR6o4n6h/I7U7/2P2/+27mOVlbP26s7GX5IIPbfWncjfqCx3gsQ80m1MgNJ/8r5kPqjNV3bhgJ9/i3jqN/fhiJbvzcmUGTqz7T5tI2sL+j9z6xFHhDx/65FlYjoP+0u4uGmu+hupH3/B/2jc18tBiRGMTCLhd7aVMsPo3z/XofeO+N+hETjp6Q/avcEZvsvnYPM+zESSw201IIq+iUs+bBy/pPQ7Gl1jSOov9920xkfcWNME0LIbXwBGP1U6Q==
   </data>
  </layer>
  <objectgroup name="Objects">
   <object id="1" name="player_spawn" type="start" x="1760" y="1280" width="32" height="32"/>
   <object id="38" name="the_exit" type="exit" x="1408" y="576" width="32" height="32">
    <properties>
-    <property name="next" value="level_boss.tmx"/>
+    <property name="next" value="level_4.tmx"/>
    </properties>
   </object>
   <object id="41" name="t" type="decoration" x="1728" y="1184" width="32" height="32">
@@ -37,7 +37,7 @@
   </object>
   <object id="62" name="better_weapon_here" type="chest" x="1408" y="864" width="32" height="32">
    <properties>
-    <property name="item0" value="-"/>
+    <property name="item0" value="it_sword_3"/>
     <property name="item1" value="-"/>
     <property name="item2" value="-"/>
     <property name="item3" value="-"/>
@@ -196,15 +196,6 @@
     <property name="type" value="door"/>
    </properties>
   </object>
-  <object id="166" name="beg_bag" type="item_bag" x="928" y="544" width="32" height="32">
-   <properties>
-    <property name="item0" value="it_note_asshole"/>
-    <property name="item1" value="-"/>
-    <property name="item2" value="-"/>
-    <property name="item3" value="-"/>
-    <property name="item4" value="-"/>
-   </properties>
-  </object>
   <object id="167" name="t" type="decoration" x="1632" y="992" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
@@ -270,17 +261,12 @@
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="180" name="t" type="decoration" x="896" y="512" width="32" height="32">
+  <object id="180" name="t" type="decoration" x="864" y="512" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="181" name="t" type="decoration" x="960" y="512" width="32" height="32">
-   <properties>
-    <property name="visual" value="torch.ani"/>
-   </properties>
-  </object>
-  <object id="182" name="t" type="decoration" x="832" y="512" width="32" height="32">
+  <object id="181" name="t" type="decoration" x="992" y="512" width="32" height="32">
    <properties>
     <property name="visual" value="torch.ani"/>
    </properties>
@@ -378,6 +364,11 @@
   <object id="201" name="shote" type="shoot_trap" x="480" y="512" width="32" height="32">
    <properties>
     <property name="direction" value="down"/>
+   </properties>
+  </object>
+  <object id="203" name="epic_door" type="door" x="928" y="832" width="32" height="32">
+   <properties>
+    <property name="key" value="none"/>
    </properties>
   </object>
  </objectgroup>

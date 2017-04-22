@@ -13,6 +13,7 @@
 #include "../GameState/StatePlaying.hpp"
 #include "../GameState/StateSplash.hpp"
 #include "../GameState/StateMenu.hpp"
+#include "../GameState/StateScrolling.hpp"
 #include <fstream>
 
 #ifdef _WIN32
@@ -21,7 +22,7 @@
 
 constexpr int g_majorVersion = 0;
 constexpr int g_minorVersion = 3;
-constexpr int g_updateVersion = 8; //<- Everytime I add a public feature
+constexpr int g_updateVersion = 9; //<- Everytime I add a public feature
 
 Game::Game()
 {
@@ -54,7 +55,7 @@ Game::Game()
     version.setCharacterSize(10);
     version.setString("Version " + std::to_string(g_majorVersion) + "." +
                                    std::to_string(g_minorVersion) + "." +
-                                   std::to_string(g_updateVersion) + " WIP");
+                                   std::to_string(g_updateVersion) + " Pre-Alpha");
     version.setPosition(sf::Vector2f(5,5));
 
     GUI::Get().setBackToMenuFunc(
@@ -197,7 +198,7 @@ void Game::setState(GameState* state)
             menu->setNewGameFunc(
             [this]()
             {
-                begForState(new StatePlaying());
+                begForState(new StateScrolling());
             });
 
             menu->setContinueFunc(
@@ -210,6 +211,16 @@ void Game::setState(GameState* state)
             [this]()
             {
                 Window.close();
+            });
+        }
+        break;
+        case GameState::Type::Scrolling:
+        {
+            auto scroll = static_cast<StateScrolling*>(m_currentState.get());
+            scroll->setExitFunc(
+            [this]()
+            {
+                begForState(new StatePlaying());
             });
         }
         break;

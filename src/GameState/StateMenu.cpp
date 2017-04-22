@@ -54,7 +54,7 @@ void StateMenu::init()
 void StateMenu::initWarning()
 {
     m_warningMessage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-    m_warningMessage.setCharacterSize(16);
+    m_warningMessage.setCharacterSize(10);
     m_warningMessage.setFillColor({255,255,255});
     m_warningMessage.setPosition(Screen::Get().halfWidth, Screen::Get().height - 48);
 }

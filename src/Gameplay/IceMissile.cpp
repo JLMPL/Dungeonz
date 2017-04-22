@@ -88,7 +88,7 @@ void IceMissile::blow(Entity* ent)
                 {
                     auto beholder = static_cast<Living*>(m_owner);
 
-                    living->freeze(15);
+                    living->freeze(5);
                     // living->push(m_direction, 8, 0.1);
 
                     m_speed = 0;

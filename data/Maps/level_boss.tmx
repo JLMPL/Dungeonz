@@ -50,7 +50,7 @@
     <property name="visual" value="torch.ani"/>
    </properties>
   </object>
-  <object id="73" name="boss" type="spawn_boss" x="992" y="1184" width="32" height="32">
+  <object id="73" name="boss" type="spawn_boss" x="992" y="992" width="32" height="32">
    <properties>
     <property name="item0" value="-"/>
     <property name="item1" value="-"/>

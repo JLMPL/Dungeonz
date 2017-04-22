@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="240">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmkEOhDAIRfUQnsn738jNTNI0NbRC+YX+xV+JhQe1oDP3cRw3RVHuOhuS7NAxW+pqSLJDx0x+f/5buLaDyI+PgfwYnT/+Vr/M2BdbtZeUORc9/Fl7ZC9/aYuOF50rdAzkJz/5bTT6jnwJdtH05R0xUx+UZp2y7rvw7zQHcf/vzV/yWdpFE/nx/IhnbHSuicYvzXajPqPxS7PNbvzauSY6v9Yn+XPxv3G9fQePxt9bs9rm6/lglQPrNXtspL4wm7/0a/mNpZffoj9Y1B6x/0fyQf65svajWcuD96/67PF8/lfgX2n/k9+fv86B5Zqj9yB+76jnDq1PDQPy3K9z8FWa9VbhX0mz+T3yufL+n5kHz9ytpPL8Q8eCqn3k+pGf/OQnvzYH6BgQyvqfrZG6Z5hhyE9+8pOfiqcH8tkAcQ==
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="1056" y="1920" width="32" height="32"/>
+  <object id="38" name="the_exit" type="exit" x="1056" y="96" width="32" height="32">
+   <properties>
+    <property name="next" value="level_boss.tmx"/>
+   </properties>
+  </object>
+  <object id="175" name="t" type="decoration" x="1024" y="96" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="176" name="t" type="decoration" x="1088" y="96" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="212" name="note_bag" type="item_bag" x="1056" y="1792" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_note_noturn"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="213" name="lc" type="chest" x="1024" y="1632" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_armor_4"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="214" name="rc" type="chest" x="1120" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_sword_4"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="215" name="nsq" type="door" x="960" y="1472" width="32" height="32">
+   <properties>
+    <property name="key" value="notsoquick"/>
+   </properties>
+  </object>
+  <object id="216" name="fucka_leva" type="lever" x="1344" y="128" width="32" height="32">
+   <properties>
+    <property name="activate" value="nsq"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="217" name="nodafa" type="lever" x="1344" y="608" width="32" height="32">
+   <properties>
+    <property name="activate" value="addasha"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="220" name="addasha" type="door" x="1344" y="864" width="32" height="32">
+   <properties>
+    <property name="key" value="notsoquick"/>
+   </properties>
+  </object>
+  <object id="221" name="addasha" type="door" x="1344" y="1056" width="32" height="32">
+   <properties>
+    <property name="key" value="addasha"/>
+   </properties>
+  </object>
+  <object id="222" name="addasha" type="door" x="1056" y="1408" width="32" height="32">
+   <properties>
+    <property name="key" value="addasha"/>
+   </properties>
+  </object>
+  <object id="223" name="skeleaz" type="spawn" x="1536" y="1472" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="224" name="skeleaz" type="spawn" x="1568" y="1152" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="225" name="skeleaz" type="spawn" x="1664" y="672" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_root"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="226" name="bob_spawn" type="spawn" x="1344" y="672" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_fiv_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="227" name="bob_spawn" type="spawn" x="1056" y="960" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="228" name="mage_spawn" type="spawn_mage" x="1504" y="384" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_potion_magicka_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
+   </properties>
+  </object>
+  <object id="229" name="mage_spawn" type="spawn_mage" x="1408" y="384" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_potion_health_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
+   </properties>
+  </object>
+  <object id="230" name="adte" type="chest" x="1024" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_potion_health_0"/>
+    <property name="item1" value="it_root"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="it_key_fiv_0"/>
+   </properties>
+  </object>
+  <object id="232" name="bat_spawn" type="spawn" x="1312" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="233" name="bat_spawn" type="spawn" x="1312" y="992" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="234" name="bat_spawn" type="spawn" x="1376" y="992" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="235" name="bat_spawn" type="spawn" x="1376" y="928" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="236" name="mage_spawn" type="spawn_mage" x="384" y="896" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_potion_health_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
+   </properties>
+  </object>
+  <object id="237" name="mage_spawn" type="spawn_mage" x="448" y="896" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_potion_magicka_0"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_mage"/>
+   </properties>
+  </object>
+  <object id="238" name="skeleaz" type="spawn" x="384" y="1024" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_root"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+  <object id="239" name="skeleaz" type="spawn" x="448" y="1024" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_root"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_skeleton"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
