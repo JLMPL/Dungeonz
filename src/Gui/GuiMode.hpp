@@ -8,7 +8,8 @@ enum class GUIMode
     Loot,
     Read,
     Spellbook,
-    Death
+    Death,
+    EndGame
 };
 
 #endif

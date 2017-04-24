@@ -48,9 +48,6 @@ void GUI::init()
     m_deathFade.setFillColor({0,0,0,128});
 
     m_ginv.init(Screen::Get().width, Screen::Get().height);
-
-    // m_centerLabel.addLabel("The Test 0!");
-    // m_centerLabel.addLabel("Another test is already there!");
 }
 
 void GUI::update(float deltaTime)
@@ -58,6 +55,13 @@ void GUI::update(float deltaTime)
     m_camera = Renderer::Get().getCameraPos();
     m_sight.setPosition(m_camera.getSfVecf());
     // Renderer::Get().submitForeground(&m_sight);
+
+    if (m_finishGame)
+    {
+        m_finishGameFunc();
+        m_mode = GUIMode::Off;
+        m_finishGame = false;
+    }
 
     switch (m_mode)
     {
@@ -186,6 +190,25 @@ void GUI::update(float deltaTime)
             }
         }
         break;
+        case GUIMode::EndGame:
+        {
+            m_deathTimer += (deltaTime /2);
+            float howmuch = lerp(0, 255, m_deathTimer);
+
+            if (howmuch < 0) howmuch = 0;
+            if (howmuch > 255) howmuch = 255;
+
+            m_deathFade.setFillColor({0,0,0, howmuch});
+            m_deathFade.setPosition(m_camera.getSfVecf());
+
+            Renderer::Get().submitOverlay(&m_deathFade);
+
+            if (howmuch >= 254)
+            {
+                m_finishGame = true;
+            }
+        }
+        break;
     }
 
     if (m_mode != GUIMode::Inv and
@@ -217,6 +240,12 @@ void GUI::goRead(const std::string& content)
 {
     m_mode = GUIMode::Read;
     m_bookText.setString(content);
+}
+
+void GUI::goFinishGame()
+{
+    // m_finishGame = true;
+    m_mode = GUIMode::EndGame;
 }
 
 void GUI::showFocusHealthbar(int val, int max, const vec2i& pos)
@@ -273,4 +302,9 @@ void GUI::begForLevel(const std::string& level, Level::InitMode mode)
 void GUI::setBackToMenuFunc(std::function<void ()> func)
 {
     m_backToMenuFunc = func;
+}
+
+void GUI::setFinishGameFunc(std::function<void ()> func)
+{
+    m_finishGameFunc = func;
 }

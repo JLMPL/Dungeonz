@@ -35,6 +35,7 @@ class GUI
         void addLabel(const std::string& label);
 
         void goDead();
+        void goFinishGame();
 
         void setTarget(Living* living);
         Living* getTarget();
@@ -43,6 +44,7 @@ class GUI
         void begForLevel(const std::string& level, Level::InitMode mode);
 
         void setBackToMenuFunc(std::function<void ()> func);
+        void setFinishGameFunc(std::function<void ()> func);
 
     private:
         GUIMode m_mode;
@@ -77,6 +79,9 @@ class GUI
         StatePlaying* m_playingState;
 
         std::function<void ()> m_backToMenuFunc;
+        std::function<void ()> m_finishGameFunc;
+
+        bool m_finishGame = false;
 };
 
 #endif

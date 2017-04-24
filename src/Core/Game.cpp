@@ -21,8 +21,8 @@
 #endif
 
 constexpr int g_majorVersion = 0;
-constexpr int g_minorVersion = 3;
-constexpr int g_updateVersion = 9; //<- Everytime I add a public feature
+constexpr int g_minorVersion = 4;
+constexpr int g_updateVersion = 0; //<- Everytime I add a public feature
 
 Game::Game()
 {
@@ -55,14 +55,21 @@ Game::Game()
     version.setCharacterSize(10);
     version.setString("Version " + std::to_string(g_majorVersion) + "." +
                                    std::to_string(g_minorVersion) + "." +
-                                   std::to_string(g_updateVersion) + " Pre-Alpha");
+                                   std::to_string(g_updateVersion) + " Alpha");
     version.setPosition(sf::Vector2f(5,5));
 
     GUI::Get().setBackToMenuFunc(
     [this]()
     {
         begForState(new StateMenu());
-        Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
+        Renderer::Get().resetCameraPos();
+    });
+
+    GUI::Get().setFinishGameFunc(
+    [this]()
+    {
+        begForState(new StateScrolling(true));
+        Renderer::Get().resetCameraPos(); //<- it's camera's fault
     });
 
     begForState(new StateSplash());
@@ -198,7 +205,7 @@ void Game::setState(GameState* state)
             menu->setNewGameFunc(
             [this]()
             {
-                begForState(new StateScrolling());
+                begForState(new StateScrolling(false));
             });
 
             menu->setContinueFunc(
@@ -221,6 +228,16 @@ void Game::setState(GameState* state)
             [this]()
             {
                 begForState(new StatePlaying());
+            });
+        }
+        break;
+        case GameState::Type::ScrollingEnd:
+        {
+            auto scroll = static_cast<StateScrolling*>(m_currentState.get());
+            scroll->setExitFunc(
+            [this]()
+            {
+                begForState(new StateMenu());
             });
         }
         break;

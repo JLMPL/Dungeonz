@@ -5,8 +5,8 @@
 #include "../Collision/CollisionHandler.hpp"
 #include "../Resource/AnimationCache.hpp"
 
-constexpr int g_bigDamage = 2;
-constexpr int g_smallDamage = 1;
+constexpr int g_bigDamage = 100;
+constexpr int g_smallDamage = 5;
 
 BossMissile::BossMissile()
 {

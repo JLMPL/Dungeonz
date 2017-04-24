@@ -4,6 +4,7 @@
 #include "../Resource/AnimationCache.hpp"
 #include "../Collision/CollisionHandler.hpp"
 #include "../Collision/CollisionAlgorithm.hpp"
+#include "../Gui/Gui.hpp"
 
 void AiBoss::setup()
 {
@@ -44,6 +45,11 @@ void AiBoss::focus()
 
 void AiBoss::update(float deltaTime)
 {
+    if (m_target->isDead())
+    {
+        GUI::Get().goFinishGame();
+    }
+
     if (!m_target->isBusy())
     {
         focus();

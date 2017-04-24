@@ -7,7 +7,7 @@
 class StateScrolling : public GameState
 {
     public:
-        StateScrolling(bool laste = false);
+        StateScrolling(bool laste);
 
         void init() override final;
         void update(float deltaTime) override final;
