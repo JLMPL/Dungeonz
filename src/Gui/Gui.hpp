@@ -46,6 +46,9 @@ class GUI
         void setBackToMenuFunc(std::function<void ()> func);
         void setFinishGameFunc(std::function<void ()> func);
 
+        void setPause(bool pause);
+        bool isPause() const;
+
     private:
         GUIMode m_mode;
         sf::Clock m_timer;
@@ -82,6 +85,10 @@ class GUI
         std::function<void ()> m_finishGameFunc;
 
         bool m_finishGame = false;
+        bool m_paused = false;
+
+        sf::RectangleShape m_pauseBackground;
+        sf::Text m_pauseText;
 };
 
 #endif

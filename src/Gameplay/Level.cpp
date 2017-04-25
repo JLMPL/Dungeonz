@@ -303,93 +303,96 @@ void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2
 
 void Level::update(float deltaTime)
 {
-    for (auto i = m_entities.begin(); i != m_entities.end();)
+    if (!GUI::Get().isPause())
     {
-        if ((*i)->isDestroyed())
-            i = m_entities.erase(i);
-        else
-            i++;
+        for (auto i = m_entities.begin(); i != m_entities.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_entities.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_missiles.begin(); i != m_missiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_missiles.erase(i);
+            else 
+                i++;
+        }
+
+        for (auto i = m_iceMissiles.begin(); i != m_iceMissiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_iceMissiles.erase(i);
+            else 
+                i++;
+        }
+
+        for (auto i = m_bossMissiles.begin(); i != m_bossMissiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_bossMissiles.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_lightnings.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_arrows.begin(); i != m_arrows.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_arrows.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
+        {
+            if ((*i)->isDead())
+                i = m_bigParticles.erase(i);
+            else
+                i++;
+        }
+
+        for (auto& i : m_entities)
+            i->update(deltaTime);
+
+        for (auto& i : m_missiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_iceMissiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_bossMissiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_lightnings)
+            i->update(deltaTime);
+
+        for (auto& i : m_arrows)
+            i->update(deltaTime);
+
+        for (auto& i : m_bigParticles)
+            i->update(deltaTime);
+
+        for (auto& i : m_decorations)
+            i->update(deltaTime);
+
+        m_map.update();
+        CollisionHandler::Get().update(deltaTime);
+
+        auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
+        Renderer::Get().setCameraPos(camera_pos);
+
+        IndicationHandler::Get().update(deltaTime);
     }
-
-    for (auto i = m_missiles.begin(); i != m_missiles.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_missiles.erase(i);
-        else 
-            i++;
-    }
-
-    for (auto i = m_iceMissiles.begin(); i != m_iceMissiles.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_iceMissiles.erase(i);
-        else 
-            i++;
-    }
-
-    for (auto i = m_bossMissiles.begin(); i != m_bossMissiles.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_bossMissiles.erase(i);
-        else
-            i++;
-    }
-
-    for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_lightnings.erase(i);
-        else
-            i++;
-    }
-
-    for (auto i = m_arrows.begin(); i != m_arrows.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_arrows.erase(i);
-        else
-            i++;
-    }
-
-    for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
-    {
-        if ((*i)->isDead())
-            i = m_bigParticles.erase(i);
-        else
-            i++;
-    }
-
-    for (auto& i : m_entities)
-        i->update(deltaTime);
-
-    for (auto& i : m_missiles)
-        i->update(deltaTime);
-
-    for (auto& i : m_iceMissiles)
-        i->update(deltaTime);
-
-    for (auto& i : m_bossMissiles)
-        i->update(deltaTime);
-
-    for (auto& i : m_lightnings)
-        i->update(deltaTime);
-
-    for (auto& i : m_arrows)
-        i->update(deltaTime);
-
-    for (auto& i : m_bigParticles)
-        i->update(deltaTime);
-
-    for (auto& i : m_decorations)
-        i->update(deltaTime);
-
-    m_map.update();
-    CollisionHandler::Get().update(deltaTime);
-
-    auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
-    Renderer::Get().setCameraPos(camera_pos);
-
-    IndicationHandler::Get().update(deltaTime);
     GUI::Get().update(deltaTime);
 }
 

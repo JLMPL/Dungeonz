@@ -44,7 +44,7 @@ void AiPlayer::update(float deltaTime)
 {
     m_noclipTimer += 1000 * deltaTime;
 
-    if (InputHandler::Get().isKeyPressed(sf::Keyboard::Return) and
+    if (InputHandler::Get().isKeyPressed(sf::Keyboard::F1) and
         m_noclipTimer >= 500)
     {
         m_noclip = !m_noclip;

@@ -1,7 +1,7 @@
 #ifndef GUI_MODE_HPP
 #define GUI_MODE_HPP
 
-enum class GUIMode 
+enum class GUIMode
 {
     Off,
     Inv,
@@ -9,7 +9,8 @@ enum class GUIMode
     Read,
     Spellbook,
     Death,
-    EndGame
+    EndGame,
+    Pause
 };
 
 #endif
