@@ -629,7 +629,7 @@ void AiPlayer::focus()
             {
                 auto exit = static_cast<Exit*>(m_focus);
                 vec2i pos = vec2i(m_focus->getFakePos().x, m_focus->getFakePos().y - 40);
-                GUI::Get().setFocusLabel(exit->getNext(), pos);
+                GUI::Get().setFocusLabel("Next Level", pos);
             }
             break;
         }

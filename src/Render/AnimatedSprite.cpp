@@ -40,8 +40,8 @@ void AnimatedSprite::update(float deltaTime)
                 }
             }
             setRect({
-                m_frame * m_sprite.getLocalBounds().width, 
-                m_direction * m_sprite.getLocalBounds().height, 
+                m_frame * int(m_sprite.getLocalBounds().width),
+                m_direction * int(m_sprite.getLocalBounds().height),
                 m_sprite.getLocalBounds().width, 
                 m_sprite.getLocalBounds().height
             });

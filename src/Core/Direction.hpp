@@ -31,7 +31,6 @@ static Direction_t deduceDirection(vec2f dir)
 
     return Up;
 }
-
-};
+}
 
 #endif

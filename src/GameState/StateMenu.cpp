@@ -40,7 +40,7 @@ void StateMenu::init()
                                  Screen::Get().halfHeight + i * g_menuOptionsOffset);
     }
 
-    m_helpText.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
+    m_helpText.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
     m_helpText.setCharacterSize(30);
     loadHelp();
     m_helpText.setOrigin(static_cast<int>(m_helpText.getLocalBounds().width/2),
