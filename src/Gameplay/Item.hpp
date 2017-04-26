@@ -1,16 +1,29 @@
 #ifndef ITEM_HPP
 #define ITEM_HPP
-#include "ItemType.hpp"
 #include "../Script/ScriptHandler.hpp"
 #include "../Core/Error.hpp"
 #include <string>
 #include <memory>
 #include <fstream>
-#include <iostream>
 
 struct Item
 {
-    ItemType type;
+    using Ptr = std::shared_ptr<Item>;
+
+    enum class Type
+    {
+        Plain = 0,
+        Weapon,
+        Armor,
+        Spell,
+        Potion,
+        Food,
+        Book,
+        Bow,
+        Misc
+    };
+
+    Type type;
     std::string code;
     std::string name;
     std::string image;
@@ -38,26 +51,6 @@ struct Item
         else
         {
 
-        // void* buffer = nullptr;
-        // size_t buffer_size = 0;
-
-        // struct zip_t* zip = zip_open("data/items.pak", 0, 'r');
-
-        // zip_entry_open(zip, "it_test_meat.lua");
-        // zip_entry_read(zip, &buffer, &buffer_size);
-
-        // if (!buffer)
-        //  printf("Failed to load %s!\n", path.c_str());
-
-        // const char* str = static_cast<char*>(buffer);
-        // std::string cont = str;
-
-        // printf("%s\n%d\n", cont.c_str(), buffer_size);
-
-        // zip_entry_close(zip);
-        // zip_close(zip);
-        // free(buffer);
-
         //*/
             using namespace luabridge;
 
@@ -78,43 +71,43 @@ struct Item
 
             if (str_type == "weapon")
             {
-                type = ItemType::Weapon;
+                type = Type::Weapon;
 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
             }
             else if (str_type == "armor")
             {
-                type = ItemType::Armor;
+                type = Type::Armor;
                 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));
             }
             else if (str_type == "food")
             {
-                type = ItemType::Food;
+                type = Type::Food;
                 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "book")
             {
-                type = ItemType::Book;
+                type = Type::Book;
                 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "spell")
             {
-                type = ItemType::Spell;
+                type = Type::Spell;
 
                 effect = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["effect"]));
             }
             else if (str_type == "misc")
             {
-                type = ItemType::Misc;
+                type = Type::Misc;
             }
             else if (str_type == "bow")
             {
-                type = ItemType::Bow;
+                type = Type::Bow;
 
                 equip = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["equip"]));
                 takeoff = std::unique_ptr<LuaRef>(new LuaRef(ref_theItem["takeoff"]));

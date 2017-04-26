@@ -1,11 +1,11 @@
 Item = {
 	code = "it_note_start",
-	name = "Journal Page",
+	name = "First Note",
 	image = "it_note.png",
 	type = "book",
-	desc = "Dirty note.",
+	desc = "Dirty one. But it's not too old.",
 
 	effect = function()
-		gui_read("Ok. Now this is not some kind of\nJoke. You understand? In this\nplace things can really go bad.\nJust grab whatever may serve you\nas a weapon. And don't let them\nkill you too easily.\n\n-Stranger");
+		gui_read("They're everywhere! I've never\nseen things like this before!\nIf you're reading this be careful!\nThese things are mad!\n\nPS. I left my old gear\nsomewhere around here.\n\nBo--");
 	end
 }

@@ -7,7 +7,7 @@ class FireMissile : public Entity
     public:
         FireMissile();
 
-        void init(vec2f origin, Direction_t dir, EntityType type);
+        void init(vec2f origin, Direction_t dir, Entity::Type type);
         void setOwner(Entity* owner);
 
         void setDirection(const vec2f& dir);

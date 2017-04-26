@@ -1,22 +1,23 @@
 #include "Arrow.hpp"
 #include "Level.hpp"
 #include "Living.hpp"
+#include "Lever.hpp"
 #include "../Collision/CollisionHandler.hpp"
 
 Arrow::Arrow()
 {
-    m_type = EntityType::Arrow;
+    m_type = Entity::Type::Arrow;
 
-    m_sprite = SpritePtr_t(new Sprite());
+    m_sprite = Sprite::Ptr(new Sprite());
     m_sprite->loadFromFile("arrow.png");
     m_sprite->setOrigin({12,12});
 
-    m_box = BoxPtr_t(new Box());
-    m_box->type = CollisionType::TriggerVolume;
+    m_box = Box::Ptr(new Box());
+    m_box->type = Box::Type::TriggerVolume;
     m_box->reactMaterial = CollMaterial::Regular;
     m_box->callback = [this]()
     {
-        blow(nullptr);
+        // blow(nullptr);
     };
     m_box->enabled = false;
 
@@ -55,13 +56,16 @@ void Arrow::init(const vec2f& pos, Direction_t dir)
 
 void Arrow::update(float deltaTime)
 {
+    if (m_decayTimer.getElapsedTime().asSeconds() >= m_decay)
+        blow(nullptr);
+
     if (m_warmup.getElapsedTime().asMilliseconds() > 150)
         m_box->enabled = true;
 
     if (m_box->enabled == true)
     {
         std::vector<Entity*> foundEnts = m_level->getEntitiesInRange(vec2f(m_box->rect.x + m_box->rect.w/2,
-                                         m_box->rect.y + m_box->rect.h/2), 24);
+                                         m_box->rect.y + m_box->rect.h/2), 10);
         
         for (auto& i : foundEnts)
             blow(i);
@@ -80,7 +84,7 @@ void Arrow::blow(Entity* ent)
     {
         switch (ent->getType())
         {
-            case EntityType::Living:
+            case Entity::Type::Living:
             {
                 auto living = static_cast<Living*>(ent);
 
@@ -88,7 +92,7 @@ void Arrow::blow(Entity* ent)
                 {
                     auto beholder = static_cast<Living*>(m_owner);
 
-                    living->damage(100);
+                    living->damage(m_damage);
                     // living->push(m_direction, 8, 0.1);
 
                     if (living->isDead())
@@ -103,6 +107,15 @@ void Arrow::blow(Entity* ent)
                     return;
             }
             break;
+            case Entity::Type::Lever:
+            {
+                auto lever = static_cast<Lever*>(ent);
+
+                lever->activate();
+                // m_speed = 0;
+                // destroy();
+            }
+            break;
         }
     }
     else
@@ -115,4 +128,14 @@ void Arrow::blow(Entity* ent)
 void Arrow::setOwner(Entity* owner)
 {
     m_owner = owner;
+}
+
+void Arrow::setDamage(int damage)
+{
+    m_damage = damage;
+}
+
+void Arrow::setDecay(float seconds)
+{
+    m_decay = seconds;
 }

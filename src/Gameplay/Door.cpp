@@ -7,22 +7,22 @@
 
 Door::Door()
 {
-    m_type = EntityType::Door;
+    m_type = Entity::Type::Door;
 
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
     m_sprite->loadFromFile("door_idle.ani");
     m_sprite->setOrigin({16,32});
 
-    m_box = BoxPtr_t(new Box());
-    m_box->rect = Rectf(736,350,32,4);
-    m_box->type = CollisionType::Static;
+    m_box = Box::Ptr(new Box());
+    m_box->rect = Rectf(736,350,32,32);
+    m_box->type = Box::Type::Static;
 
     CollisionHandler::Get().addBody(m_box);
 }
 
 void Door::update(float deltaTime)
 {
-    m_sprite->setPosition({m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h/2});
+    m_sprite->setPosition({m_box->rect.x + m_box->rect.w/2, m_box->rect.y + m_box->rect.h});
     m_sprite->update(deltaTime);
 }
 

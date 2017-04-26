@@ -16,11 +16,11 @@ Spellbook::Spellbook()
     m_background.setPosition({Screen::Get().halfWidth - g_spellBookWidth/2,
                               Screen::Get().halfHeight - g_spellBookHeight/2});
 
-    m_options.push_back(SpellOption("fire_icon.png", "Fireball\nExplodes in da face!"));
-    m_options.push_back(SpellOption("ice_icon.png", "Frostbite\nFreezes the shit out of enemies!"));
+    m_options.push_back(SpellOption("fire_icon.png", "Fireball\nExplodes in da face! Requires 15pt magicka"));
+    m_options.push_back(SpellOption("ice_icon.png", "Frostbite\nFreezes the shit out of enemies! Requires 20pt magicka"));
     // m_options.push_back(SpellOption("fire_icon.png", "Speed\nLet's you run like a horny rabbit!"));
-    m_options.push_back(SpellOption("light_icon.png", "Lightning\nDoes it get more badass?"));
-    m_options.push_back(SpellOption("heal_icon.png", "Heal\nBetter than touching yourself."));
+    m_options.push_back(SpellOption("light_icon.png", "Lightning\nDoes it get more badass? Requires 5pt magicka"));
+    m_options.push_back(SpellOption("heal_icon.png", "Heal\nBetter than touching yourself. Requires 32pt magicka"));
 
     m_selection.setSize({g_spellBookWidth -12, 32});
     m_selection.setFillColor({0,0,0,0});

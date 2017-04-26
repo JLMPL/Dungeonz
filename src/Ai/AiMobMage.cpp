@@ -36,8 +36,8 @@ void AiMobMage::focus()
         std::sort(begin(ents), end(ents),
         [&](Entity* a, Entity* b)
         {
-            float dist_a = length(a->getPosition() - m_target->getPosition());
-            float dist_b = length(b->getPosition() - m_target->getPosition());
+            float dist_a = lengthSqr(a->getPosition() - m_target->getPosition());
+            float dist_b = lengthSqr(b->getPosition() - m_target->getPosition());
 
             return dist_a < dist_b;
         });
@@ -140,7 +140,7 @@ void AiMobMage::attackState(float deltaTime)
             // enemy->push(m_target->getDirection(), 5, 0.1);
 
             auto ball = (FireMissile*)m_target->getLevel()->addFireMissile(std::shared_ptr<FireMissile>(new FireMissile()));
-            ball->init(m_target->getPosition(), m_target->getDirection(), EntityType::Fireball);
+            ball->init(m_target->getPosition(), m_target->getDirection(), Entity::Type::Fireball);
             ball->setOwner(static_cast<Entity*>(m_target));
             ball->setDirection(normalize(m_focus->getPosition() - m_target->getPosition()));
 

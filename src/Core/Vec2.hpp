@@ -97,6 +97,12 @@ static float length(const vec2<T>& v)
 }
 
 template <typename T>
+static float lengthSqr(const vec2<T>& v)
+{
+    return static_cast<float>(v.x*v.x + v.y*v.y);
+}
+
+template <typename T>
 static float distance(const vec2<T>& a, const vec2<T>& b)
 {
     return length(b - a);

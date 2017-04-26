@@ -2,7 +2,7 @@
 #define MAP_HPP
 #include "Chunk.hpp"
 #include "../Resource/TexturePtr.hpp"
-#include "../Collision/BoxPtr.hpp"
+#include "../Collision/Box.hpp"
 #include "../rapidxml/rapidxml.hpp"
 #include <vector>
 #include <string>
@@ -39,7 +39,7 @@ class Map
 
         Level* m_level;
 
-        std::vector<BoxPtr_t> m_boxes;
+        std::vector<Box::Ptr> m_boxes;
 
         int m_width = 0;
         int m_height = 0;

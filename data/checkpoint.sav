@@ -1,4 +1,4 @@
-map_test.tmx
+level_1.tmx
 40
 40
 40
@@ -6,12 +6,13 @@ map_test.tmx
 0
 0
 250
-1
-1
-1
-1
--1
 0
+0
+0
+0
+-1
+1
+it_note_start
 0
 0
 0

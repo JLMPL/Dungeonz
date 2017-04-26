@@ -10,7 +10,7 @@ constexpr int g_menuOptionsOffset = 48;
 
 StateMenu::StateMenu()
 {
-    m_type = StateType::Menu;
+    m_type = Type::Menu;
 }
 
 void StateMenu::init()
@@ -40,7 +40,7 @@ void StateMenu::init()
                                  Screen::Get().halfHeight + i * g_menuOptionsOffset);
     }
 
-    m_helpText.setFont(*FontCache::Get().getFont("BLKCHCRY.ttf"));
+    m_helpText.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
     m_helpText.setCharacterSize(30);
     loadHelp();
     m_helpText.setOrigin(static_cast<int>(m_helpText.getLocalBounds().width/2),
@@ -54,7 +54,7 @@ void StateMenu::init()
 void StateMenu::initWarning()
 {
     m_warningMessage.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
-    m_warningMessage.setCharacterSize(16);
+    m_warningMessage.setCharacterSize(10);
     m_warningMessage.setFillColor({255,255,255});
     m_warningMessage.setPosition(Screen::Get().halfWidth, Screen::Get().height - 48);
 }

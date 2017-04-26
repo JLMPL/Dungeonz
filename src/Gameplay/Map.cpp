@@ -9,10 +9,13 @@
 #include "ItemBag.hpp"
 #include "SpikeTrap.hpp"
 #include "PressPlate.hpp"
+#include "Decoration.hpp"
+#include "ShootTrap.hpp"
 #include "../Gui/Gui.hpp"
 #include "../Ai/AiMob.hpp"
 #include "../Ai/AiPlayer.hpp"
 #include "../Ai/AiMobMage.hpp"
+#include "../Ai/AiBoss.hpp"
 #include "../Core/Error.hpp"
 #include "../base64/base64.h"
 #include "../Render/Renderer.hpp"
@@ -22,7 +25,6 @@
 #include <memory>
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
 #ifdef _WIN32
 #include "../Core/MinGWSucks.hpp"
@@ -183,34 +185,34 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             profile.loadFromFile(whom + ".chr");
             // profile.loadFromFile(whom + ".chr");
 
-            auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto living = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             living->init(profile);
-            living->setAi(AiPtr_t(new AiMob()));
+            living->setAi(Ai::Ptr(new AiMob()));
             living->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 living->accessInv().addItem(item);
             }
         }
@@ -231,34 +233,58 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             profile.loadFromFile(whom + ".chr");
             // profile.loadFromFile(whom + ".chr");
 
-            auto living = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto living = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             living->init(profile);
-            living->setAi(AiPtr_t(new AiMobMage()));
+            living->setAi(Ai::Ptr(new AiMobMage()));
             living->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 living->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
+                living->accessInv().addItem(item);
+            }
+        }
+        else if (type == "spawn_boss")
+        {
+            std::string item0 = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+            std::string whom  = object->first_node("properties")->first_node("property")->next_sibling()->next_sibling()->next_sibling()->next_sibling()->next_sibling()->first_attribute("value")->value();
+            
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            LivingProfile profile;
+            profile.loadFromFile(whom + ".chr");
+            // profile.loadFromFile(whom + ".chr");
+
+            auto living = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
+            living->init(profile);
+            living->setAi(Ai::Ptr(new AiBoss()));
+            living->setPosition(pos + vec2f(16,16));
+
+            if (item0 != "-")
+            {
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 living->accessInv().addItem(item);
             }
         }
@@ -270,9 +296,9 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto door = (Door*)m_level->addEntity(EntityPtr_t(new Door()));
+            auto door = (Door*)m_level->addEntity(Entity::Ptr(new Door()));
             door->setCode(name);
-            door->setPosition(pos + vec2f(0,30));
+            door->setPosition(pos);
             door->setRequiredItem(item);
         }
         else if (type == "chest")
@@ -289,7 +315,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value()) - 13;
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto chest = (Chest*)m_level->addEntity(EntityPtr_t(new Chest()));
+            auto chest = (Chest*)m_level->addEntity(Entity::Ptr(new Chest()));
             chest->setCode(name);
             chest->setPosition(pos + vec2f(16,16));
 
@@ -300,27 +326,27 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 chest->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 chest->accessInv().addItem(item);
             }
         }
@@ -334,7 +360,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto lever = (Lever*)m_level->addEntity(EntityPtr_t(new Lever()));
+            auto lever = (Lever*)m_level->addEntity(Entity::Ptr(new Lever()));
             lever->setCode(name);
             lever->setPosition(pos + vec2f(16,16));
             lever->setActivateFunc(
@@ -342,22 +368,44 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             {
                 if (type == "door")
                 {
-                    Door* door = (Door*)m_level->getEntityByCode(whom);
-                    if (door)
-                        door->open();
+                    auto door = m_level->getEntitiesByCode(whom);
+                    for (int i = 0; i < door.size(); i++)
+                    {
+                        static_cast<Door*>(door[i])->open();
+                    }
                 }
                 else if (type == "spike_trap")
                 {
                     auto spikes = m_level->getEntitiesByCode(whom);
-                    if (!spikes.empty())
+                    for (int i = 0; i < spikes.size(); i++)
                     {
-                        for (int i = 0; i < spikes.size(); i++)
-                        {
-                            static_cast<SpikeTrap*>(spikes[i])->disable();
-                        }
+                        static_cast<SpikeTrap*>(spikes[i])->disable();
                     }
                 }
             });
+        }
+        else if (type == "shoot_trap")
+        {
+            std::string name = object->first_attribute("name")->value();
+            std::string dire = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            Direction_t dir = Direction::Down;
+            if (dire == "up")
+                dir = Direction::Up;
+            else if (dire == "down")
+                dir = Direction::Down;
+            else if (dire == "left")
+                dir = Direction::Left;
+            else 
+                dir = Direction::Right;
+
+            auto trap = (ShootTrap*)m_level->addEntity(Entity::Ptr(new ShootTrap(dir)));
+            trap->setCode(name);
+            trap->setPosition(pos);
         }
         else if (type == "spike_trap")
         {
@@ -367,7 +415,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto trap = (SpikeTrap*)m_level->addEntity(EntityPtr_t(new SpikeTrap()));
+            auto trap = (SpikeTrap*)m_level->addEntity(Entity::Ptr(new SpikeTrap()));
             trap->setCode(name);
             trap->setPosition(pos);
         }
@@ -381,7 +429,7 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto press = (PressPlate*)m_level->addEntity(EntityPtr_t(new PressPlate()));
+            auto press = (PressPlate*)m_level->addEntity(Entity::Ptr(new PressPlate()));
             press->setCode(name);
             press->setPosition(pos);
 
@@ -433,33 +481,33 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value());
 
-            auto bag = (ItemBag*)m_level->addEntity(EntityPtr_t(new ItemBag()));
+            auto bag = (ItemBag*)m_level->addEntity(Entity::Ptr(new ItemBag()));
             bag->setCode(name);
             bag->setPosition(pos + vec2f(16,16));
 
             if (item0 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item0 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item0 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item1 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item1 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item1 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item2 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item2 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item2 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item3 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item3 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item3 + ".lua")));
                 bag->accessInv().addItem(item);
             }
             if (item4 != "-")
             {
-                auto item = m_level->addItem(ItemPtr_t(new Item(item4 + ".lua")));
+                auto item = m_level->addItem(Item::Ptr(new Item(item4 + ".lua")));
                 bag->accessInv().addItem(item);
             }
         }
@@ -472,10 +520,22 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             pos.x = std::stof(object->first_attribute("x")->value());
             pos.y = std::stof(object->first_attribute("y")->value()) + 32;
 
-            auto exit = (Exit*)m_level->addEntity(EntityPtr_t(new Exit()));
+            auto exit = (Exit*)m_level->addEntity(Entity::Ptr(new Exit()));
             exit->setCode("exit");
             exit->setPosition(pos);
             exit->setNext(next);
+        }
+        else if (type == "decoration")
+        {
+            std::string name = object->first_attribute("name")->value();
+            std::string visual = object->first_node("properties")->first_node("property")->first_attribute("value")->value();
+            vec2f pos;
+            pos.x = std::stof(object->first_attribute("x")->value());
+            pos.y = std::stof(object->first_attribute("y")->value());
+
+            auto decor = (Decoration*)m_level->addDecoration(Decoration::Ptr(new Decoration()));
+            decor->init(visual);
+            decor->setPosition(pos);
         }
         else if (type == "start")
         {
@@ -487,10 +547,10 @@ void Map::loadObjects(rapidxml::xml_node<>* objects)
             LivingProfile profile;
             profile.loadFromFile("pc_player.chr");
 
-            auto player = (Living*)m_level->addEntity(EntityPtr_t(new Living()));
+            auto player = (Living*)m_level->addEntity(Entity::Ptr(new Living()));
             player->init(profile);
             player->setCode("pc_player");
-            player->setAi(AiPtr_t(new AiPlayer()));
+            player->setAi(Ai::Ptr(new AiPlayer()));
             player->setPosition(pos);
 
             GUI::Get().setTarget(player);
@@ -503,9 +563,9 @@ void Map::makeChunks()
 {
     for(int l = 0; l < m_layers.size(); l++)
     {
-        m_layers[l].chunks.resize(2);
+        m_layers[l].chunks.resize(m_width/16);
         for(auto& i : m_layers[l].chunks)
-            i.resize(2);
+            i.resize(m_width/16);
 
         for(uint h = 0; h < m_layers[l].chunks.size(); h++)
         {
@@ -537,7 +597,7 @@ void Map::collisions()
 
         if (tile.rect.x == 96 and tile.rect.y == 128)
         {
-            BoxPtr_t box(new Box());
+            Box::Ptr box(new Box());
             box->rect = {tile.position.x, tile.position.y, tile.rect.w, tile.rect.h};
             box->material = CollMaterial::Regular;
             m_boxes.push_back(box);
@@ -557,17 +617,17 @@ void Map::update()
     }
     //*/
 
-    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[0].chunks.size(); i++)
     {
-        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        for (std::size_t j = 0; j < m_layers[0].chunks[i].size(); j++)
         {
             m_layers[0].chunks[i][j].render();
         }
     }
 
-    for (std::size_t i = 0; i < m_layers[i].chunks.size(); i++)
+    for (std::size_t i = 0; i < m_layers[1].chunks.size(); i++)
     {
-        for (std::size_t j = 0; j < m_layers[i].chunks[i].size(); j++)
+        for (std::size_t j = 0; j < m_layers[1].chunks[i].size(); j++)
         {
             m_layers[1].chunks[i][j].render();
         }

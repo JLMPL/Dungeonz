@@ -169,6 +169,15 @@ void Renderer::setCameraPos(const vec2i& pos)
     m_camera.setCenter(pos.x, pos.y);
 }
 
+void Renderer::resetCameraPos()
+{
+    int hw = Screen::Get().halfWidth;
+    int hh = Screen::Get().halfHeight;
+    m_camera.setCenter(m_window->getSize().x/2, m_window->getSize().y/2);
+
+    printf("%d %d\n", hw, hh);
+}
+
 vec2i Renderer::getCameraPos() const
 {
     return vec2i(m_camera.getCenter().x - Screen::Get().halfWidth, m_camera.getCenter().y - Screen::Get().halfHeight);

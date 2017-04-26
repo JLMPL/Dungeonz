@@ -4,14 +4,14 @@
 
 Chest::Chest()
 {
-    m_type = EntityType::Chest;
-    m_sprite = SpritePtr_t(new Sprite());
+    m_type = Entity::Type::Chest;
+    m_sprite = Sprite::Ptr(new Sprite());
     m_sprite->loadFromFile("chest.png");
     m_sprite->setOrigin({16,32});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,26,16);
-    m_box->type = CollisionType::Static;
+    m_box->type = Box::Type::Static;
 
     CollisionHandler::Get().addBody(m_box);
 }

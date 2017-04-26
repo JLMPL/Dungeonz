@@ -15,6 +15,7 @@ constexpr Direction_t Right = 3;
 static Direction_t deduceDirection(vec2f dir)
 {
     float d = dot(dir, vec2f(0,-1));
+    float actual = acos(d) / M_PI;
 
     if (d >= 0.5)
         return Up;
@@ -27,8 +28,9 @@ static Direction_t deduceDirection(vec2f dir)
 
     else if (d < 0.5 and d > -0.5 and dir.x <= 0)
         return Left;
-}
 
-};
+    return Up;
+}
+}
 
 #endif

@@ -3,16 +3,14 @@
 
 namespace Files
 {
-
-bool doesFileExist(const char* path)
-{
-    FILE* file = nullptr;
-    if (file = fopen(path, "r"))
+    bool doesFileExist(const char* path)
     {
-        fclose(file);
-        return true;
+        FILE* file = nullptr;
+        if (file = fopen(path, "r"))
+        {
+            fclose(file);
+            return true;
+        }
+        return false;
     }
-    return false;
 }
-
-};

@@ -13,6 +13,7 @@
 #include "../GameState/StatePlaying.hpp"
 #include "../GameState/StateSplash.hpp"
 #include "../GameState/StateMenu.hpp"
+#include "../GameState/StateScrolling.hpp"
 #include <fstream>
 
 #ifdef _WIN32
@@ -20,14 +21,14 @@
 #endif
 
 constexpr int g_majorVersion = 0;
-constexpr int g_minorVersion = 3;
-constexpr int g_updateVersion = 6; //<- Everytime I add a public feature
+constexpr int g_minorVersion = 4;
+constexpr int g_updateVersion = 2; //<- Everytime I add a public feature
 
 Game::Game()
 {
     loadCfg();
 
-    Uint32 style = sf::Style::Close;
+    sf::Uint32 style = sf::Style::Close;
 
     if (Screen::Get().fullscreen)
         style = sf::Style::Fullscreen;
@@ -54,14 +55,21 @@ Game::Game()
     version.setCharacterSize(10);
     version.setString("Version " + std::to_string(g_majorVersion) + "." +
                                    std::to_string(g_minorVersion) + "." +
-                                   std::to_string(g_updateVersion) + " WIP");
+                                   std::to_string(g_updateVersion) + " Alpha");
     version.setPosition(sf::Vector2f(5,5));
 
     GUI::Get().setBackToMenuFunc(
     [this]()
     {
         begForState(new StateMenu());
-        Renderer::Get().setCameraPos({Screen::Get().halfWidth, Screen::Get().halfHeight});
+        Renderer::Get().resetCameraPos();
+    });
+
+    GUI::Get().setFinishGameFunc(
+    [this]()
+    {
+        begForState(new StateScrolling(true));
+        Renderer::Get().resetCameraPos(); //<- it's camera's fault
     });
 
     begForState(new StateSplash());
@@ -72,10 +80,10 @@ Game::Game()
 Game::~Game()
 {
 }
-
+//comment
 void Game::loadCfg()
 {
-    std::ifstream file("config.cfg");
+    std::ifstream file("config");
     std::string line;
     std::stringstream sstr;
 
@@ -181,7 +189,7 @@ void Game::setState(GameState* state)
 
     switch (m_currentState->getType())
     {
-        case StateType::Splash:
+        case GameState::Type::Splash:
         {
             auto splash = static_cast<StateSplash*>(m_currentState.get());
             splash->setExitFunc(
@@ -191,13 +199,13 @@ void Game::setState(GameState* state)
             });
         }
         break;
-        case StateType::Menu:
+        case GameState::Type::Menu:
         {
             auto menu = static_cast<StateMenu*>(m_currentState.get());
             menu->setNewGameFunc(
             [this]()
             {
-                begForState(new StatePlaying());
+                begForState(new StateScrolling(false));
             });
 
             menu->setContinueFunc(
@@ -210,6 +218,26 @@ void Game::setState(GameState* state)
             [this]()
             {
                 Window.close();
+            });
+        }
+        break;
+        case GameState::Type::Scrolling:
+        {
+            auto scroll = static_cast<StateScrolling*>(m_currentState.get());
+            scroll->setExitFunc(
+            [this]()
+            {
+                begForState(new StatePlaying());
+            });
+        }
+        break;
+        case GameState::Type::ScrollingEnd:
+        {
+            auto scroll = static_cast<StateScrolling*>(m_currentState.get());
+            scroll->setExitFunc(
+            [this]()
+            {
+                begForState(new StateMenu());
             });
         }
         break;

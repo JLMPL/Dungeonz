@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="144">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmM2OwyAMhKnUHre3qI+Uc97/ZbaHRou8YzyAgaThMKpEgPizh590CyFsU1NTU1NTU5fUeoAYRsszB2uBJv+x+GtiOiO/ZK6J6xv4azxwVn4vD3wLf6kHWvD3zFFtDjz511AWgzd/zvu9+EeukRoPtODvya7xsnF48/dmt3LgvR9Y/Y/En+sF1g9o3tH8Xjlg+dl9V8tbq1xZOVjD/7hGaYQPtOdX4pd9ruiB0dyt+GVdS8b04O3Bn5uDb6v/GdZCjzWfE8vZPG+t91F11Wrcgn/NmPtq/KNr781r8ZXW/P7W7a1H4tlN9LmDttH8q4iVrdErkuR6AT1BW28PMCxszZdIkmsBQu29659iS8WD8pTiQPyo3eJHuYhr4MV/+8Rj+X8JmJHNKcvP1sDT/7tHvfifn2dPIi85ku/19n+qXxz3T6TcnCJ+eWYgyX2nhB/xSf9rOWPqto+L40TzMGcGUgt+WasafmZ9sGeGNW/J+tf21SVg5hb8Vn9mXM35h56N5kfv0GI+An+OT0v4UzFfgV/zfM06YPm1ca35U3eGkfyaR6y7Xy4/ew9j2eVdOTUml1/WStamhD93jBUv+q5D/WIWi/8e/u4rqVq14Jc5Zuq1S7tfSpbU2onvLS3Wv3f94/nYOyW7j7Ta/2uZNX5r7bP8ktFz//Pml3Gze5vGixjPyi+/v9A3mTbXXYxB/2UejV8K7QGyzRobj+nF75WHPS7tu0uuB+R7+duaX4unlH8/96X2dnRmPkSf/beE39pf2JqX+GP3LuLX1oP0ffxr8efurVvgWXr4XxvL+N+q2xYwc2t+y//MWK0vy5/T7s1v+Z8Za/WdGqNfG9ltMA==
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztllEOxCAIBT1Q73++/W0MIKBstZ1JmlQL1CcqtgYAAAAAAAAAAAAAAAAAAAAAIHMJj/XNep4mM6bexuMv9e+i32rf+1fnbRf9l/Au2Y1iVOe/Yv9E9Us22v6X2pqfd6wz/jMxvfp7Gy1nmfxV6c/k31qHo/Uh9WXqxVP6PTG1tjaPGZ5a/zMxI2N+a/6957h2rlTV4VGN08YQ2f9abG/NqCCjX/rmbc+MowL0j/9brX/2bjBDdv+3lpsPK37EZxTPe1a+Vb8nXqb+Va3/qE80XqZ2ecZzgv5Zv5l6Hzn/VtX+1fmXYvXv1r//jXc+s3XHOjN30G+hzY1nziyfu03vsxPRHHt8T9TvqXWjb5Ltm/Rbe0WLdYr+qpin6P96/r++/zN23vN/5V1uNdZdMFL/d9b4A8r1RtE=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="player_spawn" type="start" x="1056" y="1920" width="32" height="32"/>
+  <object id="39" name="run_plate" type="press_plate" x="1024" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="40" name="run_plate" type="press_plate" x="1056" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="41" name="run_plate" type="press_plate" x="1088" y="1856" width="32" height="32">
+   <properties>
+    <property name="activate" value="first_spikes"/>
+    <property name="type" value="spike_trap"/>
+   </properties>
+  </object>
+  <object id="42" name="first_spikes" type="spike_trap" x="1056" y="1664" width="32" height="32"/>
+  <object id="43" name="first_spikes" type="spike_trap" x="1024" y="1632" width="32" height="32"/>
+  <object id="44" name="first_spikes" type="spike_trap" x="1056" y="1792" width="32" height="32"/>
+  <object id="45" name="first_spikes" type="spike_trap" x="1024" y="1760" width="32" height="32"/>
+  <object id="46" name="first_spikes" type="spike_trap" x="1024" y="1792" width="32" height="32"/>
+  <object id="47" name="first_spikes" type="spike_trap" x="1056" y="1696" width="32" height="32"/>
+  <object id="48" name="first_spikes" type="spike_trap" x="1024" y="1600" width="32" height="32"/>
+  <object id="49" name="first_spikes" type="spike_trap" x="1024" y="1696" width="32" height="32"/>
+  <object id="50" name="first_spikes" type="spike_trap" x="1056" y="1760" width="32" height="32"/>
+  <object id="51" name="first_spikes" type="spike_trap" x="1056" y="1824" width="32" height="32"/>
+  <object id="52" name="first_spikes" type="spike_trap" x="1024" y="1824" width="32" height="32"/>
+  <object id="53" name="first_spikes" type="spike_trap" x="1056" y="1600" width="32" height="32"/>
+  <object id="54" name="first_spikes" type="spike_trap" x="1024" y="1664" width="32" height="32"/>
+  <object id="55" name="first_spikes" type="spike_trap" x="1056" y="1632" width="32" height="32"/>
+  <object id="56" name="first_spikes" type="spike_trap" x="1056" y="1728" width="32" height="32"/>
+  <object id="57" name="first_spikes" type="spike_trap" x="1024" y="1728" width="32" height="32"/>
+  <object id="58" name="first_spikes" type="spike_trap" x="1088" y="1792" width="32" height="32"/>
+  <object id="59" name="first_spikes" type="spike_trap" x="1088" y="1664" width="32" height="32"/>
+  <object id="60" name="first_spikes" type="spike_trap" x="1088" y="1696" width="32" height="32"/>
+  <object id="61" name="first_spikes" type="spike_trap" x="1088" y="1600" width="32" height="32"/>
+  <object id="62" name="first_spikes" type="spike_trap" x="1088" y="1760" width="32" height="32"/>
+  <object id="63" name="first_spikes" type="spike_trap" x="1088" y="1728" width="32" height="32"/>
+  <object id="64" name="first_spikes" type="spike_trap" x="1088" y="1824" width="32" height="32"/>
+  <object id="65" name="first_spikes" type="spike_trap" x="1088" y="1632" width="32" height="32"/>
+  <object id="66" name="first_spikes" type="spike_trap" x="1056" y="1408" width="32" height="32"/>
+  <object id="67" name="first_spikes" type="spike_trap" x="1024" y="1408" width="32" height="32"/>
+  <object id="68" name="first_spikes" type="spike_trap" x="1088" y="1536" width="32" height="32"/>
+  <object id="69" name="first_spikes" type="spike_trap" x="1056" y="1568" width="32" height="32"/>
+  <object id="70" name="first_spikes" type="spike_trap" x="1056" y="1376" width="32" height="32"/>
+  <object id="71" name="first_spikes" type="spike_trap" x="1088" y="1440" width="32" height="32"/>
+  <object id="72" name="first_spikes" type="spike_trap" x="1088" y="1568" width="32" height="32"/>
+  <object id="73" name="first_spikes" type="spike_trap" x="1024" y="1568" width="32" height="32"/>
+  <object id="74" name="first_spikes" type="spike_trap" x="1056" y="1504" width="32" height="32"/>
+  <object id="76" name="first_spikes" type="spike_trap" x="1088" y="1472" width="32" height="32"/>
+  <object id="77" name="first_spikes" type="spike_trap" x="1088" y="1376" width="32" height="32"/>
+  <object id="79" name="first_spikes" type="spike_trap" x="1024" y="1504" width="32" height="32"/>
+  <object id="81" name="first_spikes" type="spike_trap" x="1024" y="1440" width="32" height="32"/>
+  <object id="82" name="first_spikes" type="spike_trap" x="1056" y="1536" width="32" height="32"/>
+  <object id="83" name="first_spikes" type="spike_trap" x="1088" y="1408" width="32" height="32"/>
+  <object id="84" name="first_spikes" type="spike_trap" x="1056" y="1472" width="32" height="32"/>
+  <object id="85" name="first_spikes" type="spike_trap" x="1024" y="1472" width="32" height="32"/>
+  <object id="86" name="first_spikes" type="spike_trap" x="1024" y="1376" width="32" height="32"/>
+  <object id="87" name="first_spikes" type="spike_trap" x="1056" y="1440" width="32" height="32"/>
+  <object id="88" name="first_spikes" type="spike_trap" x="1088" y="1504" width="32" height="32"/>
+  <object id="89" name="first_spikes" type="spike_trap" x="1024" y="1536" width="32" height="32"/>
+  <object id="90" name="bat_spawn" type="spawn" x="1216" y="1152" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="91" name="add_door" type="door" x="960" y="1152" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_sec_1"/>
+   </properties>
+  </object>
+  <object id="92" name="bob_spawn" type="spawn" x="1760" y="1312" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="93" name="first_rat" type="spawn" x="1472" y="1600" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_sec_0"/>
+    <property name="item1" value="it_rat_meat"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_rat"/>
+   </properties>
+  </object>
+  <object id="94" name="first_chest" type="chest" x="1760" y="1216" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_key_sec_1"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="it_key_sec_0"/>
+   </properties>
+  </object>
+  <object id="95" name="note_bag" type="item_bag" x="768" y="1216" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bow"/>
+    <property name="item1" value="it_arrow"/>
+    <property name="item2" value="it_arrow"/>
+    <property name="item3" value="it_arrow"/>
+    <property name="item4" value="it_note_shoot_lever"/>
+   </properties>
+  </object>
+  <object id="96" name="shoot_lever" type="lever" x="768" y="1504" width="32" height="32">
+   <properties>
+    <property name="activate" value="shoot_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="97" name="shoot_door" type="door" x="736" y="1184" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_sec_none"/>
+   </properties>
+  </object>
+  <object id="98" name="bat_spawn" type="spawn" x="1472" y="1344" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_bat_meat"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_bat"/>
+   </properties>
+  </object>
+  <object id="99" name="first_chest" type="chest" x="64" y="1600" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_spell_frostbite"/>
+    <property name="item1" value="it_potion_magicka_0"/>
+    <property name="item2" value="it_potion_magicka_0"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="100" name="secpike" type="spike_trap" x="64" y="1632" width="32" height="32"/>
+  <object id="101" name="secpike" type="spike_trap" x="32" y="1600" width="32" height="32"/>
+  <object id="102" name="secpike" type="spike_trap" x="96" y="1600" width="32" height="32"/>
+  <object id="107" name="sord_chest" type="chest" x="832" y="1632" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_sword_1"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="key" value="-"/>
+   </properties>
+  </object>
+  <object id="108" name="bob_spawn" type="spawn" x="320" y="1856" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="109" name="bob_spawn" type="spawn" x="448" y="1856" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="110" name="bob_spawn" type="spawn" x="320" y="1952" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="111" name="bob_spawn" type="spawn" x="448" y="1952" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_goblin"/>
+   </properties>
+  </object>
+  <object id="112" name="t" type="decoration" x="32" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="113" name="t" type="decoration" x="96" y="1568" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="114" name="secpike" type="spike_trap" x="32" y="1632" width="32" height="32"/>
+  <object id="115" name="secpike" type="spike_trap" x="96" y="1632" width="32" height="32"/>
+  <object id="116" name="the_exit" type="exit" x="384" y="1120" width="32" height="32">
+   <properties>
+    <property name="next" value="level_2.tmx"/>
+   </properties>
+  </object>
+  <object id="117" name="last_lever" type="lever" x="800" y="1984" width="32" height="32">
+   <properties>
+    <property name="activate" value="last_door"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+  <object id="118" name="last_door" type="door" x="384" y="1216" width="32" height="32">
+   <properties>
+    <property name="key" value="it_key_sec_none"/>
+   </properties>
+  </object>
+  <object id="119" name="beg_bag" type="item_bag" x="864" y="1984" width="32" height="32">
+   <properties>
+    <property name="item0" value="it_root"/>
+    <property name="item1" value="it_root"/>
+    <property name="item2" value="it_root"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+  <object id="120" name="t" type="decoration" x="1056" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="121" name="t" type="decoration" x="1152" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="123" name="t" type="decoration" x="1248" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="124" name="t" type="decoration" x="1312" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="125" name="t" type="decoration" x="1504" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="126" name="t" type="decoration" x="1632" y="1280" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="127" name="t" type="decoration" x="1728" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="128" name="t" type="decoration" x="1792" y="1184" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="129" name="t" type="decoration" x="800" y="1088" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="130" name="t" type="decoration" x="704" y="1152" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="131" name="t" type="decoration" x="768" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="132" name="t" type="decoration" x="768" y="1856" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="133" name="t" type="decoration" x="768" y="1952" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="134" name="t" type="decoration" x="608" y="1856" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="135" name="t" type="decoration" x="448" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="136" name="t" type="decoration" x="320" y="1760" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="137" name="t" type="decoration" x="352" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="138" name="t" type="decoration" x="416" y="1312" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="139" name="t" type="decoration" x="352" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="140" name="t" type="decoration" x="416" y="1216" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="141" name="t" type="decoration" x="352" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="142" name="t" type="decoration" x="416" y="1120" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="143" name="arbag" type="item_bag" x="1504" y="1632" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="it_armor_1"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -42,6 +42,7 @@ class Renderer
         void flush();
 
         void setCameraPos(const vec2i& pos);
+        void resetCameraPos();
         vec2i getCameraPos() const;
 
     private:

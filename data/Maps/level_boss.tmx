@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="88">
+ <tileset firstgid="1" name="Dungeon" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+  <image source="../Images/Dungeon_tiles.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Dungeon" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt2TsOgzAQRVHTJyVromb/m0EpkKIRMmDjuWP8iteBmTO2+SRrSmlVFEVRFEVRqrMUhK5Zfvnll19++aP4e+2N/PLX+t90b7hit87R/L3N/xQgpP8bIPR7xQyGtu/+j7N7v14U/+Ts369H26Ouf897YES/9/qP6h9h/m09T9vPxqL9rec5N/4C+1uv7dy3SYT5l9/Hn4v88svP+Vs+/6L7W77/5cbsxV/TgyPr0XhR/U/ugVxPovq9voN68LfsQwR/y/m94r+7D+zxpeeT7n//3d//7PGl59N2ev3T9l9q/ruYK8+n7Tb2WekR2nzWjxHd1t+iF7SNWA90/XQf6Lrp+R+hB2t6j1X+Mv/bM8I+L/HTdZF+uiayD3QdyrjZAP9zMik=
+  </data>
+ </layer>
+ <layer name="Decoration" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer name="Collision" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEOABAQAEEP8v/3adGhOMdMIhqyrlYKAAAAAADQqxesSPrj/np3Zn59fX19fX19fX19fX19fX19/R/6q++Yz+/eN38s/fO/i8z/HydemAEAAIA8GgtzFgE=
+  </data>
+ </layer>
+ <objectgroup name="Objects" visible="0">
+  <object id="1" name="player_spawn" type="start" x="992" y="1504" width="32" height="32"/>
+  <object id="73" name="boss" type="spawn_boss" x="992" y="832" width="32" height="32">
+   <properties>
+    <property name="item0" value="-"/>
+    <property name="item1" value="-"/>
+    <property name="item2" value="-"/>
+    <property name="item3" value="-"/>
+    <property name="item4" value="-"/>
+    <property name="spawn" value="mob_boss"/>
+   </properties>
+  </object>
+  <object id="74" name="t" type="decoration" x="608" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="75" name="t" type="decoration" x="1376" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="76" name="t" type="decoration" x="768" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="77" name="t" type="decoration" x="1216" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="78" name="t" type="decoration" x="896" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="79" name="t" type="decoration" x="1088" y="704" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="80" name="t" type="decoration" x="992" y="705" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="81" name="t" type="decoration" x="544" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="82" name="t" type="decoration" x="1440" y="832" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="83" name="t" type="decoration" x="544" y="1472" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="84" name="t" type="decoration" x="1440" y="1472" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="86" name="t" type="decoration" x="1056" y="1472" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+  <object id="87" name="t" type="decoration" x="928" y="1472" width="32" height="32">
+   <properties>
+    <property name="visual" value="torch.ani"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

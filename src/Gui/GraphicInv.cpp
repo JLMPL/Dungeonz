@@ -170,7 +170,7 @@ void GraphicInv::update()
 
         switch (item.type)
         {
-            case ItemType::Weapon:
+            case Item::Type::Weapon:
             {
                 if (!m_player->isEquipped(Equip::Weapon, &item))
                 {
@@ -184,7 +184,7 @@ void GraphicInv::update()
                 }
             }
             break;
-            case ItemType::Armor:
+            case Item::Type::Armor:
             {
                 if (!m_player->isEquipped(Equip::Armor, &item))
                 {
@@ -198,7 +198,7 @@ void GraphicInv::update()
                 }
             }
             break;
-            case ItemType::Bow:
+            case Item::Type::Bow:
             {
                 if (!m_player->isEquipped(Equip::Bow, &item))
                 {
@@ -212,25 +212,25 @@ void GraphicInv::update()
                 }
             }
             break;
-            case ItemType::Food:
+            case Item::Type::Food:
             {
                 (*item.effect)(m_player);
                 m_player->accessInv().removeItem(&item);
                 m_slots[m_selected].empty = true;
             }
             break;
-            case ItemType::Book:
+            case Item::Type::Book:
             {
                 (*item.effect)();
             }
             break;
-            case ItemType::Spell:
+            case Item::Type::Spell:
             {
                 (*item.effect)(m_player);
                 m_player->accessInv().removeItem(&item);
             }
             break;
-            case ItemType::Misc:
+            case Item::Type::Misc:
                 break;
             default:break;
         }
@@ -240,9 +240,9 @@ void GraphicInv::update()
         m_timer.getElapsedTime().asMilliseconds() > 150 and
         !m_slots[m_selected].empty)
     {
-        ItemPtr_t item = m_slots[m_selected].item;
+        Item::Ptr item = m_slots[m_selected].item;
 
-        ItemBag* bag = (ItemBag*)m_player->getLevel()->addEntity(EntityPtr_t(new ItemBag()));
+        ItemBag* bag = (ItemBag*)m_player->getLevel()->addEntity(Entity::Ptr(new ItemBag()));
         bag->setCode("spitoff");
         bag->setPosition(m_player->getFakePos().getf());
 
@@ -274,22 +274,22 @@ void GraphicInv::description()
         
         switch (slot.item->type)
         {
-            case ItemType::Weapon:
+            case Item::Type::Weapon:
                 m_descType.setString("Weapon");
                 break;
-            case ItemType::Armor:
+            case Item::Type::Armor:
                 m_descType.setString("Armor");
                 break;
-            case ItemType::Food:
+            case Item::Type::Food:
                 m_descType.setString("Consumable");
                 break;
-            case ItemType::Book:
+            case Item::Type::Book:
                 m_descType.setString("Book");
                 break;
-            case ItemType::Spell:
+            case Item::Type::Spell:
                 m_descType.setString("Spell");
                 break;
-            case ItemType::Misc:
+            case Item::Type::Misc:
                 m_descType.setString("Miscellaneous");
                 break;
         }

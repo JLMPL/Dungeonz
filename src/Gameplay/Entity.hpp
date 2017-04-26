@@ -1,9 +1,9 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
-#include "EntityType.hpp"
-#include "../Render/SpritePtr.hpp"
-#include "../Collision/BoxPtr.hpp"
+#include "../Render/Sprite.hpp"
+#include "../Collision/Box.hpp"
 #include <cstring>
+#include <memory>
 
 #ifdef _WIN32
 using uint = unsigned int;
@@ -14,6 +14,24 @@ class Level;
 class Entity
 {
     public:
+        using Ptr = std::unique_ptr<Entity>;
+
+        enum class Type
+        {
+            Plain,
+            Living,
+            Chest,
+            Door,
+            Lever,
+            SpikeTrap,
+            PressPlate,
+            ItemBag,
+            Fireball,
+            Exit,
+            Arrow,
+            ShootTrap
+        };
+
         virtual ~Entity();
 
         virtual void update(float deltaTime);
@@ -28,7 +46,7 @@ class Entity
 
         uint               getId() const;
         const std::string& getCode() const;
-        EntityType         getType() const;
+        Type               getType() const;
         vec2f              getPosition() const;
         Level*             getLevel() const;
         vec2i              getFakePos() const;
@@ -37,11 +55,11 @@ class Entity
     protected:
         uint        m_id;
         std::string m_code;
-        EntityType  m_type = EntityType::Plain;
+        Type  m_type = Type::Plain;
         Level*      m_level = nullptr;
-        SpritePtr_t m_sprite = nullptr;
+        Sprite::Ptr m_sprite = nullptr;
         vec2f       m_pos;
-        BoxPtr_t    m_box;
+        Box::Ptr    m_box;
         bool        m_destroy = false;
 };
 

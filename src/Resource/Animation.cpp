@@ -3,8 +3,6 @@
 #include <fstream>
 #include <sstream>
 
-#include <iostream>
-
 void Animation::loadFromFile(const std::string& path)
 {
     std::string finalpath = "data/Animations/" + path;

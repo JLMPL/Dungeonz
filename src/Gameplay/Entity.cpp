@@ -56,7 +56,7 @@ const std::string& Entity::getCode() const
     return m_code;
 }
 
-EntityType Entity::getType() const
+Entity::Type Entity::getType() const
 {
     return m_type;
 }

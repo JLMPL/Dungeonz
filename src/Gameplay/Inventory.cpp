@@ -1,6 +1,6 @@
 #include "Inventory.hpp"
 
-bool Inventory::addItem(ItemPtr_t item)
+bool Inventory::addItem(Item::Ptr item)
 {
     if (m_items.size() < 6*6)
     {
@@ -49,7 +49,7 @@ bool Inventory::hasItem(const std::string& code)
     return false;
 }
 
-const ItemPtr_t& Inventory::getItem(int index)
+const Item::Ptr& Inventory::getItem(int index)
 {
     if (index >= m_items.size())
         return nullptr;

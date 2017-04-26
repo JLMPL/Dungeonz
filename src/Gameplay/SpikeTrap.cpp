@@ -5,16 +5,16 @@
 
 SpikeTrap::SpikeTrap()
 {
-    m_type = EntityType::SpikeTrap;
+    m_type = Entity::Type::SpikeTrap;
 
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
     m_sprite->loadFromFile("spike_trap_idle.ani");
     m_sprite->setOrigin({16,16});
     m_sprite->setRect({0,0,32,32});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,32,32);
-    m_box->type = CollisionType::TriggerVolume;
+    m_box->type = Box::Type::TriggerVolume;
     m_box->material = CollMaterial::Trap;
     m_box->reactMaterial = CollMaterial::Living;
     m_box->callback = [this]()

@@ -7,7 +7,6 @@
 #include "../Gameplay/Living.hpp"
 #include "../Input/InputHandler.hpp"
 #include "../GameState/StatePlaying.hpp"
-#include "../GameState/States.hpp"
 
 constexpr int g_BookWidth = 256*1.5;
 constexpr int g_BookHeight = 512;
@@ -50,8 +49,13 @@ void GUI::init()
 
     m_ginv.init(Screen::Get().width, Screen::Get().height);
 
-    // m_centerLabel.addLabel("The Test 0!");
-    // m_centerLabel.addLabel("Another test is already there!");
+    m_pauseBackground.setSize({Screen::Get().width, Screen::Get().height});
+    m_pauseBackground.setFillColor({0,0,0,128});
+
+    m_pauseText.setFont(*FontCache::Get().getFont("Monaco_Linux.ttf"));
+    m_pauseText.setCharacterSize(10);
+    m_pauseText.setString("Game is now paused press 'Space' to quit. 'Esc' key to resume.");
+    m_pauseText.setOrigin(m_pauseText.getLocalBounds().width/2, m_pauseText.getLocalBounds().height/2);
 }
 
 void GUI::update(float deltaTime)
@@ -59,6 +63,13 @@ void GUI::update(float deltaTime)
     m_camera = Renderer::Get().getCameraPos();
     m_sight.setPosition(m_camera.getSfVecf());
     // Renderer::Get().submitForeground(&m_sight);
+
+    if (m_finishGame)
+    {
+        m_finishGameFunc();
+        m_mode = GUIMode::Off;
+        m_finishGame = false;
+    }
 
     switch (m_mode)
     {
@@ -75,6 +86,12 @@ void GUI::update(float deltaTime)
             {
                 m_mode = GUIMode::Spellbook;
                 m_target->setBusy(true);
+                m_timer.restart();
+            }
+
+            if (InputHandler::Get().isEscape() and m_timer.getElapsedTime().asMilliseconds() > 200)
+            {
+                setPause(true);
                 m_timer.restart();
             }
 
@@ -187,11 +204,56 @@ void GUI::update(float deltaTime)
             }
         }
         break;
+        case GUIMode::EndGame:
+        {
+            m_deathTimer += (deltaTime /2);
+            float howmuch = lerp(0, 255, m_deathTimer);
+
+            if (howmuch < 0) howmuch = 0;
+            if (howmuch > 255) howmuch = 255;
+
+            m_deathFade.setFillColor({0,0,0, howmuch});
+            m_deathFade.setPosition(m_camera.getSfVecf());
+
+            Renderer::Get().submitOverlay(&m_deathFade);
+
+            if (howmuch >= 254)
+            {
+                m_finishGame = true;
+            }
+        }
+        break;
+        case GUIMode::Pause:
+        {
+            if (m_paused)
+            {
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) and m_timer.getElapsedTime().asMilliseconds() > 200)
+                {
+                    setPause(false);
+                    m_backToMenuFunc();
+                    m_timer.restart();
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) and m_timer.getElapsedTime().asMilliseconds() > 200)
+                {
+                    setPause(false);
+                    m_timer.restart();
+                }
+
+                m_pauseBackground.setPosition(Renderer::Get().getCameraPos().getSfVecf());
+                auto pos = Renderer::Get().getCameraPos() + vec2i(Screen::Get().halfWidth, Screen::Get().halfHeight);
+                m_pauseText.setPosition(pos.getSfVecf());
+
+                Renderer::Get().submitOverlay(&m_pauseBackground);
+                Renderer::Get().submitOverlay(&m_pauseText);
+            }
+        }
+        break;
     }
 
     if (m_mode != GUIMode::Inv and
         m_mode != GUIMode::Read and
-        m_mode != GUIMode::Death)
+        m_mode != GUIMode::Death and
+        m_mode != GUIMode::Pause)
     {
         m_health.setMaxValue(m_target->getAttribute(Attribute::Health));
         m_health.setValue(m_target->getAttribute(Attribute::Hp));
@@ -218,6 +280,11 @@ void GUI::goRead(const std::string& content)
 {
     m_mode = GUIMode::Read;
     m_bookText.setString(content);
+}
+
+void GUI::goFinishGame()
+{
+    m_mode = GUIMode::EndGame;
 }
 
 void GUI::showFocusHealthbar(int val, int max, const vec2i& pos)
@@ -274,4 +341,29 @@ void GUI::begForLevel(const std::string& level, Level::InitMode mode)
 void GUI::setBackToMenuFunc(std::function<void ()> func)
 {
     m_backToMenuFunc = func;
+}
+
+void GUI::setFinishGameFunc(std::function<void ()> func)
+{
+    m_finishGameFunc = func;
+}
+
+void GUI::setPause(bool pause)
+{
+    m_paused = pause;
+    if (m_paused)
+    {
+        m_mode = GUIMode::Pause;
+        m_target->setBusy(true);
+    }
+    else
+    {
+        m_mode = GUIMode::Off;
+        m_target->setBusy(false);
+    }
+}
+
+bool GUI::isPause() const
+{
+    return m_paused;
 }

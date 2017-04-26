@@ -1,7 +1,6 @@
 #include "Living.hpp"
 #include "Level.hpp"
 #include "../Resource/TextureCache.hpp"
-#include "../Ai/AiPtr.hpp"
 #include "../Ai/AiPlayer.hpp"
 #include "../Render/AnimatedSprite.hpp"
 #include "../Collision/CollisionHandler.hpp"
@@ -10,8 +9,8 @@
 
 Living::Living()
 {
-    m_type = EntityType::Living;
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_type = Entity::Type::Living;
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
 }
 
 Living::Living(const LivingProfile& profile)
@@ -26,16 +25,16 @@ void Living::init(const LivingProfile& profile)
     m_sprite->loadFromFile(m_profile.apperance + "_idle.ani");
     m_code = m_profile.code;
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,14,6);
-    m_box->type = CollisionType::Dynamic;
+    m_box->type = Box::Type::Dynamic;
     m_box->material = CollMaterial::Living;
     m_box->reactMaterial = CollMaterial::Trap;
     m_box->callback = [this]()
     {
         if (this->m_trapTimer > 750)
         {
-            this->damage(2);
+            this->damage(5);
             this->m_trapTimer = 0;
         }
     };
@@ -63,7 +62,7 @@ void Living::init(const LivingProfile& profile)
 
     for (int i = 0; i < Spell::NumSpells; i++)
     {
-        m_spells[i] = true;
+        m_spells[i] = false;
     }
 
     m_equipped[Equip::Weapon] = nullptr;
@@ -163,7 +162,7 @@ void Living::damage(int damage)
 
     if(!state)
         dodmg = true;
-    else if(state->getState() == PlayerState::Rolling)
+    else if(state->getState() == AiPlayer::State::Rolling)
         dodmg = false;
     else
         dodmg = true;
@@ -313,7 +312,7 @@ int Living::getXp()
     return m_profile.xp;
 }
 
-void Living::setAi(AiPtr_t ai)
+void Living::setAi(Ai::Ptr ai)
 {
     m_ai = std::move(ai);
     m_ai->init(this);
@@ -376,4 +375,14 @@ Inventory& Living::accessInv()
 bool Living::isDead() const
 {
     return m_attributes[Attribute::Hp] <= 0;
+}
+
+void Living::enableCollision()
+{
+    m_box->enabled = true;
+}
+
+void Living::disableCollision()
+{
+    m_box->enabled = false;
 }

@@ -3,9 +3,7 @@
 
 namespace Files
 {
-
-bool doesFileExist(const char* path);
-
-};
+    bool doesFileExist(const char* path);
+}
 
 #endif

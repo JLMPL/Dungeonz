@@ -105,7 +105,7 @@ void Level::loadTravel(const std::string& path, bool save)
     {
         file >> aitem;
 
-        ItemPtr_t item = ItemPtr_t(new Item());
+        Item::Ptr item = Item::Ptr(new Item());
         item->loadFromFile(aitem + ".lua");
         player->accessInv().addItem(item);
     }
@@ -228,7 +228,7 @@ void Level::saveTravel(const std::string& path, bool save)
     fclose(file);
 }
 
-Entity* Level::addEntity(EntityPtr_t entity)
+Entity* Level::addEntity(Entity::Ptr entity)
 {
     m_entities.push_back(std::move(entity));
     m_entities.back()->setLevel(this);
@@ -237,7 +237,7 @@ Entity* Level::addEntity(EntityPtr_t entity)
     return m_entities.back().get();
 }
 
-ItemPtr_t Level::addItem(ItemPtr_t item)
+Item::Ptr Level::addItem(Item::Ptr item)
 {
     m_items.push_back(item);
     return m_items.back();
@@ -261,6 +261,15 @@ IceMissile* Level::addIceMissile(std::shared_ptr<IceMissile> missile)
     return m_iceMissiles.back().get();
 }
 
+BossMissile* Level::addBossMissile(std::shared_ptr<BossMissile> missile)
+{
+    m_bossMissiles.push_back(missile);
+    m_bossMissiles.back()->setLevel(this);
+    m_bossMissiles.back()->setId(m_lastEntityId);
+    m_lastEntityId++;
+    return m_bossMissiles.back().get();
+}
+
 LightningBolt* Level::addLightningBolt(std::shared_ptr<LightningBolt> bolt)
 {
     m_lightnings.push_back(bolt);
@@ -279,6 +288,12 @@ Arrow* Level::addArrow(std::shared_ptr<Arrow> arrow)
     return m_arrows.back().get();
 }
 
+Decoration* Level::addDecoration(Decoration::Ptr decor)
+{
+    m_decorations.push_back(decor);
+    return m_decorations.back().get();
+}
+
 void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2i& offset, float life)
 {
     m_bigParticles.push_back(std::shared_ptr<BigParticle>(new BigParticle()));
@@ -288,79 +303,96 @@ void Level::addBigParticle(const std::string& path, const vec2i& pos, const vec2
 
 void Level::update(float deltaTime)
 {
-    for (auto i = m_entities.begin(); i != m_entities.end();)
+    if (!GUI::Get().isPause())
     {
-        if ((*i)->isDestroyed())
-            i = m_entities.erase(i);
-        else
-            i++;
+        for (auto i = m_entities.begin(); i != m_entities.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_entities.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_missiles.begin(); i != m_missiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_missiles.erase(i);
+            else 
+                i++;
+        }
+
+        for (auto i = m_iceMissiles.begin(); i != m_iceMissiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_iceMissiles.erase(i);
+            else 
+                i++;
+        }
+
+        for (auto i = m_bossMissiles.begin(); i != m_bossMissiles.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_bossMissiles.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_lightnings.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_arrows.begin(); i != m_arrows.end();)
+        {
+            if ((*i)->isDestroyed())
+                i = m_arrows.erase(i);
+            else
+                i++;
+        }
+
+        for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
+        {
+            if ((*i)->isDead())
+                i = m_bigParticles.erase(i);
+            else
+                i++;
+        }
+
+        for (auto& i : m_entities)
+            i->update(deltaTime);
+
+        for (auto& i : m_missiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_iceMissiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_bossMissiles)
+            i->update(deltaTime);
+
+        for (auto& i : m_lightnings)
+            i->update(deltaTime);
+
+        for (auto& i : m_arrows)
+            i->update(deltaTime);
+
+        for (auto& i : m_bigParticles)
+            i->update(deltaTime);
+
+        for (auto& i : m_decorations)
+            i->update(deltaTime);
+
+        m_map.update();
+        CollisionHandler::Get().update(deltaTime);
+
+        auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
+        Renderer::Get().setCameraPos(camera_pos);
+
+        IndicationHandler::Get().update(deltaTime);
     }
-
-    for (auto i = m_missiles.begin(); i != m_missiles.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_missiles.erase(i);
-        else 
-            i++;
-    }
-
-    for (auto i = m_iceMissiles.begin(); i != m_iceMissiles.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_iceMissiles.erase(i);
-        else 
-            i++;
-    }
-
-    for (auto i = m_lightnings.begin(); i != m_lightnings.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_lightnings.erase(i);
-        else
-            i++;
-    }
-
-    for (auto i = m_arrows.begin(); i != m_arrows.end();)
-    {
-        if ((*i)->isDestroyed())
-            i = m_arrows.erase(i);
-        else
-            i++;
-    }
-
-    for (auto i = m_bigParticles.begin(); i != m_bigParticles.end();)
-    {
-        if ((*i)->isDead())
-            i = m_bigParticles.erase(i);
-        else
-            i++;
-    }
-
-    for (auto& i : m_entities)
-        i->update(deltaTime);
-
-    for (auto& i : m_missiles)
-        i->update(deltaTime);
-
-    for (auto& i : m_iceMissiles)
-        i->update(deltaTime);
-
-    for (auto& i : m_lightnings)
-        i->update(deltaTime);
-
-    for (auto& i : m_arrows)
-        i->update(deltaTime);
-
-    for (auto& i : m_bigParticles)
-        i->update(deltaTime);
-
-    m_map.update();
-    CollisionHandler::Get().update(deltaTime);
-
-    auto camera_pos = GUI::Get().getTarget()->getPosition().geti();
-    Renderer::Get().setCameraPos(camera_pos);
-
-    IndicationHandler::Get().update(deltaTime);
     GUI::Get().update(deltaTime);
 }
 

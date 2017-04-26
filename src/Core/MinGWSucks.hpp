@@ -17,7 +17,6 @@ static std::string to_string(T v)
 {
     std::stringstream ss;
     ss << v;
-    // printf("MinGW Sucks Ass!!!\n");
     return ss.str();
 }
 
@@ -27,7 +26,6 @@ static int stoi(std::string str)
     std::stringstream ss;
     ss << str;
     ss >> result;
-    // printf("MinGW Sucks Ass!!!\n");
     return result;
 }
 
@@ -37,7 +35,6 @@ static float stof(std::string str)
     std::stringstream ss;
     ss << str;
     ss >> result;
-    // printf("MinGW Sucks Ass!!!\n");
     return result;
 }
 

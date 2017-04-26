@@ -7,13 +7,13 @@
 
 IceMissile::IceMissile()
 {
-    m_sprite = SpritePtr_t(new AnimatedSprite());
+    m_sprite = Sprite::Ptr(new AnimatedSprite());
     m_sprite->loadFromFile("iceball.ani");
     m_sprite->setOrigin({12,12});
 
-    m_box = BoxPtr_t(new Box());
+    m_box = Box::Ptr(new Box());
     m_box->rect = Rectf(0,0,8,8);
-    m_box->type = CollisionType::TriggerVolume;
+    m_box->type = Box::Type::TriggerVolume;
     m_box->reactMaterial = CollMaterial::Regular | CollMaterial::Living;
     m_box->callback = [this]()
     {
@@ -24,7 +24,7 @@ IceMissile::IceMissile()
     CollisionHandler::Get().addBody(m_box);
 }
 
-void IceMissile::init(vec2f origin, Direction_t dir, EntityType type)
+void IceMissile::init(vec2f origin, Direction_t dir, Entity::Type type)
 {
     m_type = type;
     m_direction = dir;
@@ -80,7 +80,7 @@ void IceMissile::blow(Entity* ent)
     {
         switch (ent->getType())
         {
-            case EntityType::Living:
+            case Entity::Type::Living:
             {
                 auto living = static_cast<Living*>(ent);
 
@@ -88,7 +88,7 @@ void IceMissile::blow(Entity* ent)
                 {
                     auto beholder = static_cast<Living*>(m_owner);
 
-                    living->freeze(15);
+                    living->freeze(5);
                     // living->push(m_direction, 8, 0.1);
 
                     m_speed = 0;
