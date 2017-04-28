@@ -12,7 +12,6 @@ __Lua 5.2__ - The scripting language
 __LuaBridge__ - Little help  
 __RapidXml__ - Parsing _.tmx_ map files  
 __zlib__ - Decompressing map files  
-__SDL2__ - Error handling  
 
 # resources
 __Monaco Font__ - Most of User interface  
