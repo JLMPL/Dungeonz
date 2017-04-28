@@ -11,7 +11,7 @@ Item = {
 	effect = function(user)
 		if user:knowsSpell(Spell_Fireball) == false then
 			user:learnSpell(Spell_Fireball, true)
-			gui_read("Shmaten faken shiten biten.\nTrolololo!");
+			gui_read("One of the most powerful elements\njust waiting to be unleashed.");
 		end
 	end
 }

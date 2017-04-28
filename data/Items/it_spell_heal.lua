@@ -11,7 +11,7 @@ Item = {
 	effect = function(user)
 		if user:knowsSpell(Spell_Heal) == false then
 			user:learnSpell(Spell_Heal, true)
-			gui_read("Now that's some useful suff\nyour having here.");
+			gui_read("Magic put into harmless but\nstill useful purpose.");
 		end
 	end
 }

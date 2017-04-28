@@ -367,3 +367,8 @@ bool GUI::isPause() const
 {
     return m_paused;
 }
+
+void GUI::resetTimer()
+{
+    m_timer.restart();
+}

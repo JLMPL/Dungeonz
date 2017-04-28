@@ -3,6 +3,11 @@
 #include "../GameState/GameState.hpp"
 #include <SFML/Graphics.hpp>
 
+#ifdef _WIN32
+#include <memory>
+using uint = unsigned int;
+#endif
+
 class Game
 {
     public:

@@ -39,6 +39,8 @@ void Level::init(const std::string& map, InitMode mode)
             loadTravel("data/checkpoint.sav", true);
             break;
     }
+
+    GUI::Get().resetTimer();
 }
 
 void Level::loadTravel(const std::string& path, bool save)

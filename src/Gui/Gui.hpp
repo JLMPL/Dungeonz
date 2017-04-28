@@ -49,6 +49,8 @@ class GUI
         void setPause(bool pause);
         bool isPause() const;
 
+        void resetTimer();
+
     private:
         GUIMode m_mode;
         sf::Clock m_timer;
