@@ -1,0 +1,2441 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m_back",
+				"m_backToMenuFunc"
+			],
+			[
+				"M_pa",
+				"m_pauseBackground"
+			],
+			[
+				"m_paus",
+				"m_pauseText"
+			],
+			[
+				"m_Pau",
+				"m_pauseText"
+			],
+			[
+				"m_ap",
+				"m_pauseText"
+			],
+			[
+				"m_fi",
+				"m_finishGameFunc"
+			],
+			[
+				"fucn",
+				"function"
+			],
+			[
+				"m_no",
+				"m_noclip"
+			],
+			[
+				"Enit",
+				"EntityType"
+			],
+			[
+				"hell",
+				"hello_len\tlabel"
+			],
+			[
+				"m_wa",
+				"m_warningMessage"
+			],
+			[
+				"half",
+				"halfHeight"
+			],
+			[
+				"init",
+				"initWarning"
+			],
+			[
+				"size",
+				"size"
+			],
+			[
+				"Rend",
+				"RenderStates"
+			],
+			[
+				"Ver",
+				"VertexArray"
+			],
+			[
+				"V",
+				"VertexArray"
+			],
+			[
+				"m_con",
+				"m_conMode"
+			],
+			[
+				"getP",
+				"getPosition"
+			],
+			[
+				"m_mu",
+				"m_music"
+			],
+			[
+				"Sou",
+				"SoundBuffer"
+			],
+			[
+				"pla",
+				"playMusic"
+			],
+			[
+				"Soud",
+				"SoundEffect"
+			],
+			[
+				"Soudn",
+				"SoundHandler"
+			],
+			[
+				"SOudn",
+				"SoundEffect"
+			],
+			[
+				"load",
+				"loadChekpoint"
+			],
+			[
+				"fuc",
+				"func"
+			],
+			[
+				"Item",
+				"ItemBag"
+			],
+			[
+				"dis",
+				"dist1"
+			],
+			[
+				"En",
+				"Entity"
+			],
+			[
+				"Key",
+				"KeyBind"
+			],
+			[
+				"vec",
+				"vector\tstd::vector"
+			],
+			[
+				"Col",
+				"Collision"
+			],
+			[
+				"Coll",
+				"CollisionHandler"
+			],
+			[
+				"ob",
+				"objectgroup"
+			],
+			[
+				"beg",
+				"begForState"
+			],
+			[
+				"hal",
+				"halfHeight"
+			],
+			[
+				"PRES",
+				"press"
+			],
+			[
+				"m_ac",
+				"m_activateFunc"
+			],
+			[
+				"s",
+				"STATE_HANDLER_HPP"
+			],
+			[
+				"next",
+				"next_sibling"
+			],
+			[
+				"fi",
+				"first_node"
+			],
+			[
+				"pr",
+				"printf\tprintf …"
+			],
+			[
+				"crit",
+				"criterias"
+			],
+			[
+				"cr",
+				"criterias"
+			],
+			[
+				"string",
+				"stringstream"
+			],
+			[
+				"m_t",
+				"m_target"
+			],
+			[
+				"m_inv",
+				"m_invPos"
+			],
+			[
+				"m_co",
+				"m_considered"
+			],
+			[
+				"m_Con",
+				"m_considered"
+			],
+			[
+				"m_dea",
+				"m_deathSentence"
+			],
+			[
+				"m_de",
+				"m_deathTimer"
+			],
+			[
+				"Gui",
+				"GUIMode"
+			],
+			[
+				"sEC",
+				"Second"
+			],
+			[
+				"ex",
+				"exit1"
+			],
+			[
+				"map",
+				"map_test"
+			],
+			[
+				"c",
+				"curr"
+			],
+			[
+				"Lig",
+				"LightningBolt"
+			],
+			[
+				"di",
+				"distb"
+			],
+			[
+				"file",
+				"fileLength"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"m_f",
+				"m_frozenTimer"
+			],
+			[
+				"m_fr",
+				"m_frozenDuration"
+			],
+			[
+				"Menu",
+				"MenuState"
+			],
+			[
+				"Men",
+				"MenuState"
+			],
+			[
+				"S",
+				"Screen"
+			],
+			[
+				"Scre",
+				"_Screen"
+			],
+			[
+				"How",
+				"HowToPlay"
+			],
+			[
+				"buff",
+				"buffer_size"
+			],
+			[
+				"buf",
+				"buffer_size"
+			],
+			[
+				"bu",
+				"buffer_size"
+			],
+			[
+				"res",
+				"restoreMana"
+			],
+			[
+				"m_",
+				"m_manaRestoreTimer"
+			],
+			[
+				"ve",
+				"vec"
+			],
+			[
+				"m_spe",
+				"m_speedSpellActive"
+			],
+			[
+				"Sta",
+				"StateSplash"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Game",
+				"GameState"
+			],
+			[
+				"getC",
+				"getCameraPos"
+			],
+			[
+				"Clos",
+				"ClosingRound"
+			],
+			[
+				"OP",
+				"OpeningRound"
+			],
+			[
+				"Token",
+				"TokenType"
+			],
+			[
+				"Tokne",
+				"TokenType"
+			],
+			[
+				"stat",
+				"state"
+			],
+			[
+				"de",
+				"deltaTime"
+			],
+			[
+				"INput",
+				"InputHandler"
+			],
+			[
+				"Enti",
+				"EntityType"
+			],
+			[
+				"Li",
+				"Lightning"
+			],
+			[
+				"lin",
+				"Lines"
+			],
+			[
+				"Vec",
+				"vector"
+			],
+			[
+				"cst",
+				"castFireball"
+			],
+			[
+				"T",
+				"Thread"
+			],
+			[
+				"pos",
+				"pos"
+			],
+			[
+				"Spel",
+				"Spell"
+			],
+			[
+				"te",
+				"TextureCache"
+			],
+			[
+				"INpu",
+				"InputHandler"
+			],
+			[
+				"g_sep",
+				"g_spellBookHeight"
+			],
+			[
+				"g_se",
+				"g_spellBookHeight"
+			],
+			[
+				"g_s",
+				"g_spellBookWidth"
+			],
+			[
+				"getE",
+				"getEntityByCode"
+			],
+			[
+				"Ent",
+				"EntityType"
+			],
+			[
+				"ITem",
+				"ItemType"
+			],
+			[
+				"Def",
+				"DEFENSE"
+			],
+			[
+				"ret",
+				"restoreBasicDefense"
+			],
+			[
+				"ma",
+				"m_attributes"
+			],
+			[
+				"Ania",
+				"AnimationCache"
+			],
+			[
+				"Input",
+				"InputHandler"
+			],
+			[
+				"KEy",
+				"KeyBind"
+			],
+			[
+				"ge",
+				"getTexture"
+			],
+			[
+				"ne",
+				"next_sibling"
+			],
+			[
+				"it",
+				"item0"
+			],
+			[
+				"m_Bac",
+				"m_BackgroundData"
+			],
+			[
+				"m_Back",
+				"m_BackCircleData"
+			],
+			[
+				"set",
+				"setAnimation"
+			],
+			[
+				"get",
+				"getEntityByCode"
+			],
+			[
+				"Keyb",
+				"Keyboard"
+			],
+			[
+				"Collsi",
+				"CollisionType"
+			],
+			[
+				"reac",
+				"reactMaterial"
+			],
+			[
+				"b",
+				"BoxPtr_t"
+			],
+			[
+				"m_B",
+				"m_bookText"
+			],
+			[
+				"m_book",
+				"m_bookText"
+			],
+			[
+				"m_boo",
+				"m_bookText"
+			],
+			[
+				"m_b",
+				"m_bookText"
+			],
+			[
+				"st",
+				"str_type"
+			],
+			[
+				"GUI",
+				"GUIMode"
+			],
+			[
+				"_boo",
+				"_BookHeight"
+			],
+			[
+				"fir",
+				"first_attribute"
+			],
+			[
+				"pro",
+				"properties"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Rekt/src/Core/Game.cpp",
+			"settings":
+			{
+				"buffer_size": 6601,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Core/Game.hpp",
+			"settings":
+			{
+				"buffer_size": 972,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Collision/CollisionMaterial.hpp",
+			"settings":
+			{
+				"buffer_size": 254,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Core/Direction.hpp",
+			"settings":
+			{
+				"buffer_size": 628,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Core/Files.hpp",
+			"settings":
+			{
+				"buffer_size": 106,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Render/AnimatedSprite.cpp",
+			"settings":
+			{
+				"buffer_size": 2302,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/StateMenu.cpp",
+			"settings":
+			{
+				"buffer_size": 6050,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 1066,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Core/Files.cpp",
+			"settings":
+			{
+				"buffer_size": 273,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/StateScrolling.cpp",
+			"settings":
+			{
+				"buffer_size": 2688,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/StateScrolling.hpp",
+			"settings":
+			{
+				"buffer_size": 498,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Ai/AiBoss.cpp",
+			"settings":
+			{
+				"buffer_size": 6733,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Gui/Gui.hpp",
+			"settings":
+			{
+				"buffer_size": 2274,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Gui/Gui.cpp",
+			"settings":
+			{
+				"buffer_size": 10943,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Gameplay/Level.cpp",
+			"settings":
+			{
+				"buffer_size": 11295,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/data/Items/it_spell_fireball.lua",
+			"settings":
+			{
+				"buffer_size": 397,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/data/Items/it_spell_frostbite.lua",
+			"settings":
+			{
+				"buffer_size": 424,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/data/Items/it_spell_lightning.lua",
+			"settings":
+			{
+				"buffer_size": 458,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/data/Items/it_spell_heal.lua",
+			"settings":
+			{
+				"buffer_size": 348,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Ai/AiPlayer.cpp",
+			"settings":
+			{
+				"buffer_size": 19660,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Gui/GuiMode.hpp",
+			"settings":
+			{
+				"buffer_size": 161,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Render/Renderer.cpp",
+			"settings":
+			{
+				"buffer_size": 4109,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/Gameplay/BossMissile.cpp",
+			"settings":
+			{
+				"buffer_size": 6466,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/StateSplash.hpp",
+			"settings":
+			{
+				"buffer_size": 484,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/StateSplash.cpp",
+			"settings":
+			{
+				"buffer_size": 2038,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Rekt/src/GameState/GameState.hpp",
+			"settings":
+			{
+				"buffer_size": 606,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"save all",
+				"File: Save All"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sav",
+				"File: Save All"
+			],
+			[
+				"sva",
+				"File: Save All"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"exit",
+				"Set Syntax: Textile"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"Indentation",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"iden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"to",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/dominik/Desktop/Rekt/src",
+		"/home/dominik/Desktop/Rekt/src/Ai",
+		"/home/dominik/Desktop/Rekt/src/Collision",
+		"/home/dominik/Desktop/Rekt/src/Core",
+		"/home/dominik/Desktop/Rekt/src/GameState",
+		"/home/dominik/Desktop/Rekt/src/Gameplay",
+		"/home/dominik/Desktop/Rekt/src/Gui",
+		"/home/dominik/Desktop/Rekt/src/Input",
+		"/home/dominik/Desktop/Rekt/src/Render",
+		"/home/dominik/Desktop/Rekt/src/Resource",
+		"/home/dominik/Desktop/Rekt/src/Script",
+		"/home/dominik/Desktop/Rekt/src/Sound"
+	],
+	"file_history":
+	[
+		"/home/dominik/Desktop/Dungeonz-dev/src/Core/Game.cpp",
+		"/home/dominik/Desktop/Rekt/src/Input/InputHandler.cpp",
+		"/home/dominik/Desktop/Rekt/src/Input/InputHandler.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Renderer.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/GuiMode.hpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StateMenu.cpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StateScrolling.cpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StateScrolling.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Item.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Map.cpp",
+		"/home/dominik/Desktop/Rekt/src/Resource/Animation.cpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiMob.cpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiMobMage.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/AnimatedSprite.cpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Game.cpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiBoss.cpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/Box.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/ShootTrap.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/ShootTrap.cpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/BossMissile.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/IceMissile.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Arrow.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Arrow.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/SpikeTrap.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/SpikeTrap.cpp",
+		"/home/dominik/Desktop/Sungs",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Entity.hpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Direction.hpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Error.hpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Vec2.hpp",
+		"/home/dominik/Desktop/Rekt/src/base64/base64.cpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiBoss.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/BossMissile.hpp",
+		"/home/dominik/Desktop/Zependarize/src/Game.cpp",
+		"/home/dominik/Desktop/Zependarize/src/Game.hpp",
+		"/home/dominik/Desktop/Zependarize/src/GLArrayBuffer.cpp",
+		"/home/dominik/Desktop/Zependarize/src/GLArrayBuffer.hpp",
+		"/home/dominik/Desktop/Zependarize/src/GLShader.cpp",
+		"/home/dominik/Desktop/Zependarize/src/GLShader.hpp",
+		"/home/dominik/Desktop/Zependarize/src/main.cpp",
+		"/home/dominik/Desktop/Zependarize/src/math3d.cpp",
+		"/home/dominik/Desktop/Zependarize/src/math3d.hpp",
+		"/home/dominik/Desktop/Zependarize/src/math_3d.h",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Level.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Level.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiMob.hpp",
+		"/home/dominik/Desktop/Rekt/src/Core/MinGWSucks.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/PressPlate.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Living.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Lever.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/ItemBag.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/FireMissile.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Exit.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Door.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Chest.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Sprite.hpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/GameState.hpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/GameState.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/Gui.cpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StatePlaying.cpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StateSplash.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Stats.hpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/States.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/SpritePtr.hpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/CollisionMaterial.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Living.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/Ai.hpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/CollisionHandler.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Decoration.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Decoration.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/Slot.hpp",
+		"/home/dominik/Desktop/Rekt/src/Script/ScriptHandler.cpp",
+		"/home/dominik/Desktop/Rekt/src/Script/ScriptHandler.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/EntityType.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Map.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Inventory.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Inventory.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Entity.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/FireMissile.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/IceMissile.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiPlayer.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiPlayer.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/Slot.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/GraphicInv.cpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/CollisionType.hpp",
+		"/home/dominik/Desktop/Rekt/src/Collision/BoxPtr.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/ItemType.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiPtr.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/Spellbook.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Renderer.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Chunk.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Chunk.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Tile.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/BigParticle.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/BigParticle.hpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Files.cpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Files.hpp",
+		"/home/dominik/Desktop/Rekt/src/GameState/StateMenu.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/Spells.hpp",
+		"/home/dominik/Desktop/Minor/ass/suckin.asm",
+		"/home/dominik/Desktop/Minor/ass/nothauna.asm",
+		"/home/dominik/Desktop/Rekt/data/checkpoint.sav",
+		"/home/dominik/Desktop/Rekt/src/GameState/StatePlaying.hpp",
+		"/home/dominik/Desktop/Rekt/data/travel.sav",
+		"/home/dominik/Desktop/Rekt/src/Sound/SoundHandler.hpp",
+		"/home/dominik/Desktop/Rekt/src/Sound/SoundHandler.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/GraphicLoot.cpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/Gui.hpp",
+		"/home/dominik/Desktop/Rekt/src/Ai/AiMobMage.hpp",
+		"/home/dominik/Desktop/Electre/rewrite",
+		"/home/dominik/Desktop/Minor/ass/hello.asm",
+		"/home/dominik/Desktop/Rekt/src/Gameplay/LivingProfile.hpp",
+		"/home/dominik/Desktop/Rekt/src/Resource/TextureCache.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/GraphicInv.hpp",
+		"/home/dominik/Desktop/Rekt/data/Maps/dote_test.tmx",
+		"/home/dominik/Desktop/Rekt/src/Ai/Ai.cpp",
+		"/home/dominik/Desktop/Rekt/src/Core/Dice.hpp",
+		"/home/dominik/Desktop/Rekt/src/Gui/SpellOption.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/AnimatedSprite.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Bar.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Bar.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Indication.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/Indication.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/IndicationHandler.cpp",
+		"/home/dominik/Desktop/Rekt/src/Render/IndicationHandler.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/RenderAttribute.hpp",
+		"/home/dominik/Desktop/Rekt/src/Render/RenderData.hpp"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+			"",
+			"/usr/home/Desktop/Rect/src/",
+			"/home/Desktop/Rect/src/",
+			"/home/Desktop/Rect/src",
+			"",
+			"/home/dominik/Desktop/Quake-III-Arena/",
+			"/home/dominik/Desktop/Rekt/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"file",
+			"m_finishGame",
+			"Return",
+			"48",
+			"halfHeight = ",
+			"halfWidth = ",
+			"m_camera",
+			"setBackToMenuFunc",
+			"GUI::Get().setPlayingState",
+			"castFrostbite",
+			"castState",
+			"shootState",
+			".",
+			"Int32",
+			"Length",
+			"length",
+			"lenght",
+			"iostream",
+			"<iostream>",
+			"getPosition",
+			"m_level",
+			"this",
+			"getFakePos().getf()",
+			"Big",
+			"FireMissile",
+			"m_iceMissiles",
+			"m_bossMissiles",
+			"iceMissile",
+			"IceMissile",
+			"FireMissile",
+			"FIRE_MISSILE_HPP",
+			"fleeState",
+			"m_target->getProfile().apperance + ",
+			"AiMobMage",
+			"AI_MOB_MAGE",
+			"//",
+			"StateType",
+			"DoorProfile.hpp",
+			"DoorProfile",
+			"SpritePtr_t",
+			"CollisionType",
+			"BoxPtr_t",
+			"CollisionType",
+			"BoxPtr_t",
+			"CollisionType",
+			"ItemType",
+			"EntityPtr_t",
+			"ItemPtr_t",
+			"ItemPtr",
+			"ItemPtr_t",
+			"ItemPtr",
+			"EntityPtr_t",
+			"ItemPtr_t",
+			"EntityPtr_t",
+			"ItemPtr_t",
+			"EntityPtr_t",
+			"ItemPtr_t",
+			"AiPtr_t",
+			"PlayerState",
+			"EntityType",
+			"door",
+			"AnimationCache",
+			"Renderer",
+			"CollisionHandler",
+			"picking",
+			"pickingState",
+			"constexpr",
+			"makeChunks",
+			"m_width",
+			":\n",
+			"shit",
+			"0",
+			"32",
+			"another test",
+			"it",
+			"another class",
+			"k",
+			"i",
+			".size.",
+			".pos.",
+			"pos",
+			"++)",
+			"m_Layers",
+			"wid",
+			"m_Texture",
+			"m_Tiles",
+			"m_Array",
+			"Spell::Speed",
+			"submitLine",
+			".submitLine",
+			"delete",
+			"m_position",
+			"=",
+			"indication",
+			"(B15-$Q15)<$J15",
+			"B15-$P15)<=$J15",
+			"checkpoint.sav",
+			"setLevel",
+			"begForLevel",
+			"m_conMode",
+			"AiMob",
+			"double free",
+			"fukin'",
+			"m_level",
+			"double free",
+			"double",
+			"m_music",
+			"hit",
+			"Hit",
+			"loadTravel",
+			"saveTravel",
+			"=",
+			"equip",
+			"Equip",
+			"m_equipped",
+			"isEquipped",
+			"m_equipped",
+			"m_warmup",
+			"m_arrows",
+			"m_lightnings",
+			"addExit",
+			"300",
+			"30",
+			"400",
+			"m_graphicInv",
+			"_height",
+			"_width",
+			"break"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Sprite::Ptr",
+			"FireMissile",
+			"CollMaterial::Living",
+			"CollMaterial::Trap",
+			"CollMaterial::Regular",
+			"CollMaterial::None",
+			"CollisionType::TriggerVolume",
+			"CollisionType::Dynamic",
+			"CollisionType::Static",
+			"Spell::NumSpells",
+			"Spell::Lightning",
+			"Spell::Speed",
+			"Spell::Frostbite",
+			"Spell::Fireball",
+			"Equip::NumEq",
+			"Equip::Armor",
+			"Equip::Weapon",
+			"Attribute::NumAtts",
+			"Attribute::ToNext",
+			"Attribute::Xp",
+			"Attribute::currLevel",
+			"Attribute::Defense",
+			"Attribute::Damage",
+			"Attribute::Magicka",
+			"Attribute::Mp",
+			"Attribute::Health",
+			"Attribute::Hp",
+			"Attribute::NUM_ATTS",
+			"Attribute::NumAtts",
+			"Attribute::ToNext",
+			"Attribute::Xp",
+			"Attribute::Level",
+			"Attribute::Defense",
+			"Attribute::Damage",
+			"Attribute::Magicka",
+			"Attribute::Mp",
+			"Attribute::Health",
+			"Attribute::Hp",
+			"EntityType::Fireball",
+			"EntityType::ItemBag",
+			"EntityType::PressPlate",
+			"EntityType::SpikeTrap",
+			"EntityType::Lever",
+			"EntityType::Door",
+			"EntityType::Chest",
+			"EntityType::Living",
+			"EntityType::Plain",
+			"Direction::Right",
+			"Direction::Left",
+			"Direction::Down",
+			"Direction::Up",
+			"Right",
+			"Down",
+			"Up",
+			"Roll",
+			"Escape",
+			"Spellbook",
+			"Cast",
+			"Run",
+			"Inv",
+			"Attack",
+			"Action",
+			"Right",
+			"Left",
+			"switch (",
+			"AiPlayer",
+			"setAi",
+			"AiPtr_t",
+			"for (",
+			"while (",
+			"if (",
+			"../Core/Vec2.hpp",
+			"../Core/Rect.hpp",
+			"../Core/Vec2.hpp",
+			"ai_mob.hpp",
+			"AIMob"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Rekt/src/Core/Game.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Rekt/src/Core/Game.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 972,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Rekt/src/Collision/CollisionMaterial.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								217,
+								217
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Rekt/src/Core/Direction.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								619,
+								619
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Rekt/src/Core/Files.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Rekt/src/Render/AnimatedSprite.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								914,
+								914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Rekt/src/GameState/StateMenu.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6050,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Rekt/CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								888,
+								888
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Rekt/src/Core/Files.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 273,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Rekt/src/GameState/StateScrolling.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								535,
+								535
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Rekt/src/GameState/StateScrolling.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Rekt/src/Ai/AiBoss.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1176,
+								1176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 529.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Rekt/src/Gui/Gui.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1342,
+								1342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 587.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "Rekt/src/Gui/Gui.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10598,
+								10598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5134.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Rekt/src/Gameplay/Level.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Rekt/data/Items/it_spell_fireball.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								383
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "Rekt/data/Items/it_spell_frostbite.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								263,
+								263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "Rekt/data/Items/it_spell_lightning.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								457,
+								457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "Rekt/data/Items/it_spell_heal.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Rekt/src/Ai/AiPlayer.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								640,
+								640
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "Rekt/src/Gui/GuiMode.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Rekt/src/Render/Renderer.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "Rekt/src/Gameplay/BossMissile.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "Rekt/src/GameState/StateSplash.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "Rekt/src/GameState/StateSplash.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2038,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "Rekt/src/GameState/GameState.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "rekt.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"level",
+				"Gameplay/Level.cpp"
+			],
+			[
+				"animateds",
+				"Render/AnimatedSprite.cpp"
+			],
+			[
+				"materia",
+				"Collision/CollisionMaterial.hpp"
+			],
+			[
+				"game",
+				"Core/Game.cpp"
+			],
+			[
+				"input",
+				"Input/InputHandler.cpp"
+			],
+			[
+				"renderer",
+				"Render/Renderer.hpp"
+			],
+			[
+				"bossm",
+				"Gameplay/BossMissile.cpp"
+			],
+			[
+				"gui",
+				"Gui/Gui.hpp"
+			],
+			[
+				"aibos",
+				"Ai/AiBoss.cpp"
+			],
+			[
+				"level.hpp",
+				"Gameplay/Level.hpp"
+			],
+			[
+				"liv",
+				"Gameplay/Living.cpp"
+			],
+			[
+				"living",
+				"Gameplay/Living.hpp"
+			],
+			[
+				"map.cpp",
+				"Gameplay/Map.cpp"
+			],
+			[
+				"door",
+				"Gameplay/Door.cpp"
+			],
+			[
+				"spell",
+				"Gui/Spellbook.cpp"
+			],
+			[
+				"lev",
+				"Gameplay/Level.cpp"
+			],
+			[
+				"statemen",
+				"GameState/StateMenu.cpp"
+			],
+			[
+				"stateme",
+				"GameState/StateMenu.cpp"
+			],
+			[
+				"",
+				"~/Desktop/additional/hom/index.htm"
+			],
+			[
+				"aip",
+				"Ai/AiPlayer.cpp"
+			],
+			[
+				"aipl",
+				"Ai/AiPlayer.hpp"
+			],
+			[
+				"livn",
+				"Gameplay/Living.hpp"
+			],
+			[
+				"state",
+				"GameState/StatePlaying.cpp"
+			],
+			[
+				"statepla",
+				"GameState/StatePlaying.cpp"
+			],
+			[
+				"aipla",
+				"Ai/AiPlayer.cpp"
+			],
+			[
+				"leve",
+				"Gameplay/Level.hpp"
+			],
+			[
+				"coll",
+				"Collision/CollisionMaterial.hpp"
+			],
+			[
+				"inpuit",
+				"Input/InputHandler.cpp"
+			],
+			[
+				"stat",
+				"Gameplay/Stats.hpp"
+			],
+			[
+				"s",
+				"Gameplay/Stats.hpp"
+			],
+			[
+				"enit",
+				"Gameplay/EntityType.hpp"
+			],
+			[
+				"map",
+				"Gameplay/Map.hpp"
+			],
+			[
+				"lever",
+				"Gameplay/Lever.cpp"
+			],
+			[
+				"spike",
+				"Gameplay/SpikeTrap.cpp"
+			],
+			[
+				"iamob",
+				"Ai/AiMob.cpp"
+			],
+			[
+				"aipp",
+				"Ai/AiPlayer.hpp"
+			],
+			[
+				"lig",
+				"Gameplay/Lightning.cpp"
+			],
+			[
+				"cent",
+				"Gui/CenterLabel.cpp"
+			],
+			[
+				"center",
+				"Gui/CenterLabel.hpp"
+			],
+			[
+				"collision",
+				"Collision/CollisionMaterial.hpp"
+			],
+			[
+				"itemb",
+				"Gameplay/ItemBag.hpp"
+			],
+			[
+				"livin",
+				"Gameplay/Living.cpp"
+			],
+			[
+				"itemba",
+				"Gameplay/ItemBag.cpp"
+			],
+			[
+				"lvin",
+				"Gameplay/Living.cpp"
+			],
+			[
+				"ren",
+				"Render/Renderer.cpp"
+			],
+			[
+				"levl",
+				"gameplay/level.hpp"
+			],
+			[
+				"graphicinv",
+				"gui/graphic_inv.cpp"
+			],
+			[
+				"ai",
+				"ai/ai_mob.cpp"
+			],
+			[
+				"ai_bo",
+				"ai/ai_mob.hpp"
+			],
+			[
+				"lving",
+				"gameplay/living.cpp"
+			],
+			[
+				"big",
+				"render/big_particle.cpp"
+			],
+			[
+				"sprit",
+				"render/sprite.hpp"
+			],
+			[
+				"animat",
+				"render/animated_sprite.hpp"
+			],
+			[
+				"rend",
+				"render/renderer.hpp"
+			],
+			[
+				"indic",
+				"render/indication_handler.hpp"
+			],
+			[
+				"ai_pa",
+				"ai/ai_player.cpp"
+			],
+			[
+				"gui.",
+				"gui/gui.cpp"
+			],
+			[
+				"l",
+				"gameplay/level.cpp"
+			],
+			[
+				"ma",
+				"gameplay/map.cpp"
+			],
+			[
+				"ai_pal",
+				"ai/ai_player.cpp"
+			],
+			[
+				"pla",
+				"ai/ai_player.cpp"
+			],
+			[
+				"spiek",
+				"gameplay/spike_trap.cpp"
+			],
+			[
+				"colli",
+				"collision/collision_handler.cpp"
+			],
+			[
+				"spie",
+				"gameplay/spike_trap.cpp"
+			],
+			[
+				"living.",
+				"gameplay/living.cpp"
+			],
+			[
+				"main",
+				"main.cpp"
+			],
+			[
+				"item",
+				"gameplay/item.hpp"
+			],
+			[
+				"slot",
+				"gui/slot.hpp"
+			],
+			[
+				"spir",
+				"render/sprite.hpp"
+			],
+			[
+				"spri",
+				"render/sprite.cpp"
+			],
+			[
+				"c",
+				"collision/collision_handler.cpp"
+			],
+			[
+				"inpu",
+				"input/input_handler.hpp"
+			],
+			[
+				"collison",
+				"collision/collision_handler.cpp"
+			],
+			[
+				"aibat",
+				"ai/ai_bat.hpp"
+			],
+			[
+				"bat",
+				"ai/ai_bat.cpp"
+			],
+			[
+				"ai_ba",
+				"ai/ai_bat.cpp"
+			],
+			[
+				"enti",
+				"gameplay/entity.cpp"
+			],
+			[
+				"lavel",
+				"gameplay/level.cpp"
+			],
+			[
+				"collis",
+				"collision/collision_handler.cpp"
+			],
+			[
+				"box",
+				"collision/box.hpp"
+			],
+			[
+				"map.cp",
+				"gameplay/map.cpp"
+			],
+			[
+				"col",
+				"collision/collision_handler.cpp"
+			],
+			[
+				"lecv",
+				"gameplay/level.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
